@@ -1,0 +1,6 @@
+﻿<Project>
+	<PropertyGroup>
+		<Deterministic>true</Deterministic>
+		<ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+	</PropertyGroup>
+</Project>

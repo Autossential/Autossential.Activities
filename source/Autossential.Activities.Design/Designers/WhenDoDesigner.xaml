@@ -1,0 +1,66 @@
+﻿<sap:ActivityDesigner x:Class="Autossential.Activities.Design.Designers.WhenDoDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sa="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls" xmlns:converters="clr-namespace:Autossential.Shared.Activities.Design.Converters">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <converters:BooleanToVisibilityConverter x:Key="ReverseBooleanToVisibilityConverter" Reverse="True" />
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush Drawing="{StaticResource WhenDoIcon}" Stretch="Uniform"></DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+
+    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" MinWidth="300">
+        <StackPanel>
+            <Label Content="{Binding Path=WhenLabel, Mode=TwoWay}" />
+            <sap:WorkflowItemPresenter
+                        AutomationProperties.AutomationId="Activity"
+                        Margin="0"
+                        Padding="0"
+                        Item="{Binding Path=ModelItem.Condition, Mode=TwoWay}"
+                        HintText="Drop the condition activity"
+                        x:Name="WhenObj"/>
+
+            <DockPanel>
+                <Label DockPanel.Dock="Left" Content="Do"/>
+                <Separator Background="#55777777" Height="1" Margin="0,4,0,0" />
+            </DockPanel>
+
+            <sap:WorkflowItemPresenter
+                    AutomationProperties.AutomationId="Activity"
+                    Margin="0"
+                    Item="{Binding Path=ModelItem.Body.Handler, Mode=TwoWay}"
+                    AllowedItemType="sa:Activity"
+                    HintText="Drop activities here" />
+            <StackPanel Visibility="{Binding Path=ModelItem.WithElse, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <DockPanel>
+                    <Label DockPanel.Dock="Left" Content="Else"/>
+                    <Separator Background="#55777777" Height="1" Margin="0,4,0,0" />
+                </DockPanel>
+                <sap:WorkflowItemPresenter
+                    AutomationProperties.AutomationId="Activity"
+                    Margin="0"
+                    Item="{Binding Path=ModelItem.ElseBody.Handler, Mode=TwoWay}"
+                    AllowedItemType="sa:Activity"
+                    HintText="Drop activities here" />
+            </StackPanel>
+            <StackPanel Visibility="{Binding Path=ModelItem.WithElse, Converter={StaticResource ReverseBooleanToVisibilityConverter}}">
+                <TextBlock>
+                    <Hyperlink TextDecorations="None" Click="AddElse_Click">Add Else</Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </c:ActivityDecoratorControl>
+
+</sap:ActivityDesigner>

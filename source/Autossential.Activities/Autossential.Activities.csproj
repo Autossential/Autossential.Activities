@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net461;net5.0-windows</TargetFrameworks>
+		<PackageId>$(MSBuildProjectName).Core</PackageId>
+	</PropertyGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net461' ">
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="PresentationCore" />
+		<Reference Include="PresentationFramework" />
+		<Reference Include="System.Activities" />
+		<Reference Include="System.Activities.Presentation" />
+		<Reference Include="System.Data.DataSetExtensions" />
+		<Reference Include="System.IO.Compression" />
+		<Reference Include="WindowsBase" />
+	</ItemGroup>
+	
+	<ItemGroup Condition="'$(TargetFramework)' != 'net461' ">
+		<PackageReference Include="System.Activities" />
+		<PackageReference Include="UiPath.Workflow" />
+		<PackageReference Include="System.Activities.Core.Presentation" />
+		<PackageReference Include="System.Activities.Metadata" />
+		<PackageReference Include="UiPath.Activities.Api" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\Autossential.Core\Autossential.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGeneratorEx</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\ResourcesGen.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ResourcesGen.tt</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Properties\ResourcesGen.tt">
+			<Generator>TextTemplatingFileGenerator</Generator>
+			<LastGenOutput>ResourcesGen.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+	<Import Project="..\..\shared\Autossential.Shared\Autossential.Shared.projitems" Label="Shared" />
+
+	<Import Project="..\..\shared\Autossential.Shared.Activities\Autossential.Shared.Activities.projitems" Label="Shared" />
+
+</Project>

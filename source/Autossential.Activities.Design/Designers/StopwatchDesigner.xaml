@@ -1,0 +1,46 @@
+﻿<sap:ActivityDesigner x:Class="Autossential.Activities.Design.Designers.StopwatchDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls" 
+    xmlns:converters="clr-namespace:Autossential.Shared.Activities.Design.Converters">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush Drawing="{StaticResource StopwatchIcon}" Stretch="Uniform"></DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+
+    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" Width="240">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Content="Stopwatch (In/Out)" Grid.Row="0" Grid.Column="0"/>
+            <sapv:ExpressionTextBox Grid.Row="1" Grid.Column="0"
+                    ExpressionType="{Binding ModelItem.Properties[ReferenceStopwatch].PropertyType.GenericTypeArguments[0]}"
+                    OwnerActivity="{Binding ModelItem}"
+                    UseLocationExpression="True"
+                    Expression="{Binding ModelItem.ReferenceStopwatch, ConverterParameter=InOut, Converter={StaticResource ArgumentToExpressionConverter}}" />
+
+            <Label Content="Method" Grid.Row="0" Grid.Column="2"/>
+            <ComboBox Grid.Row="1" Grid.Column="2" x:Name="cbMethods" SelectedValue="{Binding Path=ModelItem.Method, Mode=TwoWay}" />            
+        </Grid>
+    </c:ActivityDecoratorControl>
+</sap:ActivityDesigner>

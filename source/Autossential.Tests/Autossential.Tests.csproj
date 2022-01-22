@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net5.0-windows;net461</TargetFrameworks>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Samples\output\**" />
+	  <EmbeddedResource Remove="Samples\output\**" />
+	  <None Remove="Samples\output\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="EncryptDecryptDataTableTests.cs" />
+	  <Compile Remove="EncryptDecryptTextTests.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" />
+		<PackageReference Include="MSTest.TestAdapter" />
+		<PackageReference Include="MSTest.TestFramework" />
+		<PackageReference Include="coverlet.collector" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\Autossential.Activities\Autossential.Activities.csproj" />
+	</ItemGroup>
+
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net461' ">
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="PresentationCore" />
+		<Reference Include="PresentationFramework" />
+		<Reference Include="System.Activities" />
+		<Reference Include="System.Activities.Presentation" />
+		<Reference Include="System.Data.DataSetExtensions" />
+		<Reference Include="System.IO.Compression" />
+		<Reference Include="WindowsBase" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' != 'net461' ">
+		<PackageReference Include="UiPath.Workflow" />
+		<PackageReference Include="System.Activities.Core.Presentation" />
+		<PackageReference Include="System.Activities.Metadata" />
+	</ItemGroup>
+
+	<Import Project="..\..\shared\Autossential.Shared.Tests\Autossential.Shared.Tests.projitems" Label="Shared" />
+
+</Project>

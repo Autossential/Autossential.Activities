@@ -1,0 +1,79 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+	<PropertyGroup>
+		<TargetFrameworks>net461;net5.0-windows</TargetFrameworks>
+		<UseWPF>true</UseWPF>
+		<Version>3.0-preview-3</Version>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Description>Provides a collection of activities to work with DataTables, Collections, Files, Programming, Workflows, Security and Diagnostics.</Description>
+		<Authors>Alexandre Toledo Perez</Authors>
+		<Copyright>© 2020-2021 Alexandre Toledo Perez</Copyright>
+		<PackageProjectUrl>https://alexandretperez.github.io/Autossential/</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/alexandretperez/Autossential</RepositoryUrl>
+		<RepositoryType>GIT</RepositoryType>
+		<PackageTags>Custom Activity Windows Workflow Foundation UiPath</PackageTags>
+		<PackageId>$(MSBuildProjectName.Replace(".Design", ""))</PackageId>
+		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageIcon>packageIcon.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Designers\DecryptDataTableDesigner.xaml.cs" />
+	  <Compile Remove="Designers\DecryptTextDesigner.xaml.cs" />
+	  <Compile Remove="Designers\EncryptDataTableDesigner.xaml.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Page Remove="Designers\DecryptDataTableDesigner.xaml" />
+	  <Page Remove="Designers\DecryptTextDesigner.xaml" />
+	  <Page Remove="Designers\EncryptDataTableDesigner.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Autossential.Activities\Autossential.Activities.csproj">
+			<PrivateAssets>All</PrivateAssets>
+			<Private>true</Private>
+		</ProjectReference>
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net461' ">
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="PresentationCore" />
+		<Reference Include="PresentationFramework" />
+		<Reference Include="System.Activities" />
+		<Reference Include="System.Activities.Core.Presentation" />
+		<Reference Include="System.Activities.Presentation" />
+		<Reference Include="System.ServiceModel" />
+		<Reference Include="System.ServiceModel.Activities" />
+		<Reference Include="System.Windows.Forms" />
+		<Reference Include="System.Xaml" />
+		<Reference Include="WindowsBase" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' != 'net461' ">
+		<PackageReference Include="System.Activities" />
+		<PackageReference Include="UiPath.Workflow" />
+		<PackageReference Include="System.Activities.Core.Presentation" />
+		<PackageReference Include="System.Activities.Metadata" />
+		<PackageReference Include="UiPath.Activities.Api" />
+	</ItemGroup>
+	
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug' AND '$(DesignTimeBuild)' != 'true'">
+		<PackageVersion>$(Version)-$([System.DateTime]::UtcNow.ToString(MMddHHmmss))</PackageVersion>
+	</PropertyGroup>
+
+	<Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
+		<ItemGroup>
+			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadatavalue('ReferenceSourceTarget', 'ProjectReference'))" />
+		</ItemGroup>
+	</Target>
+
+	<ItemGroup>
+		<None Include="packageIcon.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+
+	<Import Project="..\..\shared\Autossential.Shared.Activities.Design\Autossential.Shared.Activities.Design.projitems" Label="Shared" />
+</Project>

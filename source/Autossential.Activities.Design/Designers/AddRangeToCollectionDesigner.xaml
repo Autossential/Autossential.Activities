@@ -1,0 +1,54 @@
+﻿<sap:ActivityDesigner x:Class="Autossential.Activities.Design.Designers.AddRangeToCollectionDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush Drawing="{StaticResource AddRangeToCollectionIcon}" Stretch="Uniform"></DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+
+    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" Width="300">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Collection" Grid.Row="0" Grid.Column="0" />
+            <sapv:ExpressionTextBox
+                Grid.Row="1"
+                Grid.Column="0"
+                ExpressionType="{Binding ModelItem.Properties[Collection].PropertyType.GenericTypeArguments[0]}"
+                OwnerActivity="{Binding ModelItem}"
+                UseLocationExpression="False"
+                Expression="{Binding ModelItem.Collection, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
+            
+            <Label Content="Items" Grid.Row="0" Grid.Column="2" />
+            <sapv:ExpressionTextBox
+                Grid.Row="1"
+                Grid.Column="2"
+                ExpressionType="{Binding ModelItem.Properties[Items].PropertyType.GenericTypeArguments[0]}"
+                OwnerActivity="{Binding ModelItem}"
+                UseLocationExpression="False"
+                Expression="{Binding ModelItem.Items, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
+         
+        </Grid>
+    </c:ActivityDecoratorControl>
+</sap:ActivityDesigner>

@@ -1,0 +1,86 @@
+﻿<sap:ActivityDesigner x:Class="Autossential.Activities.Design.Designers.EncryptionDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush Drawing="{StaticResource EncryptionIcon}" Stretch="Uniform"></DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+
+    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" Width="300">
+        <StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Input" Grid.Row="0" Grid.Column="0"/>
+                <sapv:ExpressionTextBox
+                    Grid.Row="1" 
+                    Grid.Column="0"
+                    ExpressionType="{Binding ModelItem.Properties[Input].PropertyType.GenericTypeArguments[0]}"
+                    OwnerActivity="{Binding ModelItem}"
+                    UseLocationExpression="False"
+                    Expression="{Binding ModelItem.Input, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"/>
+
+                <Label Content="Key" Grid.Row="0" Grid.Column="2"/>
+                <sapv:ExpressionTextBox
+                    Grid.Row="1" 
+                    Grid.Column="2"
+                    ExpressionType="{Binding ModelItem.Properties[Key].PropertyType.GenericTypeArguments[0]}"
+                    OwnerActivity="{Binding ModelItem}"
+                    UseLocationExpression="False"
+                    Expression="{Binding ModelItem.Key, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"/>
+            </Grid>
+            <Label Content="Algorithm" />
+            <Border BorderThickness="1" BorderBrush="#33777777">
+                <sap:WorkflowItemPresenter
+                    AutomationProperties.AutomationId="Activity"
+                    Margin="0"
+                    Item="{Binding Path=ModelItem.Algorithm.Handler, Mode=TwoWay}"
+                    HintText="Drop the crypto algorithm here"
+                    x:Name="Algorithm"/>
+            </Border>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Action" Grid.Column="0" Grid.Row="0" />
+                <ComboBox Grid.Row="1" Grid.Column="0" Name="cbActions" SelectedValue="{Binding Path=ModelItem.Action, Mode=TwoWay}" />
+
+                <Label Content="Result (Output)" Grid.Column="2" Grid.Row="0" />
+                <sapv:ExpressionTextBox
+                    Grid.Column="2" Grid.Row="1"
+                    ExpressionType="{Binding ModelItem.Properties[Result].PropertyType.GenericTypeArguments[0]}"
+                    OwnerActivity="{Binding ModelItem}"
+                    UseLocationExpression="True"
+                    Expression="{Binding ModelItem.Result, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}"/>
+            </Grid>
+        </StackPanel>
+    </c:ActivityDecoratorControl>
+</sap:ActivityDesigner>

@@ -1,0 +1,52 @@
+﻿<sap:ActivityDesigner x:Class="Autossential.Activities.Design.Designers.CultureScopeDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sa="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls" xmlns:sapv="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush Drawing="{StaticResource CultureScopeIcon}" Stretch="Uniform"></DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+
+    <Border Padding="4,0">
+        <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" MinWidth="300">
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <sapv:ExpressionTextBox
+                        Grid.Column="0"
+                        ExpressionType="{Binding ModelItem.Properties[CultureName].PropertyType.GenericTypeArguments[0]}"
+                        OwnerActivity="{Binding ModelItem}"
+                        UseLocationExpression="False"
+                        HintText='"en-US"'
+                        Expression="{Binding ModelItem.CultureName, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        HorizontalAlignment="Right"
+                        Width="70"
+                        EditorLostLogicalFocus="ExpressionTextBox_EditorLostLogicalFocus" />
+                    <Label Content="..." Grid.Column="1" Name="CultureLabel" Foreground="#999999" Loaded="CultureLabel_Loaded" />
+                </Grid>
+
+                <sap:WorkflowItemPresenter
+                    AutomationProperties.AutomationId="Activity"
+                    Margin="0"
+                    Item="{Binding Path=ModelItem.Body.Handler, Mode=TwoWay}"
+                    AllowedItemType="sa:Activity"
+                    HintText="Drop activities here" />
+            </StackPanel>
+        </c:ActivityDecoratorControl>
+    </Border>
+</sap:ActivityDesigner>

@@ -1,0 +1,22 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:PropertyEditing="clr-namespace:System.Activities.Presentation.PropertyEditing;assembly=System.Activities.Presentation" >
+
+    <DataTemplate x:Key="ArgumentDictionaryPropertyEditor">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="(Collection)" Padding="2,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" TextTrimming="CharacterEllipsis" />
+
+            <PropertyEditing:EditModeSwitchButton
+                Grid.Column="1"
+                ToolTip="Edit items in this collection..."/>
+
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

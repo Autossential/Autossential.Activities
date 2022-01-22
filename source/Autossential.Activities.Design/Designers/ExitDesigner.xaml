@@ -1,0 +1,32 @@
+﻿<sap:ActivityDesigner x:Class="Autossential.Activities.Design.Designers.ExitDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush Drawing="{StaticResource ExitIcon}" Stretch="Uniform"></DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+
+    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" Width="186">
+        <sapv:ExpressionTextBox
+                Grid.Column="0"
+                ExpressionType="{Binding ModelItem.Properties[Condition].PropertyType.GenericTypeArguments[0]}"
+                OwnerActivity="{Binding ModelItem}"
+                UseLocationExpression="False"
+                HintText="True by default"
+                Expression="{Binding ModelItem.Condition, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"/>
+    </c:ActivityDecoratorControl>
+
+</sap:ActivityDesigner>

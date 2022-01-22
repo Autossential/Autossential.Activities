@@ -1,0 +1,59 @@
+﻿<sap:ActivityDesigner x:Class="Autossential.Activities.Design.Designers.ZipDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush Drawing="{StaticResource ZipIcon}" Stretch="Uniform"></DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+
+    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" Width="300">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Label Content="ToCompress" Grid.Row="0" />
+            <sapv:ExpressionTextBox
+                Grid.Row="1"
+                ExpressionType="{Binding ModelItem.Properties[ToCompress].PropertyType.GenericTypeArguments[0]}"
+                OwnerActivity="{Binding ModelItem}"
+                UseLocationExpression="False"
+                Margin="0,0,23,0"
+                Expression="{Binding ModelItem.ToCompress, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
+            <c:FilePickerControl Grid.Row="1" HorizontalAlignment="Right"
+                                        PropertyName="ToCompress"
+                                        ModelItem="{Binding ModelItem}"
+                                        Multiselect="True" />
+
+            <Label Content="ZipFilePath" Grid.Row="2" />
+            <sapv:ExpressionTextBox
+                Grid.Row="3"
+                ExpressionType="{Binding ModelItem.Properties[ZipFilePath].PropertyType.GenericTypeArguments[0]}"
+                OwnerActivity="{Binding ModelItem}"
+                UseLocationExpression="False"
+                Margin="0,0,23,0"
+                Expression="{Binding ModelItem.ZipFilePath, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
+            <c:FilePickerControl Grid.Row="3" HorizontalAlignment="Right"
+                                        PropertyName="ZipFilePath"
+                                        ModelItem="{Binding ModelItem}"
+                                        Filter="Zip Files (*.zip)|*.zip"
+                                        CheckFileExists="False" />
+        </Grid>
+    </c:ActivityDecoratorControl>
+</sap:ActivityDesigner>

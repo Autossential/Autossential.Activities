@@ -1,0 +1,150 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System" #>
+<#@ assembly name="$(TargetDir)Autossential.Activities.dll" #>
+<#@ import namespace="System.Globalization" #>
+<#@ import namespace="System.Resources" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="Autossential.Activities.Properties" #>
+<#
+   var resourceSet = Resources.ResourceManager.GetResourceSet(CultureInfo.InvariantCulture, true, true);
+   var resourceNamespace = "Autossential.Activities.Properties";
+   var resourceFullName = resourceNamespace + ".Resources";
+#>
+// ################################
+// THIS FILE IS AUTO-GENERATE BY T4
+// ################################
+
+namespace <#= resourceNamespace #>
+{
+    using System.Resources;   
+    
+
+    public partial class Resources 
+    {
+        public static System.Globalization.CultureInfo Culture { get; set; }
+
+        private static object _internalSyncObject;
+        
+        /// <summary>
+        /// Thread safe lock object used by this class.
+        /// </summary>
+        public static object InternalSyncObject
+        {
+            get
+            {
+                if (_internalSyncObject is null)
+                    System.Threading.Interlocked.CompareExchange(ref _internalSyncObject, new object(), null);
+                
+                return _internalSyncObject;
+            }
+        }
+        private static ResourceManager _resourceManager;
+
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public static ResourceManager ResourceManager
+        {
+            get
+            {
+                if (_resourceManager is null)
+                {
+                    System.Threading.Monitor.Enter(InternalSyncObject);
+
+                    try
+                    {
+                        if (_resourceManager is null)
+                            System.Threading.Interlocked.Exchange(ref _resourceManager, new ResourceManager("<#= resourceFullName #>", typeof(Resources).Assembly));
+                    }
+                    finally
+                    {
+                        System.Threading.Monitor.Exit(InternalSyncObject);
+                    }
+                }
+                return _resourceManager;
+            }
+        }
+
+        // ####### FORMATTERS ###############################################
+        
+        <# GenerateFormatters(resourceSet); #>   
+
+        // ####### GETTERS ##################################################
+
+        <# GenerateGetters(resourceSet); #>   
+
+        // ####### RESOURCE NAMES ###########################################
+
+        /// <summary>
+        /// Contains all resource names stored in their respective constants.
+        /// </summary>
+        public static class ResourceNames
+        {
+            <# GenerateNames(resourceSet); #>
+        }
+    }
+}
+    
+
+<#+
+    void GenerateFormatters(ResourceSet resourceSet)
+    {
+        foreach (DictionaryEntry entry in resourceSet)
+        {
+            var value = entry.Value.ToString();
+            if (value.Contains("{0}"))
+            {
+                var count = Regex.Matches(value, @"\{\d+\}").Count;
+                var args = new string[count];
+                var argsSign = new string[count];
+                var paramNames = new string[count];
+
+                WriteLine($@"
+        /// <summary>
+        /// Looks up a localized string similar to '{entry.Value}'.
+        /// </summary>");
+
+                for (var i = 0; i < count; i++)
+                {
+                    WriteLine($@"        /// <param name=""arg{i}"">An object ({i}) to format.</param>");
+                    args[i] = "arg" + i;
+                    argsSign[i] = "object arg" + i;
+                }
+
+                WriteLine(
+$@"        /// <returns>A copy of format string in which the format items have been replaced by the String equivalent of the corresponding instances of Object in arguments.</returns>
+        public static string {entry.Key}Format({string.Join(", ", argsSign)})
+        {{
+            return string.Format(Culture, {entry.Key}, {string.Join(", ", args)});
+        }}");
+            }
+        }
+    }
+
+    void GenerateGetters(ResourceSet resourceSet)
+    {
+        foreach (DictionaryEntry entry in resourceSet)
+        {
+    WriteLine($@"
+        /// <summary>
+        /// Looks up a localized string similar to '{entry.Value}'.
+        /// </summary>
+        public static string {entry.Key} => ResourceManager.GetString(""{entry.Key}"", Culture);
+    ");
+        }
+    }
+
+    void GenerateNames(ResourceSet resourceSet)
+    {
+        foreach (DictionaryEntry entry in resourceSet)
+        {
+        WriteLine($@"
+            /// <summary>
+            /// Stores the resource name '{entry.Key}'.
+            /// </summary>
+            public const string {entry.Key} = ""{entry.Key}"";
+        ");
+        }
+    }
+    
+#>

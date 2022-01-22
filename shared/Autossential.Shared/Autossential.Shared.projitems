@@ -10,7 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ArgumentExtensions.cs" />
-    <Compile Include="..\Autossential.Shared\ActivityMetadataExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ActivityMetadataExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ExpressionServiceLanguage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\DataTableUtil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\EnumUtil.cs" />

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>036c99d1-87b1-46d1-aed3-4e5e6ecdbaea</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Autossential.Shared.Activities.Design</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ActivitiesAttributesBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ActivityDecoratorControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\FilePickerControl.xaml.cs">
+      <DependentUpon>FilePickerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\FolderPickerControl.xaml.cs">
+      <DependentUpon>FolderPickerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ComparisonConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\OppositeBooleanConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Features\DesignerFeatures.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MembersAttributesBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TypeExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\FilePickerControl.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\FolderPickerControl.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

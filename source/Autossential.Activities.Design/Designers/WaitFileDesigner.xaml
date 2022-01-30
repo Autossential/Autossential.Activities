@@ -19,8 +19,8 @@
         <DrawingBrush Drawing="{StaticResource WaitFileIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" Width="300">
-        <Grid>
+    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+        <Grid Width="300">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="23"></ColumnDefinition>
@@ -31,6 +31,7 @@
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
                 Expression="{Binding ModelItem.FilePath, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
+                HintText="Enter a file path"
                 />
             <c:FilePickerControl 
                 Grid.Column="1"

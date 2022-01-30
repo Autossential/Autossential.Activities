@@ -10,7 +10,7 @@ namespace Autossential.Activities
 {
     public sealed class EnumerateFiles : CodeActivity<IEnumerable<string>>
     {
-        public InArgument Path { get; set; }
+        public InArgument DirectoryPath { get; set; }
         public InArgument SearchPattern { get; set; }
         public SearchOption SearchOption { get; set; }
 
@@ -25,17 +25,17 @@ namespace Autossential.Activities
         {
             metadata.AddRuntimeArgument(Result, nameof(Result), true);
 
-            if (Path == null)
+            if (DirectoryPath == null)
             {
-                metadata.AddRuntimeArgument(Path, typeof(string), nameof(Path), true);
+                metadata.AddRuntimeArgument(DirectoryPath, typeof(string), nameof(DirectoryPath), true);
             }
-            else if (Path.IsArgumentTypeAnyCompatible<string, IEnumerable<string>>())
+            else if (DirectoryPath.IsArgumentTypeAnyCompatible<string, IEnumerable<string>>())
             {
-                metadata.AddRuntimeArgument(Path, Path.ArgumentType, nameof(Path), true);
+                metadata.AddRuntimeArgument(DirectoryPath, DirectoryPath.ArgumentType, nameof(DirectoryPath), true);
             }
             else
             {
-                metadata.AddValidationError(Resources.Validation_TypeErrorFormat("string or IEnumerable<string>", nameof(Path)));
+                metadata.AddValidationError(Resources.Validation_TypeErrorFormat("string or IEnumerable<string>", nameof(DirectoryPath)));
             }
 
             if (SearchPattern == null)
@@ -54,7 +54,7 @@ namespace Autossential.Activities
 
         protected override IEnumerable<string> Execute(CodeActivityContext context)
         {
-            var directories = Path.GetAsArray<string>(context);
+            var directories = DirectoryPath.GetAsArray<string>(context);
             var patterns = SearchPattern.GetAsArray<string>(context);
             if (patterns.Length == 0)
                 patterns = new[] { "*.*" };

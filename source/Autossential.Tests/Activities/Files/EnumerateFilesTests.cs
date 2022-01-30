@@ -40,7 +40,7 @@ namespace Autossential.Activities.Test
             var enumFiles = Directory.EnumerateFiles(path, searchPattern ?? "*", option);
             var result = WorkflowTester.CompileAndInvoke(new EnumerateFiles()
             {
-                Path = new InArgument<string>(path),
+                DirectoryPath = new InArgument<string>(path),
                 SearchPattern = new InArgument<string>(searchPattern),
                 SearchOption = option
             });
@@ -66,7 +66,7 @@ namespace Autossential.Activities.Test
 
             var result = WorkflowTester.CompileAndInvoke(new EnumerateFiles()
             {
-                Path = new InArgument<string>(IOSamples.GetTestPath("output")),
+                DirectoryPath = new InArgument<string>(IOSamples.GetTestPath("output")),
                 SearchOption = SearchOption.AllDirectories,
                 Exclusions = attrToExclude
             });
@@ -82,7 +82,7 @@ namespace Autossential.Activities.Test
 
             var result = WorkflowTester.CompileAndInvoke(new EnumerateFiles()
             {
-                Path = new InArgument<string[]>(_ => new[] { path1, path2 }),
+                DirectoryPath = new InArgument<string[]>(_ => new[] { path1, path2 }),
                 SearchPattern = new InArgument<string[]>(_ => new[] { "*.json", "*.txt" }),
                 SearchOption = SearchOption.TopDirectoryOnly
             });
@@ -98,7 +98,7 @@ namespace Autossential.Activities.Test
         {
             Assert.ThrowsException<InvalidWorkflowException>(() => WorkflowTester.CompileAndInvoke(new EnumerateFiles()
             {
-                Path = new InArgument<int>(10),
+                DirectoryPath = new InArgument<int>(10),
                 SearchPattern = new InArgument<bool>(true)
             }));
 

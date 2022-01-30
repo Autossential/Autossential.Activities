@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<TargetFrameworks>net461;net5.0-windows</TargetFrameworks>
 		<UseWPF>true</UseWPF>
-		<Version>3.0-preview-3</Version>
+		<Version>3.0-preview3</Version>
 	</PropertyGroup>
 
 	<PropertyGroup>

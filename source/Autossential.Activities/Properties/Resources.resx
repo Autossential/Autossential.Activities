@@ -369,16 +369,16 @@
     <value>Returns an enumerable collection of full file names that match a search pattern (or collection of patterns) and enumeration options in a specified path (or collection of paths).</value>
     <comment>activity description</comment>
   </data>
+  <data name="EnumerateFiles_DirectoryPath_Description" xml:space="preserve">
+    <value>The relative or absolute path (or collection of paths) to the directory (or directories) to search.</value>
+    <comment>property description</comment>
+  </data>
   <data name="EnumerateFiles_DisplayName" xml:space="preserve">
     <value>Enumerate Files</value>
     <comment>activity name</comment>
   </data>
   <data name="EnumerateFiles_Exclusions_Description" xml:space="preserve">
     <value>Excludes from the enumeration the files with any of the specified attributes.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="EnumerateFiles_Path_Description" xml:space="preserve">
-    <value>The relative or absolute path (or collection of paths) to the directory (or directories) to search.</value>
     <comment>property description</comment>
   </data>
   <data name="EnumerateFiles_Result_Description" xml:space="preserve">
@@ -810,7 +810,7 @@
     <comment>property description</comment>
   </data>
   <data name="WhenDo_WithElse_Description" xml:space="preserve">
-    <value>Toggles the 'Else' block.</value>
+    <value>Toggles the 'Else' block activating or deactivating it. </value>
     <comment>property description</comment>
   </data>
   <data name="ZipEntriesCount_Description" xml:space="preserve">

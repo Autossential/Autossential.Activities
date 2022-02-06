@@ -20,8 +20,8 @@
     </sap:ActivityDesigner.Icon>
 
     <Border Padding="4,0">
-        <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" MinWidth="300">
-            <StackPanel>
+        <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+            <StackPanel MinWidth="300">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />

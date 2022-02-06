@@ -7,6 +7,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Icons.xaml" />
     </ResourceDictionary.MergedDictionaries>
+    
 
     <Style TargetType="{x:Type shared:ActivityDecoratorControl}" x:Key="ActivityDecoratorStyle">
         <Setter Property="Template">
@@ -49,9 +50,10 @@
                 <Setter Property="VerticalContentAlignment" Value="Stretch" />
                 <Setter Property="MaxLines" Value="1" />
             </Style>
-            <Style TargetType="ComboBox">
+            <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
                 <Setter Property="Height" Value="23" />
             </Style>
         </Style.Resources>
     </Style>
+
 </ResourceDictionary>

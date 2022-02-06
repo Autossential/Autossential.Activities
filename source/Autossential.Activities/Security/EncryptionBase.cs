@@ -41,6 +41,7 @@ namespace Autossential.Activities
             metadata.AddImplementationDelegate(Algorithm);
             metadata.AddRuntimeArgument(Input, typeof(T), nameof(Input), true);
             metadata.AddRuntimeArgument(TextEncoding, nameof(TextEncoding), false);
+            metadata.AddRuntimeArgument(Result, nameof(Result), true);
 
             if (Key == null)
             {

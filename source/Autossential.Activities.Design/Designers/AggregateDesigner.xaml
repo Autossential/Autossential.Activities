@@ -19,9 +19,8 @@
         <DrawingBrush Drawing="{StaticResource AggregateIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" Width="300">
-
-        <StackPanel>
+    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+        <StackPanel Width="300">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />

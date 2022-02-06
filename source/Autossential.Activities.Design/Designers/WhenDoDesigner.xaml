@@ -21,13 +21,12 @@
         <DrawingBrush Drawing="{StaticResource WhenDoIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" MinWidth="300">
-        <StackPanel>
+    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+        <StackPanel MinWidth="300">
             <Label Content="{Binding Path=WhenLabel, Mode=TwoWay}" />
             <sap:WorkflowItemPresenter
                         AutomationProperties.AutomationId="Activity"
                         Margin="0"
-                        Padding="0"
                         Item="{Binding Path=ModelItem.Condition, Mode=TwoWay}"
                         HintText="Drop the condition activity"
                         x:Name="WhenObj"/>

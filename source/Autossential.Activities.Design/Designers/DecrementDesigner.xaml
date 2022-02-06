@@ -19,28 +19,26 @@
         <DrawingBrush Drawing="{StaticResource DecrementIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
-        <Grid Width="230">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="30" />
-                <ColumnDefinition Width="60" />
-            </Grid.ColumnDefinitions>
+    <Grid Width="230">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="60" />
+        </Grid.ColumnDefinitions>
 
-            <sapv:ExpressionTextBox
+        <sapv:ExpressionTextBox
                     Grid.Column="0"
                     ExpressionType="{Binding ModelItem.Properties[Variable].PropertyType.GenericTypeArguments[0]}"
                     OwnerActivity="{Binding ModelItem}"
                     UseLocationExpression="True"
                     Expression="{Binding ModelItem.Variable, ConverterParameter=InOut, Converter={StaticResource ArgumentToExpressionConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Label Grid.Column="1" Content="By" HorizontalAlignment="Center" />
-            <sapv:ExpressionTextBox
+        <Label Grid.Column="1" Content="By" HorizontalAlignment="Center" />
+        <sapv:ExpressionTextBox
                     Grid.Column="2"
                     ExpressionType="{Binding ModelItem.Properties[Value].PropertyType.GenericTypeArguments[0]}"
                     OwnerActivity="{Binding ModelItem}"
                     UseLocationExpression="False"
                     Expression="{Binding ModelItem.Value, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-        </Grid>
-    </c:ActivityDecoratorControl>
+    </Grid>
 </sap:ActivityDesigner>

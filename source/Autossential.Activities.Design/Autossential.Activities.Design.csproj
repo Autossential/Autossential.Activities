@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<TargetFrameworks>net461;net5.0-windows</TargetFrameworks>
 		<UseWPF>true</UseWPF>
-		<Version>3.0</Version>
+		<Version>3.0.1</Version>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -59,7 +59,7 @@
 	</ItemGroup>
 	
 	<PropertyGroup Condition="'$(Configuration)' == 'Debug' AND '$(DesignTimeBuild)' != 'true'">
-		<PackageVersion>$(Version)-$([System.DateTime]::UtcNow.ToString(MMddHHmmss))</PackageVersion>
+		<PackageVersion>$(Version)-preview-$([System.DateTime]::UtcNow.ToString(MMddHHmmss))</PackageVersion>
 	</PropertyGroup>
 
 	<Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">

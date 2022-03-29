@@ -1,7 +1,5 @@
 ﻿using Autossential.Shared.Activities.Base;
 using System.Activities;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
 
@@ -9,17 +7,6 @@ namespace Autossential.Activities
 {
     public sealed class CultureScope : ScopeActivity
     {
-        private Collection<Variable> _variables;
-
-        [Browsable(false)]
-        public Collection<Variable> Variables
-        {
-            get
-            {
-                return _variables ?? (_variables = new Collection<Variable>());
-            }
-        }
-
         [RequiredArgument]
         public InArgument<string> CultureName { get; set; }
 

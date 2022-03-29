@@ -1,40 +1,27 @@
 ﻿using Autossential.Activities.Properties;
 using Autossential.Shared.Activities.Base;
-
 using System;
 using System.Activities;
 using System.Activities.Expressions;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 
 namespace Autossential.Activities
 {
-    public sealed class Iterate : ScopeActivity
+    public sealed class Iterate : ScopeActivity<int>
     {
-        private Collection<Variable> _variables;
-
-        [Browsable(false)]
-        public Collection<Variable> Variables
-        {
-            get
-            {
-                if (_variables == null)
-                    _variables = new Collection<Variable>();
-
-                return _variables;
-            }
-        }
-
         public InArgument<int> Iterations { get; set; }
-
-        public OutArgument<int> Index { get; set; }
 
         public bool Reverse { get; set; }
 
+        protected override void InitializeBody()
+        {
+            Index = new Variable<int>();
+
+            base.InitializeBody();
+            Body.Argument = new DelegateInArgument<int>("index");
+        }
         protected override void CacheMetadata(NativeActivityMetadata metadata)
         {
             base.CacheMetadata(metadata);
-
             if (Iterations == null)
             {
                 metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Iterations)));
@@ -43,6 +30,7 @@ namespace Autossential.Activities
             {
                 metadata.AddValidationError(Resources.Iterate_ErrorMsg_IterationsMinValue);
             }
+            metadata.AddImplementationVariable(Index);
         }
 
         protected override void Execute(NativeActivityContext context)
@@ -60,10 +48,12 @@ namespace Autossential.Activities
             ExecuteNext(context);
         }
 
+        private Variable<int> Index { get; set; }
         private void ExecuteNext(NativeActivityContext context)
         {
-            Index.Set(context, Reverse ? _iterations - 1 - _index : _index);
-            context.ScheduleAction(Body, OnIterateCompleted);
+            var value = Reverse ? _iterations - 1 - _index : _index;
+            Index.Set(context, value);
+            context.ScheduleAction<int>(Body, value, OnIterateCompleted);
         }
 
         private void OnIterateCompleted(NativeActivityContext context, ActivityInstance completedInstance)

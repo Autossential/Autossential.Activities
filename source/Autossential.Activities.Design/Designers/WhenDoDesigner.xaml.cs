@@ -65,12 +65,5 @@ namespace Autossential.Activities.Design.Designers
         }
 
         public static readonly DependencyProperty WhenLabelProperty = DependencyProperty.Register("WhenLabel", typeof(string), typeof(WhenDoDesigner));
-
-        //public static readonly DependencyProperty PropertyNameProperty = DependencyProperty.Register("PropertyName", typeof(string), typeof(FilePickerControl));
-
-        //public string PropertyName
-        //{
-        //    get { return GetValue(PropertyNameProperty) as string; }
-        //    set { SetValue(PropertyNameProperty, value); }
     }
 }

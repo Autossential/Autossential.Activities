@@ -63,7 +63,7 @@ namespace Autossential.Activities
                         if (token.IsCancellationRequested)
                             token.ThrowIfCancellationRequested();
 
-                        var files = Directory.EnumerateFiles(dir, searchPattern).Where(path => File.GetCreationTime(path) > afterDate);
+                        var files = Directory.EnumerateFiles(dir, searchPattern).Where(path => File.GetLastWriteTime(path) > afterDate);
                         if (files.Any())
                         {
                             done = true;

@@ -485,10 +485,6 @@
     <value>Iterations must have a value greater than zero.</value>
     <comment>error message</comment>
   </data>
-  <data name="Iterate_Index_Description" xml:space="preserve">
-    <value>The zero-based iteration index.</value>
-    <comment>property description</comment>
-  </data>
   <data name="Iterate_Iterations_Description" xml:space="preserve">
     <value>The number of iterations that must be run.</value>
     <comment>property description</comment>

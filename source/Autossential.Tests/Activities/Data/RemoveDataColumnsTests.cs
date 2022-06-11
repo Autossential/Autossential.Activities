@@ -28,6 +28,36 @@ namespace Autossential.Activities.Test
             Assert.AreEqual(dt.Columns[2].ColumnName, "Col4");
         }
 
+
+        [TestMethod]
+        public void InvalidColumnNames()
+        {
+            var dt = DataTableHelper.CreateDataTable<object>(3);
+
+            WorkflowTester.CompileAndRun(new RemoveDataColumns
+            {
+                Columns = new InArgument<string[]>(_ => new string[] { "Col1", "Col4" })
+            }, GetArgs(dt));
+
+            Assert.AreEqual(dt.Columns.Count, 2);
+            Assert.AreEqual(dt.Columns[0].ColumnName, "Col0");
+            Assert.AreEqual(dt.Columns[1].ColumnName, "Col2");
+        }
+
+        [TestMethod]
+        public void InvalidColumnIndexes()
+        {
+            var dt = DataTableHelper.CreateDataTable<object>(2);
+
+            WorkflowTester.CompileAndRun(new RemoveDataColumns
+            {
+                Columns = new InArgument<int[]>(_ => new int[] { 2, 0, 3  })
+            }, GetArgs(dt));
+
+            Assert.AreEqual(dt.Columns.Count, 1);
+            Assert.AreEqual(dt.Columns[0].ColumnName, "Col1");
+        }
+
         private static IDictionary<string, object> GetArgs(DataTable dt)
         {
             return new Dictionary<string, object>

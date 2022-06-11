@@ -11,17 +11,26 @@ namespace Autossential.Shared.Utils
             if (columns is IEnumerable<int> indexes)
             {
                 foreach (var index in indexes)
-                    yield return index;
+                {
+                    if (index < dataTable.Columns.Count)
+                        yield return index;
+                }
             }
             else if (columns is IEnumerable<string> names)
             {
                 foreach (var name in names)
-                    yield return dataTable.Columns[name].Ordinal;
+                {
+                    if (dataTable.Columns.Contains(name))
+                        yield return dataTable.Columns[name].Ordinal;
+                }
             }
             else if (defaultValue != null)
             {
                 foreach (var index in defaultValue)
-                    yield return index;
+                {
+                    if (index < dataTable.Columns.Count)
+                        yield return index;
+                }
             }
         }
 

@@ -532,6 +532,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The content after the tokens replacement be performed.'.
+        /// </summary>
+        public static string ReplaceTokens_Result_Description => ResourceManager.GetString("ReplaceTokens_Result_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Stopwatch'.
         /// </summary>
         public static string Stopwatch_ReferenceStopwatch_DisplayName => ResourceManager.GetString("Stopwatch_ReferenceStopwatch_DisplayName", Culture);
@@ -688,6 +694,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Replaces the tokens of a string by the values of a Dictionary. Tokens are strings written in a specific pattern, usually enclosed in special characters. Use the combination of 'Pattern' and 'Placeholder' properties to define your token format.'.
+        /// </summary>
+        public static string ReplaceTokens_Description => ResourceManager.GetString("ReplaceTokens_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The input DataTable.'.
         /// </summary>
         public static string PromoteHeaders_InputDataTable_Description => ResourceManager.GetString("PromoteHeaders_InputDataTable_Description", Culture);
@@ -802,6 +814,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The dictionary where each key/value pair are used to replace the tokens.'.
+        /// </summary>
+        public static string ReplaceTokens_InputDictionary_Description => ResourceManager.GetString("ReplaceTokens_InputDictionary_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Cannot be used outside of {0} activities.'.
         /// </summary>
         public static string Validation_ScopesError => ResourceManager.GetString("Validation_ScopesError", Culture);
@@ -853,6 +871,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The output DataTable.'.
         /// </summary>
         public static string DictionaryToDataTable_Result_Description => ResourceManager.GetString("DictionaryToDataTable_Result_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Replace Tokens'.
+        /// </summary>
+        public static string ReplaceTokens_DisplayName => ResourceManager.GetString("ReplaceTokens_DisplayName", Culture);
     
 
         /// <summary>
@@ -955,6 +979,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The input DataTable.'.
         /// </summary>
         public static string RemoveEmptyRows_InputDataTable_Description => ResourceManager.GetString("RemoveEmptyRows_InputDataTable_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The text which contains the tokens to be replaced.'.
+        /// </summary>
+        public static string ReplaceTokens_Content_Description => ResourceManager.GetString("ReplaceTokens_Content_Description", Culture);
     
 
         /// <summary>
@@ -1126,6 +1156,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The placeholder where each dictionary key will found.'.
+        /// </summary>
+        public static string ReplaceTokens_Placeholder_Description => ResourceManager.GetString("ReplaceTokens_Placeholder_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Promotes the first row of values to new column headers.'.
         /// </summary>
         public static string PromoteHeaders_Description => ResourceManager.GetString("PromoteHeaders_Description", Culture);
@@ -1195,6 +1231,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The accepted range is from {0} and {1}. The value will be clamped.'.
         /// </summary>
         public static string WaitFile_ErrorMsg_IntervalRange => ResourceManager.GetString("WaitFile_ErrorMsg_IntervalRange", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The token text pattern. It can have characters either before and after the placeholder.'.
+        /// </summary>
+        public static string ReplaceTokens_Pattern_Description => ResourceManager.GetString("ReplaceTokens_Pattern_Description", Culture);
     
 
         /// <summary>
@@ -1663,6 +1705,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'ReplaceTokens_Result_Description'.
+            /// </summary>
+            public const string ReplaceTokens_Result_Description = "ReplaceTokens_Result_Description";
+        
+
+            /// <summary>
             /// Stores the resource name 'Stopwatch_ReferenceStopwatch_DisplayName'.
             /// </summary>
             public const string Stopwatch_ReferenceStopwatch_DisplayName = "Stopwatch_ReferenceStopwatch_DisplayName";
@@ -1819,6 +1867,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'ReplaceTokens_Description'.
+            /// </summary>
+            public const string ReplaceTokens_Description = "ReplaceTokens_Description";
+        
+
+            /// <summary>
             /// Stores the resource name 'PromoteHeaders_InputDataTable_Description'.
             /// </summary>
             public const string PromoteHeaders_InputDataTable_Description = "PromoteHeaders_InputDataTable_Description";
@@ -1933,6 +1987,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'ReplaceTokens_InputDictionary_Description'.
+            /// </summary>
+            public const string ReplaceTokens_InputDictionary_Description = "ReplaceTokens_InputDictionary_Description";
+        
+
+            /// <summary>
             /// Stores the resource name 'Validation_ScopesError'.
             /// </summary>
             public const string Validation_ScopesError = "Validation_ScopesError";
@@ -1984,6 +2044,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'DictionaryToDataTable_Result_Description'.
             /// </summary>
             public const string DictionaryToDataTable_Result_Description = "DictionaryToDataTable_Result_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ReplaceTokens_DisplayName'.
+            /// </summary>
+            public const string ReplaceTokens_DisplayName = "ReplaceTokens_DisplayName";
         
 
             /// <summary>
@@ -2086,6 +2152,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'RemoveEmptyRows_InputDataTable_Description'.
             /// </summary>
             public const string RemoveEmptyRows_InputDataTable_Description = "RemoveEmptyRows_InputDataTable_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ReplaceTokens_Content_Description'.
+            /// </summary>
+            public const string ReplaceTokens_Content_Description = "ReplaceTokens_Content_Description";
         
 
             /// <summary>
@@ -2257,6 +2329,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'ReplaceTokens_Placeholder_Description'.
+            /// </summary>
+            public const string ReplaceTokens_Placeholder_Description = "ReplaceTokens_Placeholder_Description";
+        
+
+            /// <summary>
             /// Stores the resource name 'PromoteHeaders_Description'.
             /// </summary>
             public const string PromoteHeaders_Description = "PromoteHeaders_Description";
@@ -2326,6 +2404,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'WaitFile_ErrorMsg_IntervalRange'.
             /// </summary>
             public const string WaitFile_ErrorMsg_IntervalRange = "WaitFile_ErrorMsg_IntervalRange";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ReplaceTokens_Pattern_Description'.
+            /// </summary>
+            public const string ReplaceTokens_Pattern_Description = "ReplaceTokens_Pattern_Description";
         
 
             /// <summary>

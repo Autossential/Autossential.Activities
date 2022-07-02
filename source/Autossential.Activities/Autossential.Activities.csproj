@@ -18,7 +18,6 @@
 	<ItemGroup Condition="'$(TargetFramework)' != 'net461' ">
 		<PackageReference Include="System.Activities" />
 		<PackageReference Include="UiPath.Workflow" />
-		<PackageReference Include="UiPath.Workflow.Runtime" />
 		<PackageReference Include="System.Activities.Core.Presentation" />
 		<PackageReference Include="System.Activities.Metadata" />
 		<PackageReference Include="UiPath.Activities.Api" />

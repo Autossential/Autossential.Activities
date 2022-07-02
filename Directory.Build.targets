@@ -10,8 +10,8 @@
 
 	<ItemGroup Condition="'$(TargetFramework)' != 'net461' ">
 		<PackageReference Update="System.Activities" Version="5.0.0-20211103-03" PrivateAssets="All"/>
-		<PackageReference Update="UiPath.Workflow.Runtime" Version="6.0.3" PrivateAssets="All"/>
-		<PackageReference Update="UiPath.Workflow" Version="6.0.3" PrivateAssets="All"/>
+		<PackageReference Update="UiPath.Workflow.Runtime" Version="5.0.0-20211103-03" PrivateAssets="All"/>
+		<PackageReference Update="UiPath.Workflow" Version="5.0.0-20211103-03" PrivateAssets="All"/>
 		<PackageReference Update="System.Activities.Core.Presentation" Version="1.0.0-alpha004" PrivateAssets="All"/>
 		<PackageReference Update="System.Activities.Metadata" Version="1.0.0-alpha004" PrivateAssets="All"/>
 		<PackageReference Update="UiPath.Activities.Api" Version="21.10.3" PrivateAssets="All" />

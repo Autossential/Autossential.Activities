@@ -2,7 +2,7 @@
 
 namespace Autossential.Activities.Security.Algorithms
 {
-#if NET5_0
+#if NET6_0
     public sealed class AesGcmAlgorithmEncryption : SymmetricAlgorithmEncryptionBase<AesGcmEncryption> { }
 #endif
 }

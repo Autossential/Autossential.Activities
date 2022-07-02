@@ -485,10 +485,6 @@
     <value>Iterations must have a value greater than zero.</value>
     <comment>error message</comment>
   </data>
-  <data name="Iterate_Index_Description" xml:space="preserve">
-    <value>The zero-based iteration index.</value>
-    <comment>property description</comment>
-  </data>
   <data name="Iterate_Iterations_Description" xml:space="preserve">
     <value>The number of iterations that must be run.</value>
     <comment>property description</comment>
@@ -615,6 +611,34 @@
   </data>
   <data name="RemoveEmptyRows_Result_Description" xml:space="preserve">
     <value>The output DataTable.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Content_Description" xml:space="preserve">
+    <value>The text which contains the tokens to be replaced.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Description" xml:space="preserve">
+    <value>Replaces the tokens of a string by the values of a Dictionary. Tokens are strings written in a specific pattern, usually enclosed in special characters. Use the combination of 'Pattern' and 'Placeholder' properties to define your token format.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="ReplaceTokens_DisplayName" xml:space="preserve">
+    <value>Replace Tokens</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="ReplaceTokens_InputDictionary_Description" xml:space="preserve">
+    <value>The dictionary where each key/value pair are used to replace the tokens.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
+    <value>The token text pattern. It can have characters either before and after the placeholder.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
+    <value>The placeholder where each dictionary key will found.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Result_Description" xml:space="preserve">
+    <value>The content after the tokens replacement be performed.</value>
     <comment>property description</comment>
   </data>
   <data name="RijndaelAlgorithmEncryption_DisplayName" xml:space="preserve">

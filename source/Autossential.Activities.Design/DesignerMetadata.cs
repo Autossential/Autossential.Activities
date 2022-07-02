@@ -1,9 +1,8 @@
-﻿using Autossential.Activities.Security.Algorithms;
-using Autossential.Core.Security.Algorithms;
-using Autossential.Activities.Design.Designers;
+﻿using Autossential.Activities.Design.Designers;
 using Autossential.Activities.Design.PropertyEditors;
 using Autossential.Activities.Properties;
-using Autossential.Core.Security;
+using Autossential.Activities.Security.Algorithms;
+using Autossential.Core.Security.Algorithms;
 using Autossential.Shared.Activities.Design;
 using System;
 using System.Activities.Presentation;
@@ -104,7 +103,8 @@ namespace Autossential.Activities.Design
                     .Register<CultureScope, CultureScopeDesigner>(programming)
                     .Register<Decrement, DecrementDesigner>(programming)
                     .Register<Increment, IncrementDesigner>(programming)
-                    .Register<IsTrue, IsTrueDesigner>(programming);
+                    .Register<IsTrue, IsTrueDesigner>(programming)
+                    .Register<ReplaceTokens, ReplaceTokensDesigner>(programming);
 
                 // SECURITY
                 builder
@@ -121,9 +121,9 @@ namespace Autossential.Activities.Design
                 builder
                     .RegisterToMember(new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description), "Iterations", encryptionTypes)
                     .RegisterToMember(new BrowsableAttribute(false), "Result", encryptionTypes);
-                
 
-#if NET5_0
+
+#if NET6_0
                 builder
                     .Register<AesGcmAlgorithmEncryption, CryptoAlgorithmDesigner>(securityAlgorithms, m =>
                     {

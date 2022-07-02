@@ -298,6 +298,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Inverts the condition of the when test.'.
+        /// </summary>
+        public static string WhenDo_Inverted_Description => ResourceManager.GetString("WhenDo_Inverted_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Returns an enumerable collection of full file names that match a search pattern (or collection of patterns) and enumeration options in a specified path (or collection of paths).'.
         /// </summary>
         public static string EnumerateFiles_Description => ResourceManager.GetString("EnumerateFiles_Description", Culture);
@@ -361,12 +367,6 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The column indexes or column names to apply the aggregation. If not specified, the aggregation will be applied in all possible columns.'.
         /// </summary>
         public static string Aggregate_Columns_Description => ResourceManager.GetString("Aggregate_Columns_Description", Culture);
-    
-
-        /// <summary>
-        /// Looks up a localized string similar to 'A variable that represents the instance of System.Diagnostics.Stopwatch class.'.
-        /// </summary>
-        public static string Stopwatch_Instance_Description => ResourceManager.GetString("Stopwatch_Instance_Description", Culture);
     
 
         /// <summary>
@@ -532,6 +532,18 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The content after the tokens replacement be performed.'.
+        /// </summary>
+        public static string ReplaceTokens_Result_Description => ResourceManager.GetString("ReplaceTokens_Result_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Stopwatch'.
+        /// </summary>
+        public static string Stopwatch_ReferenceStopwatch_DisplayName => ResourceManager.GetString("Stopwatch_ReferenceStopwatch_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The maximum timeout to wait in milliseconds.'.
         /// </summary>
         public static string WaitFile_Timeout_Description => ResourceManager.GetString("WaitFile_Timeout_Description", Culture);
@@ -586,7 +598,7 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'Toggles the 'Else' block.'.
+        /// Looks up a localized string similar to 'Toggles the 'Else' block activating or deactivating it. '.
         /// </summary>
         public static string WhenDo_WithElse_Description => ResourceManager.GetString("WhenDo_WithElse_Description", Culture);
     
@@ -625,12 +637,6 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Common'.
         /// </summary>
         public static string Common_Category => ResourceManager.GetString("Common_Category", Culture);
-    
-
-        /// <summary>
-        /// Looks up a localized string similar to 'The zero-based iteration index.'.
-        /// </summary>
-        public static string Iterate_Index_Description => ResourceManager.GetString("Iterate_Index_Description", Culture);
     
 
         /// <summary>
@@ -685,6 +691,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The increment value cannot be smaller than 1.'.
         /// </summary>
         public static string Increment_ErrorMsg_MinValue => ResourceManager.GetString("Increment_ErrorMsg_MinValue", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Replaces the tokens of a string by the values of a Dictionary. Tokens are strings written in a specific pattern, usually enclosed in special characters. Use the combination of 'Pattern' and 'Placeholder' properties to define your token format.'.
+        /// </summary>
+        public static string ReplaceTokens_Description => ResourceManager.GetString("ReplaceTokens_Description", Culture);
     
 
         /// <summary>
@@ -802,6 +814,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The dictionary where each key/value pair are used to replace the tokens.'.
+        /// </summary>
+        public static string ReplaceTokens_InputDictionary_Description => ResourceManager.GetString("ReplaceTokens_InputDictionary_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Cannot be used outside of {0} activities.'.
         /// </summary>
         public static string Validation_ScopesError => ResourceManager.GetString("Validation_ScopesError", Culture);
@@ -856,6 +874,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Replace Tokens'.
+        /// </summary>
+        public static string ReplaceTokens_DisplayName => ResourceManager.GetString("ReplaceTokens_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings. Default value is "*.*".'.
         /// </summary>
         public static string WaitDynamicFile_SearchPattern_Description => ResourceManager.GetString("WaitDynamicFile_SearchPattern_Description", Culture);
@@ -883,6 +907,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The column indexes or column names to be decrypted.'.
         /// </summary>
         public static string DataTableEncryption_Columns_Description => ResourceManager.GetString("DataTableEncryption_Columns_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The DataTable object from which the columns is to be removed.'.
+        /// </summary>
+        public static string RemoveDataColumns_ReferenceDataTable_Description => ResourceManager.GetString("RemoveDataColumns_ReferenceDataTable_Description", Culture);
     
 
         /// <summary>
@@ -922,6 +952,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The relative or absolute path (or collection of paths) to the directory (or directories) to search.'.
+        /// </summary>
+        public static string EnumerateFiles_DirectoryPath_Description => ResourceManager.GetString("EnumerateFiles_DirectoryPath_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Zip entry name ends in directory separator character but contains data.'.
         /// </summary>
         public static string Unzip_ErrorMsg_DirNameWithData => ResourceManager.GetString("Unzip_ErrorMsg_DirNameWithData", Culture);
@@ -940,15 +976,15 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'Stopwatch'.
-        /// </summary>
-        public static string Stopwatch_StopwatchObj_DisplayName => ResourceManager.GetString("Stopwatch_StopwatchObj_DisplayName", Culture);
-    
-
-        /// <summary>
         /// Looks up a localized string similar to 'The input DataTable.'.
         /// </summary>
         public static string RemoveEmptyRows_InputDataTable_Description => ResourceManager.GetString("RemoveEmptyRows_InputDataTable_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The text which contains the tokens to be replaced.'.
+        /// </summary>
+        public static string ReplaceTokens_Content_Description => ResourceManager.GetString("ReplaceTokens_Content_Description", Culture);
     
 
         /// <summary>
@@ -976,12 +1012,6 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'Returns a data row detached from the data table.'.
-        /// </summary>
-        public static string Aggregate_Detached_Description => ResourceManager.GetString("Aggregate_Detached_Description", Culture);
-    
-
-        /// <summary>
         /// Looks up a localized string similar to 'The text to be encrypted or decrypted.'.
         /// </summary>
         public static string TextEncryption_Input_Description => ResourceManager.GetString("TextEncryption_Input_Description", Culture);
@@ -1006,12 +1036,6 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'The DataTable object from which the columns is to be removed.'.
-        /// </summary>
-        public static string RemoveDataColumns_DataTable_Description => ResourceManager.GetString("RemoveDataColumns_DataTable_Description", Culture);
-    
-
-        /// <summary>
         /// Looks up a localized string similar to 'A collection of key/value pairs that provide additional user-defined information about the exception.'.
         /// </summary>
         public static string CheckPoint_Data_Description => ResourceManager.GetString("CheckPoint_Data_Description", Culture);
@@ -1027,12 +1051,6 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Text Encryption'.
         /// </summary>
         public static string TextEncryption_DisplayName => ResourceManager.GetString("TextEncryption_DisplayName", Culture);
-    
-
-        /// <summary>
-        /// Looks up a localized string similar to 'Determines from what creation time the file should be considered.'.
-        /// </summary>
-        public static string WaitDynamicFile_AfterCreationTime_Description => ResourceManager.GetString("WaitDynamicFile_AfterCreationTime_Description", Culture);
     
 
         /// <summary>
@@ -1084,6 +1102,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'DataTable'.
+        /// </summary>
+        public static string RemoveDataColumns_ReferenceDataTable_DisplayName => ResourceManager.GetString("RemoveDataColumns_ReferenceDataTable_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Decompress files from a zip archive.'.
         /// </summary>
         public static string Unzip_Description => ResourceManager.GetString("Unzip_Description", Culture);
@@ -1099,6 +1123,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Options'.
         /// </summary>
         public static string Options_Category => ResourceManager.GetString("Options_Category", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'AES GCM'.
+        /// </summary>
+        public static string AesGcmAlgorithmEncryption_DisplayName => ResourceManager.GetString("AesGcmAlgorithmEncryption_DisplayName", Culture);
     
 
         /// <summary>
@@ -1123,6 +1153,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Returns the number of folder entries in the zip archive.'.
         /// </summary>
         public static string ZipEntriesCount_FoldersCount_Description => ResourceManager.GetString("ZipEntriesCount_FoldersCount_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The placeholder where each dictionary key will found.'.
+        /// </summary>
+        public static string ReplaceTokens_Placeholder_Description => ResourceManager.GetString("ReplaceTokens_Placeholder_Description", Culture);
     
 
         /// <summary>
@@ -1162,12 +1198,6 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'The relative or absolute path (or collection of paths) to the directory (or directories) to search.'.
-        /// </summary>
-        public static string EnumerateFiles_Path_Description => ResourceManager.GetString("EnumerateFiles_Path_Description", Culture);
-    
-
-        /// <summary>
         /// Looks up a localized string similar to 'The increment value.'.
         /// </summary>
         public static string Increment_Value_Description => ResourceManager.GetString("Increment_Value_Description", Culture);
@@ -1201,6 +1231,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The accepted range is from {0} and {1}. The value will be clamped.'.
         /// </summary>
         public static string WaitFile_ErrorMsg_IntervalRange => ResourceManager.GetString("WaitFile_ErrorMsg_IntervalRange", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The token text pattern. It can have characters either before and after the placeholder.'.
+        /// </summary>
+        public static string ReplaceTokens_Pattern_Description => ResourceManager.GetString("ReplaceTokens_Pattern_Description", Culture);
     
 
         /// <summary>
@@ -1255,6 +1291,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings. Default value is "*.*".'.
         /// </summary>
         public static string EnumerateFiles_SearchPattern_Description => ResourceManager.GetString("EnumerateFiles_SearchPattern_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'A variable that represents the instance of System.Diagnostics.Stopwatch class.'.
+        /// </summary>
+        public static string Stopwatch_ReferenceStopwatch_Description => ResourceManager.GetString("Stopwatch_ReferenceStopwatch_Description", Culture);
     
 
         /// <summary>
@@ -1429,6 +1471,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'WhenDo_Inverted_Description'.
+            /// </summary>
+            public const string WhenDo_Inverted_Description = "WhenDo_Inverted_Description";
+        
+
+            /// <summary>
             /// Stores the resource name 'EnumerateFiles_Description'.
             /// </summary>
             public const string EnumerateFiles_Description = "EnumerateFiles_Description";
@@ -1492,12 +1540,6 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'Aggregate_Columns_Description'.
             /// </summary>
             public const string Aggregate_Columns_Description = "Aggregate_Columns_Description";
-        
-
-            /// <summary>
-            /// Stores the resource name 'Stopwatch_Instance_Description'.
-            /// </summary>
-            public const string Stopwatch_Instance_Description = "Stopwatch_Instance_Description";
         
 
             /// <summary>
@@ -1663,6 +1705,18 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'ReplaceTokens_Result_Description'.
+            /// </summary>
+            public const string ReplaceTokens_Result_Description = "ReplaceTokens_Result_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'Stopwatch_ReferenceStopwatch_DisplayName'.
+            /// </summary>
+            public const string Stopwatch_ReferenceStopwatch_DisplayName = "Stopwatch_ReferenceStopwatch_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'WaitFile_Timeout_Description'.
             /// </summary>
             public const string WaitFile_Timeout_Description = "WaitFile_Timeout_Description";
@@ -1759,12 +1813,6 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
-            /// Stores the resource name 'Iterate_Index_Description'.
-            /// </summary>
-            public const string Iterate_Index_Description = "Iterate_Index_Description";
-        
-
-            /// <summary>
             /// Stores the resource name 'Zip_ZipFilePath_Description'.
             /// </summary>
             public const string Zip_ZipFilePath_Description = "Zip_ZipFilePath_Description";
@@ -1816,6 +1864,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'Increment_ErrorMsg_MinValue'.
             /// </summary>
             public const string Increment_ErrorMsg_MinValue = "Increment_ErrorMsg_MinValue";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ReplaceTokens_Description'.
+            /// </summary>
+            public const string ReplaceTokens_Description = "ReplaceTokens_Description";
         
 
             /// <summary>
@@ -1933,6 +1987,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'ReplaceTokens_InputDictionary_Description'.
+            /// </summary>
+            public const string ReplaceTokens_InputDictionary_Description = "ReplaceTokens_InputDictionary_Description";
+        
+
+            /// <summary>
             /// Stores the resource name 'Validation_ScopesError'.
             /// </summary>
             public const string Validation_ScopesError = "Validation_ScopesError";
@@ -1987,6 +2047,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'ReplaceTokens_DisplayName'.
+            /// </summary>
+            public const string ReplaceTokens_DisplayName = "ReplaceTokens_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'WaitDynamicFile_SearchPattern_Description'.
             /// </summary>
             public const string WaitDynamicFile_SearchPattern_Description = "WaitDynamicFile_SearchPattern_Description";
@@ -2014,6 +2080,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'DataTableEncryption_Columns_Description'.
             /// </summary>
             public const string DataTableEncryption_Columns_Description = "DataTableEncryption_Columns_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'RemoveDataColumns_ReferenceDataTable_Description'.
+            /// </summary>
+            public const string RemoveDataColumns_ReferenceDataTable_Description = "RemoveDataColumns_ReferenceDataTable_Description";
         
 
             /// <summary>
@@ -2053,6 +2125,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'EnumerateFiles_DirectoryPath_Description'.
+            /// </summary>
+            public const string EnumerateFiles_DirectoryPath_Description = "EnumerateFiles_DirectoryPath_Description";
+        
+
+            /// <summary>
             /// Stores the resource name 'Unzip_ErrorMsg_DirNameWithData'.
             /// </summary>
             public const string Unzip_ErrorMsg_DirNameWithData = "Unzip_ErrorMsg_DirNameWithData";
@@ -2071,15 +2149,15 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
-            /// Stores the resource name 'Stopwatch_StopwatchObj_DisplayName'.
-            /// </summary>
-            public const string Stopwatch_StopwatchObj_DisplayName = "Stopwatch_StopwatchObj_DisplayName";
-        
-
-            /// <summary>
             /// Stores the resource name 'RemoveEmptyRows_InputDataTable_Description'.
             /// </summary>
             public const string RemoveEmptyRows_InputDataTable_Description = "RemoveEmptyRows_InputDataTable_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ReplaceTokens_Content_Description'.
+            /// </summary>
+            public const string ReplaceTokens_Content_Description = "ReplaceTokens_Content_Description";
         
 
             /// <summary>
@@ -2107,12 +2185,6 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
-            /// Stores the resource name 'Aggregate_Detached_Description'.
-            /// </summary>
-            public const string Aggregate_Detached_Description = "Aggregate_Detached_Description";
-        
-
-            /// <summary>
             /// Stores the resource name 'TextEncryption_Input_Description'.
             /// </summary>
             public const string TextEncryption_Input_Description = "TextEncryption_Input_Description";
@@ -2137,12 +2209,6 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
-            /// Stores the resource name 'RemoveDataColumns_DataTable_Description'.
-            /// </summary>
-            public const string RemoveDataColumns_DataTable_Description = "RemoveDataColumns_DataTable_Description";
-        
-
-            /// <summary>
             /// Stores the resource name 'CheckPoint_Data_Description'.
             /// </summary>
             public const string CheckPoint_Data_Description = "CheckPoint_Data_Description";
@@ -2158,12 +2224,6 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'TextEncryption_DisplayName'.
             /// </summary>
             public const string TextEncryption_DisplayName = "TextEncryption_DisplayName";
-        
-
-            /// <summary>
-            /// Stores the resource name 'WaitDynamicFile_AfterCreationTime_Description'.
-            /// </summary>
-            public const string WaitDynamicFile_AfterCreationTime_Description = "WaitDynamicFile_AfterCreationTime_Description";
         
 
             /// <summary>
@@ -2215,6 +2275,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'RemoveDataColumns_ReferenceDataTable_DisplayName'.
+            /// </summary>
+            public const string RemoveDataColumns_ReferenceDataTable_DisplayName = "RemoveDataColumns_ReferenceDataTable_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'Unzip_Description'.
             /// </summary>
             public const string Unzip_Description = "Unzip_Description";
@@ -2230,6 +2296,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'Options_Category'.
             /// </summary>
             public const string Options_Category = "Options_Category";
+        
+
+            /// <summary>
+            /// Stores the resource name 'AesGcmAlgorithmEncryption_DisplayName'.
+            /// </summary>
+            public const string AesGcmAlgorithmEncryption_DisplayName = "AesGcmAlgorithmEncryption_DisplayName";
         
 
             /// <summary>
@@ -2254,6 +2326,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'ZipEntriesCount_FoldersCount_Description'.
             /// </summary>
             public const string ZipEntriesCount_FoldersCount_Description = "ZipEntriesCount_FoldersCount_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ReplaceTokens_Placeholder_Description'.
+            /// </summary>
+            public const string ReplaceTokens_Placeholder_Description = "ReplaceTokens_Placeholder_Description";
         
 
             /// <summary>
@@ -2293,12 +2371,6 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
-            /// Stores the resource name 'EnumerateFiles_Path_Description'.
-            /// </summary>
-            public const string EnumerateFiles_Path_Description = "EnumerateFiles_Path_Description";
-        
-
-            /// <summary>
             /// Stores the resource name 'Increment_Value_Description'.
             /// </summary>
             public const string Increment_Value_Description = "Increment_Value_Description";
@@ -2332,6 +2404,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'WaitFile_ErrorMsg_IntervalRange'.
             /// </summary>
             public const string WaitFile_ErrorMsg_IntervalRange = "WaitFile_ErrorMsg_IntervalRange";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ReplaceTokens_Pattern_Description'.
+            /// </summary>
+            public const string ReplaceTokens_Pattern_Description = "ReplaceTokens_Pattern_Description";
         
 
             /// <summary>
@@ -2386,6 +2464,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'EnumerateFiles_SearchPattern_Description'.
             /// </summary>
             public const string EnumerateFiles_SearchPattern_Description = "EnumerateFiles_SearchPattern_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'Stopwatch_ReferenceStopwatch_Description'.
+            /// </summary>
+            public const string Stopwatch_ReferenceStopwatch_Description = "Stopwatch_ReferenceStopwatch_Description";
         
 
             /// <summary>

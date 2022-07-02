@@ -25,7 +25,7 @@ namespace Autossential.Shared.Tests
                 GenerateAsPartialClass = false,
                 AlwaysGenerateSource = true,
                 ForImplementation = false,
-#if NET5_0
+#if NET6_0
                 Compiler = new CSharpAotCompiler()
 #endif
             };

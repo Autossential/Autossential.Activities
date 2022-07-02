@@ -12,47 +12,52 @@ namespace Autossential.Activities.Test
     {
         [TestMethod]
         [DataRow(3, false)]
+        [DataRow(3, true)]
         public void Default(int iterations, bool reverse)
         {
-            //var list = new List<int>();
-            //var index = 0;
-            //var dyn = new Sequence
-            //{
-            //    Activities =
-            //    {
-            //        new Iterate()
-            //        {
-            //            Iterations = iterations,
-            //            Reverse = reverse,
-            //            Index = new OutArgument<int>(_ => index),
-            //            Body = new ActivityAction
-            //            {
-            //                Handler = new Sequence
-            //                {
-            //                    Variables = { new Variable<int>("index") },
-            //                    Activities =
-            //                    {
-            //                        new InvokeMethod
-            //                        {
-            //                            TargetObject = new InArgument<List<int>>(_ => list),
-            //                            MethodName = "Add",
-            //                            Parameters = { new InArgument<int>(_ => index) }
-            //                        }
-            //                    }
-            //                }
-            //            }
-            //        }
-            //    }
-            //};
+            var list = new List<int>();
 
-            //WorkflowTester.CompileAndRun(dyn);
+            var index = new DelegateInArgument<int>("index");
 
-            //var values = Enumerable.Range(0, iterations);
-            //if (reverse)
-            //    values = values.Reverse();
+            var dyn = new Sequence
+            {
+                Activities =
+                {
+                    new Iterate()
+                    {
+                        Iterations = iterations,
+                        Reverse = reverse,
+                        Body = new ActivityAction<int>
+                        {
+                            Argument = index,
+                            Handler = new Sequence
+                            {
+                                Activities =
+                                {
+                                    new InvokeMethod()
+                                    {
+                                        TargetObject = new InArgument<List<int>>(_ => list),
+                                        MethodName = "Add",
+                                        Parameters = 
+                                        { 
+                                            new InArgument<int>(ctx => index.Get(ctx))
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
 
-            //CollectionAssert.AreEqual(values.ToArray(), list);
 
+            WorkflowTester.CompileAndRun(dyn);
+
+            var values = Enumerable.Range(0, iterations);
+            if (reverse)
+                values = values.Reverse();
+
+            CollectionAssert.AreEqual(values.ToArray(), list);
         }
     }
 }

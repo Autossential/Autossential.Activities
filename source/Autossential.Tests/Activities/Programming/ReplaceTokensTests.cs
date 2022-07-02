@@ -1,10 +1,9 @@
 ﻿using Autossential.Activities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Activities;
 using System.Collections.Generic;
 
-namespace Autossential.Tests.Activities.Programming
+namespace Autossential.Activities.Test
 {
     [TestClass]
     public class ReplaceTokensTests

@@ -123,7 +123,7 @@ namespace Autossential.Activities.Design
                     .RegisterToMember(new BrowsableAttribute(false), "Result", encryptionTypes);
 
 
-#if NET5_0
+#if NET6_0
                 builder
                     .Register<AesGcmAlgorithmEncryption, CryptoAlgorithmDesigner>(securityAlgorithms, m =>
                     {

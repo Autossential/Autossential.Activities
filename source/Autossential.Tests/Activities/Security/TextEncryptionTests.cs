@@ -23,7 +23,7 @@ namespace Autossential.Activities.Test
         [DataRow(nameof(RC2AlgorithmEncryption))]
         [DataRow(nameof(RijndaelAlgorithmEncryption))]
         [DataRow(nameof(TripleDESAlgorithmEncryption))]
-#if NET5_0
+#if NET6_0
         [DataRow(nameof(AesGcmAlgorithmEncryption))]
 #endif
         public void Default(string alg)
@@ -47,7 +47,7 @@ namespace Autossential.Activities.Test
                 case nameof(TripleDESAlgorithmEncryption):
                     handler = new TripleDESAlgorithmEncryption();
                     break;
-#if NET5_0
+#if NET6_0
                 case nameof(AesGcmAlgorithmEncryption):
                     handler = new AesGcmAlgorithmEncryption();
                     break;

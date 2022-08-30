@@ -28,6 +28,6 @@ namespace Autossential.Activities
             }
         }
 
-        public const string BOOKMARK_NAME = "NextBookmark";
+        public const string BOOKMARK_NAME = "Autossential_NextBookmark";
     }
 }

@@ -35,6 +35,8 @@ namespace Autossential.Activities
 
         protected override void Execute(NativeActivityContext context)
         {
+            Reset();
+
             var exitBookmark = context.CreateBookmark(OnExit, BookmarkOptions.NonBlocking);
             context.Properties.Add(Exit.BOOKMARK_NAME, exitBookmark);
 
@@ -83,8 +85,15 @@ namespace Autossential.Activities
                 context.ResumeBookmark(b, value);
         }
 
-        private int _iterations = 0;
-        private int _index = 0;
+        private int _iterations;
+        private int _index;
         private bool _break;
+
+        private void Reset()
+        {
+            _iterations = 0;
+            _break = false;
+            _index = 0;
+        }
     }
 }

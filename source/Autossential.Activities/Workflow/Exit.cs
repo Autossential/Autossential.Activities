@@ -29,6 +29,6 @@ namespace Autossential.Activities
             }
         }
 
-        public const string BOOKMARK_NAME = "ExitBookmark";
+        public const string BOOKMARK_NAME = "Autossential_ExitBookmark";
     }
 }

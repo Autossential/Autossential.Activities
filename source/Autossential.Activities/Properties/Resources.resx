@@ -773,6 +773,10 @@
     <value>Returns the information about the file.</value>
     <comment>property description</comment>
   </data>
+  <data name="WaitDynamicFile_FromDateTime_Description" xml:space="preserve">
+    <value>Considers only the files whose last write time is greater than this value. If is not set, the value used is the same as the last write time of the most recent file in the folder. If the folder is empty, the current date and time is used.</value>
+    <comment>property description</comment>
+  </data>
   <data name="WaitDynamicFile_Interval_Description" xml:space="preserve">
     <value>Specifies the amount of time (in milliseconds) for the file re-check. Any values out of the range of 100-20000 milliseconds is reseted to its nearest limit. The default value is 500.</value>
     <comment>property description</comment>

@@ -52,6 +52,8 @@ namespace Autossential.Activities
 
         protected override void Execute(NativeActivityContext context)
         {
+            _exitRequested = false;
+
             if (Activities.Count > 0)
             {
                 var next = Activities[0];

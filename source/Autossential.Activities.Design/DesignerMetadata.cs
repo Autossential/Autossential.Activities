@@ -2,6 +2,7 @@
 using Autossential.Activities.Design.PropertyEditors;
 using Autossential.Activities.Properties;
 using Autossential.Activities.Security.Algorithms;
+using Autossential.Activities.Workflow;
 using Autossential.Core.Security.Algorithms;
 using Autossential.Shared.Activities.Design;
 using System;
@@ -95,7 +96,8 @@ namespace Autossential.Activities.Design
                     .Register<Exit, ExitDesigner>(workflow)
                     .Register<Next, NextDesigner>(workflow)
                     .Register<Iterate, IterateDesigner>(workflow, m => m.Register(new CategoryAttribute(Resources.Options_Category), p => p.Reverse))
-                    .Register<WhenDo, WhenDoDesigner>(workflow);
+                    .Register<WhenDo, WhenDoDesigner>(workflow)
+                    .Register<RepeatUntilFailure, RepeatUntilFailureDesigner>(workflow);
 
                 // PROGRAMMING
                 builder

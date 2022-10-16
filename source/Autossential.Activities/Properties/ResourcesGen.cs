@@ -370,6 +370,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The maximum number of repetitions to stop the loop in case no exception occur. If not set, its default value is 300.'.
+        /// </summary>
+        public static string RepeatUntilFailure_MaximumRepetitions_Description => ResourceManager.GetString("RepeatUntilFailure_MaximumRepetitions_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'If set, continue executing the remaining activities even if the current activity has failed.'.
         /// </summary>
         public static string Common_ContinueOnError => ResourceManager.GetString("Common_ContinueOnError", Culture);
@@ -631,6 +637,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The string representation of the DataTable.'.
         /// </summary>
         public static string DataTableToText_Result_Description => ResourceManager.GetString("DataTableToText_Result_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The exception which caused the loop break. This result can be null in case of no exceptions did occur.'.
+        /// </summary>
+        public static string RepeatUntilFailure_OutputException_Description => ResourceManager.GetString("RepeatUntilFailure_OutputException_Description", Culture);
     
 
         /// <summary>
@@ -1018,6 +1030,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The amount of time between each loop iteration.'.
+        /// </summary>
+        public static string RepeatUntilFailure_LoopInterval_Description => ResourceManager.GetString("RepeatUntilFailure_LoopInterval_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Removes the empty rows from a DataTable.'.
         /// </summary>
         public static string RemoveEmptyRows_Description => ResourceManager.GetString("RemoveEmptyRows_Description", Culture);
@@ -1126,6 +1144,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Repeat Until Failure'.
+        /// </summary>
+        public static string RepeatUntilFailure_DisplayName => ResourceManager.GetString("RepeatUntilFailure_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'AES GCM'.
         /// </summary>
         public static string AesGcmAlgorithmEncryption_DisplayName => ResourceManager.GetString("AesGcmAlgorithmEncryption_DisplayName", Culture);
@@ -1216,6 +1240,18 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Considers only the files whose last write time is greater than this value. If is not set, the value used is the same as the last write time of the most recent file in the folder. If the folder is empty, the current date and time is used.'.
+        /// </summary>
+        public static string WaitDynamicFile_FromDateTime_Description => ResourceManager.GetString("WaitDynamicFile_FromDateTime_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Repeats an action until an exception occur or the maximum number of repetitions is reached.'.
+        /// </summary>
+        public static string RepeatUntilFailure_Description => ResourceManager.GetString("RepeatUntilFailure_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The aggregate function.'.
         /// </summary>
         public static string Aggregate_Function_Description => ResourceManager.GetString("Aggregate_Function_Description", Culture);
@@ -1249,6 +1285,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The value or expression to be evaluated.'.
         /// </summary>
         public static string IsTrue_Value_Description => ResourceManager.GetString("IsTrue_Value_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The iteration that was being processed when the loop had broken.'.
+        /// </summary>
+        public static string RepeatUntilFailure_IterationNumber_Description => ResourceManager.GetString("RepeatUntilFailure_IterationNumber_Description", Culture);
     
 
         /// <summary>
@@ -1543,6 +1585,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'RepeatUntilFailure_MaximumRepetitions_Description'.
+            /// </summary>
+            public const string RepeatUntilFailure_MaximumRepetitions_Description = "RepeatUntilFailure_MaximumRepetitions_Description";
+        
+
+            /// <summary>
             /// Stores the resource name 'Common_ContinueOnError'.
             /// </summary>
             public const string Common_ContinueOnError = "Common_ContinueOnError";
@@ -1804,6 +1852,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'DataTableToText_Result_Description'.
             /// </summary>
             public const string DataTableToText_Result_Description = "DataTableToText_Result_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'RepeatUntilFailure_OutputException_Description'.
+            /// </summary>
+            public const string RepeatUntilFailure_OutputException_Description = "RepeatUntilFailure_OutputException_Description";
         
 
             /// <summary>
@@ -2191,6 +2245,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'RepeatUntilFailure_LoopInterval_Description'.
+            /// </summary>
+            public const string RepeatUntilFailure_LoopInterval_Description = "RepeatUntilFailure_LoopInterval_Description";
+        
+
+            /// <summary>
             /// Stores the resource name 'RemoveEmptyRows_Description'.
             /// </summary>
             public const string RemoveEmptyRows_Description = "RemoveEmptyRows_Description";
@@ -2299,6 +2359,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'RepeatUntilFailure_DisplayName'.
+            /// </summary>
+            public const string RepeatUntilFailure_DisplayName = "RepeatUntilFailure_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'AesGcmAlgorithmEncryption_DisplayName'.
             /// </summary>
             public const string AesGcmAlgorithmEncryption_DisplayName = "AesGcmAlgorithmEncryption_DisplayName";
@@ -2389,6 +2455,18 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'WaitDynamicFile_FromDateTime_Description'.
+            /// </summary>
+            public const string WaitDynamicFile_FromDateTime_Description = "WaitDynamicFile_FromDateTime_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'RepeatUntilFailure_Description'.
+            /// </summary>
+            public const string RepeatUntilFailure_Description = "RepeatUntilFailure_Description";
+        
+
+            /// <summary>
             /// Stores the resource name 'Aggregate_Function_Description'.
             /// </summary>
             public const string Aggregate_Function_Description = "Aggregate_Function_Description";
@@ -2422,6 +2500,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'IsTrue_Value_Description'.
             /// </summary>
             public const string IsTrue_Value_Description = "IsTrue_Value_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'RepeatUntilFailure_IterationNumber_Description'.
+            /// </summary>
+            public const string RepeatUntilFailure_IterationNumber_Description = "RepeatUntilFailure_IterationNumber_Description";
         
 
             /// <summary>

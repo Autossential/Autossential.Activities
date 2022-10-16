@@ -613,6 +613,30 @@
     <value>The output DataTable.</value>
     <comment>property description</comment>
   </data>
+  <data name="RepeatUntilFailure_Description" xml:space="preserve">
+    <value>Repeats an action until an exception occur or the maximum number of repetitions is reached.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="RepeatUntilFailure_DisplayName" xml:space="preserve">
+    <value>Repeat Until Failure</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="RepeatUntilFailure_IterationNumber_Description" xml:space="preserve">
+    <value>The iteration that was being processed when the loop had broken.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RepeatUntilFailure_LoopInterval_Description" xml:space="preserve">
+    <value>The amount of time between each loop iteration.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RepeatUntilFailure_MaximumRepetitions_Description" xml:space="preserve">
+    <value>The maximum number of repetitions to stop the loop in case no exception occur. If not set, its default value is 300.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RepeatUntilFailure_OutputException_Description" xml:space="preserve">
+    <value>The exception which caused the loop break. This result can be null in case of no exceptions did occur.</value>
+    <comment>property description</comment>
+  </data>
   <data name="ReplaceTokens_Content_Description" xml:space="preserve">
     <value>The text which contains the tokens to be replaced.</value>
     <comment>property description</comment>

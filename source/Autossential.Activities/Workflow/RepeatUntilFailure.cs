@@ -11,7 +11,7 @@ namespace Autossential.Activities.Workflow
         [Browsable(false)]
         public ActivityDelegate Body { get; set; }
         public OutArgument<Exception> OutputException { get; set; }
-        public OutArgument<int> Iterations { get; set; }
+        public OutArgument<int> IterationNumber { get; set; }
         public InArgument<int> MaximumRepetitions { get; set; }
         public InArgument<TimeSpan> LoopInterval { get; set; }
 
@@ -73,7 +73,7 @@ namespace Autossential.Activities.Workflow
                                 },
                                 new Assign<int>
                                 {
-                                    To = new OutArgument<int>(context => Iterations.Get(context)),
+                                    To = new OutArgument<int>(context => IterationNumber.Get(context)),
                                     Value = new Subtract<int, int, int>
                                     {
                                         Left = maxRep,

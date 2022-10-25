@@ -622,7 +622,7 @@
     <comment>activity name</comment>
   </data>
   <data name="RepeatUntilFailure_IterationNumber_Description" xml:space="preserve">
-    <value>The iteration that was being processed when the loop had broken.</value>
+    <value>The current iteration that was being processed. You can use it to determine in which iteration the process has broken.</value>
     <comment>property description</comment>
   </data>
   <data name="RepeatUntilFailure_LoopInterval_Description" xml:space="preserve">

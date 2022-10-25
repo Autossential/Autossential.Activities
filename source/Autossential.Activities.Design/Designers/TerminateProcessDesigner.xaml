@@ -1,10 +1,10 @@
-﻿<sap:ActivityDesigner x:Class="Autossential.Activities.Design.Designers.IsTrueDesigner"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<sap:ActivityDesigner x:Class="Autossential.Activities.Design.Designers.TerminateProcessDesigner"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
-    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls" Collapsible="False">
+    Collapsible="False">
 
     <sap:ActivityDesigner.Resources>
         <ResourceDictionary>
@@ -16,16 +16,16 @@
     </sap:ActivityDesigner.Resources>
 
     <sap:ActivityDesigner.Icon>
-        <DrawingBrush Drawing="{StaticResource IsTrueIcon}" Stretch="Uniform"></DrawingBrush>
+        <DrawingBrush Drawing="{StaticResource CloseProcessesIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
     <StackPanel Width="230">
         <sapv:ExpressionTextBox
             Grid.Column="0"
-            ExpressionType="{Binding ModelItem.Properties[Value].PropertyType.GenericTypeArguments[0]}"
+            ExpressionType="{Binding ModelItem.Properties[ProcessName].PropertyType.GenericTypeArguments[0]}"
             OwnerActivity="{Binding ModelItem}"
             UseLocationExpression="False"
-            HintText="Expression to be evaluated"
-            Expression="{Binding ModelItem.Value, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"/>
+            HintText="Process name or list of process names"
+            Expression="{Binding ModelItem.ProcessName, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"/>
     </StackPanel>
 </sap:ActivityDesigner>

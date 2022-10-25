@@ -25,7 +25,7 @@ namespace Autossential.Activities.Design
         public const string WORKFLOW_CATEGORY = MAIN_CATEGORY + ".Workflow";
         public const string SECURITY_CATEGORY = MAIN_CATEGORY + ".Security";
         public const string SECURITY_ALGORITHMS_CATEGORY = SECURITY_CATEGORY + ".Algorithms";
-        public const string DIAGNOSTICS_CATEGORY = MAIN_CATEGORY + ".Diagnostics";
+        public const string APPS_AND_DIAGNOSTICS_CATEGORY = MAIN_CATEGORY + ".Apps & Diagnostics";
 
         public void Register()
         {
@@ -36,7 +36,7 @@ namespace Autossential.Activities.Design
             var programming = new CategoryAttribute(PROGRAMMING_CATEGORY);
             var security = new CategoryAttribute(SECURITY_CATEGORY);
             var securityAlgorithms = new CategoryAttribute(SECURITY_ALGORITHMS_CATEGORY);
-            var diagnostics = new CategoryAttribute(DIAGNOSTICS_CATEGORY);
+            var appsAndDiagnostics = new CategoryAttribute(APPS_AND_DIAGNOSTICS_CATEGORY);
 
             ActivitiesAttributesBuilder.Build(Resources.ResourceManager, builder =>
             {
@@ -135,9 +135,10 @@ namespace Autossential.Activities.Design
 #endif
 
 
-                // DIAGNOSTICS
+                // APPS & DIAGNOSTICS
                 builder
-                    .Register<Stopwatch, StopwatchDesigner>(diagnostics);
+                    .Register<Stopwatch, StopwatchDesigner>(appsAndDiagnostics)
+                    .Register<TerminateProcess, TerminateProcessDesigner>(appsAndDiagnostics);
             });
         }
     }

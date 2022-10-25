@@ -689,6 +689,18 @@
     <value>The number of iterations for the operation.</value>
     <comment>property description</comment>
   </data>
+  <data name="TerminateProcess_Description" xml:space="preserve">
+    <value>Tries to gracefully close all instances of the applications corresponding to the specified processes. If not possible, it kills the process.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="TerminateProcess_DisplayName" xml:space="preserve">
+    <value>Terminate Process</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="TerminateProcess_ProcessName_Description" xml:space="preserve">
+    <value>The name of the process to close or kill. Can be either a single name or a list of names.</value>
+    <comment>property description</comment>
+  </data>
   <data name="TextEncryption_Action_Description" xml:space="preserve">
     <value>Determines if is to encrypt or decrypt the input value.</value>
     <comment>property description</comment>

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace Autossential.Activities
 {
@@ -40,6 +41,8 @@ namespace Autossential.Activities
         }
 
         const int WaitForExit = 3000;
+        const int DelayForNext = 50;
+        const int DelayNonGUI = 500;
 
         protected override void Execute(CodeActivityContext context)
         {
@@ -54,6 +57,7 @@ namespace Autossential.Activities
             var timer = System.Diagnostics.Stopwatch.StartNew();
             var processes = Array.Empty<Process>();
             var switched = false;
+            var hasGui = false;
 
             foreach (var name in (IEnumerable<string>)names)
             {
@@ -68,9 +72,12 @@ namespace Autossential.Activities
                         if (process.HasExited)
                             continue;
 
+                        hasGui = true;
+
                         if (process.CloseMainWindow())
                         {
                             process.Close();
+                            Thread.Sleep(DelayForNext);
                             switched = false;
                             continue;
                         }
@@ -85,9 +92,13 @@ namespace Autossential.Activities
                         switched = false;
                         process.Kill();
                         process.WaitForExit(WaitForExit);
+                        Thread.Sleep(DelayForNext);
                     }
 
                 } while (processes.Length > 0 && timer.ElapsedMilliseconds <= timeout);
+
+                if (hasGui)
+                    Thread.Sleep(DelayNonGUI); // holds for a brief moment before search for non-GUI processes
 
                 // Processes without GUI
                 processes = Process.GetProcessesByName(name)
@@ -95,6 +106,9 @@ namespace Autossential.Activities
 
                 foreach (var process in processes)
                 {
+                    if (process.HasExited)
+                        continue;
+
                     process.Kill();
                     process.WaitForExit(WaitForExit);
                 }

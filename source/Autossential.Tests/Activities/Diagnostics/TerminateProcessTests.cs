@@ -31,5 +31,21 @@ namespace Autossential.Activities.Test
                 Assert.AreEqual(0, Process.GetProcessesByName(name).Length);
             }
         }
+
+        [TestMethod]
+        public void Edge()
+        {
+            var processes = Process.GetProcessesByName("msedge");
+
+            if (processes.Length > 0)
+            {
+                WorkflowTester.Invoke(new TerminateProcess
+                {
+                    ProcessName = new InArgument<string>("msedge")
+                });
+
+                Assert.AreEqual(0, Process.GetProcessesByName("msedge").Length);
+            }
+        }
     }
 }

@@ -1,0 +1,28 @@
+﻿<sap:WorkflowElementDialog x:Class="Autossential.Activities.Design.Controls.Editors.ExpressionDialogEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation">
+    
+    <FrameworkElement.Resources>
+        <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter"/>
+    </FrameworkElement.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="ArgLabel" Content="{Binding ArgumentLabel}"/>
+        <sapv:ExpressionTextBox Name="ExpressionTextBoxId" Grid.Row="1" Focusable="true" AcceptsReturn="True"
+                           HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ExplicitCommit="True"
+                           ClipToBounds="True" OwnerActivity="{Binding OwnerActivity}" HintText="{Binding HintText}"
+                           ExpressionType="{Binding ExpressionType}"
+                           Expression="{Binding Argument, Converter={StaticResource ArgumentToExpressionConverter}, Mode=TwoWay}"
+                           UseLocationExpression="{Binding UseLocationExpression}"
+                           AutomationProperties.LabeledBy="{Binding ElementName=ArgLabel}"
+                           AutomationProperties.HelpText="{Binding HintText}"/>
+    </Grid>
+</sap:WorkflowElementDialog>

@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Autossential.Activities.Design.Controls.BooleanPropertyEditorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Autossential.Activities.Design.Controls" 
+             xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="400" Background="White"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:PropertyEditing="clr-namespace:System.Activities.Presentation.PropertyEditing;assembly=System.Activities.Presentation" 
+             Name="BooleanControl">
+
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <sap:ExpressionTextBox 
+            ExpressionType="sys:Boolean"
+            OwnerActivity="{Binding Path=OwnerActivity, ElementName=BooleanControl}"
+            Expression="{Binding ElementName=BooleanControl, Path=Expression, Converter={StaticResource ArgumentToExpressionConverter}, Mode=TwoWay}" />
+
+        <CheckBox
+            x:Name="CheckBoxControl"
+            Grid.Column="1" 
+            IsThreeState="True" 
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Checked="CheckBoxControl_Checked"
+            Unchecked="CheckBoxControl_Unchecked"
+            Indeterminate="CheckBoxControl_Indeterminate"/>
+
+        <PropertyEditing:EditModeSwitchButton Grid.Column="2"/>
+    </Grid>
+</UserControl>
+
+<!--<Grid>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="20"/>
+        <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    
+    <shared:CheckBox x:Name="BoolCheckBox" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"
+                     Indeterminate="Checkbox_Indeterminate" Grid.Column="1" HorizontalAlignment="Center"
+                     VerticalAlignment="Center" DockPanel.Dock="Left" IsThreeState="True"
+                     AutomationProperties.Name="{Binding ElementName=BoolControl, Path=PropertyName}"
+                     AutomationProperties.HelpText="{Binding ElementName=BoolControl, Path=HintText}"/>
+    <shared:ExpressionOpenButtonControl Grid.Column="2" IsPropertyEditor="True" ExpressionType="{x:Type Boolean}"
+                                        OwnerActivity="{Binding ElementName=BoolControl, Path=OwnerActivity}"
+                                        Expression="{Binding ElementName=BoolControl, Path=Expression, Mode=TwoWay}"
+                                        HintText="{Binding ElementName=BoolControl, Path=HintText}"
+                                        DisplayName="{Binding ElementName=BoolControl, Path=PropertyName}"/>
+</Grid>-->
+    

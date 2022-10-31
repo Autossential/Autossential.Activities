@@ -69,7 +69,6 @@ namespace Autossential.Activities.Design
                     .Register(typeof(ExtractDataColumnValues<>), typeof(ExtractDataColumnValuesDesigner), new Attribute[] { dataTable, new DefaultTypeArgumentAttribute(typeof(object)) });
 
 
-
                 // FILE
                 builder
                     .Register<CleanUpFolder, CleanUpFolderDesigner>(file, m =>
@@ -79,14 +78,19 @@ namespace Autossential.Activities.Design
                             p => p.SearchPattern);
                     })
                     .Register<EnumerateFiles, EnumerateFilesDesigner>(file, m => m.Register(new CategoryAttribute(Resources.Options_Category), p => p.SearchPattern))
-                    .Register<WaitFile, WaitFileDesigner>(file)
+                    .Register<WaitFile, WaitFileDesigner>(file, m =>
+                        m.Register(new EditorAttribute(typeof(BooleanPropertyEditor), typeof(DialogPropertyValueEditor)),
+                            p => p.ContinueOnError)
+                     )
                     .Register<WaitDynamicFile, WaitDynamicFileDesigner>(file);
+
 
                 // FILE COMPRESSION
                 builder
                     .Register<Zip, ZipDesigner>(fileCompression)
                     .Register<ZipEntriesCount, ZipEntriesCountDesigner>(fileCompression)
                     .Register<Unzip, UnzipDesigner>(fileCompression);
+
 
                 // WORKFLOW
                 builder
@@ -99,6 +103,7 @@ namespace Autossential.Activities.Design
                     .Register<WhenDo, WhenDoDesigner>(workflow)
                     .Register<RepeatUntilFailure, RepeatUntilFailureDesigner>(workflow);
 
+
                 // PROGRAMMING
                 builder
                     .Register(typeof(AddRangeToCollection<>), typeof(AddRangeToCollectionDesigner), new Attribute[] { programming, new DefaultTypeArgumentAttribute(typeof(object)) })
@@ -107,6 +112,7 @@ namespace Autossential.Activities.Design
                     .Register<Increment, IncrementDesigner>(programming)
                     .Register<IsTrue, IsTrueDesigner>(programming)
                     .Register<ReplaceTokens, ReplaceTokensDesigner>(programming);
+
 
                 // SECURITY
                 builder

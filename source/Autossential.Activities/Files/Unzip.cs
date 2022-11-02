@@ -17,12 +17,13 @@ namespace Autossential.Activities
         [RequiredArgument]
         public InArgument<string> ExtractTo { get; set; }
 
-        public bool Overwrite { get; set; }
+        public InArgument<bool> Overwrite { get; set; }
 
         protected override async Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
             var zipFilePath = ZipFilePath.Get(context);
             var extractTo = ExtractTo.Get(context);
+            var overwrite = Overwrite.Get(context);
 
             await Task.Run(() =>
             {
@@ -51,7 +52,7 @@ namespace Autossential.Activities
                         else
                         {
                             Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
-                            entry.ExtractToFile(fullPath, Overwrite);
+                            entry.ExtractToFile(fullPath, overwrite);
                         }
                     }
                 }

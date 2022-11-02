@@ -12,7 +12,7 @@ namespace Autossential.Activities
     {
         public InArgument<DataTable> InputDataTable { get; set; }
 
-        public bool AutoRename { get; set; } = true;
+        public InArgument<bool> AutoRename { get; set; } = true;
 
         public InArgument<string> EmptyColumnName { get; set; } = new InArgument<string>("Empty");
 
@@ -30,6 +30,7 @@ namespace Autossential.Activities
         {
             var names = new Dictionary<string, int>();
             var emptyName = EmptyColumnName.Get(context);
+            var autoRename = AutoRename.Get(context);
 
             var inputDT = InputDataTable.Get(context);
             if (inputDT.Rows.Count == 0)
@@ -44,7 +45,7 @@ namespace Autossential.Activities
                 return string.IsNullOrEmpty(firstRowValue) ? emptyName : firstRowValue;
             }
 
-            if (AutoRename)
+            if (autoRename)
             {
                 foreach (DataColumn col in outputDT.Columns)
                 {

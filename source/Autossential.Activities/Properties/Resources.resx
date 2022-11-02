@@ -190,7 +190,7 @@
     <comment>property description</comment>
   </data>
   <data name="CleanUpFolder_DeleteEmptyFolders_Description" xml:space="preserve">
-    <value>Determines if the left empty folders after files deletion must also be deleted. Default is true.</value>
+    <value>Determines if the left empty folders after files deletion must also be deleted.</value>
     <comment>property description</comment>
   </data>
   <data name="CleanUpFolder_Description" xml:space="preserve">
@@ -817,6 +817,10 @@
     <value>Specifies the amount of time (in milliseconds) for the file re-check. Any values out of the range of 100-20000 milliseconds is reseted to its nearest limit. The default value is 500.</value>
     <comment>property description</comment>
   </data>
+  <data name="WaitDynamicFile_Result_Description" xml:space="preserve">
+    <value>The FileInfo object of the respective file when found.</value>
+    <comment>property description</comment>
+  </data>
   <data name="WaitDynamicFile_SearchPattern_Description" xml:space="preserve">
     <value>The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings. Default value is "*.*".</value>
     <comment>property description</comment>
@@ -851,6 +855,10 @@
   </data>
   <data name="WaitFile_Interval_Description" xml:space="preserve">
     <value>Specifies the amount of time (in milliseconds) for the file re-check. Any values out of the range of 100-20000 milliseconds is reseted to its nearest limit. The default value is 500.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="WaitFile_Result_Description" xml:space="preserve">
+    <value>The FileInfo object of the respective file when found.</value>
     <comment>property description</comment>
   </data>
   <data name="WaitFile_Timeout_Description" xml:space="preserve">

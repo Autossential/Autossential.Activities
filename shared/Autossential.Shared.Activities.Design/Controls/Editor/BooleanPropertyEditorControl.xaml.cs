@@ -20,7 +20,7 @@ using System.Windows.Shapes;
 using System.Runtime.CompilerServices;
 using Autossential.Shared.Activities.Design;
 
-namespace Autossential.Activities.Design.Controls
+namespace Autossential.Shared.Activities.Design.Controls
 {
     /// <summary>
     /// Interaction logic for BooleanPropertyEditorControl.xaml

@@ -37,7 +37,7 @@ namespace Autossential.Activities.Workflow
         {
             var maxRep = new Variable<int>("maxRep", context => MaximumRepetitions.Expression == null ? 300 : MaximumRepetitions.Get(context));
             var counter = new Variable<int>("counter", context => maxRep.Get(context));
-            var interval = new Variable<TimeSpan>("interval", context => LoopInterval.Expression == null ? TimeSpan.FromMilliseconds(100) : LoopInterval.Get(context));
+            var interval = new Variable<TimeSpan>("interval", context => LoopInterval.Expression == null ? TimeSpan.FromMilliseconds(0) : LoopInterval.Get(context));
             var ex = new DelegateInArgument<Exception>("ex");
 
             return new Sequence

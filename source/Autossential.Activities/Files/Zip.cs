@@ -26,7 +26,7 @@ namespace Autossential.Activities
 
         public OutArgument<int> FilesCount { get; set; }
 
-        public bool ShortEntryNames { get; set; }
+        public InArgument<bool> ShortEntryNames { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
@@ -49,6 +49,7 @@ namespace Autossential.Activities
             var zipFilePath = Path.GetFullPath(ZipFilePath.Get(context));
             var toCompress = ToCompress.Get(context);
             var encoding = TextEncoding.Get(context);
+            var shortEntryNames = ShortEntryNames.Get(context);
             var counter = 0;
 
             if (toCompress is string)
@@ -74,14 +75,14 @@ namespace Autossential.Activities
                     : ZipArchiveMode.Create;
 
                 using (var zip = ZipFile.Open(zipFilePath, mode, encoding))
-                    counter = CompressTo(zip, entries, mode, token, null);
+                    counter = CompressTo(zip, entries, mode, token, shortEntryNames, null);
 
             }, token).ConfigureAwait(false);
 
             return ctx => FilesCount.Set(ctx, counter);
         }
 
-        private int CompressTo(ZipArchive zip, string[] entries, ZipArchiveMode mode, CancellationToken token, string entryPrefix)
+        private int CompressTo(ZipArchive zip, string[] entries, ZipArchiveMode mode, CancellationToken token, bool shortEntryNames, string entryPrefix)
         {
             var commonDir = GetLongestCommonDir(entries);
             var prefixLen = commonDir.Length;
@@ -90,7 +91,7 @@ namespace Autossential.Activities
             if (prefixLen == 0)
             {
                 foreach (var group in entries.GroupBy(Path.GetPathRoot))
-                    count += CompressTo(zip, group.OrderBy(path => path).ToArray(), mode, token, group.Key.Replace(":", ""));
+                    count += CompressTo(zip, group.OrderBy(path => path).ToArray(), mode, token, shortEntryNames, group.Key.Replace(":", ""));
 
                 return count;
             }
@@ -118,7 +119,7 @@ namespace Autossential.Activities
                 return name;
             }
 
-            if (ShortEntryNames || entryPrefix == null)
+            if (shortEntryNames || entryPrefix == null)
             {
                 foreach (var fullPath in entries)
                 {

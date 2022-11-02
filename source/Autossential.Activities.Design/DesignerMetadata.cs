@@ -3,7 +3,6 @@ using Autossential.Activities.Design.PropertyEditors;
 using Autossential.Activities.Properties;
 using Autossential.Activities.Security.Algorithms;
 using Autossential.Activities.Workflow;
-using Autossential.Core.Security;
 using Autossential.Core.Security.Algorithms;
 using Autossential.Shared.Activities.Base;
 using Autossential.Shared.Activities.Design;
@@ -14,7 +13,6 @@ using System.Activities.Presentation.Metadata;
 using System.Activities.Presentation.PropertyEditing;
 using System.ComponentModel;
 using System.Linq;
-using System.Net;
 
 namespace Autossential.Activities.Design
 {
@@ -41,6 +39,9 @@ namespace Autossential.Activities.Design
             var security = new CategoryAttribute(SECURITY_CATEGORY);
             var securityAlgorithms = new CategoryAttribute(SECURITY_ALGORITHMS_CATEGORY);
             var appsAndDiagnostics = new CategoryAttribute(APPS_AND_DIAGNOSTICS_CATEGORY);
+
+            // CUSTOM EDITOR ATTRIBUTES
+            var booleanPropertyEditorAttribute = new EditorAttribute(typeof(BooleanPropertyEditor), typeof(DialogPropertyValueEditor));
 
             ActivitiesAttributesBuilder.Build(Resources.ResourceManager, builder =>
             {
@@ -69,7 +70,11 @@ namespace Autossential.Activities.Design
                     })
                     .Register<RemoveDataColumns, RemoveDataColumnsDesigner>(dataTable)
                     .Register<RemoveDuplicateRows, RemoveDuplicateRowsDesigner>(dataTable, m => m.Register(p => p.Columns, new CategoryAttribute(Resources.Options_Category)))
-                    .Register<PromoteHeaders, PromoteHeadersDesigner>(dataTable, m => m.Register(p => p.EmptyColumnName, new CategoryAttribute(Resources.Options_Category)))
+                    .Register<PromoteHeaders, PromoteHeadersDesigner>(dataTable, m =>
+                    {
+                        m.Register(p => p.EmptyColumnName, new CategoryAttribute(Resources.Options_Category));
+                        m.Register(p => p.AutoRename, booleanPropertyEditorAttribute);
+                    })
                     .Register(typeof(ExtractDataColumnValues<>), typeof(ExtractDataColumnValuesDesigner), new Attribute[] { dataTable, new DefaultTypeArgumentAttribute(typeof(object)) });
 
 
@@ -80,6 +85,8 @@ namespace Autossential.Activities.Design
                         m.Register(new CategoryAttribute(Resources.Options_Category),
                             p => p.LastWriteTime,
                             p => p.SearchPattern);
+
+                        m.Register(p => p.DeleteEmptyFolders, booleanPropertyEditorAttribute);
                     })
                     .Register<EnumerateFiles, EnumerateFilesDesigner>(file, m => m.Register(new CategoryAttribute(Resources.Options_Category), p => p.SearchPattern))
                     .Register<WaitFile, WaitFileDesigner>(file)
@@ -88,9 +95,11 @@ namespace Autossential.Activities.Design
 
                 // FILE COMPRESSION
                 builder
-                    .Register<Zip, ZipDesigner>(fileCompression)
+                    .Register<Zip, ZipDesigner>(fileCompression, m =>
+                        m.Register(p => p.ShortEntryNames, booleanPropertyEditorAttribute))
                     .Register<ZipEntriesCount, ZipEntriesCountDesigner>(fileCompression)
-                    .Register<Unzip, UnzipDesigner>(fileCompression);
+                    .Register<Unzip, UnzipDesigner>(fileCompression, m =>
+                        m.Register(p => p.Overwrite, booleanPropertyEditorAttribute));
 
 
                 // WORKFLOW
@@ -148,13 +157,13 @@ namespace Autossential.Activities.Design
                 builder
                     .Register<Stopwatch, StopwatchDesigner>(appsAndDiagnostics)
                     .Register<TerminateProcess, TerminateProcessDesigner>(appsAndDiagnostics, m =>
-                        m.Register(new EditorAttribute(typeof(BooleanPropertyEditor), typeof(DialogPropertyValueEditor)), p => p.ContinueOnError));
+                        m.Register(p => p.ContinueOnError, booleanPropertyEditorAttribute));
 
 
                 // COMMON / SHARED
                 var continuableActivityTypes = typeof(ContinuableAsyncTaskCodeActivity).GetDerivedTypes().ToArray();
                 builder.RegisterToMember(
-                    new EditorAttribute(typeof(BooleanPropertyEditor), typeof(DialogPropertyValueEditor)),
+                    booleanPropertyEditorAttribute,
                     nameof(ContinuableAsyncTaskCodeActivity.ContinueOnError),
                     continuableActivityTypes);
             });

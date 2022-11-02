@@ -11,6 +11,9 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ActivitiesAttributesBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\ActivityDecoratorControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Editor\BooleanPropertyEditorControl.xaml.cs">
+      <DependentUpon>BooleanPropertyEditorControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\CheckBoxControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Editor\ExpressionDialogEditor.xaml.cs">
       <SubType>Code</SubType>
@@ -32,6 +35,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)TypeExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\Editor\BooleanPropertyEditorControl.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Controls\Editor\ExpressionDialogEditor.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

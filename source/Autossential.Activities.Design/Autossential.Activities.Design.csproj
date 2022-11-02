@@ -21,14 +21,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Controls\Editors\ExpressionDialogEditor.xaml.cs" />
 	  <Compile Remove="Designers\DecryptDataTableDesigner.xaml.cs" />
 	  <Compile Remove="Designers\DecryptTextDesigner.xaml.cs" />
 	  <Compile Remove="Designers\EncryptDataTableDesigner.xaml.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Page Remove="Controls\Editors\ExpressionDialogEditor.xaml" />
 	  <Page Remove="Designers\DecryptDataTableDesigner.xaml" />
 	  <Page Remove="Designers\DecryptTextDesigner.xaml" />
 	  <Page Remove="Designers\EncryptDataTableDesigner.xaml" />
@@ -75,10 +73,6 @@
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
 		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Controls\Editors\" />
 	</ItemGroup>
 
 	<Import Project="..\..\shared\Autossential.Shared.Activities.Design\Autossential.Shared.Activities.Design.projitems" Label="Shared" />

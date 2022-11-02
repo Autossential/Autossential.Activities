@@ -3,14 +3,18 @@ using Autossential.Activities.Design.PropertyEditors;
 using Autossential.Activities.Properties;
 using Autossential.Activities.Security.Algorithms;
 using Autossential.Activities.Workflow;
+using Autossential.Core.Security;
 using Autossential.Core.Security.Algorithms;
+using Autossential.Shared.Activities.Base;
 using Autossential.Shared.Activities.Design;
 using System;
+using System.Activities;
 using System.Activities.Presentation;
 using System.Activities.Presentation.Metadata;
 using System.Activities.Presentation.PropertyEditing;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
 
 namespace Autossential.Activities.Design
 {
@@ -78,10 +82,7 @@ namespace Autossential.Activities.Design
                             p => p.SearchPattern);
                     })
                     .Register<EnumerateFiles, EnumerateFilesDesigner>(file, m => m.Register(new CategoryAttribute(Resources.Options_Category), p => p.SearchPattern))
-                    .Register<WaitFile, WaitFileDesigner>(file, m =>
-                        m.Register(new EditorAttribute(typeof(BooleanPropertyEditor), typeof(DialogPropertyValueEditor)),
-                            p => p.ContinueOnError)
-                     )
+                    .Register<WaitFile, WaitFileDesigner>(file)
                     .Register<WaitDynamicFile, WaitDynamicFileDesigner>(file);
 
 
@@ -127,8 +128,11 @@ namespace Autossential.Activities.Design
                 var encryptionTypes = typeof(SymmetricAlgorithmEncryptionBase<>).GetDerivedTypes().ToArray();
 
                 builder
-                    .RegisterToMember(new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description), "Iterations", encryptionTypes)
-                    .RegisterToMember(new BrowsableAttribute(false), "Result", encryptionTypes);
+                    .RegisterToMember(
+                        new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description),
+                        nameof(SymmetricAlgorithmEncryptionBase<AesEncryption>.Iterations),
+                        encryptionTypes)
+                    .RegisterToMember(new BrowsableAttribute(false), nameof(ActivityWithResult.Result), encryptionTypes);
 
 
 #if NET6_0
@@ -140,11 +144,19 @@ namespace Autossential.Activities.Design
                     });
 #endif
 
-
                 // APPS & DIAGNOSTICS
                 builder
                     .Register<Stopwatch, StopwatchDesigner>(appsAndDiagnostics)
-                    .Register<TerminateProcess, TerminateProcessDesigner>(appsAndDiagnostics);
+                    .Register<TerminateProcess, TerminateProcessDesigner>(appsAndDiagnostics, m =>
+                        m.Register(new EditorAttribute(typeof(BooleanPropertyEditor), typeof(DialogPropertyValueEditor)), p => p.ContinueOnError));
+
+
+                // COMMON / SHARED
+                var continuableActivityTypes = typeof(ContinuableAsyncTaskCodeActivity).GetDerivedTypes().ToArray();
+                builder.RegisterToMember(
+                    new EditorAttribute(typeof(BooleanPropertyEditor), typeof(DialogPropertyValueEditor)),
+                    nameof(ContinuableAsyncTaskCodeActivity.ContinueOnError),
+                    continuableActivityTypes);
             });
         }
     }

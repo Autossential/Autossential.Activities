@@ -805,10 +805,6 @@
     <value>The accepted range is from {0} and {1}. The value will be clamped.</value>
     <comment>error message</comment>
   </data>
-  <data name="WaitDynamicFile_FileInfo_Description" xml:space="preserve">
-    <value>Returns the information about the file.</value>
-    <comment>property description</comment>
-  </data>
   <data name="WaitDynamicFile_FromDateTime_Description" xml:space="preserve">
     <value>Considers only the files whose last write time is greater than this value. If is not set, the value used is the same as the last write time of the most recent file in the folder. If the folder is empty, the current date and time is used.</value>
     <comment>property description</comment>
@@ -844,10 +840,6 @@
   <data name="WaitFile_ErrorMsg_IntervalRange" xml:space="preserve">
     <value>The accepted range is from {0} and {1}. The value will be clamped.</value>
     <comment>error message</comment>
-  </data>
-  <data name="WaitFile_FileInfo_Description" xml:space="preserve">
-    <value>(Optional) Returns the information about the file.</value>
-    <comment>property description</comment>
   </data>
   <data name="WaitFile_FilePath_Description" xml:space="preserve">
     <value>The storage path of the file.</value>

@@ -84,7 +84,9 @@ namespace Autossential.Shared.Activities.Design
         }
 
         public ActivitiesAttributesBuilder Register(Type activityType, Type activityDesignerType, Attribute[] attributes) => Register(activityType, attributes.Concat(new[] { new DesignerAttribute(activityDesignerType) }).ToArray());
+
         public ActivitiesAttributesBuilder Register(Type activityType, Type activityDesignerType) => Register(activityType, activityDesignerType, new Attribute[] { });
+
         private bool TryGetFromResource(string key, out string value)
         {
             value = _resourcesManager.GetString(key);

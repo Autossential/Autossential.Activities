@@ -11,6 +11,9 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ActivitiesAttributesBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\ActivityDecoratorControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\BadgeLabelControl.cs">
+      <DependentUpon>BadgeLabelControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Editor\BooleanPropertyEditorControl.xaml.cs">
       <DependentUpon>BooleanPropertyEditorControl.xaml</DependentUpon>
     </Compile>
@@ -35,6 +38,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)TypeExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\BadgeLabelControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Controls\Editor\BooleanPropertyEditorControl.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <Generator>MSBuild:Compile</Generator>

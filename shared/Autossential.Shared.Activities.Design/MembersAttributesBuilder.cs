@@ -14,6 +14,7 @@ namespace Autossential.Shared.Activities.Design
             _tableBuilder = tableBuilder;
             _activityType = activityType;
         }
+
         public void Register<TActivity>(Attribute attribute, params Expression<Func<TActivity, object>>[] members)
         {
             foreach (var member in members)
@@ -34,7 +35,6 @@ namespace Autossential.Shared.Activities.Design
 
     public sealed class MembersAttributesBuilder<TActivity> : MembersAttributesBuilder where TActivity : class
     {
-
         public MembersAttributesBuilder(AttributeTableBuilder tableBuilder) : base(tableBuilder, typeof(TActivity))
         {
         }

@@ -80,6 +80,7 @@ namespace Autossential.Shared.Activities.Design.Features
         {
             return modelItem?.ItemType.GetGenericArguments()[argIndex];
         }
+
         private static string GetActivityDefaultName(Type activityType)
         {
             return ((Activity)Activator.CreateInstance(activityType)).DisplayName;

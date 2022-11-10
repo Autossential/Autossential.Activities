@@ -18,5 +18,11 @@ namespace Autossential.Shared.Activities.Design
 
             return type.Assembly.GetTypes().Where(t => t.IsSubclassOf(type));
         }
+
+        public static Type GetGenericArgumentType(this Type type)
+        {
+            var args = type.GetGenericArguments();
+            return args.Length == 1 ? args[0] : null;
+        }
     }
 }

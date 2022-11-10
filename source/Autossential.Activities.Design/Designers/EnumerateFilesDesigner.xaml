@@ -51,7 +51,7 @@ xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activiti
                 Expression="{Binding ModelItem.SearchPattern, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
                  Grid.Column="0" Grid.Row="1" />
 
-                <Label Content="Result (Output)" Grid.Column="2" Grid.Row="0"/>
+                <c:BadgeLabelControl Label="Result" Badge="Out" Grid.Row="0" Grid.Column="2"/>
                 <sapv:ExpressionTextBox
                 ExpressionType="{Binding ModelItem.Properties[Result].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"

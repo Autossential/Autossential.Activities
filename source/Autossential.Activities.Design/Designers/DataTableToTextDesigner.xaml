@@ -44,7 +44,7 @@
                 <Label Content="TextFormat" Grid.Row="0" Grid.Column="2" />
                 <ComboBox Grid.Row="1" Grid.Column="2" x:Name="cbTextFormat" SelectedValue="{Binding Path=ModelItem.TextFormat, Mode=TwoWay}" />
             </Grid>
-            <Label Content="Result (Output)"/>
+            <c:BadgeLabelControl Label="Result" Badge="Out" />
             <sapv:ExpressionTextBox
                 Grid.Row="1"
                 Grid.Column="2"

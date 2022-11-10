@@ -32,7 +32,7 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Label Content="Stopwatch (In/Out)" Grid.Row="0" Grid.Column="0"/>
+            <c:BadgeLabelControl Label="Stopwatch" Badge="InOut" Grid.Row="0" Grid.Column="0"/>
             <sapv:ExpressionTextBox Grid.Row="1" Grid.Column="0"
                     ExpressionType="{Binding ModelItem.Properties[ReferenceStopwatch].PropertyType.GenericTypeArguments[0]}"
                     OwnerActivity="{Binding ModelItem}"

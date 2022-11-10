@@ -40,7 +40,7 @@
                 UseLocationExpression="False"
                 Expression="{Binding ModelItem.InputDictionary, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
 
-            <Label Content="Result (Output)" Grid.Row="0" Grid.Column="2" />
+            <c:BadgeLabelControl Label="Result" Badge="Out" Grid.Row="0" Grid.Column="2"/>
             <sapv:ExpressionTextBox
                 Grid.Row="1"
                 Grid.Column="2"

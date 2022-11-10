@@ -51,7 +51,7 @@
 
             </Grid>
 
-            <Label Content="Result (Output)" Grid.Row="0" Grid.Column="2" />
+            <Label Content="Result (Output)" Grid.Row="0" Grid.Column="0" />
             <sapv:ExpressionTextBox ExpressionType="{Binding ModelItem.Properties[Result].PropertyType.GenericTypeArguments[0]}"
                                     OwnerActivity="{Binding Path=ModelItem}"
                                     HintText="Array result"

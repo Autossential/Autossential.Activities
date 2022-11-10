@@ -28,7 +28,7 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Label Content="DataTable (In/Out)" Grid.Row="0"/>
+            <c:BadgeLabelControl Label="DataTable" Badge="InOut" Grid.Row="0" Grid.Column="0"/>
             <sapv:ExpressionTextBox Grid.Row="1"
                                     ExpressionType="{Binding ModelItem.Properties[ReferenceDataTable].PropertyType.GenericTypeArguments[0]}"
                                     OwnerActivity="{Binding Path=ModelItem}"

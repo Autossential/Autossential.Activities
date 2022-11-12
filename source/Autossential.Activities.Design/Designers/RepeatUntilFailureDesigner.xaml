@@ -20,7 +20,7 @@
     </sap:ActivityDesigner.Icon>
 
     <Border>
-        <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+        <c:ActivityDecoratorControl>
             <StackPanel>
                 <sap:WorkflowItemPresenter
                     AutomationProperties.AutomationId="Activity"

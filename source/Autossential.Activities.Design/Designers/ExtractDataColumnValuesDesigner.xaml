@@ -19,7 +19,7 @@
         <DrawingBrush Drawing="{StaticResource ExtractDataColumnValuesIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+    <c:ActivityDecoratorControl>
         <StackPanel Width="300">
             <Grid>
                 <Grid.RowDefinitions>

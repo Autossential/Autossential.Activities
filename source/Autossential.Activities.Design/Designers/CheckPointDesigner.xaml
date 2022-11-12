@@ -19,7 +19,7 @@
         <DrawingBrush Drawing="{StaticResource CheckPointIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+    <c:ActivityDecoratorControl>
         <StackPanel Width="300">
             <Label Content="Expression" />
             <sapv:ExpressionTextBox

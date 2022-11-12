@@ -19,7 +19,7 @@
         <DrawingBrush Drawing="{StaticResource ExitIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}" Width="186">
+    <c:ActivityDecoratorControl Width="186">
         <sapv:ExpressionTextBox
                 Grid.Column="0"
                 ExpressionType="{Binding ModelItem.Properties[Condition].PropertyType.GenericTypeArguments[0]}"

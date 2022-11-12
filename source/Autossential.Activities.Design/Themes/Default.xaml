@@ -7,9 +7,19 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Icons.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
 
-    <Style TargetType="{x:Type shared:ActivityDecoratorControl}" x:Key="ActivityDecoratorStyle">
+    <Style TargetType="sapv:ExpressionTextBox">
+        <Setter Property="Height" Value="23"/>
+        <Setter Property="MinHeight" Value="23" />
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+    </Style>
+
+    <Style TargetType="ComboBox">
+        <Setter Property="Height" Value="23"/>
+    </Style>
+
+    <Style TargetType="{x:Type shared:ActivityDecoratorControl}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type shared:ActivityDecoratorControl}">
@@ -44,16 +54,6 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Resources>
-            <Style TargetType="sapv:ExpressionTextBox">
-                <Setter Property="Height" Value="23" />
-                <Setter Property="VerticalContentAlignment" Value="Stretch" />
-                <Setter Property="MaxLines" Value="1" />
-            </Style>
-            <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
-                <Setter Property="Height" Value="23" />
-            </Style>
-        </Style.Resources>
     </Style>
 
 </ResourceDictionary>

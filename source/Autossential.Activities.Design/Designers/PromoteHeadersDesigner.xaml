@@ -19,7 +19,7 @@
         <DrawingBrush Drawing="{StaticResource PromoteHeadersIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+    <c:ActivityDecoratorControl>
         <Grid Width="300">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />

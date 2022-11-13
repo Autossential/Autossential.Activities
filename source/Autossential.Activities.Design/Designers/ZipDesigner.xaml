@@ -4,7 +4,8 @@
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
-    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls">
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls"
+    xmlns:as="clr-namespace:Autossential.Activities.Properties;assembly=Autossential.Activities">
 
     <sap:ActivityDesigner.Resources>
         <ResourceDictionary>
@@ -28,27 +29,35 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Label Content="ToCompress" Grid.Row="0" />
+            <Label
+                Content="{x:Static as:Resources.Zip_ToCompress_DisplayName}" 
+                ToolTip="{x:Static as:Resources.Zip_ToCompress_Description}"  
+                Grid.Row="0" />
             <sapv:ExpressionTextBox
                 Grid.Row="1"
                 ExpressionType="{Binding ModelItem.Properties[ToCompress].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
                 Margin="0,0,23,0"
-                Expression="{Binding ModelItem.ToCompress, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
+                Expression="{Binding ModelItem.ToCompress, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
+                HintText="Enter a path or collection of paths"/>
             <c:FilePickerControl Grid.Row="1" HorizontalAlignment="Right"
                                         PropertyName="ToCompress"
                                         ModelItem="{Binding ModelItem}"
                                         Multiselect="True" />
 
-            <Label Content="ZipFilePath" Grid.Row="2" />
+            <Label
+                Content="{x:Static as:Resources.Zip_ZipFilePath_DisplayName}" 
+                ToolTip="{x:Static as:Resources.Zip_ZipFilePath_Description}"  
+                Grid.Row="2" />
             <sapv:ExpressionTextBox
                 Grid.Row="3"
                 ExpressionType="{Binding ModelItem.Properties[ZipFilePath].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
                 Margin="0,0,23,0"
-                Expression="{Binding ModelItem.ZipFilePath, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
+                Expression="{Binding ModelItem.ZipFilePath, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
+                HintText="Enter a zip file path"/>
             <c:FilePickerControl Grid.Row="3" HorizontalAlignment="Right"
                                         PropertyName="ZipFilePath"
                                         ModelItem="{Binding ModelItem}"

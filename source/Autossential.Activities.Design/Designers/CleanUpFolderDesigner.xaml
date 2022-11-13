@@ -4,7 +4,8 @@
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
-    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls">
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls"
+    xmlns:as="clr-namespace:Autossential.Activities.Properties;assembly=Autossential.Activities">
 
     <sap:ActivityDesigner.Resources>
         <ResourceDictionary>
@@ -30,13 +31,17 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Label Content="Folder" Grid.Row="0" />
+            <Label 
+                Content="{x:Static as:Resources.CleanUpFolder_Folder_DisplayName}" 
+                ToolTip="{x:Static as:Resources.CleanUpFolder_Folder_Description}"
+                Grid.Row="0"/>
             <sapv:ExpressionTextBox
                 Grid.Row="1"
                 ExpressionType="{Binding ModelItem.Properties[Folder].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
                 Margin="0,0,23,0"
+                HintText="Enter a folder path"
                 Expression="{Binding ModelItem.Folder, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
 
             
@@ -44,24 +49,34 @@
                                         PropertyName="Folder"
                                         ModelItem="{Binding ModelItem}" />
 
-            <Label Content="LastWriteTime" Grid.Row="2" />
-                        
-            <sapv:ExpressionTextBox
-                Grid.Row="3"
-                ExpressionType="{Binding ModelItem.Properties[LastWriteTime].PropertyType.GenericTypeArguments[0]}"
-                OwnerActivity="{Binding ModelItem}"
-                UseLocationExpression="False"
-                HintText="(Optional) Default is DateTime.Now"
-                Expression="{Binding ModelItem.LastWriteTime, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
 
-            <Label Content="SearchPattern" Grid.Row="4" />
+            <Label 
+                Content="{x:Static as:Resources.CleanUpFolder_SearchPattern_DisplayName}" 
+                ToolTip="{x:Static as:Resources.CleanUpFolder_SearchPattern_Description}"
+                Grid.Row="2"/>
+
             <sapv:ExpressionTextBox
                 ExpressionType="{Binding ModelItem.Properties[SearchPattern].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
                 HintText='(Optional) Default is "*.*"'
                 Expression="{Binding ModelItem.SearchPattern, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
-                Grid.Row="5" />
+                Grid.Row="3" />
+
+
+            <Label 
+                Content="{x:Static as:Resources.CleanUpFolder_LastWriteTime_DisplayName}" 
+                ToolTip="{x:Static as:Resources.CleanUpFolder_LastWriteTime_Description}"
+                Grid.Row="4" />
+            <sapv:ExpressionTextBox
+                Grid.Row="5"
+                ExpressionType="{Binding ModelItem.Properties[LastWriteTime].PropertyType.GenericTypeArguments[0]}"
+                OwnerActivity="{Binding ModelItem}"
+                UseLocationExpression="False"
+                HintText="(Optional) Default is DateTime.Now"
+                Expression="{Binding ModelItem.LastWriteTime, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
+
+            
         </Grid>
     </c:ActivityDecoratorControl>
 </sap:ActivityDesigner>

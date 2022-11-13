@@ -4,7 +4,8 @@
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
-    Collapsible="False">
+    Collapsible="False"
+    xmlns:as="clr-namespace:Autossential.Activities.Properties;assembly=Autossential.Activities">
 
     <sap:ActivityDesigner.Resources>
         <ResourceDictionary>
@@ -25,7 +26,7 @@
             ExpressionType="{Binding ModelItem.Properties[Value].PropertyType.GenericTypeArguments[0]}"
             OwnerActivity="{Binding ModelItem}"
             UseLocationExpression="False"
-            HintText="Expression to be evaluated"
+            HintText="Enter a expression to be evaluated"
             Expression="{Binding ModelItem.Value, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
     </StackPanel>
 </sap:ActivityDesigner>

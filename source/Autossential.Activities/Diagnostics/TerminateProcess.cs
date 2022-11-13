@@ -41,7 +41,7 @@ namespace Autossential.Activities
         }
 
         const int WaitForExit = 3000;
-        const int DelayForNext = 50;
+        const int DelayForNext = 100;
         const int DelayNonGUI = 500;
 
         protected override void Execute(CodeActivityContext context)

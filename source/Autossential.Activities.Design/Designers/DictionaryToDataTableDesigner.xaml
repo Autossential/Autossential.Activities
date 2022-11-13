@@ -4,7 +4,8 @@
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
-    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls">
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls"
+    xmlns:as="clr-namespace:Autossential.Activities.Properties;assembly=Autossential.Activities">
 
     <sap:ActivityDesigner.Resources>
         <ResourceDictionary>
@@ -31,7 +32,10 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Content="Dictionary" Grid.Row="0" Grid.Column="0" />
+            <Label 
+                Content="{x:Static as:Resources.DictionaryToDataTable_InputDictionary_DisplayName}" 
+                ToolTip="{x:Static as:Resources.DictionaryToDataTable_InputDictionary_Description}"
+                Grid.Row="0" Grid.Column="0" />
             <sapv:ExpressionTextBox
                 Grid.Row="1"
                 Grid.Column="0"
@@ -40,7 +44,10 @@
                 UseLocationExpression="False"
                 Expression="{Binding ModelItem.InputDictionary, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
 
-            <c:BadgeLabelControl Label="Result" Badge="Out" Grid.Row="0" Grid.Column="2"/>
+            <c:BadgeLabelControl 
+                Label="{x:Static as:Resources.DictionaryToDataTable_Result_DisplayName}" 
+                ToolTip="{x:Static as:Resources.DictionaryToDataTable_Result_Description}"
+                Badge="Out" Grid.Row="0" Grid.Column="2"/>
             <sapv:ExpressionTextBox
                 Grid.Row="1"
                 Grid.Column="2"

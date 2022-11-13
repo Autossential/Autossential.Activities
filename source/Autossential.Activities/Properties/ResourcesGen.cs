@@ -1,4 +1,5 @@
-﻿// ################################
+﻿
+// ################################
 // THIS FILE IS AUTO-GENERATE BY T4
 // ################################
 
@@ -148,6 +149,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Timeout'.
+        /// </summary>
+        public static string WaitDynamicFile_Timeout_DisplayName => ResourceManager.GetString("WaitDynamicFile_Timeout_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Condition which determines if the activity will be evaluated. If empty it assumes True.'.
         /// </summary>
         public static string Next_Condition_Description => ResourceManager.GetString("Next_Condition_Description", Culture);
@@ -157,6 +164,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Triple DES'.
         /// </summary>
         public static string TripleDESAlgorithmEncryption_DisplayName => ResourceManager.GetString("TripleDESAlgorithmEncryption_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'ToCompress'.
+        /// </summary>
+        public static string Zip_ToCompress_DisplayName => ResourceManager.GetString("Zip_ToCompress_DisplayName", Culture);
     
 
         /// <summary>
@@ -202,6 +215,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string TextEncryption_Result_DisplayName => ResourceManager.GetString("TextEncryption_Result_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The DataTable.'.
         /// </summary>
         public static string DataTableToText_DataTable_Description => ResourceManager.GetString("DataTableToText_DataTable_Description", Culture);
@@ -220,6 +239,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Mode'.
+        /// </summary>
+        public static string RemoveEmptyRows_Mode_DisplayName => ResourceManager.GetString("RemoveEmptyRows_Mode_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Returns the number of entries (files and folders) from a Zip archive.'.
         /// </summary>
         public static string ZipEntriesCount_Description => ResourceManager.GetString("ZipEntriesCount_Description", Culture);
@@ -229,6 +254,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Please provide an output variable for at least one of the available options.'.
         /// </summary>
         public static string ZipEntriesCount_ErrorMsg_OutputMissing => ResourceManager.GetString("ZipEntriesCount_ErrorMsg_OutputMissing", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'ProcessName'.
+        /// </summary>
+        public static string TerminateProcess_ProcessName_DisplayName => ResourceManager.GetString("TerminateProcess_ProcessName_DisplayName", Culture);
     
 
         /// <summary>
@@ -250,15 +281,33 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Expression'.
+        /// </summary>
+        public static string CheckPoint_Expression_DisplayName => ResourceManager.GetString("CheckPoint_Expression_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'EntriesCount'.
+        /// </summary>
+        public static string ZipEntriesCount_EntriesCount_DisplayName => ResourceManager.GetString("ZipEntriesCount_EntriesCount_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Tries to gracefully close all instances of the applications corresponding to the specified processes. If not possible, it kills the process.'.
+        /// </summary>
+        public static string TerminateProcess_Description => ResourceManager.GetString("TerminateProcess_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Compress files into a zip archive.'.
         /// </summary>
         public static string Zip_Description => ResourceManager.GetString("Zip_Description", Culture);
     
 
         /// <summary>
-        /// Looks up a localized string similar to '(Optional) Returns the information about the file.'.
+        /// Looks up a localized string similar to 'Variable'.
         /// </summary>
-        public static string WaitFile_FileInfo_Description => ResourceManager.GetString("WaitFile_FileInfo_Description", Culture);
+        public static string Increment_Variable_DisplayName => ResourceManager.GetString("Increment_Variable_DisplayName", Culture);
     
 
         /// <summary>
@@ -280,9 +329,27 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The name of the process to close or kill. Can be either a single name or a list of names.'.
+        /// </summary>
+        public static string TerminateProcess_ProcessName_Description => ResourceManager.GetString("TerminateProcess_ProcessName_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'LastWriteTime'.
+        /// </summary>
+        public static string CleanUpFolder_LastWriteTime_DisplayName => ResourceManager.GetString("CleanUpFolder_LastWriteTime_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The items to be added to the collection.'.
         /// </summary>
         public static string AddRangeToCollection_Items_Description => ResourceManager.GetString("AddRangeToCollection_Items_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string PromoteHeaders_Result_DisplayName => ResourceManager.GetString("PromoteHeaders_Result_DisplayName", Culture);
     
 
         /// <summary>
@@ -295,6 +362,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Replaces an empty column name by the value of this property.'.
         /// </summary>
         public static string PromoteHeaders_EmptyColumnName_Description => ResourceManager.GetString("PromoteHeaders_EmptyColumnName_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The FileInfo object of the respective file when found.'.
+        /// </summary>
+        public static string WaitDynamicFile_Result_Description => ResourceManager.GetString("WaitDynamicFile_Result_Description", Culture);
     
 
         /// <summary>
@@ -334,6 +407,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Interval'.
+        /// </summary>
+        public static string WaitFile_Interval_DisplayName => ResourceManager.GetString("WaitFile_Interval_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Executes the 'Do' block if the condition activity returns true.'.
         /// </summary>
         public static string WhenDo_Description => ResourceManager.GetString("WhenDo_Description", Culture);
@@ -343,6 +422,18 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Specifies the amount of time in milliseconds to wait for the activity to run before an error is thrown. The default value is 30000 (30s).'.
         /// </summary>
         public static string Common_Timeout => ResourceManager.GetString("Common_Timeout", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Column'.
+        /// </summary>
+        public static string ExtractDataColumnValues_Column_DisplayName => ResourceManager.GetString("ExtractDataColumnValues_Column_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string DataTableToText_Result_DisplayName => ResourceManager.GetString("DataTableToText_Result_DisplayName", Culture);
     
 
         /// <summary>
@@ -358,6 +449,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Function'.
+        /// </summary>
+        public static string Aggregate_Function_DisplayName => ResourceManager.GetString("Aggregate_Function_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'An object containing the number of files deleted, folders deleted and total deleted.'.
         /// </summary>
         public static string CleanUpFolder_Result_Description => ResourceManager.GetString("CleanUpFolder_Result_Description", Culture);
@@ -370,6 +467,30 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Exception'.
+        /// </summary>
+        public static string CheckPoint_Exception_DisplayName => ResourceManager.GetString("CheckPoint_Exception_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'ParallelProcessing'.
+        /// </summary>
+        public static string DataTableEncryption_ParallelProcessing_DisplayName => ResourceManager.GetString("DataTableEncryption_ParallelProcessing_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string ExtractDataColumnValues_Result_DisplayName => ResourceManager.GetString("ExtractDataColumnValues_Result_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'TextEncoding'.
+        /// </summary>
+        public static string DataTableEncryption_TextEncoding_DisplayName => ResourceManager.GetString("DataTableEncryption_TextEncoding_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The maximum number of repetitions to stop the loop in case no exception occur. If not set, its default value is 300.'.
         /// </summary>
         public static string RepeatUntilFailure_MaximumRepetitions_Description => ResourceManager.GetString("RepeatUntilFailure_MaximumRepetitions_Description", Culture);
@@ -379,6 +500,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'If set, continue executing the remaining activities even if the current activity has failed.'.
         /// </summary>
         public static string Common_ContinueOnError => ResourceManager.GetString("Common_ContinueOnError", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'DataRow'.
+        /// </summary>
+        public static string DataRowToDictionary_InputDataRow_DisplayName => ResourceManager.GetString("DataRowToDictionary_InputDataRow_DisplayName", Culture);
     
 
         /// <summary>
@@ -400,9 +527,21 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'DataTable'.
+        /// </summary>
+        public static string RemoveEmptyRows_InputDataTable_DisplayName => ResourceManager.GetString("RemoveEmptyRows_InputDataTable_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'A container that allows you to run a set of activities over a different culture.'.
         /// </summary>
         public static string CultureScope_Description => ResourceManager.GetString("CultureScope_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Terminate Process'.
+        /// </summary>
+        public static string TerminateProcess_DisplayName => ResourceManager.GetString("TerminateProcess_DisplayName", Culture);
     
 
         /// <summary>
@@ -418,6 +557,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Value'.
+        /// </summary>
+        public static string IsTrue_Value_DisplayName => ResourceManager.GetString("IsTrue_Value_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Clean Up Folder'.
         /// </summary>
         public static string CleanUpFolder_DisplayName => ResourceManager.GetString("CleanUpFolder_DisplayName", Culture);
@@ -427,6 +572,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Remove Data Columns'.
         /// </summary>
         public static string RemoveDataColumns_DisplayName => ResourceManager.GetString("RemoveDataColumns_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Iterations'.
+        /// </summary>
+        public static string SymmetricAlgorithmEncryptionBase_Iterations_DisplayName => ResourceManager.GetString("SymmetricAlgorithmEncryptionBase_Iterations_DisplayName", Culture);
     
 
         /// <summary>
@@ -451,6 +602,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Determines the evaluation condition for the specified columns where (And) checks if all columns are empty and (Or) checks if any of the columns are empty.'.
         /// </summary>
         public static string RemoveEmptyRows_Operator_Description => ResourceManager.GetString("RemoveEmptyRows_Operator_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Data'.
+        /// </summary>
+        public static string CheckPoint_Data_DisplayName => ResourceManager.GetString("CheckPoint_Data_DisplayName", Culture);
     
 
         /// <summary>
@@ -544,6 +701,18 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'DateTimeFormat'.
+        /// </summary>
+        public static string DataTableToText_DateTimeFormat_DisplayName => ResourceManager.GetString("DataTableToText_DateTimeFormat_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string DataRowToDictionary_Result_DisplayName => ResourceManager.GetString("DataRowToDictionary_Result_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Stopwatch'.
         /// </summary>
         public static string Stopwatch_ReferenceStopwatch_DisplayName => ResourceManager.GetString("Stopwatch_ReferenceStopwatch_DisplayName", Culture);
@@ -562,15 +731,45 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string WaitFile_Result_DisplayName => ResourceManager.GetString("WaitFile_Result_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'DataTable'.
+        /// </summary>
+        public static string RemoveDuplicateRows_InputDataTable_DisplayName => ResourceManager.GetString("RemoveDuplicateRows_InputDataTable_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'RC2'.
         /// </summary>
         public static string RC2AlgorithmEncryption_DisplayName => ResourceManager.GetString("RC2AlgorithmEncryption_DisplayName", Culture);
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Sort'.
+        /// </summary>
+        public static string DataTableEncryption_Sort_DisplayName => ResourceManager.GetString("DataTableEncryption_Sort_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The column name or index where the values will be extracted from.'.
         /// </summary>
         public static string ExtractDataColumnValues_Column_Description => ResourceManager.GetString("ExtractDataColumnValues_Column_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Key'.
+        /// </summary>
+        public static string TextEncryption_Key_DisplayName => ResourceManager.GetString("TextEncryption_Key_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Overwrite'.
+        /// </summary>
+        public static string Unzip_Overwrite_DisplayName => ResourceManager.GetString("Unzip_Overwrite_DisplayName", Culture);
     
 
         /// <summary>
@@ -583,6 +782,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'DataRow To Dictionary'.
         /// </summary>
         public static string DataRowToDictionary_DisplayName => ResourceManager.GetString("DataRowToDictionary_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'DataTable'.
+        /// </summary>
+        public static string TransposeData_InputDataTable_DisplayName => ResourceManager.GetString("TransposeData_InputDataTable_DisplayName", Culture);
     
 
         /// <summary>
@@ -607,6 +812,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Toggles the 'Else' block activating or deactivating it. '.
         /// </summary>
         public static string WhenDo_WithElse_Description => ResourceManager.GetString("WhenDo_WithElse_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'IterationNumber'.
+        /// </summary>
+        public static string RepeatUntilFailure_IterationNumber_DisplayName => ResourceManager.GetString("RepeatUntilFailure_IterationNumber_DisplayName", Culture);
     
 
         /// <summary>
@@ -640,6 +851,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'TextEncoding'.
+        /// </summary>
+        public static string Zip_TextEncoding_DisplayName => ResourceManager.GetString("Zip_TextEncoding_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The exception which caused the loop break. This result can be null in case of no exceptions did occur.'.
         /// </summary>
         public static string RepeatUntilFailure_OutputException_Description => ResourceManager.GetString("RepeatUntilFailure_OutputException_Description", Culture);
@@ -652,6 +869,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Pattern'.
+        /// </summary>
+        public static string ReplaceTokens_Pattern_DisplayName => ResourceManager.GetString("ReplaceTokens_Pattern_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The path of the zip archive.'.
         /// </summary>
         public static string Zip_ZipFilePath_Description => ResourceManager.GetString("Zip_ZipFilePath_Description", Culture);
@@ -661,6 +884,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Promote Headers'.
         /// </summary>
         public static string PromoteHeaders_DisplayName => ResourceManager.GetString("PromoteHeaders_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'TextFormat'.
+        /// </summary>
+        public static string DataTableToText_TextFormat_DisplayName => ResourceManager.GetString("DataTableToText_TextFormat_DisplayName", Culture);
     
 
         /// <summary>
@@ -784,6 +1013,42 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Value'.
+        /// </summary>
+        public static string Increment_Value_DisplayName => ResourceManager.GetString("Increment_Value_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Exclusions'.
+        /// </summary>
+        public static string EnumerateFiles_Exclusions_DisplayName => ResourceManager.GetString("EnumerateFiles_Exclusions_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'ShortEntryNames'.
+        /// </summary>
+        public static string Zip_ShortEntryNames_DisplayName => ResourceManager.GetString("Zip_ShortEntryNames_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'DeleteEmptyFolders'.
+        /// </summary>
+        public static string CleanUpFolder_DeleteEmptyFolders_DisplayName => ResourceManager.GetString("CleanUpFolder_DeleteEmptyFolders_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'DirectoryPath'.
+        /// </summary>
+        public static string EnumerateFiles_DirectoryPath_DisplayName => ResourceManager.GetString("EnumerateFiles_DirectoryPath_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string IsTrue_Result_DisplayName => ResourceManager.GetString("IsTrue_Result_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The desired culture, eg.: en-US, pt-BR, jp-JP, etc.'.
         /// </summary>
         public static string CultureScope_CultureName_Description => ResourceManager.GetString("CultureScope_CultureName_Description", Culture);
@@ -793,6 +1058,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Remove Duplicate Rows'.
         /// </summary>
         public static string RemoveDuplicateRows_DisplayName => ResourceManager.GetString("RemoveDuplicateRows_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'TextEncoding'.
+        /// </summary>
+        public static string TextEncryption_TextEncoding_DisplayName => ResourceManager.GetString("TextEncryption_TextEncoding_DisplayName", Culture);
     
 
         /// <summary>
@@ -814,6 +1085,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Columns'.
+        /// </summary>
+        public static string RemoveDuplicateRows_Columns_DisplayName => ResourceManager.GetString("RemoveDuplicateRows_Columns_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The key to be use. Can be a string or a SecureString.'.
         /// </summary>
         public static string TextEncryption_Key_Description => ResourceManager.GetString("TextEncryption_Key_Description", Culture);
@@ -832,15 +1109,27 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Collection'.
+        /// </summary>
+        public static string AddRangeToCollection_Collection_DisplayName => ResourceManager.GetString("AddRangeToCollection_Collection_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string RemoveDuplicateRows_Result_DisplayName => ResourceManager.GetString("RemoveDuplicateRows_Result_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Cannot be used outside of {0} activities.'.
         /// </summary>
         public static string Validation_ScopesError => ResourceManager.GetString("Validation_ScopesError", Culture);
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'Returns the information about the file.'.
+        /// Looks up a localized string similar to 'The FileInfo object of the respective file when found.'.
         /// </summary>
-        public static string WaitDynamicFile_FileInfo_Description => ResourceManager.GetString("WaitDynamicFile_FileInfo_Description", Culture);
+        public static string WaitFile_Result_Description => ResourceManager.GetString("WaitFile_Result_Description", Culture);
     
 
         /// <summary>
@@ -850,15 +1139,45 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Input'.
+        /// </summary>
+        public static string DataTableEncryption_Input_DisplayName => ResourceManager.GetString("DataTableEncryption_Input_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Reverses the order of the output index.'.
         /// </summary>
         public static string Iterate_Reverse_Description => ResourceManager.GetString("Iterate_Reverse_Description", Culture);
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Interval'.
+        /// </summary>
+        public static string WaitDynamicFile_Interval_DisplayName => ResourceManager.GetString("WaitDynamicFile_Interval_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Provides methods to encrypt or decrypt the values of a DataTable using a specified algorithm and key.'.
         /// </summary>
         public static string DataTableEncryption_Description => ResourceManager.GetString("DataTableEncryption_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'FolderPath'.
+        /// </summary>
+        public static string WaitDynamicFile_DirectoryPath_DisplayName => ResourceManager.GetString("WaitDynamicFile_DirectoryPath_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Dictionary'.
+        /// </summary>
+        public static string DictionaryToDataTable_InputDictionary_DisplayName => ResourceManager.GetString("DictionaryToDataTable_InputDictionary_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Value'.
+        /// </summary>
+        public static string Decrement_Value_DisplayName => ResourceManager.GetString("Decrement_Value_DisplayName", Culture);
     
 
         /// <summary>
@@ -871,6 +1190,18 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'One of the enumeration values that indicates whether to emphasize speed or compression.'.
         /// </summary>
         public static string Zip_CompressionLevel_Description => ResourceManager.GetString("Zip_CompressionLevel_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'FromDateTime'.
+        /// </summary>
+        public static string WaitDynamicFile_FromDateTime_DisplayName => ResourceManager.GetString("WaitDynamicFile_FromDateTime_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Timeout'.
+        /// </summary>
+        public static string WaitFile_Timeout_DisplayName => ResourceManager.GetString("WaitFile_Timeout_DisplayName", Culture);
     
 
         /// <summary>
@@ -898,9 +1229,21 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'Determines if the left empty folders after files deletion must also be deleted. Default is true.'.
+        /// Looks up a localized string similar to 'Determines if the left empty folders after files deletion must also be deleted.'.
         /// </summary>
         public static string CleanUpFolder_DeleteEmptyFolders_Description => ResourceManager.GetString("CleanUpFolder_DeleteEmptyFolders_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'LoopInterval'.
+        /// </summary>
+        public static string RepeatUntilFailure_LoopInterval_DisplayName => ResourceManager.GetString("RepeatUntilFailure_LoopInterval_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Inverted'.
+        /// </summary>
+        public static string WhenDo_Inverted_DisplayName => ResourceManager.GetString("WhenDo_Inverted_DisplayName", Culture);
     
 
         /// <summary>
@@ -913,6 +1256,18 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Extracting Zip entry would have resulted in a file outside the specified destination directory.'.
         /// </summary>
         public static string Unzip_ErrorMsg_OutsideDir => ResourceManager.GetString("Unzip_ErrorMsg_OutsideDir", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'FilePath'.
+        /// </summary>
+        public static string WaitFile_FilePath_DisplayName => ResourceManager.GetString("WaitFile_FilePath_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Columns'.
+        /// </summary>
+        public static string RemoveDataColumns_Columns_DisplayName => ResourceManager.GetString("RemoveDataColumns_Columns_DisplayName", Culture);
     
 
         /// <summary>
@@ -931,6 +1286,18 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The output DataTable.'.
         /// </summary>
         public static string RemoveEmptyRows_Result_Description => ResourceManager.GetString("RemoveEmptyRows_Result_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'SearchPattern'.
+        /// </summary>
+        public static string CleanUpFolder_SearchPattern_DisplayName => ResourceManager.GetString("CleanUpFolder_SearchPattern_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'MaximumRepetitions'.
+        /// </summary>
+        public static string RepeatUntilFailure_MaximumRepetitions_DisplayName => ResourceManager.GetString("RepeatUntilFailure_MaximumRepetitions_DisplayName", Culture);
     
 
         /// <summary>
@@ -955,6 +1322,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The output DataTable resulting of the transpose.'.
         /// </summary>
         public static string TransposeData_Result_Description => ResourceManager.GetString("TransposeData_Result_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'EmptyColumnName'.
+        /// </summary>
+        public static string PromoteHeaders_EmptyColumnName_DisplayName => ResourceManager.GetString("PromoteHeaders_EmptyColumnName_DisplayName", Culture);
     
 
         /// <summary>
@@ -988,9 +1361,33 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'DataTable'.
+        /// </summary>
+        public static string DataTableToText_DataTable_DisplayName => ResourceManager.GetString("DataTableToText_DataTable_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'DefaultValue'.
+        /// </summary>
+        public static string ExtractDataColumnValues_DefaultValue_DisplayName => ResourceManager.GetString("ExtractDataColumnValues_DefaultValue_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The input DataTable.'.
         /// </summary>
         public static string RemoveEmptyRows_InputDataTable_Description => ResourceManager.GetString("RemoveEmptyRows_InputDataTable_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'AutoRename'.
+        /// </summary>
+        public static string PromoteHeaders_AutoRename_DisplayName => ResourceManager.GetString("PromoteHeaders_AutoRename_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'CultureName'.
+        /// </summary>
+        public static string CultureScope_CultureName_DisplayName => ResourceManager.GetString("CultureScope_CultureName_DisplayName", Culture);
     
 
         /// <summary>
@@ -1018,15 +1415,39 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'DataTable'.
+        /// </summary>
+        public static string Aggregate_InputDataTable_DisplayName => ResourceManager.GetString("Aggregate_InputDataTable_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'ExtractTo'.
+        /// </summary>
+        public static string Unzip_ExtractTo_DisplayName => ResourceManager.GetString("Unzip_ExtractTo_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The decrement value.'.
         /// </summary>
         public static string Decrement_Value_Description => ResourceManager.GetString("Decrement_Value_Description", Culture);
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'WaitForExist'.
+        /// </summary>
+        public static string WaitFile_WaitForExist_DisplayName => ResourceManager.GetString("WaitFile_WaitForExist_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The text to be encrypted or decrypted.'.
         /// </summary>
         public static string TextEncryption_Input_Description => ResourceManager.GetString("TextEncryption_Input_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Condition'.
+        /// </summary>
+        public static string Next_Condition_DisplayName => ResourceManager.GetString("Next_Condition_DisplayName", Culture);
     
 
         /// <summary>
@@ -1042,15 +1463,39 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Columns'.
+        /// </summary>
+        public static string DataTableEncryption_Columns_DisplayName => ResourceManager.GetString("DataTableEncryption_Columns_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Reverse'.
+        /// </summary>
+        public static string Iterate_Reverse_DisplayName => ResourceManager.GetString("Iterate_Reverse_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The path to the folder where files will be extracted.'.
         /// </summary>
         public static string Unzip_ExtractTo_Description => ResourceManager.GetString("Unzip_ExtractTo_Description", Culture);
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'ZipFilePath'.
+        /// </summary>
+        public static string Zip_ZipFilePath_DisplayName => ResourceManager.GetString("Zip_ZipFilePath_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The date format to be used on the string representation for DateTime column types.'.
         /// </summary>
         public static string DataTableToText_DateTimeFormat_Description => ResourceManager.GetString("DataTableToText_DateTimeFormat_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'OutputException'.
+        /// </summary>
+        public static string RepeatUntilFailure_OutputException_DisplayName => ResourceManager.GetString("RepeatUntilFailure_OutputException_DisplayName", Culture);
     
 
         /// <summary>
@@ -1063,6 +1508,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The maximum timeout to wait in milliseconds.'.
         /// </summary>
         public static string WaitDynamicFile_Timeout_Description => ResourceManager.GetString("WaitDynamicFile_Timeout_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'ZipFilePath'.
+        /// </summary>
+        public static string Unzip_ZipFilePath_DisplayName => ResourceManager.GetString("Unzip_ZipFilePath_DisplayName", Culture);
     
 
         /// <summary>
@@ -1084,6 +1535,24 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'DataTable'.
+        /// </summary>
+        public static string PromoteHeaders_InputDataTable_DisplayName => ResourceManager.GetString("PromoteHeaders_InputDataTable_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string EnumerateFiles_Result_DisplayName => ResourceManager.GetString("EnumerateFiles_Result_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string DictionaryToDataTable_Result_DisplayName => ResourceManager.GetString("DictionaryToDataTable_Result_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Transposes a DataTable by swapping its rows and columns so that rows become columns and columns become rows.'.
         /// </summary>
         public static string TransposeData_Description => ResourceManager.GetString("TransposeData_Description", Culture);
@@ -1102,9 +1571,33 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Key'.
+        /// </summary>
+        public static string DataTableEncryption_Key_DisplayName => ResourceManager.GetString("DataTableEncryption_Key_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Iterations'.
+        /// </summary>
+        public static string Iterate_Iterations_DisplayName => ResourceManager.GetString("Iterate_Iterations_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Waits until an unknown file be available by monitoring a specified folder.'.
         /// </summary>
         public static string WaitDynamicFile_Description => ResourceManager.GetString("WaitDynamicFile_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string CleanUpFolder_Result_DisplayName => ResourceManager.GetString("CleanUpFolder_Result_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string DataTableEncryption_Result_DisplayName => ResourceManager.GetString("DataTableEncryption_Result_DisplayName", Culture);
     
 
         /// <summary>
@@ -1120,9 +1613,27 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'CompressionLevel'.
+        /// </summary>
+        public static string Zip_CompressionLevel_DisplayName => ResourceManager.GetString("Zip_CompressionLevel_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'DataTable'.
         /// </summary>
         public static string RemoveDataColumns_ReferenceDataTable_DisplayName => ResourceManager.GetString("RemoveDataColumns_ReferenceDataTable_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'SearchPattern'.
+        /// </summary>
+        public static string WaitDynamicFile_SearchPattern_DisplayName => ResourceManager.GetString("WaitDynamicFile_SearchPattern_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string Aggregate_Result_DisplayName => ResourceManager.GetString("Aggregate_Result_DisplayName", Culture);
     
 
         /// <summary>
@@ -1144,6 +1655,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Content'.
+        /// </summary>
+        public static string ReplaceTokens_Content_DisplayName => ResourceManager.GetString("ReplaceTokens_Content_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Repeat Until Failure'.
         /// </summary>
         public static string RepeatUntilFailure_DisplayName => ResourceManager.GetString("RepeatUntilFailure_DisplayName", Culture);
@@ -1162,15 +1679,63 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string WaitDynamicFile_Result_DisplayName => ResourceManager.GetString("WaitDynamicFile_Result_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Method'.
+        /// </summary>
+        public static string Stopwatch_Method_DisplayName => ResourceManager.GetString("Stopwatch_Method_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Extract Data Column Values'.
         /// </summary>
         public static string ExtractDataColumnValues_DisplayName => ResourceManager.GetString("ExtractDataColumnValues_DisplayName", Culture);
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Action'.
+        /// </summary>
+        public static string DataTableEncryption_Action_DisplayName => ResourceManager.GetString("DataTableEncryption_Action_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string ReplaceTokens_Result_DisplayName => ResourceManager.GetString("ReplaceTokens_Result_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Action'.
+        /// </summary>
+        public static string TextEncryption_Action_DisplayName => ResourceManager.GetString("TextEncryption_Action_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Dictionary'.
+        /// </summary>
+        public static string ReplaceTokens_InputDictionary_DisplayName => ResourceManager.GetString("ReplaceTokens_InputDictionary_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The directory to be monitored.'.
         /// </summary>
         public static string WaitDynamicFile_DirectoryPath_Description => ResourceManager.GetString("WaitDynamicFile_DirectoryPath_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Columns'.
+        /// </summary>
+        public static string RemoveEmptyRows_Columns_DisplayName => ResourceManager.GetString("RemoveEmptyRows_Columns_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Operator'.
+        /// </summary>
+        public static string RemoveEmptyRows_Operator_DisplayName => ResourceManager.GetString("RemoveEmptyRows_Operator_DisplayName", Culture);
     
 
         /// <summary>
@@ -1183,6 +1748,18 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The placeholder where each dictionary key will found.'.
         /// </summary>
         public static string ReplaceTokens_Placeholder_Description => ResourceManager.GetString("ReplaceTokens_Placeholder_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Items'.
+        /// </summary>
+        public static string AddRangeToCollection_Items_DisplayName => ResourceManager.GetString("AddRangeToCollection_Items_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'SearchOption'.
+        /// </summary>
+        public static string EnumerateFiles_SearchOption_DisplayName => ResourceManager.GetString("EnumerateFiles_SearchOption_DisplayName", Culture);
     
 
         /// <summary>
@@ -1201,6 +1778,24 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The data table where the values will be extracted from.'.
         /// </summary>
         public static string ExtractDataColumnValues_DataTable_Description => ResourceManager.GetString("ExtractDataColumnValues_DataTable_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Input'.
+        /// </summary>
+        public static string TextEncryption_Input_DisplayName => ResourceManager.GetString("TextEncryption_Input_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Placeholder'.
+        /// </summary>
+        public static string ReplaceTokens_Placeholder_DisplayName => ResourceManager.GetString("ReplaceTokens_Placeholder_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'TypeArgument'.
+        /// </summary>
+        public static string ExtractDataColumnValues_TypeArgument_DisplayName => ResourceManager.GetString("ExtractDataColumnValues_TypeArgument_DisplayName", Culture);
     
 
         /// <summary>
@@ -1246,6 +1841,24 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string RemoveEmptyRows_Result_DisplayName => ResourceManager.GetString("RemoveEmptyRows_Result_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string TransposeData_Result_DisplayName => ResourceManager.GetString("TransposeData_Result_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'FilesCount'.
+        /// </summary>
+        public static string ZipEntriesCount_FilesCount_DisplayName => ResourceManager.GetString("ZipEntriesCount_FilesCount_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Repeats an action until an exception occur or the maximum number of repetitions is reached.'.
         /// </summary>
         public static string RepeatUntilFailure_Description => ResourceManager.GetString("RepeatUntilFailure_Description", Culture);
@@ -1264,15 +1877,57 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'DataTable'.
+        /// </summary>
+        public static string ExtractDataColumnValues_DataTable_DisplayName => ResourceManager.GetString("ExtractDataColumnValues_DataTable_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The accepted range is from {0} and {1}. The value will be clamped.'.
         /// </summary>
         public static string WaitFile_ErrorMsg_IntervalRange => ResourceManager.GetString("WaitFile_ErrorMsg_IntervalRange", Culture);
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'FilesCount'.
+        /// </summary>
+        public static string Zip_FilesCount_DisplayName => ResourceManager.GetString("Zip_FilesCount_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'WithElse'.
+        /// </summary>
+        public static string WhenDo_WithElse_DisplayName => ResourceManager.GetString("WhenDo_WithElse_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'FolderPath'.
+        /// </summary>
+        public static string CleanUpFolder_Folder_DisplayName => ResourceManager.GetString("CleanUpFolder_Folder_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'ZipFilePath'.
+        /// </summary>
+        public static string ZipEntriesCount_ZipFilePath_DisplayName => ResourceManager.GetString("ZipEntriesCount_ZipFilePath_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The token text pattern. It can have characters either before and after the placeholder.'.
         /// </summary>
         public static string ReplaceTokens_Pattern_Description => ResourceManager.GetString("ReplaceTokens_Pattern_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'CustomOptions'.
+        /// </summary>
+        public static string RemoveEmptyRows_CustomOptions_DisplayName => ResourceManager.GetString("RemoveEmptyRows_CustomOptions_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'FoldersCount'.
+        /// </summary>
+        public static string ZipEntriesCount_FoldersCount_DisplayName => ResourceManager.GetString("ZipEntriesCount_FoldersCount_DisplayName", Culture);
     
 
         /// <summary>
@@ -1288,7 +1943,7 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'The iteration that was being processed when the loop had broken.'.
+        /// Looks up a localized string similar to 'The current iteration that was being processed. You can use it to determine in which iteration the process has broken.'.
         /// </summary>
         public static string RepeatUntilFailure_IterationNumber_Description => ResourceManager.GetString("RepeatUntilFailure_IterationNumber_Description", Culture);
     
@@ -1312,6 +1967,24 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Columns'.
+        /// </summary>
+        public static string Aggregate_Columns_DisplayName => ResourceManager.GetString("Aggregate_Columns_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Condition'.
+        /// </summary>
+        public static string Exit_Condition_DisplayName => ResourceManager.GetString("Exit_Condition_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Variable'.
+        /// </summary>
+        public static string Decrement_Variable_DisplayName => ResourceManager.GetString("Decrement_Variable_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Determines if is to encrypt or decrypt the input value.'.
         /// </summary>
         public static string TextEncryption_Action_Description => ResourceManager.GetString("TextEncryption_Action_Description", Culture);
@@ -1327,6 +2000,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The storage path of the file.'.
         /// </summary>
         public static string WaitFile_FilePath_Description => ResourceManager.GetString("WaitFile_FilePath_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'SearchPattern'.
+        /// </summary>
+        public static string EnumerateFiles_SearchPattern_DisplayName => ResourceManager.GetString("EnumerateFiles_SearchPattern_DisplayName", Culture);
     
 
         /// <summary>
@@ -1363,6 +2042,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'WaitDynamicFile_Timeout_DisplayName'.
+            /// </summary>
+            public const string WaitDynamicFile_Timeout_DisplayName = "WaitDynamicFile_Timeout_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'Next_Condition_Description'.
             /// </summary>
             public const string Next_Condition_Description = "Next_Condition_Description";
@@ -1372,6 +2057,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'TripleDESAlgorithmEncryption_DisplayName'.
             /// </summary>
             public const string TripleDESAlgorithmEncryption_DisplayName = "TripleDESAlgorithmEncryption_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'Zip_ToCompress_DisplayName'.
+            /// </summary>
+            public const string Zip_ToCompress_DisplayName = "Zip_ToCompress_DisplayName";
         
 
             /// <summary>
@@ -1417,6 +2108,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'TextEncryption_Result_DisplayName'.
+            /// </summary>
+            public const string TextEncryption_Result_DisplayName = "TextEncryption_Result_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'DataTableToText_DataTable_Description'.
             /// </summary>
             public const string DataTableToText_DataTable_Description = "DataTableToText_DataTable_Description";
@@ -1435,6 +2132,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'RemoveEmptyRows_Mode_DisplayName'.
+            /// </summary>
+            public const string RemoveEmptyRows_Mode_DisplayName = "RemoveEmptyRows_Mode_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'ZipEntriesCount_Description'.
             /// </summary>
             public const string ZipEntriesCount_Description = "ZipEntriesCount_Description";
@@ -1444,6 +2147,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'ZipEntriesCount_ErrorMsg_OutputMissing'.
             /// </summary>
             public const string ZipEntriesCount_ErrorMsg_OutputMissing = "ZipEntriesCount_ErrorMsg_OutputMissing";
+        
+
+            /// <summary>
+            /// Stores the resource name 'TerminateProcess_ProcessName_DisplayName'.
+            /// </summary>
+            public const string TerminateProcess_ProcessName_DisplayName = "TerminateProcess_ProcessName_DisplayName";
         
 
             /// <summary>
@@ -1465,15 +2174,33 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'CheckPoint_Expression_DisplayName'.
+            /// </summary>
+            public const string CheckPoint_Expression_DisplayName = "CheckPoint_Expression_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ZipEntriesCount_EntriesCount_DisplayName'.
+            /// </summary>
+            public const string ZipEntriesCount_EntriesCount_DisplayName = "ZipEntriesCount_EntriesCount_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'TerminateProcess_Description'.
+            /// </summary>
+            public const string TerminateProcess_Description = "TerminateProcess_Description";
+        
+
+            /// <summary>
             /// Stores the resource name 'Zip_Description'.
             /// </summary>
             public const string Zip_Description = "Zip_Description";
         
 
             /// <summary>
-            /// Stores the resource name 'WaitFile_FileInfo_Description'.
+            /// Stores the resource name 'Increment_Variable_DisplayName'.
             /// </summary>
-            public const string WaitFile_FileInfo_Description = "WaitFile_FileInfo_Description";
+            public const string Increment_Variable_DisplayName = "Increment_Variable_DisplayName";
         
 
             /// <summary>
@@ -1495,9 +2222,27 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'TerminateProcess_ProcessName_Description'.
+            /// </summary>
+            public const string TerminateProcess_ProcessName_Description = "TerminateProcess_ProcessName_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'CleanUpFolder_LastWriteTime_DisplayName'.
+            /// </summary>
+            public const string CleanUpFolder_LastWriteTime_DisplayName = "CleanUpFolder_LastWriteTime_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'AddRangeToCollection_Items_Description'.
             /// </summary>
             public const string AddRangeToCollection_Items_Description = "AddRangeToCollection_Items_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'PromoteHeaders_Result_DisplayName'.
+            /// </summary>
+            public const string PromoteHeaders_Result_DisplayName = "PromoteHeaders_Result_DisplayName";
         
 
             /// <summary>
@@ -1510,6 +2255,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'PromoteHeaders_EmptyColumnName_Description'.
             /// </summary>
             public const string PromoteHeaders_EmptyColumnName_Description = "PromoteHeaders_EmptyColumnName_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'WaitDynamicFile_Result_Description'.
+            /// </summary>
+            public const string WaitDynamicFile_Result_Description = "WaitDynamicFile_Result_Description";
         
 
             /// <summary>
@@ -1549,6 +2300,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'WaitFile_Interval_DisplayName'.
+            /// </summary>
+            public const string WaitFile_Interval_DisplayName = "WaitFile_Interval_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'WhenDo_Description'.
             /// </summary>
             public const string WhenDo_Description = "WhenDo_Description";
@@ -1558,6 +2315,18 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'Common_Timeout'.
             /// </summary>
             public const string Common_Timeout = "Common_Timeout";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ExtractDataColumnValues_Column_DisplayName'.
+            /// </summary>
+            public const string ExtractDataColumnValues_Column_DisplayName = "ExtractDataColumnValues_Column_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'DataTableToText_Result_DisplayName'.
+            /// </summary>
+            public const string DataTableToText_Result_DisplayName = "DataTableToText_Result_DisplayName";
         
 
             /// <summary>
@@ -1573,6 +2342,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'Aggregate_Function_DisplayName'.
+            /// </summary>
+            public const string Aggregate_Function_DisplayName = "Aggregate_Function_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'CleanUpFolder_Result_Description'.
             /// </summary>
             public const string CleanUpFolder_Result_Description = "CleanUpFolder_Result_Description";
@@ -1585,6 +2360,30 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'CheckPoint_Exception_DisplayName'.
+            /// </summary>
+            public const string CheckPoint_Exception_DisplayName = "CheckPoint_Exception_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'DataTableEncryption_ParallelProcessing_DisplayName'.
+            /// </summary>
+            public const string DataTableEncryption_ParallelProcessing_DisplayName = "DataTableEncryption_ParallelProcessing_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ExtractDataColumnValues_Result_DisplayName'.
+            /// </summary>
+            public const string ExtractDataColumnValues_Result_DisplayName = "ExtractDataColumnValues_Result_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'DataTableEncryption_TextEncoding_DisplayName'.
+            /// </summary>
+            public const string DataTableEncryption_TextEncoding_DisplayName = "DataTableEncryption_TextEncoding_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'RepeatUntilFailure_MaximumRepetitions_Description'.
             /// </summary>
             public const string RepeatUntilFailure_MaximumRepetitions_Description = "RepeatUntilFailure_MaximumRepetitions_Description";
@@ -1594,6 +2393,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'Common_ContinueOnError'.
             /// </summary>
             public const string Common_ContinueOnError = "Common_ContinueOnError";
+        
+
+            /// <summary>
+            /// Stores the resource name 'DataRowToDictionary_InputDataRow_DisplayName'.
+            /// </summary>
+            public const string DataRowToDictionary_InputDataRow_DisplayName = "DataRowToDictionary_InputDataRow_DisplayName";
         
 
             /// <summary>
@@ -1615,9 +2420,21 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'RemoveEmptyRows_InputDataTable_DisplayName'.
+            /// </summary>
+            public const string RemoveEmptyRows_InputDataTable_DisplayName = "RemoveEmptyRows_InputDataTable_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'CultureScope_Description'.
             /// </summary>
             public const string CultureScope_Description = "CultureScope_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'TerminateProcess_DisplayName'.
+            /// </summary>
+            public const string TerminateProcess_DisplayName = "TerminateProcess_DisplayName";
         
 
             /// <summary>
@@ -1633,6 +2450,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'IsTrue_Value_DisplayName'.
+            /// </summary>
+            public const string IsTrue_Value_DisplayName = "IsTrue_Value_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'CleanUpFolder_DisplayName'.
             /// </summary>
             public const string CleanUpFolder_DisplayName = "CleanUpFolder_DisplayName";
@@ -1642,6 +2465,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'RemoveDataColumns_DisplayName'.
             /// </summary>
             public const string RemoveDataColumns_DisplayName = "RemoveDataColumns_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'SymmetricAlgorithmEncryptionBase_Iterations_DisplayName'.
+            /// </summary>
+            public const string SymmetricAlgorithmEncryptionBase_Iterations_DisplayName = "SymmetricAlgorithmEncryptionBase_Iterations_DisplayName";
         
 
             /// <summary>
@@ -1666,6 +2495,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'RemoveEmptyRows_Operator_Description'.
             /// </summary>
             public const string RemoveEmptyRows_Operator_Description = "RemoveEmptyRows_Operator_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'CheckPoint_Data_DisplayName'.
+            /// </summary>
+            public const string CheckPoint_Data_DisplayName = "CheckPoint_Data_DisplayName";
         
 
             /// <summary>
@@ -1759,6 +2594,18 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'DataTableToText_DateTimeFormat_DisplayName'.
+            /// </summary>
+            public const string DataTableToText_DateTimeFormat_DisplayName = "DataTableToText_DateTimeFormat_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'DataRowToDictionary_Result_DisplayName'.
+            /// </summary>
+            public const string DataRowToDictionary_Result_DisplayName = "DataRowToDictionary_Result_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'Stopwatch_ReferenceStopwatch_DisplayName'.
             /// </summary>
             public const string Stopwatch_ReferenceStopwatch_DisplayName = "Stopwatch_ReferenceStopwatch_DisplayName";
@@ -1777,15 +2624,45 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'WaitFile_Result_DisplayName'.
+            /// </summary>
+            public const string WaitFile_Result_DisplayName = "WaitFile_Result_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'RemoveDuplicateRows_InputDataTable_DisplayName'.
+            /// </summary>
+            public const string RemoveDuplicateRows_InputDataTable_DisplayName = "RemoveDuplicateRows_InputDataTable_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'RC2AlgorithmEncryption_DisplayName'.
             /// </summary>
             public const string RC2AlgorithmEncryption_DisplayName = "RC2AlgorithmEncryption_DisplayName";
         
 
             /// <summary>
+            /// Stores the resource name 'DataTableEncryption_Sort_DisplayName'.
+            /// </summary>
+            public const string DataTableEncryption_Sort_DisplayName = "DataTableEncryption_Sort_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'ExtractDataColumnValues_Column_Description'.
             /// </summary>
             public const string ExtractDataColumnValues_Column_Description = "ExtractDataColumnValues_Column_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'TextEncryption_Key_DisplayName'.
+            /// </summary>
+            public const string TextEncryption_Key_DisplayName = "TextEncryption_Key_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'Unzip_Overwrite_DisplayName'.
+            /// </summary>
+            public const string Unzip_Overwrite_DisplayName = "Unzip_Overwrite_DisplayName";
         
 
             /// <summary>
@@ -1798,6 +2675,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'DataRowToDictionary_DisplayName'.
             /// </summary>
             public const string DataRowToDictionary_DisplayName = "DataRowToDictionary_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'TransposeData_InputDataTable_DisplayName'.
+            /// </summary>
+            public const string TransposeData_InputDataTable_DisplayName = "TransposeData_InputDataTable_DisplayName";
         
 
             /// <summary>
@@ -1822,6 +2705,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'WhenDo_WithElse_Description'.
             /// </summary>
             public const string WhenDo_WithElse_Description = "WhenDo_WithElse_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'RepeatUntilFailure_IterationNumber_DisplayName'.
+            /// </summary>
+            public const string RepeatUntilFailure_IterationNumber_DisplayName = "RepeatUntilFailure_IterationNumber_DisplayName";
         
 
             /// <summary>
@@ -1855,6 +2744,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'Zip_TextEncoding_DisplayName'.
+            /// </summary>
+            public const string Zip_TextEncoding_DisplayName = "Zip_TextEncoding_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'RepeatUntilFailure_OutputException_Description'.
             /// </summary>
             public const string RepeatUntilFailure_OutputException_Description = "RepeatUntilFailure_OutputException_Description";
@@ -1867,6 +2762,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'ReplaceTokens_Pattern_DisplayName'.
+            /// </summary>
+            public const string ReplaceTokens_Pattern_DisplayName = "ReplaceTokens_Pattern_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'Zip_ZipFilePath_Description'.
             /// </summary>
             public const string Zip_ZipFilePath_Description = "Zip_ZipFilePath_Description";
@@ -1876,6 +2777,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'PromoteHeaders_DisplayName'.
             /// </summary>
             public const string PromoteHeaders_DisplayName = "PromoteHeaders_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'DataTableToText_TextFormat_DisplayName'.
+            /// </summary>
+            public const string DataTableToText_TextFormat_DisplayName = "DataTableToText_TextFormat_DisplayName";
         
 
             /// <summary>
@@ -1999,6 +2906,42 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'Increment_Value_DisplayName'.
+            /// </summary>
+            public const string Increment_Value_DisplayName = "Increment_Value_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'EnumerateFiles_Exclusions_DisplayName'.
+            /// </summary>
+            public const string EnumerateFiles_Exclusions_DisplayName = "EnumerateFiles_Exclusions_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'Zip_ShortEntryNames_DisplayName'.
+            /// </summary>
+            public const string Zip_ShortEntryNames_DisplayName = "Zip_ShortEntryNames_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'CleanUpFolder_DeleteEmptyFolders_DisplayName'.
+            /// </summary>
+            public const string CleanUpFolder_DeleteEmptyFolders_DisplayName = "CleanUpFolder_DeleteEmptyFolders_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'EnumerateFiles_DirectoryPath_DisplayName'.
+            /// </summary>
+            public const string EnumerateFiles_DirectoryPath_DisplayName = "EnumerateFiles_DirectoryPath_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'IsTrue_Result_DisplayName'.
+            /// </summary>
+            public const string IsTrue_Result_DisplayName = "IsTrue_Result_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'CultureScope_CultureName_Description'.
             /// </summary>
             public const string CultureScope_CultureName_Description = "CultureScope_CultureName_Description";
@@ -2008,6 +2951,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'RemoveDuplicateRows_DisplayName'.
             /// </summary>
             public const string RemoveDuplicateRows_DisplayName = "RemoveDuplicateRows_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'TextEncryption_TextEncoding_DisplayName'.
+            /// </summary>
+            public const string TextEncryption_TextEncoding_DisplayName = "TextEncryption_TextEncoding_DisplayName";
         
 
             /// <summary>
@@ -2029,6 +2978,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'RemoveDuplicateRows_Columns_DisplayName'.
+            /// </summary>
+            public const string RemoveDuplicateRows_Columns_DisplayName = "RemoveDuplicateRows_Columns_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'TextEncryption_Key_Description'.
             /// </summary>
             public const string TextEncryption_Key_Description = "TextEncryption_Key_Description";
@@ -2047,15 +3002,27 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'AddRangeToCollection_Collection_DisplayName'.
+            /// </summary>
+            public const string AddRangeToCollection_Collection_DisplayName = "AddRangeToCollection_Collection_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'RemoveDuplicateRows_Result_DisplayName'.
+            /// </summary>
+            public const string RemoveDuplicateRows_Result_DisplayName = "RemoveDuplicateRows_Result_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'Validation_ScopesError'.
             /// </summary>
             public const string Validation_ScopesError = "Validation_ScopesError";
         
 
             /// <summary>
-            /// Stores the resource name 'WaitDynamicFile_FileInfo_Description'.
+            /// Stores the resource name 'WaitFile_Result_Description'.
             /// </summary>
-            public const string WaitDynamicFile_FileInfo_Description = "WaitDynamicFile_FileInfo_Description";
+            public const string WaitFile_Result_Description = "WaitFile_Result_Description";
         
 
             /// <summary>
@@ -2065,15 +3032,45 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'DataTableEncryption_Input_DisplayName'.
+            /// </summary>
+            public const string DataTableEncryption_Input_DisplayName = "DataTableEncryption_Input_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'Iterate_Reverse_Description'.
             /// </summary>
             public const string Iterate_Reverse_Description = "Iterate_Reverse_Description";
         
 
             /// <summary>
+            /// Stores the resource name 'WaitDynamicFile_Interval_DisplayName'.
+            /// </summary>
+            public const string WaitDynamicFile_Interval_DisplayName = "WaitDynamicFile_Interval_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'DataTableEncryption_Description'.
             /// </summary>
             public const string DataTableEncryption_Description = "DataTableEncryption_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'WaitDynamicFile_DirectoryPath_DisplayName'.
+            /// </summary>
+            public const string WaitDynamicFile_DirectoryPath_DisplayName = "WaitDynamicFile_DirectoryPath_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'DictionaryToDataTable_InputDictionary_DisplayName'.
+            /// </summary>
+            public const string DictionaryToDataTable_InputDictionary_DisplayName = "DictionaryToDataTable_InputDictionary_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'Decrement_Value_DisplayName'.
+            /// </summary>
+            public const string Decrement_Value_DisplayName = "Decrement_Value_DisplayName";
         
 
             /// <summary>
@@ -2086,6 +3083,18 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'Zip_CompressionLevel_Description'.
             /// </summary>
             public const string Zip_CompressionLevel_Description = "Zip_CompressionLevel_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'WaitDynamicFile_FromDateTime_DisplayName'.
+            /// </summary>
+            public const string WaitDynamicFile_FromDateTime_DisplayName = "WaitDynamicFile_FromDateTime_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'WaitFile_Timeout_DisplayName'.
+            /// </summary>
+            public const string WaitFile_Timeout_DisplayName = "WaitFile_Timeout_DisplayName";
         
 
             /// <summary>
@@ -2119,6 +3128,18 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'RepeatUntilFailure_LoopInterval_DisplayName'.
+            /// </summary>
+            public const string RepeatUntilFailure_LoopInterval_DisplayName = "RepeatUntilFailure_LoopInterval_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'WhenDo_Inverted_DisplayName'.
+            /// </summary>
+            public const string WhenDo_Inverted_DisplayName = "WhenDo_Inverted_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'WhenDo_DisplayName'.
             /// </summary>
             public const string WhenDo_DisplayName = "WhenDo_DisplayName";
@@ -2128,6 +3149,18 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'Unzip_ErrorMsg_OutsideDir'.
             /// </summary>
             public const string Unzip_ErrorMsg_OutsideDir = "Unzip_ErrorMsg_OutsideDir";
+        
+
+            /// <summary>
+            /// Stores the resource name 'WaitFile_FilePath_DisplayName'.
+            /// </summary>
+            public const string WaitFile_FilePath_DisplayName = "WaitFile_FilePath_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'RemoveDataColumns_Columns_DisplayName'.
+            /// </summary>
+            public const string RemoveDataColumns_Columns_DisplayName = "RemoveDataColumns_Columns_DisplayName";
         
 
             /// <summary>
@@ -2146,6 +3179,18 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'RemoveEmptyRows_Result_Description'.
             /// </summary>
             public const string RemoveEmptyRows_Result_Description = "RemoveEmptyRows_Result_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'CleanUpFolder_SearchPattern_DisplayName'.
+            /// </summary>
+            public const string CleanUpFolder_SearchPattern_DisplayName = "CleanUpFolder_SearchPattern_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'RepeatUntilFailure_MaximumRepetitions_DisplayName'.
+            /// </summary>
+            public const string RepeatUntilFailure_MaximumRepetitions_DisplayName = "RepeatUntilFailure_MaximumRepetitions_DisplayName";
         
 
             /// <summary>
@@ -2170,6 +3215,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'TransposeData_Result_Description'.
             /// </summary>
             public const string TransposeData_Result_Description = "TransposeData_Result_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'PromoteHeaders_EmptyColumnName_DisplayName'.
+            /// </summary>
+            public const string PromoteHeaders_EmptyColumnName_DisplayName = "PromoteHeaders_EmptyColumnName_DisplayName";
         
 
             /// <summary>
@@ -2203,9 +3254,33 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'DataTableToText_DataTable_DisplayName'.
+            /// </summary>
+            public const string DataTableToText_DataTable_DisplayName = "DataTableToText_DataTable_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ExtractDataColumnValues_DefaultValue_DisplayName'.
+            /// </summary>
+            public const string ExtractDataColumnValues_DefaultValue_DisplayName = "ExtractDataColumnValues_DefaultValue_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'RemoveEmptyRows_InputDataTable_Description'.
             /// </summary>
             public const string RemoveEmptyRows_InputDataTable_Description = "RemoveEmptyRows_InputDataTable_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'PromoteHeaders_AutoRename_DisplayName'.
+            /// </summary>
+            public const string PromoteHeaders_AutoRename_DisplayName = "PromoteHeaders_AutoRename_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'CultureScope_CultureName_DisplayName'.
+            /// </summary>
+            public const string CultureScope_CultureName_DisplayName = "CultureScope_CultureName_DisplayName";
         
 
             /// <summary>
@@ -2233,15 +3308,39 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'Aggregate_InputDataTable_DisplayName'.
+            /// </summary>
+            public const string Aggregate_InputDataTable_DisplayName = "Aggregate_InputDataTable_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'Unzip_ExtractTo_DisplayName'.
+            /// </summary>
+            public const string Unzip_ExtractTo_DisplayName = "Unzip_ExtractTo_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'Decrement_Value_Description'.
             /// </summary>
             public const string Decrement_Value_Description = "Decrement_Value_Description";
         
 
             /// <summary>
+            /// Stores the resource name 'WaitFile_WaitForExist_DisplayName'.
+            /// </summary>
+            public const string WaitFile_WaitForExist_DisplayName = "WaitFile_WaitForExist_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'TextEncryption_Input_Description'.
             /// </summary>
             public const string TextEncryption_Input_Description = "TextEncryption_Input_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'Next_Condition_DisplayName'.
+            /// </summary>
+            public const string Next_Condition_DisplayName = "Next_Condition_DisplayName";
         
 
             /// <summary>
@@ -2257,15 +3356,39 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'DataTableEncryption_Columns_DisplayName'.
+            /// </summary>
+            public const string DataTableEncryption_Columns_DisplayName = "DataTableEncryption_Columns_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'Iterate_Reverse_DisplayName'.
+            /// </summary>
+            public const string Iterate_Reverse_DisplayName = "Iterate_Reverse_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'Unzip_ExtractTo_Description'.
             /// </summary>
             public const string Unzip_ExtractTo_Description = "Unzip_ExtractTo_Description";
         
 
             /// <summary>
+            /// Stores the resource name 'Zip_ZipFilePath_DisplayName'.
+            /// </summary>
+            public const string Zip_ZipFilePath_DisplayName = "Zip_ZipFilePath_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'DataTableToText_DateTimeFormat_Description'.
             /// </summary>
             public const string DataTableToText_DateTimeFormat_Description = "DataTableToText_DateTimeFormat_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'RepeatUntilFailure_OutputException_DisplayName'.
+            /// </summary>
+            public const string RepeatUntilFailure_OutputException_DisplayName = "RepeatUntilFailure_OutputException_DisplayName";
         
 
             /// <summary>
@@ -2278,6 +3401,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'WaitDynamicFile_Timeout_Description'.
             /// </summary>
             public const string WaitDynamicFile_Timeout_Description = "WaitDynamicFile_Timeout_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'Unzip_ZipFilePath_DisplayName'.
+            /// </summary>
+            public const string Unzip_ZipFilePath_DisplayName = "Unzip_ZipFilePath_DisplayName";
         
 
             /// <summary>
@@ -2299,6 +3428,24 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'PromoteHeaders_InputDataTable_DisplayName'.
+            /// </summary>
+            public const string PromoteHeaders_InputDataTable_DisplayName = "PromoteHeaders_InputDataTable_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'EnumerateFiles_Result_DisplayName'.
+            /// </summary>
+            public const string EnumerateFiles_Result_DisplayName = "EnumerateFiles_Result_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'DictionaryToDataTable_Result_DisplayName'.
+            /// </summary>
+            public const string DictionaryToDataTable_Result_DisplayName = "DictionaryToDataTable_Result_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'TransposeData_Description'.
             /// </summary>
             public const string TransposeData_Description = "TransposeData_Description";
@@ -2317,9 +3464,33 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'DataTableEncryption_Key_DisplayName'.
+            /// </summary>
+            public const string DataTableEncryption_Key_DisplayName = "DataTableEncryption_Key_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'Iterate_Iterations_DisplayName'.
+            /// </summary>
+            public const string Iterate_Iterations_DisplayName = "Iterate_Iterations_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'WaitDynamicFile_Description'.
             /// </summary>
             public const string WaitDynamicFile_Description = "WaitDynamicFile_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'CleanUpFolder_Result_DisplayName'.
+            /// </summary>
+            public const string CleanUpFolder_Result_DisplayName = "CleanUpFolder_Result_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'DataTableEncryption_Result_DisplayName'.
+            /// </summary>
+            public const string DataTableEncryption_Result_DisplayName = "DataTableEncryption_Result_DisplayName";
         
 
             /// <summary>
@@ -2335,9 +3506,27 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'Zip_CompressionLevel_DisplayName'.
+            /// </summary>
+            public const string Zip_CompressionLevel_DisplayName = "Zip_CompressionLevel_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'RemoveDataColumns_ReferenceDataTable_DisplayName'.
             /// </summary>
             public const string RemoveDataColumns_ReferenceDataTable_DisplayName = "RemoveDataColumns_ReferenceDataTable_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'WaitDynamicFile_SearchPattern_DisplayName'.
+            /// </summary>
+            public const string WaitDynamicFile_SearchPattern_DisplayName = "WaitDynamicFile_SearchPattern_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'Aggregate_Result_DisplayName'.
+            /// </summary>
+            public const string Aggregate_Result_DisplayName = "Aggregate_Result_DisplayName";
         
 
             /// <summary>
@@ -2359,6 +3548,12 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'ReplaceTokens_Content_DisplayName'.
+            /// </summary>
+            public const string ReplaceTokens_Content_DisplayName = "ReplaceTokens_Content_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'RepeatUntilFailure_DisplayName'.
             /// </summary>
             public const string RepeatUntilFailure_DisplayName = "RepeatUntilFailure_DisplayName";
@@ -2377,15 +3572,63 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'WaitDynamicFile_Result_DisplayName'.
+            /// </summary>
+            public const string WaitDynamicFile_Result_DisplayName = "WaitDynamicFile_Result_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'Stopwatch_Method_DisplayName'.
+            /// </summary>
+            public const string Stopwatch_Method_DisplayName = "Stopwatch_Method_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'ExtractDataColumnValues_DisplayName'.
             /// </summary>
             public const string ExtractDataColumnValues_DisplayName = "ExtractDataColumnValues_DisplayName";
         
 
             /// <summary>
+            /// Stores the resource name 'DataTableEncryption_Action_DisplayName'.
+            /// </summary>
+            public const string DataTableEncryption_Action_DisplayName = "DataTableEncryption_Action_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ReplaceTokens_Result_DisplayName'.
+            /// </summary>
+            public const string ReplaceTokens_Result_DisplayName = "ReplaceTokens_Result_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'TextEncryption_Action_DisplayName'.
+            /// </summary>
+            public const string TextEncryption_Action_DisplayName = "TextEncryption_Action_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ReplaceTokens_InputDictionary_DisplayName'.
+            /// </summary>
+            public const string ReplaceTokens_InputDictionary_DisplayName = "ReplaceTokens_InputDictionary_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'WaitDynamicFile_DirectoryPath_Description'.
             /// </summary>
             public const string WaitDynamicFile_DirectoryPath_Description = "WaitDynamicFile_DirectoryPath_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'RemoveEmptyRows_Columns_DisplayName'.
+            /// </summary>
+            public const string RemoveEmptyRows_Columns_DisplayName = "RemoveEmptyRows_Columns_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'RemoveEmptyRows_Operator_DisplayName'.
+            /// </summary>
+            public const string RemoveEmptyRows_Operator_DisplayName = "RemoveEmptyRows_Operator_DisplayName";
         
 
             /// <summary>
@@ -2398,6 +3641,18 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'ReplaceTokens_Placeholder_Description'.
             /// </summary>
             public const string ReplaceTokens_Placeholder_Description = "ReplaceTokens_Placeholder_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'AddRangeToCollection_Items_DisplayName'.
+            /// </summary>
+            public const string AddRangeToCollection_Items_DisplayName = "AddRangeToCollection_Items_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'EnumerateFiles_SearchOption_DisplayName'.
+            /// </summary>
+            public const string EnumerateFiles_SearchOption_DisplayName = "EnumerateFiles_SearchOption_DisplayName";
         
 
             /// <summary>
@@ -2416,6 +3671,24 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'ExtractDataColumnValues_DataTable_Description'.
             /// </summary>
             public const string ExtractDataColumnValues_DataTable_Description = "ExtractDataColumnValues_DataTable_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'TextEncryption_Input_DisplayName'.
+            /// </summary>
+            public const string TextEncryption_Input_DisplayName = "TextEncryption_Input_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ReplaceTokens_Placeholder_DisplayName'.
+            /// </summary>
+            public const string ReplaceTokens_Placeholder_DisplayName = "ReplaceTokens_Placeholder_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ExtractDataColumnValues_TypeArgument_DisplayName'.
+            /// </summary>
+            public const string ExtractDataColumnValues_TypeArgument_DisplayName = "ExtractDataColumnValues_TypeArgument_DisplayName";
         
 
             /// <summary>
@@ -2461,6 +3734,24 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'RemoveEmptyRows_Result_DisplayName'.
+            /// </summary>
+            public const string RemoveEmptyRows_Result_DisplayName = "RemoveEmptyRows_Result_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'TransposeData_Result_DisplayName'.
+            /// </summary>
+            public const string TransposeData_Result_DisplayName = "TransposeData_Result_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ZipEntriesCount_FilesCount_DisplayName'.
+            /// </summary>
+            public const string ZipEntriesCount_FilesCount_DisplayName = "ZipEntriesCount_FilesCount_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'RepeatUntilFailure_Description'.
             /// </summary>
             public const string RepeatUntilFailure_Description = "RepeatUntilFailure_Description";
@@ -2479,15 +3770,57 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'ExtractDataColumnValues_DataTable_DisplayName'.
+            /// </summary>
+            public const string ExtractDataColumnValues_DataTable_DisplayName = "ExtractDataColumnValues_DataTable_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'WaitFile_ErrorMsg_IntervalRange'.
             /// </summary>
             public const string WaitFile_ErrorMsg_IntervalRange = "WaitFile_ErrorMsg_IntervalRange";
         
 
             /// <summary>
+            /// Stores the resource name 'Zip_FilesCount_DisplayName'.
+            /// </summary>
+            public const string Zip_FilesCount_DisplayName = "Zip_FilesCount_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'WhenDo_WithElse_DisplayName'.
+            /// </summary>
+            public const string WhenDo_WithElse_DisplayName = "WhenDo_WithElse_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'CleanUpFolder_Folder_DisplayName'.
+            /// </summary>
+            public const string CleanUpFolder_Folder_DisplayName = "CleanUpFolder_Folder_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ZipEntriesCount_ZipFilePath_DisplayName'.
+            /// </summary>
+            public const string ZipEntriesCount_ZipFilePath_DisplayName = "ZipEntriesCount_ZipFilePath_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'ReplaceTokens_Pattern_Description'.
             /// </summary>
             public const string ReplaceTokens_Pattern_Description = "ReplaceTokens_Pattern_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'RemoveEmptyRows_CustomOptions_DisplayName'.
+            /// </summary>
+            public const string RemoveEmptyRows_CustomOptions_DisplayName = "RemoveEmptyRows_CustomOptions_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'ZipEntriesCount_FoldersCount_DisplayName'.
+            /// </summary>
+            public const string ZipEntriesCount_FoldersCount_DisplayName = "ZipEntriesCount_FoldersCount_DisplayName";
         
 
             /// <summary>
@@ -2527,6 +3860,24 @@ namespace Autossential.Activities.Properties
         
 
             /// <summary>
+            /// Stores the resource name 'Aggregate_Columns_DisplayName'.
+            /// </summary>
+            public const string Aggregate_Columns_DisplayName = "Aggregate_Columns_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'Exit_Condition_DisplayName'.
+            /// </summary>
+            public const string Exit_Condition_DisplayName = "Exit_Condition_DisplayName";
+        
+
+            /// <summary>
+            /// Stores the resource name 'Decrement_Variable_DisplayName'.
+            /// </summary>
+            public const string Decrement_Variable_DisplayName = "Decrement_Variable_DisplayName";
+        
+
+            /// <summary>
             /// Stores the resource name 'TextEncryption_Action_Description'.
             /// </summary>
             public const string TextEncryption_Action_Description = "TextEncryption_Action_Description";
@@ -2542,6 +3893,12 @@ namespace Autossential.Activities.Properties
             /// Stores the resource name 'WaitFile_FilePath_Description'.
             /// </summary>
             public const string WaitFile_FilePath_Description = "WaitFile_FilePath_Description";
+        
+
+            /// <summary>
+            /// Stores the resource name 'EnumerateFiles_SearchPattern_DisplayName'.
+            /// </summary>
+            public const string EnumerateFiles_SearchPattern_DisplayName = "EnumerateFiles_SearchPattern_DisplayName";
         
 
             /// <summary>

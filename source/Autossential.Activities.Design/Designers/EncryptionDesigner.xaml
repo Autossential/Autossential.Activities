@@ -4,7 +4,8 @@
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
-    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls">
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls"
+    xmlns:as="clr-namespace:Autossential.Activities.Properties;assembly=Autossential.Activities">
 
     <sap:ActivityDesigner.Resources>
         <ResourceDictionary>
@@ -33,7 +34,10 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Label Content="Input" Grid.Row="0" Grid.Column="0"/>
+                <Label 
+                    Content="{x:Static as:Resources.TextEncryption_Input_DisplayName}"
+                    ToolTip="{x:Static as:Resources.TextEncryption_Input_Description}"
+                    Grid.Row="0" Grid.Column="0"/>
                 <sapv:ExpressionTextBox
                     Grid.Row="1" 
                     Grid.Column="0"
@@ -42,7 +46,10 @@
                     UseLocationExpression="False"
                     Expression="{Binding ModelItem.Input, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"/>
 
-                <Label Content="Key" Grid.Row="0" Grid.Column="2"/>
+                <Label
+                    Content="{x:Static as:Resources.TextEncryption_Key_DisplayName}"
+                    ToolTip="{x:Static as:Resources.TextEncryption_Key_Description}"
+                    Grid.Row="0" Grid.Column="2"/>
                 <sapv:ExpressionTextBox
                     Grid.Row="1" 
                     Grid.Column="2"
@@ -51,7 +58,7 @@
                     UseLocationExpression="False"
                     Expression="{Binding ModelItem.Key, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"/>
             </Grid>
-            <Label Content="Algorithm" />
+            <Label Content="Algorithm" ToolTip="The algorithm to be used"/>
             <Border BorderThickness="1" BorderBrush="#33777777">
                 <sap:WorkflowItemPresenter
                     AutomationProperties.AutomationId="Activity"
@@ -70,10 +77,16 @@
                     <ColumnDefinition Width="10" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Label Content="Action" Grid.Column="0" Grid.Row="0" />
+                <Label
+                    Content="{x:Static as:Resources.TextEncryption_Action_DisplayName}"
+                    ToolTip="{x:Static as:Resources.TextEncryption_Action_Description}"
+                    Grid.Column="0" Grid.Row="0" />
                 <ComboBox Grid.Row="1" Grid.Column="0" Name="cbActions" SelectedValue="{Binding Path=ModelItem.Action, Mode=TwoWay}" />
 
-                <c:BadgeLabelControl Label="Result" Badge="Out" Grid.Row="0" Grid.Column="2"/>
+                <c:BadgeLabelControl 
+                    Label="{x:Static as:Resources.TextEncryption_Result_DisplayName}"
+                    ToolTip="{x:Static as:Resources.TextEncryption_Result_Description}"
+                    Badge="Out" Grid.Row="0" Grid.Column="2"/>
                 <sapv:ExpressionTextBox
                     Grid.Column="2" Grid.Row="1"
                     ExpressionType="{Binding ModelItem.Properties[Result].PropertyType.GenericTypeArguments[0]}"

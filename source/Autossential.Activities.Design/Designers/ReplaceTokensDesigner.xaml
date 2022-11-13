@@ -4,7 +4,8 @@
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
-    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls" Collapsible="False">
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls" Collapsible="False"
+    xmlns:as="clr-namespace:Autossential.Activities.Properties;assembly=Autossential.Activities">
 
     <sap:ActivityDesigner.Resources>
         <ResourceDictionary>
@@ -21,12 +22,15 @@
 
     <c:ActivityDecoratorControl>
         <StackPanel Width="300">
-            <Label Content="Content"/>
+            <Label
+                Content="{x:Static as:Resources.ReplaceTokens_Content_DisplayName}" 
+                ToolTip="{x:Static as:Resources.ReplaceTokens_Content_Description}" />
             <sapv:ExpressionTextBox
                 ExpressionType="{Binding ModelItem.Properties[Content].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
-                Expression="{Binding ModelItem.Content, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"/>
+                Expression="{Binding ModelItem.Content, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
+                HintText="Enter a string"/>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -38,21 +42,29 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Label Content="Dictionary" Grid.Row="0" Grid.Column="0"/>
+                <Label
+                    Content="{x:Static as:Resources.ReplaceTokens_InputDictionary_DisplayName}" 
+                    ToolTip="{x:Static as:Resources.ReplaceTokens_InputDictionary_Description}" 
+                    Grid.Row="0" Grid.Column="0"/>
                 <sapv:ExpressionTextBox
                     Grid.Row="1" Grid.Column="0"
                     ExpressionType="{Binding ModelItem.Properties[InputDictionary].PropertyType.GenericTypeArguments[0]}"
                     OwnerActivity="{Binding ModelItem}"
                     UseLocationExpression="False"
-                    Expression="{Binding ModelItem.InputDictionary, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"/>
+                    Expression="{Binding ModelItem.InputDictionary, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
+                    HintText="Enter a dictionary"/>
 
-                <c:BadgeLabelControl Label="Result" Badge="Out" Grid.Row="0" Grid.Column="2"/>
+                <c:BadgeLabelControl
+                    Label="{x:Static as:Resources.ReplaceTokens_Result_DisplayName}" 
+                    ToolTip="{x:Static as:Resources.ReplaceTokens_Result_Description}" 
+                    Badge="Out" Grid.Row="0" Grid.Column="2"/>
                 <sapv:ExpressionTextBox
                     Grid.Row="1" Grid.Column="2"
                     ExpressionType="{Binding ModelItem.Properties[Result].PropertyType.GenericTypeArguments[0]}"
                     OwnerActivity="{Binding ModelItem}"
                     UseLocationExpression="True"
-                    Expression="{Binding ModelItem.Result, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}"/>
+                    Expression="{Binding ModelItem.Result, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}"
+                    HintText="Enter a string variable"/>
             </Grid>
         </StackPanel>
     </c:ActivityDecoratorControl>

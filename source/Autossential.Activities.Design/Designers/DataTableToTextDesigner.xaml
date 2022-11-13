@@ -53,7 +53,7 @@
                 <ComboBox Grid.Row="1" Grid.Column="2" x:Name="cbTextFormat" SelectedValue="{Binding Path=ModelItem.TextFormat, Mode=TwoWay}" />
             </Grid>
             <c:BadgeLabelControl
-                Content="{x:Static as:Resources.DataTableToText_Result_DisplayName}" 
+                Label="{x:Static as:Resources.DataTableToText_Result_DisplayName}" 
                 ToolTip="{x:Static as:Resources.DataTableToText_Result_Description}"
                 Badge="Out" />
             <sapv:ExpressionTextBox

@@ -7,7 +7,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Description>Provides a collection of activities designed for a variety of purposes. It contains +30 activities organized in different categories such as Apps &amp; Diagnostics, Data, Files, Programming, Security and Workflows.</Description>
+		<Description>Provides a collection of activities designed for a variety of purposes. It contains +30 activities organized in different categories, such as Apps &amp; Diagnostics, Data, Files, Programming, Security and Workflows.</Description>
 		<Authors>Alexandre Toledo Perez</Authors>
 		<Copyright>© 2020-2022 Alexandre Toledo Perez</Copyright>
 		<PackageProjectUrl>https://github.com/Autossential</PackageProjectUrl>

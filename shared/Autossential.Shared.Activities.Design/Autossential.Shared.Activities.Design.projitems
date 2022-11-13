@@ -11,6 +11,17 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ActivitiesAttributesBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\ActivityDecoratorControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\BadgeLabelControl.cs">
+      <DependentUpon>BadgeLabelControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Editor\BooleanPropertyEditorControl.xaml.cs">
+      <DependentUpon>BooleanPropertyEditorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CheckBoxControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Editor\ExpressionDialogEditor.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>ExpressionDialogEditor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\FilePickerControl.xaml.cs">
       <DependentUpon>FilePickerControl.xaml</DependentUpon>
     </Compile>
@@ -22,9 +33,25 @@
     <Compile Include="$(MSBuildThisFileDirectory)Converters\OppositeBooleanConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Features\DesignerFeatures.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MembersAttributesBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelItemExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PropertyEditorExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TypeExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\BadgeLabelControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\Editor\BooleanPropertyEditorControl.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\Editor\ExpressionDialogEditor.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Controls\FilePickerControl.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>

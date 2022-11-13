@@ -4,7 +4,8 @@
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
-    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls">
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls"
+    xmlns:as="clr-namespace:Autossential.Activities.Properties;assembly=Autossential.Activities">
 
     <sap:ActivityDesigner.Resources>
         <ResourceDictionary>
@@ -19,7 +20,7 @@
         <DrawingBrush Drawing="{StaticResource AggregateIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+    <c:ActivityDecoratorControl>
         <StackPanel Width="300">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -31,22 +32,30 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Label Content="DataTable" Grid.Row="0" Grid.Column="0" />
+                <Label Content="{x:Static as:Resources.Aggregate_InputDataTable_DisplayName}" 
+                       ToolTip="{x:Static as:Resources.Aggregate_InputDataTable_Description}"
+                       Grid.Row="0" Grid.Column="0" />
                 <sapv:ExpressionTextBox
                      Grid.Row="1" Grid.Column="0"
                     ExpressionType="{Binding ModelItem.Properties[InputDataTable].PropertyType.GenericTypeArguments[0]}"
                     OwnerActivity="{Binding ModelItem}"
                     UseLocationExpression="False"
-                    Expression="{Binding ModelItem.InputDataTable, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
-                <Label Content="Function" Grid.Row="0" Grid.Column="2" />
+                    Expression="{Binding ModelItem.InputDataTable, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
+                    HintText="Enter a data table"/>
+                <Label Content="{x:Static as:Resources.Aggregate_Function_DisplayName}" 
+                       ToolTip="{x:Static as:Resources.Aggregate_Function_Description}"
+                       Grid.Row="0" Grid.Column="2" />
                 <ComboBox Grid.Row="1" Grid.Column="2" x:Name="cbFunction" SelectedValue="{Binding Path=ModelItem.Function, Mode=TwoWay}" />
             </Grid>
-            <Label Content="Result (Output)"/>
+            <c:BadgeLabelControl Label="{x:Static as:Resources.Aggregate_Result_DisplayName}" 
+                                 ToolTip="{x:Static as:Resources.Aggregate_Result_Description}"
+                                 Badge="Out"/>
             <sapv:ExpressionTextBox
                 ExpressionType="{Binding ModelItem.Properties[Result].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="True"
-                Expression="{Binding ModelItem.Result, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}" />
+                Expression="{Binding ModelItem.Result, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}" 
+                HintText="Enter an array" />
         </StackPanel>
     </c:ActivityDecoratorControl>
 </sap:ActivityDesigner>

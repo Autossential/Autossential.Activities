@@ -2,9 +2,12 @@
 using Autossential.Activities.Design.PropertyEditors;
 using Autossential.Activities.Properties;
 using Autossential.Activities.Security.Algorithms;
+using Autossential.Activities.Workflow;
 using Autossential.Core.Security.Algorithms;
+using Autossential.Shared.Activities.Base;
 using Autossential.Shared.Activities.Design;
 using System;
+using System.Activities;
 using System.Activities.Presentation;
 using System.Activities.Presentation.Metadata;
 using System.Activities.Presentation.PropertyEditing;
@@ -24,7 +27,7 @@ namespace Autossential.Activities.Design
         public const string WORKFLOW_CATEGORY = MAIN_CATEGORY + ".Workflow";
         public const string SECURITY_CATEGORY = MAIN_CATEGORY + ".Security";
         public const string SECURITY_ALGORITHMS_CATEGORY = SECURITY_CATEGORY + ".Algorithms";
-        public const string DIAGNOSTICS_CATEGORY = MAIN_CATEGORY + ".Diagnostics";
+        public const string APPS_AND_DIAGNOSTICS_CATEGORY = MAIN_CATEGORY + ".Apps & Diagnostics";
 
         public void Register()
         {
@@ -35,7 +38,10 @@ namespace Autossential.Activities.Design
             var programming = new CategoryAttribute(PROGRAMMING_CATEGORY);
             var security = new CategoryAttribute(SECURITY_CATEGORY);
             var securityAlgorithms = new CategoryAttribute(SECURITY_ALGORITHMS_CATEGORY);
-            var diagnostics = new CategoryAttribute(DIAGNOSTICS_CATEGORY);
+            var appsAndDiagnostics = new CategoryAttribute(APPS_AND_DIAGNOSTICS_CATEGORY);
+
+            // CUSTOM EDITOR ATTRIBUTES
+            var booleanPropertyEditorAttribute = new EditorAttribute(typeof(BooleanPropertyEditor), typeof(DialogPropertyValueEditor));
 
             ActivitiesAttributesBuilder.Build(Resources.ResourceManager, builder =>
             {
@@ -64,9 +70,12 @@ namespace Autossential.Activities.Design
                     })
                     .Register<RemoveDataColumns, RemoveDataColumnsDesigner>(dataTable)
                     .Register<RemoveDuplicateRows, RemoveDuplicateRowsDesigner>(dataTable, m => m.Register(p => p.Columns, new CategoryAttribute(Resources.Options_Category)))
-                    .Register<PromoteHeaders, PromoteHeadersDesigner>(dataTable, m => m.Register(p => p.EmptyColumnName, new CategoryAttribute(Resources.Options_Category)))
+                    .Register<PromoteHeaders, PromoteHeadersDesigner>(dataTable, m =>
+                    {
+                        m.Register(p => p.EmptyColumnName, new CategoryAttribute(Resources.Options_Category));
+                        m.Register(p => p.AutoRename, booleanPropertyEditorAttribute);
+                    })
                     .Register(typeof(ExtractDataColumnValues<>), typeof(ExtractDataColumnValuesDesigner), new Attribute[] { dataTable, new DefaultTypeArgumentAttribute(typeof(object)) });
-
 
 
                 // FILE
@@ -76,16 +85,22 @@ namespace Autossential.Activities.Design
                         m.Register(new CategoryAttribute(Resources.Options_Category),
                             p => p.LastWriteTime,
                             p => p.SearchPattern);
+
+                        m.Register(p => p.DeleteEmptyFolders, booleanPropertyEditorAttribute);
                     })
                     .Register<EnumerateFiles, EnumerateFilesDesigner>(file, m => m.Register(new CategoryAttribute(Resources.Options_Category), p => p.SearchPattern))
                     .Register<WaitFile, WaitFileDesigner>(file)
                     .Register<WaitDynamicFile, WaitDynamicFileDesigner>(file);
 
+
                 // FILE COMPRESSION
                 builder
-                    .Register<Zip, ZipDesigner>(fileCompression)
+                    .Register<Zip, ZipDesigner>(fileCompression, m =>
+                        m.Register(p => p.ShortEntryNames, booleanPropertyEditorAttribute))
                     .Register<ZipEntriesCount, ZipEntriesCountDesigner>(fileCompression)
-                    .Register<Unzip, UnzipDesigner>(fileCompression);
+                    .Register<Unzip, UnzipDesigner>(fileCompression, m =>
+                        m.Register(p => p.Overwrite, booleanPropertyEditorAttribute));
+
 
                 // WORKFLOW
                 builder
@@ -95,7 +110,9 @@ namespace Autossential.Activities.Design
                     .Register<Exit, ExitDesigner>(workflow)
                     .Register<Next, NextDesigner>(workflow)
                     .Register<Iterate, IterateDesigner>(workflow, m => m.Register(new CategoryAttribute(Resources.Options_Category), p => p.Reverse))
-                    .Register<WhenDo, WhenDoDesigner>(workflow);
+                    .Register<WhenDo, WhenDoDesigner>(workflow)
+                    .Register<RepeatUntilFailure, RepeatUntilFailureDesigner>(workflow);
+
 
                 // PROGRAMMING
                 builder
@@ -105,6 +122,7 @@ namespace Autossential.Activities.Design
                     .Register<Increment, IncrementDesigner>(programming)
                     .Register<IsTrue, IsTrueDesigner>(programming)
                     .Register<ReplaceTokens, ReplaceTokensDesigner>(programming);
+
 
                 // SECURITY
                 builder
@@ -119,8 +137,11 @@ namespace Autossential.Activities.Design
                 var encryptionTypes = typeof(SymmetricAlgorithmEncryptionBase<>).GetDerivedTypes().ToArray();
 
                 builder
-                    .RegisterToMember(new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description), "Iterations", encryptionTypes)
-                    .RegisterToMember(new BrowsableAttribute(false), "Result", encryptionTypes);
+                    .RegisterToMember(
+                        new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description),
+                        nameof(SymmetricAlgorithmEncryptionBase<AesEncryption>.Iterations),
+                        encryptionTypes)
+                    .RegisterToMember(new BrowsableAttribute(false), nameof(ActivityWithResult.Result), encryptionTypes);
 
 
 #if NET6_0
@@ -132,10 +153,19 @@ namespace Autossential.Activities.Design
                     });
 #endif
 
-
-                // DIAGNOSTICS
+                // APPS & DIAGNOSTICS
                 builder
-                    .Register<Stopwatch, StopwatchDesigner>(diagnostics);
+                    .Register<Stopwatch, StopwatchDesigner>(appsAndDiagnostics)
+                    .Register<TerminateProcess, TerminateProcessDesigner>(appsAndDiagnostics, m =>
+                        m.Register(p => p.ContinueOnError, booleanPropertyEditorAttribute));
+
+
+                // COMMON / SHARED
+                var continuableActivityTypes = typeof(ContinuableAsyncTaskCodeActivity).GetDerivedTypes().ToArray();
+                builder.RegisterToMember(
+                    booleanPropertyEditorAttribute,
+                    nameof(ContinuableAsyncTaskCodeActivity.ContinueOnError),
+                    continuableActivityTypes);
             });
         }
     }

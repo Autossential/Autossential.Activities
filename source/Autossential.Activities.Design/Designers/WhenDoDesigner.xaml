@@ -21,7 +21,7 @@
         <DrawingBrush Drawing="{StaticResource WhenDoIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+    <c:ActivityDecoratorControl>
         <StackPanel MinWidth="300">
             <Label Content="{Binding Path=WhenLabel, Mode=TwoWay}" />
             <sap:WorkflowItemPresenter

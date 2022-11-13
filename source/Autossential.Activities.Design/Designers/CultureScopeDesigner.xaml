@@ -4,7 +4,8 @@
     xmlns:sa="http://schemas.microsoft.com/netfx/2009/xaml/activities"
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
-    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls" xmlns:sapv="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation">
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls" 
+    xmlns:sapv="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation">
 
     <sap:ActivityDesigner.Resources>
         <ResourceDictionary>
@@ -20,7 +21,7 @@
     </sap:ActivityDesigner.Icon>
 
     <Border Padding="4,0">
-        <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+        <c:ActivityDecoratorControl>
             <StackPanel MinWidth="300">
                 <Grid>
                     <Grid.ColumnDefinitions>

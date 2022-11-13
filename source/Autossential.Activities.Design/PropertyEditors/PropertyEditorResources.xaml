@@ -1,7 +1,9 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:PropertyEditing="clr-namespace:System.Activities.Presentation.PropertyEditing;assembly=System.Activities.Presentation" >
+    xmlns:PropertyEditing="clr-namespace:System.Activities.Presentation.PropertyEditing;assembly=System.Activities.Presentation" 
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
+    xmlns:shared="clr-namespace:Autossential.Shared.Activities.Design.Controls">
 
     <DataTemplate x:Key="ArgumentDictionaryPropertyEditor">
         <Grid>
@@ -17,6 +19,18 @@
                 ToolTip="Edit items in this collection..."/>
 
         </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="BooleanPropertyEditor">
+        <FrameworkTemplate.Resources>
+            <sapc:ModelPropertyEntryToOwnerActivityConverter x:Key="ModelPropertyEntryToOwnerActivityConverter"/>
+        </FrameworkTemplate.Resources>
+        <DockPanel LastChildFill="True">
+            <shared:BooleanPropertyEditorControl 
+                PropertyName="{Binding Path=ParentProperty.PropertyName, Mode=OneWay}"
+                OwnerActivity="{Binding Path=ParentProperty, Mode=OneWay, Converter={StaticResource ModelPropertyEntryToOwnerActivityConverter}}" 
+                PropertyHierarchyPath="{Binding ParentProperty.SubPropertyHierarchyPath, Mode=OneWay}"/>
+        </DockPanel>
     </DataTemplate>
 
 </ResourceDictionary>

@@ -118,8 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
-    <value>The collection that will receive the new items.</value>
+    <value>The collection you want to modify.</value>
     <comment>property description</comment>
+  </data>
+  <data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+    <value>Collection</value>
+    <comment>property name</comment>
   </data>
   <data name="AddRangeToCollection_Description" xml:space="preserve">
     <value>Adds a set of items to the specified collection.</value>
@@ -141,6 +145,10 @@
     <value>The items to be added to the collection.</value>
     <comment>property description</comment>
   </data>
+  <data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+    <value>Items</value>
+    <comment>property name</comment>
+  </data>
   <data name="AesAlgorithmEncryption_DisplayName" xml:space="preserve">
     <value>AES</value>
     <comment>activity name</comment>
@@ -153,6 +161,10 @@
     <value>The column indexes or column names to apply the aggregation. If not specified, the aggregation will be applied in all possible columns.</value>
     <comment>property description</comment>
   </data>
+  <data name="Aggregate_Columns_DisplayName" xml:space="preserve">
+    <value>Columns</value>
+    <comment>property name</comment>
+  </data>
   <data name="Aggregate_Description" xml:space="preserve">
     <value>Aggregates the DataTable data by the specified function resulting in a DataRow, product of this aggregation.</value>
     <comment>activity description</comment>
@@ -161,17 +173,33 @@
     <value>The aggregate function.</value>
     <comment>property description</comment>
   </data>
+  <data name="Aggregate_Function_DisplayName" xml:space="preserve">
+    <value>Function</value>
+    <comment>property name</comment>
+  </data>
   <data name="Aggregate_InputDataTable_Description" xml:space="preserve">
     <value>The data table which the aggregate function will be applied.</value>
     <comment>property description</comment>
+  </data>
+  <data name="Aggregate_InputDataTable_DisplayName" xml:space="preserve">
+    <value>DataTable</value>
+    <comment>property name</comment>
   </data>
   <data name="Aggregate_Result_Description" xml:space="preserve">
     <value>An object array containing the result of the aggregation.</value>
     <comment>property description</comment>
   </data>
+  <data name="Aggregate_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
   <data name="CheckPoint_Data_Description" xml:space="preserve">
     <value>A collection of key/value pairs that provide additional user-defined information about the exception.</value>
     <comment>property description</comment>
+  </data>
+  <data name="CheckPoint_Data_DisplayName" xml:space="preserve">
+    <value>Data</value>
+    <comment>property name</comment>
   </data>
   <data name="CheckPoint_Description" xml:space="preserve">
     <value>Checks if a given expression is true, if not, thrown the specified exception.</value>
@@ -182,16 +210,28 @@
     <comment>activity name</comment>
   </data>
   <data name="CheckPoint_Exception_Description" xml:space="preserve">
-    <value>The exception that will be thrown if the expression is not true.</value>
+    <value>The exception to thrown if the expression is not true.</value>
     <comment>property description</comment>
+  </data>
+  <data name="CheckPoint_Exception_DisplayName" xml:space="preserve">
+    <value>Exception</value>
+    <comment>property name</comment>
   </data>
   <data name="CheckPoint_Expression_Description" xml:space="preserve">
     <value>The expression to be evaluated.</value>
     <comment>property description</comment>
   </data>
+  <data name="CheckPoint_Expression_DisplayName" xml:space="preserve">
+    <value>Expression</value>
+    <comment>property name</comment>
+  </data>
   <data name="CleanUpFolder_DeleteEmptyFolders_Description" xml:space="preserve">
-    <value>Determines if the left empty folders after files deletion must also be deleted. Default is true.</value>
+    <value>Determines if the left empty folders after files deletion must also be deleted.</value>
     <comment>property description</comment>
+  </data>
+  <data name="CleanUpFolder_DeleteEmptyFolders_DisplayName" xml:space="preserve">
+    <value>DeleteEmptyFolders</value>
+    <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_Description" xml:space="preserve">
     <value>Deletes all files and folders from a specified folder.</value>
@@ -205,17 +245,33 @@
     <value>The folder path to be cleaned up.</value>
     <comment>property description</comment>
   </data>
+  <data name="CleanUpFolder_Folder_DisplayName" xml:space="preserve">
+    <value>FolderPath</value>
+    <comment>property name</comment>
+  </data>
   <data name="CleanUpFolder_LastWriteTime_Description" xml:space="preserve">
     <value>Deletes only the files with last write time till this reference date. Default is DateTime.Now.</value>
     <comment>property description</comment>
+  </data>
+  <data name="CleanUpFolder_LastWriteTime_DisplayName" xml:space="preserve">
+    <value>LastWriteTime</value>
+    <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_Result_Description" xml:space="preserve">
     <value>An object containing the number of files deleted, folders deleted and total deleted.</value>
     <comment>property description</comment>
   </data>
+  <data name="CleanUpFolder_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
   <data name="CleanUpFolder_SearchPattern_Description" xml:space="preserve">
     <value>The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings. Default value is "*.*".</value>
     <comment>property description</comment>
+  </data>
+  <data name="CleanUpFolder_SearchPattern_DisplayName" xml:space="preserve">
+    <value>SearchPattern</value>
+    <comment>property name</comment>
   </data>
   <data name="Common_Category" xml:space="preserve">
     <value>Common</value>
@@ -237,6 +293,10 @@
     <value>The desired culture, eg.: en-US, pt-BR, jp-JP, etc.</value>
     <comment>property description</comment>
   </data>
+  <data name="CultureScope_CultureName_DisplayName" xml:space="preserve">
+    <value>CultureName</value>
+    <comment>property name</comment>
+  </data>
   <data name="CultureScope_Description" xml:space="preserve">
     <value>A container that allows you to run a set of activities over a different culture.</value>
     <comment>activity description</comment>
@@ -257,17 +317,33 @@
     <value>The input DataRow.</value>
     <comment>property description</comment>
   </data>
+  <data name="DataRowToDictionary_InputDataRow_DisplayName" xml:space="preserve">
+    <value>DataRow</value>
+    <comment>property name</comment>
+  </data>
   <data name="DataRowToDictionary_Result_Description" xml:space="preserve">
     <value>The output Dictionary.</value>
     <comment>property description</comment>
+  </data>
+  <data name="DataRowToDictionary_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
   </data>
   <data name="DataTableEncryption_Action_Description" xml:space="preserve">
     <value>Determines if is to encrypt or decrypt the input value.</value>
     <comment>property description</comment>
   </data>
+  <data name="DataTableEncryption_Action_DisplayName" xml:space="preserve">
+    <value>Action</value>
+    <comment>property name</comment>
+  </data>
   <data name="DataTableEncryption_Columns_Description" xml:space="preserve">
     <value>The column indexes or column names to be decrypted.</value>
     <comment>property description</comment>
+  </data>
+  <data name="DataTableEncryption_Columns_DisplayName" xml:space="preserve">
+    <value>Columns</value>
+    <comment>property name</comment>
   </data>
   <data name="DataTableEncryption_Description" xml:space="preserve">
     <value>Provides methods to encrypt or decrypt the values of a DataTable using a specified algorithm and key.</value>
@@ -281,33 +357,65 @@
     <value>The DataTable to encrypt or decrypt.</value>
     <comment>property description</comment>
   </data>
+  <data name="DataTableEncryption_Input_DisplayName" xml:space="preserve">
+    <value>Input</value>
+    <comment>property name</comment>
+  </data>
   <data name="DataTableEncryption_Key_Description" xml:space="preserve">
     <value>The key to be use. Can be a string or a SecureString.</value>
     <comment>property description</comment>
+  </data>
+  <data name="DataTableEncryption_Key_DisplayName" xml:space="preserve">
+    <value>Key</value>
+    <comment>property name</comment>
   </data>
   <data name="DataTableEncryption_ParallelProcessing_Description" xml:space="preserve">
     <value>Uses parallel processing to scan through the DataTable and decrypt the data. Although this can drastically increase the processing speed, the rows in the resulting DataTable may have its order changed. Combine it with Sort property to reorder the DataTable when necessary.</value>
     <comment>property description</comment>
   </data>
+  <data name="DataTableEncryption_ParallelProcessing_DisplayName" xml:space="preserve">
+    <value>ParallelProcessing</value>
+    <comment>property name</comment>
+  </data>
   <data name="DataTableEncryption_Result_Description" xml:space="preserve">
     <value>The encrypted or decrypted DataTable.</value>
     <comment>property description</comment>
+  </data>
+  <data name="DataTableEncryption_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
   </data>
   <data name="DataTableEncryption_Sort_Description" xml:space="preserve">
     <value>Sets the sort column or columns, and sort order for the output DataTable. The value must be a string that contains the column name followed by "ASC" (ascending) or "DESC" (descending). Columns are sorted ascending by default. Multiple columns can be separated by commas.</value>
     <comment>property description</comment>
   </data>
+  <data name="DataTableEncryption_Sort_DisplayName" xml:space="preserve">
+    <value>Sort</value>
+    <comment>property name</comment>
+  </data>
   <data name="DataTableEncryption_TextEncoding_Description" xml:space="preserve">
     <value>The encoding used to interpret the data and key.</value>
     <comment>property description</comment>
+  </data>
+  <data name="DataTableEncryption_TextEncoding_DisplayName" xml:space="preserve">
+    <value>TextEncoding</value>
+    <comment>property name</comment>
   </data>
   <data name="DataTableToText_DataTable_Description" xml:space="preserve">
     <value>The DataTable.</value>
     <comment>property description</comment>
   </data>
+  <data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
+    <value>DataTable</value>
+    <comment>property name</comment>
+  </data>
   <data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
     <value>The date format to be used on the string representation for DateTime column types.</value>
     <comment>property description</comment>
+  </data>
+  <data name="DataTableToText_DateTimeFormat_DisplayName" xml:space="preserve">
+    <value>DateTimeFormat</value>
+    <comment>property name</comment>
   </data>
   <data name="DataTableToText_Description" xml:space="preserve">
     <value>Returns a string representation of a datatable on the specified text format (HTML, JSON or XML).</value>
@@ -321,9 +429,17 @@
     <value>The string representation of the DataTable.</value>
     <comment>property description</comment>
   </data>
+  <data name="DataTableToText_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
   <data name="DataTableToText_TextFormat_Description" xml:space="preserve">
     <value>The text format.</value>
     <comment>property description</comment>
+  </data>
+  <data name="DataTableToText_TextFormat_DisplayName" xml:space="preserve">
+    <value>TextFormat</value>
+    <comment>property name</comment>
   </data>
   <data name="Decrement_Description" xml:space="preserve">
     <value>Decrements the value of a variable by the specified decrement value.</value>
@@ -337,9 +453,17 @@
     <value>The decrement value.</value>
     <comment>property description</comment>
   </data>
+  <data name="Decrement_Value_DisplayName" xml:space="preserve">
+    <value>Value</value>
+    <comment>property name</comment>
+  </data>
   <data name="Decrement_Variable_Description" xml:space="preserve">
     <value>The variable to decrement.</value>
     <comment>property description</comment>
+  </data>
+  <data name="Decrement_Variable_DisplayName" xml:space="preserve">
+    <value>Variable</value>
+    <comment>property name</comment>
   </data>
   <data name="DESAlgorithmEncryption_DisplayName" xml:space="preserve">
     <value>DES</value>
@@ -357,9 +481,17 @@
     <value>The input Dictionary.</value>
     <comment>property description</comment>
   </data>
+  <data name="DictionaryToDataTable_InputDictionary_DisplayName" xml:space="preserve">
+    <value>Dictionary</value>
+    <comment>property name</comment>
+  </data>
   <data name="DictionaryToDataTable_Result_Description" xml:space="preserve">
     <value>The output DataTable.</value>
     <comment>property description</comment>
+  </data>
+  <data name="DictionaryToDataTable_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
   </data>
   <data name="EncryptionBase_ErrorMsg_AlgorithmMissing" xml:space="preserve">
     <value>An algorithm is required.</value>
@@ -373,6 +505,10 @@
     <value>The relative or absolute path (or collection of paths) to the directory (or directories) to search.</value>
     <comment>property description</comment>
   </data>
+  <data name="EnumerateFiles_DirectoryPath_DisplayName" xml:space="preserve">
+    <value>DirectoryPath</value>
+    <comment>property name</comment>
+  </data>
   <data name="EnumerateFiles_DisplayName" xml:space="preserve">
     <value>Enumerate Files</value>
     <comment>activity name</comment>
@@ -381,21 +517,41 @@
     <value>Excludes from the enumeration the files with any of the specified attributes.</value>
     <comment>property description</comment>
   </data>
+  <data name="EnumerateFiles_Exclusions_DisplayName" xml:space="preserve">
+    <value>Exclusions</value>
+    <comment>property name</comment>
+  </data>
   <data name="EnumerateFiles_Result_Description" xml:space="preserve">
     <value>An enumerable collection of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern and option.</value>
     <comment>property description</comment>
+  </data>
+  <data name="EnumerateFiles_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
   </data>
   <data name="EnumerateFiles_SearchOption_Description" xml:space="preserve">
     <value>Specifies whether the search operation should include only the current directory or should include all subdirectories.</value>
     <comment>property description</comment>
   </data>
+  <data name="EnumerateFiles_SearchOption_DisplayName" xml:space="preserve">
+    <value>SearchOption</value>
+    <comment>property name</comment>
+  </data>
   <data name="EnumerateFiles_SearchPattern_Description" xml:space="preserve">
     <value>The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings. Default value is "*.*".</value>
     <comment>property description</comment>
   </data>
+  <data name="EnumerateFiles_SearchPattern_DisplayName" xml:space="preserve">
+    <value>SearchPattern</value>
+    <comment>property name</comment>
+  </data>
   <data name="Exit_Condition_Description" xml:space="preserve">
     <value>Condition which determines if the activity will be evaluated. If empty it assumes True.</value>
     <comment>property description</comment>
+  </data>
+  <data name="Exit_Condition_DisplayName" xml:space="preserve">
+    <value>Condition</value>
+    <comment>property name</comment>
   </data>
   <data name="Exit_Description" xml:space="preserve">
     <value>Exits from the Container or Iterate Activities interrupting any child executions after it.</value>
@@ -405,13 +561,25 @@
     <value>The column name or index where the values will be extracted from.</value>
     <comment>property description</comment>
   </data>
+  <data name="ExtractDataColumnValues_Column_DisplayName" xml:space="preserve">
+    <value>Column</value>
+    <comment>property name</comment>
+  </data>
   <data name="ExtractDataColumnValues_DataTable_Description" xml:space="preserve">
     <value>The data table where the values will be extracted from.</value>
     <comment>property description</comment>
   </data>
+  <data name="ExtractDataColumnValues_DataTable_DisplayName" xml:space="preserve">
+    <value>DataTable</value>
+    <comment>property name</comment>
+  </data>
   <data name="ExtractDataColumnValues_DefaultValue_Description" xml:space="preserve">
     <value>The value to be use in case of the extract value cannot be converted to the specified type.</value>
     <comment>property description</comment>
+  </data>
+  <data name="ExtractDataColumnValues_DefaultValue_DisplayName" xml:space="preserve">
+    <value>DefaultValue</value>
+    <comment>property name</comment>
   </data>
   <data name="ExtractDataColumnValues_Description" xml:space="preserve">
     <value>Returns an array with all values of a respective data column.</value>
@@ -433,9 +601,17 @@
     <value>The array of values extracted from the data column.</value>
     <comment>property description</comment>
   </data>
+  <data name="ExtractDataColumnValues_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
   <data name="ExtractDataColumnValues_TypeArgument_Description" xml:space="preserve">
     <value>Determines the type of each value extracted from the data column.</value>
     <comment>property description</comment>
+  </data>
+  <data name="ExtractDataColumnValues_TypeArgument_DisplayName" xml:space="preserve">
+    <value>TypeArgument</value>
+    <comment>property name</comment>
   </data>
   <data name="Increment_Description" xml:space="preserve">
     <value>Increments the value of a variable by the specified increment value.</value>
@@ -449,9 +625,17 @@
     <value>The increment value.</value>
     <comment>property description</comment>
   </data>
+  <data name="Increment_Value_DisplayName" xml:space="preserve">
+    <value>Value</value>
+    <comment>property name</comment>
+  </data>
   <data name="Increment_Variable_Description" xml:space="preserve">
     <value>The variable to be incremented.</value>
     <comment>property description</comment>
+  </data>
+  <data name="Increment_Variable_DisplayName" xml:space="preserve">
+    <value>Variable</value>
+    <comment>property name</comment>
   </data>
   <data name="InputOutput_Category" xml:space="preserve">
     <value>Reference</value>
@@ -473,9 +657,17 @@
     <value>The result of the evaluation.</value>
     <comment>property description</comment>
   </data>
+  <data name="IsTrue_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
   <data name="IsTrue_Value_Description" xml:space="preserve">
     <value>The value or expression to be evaluated.</value>
     <comment>property description</comment>
+  </data>
+  <data name="IsTrue_Value_DisplayName" xml:space="preserve">
+    <value>Value</value>
+    <comment>property name</comment>
   </data>
   <data name="Iterate_Description" xml:space="preserve">
     <value>Iterates the activity execution for the specified number of times.</value>
@@ -489,13 +681,25 @@
     <value>The number of iterations that must be run.</value>
     <comment>property description</comment>
   </data>
+  <data name="Iterate_Iterations_DisplayName" xml:space="preserve">
+    <value>Iterations</value>
+    <comment>property name</comment>
+  </data>
   <data name="Iterate_Reverse_Description" xml:space="preserve">
     <value>Reverses the order of the output index.</value>
     <comment>property description</comment>
   </data>
+  <data name="Iterate_Reverse_DisplayName" xml:space="preserve">
+    <value>Reverse</value>
+    <comment>property name</comment>
+  </data>
   <data name="Next_Condition_Description" xml:space="preserve">
     <value>Condition which determines if the activity will be evaluated. If empty it assumes True.</value>
     <comment>property description</comment>
+  </data>
+  <data name="Next_Condition_DisplayName" xml:space="preserve">
+    <value>Condition</value>
+    <comment>property name</comment>
   </data>
   <data name="Next_Description" xml:space="preserve">
     <value>Skips the current iteration in an Iterate activity and proceeds the execution with the next iteration.</value>
@@ -513,6 +717,10 @@
     <value>When true, it avoids the "column name already belongs to DataTable" error by adding a numeric suffix to it.</value>
     <comment>property description</comment>
   </data>
+  <data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
+    <value>AutoRename</value>
+    <comment>property name</comment>
+  </data>
   <data name="PromoteHeaders_Description" xml:space="preserve">
     <value>Promotes the first row of values to new column headers.</value>
     <comment>activity description</comment>
@@ -525,6 +733,10 @@
     <value>Replaces an empty column name by the value of this property.</value>
     <comment>property description</comment>
   </data>
+  <data name="PromoteHeaders_EmptyColumnName_DisplayName" xml:space="preserve">
+    <value>EmptyColumnName</value>
+    <comment>property name</comment>
+  </data>
   <data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
     <value>There is no rows in the input data table to promote.</value>
     <comment>error message</comment>
@@ -533,9 +745,17 @@
     <value>The input DataTable.</value>
     <comment>property description</comment>
   </data>
+  <data name="PromoteHeaders_InputDataTable_DisplayName" xml:space="preserve">
+    <value>DataTable</value>
+    <comment>property name</comment>
+  </data>
   <data name="PromoteHeaders_Result_Description" xml:space="preserve">
     <value>The output DataTable.</value>
     <comment>property description</comment>
+  </data>
+  <data name="PromoteHeaders_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
   </data>
   <data name="RC2AlgorithmEncryption_DisplayName" xml:space="preserve">
     <value>RC2</value>
@@ -544,6 +764,10 @@
   <data name="RemoveDataColumns_Columns_Description" xml:space="preserve">
     <value>The column names or column indexes to be removed. Can be either a collection of string or int.</value>
     <comment>property description</comment>
+  </data>
+  <data name="RemoveDataColumns_Columns_DisplayName" xml:space="preserve">
+    <value>Columns</value>
+    <comment>property name</comment>
   </data>
   <data name="RemoveDataColumns_Description" xml:space="preserve">
     <value>Removes the specified columns from a DataTable</value>
@@ -565,6 +789,10 @@
     <value>The column names or column indexes to be analyzed on duplicate rows comparison. Can be either a collection of string or int.</value>
     <comment>property description</comment>
   </data>
+  <data name="RemoveDuplicateRows_Columns_DisplayName" xml:space="preserve">
+    <value>Columns</value>
+    <comment>property name</comment>
+  </data>
   <data name="RemoveDuplicateRows_Description" xml:space="preserve">
     <value>Removes the duplicate rows from a DataTable keeping only the first occurrence. Allows specify a limited number of columns for this comparison.</value>
     <comment>activity description</comment>
@@ -577,17 +805,33 @@
     <value>The DataTable to remove duplicated rows.</value>
     <comment>property description</comment>
   </data>
+  <data name="RemoveDuplicateRows_InputDataTable_DisplayName" xml:space="preserve">
+    <value>DataTable</value>
+    <comment>property name</comment>
+  </data>
   <data name="RemoveDuplicateRows_Result_Description" xml:space="preserve">
     <value>The output DataTable with the distinct rows.</value>
     <comment>property description</comment>
+  </data>
+  <data name="RemoveDuplicateRows_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_Columns_Description" xml:space="preserve">
     <value>The column indexes or column names to verify.</value>
     <comment>property description</comment>
   </data>
+  <data name="RemoveEmptyRows_Columns_DisplayName" xml:space="preserve">
+    <value>Columns</value>
+    <comment>property name</comment>
+  </data>
   <data name="RemoveEmptyRows_CustomOptions_Category" xml:space="preserve">
     <value>Options (Custom Mode)</value>
     <comment>category</comment>
+  </data>
+  <data name="RemoveEmptyRows_CustomOptions_DisplayName" xml:space="preserve">
+    <value>CustomOptions</value>
+    <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_Description" xml:space="preserve">
     <value>Removes the empty rows from a DataTable.</value>
@@ -601,21 +845,81 @@
     <value>The input DataTable.</value>
     <comment>property description</comment>
   </data>
+  <data name="RemoveEmptyRows_InputDataTable_DisplayName" xml:space="preserve">
+    <value>DataTable</value>
+    <comment>property name</comment>
+  </data>
   <data name="RemoveEmptyRows_Mode_Description" xml:space="preserve">
     <value>Determines when a row should be removed. (All) means that all columns must be empty to remove the row. (Any) for any column empty and (Custom) for the user defined rules.</value>
     <comment>property description</comment>
+  </data>
+  <data name="RemoveEmptyRows_Mode_DisplayName" xml:space="preserve">
+    <value>Mode</value>
+    <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_Operator_Description" xml:space="preserve">
     <value>Determines the evaluation condition for the specified columns where (And) checks if all columns are empty and (Or) checks if any of the columns are empty.</value>
     <comment>property description</comment>
   </data>
+  <data name="RemoveEmptyRows_Operator_DisplayName" xml:space="preserve">
+    <value>Operator</value>
+    <comment>property name</comment>
+  </data>
   <data name="RemoveEmptyRows_Result_Description" xml:space="preserve">
     <value>The output DataTable.</value>
     <comment>property description</comment>
   </data>
+  <data name="RemoveEmptyRows_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RepeatUntilFailure_Description" xml:space="preserve">
+    <value>Repeats an action until an exception occur or the maximum number of repetitions is reached.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="RepeatUntilFailure_DisplayName" xml:space="preserve">
+    <value>Repeat Until Failure</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="RepeatUntilFailure_IterationNumber_Description" xml:space="preserve">
+    <value>The current iteration that was being processed. You can use it to determine in which iteration the process has broken.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RepeatUntilFailure_IterationNumber_DisplayName" xml:space="preserve">
+    <value>IterationNumber</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RepeatUntilFailure_LoopInterval_Description" xml:space="preserve">
+    <value>The amount of time between each loop iteration.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RepeatUntilFailure_LoopInterval_DisplayName" xml:space="preserve">
+    <value>LoopInterval</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RepeatUntilFailure_MaximumRepetitions_Description" xml:space="preserve">
+    <value>The maximum number of repetitions to stop the loop in case no exception occur. If not set, its default value is 300.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RepeatUntilFailure_MaximumRepetitions_DisplayName" xml:space="preserve">
+    <value>MaximumRepetitions</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RepeatUntilFailure_OutputException_Description" xml:space="preserve">
+    <value>The exception which caused the loop break. This result can be null in case of no exceptions did occur.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RepeatUntilFailure_OutputException_DisplayName" xml:space="preserve">
+    <value>OutputException</value>
+    <comment>property name</comment>
+  </data>
   <data name="ReplaceTokens_Content_Description" xml:space="preserve">
     <value>The text which contains the tokens to be replaced.</value>
     <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Content_DisplayName" xml:space="preserve">
+    <value>Content</value>
+    <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Description" xml:space="preserve">
     <value>Replaces the tokens of a string by the values of a Dictionary. Tokens are strings written in a specific pattern, usually enclosed in special characters. Use the combination of 'Pattern' and 'Placeholder' properties to define your token format.</value>
@@ -629,17 +933,33 @@
     <value>The dictionary where each key/value pair are used to replace the tokens.</value>
     <comment>property description</comment>
   </data>
+  <data name="ReplaceTokens_InputDictionary_DisplayName" xml:space="preserve">
+    <value>Dictionary</value>
+    <comment>property name</comment>
+  </data>
   <data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
     <value>The token text pattern. It can have characters either before and after the placeholder.</value>
     <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Pattern_DisplayName" xml:space="preserve">
+    <value>Pattern</value>
+    <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
     <value>The placeholder where each dictionary key will found.</value>
     <comment>property description</comment>
   </data>
+  <data name="ReplaceTokens_Placeholder_DisplayName" xml:space="preserve">
+    <value>Placeholder</value>
+    <comment>property name</comment>
+  </data>
   <data name="ReplaceTokens_Result_Description" xml:space="preserve">
     <value>The content after the tokens replacement be performed.</value>
     <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
   </data>
   <data name="RijndaelAlgorithmEncryption_DisplayName" xml:space="preserve">
     <value>Rijndael</value>
@@ -653,6 +973,10 @@
     <value>Determines which method must be invoked by activity.</value>
     <comment>property description</comment>
   </data>
+  <data name="Stopwatch_Method_DisplayName" xml:space="preserve">
+    <value>Method</value>
+    <comment>property name</comment>
+  </data>
   <data name="Stopwatch_ReferenceStopwatch_Description" xml:space="preserve">
     <value>A variable that represents the instance of System.Diagnostics.Stopwatch class.</value>
     <comment>property description</comment>
@@ -665,9 +989,33 @@
     <value>The number of iterations for the operation.</value>
     <comment>property description</comment>
   </data>
+  <data name="SymmetricAlgorithmEncryptionBase_Iterations_DisplayName" xml:space="preserve">
+    <value>Iterations</value>
+    <comment>property name</comment>
+  </data>
+  <data name="TerminateProcess_Description" xml:space="preserve">
+    <value>Tries to gracefully close all instances of the applications corresponding to the specified processes. If not possible, it kills the process.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="TerminateProcess_DisplayName" xml:space="preserve">
+    <value>Terminate Process</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="TerminateProcess_ProcessName_Description" xml:space="preserve">
+    <value>The name of the process to close or kill. Can be either a single name or a list of names.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TerminateProcess_ProcessName_DisplayName" xml:space="preserve">
+    <value>ProcessName</value>
+    <comment>property name</comment>
+  </data>
   <data name="TextEncryption_Action_Description" xml:space="preserve">
     <value>Determines if is to encrypt or decrypt the input value.</value>
     <comment>property description</comment>
+  </data>
+  <data name="TextEncryption_Action_DisplayName" xml:space="preserve">
+    <value>Action</value>
+    <comment>property name</comment>
   </data>
   <data name="TextEncryption_Description" xml:space="preserve">
     <value>Provides methods to encrypt or decrypt a text using a specified algorithm and key.</value>
@@ -681,17 +1029,33 @@
     <value>The text to be encrypted or decrypted.</value>
     <comment>property description</comment>
   </data>
+  <data name="TextEncryption_Input_DisplayName" xml:space="preserve">
+    <value>Input</value>
+    <comment>property name</comment>
+  </data>
   <data name="TextEncryption_Key_Description" xml:space="preserve">
     <value>The key to be use. Can be a string or a SecureString.</value>
     <comment>property description</comment>
+  </data>
+  <data name="TextEncryption_Key_DisplayName" xml:space="preserve">
+    <value>Key</value>
+    <comment>property name</comment>
   </data>
   <data name="TextEncryption_Result_Description" xml:space="preserve">
     <value>The resulting string from the encrypt or decrypt operation.</value>
     <comment>property description</comment>
   </data>
+  <data name="TextEncryption_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
   <data name="TextEncryption_TextEncoding_Description" xml:space="preserve">
     <value>The encoding used to interpret the text and key.</value>
     <comment>property description</comment>
+  </data>
+  <data name="TextEncryption_TextEncoding_DisplayName" xml:space="preserve">
+    <value>TextEncoding</value>
+    <comment>property name</comment>
   </data>
   <data name="TransposeData_Description" xml:space="preserve">
     <value>Transposes a DataTable by swapping its rows and columns so that rows become columns and columns become rows.</value>
@@ -705,9 +1069,17 @@
     <value>The input DataTable to be transposed.</value>
     <comment>property description</comment>
   </data>
+  <data name="TransposeData_InputDataTable_DisplayName" xml:space="preserve">
+    <value>DataTable</value>
+    <comment>property name</comment>
+  </data>
   <data name="TransposeData_Result_Description" xml:space="preserve">
     <value>The output DataTable resulting of the transpose.</value>
     <comment>property description</comment>
+  </data>
+  <data name="TransposeData_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
   </data>
   <data name="TripleDESAlgorithmEncryption_DisplayName" xml:space="preserve">
     <value>Triple DES</value>
@@ -729,13 +1101,25 @@
     <value>The path to the folder where files will be extracted.</value>
     <comment>property description</comment>
   </data>
+  <data name="Unzip_ExtractTo_DisplayName" xml:space="preserve">
+    <value>ExtractTo</value>
+    <comment>property name</comment>
+  </data>
   <data name="Unzip_Overwrite_Description" xml:space="preserve">
     <value>When true, overwrites an existing file that has the same name as the destination file.</value>
     <comment>property description</comment>
   </data>
+  <data name="Unzip_Overwrite_DisplayName" xml:space="preserve">
+    <value>Overwrite</value>
+    <comment>property name</comment>
+  </data>
   <data name="Unzip_ZipFilePath_Description" xml:space="preserve">
     <value>The compressed file.</value>
     <comment>property description</comment>
+  </data>
+  <data name="Unzip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>ZipFilePath</value>
+    <comment>property name</comment>
   </data>
   <data name="Validation_ScopeError" xml:space="preserve">
     <value>Cannot be used outside of {0} activity.</value>
@@ -761,6 +1145,10 @@
     <value>The directory to be monitored.</value>
     <comment>property description</comment>
   </data>
+  <data name="WaitDynamicFile_DirectoryPath_DisplayName" xml:space="preserve">
+    <value>FolderPath</value>
+    <comment>property name</comment>
+  </data>
   <data name="WaitDynamicFile_DisplayName" xml:space="preserve">
     <value>Wait Dynamic File</value>
     <comment>activity name</comment>
@@ -769,21 +1157,45 @@
     <value>The accepted range is from {0} and {1}. The value will be clamped.</value>
     <comment>error message</comment>
   </data>
-  <data name="WaitDynamicFile_FileInfo_Description" xml:space="preserve">
-    <value>Returns the information about the file.</value>
+  <data name="WaitDynamicFile_FromDateTime_Description" xml:space="preserve">
+    <value>Considers only the files whose last write time is greater than this value. If is not set, the value used is the same as the last write time of the most recent file in the folder. If the folder is empty, the current date and time is used.</value>
     <comment>property description</comment>
+  </data>
+  <data name="WaitDynamicFile_FromDateTime_DisplayName" xml:space="preserve">
+    <value>FromDateTime</value>
+    <comment>property name</comment>
   </data>
   <data name="WaitDynamicFile_Interval_Description" xml:space="preserve">
     <value>Specifies the amount of time (in milliseconds) for the file re-check. Any values out of the range of 100-20000 milliseconds is reseted to its nearest limit. The default value is 500.</value>
     <comment>property description</comment>
   </data>
+  <data name="WaitDynamicFile_Interval_DisplayName" xml:space="preserve">
+    <value>Interval</value>
+    <comment>property name</comment>
+  </data>
+  <data name="WaitDynamicFile_Result_Description" xml:space="preserve">
+    <value>The FileInfo object of the respective file when found.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="WaitDynamicFile_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
   <data name="WaitDynamicFile_SearchPattern_Description" xml:space="preserve">
     <value>The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings. Default value is "*.*".</value>
     <comment>property description</comment>
   </data>
+  <data name="WaitDynamicFile_SearchPattern_DisplayName" xml:space="preserve">
+    <value>SearchPattern</value>
+    <comment>property name</comment>
+  </data>
   <data name="WaitDynamicFile_Timeout_Description" xml:space="preserve">
     <value>The maximum timeout to wait in milliseconds.</value>
     <comment>property description</comment>
+  </data>
+  <data name="WaitDynamicFile_Timeout_DisplayName" xml:space="preserve">
+    <value>Timeout</value>
+    <comment>property name</comment>
   </data>
   <data name="WaitFile_Description" xml:space="preserve">
     <value>Waits until the file be available.</value>
@@ -801,25 +1213,45 @@
     <value>The accepted range is from {0} and {1}. The value will be clamped.</value>
     <comment>error message</comment>
   </data>
-  <data name="WaitFile_FileInfo_Description" xml:space="preserve">
-    <value>(Optional) Returns the information about the file.</value>
-    <comment>property description</comment>
-  </data>
   <data name="WaitFile_FilePath_Description" xml:space="preserve">
     <value>The storage path of the file.</value>
     <comment>property description</comment>
+  </data>
+  <data name="WaitFile_FilePath_DisplayName" xml:space="preserve">
+    <value>FilePath</value>
+    <comment>property name</comment>
   </data>
   <data name="WaitFile_Interval_Description" xml:space="preserve">
     <value>Specifies the amount of time (in milliseconds) for the file re-check. Any values out of the range of 100-20000 milliseconds is reseted to its nearest limit. The default value is 500.</value>
     <comment>property description</comment>
   </data>
+  <data name="WaitFile_Interval_DisplayName" xml:space="preserve">
+    <value>Interval</value>
+    <comment>property name</comment>
+  </data>
+  <data name="WaitFile_Result_Description" xml:space="preserve">
+    <value>The FileInfo object of the respective file when found.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="WaitFile_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
   <data name="WaitFile_Timeout_Description" xml:space="preserve">
     <value>The maximum timeout to wait in milliseconds.</value>
     <comment>property description</comment>
   </data>
+  <data name="WaitFile_Timeout_DisplayName" xml:space="preserve">
+    <value>Timeout</value>
+    <comment>property name</comment>
+  </data>
   <data name="WaitFile_WaitForExist_Description" xml:space="preserve">
     <value>Waits until the file exists.</value>
     <comment>property description</comment>
+  </data>
+  <data name="WaitFile_WaitForExist_DisplayName" xml:space="preserve">
+    <value>WaitForExist</value>
+    <comment>property name</comment>
   </data>
   <data name="WhenDo_Description" xml:space="preserve">
     <value>Executes the 'Do' block if the condition activity returns true.</value>
@@ -833,9 +1265,17 @@
     <value>Inverts the condition of the when test.</value>
     <comment>property description</comment>
   </data>
+  <data name="WhenDo_Inverted_DisplayName" xml:space="preserve">
+    <value>Inverted</value>
+    <comment>property name</comment>
+  </data>
   <data name="WhenDo_WithElse_Description" xml:space="preserve">
     <value>Toggles the 'Else' block activating or deactivating it. </value>
     <comment>property description</comment>
+  </data>
+  <data name="WhenDo_WithElse_DisplayName" xml:space="preserve">
+    <value>WithElse</value>
+    <comment>property name</comment>
   </data>
   <data name="ZipEntriesCount_Description" xml:space="preserve">
     <value>Returns the number of entries (files and folders) from a Zip archive.</value>
@@ -849,6 +1289,10 @@
     <value>The number of entries (files and folders) in the zip archive.</value>
     <comment>property description</comment>
   </data>
+  <data name="ZipEntriesCount_EntriesCount_DisplayName" xml:space="preserve">
+    <value>EntriesCount</value>
+    <comment>property name</comment>
+  </data>
   <data name="ZipEntriesCount_ErrorMsg_OutputMissing" xml:space="preserve">
     <value>Please provide an output variable for at least one of the available options.</value>
     <comment>error message</comment>
@@ -857,17 +1301,33 @@
     <value>Returns the number of file entries in the zip archive.</value>
     <comment>property description</comment>
   </data>
+  <data name="ZipEntriesCount_FilesCount_DisplayName" xml:space="preserve">
+    <value>FilesCount</value>
+    <comment>property name</comment>
+  </data>
   <data name="ZipEntriesCount_FoldersCount_Description" xml:space="preserve">
     <value>Returns the number of folder entries in the zip archive.</value>
     <comment>property description</comment>
+  </data>
+  <data name="ZipEntriesCount_FoldersCount_DisplayName" xml:space="preserve">
+    <value>FoldersCount</value>
+    <comment>property name</comment>
   </data>
   <data name="ZipEntriesCount_ZipFilePath_Description" xml:space="preserve">
     <value>The path of the zip archive.</value>
     <comment>property description</comment>
   </data>
+  <data name="ZipEntriesCount_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>ZipFilePath</value>
+    <comment>property name</comment>
+  </data>
   <data name="Zip_CompressionLevel_Description" xml:space="preserve">
     <value>One of the enumeration values that indicates whether to emphasize speed or compression.</value>
     <comment>property description</comment>
+  </data>
+  <data name="Zip_CompressionLevel_DisplayName" xml:space="preserve">
+    <value>CompressionLevel</value>
+    <comment>property name</comment>
   </data>
   <data name="Zip_Description" xml:space="preserve">
     <value>Compress files into a zip archive.</value>
@@ -877,20 +1337,40 @@
     <value>Returns the amount of files added to zip archive.</value>
     <comment>property description</comment>
   </data>
+  <data name="Zip_FilesCount_DisplayName" xml:space="preserve">
+    <value>FilesCount</value>
+    <comment>property name</comment>
+  </data>
   <data name="Zip_ShortEntryNames_Description" xml:space="preserve">
     <value>When true, reduces the entry names when it is coming from different root paths.</value>
     <comment>property description</comment>
+  </data>
+  <data name="Zip_ShortEntryNames_DisplayName" xml:space="preserve">
+    <value>ShortEntryNames</value>
+    <comment>property name</comment>
   </data>
   <data name="Zip_TextEncoding_Description" xml:space="preserve">
     <value>The encoding to use when writing entry names in this archive. Specify a value for this parameter only when an encoding is required for interoperability with zip archive tools and libraries that do not support UTF-8 encoding for entry names.</value>
     <comment>property description</comment>
   </data>
+  <data name="Zip_TextEncoding_DisplayName" xml:space="preserve">
+    <value>TextEncoding</value>
+    <comment>property name</comment>
+  </data>
   <data name="Zip_ToCompress_Description" xml:space="preserve">
     <value>The path of the file(s) or folder(s) that will be compressed. Can be a string or a collection of strings.</value>
     <comment>property description</comment>
   </data>
+  <data name="Zip_ToCompress_DisplayName" xml:space="preserve">
+    <value>ToCompress</value>
+    <comment>property name</comment>
+  </data>
   <data name="Zip_ZipFilePath_Description" xml:space="preserve">
     <value>The path of the zip archive.</value>
     <comment>property description</comment>
+  </data>
+  <data name="Zip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>ZipFilePath</value>
+    <comment>property name</comment>
   </data>
 </root>

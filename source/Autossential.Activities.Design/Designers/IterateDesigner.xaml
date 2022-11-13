@@ -21,7 +21,7 @@
     </sap:ActivityDesigner.Icon>
 
     <Border Padding="4,0">
-        <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+        <c:ActivityDecoratorControl>
             <StackPanel MinWidth="300">
                 <Grid>
                     <Grid.ColumnDefinitions>

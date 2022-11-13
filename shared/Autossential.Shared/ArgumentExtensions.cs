@@ -14,6 +14,7 @@ namespace Autossential.Shared
 
             return type == arg.ArgumentType;
         }
+
         public static bool IsArgumentTypeAnyCompatible<T1, T2>(this Argument arg)
         {
             return IsArgumentTypeCompatible<T1>(arg)

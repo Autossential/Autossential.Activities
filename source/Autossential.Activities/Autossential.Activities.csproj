@@ -15,12 +15,9 @@
 		<Reference Include="WindowsBase" />
 	</ItemGroup>
 	
-	<ItemGroup Condition="'$(TargetFramework)' != 'net461' ">
-		<PackageReference Include="System.Activities" />
+	<ItemGroup Condition="$(TargetFramework.StartsWith('net6'))">
 		<PackageReference Include="UiPath.Workflow" />
 		<PackageReference Include="System.Activities.Core.Presentation" />
-		<PackageReference Include="System.Activities.Metadata" />
-		<PackageReference Include="UiPath.Activities.Api" />
 	</ItemGroup>
 	
 	<ItemGroup>
@@ -35,15 +32,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Update="Properties\ResourcesGen.cs">
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
-			<DependentUpon>ResourcesGen.tt</DependentUpon>
-		</Compile>
+		<Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	  <Compile Update="Properties\ResourcesGen.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ResourcesGen.tt</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,0 +1,32 @@
+﻿<sap:ActivityDesigner x:Class="Autossential.Activities.Design.Designers.TerminateProcessDesigner"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
+    Collapsible="False"
+    xmlns:as="clr-namespace:Autossential.Activities.Properties;assembly=Autossential.Activities">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush Drawing="{StaticResource CloseProcessesIcon}" Stretch="Uniform"></DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+
+    <StackPanel Width="230">
+        <sapv:ExpressionTextBox
+            Grid.Column="0"
+            ExpressionType="{Binding ModelItem.Properties[ProcessName].PropertyType.GenericTypeArguments[0]}"
+            OwnerActivity="{Binding ModelItem}"
+            UseLocationExpression="False"
+            HintText="Enter a process name or collection of process names"
+            Expression="{Binding ModelItem.ProcessName, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"/>
+    </StackPanel>
+</sap:ActivityDesigner>

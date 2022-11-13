@@ -2,11 +2,12 @@
 	<PropertyGroup>
 		<TargetFrameworks>net461;net6.0-windows</TargetFrameworks>
 		<UseWPF>true</UseWPF>
-		<Version>3.1.1</Version>
+		<UseWindowsForms>true</UseWindowsForms>
+		<Version>3.2.1</Version>
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Description>Provides a collection of activities designed to work with DataTables, Collections, Files, Programming, Workflows, Security and Diagnostics.</Description>
+		<Description>Provides a collection of activities designed for a variety of purposes. It contains +30 activities organized in different categories, such as Apps &amp; Diagnostics, Data, Files, Programming, Security and Workflows.</Description>
 		<Authors>Alexandre Toledo Perez</Authors>
 		<Copyright>© 2020-2022 Alexandre Toledo Perez</Copyright>
 		<PackageProjectUrl>https://github.com/Autossential</PackageProjectUrl>
@@ -17,6 +18,7 @@
 		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageIcon>packageIcon.png</PackageIcon>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -50,12 +52,11 @@
 		<Reference Include="System.Xaml" />
 		<Reference Include="WindowsBase" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' != 'net461' ">
-		<PackageReference Include="System.Activities" />
+
+	<ItemGroup Condition="$(TargetFramework.StartsWith('net6'))">
 		<PackageReference Include="UiPath.Workflow" />
+		<PackageReference Include="UiPath.Workflow.Runtime" />
 		<PackageReference Include="System.Activities.Core.Presentation" />
-		<PackageReference Include="System.Activities.Metadata" />
-		<PackageReference Include="UiPath.Activities.Api" />
 	</ItemGroup>
 	
 	<PropertyGroup Condition="'$(Configuration)' == 'Debug' AND '$(DesignTimeBuild)' != 'true'">

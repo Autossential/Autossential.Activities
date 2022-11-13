@@ -4,7 +4,8 @@
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
-    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls">
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls"
+    xmlns:as="clr-namespace:Autossential.Activities.Properties;assembly=Autossential.Activities">
 
     <sap:ActivityDesigner.Resources>
         <ResourceDictionary>
@@ -19,20 +20,26 @@
         <DrawingBrush Drawing="{StaticResource CheckPointIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+    <c:ActivityDecoratorControl>
         <StackPanel Width="300">
-            <Label Content="Expression" />
+            <Label 
+                Content="{x:Static as:Resources.CheckPoint_Expression_DisplayName}" 
+                ToolTip="{x:Static as:Resources.CheckPoint_Expression_Description}" />
             <sapv:ExpressionTextBox
                 ExpressionType="{Binding ModelItem.Properties[Expression].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
-                Expression="{Binding ModelItem.Expression, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
-            <Label Content="Exception" />
+                Expression="{Binding ModelItem.Expression, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
+                HintText="Enter a condition to be tested"/>
+            <Label
+                Content="{x:Static as:Resources.CheckPoint_Exception_DisplayName}" 
+                ToolTip="{x:Static as:Resources.CheckPoint_Exception_Description}" />
             <sapv:ExpressionTextBox
                 ExpressionType="{Binding ModelItem.Properties[Exception].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
-                Expression="{Binding ModelItem.Exception, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
+                Expression="{Binding ModelItem.Exception, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
+                HintText="Enter the exception to thrown"/>
         </StackPanel>
     </c:ActivityDecoratorControl>
 </sap:ActivityDesigner>

@@ -4,7 +4,8 @@
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
-    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls">
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls"
+    xmlns:as="clr-namespace:Autossential.Activities.Properties;assembly=Autossential.Activities">
 
     <sap:ActivityDesigner.Resources>
         <ResourceDictionary>
@@ -19,7 +20,7 @@
         <DrawingBrush Drawing="{StaticResource RemoveDuplicateRowsIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <c:ActivityDecoratorControl Style="{StaticResource ActivityDecoratorStyle}">
+    <c:ActivityDecoratorControl>
         <Grid Width="300">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -31,20 +32,28 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Content="DataTable" Grid.Row="0" Grid.Column="0" />
+            <Label 
+                Content="{x:Static as:Resources.RemoveDuplicateRows_InputDataTable_DisplayName}" 
+                ToolTip="{x:Static as:Resources.RemoveDuplicateRows_InputDataTable_Description}" 
+                Grid.Row="0" Grid.Column="0" />
             <sapv:ExpressionTextBox Grid.Row="1" Grid.Column="0"
                                     ExpressionType="{Binding ModelItem.Properties[InputDataTable].PropertyType.GenericTypeArguments[0]}"
                                     OwnerActivity="{Binding Path=ModelItem}"
                                     UseLocationExpression="False"
-                                    Expression="{Binding Path=ModelItem.InputDataTable, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=In, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                    Expression="{Binding Path=ModelItem.InputDataTable, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=In, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                    HintText="Enter a data table">
             </sapv:ExpressionTextBox>
 
-            <Label Content="Result (Output)" Grid.Row="0" Grid.Column="2" />
+            <c:BadgeLabelControl 
+                Label="{x:Static as:Resources.RemoveDuplicateRows_Result_DisplayName}" 
+                ToolTip="{x:Static as:Resources.RemoveDuplicateRows_Result_Description}" 
+                Badge="Out" Grid.Row="0" Grid.Column="2"/>
             <sapv:ExpressionTextBox Grid.Row="1" Grid.Column="2"
                                     ExpressionType="{Binding ModelItem.Properties[Result].PropertyType.GenericTypeArguments[0]}"
                                     OwnerActivity="{Binding Path=ModelItem}"
                                     UseLocationExpression="True"
-                                    Expression="{Binding Path=ModelItem.Result, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=Out, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                    Expression="{Binding Path=ModelItem.Result, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=Out, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                    HintText="Enter a data table">
             </sapv:ExpressionTextBox>
         </Grid>
     </c:ActivityDecoratorControl>

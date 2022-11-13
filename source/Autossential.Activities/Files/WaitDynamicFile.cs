@@ -16,6 +16,7 @@ namespace Autossential.Activities
         public InArgument<string> DirectoryPath { get; set; }
         public InArgument<string> SearchPattern { get; set; }
         public InArgument<int> Timeout { get; set; } = 30000;
+        public InArgument<DateTime?> FromDateTime { get; set; }
         public int Interval { get; set; } = 500;
         public OutArgument<FileInfo> Result { get; set; }
 
@@ -35,7 +36,9 @@ namespace Autossential.Activities
             var dir = DirectoryPath.Get(context);
             var time = Timeout.Get(context);
             var searchPattern = SearchPattern.Get(context) ?? "*.*";
-            var afterDate = CalculateDate(dir);
+            var fromDateTime = FromDateTime.Get(context);
+            var afterDate = (fromDateTime == null) ? CalculateDate(dir) : fromDateTime.Value;
+
             var filePath = await ExecuteWithTimeoutAsync(context, token, ExecuteMainAsync(dir, searchPattern, afterDate, token), time).ConfigureAwait(false);
             return ctx => Result.Set(ctx, filePath != null ? new FileInfo(filePath) : null);
         }

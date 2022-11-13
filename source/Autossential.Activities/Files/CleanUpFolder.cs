@@ -20,7 +20,7 @@ namespace Autossential.Activities
         public InArgument SearchPattern { get; set; }
         public OutArgument<CleanUpFolderResult> Result { get; set; }
         public InArgument<DateTime?> LastWriteTime { get; set; }
-        public bool DeleteEmptyFolders { get; set; } = true;
+        public InArgument<bool> DeleteEmptyFolders { get; set; } = true;
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
@@ -42,6 +42,7 @@ namespace Autossential.Activities
             var folder = Folder.Get(context);
             var patterns = SearchPattern?.GetAsArray<string>(context) ?? new[] { "*" };
             var lastWriteTime = LastWriteTime?.Get(context) ?? DateTime.Now;
+            var deleteEmptyFolders = DeleteEmptyFolders.Get(context);
 
             int filesDeleted = 0;
             int foldersDeleted = 0;
@@ -67,7 +68,8 @@ namespace Autossential.Activities
                     }
                 }
 
-                if (DeleteEmptyFolders)
+                
+                if (deleteEmptyFolders)
                 {
                     foreach (var f in Directory.EnumerateDirectories(folder, "*", SearchOption.AllDirectories).Reverse())
                     {

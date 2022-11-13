@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Autossential.Activities.Test
@@ -30,6 +31,35 @@ namespace Autossential.Activities.Test
             var expectedFileName = await createFile.ConfigureAwait(false);
             var info = result.Get(p => p.Result) as FileInfo;
             Assert.AreEqual(Path.GetFullPath(expectedFileName), info.FullName);
+        }
+
+        [TestMethod]
+        [DataRow(false)]
+        [DataRow(true)]
+        public async Task FromDateTime(bool setDate)
+        {
+            DateTime? fromDate = null;
+            if (setDate)
+                fromDate = DateTime.Now;
+
+            var createFile = CreateFileAfter(1);
+            await Task.Delay(2000);
+            var args = GetArgs(IOSamples.GetTestPath("output"), "*.txt");
+            args.Add(nameof(WaitDynamicFile.Timeout), 2000);
+            args.Add(nameof(WaitDynamicFile.ContinueOnError), true);
+            args.Add(nameof(WaitDynamicFile.FromDateTime), fromDate);
+
+            var result = WorkflowTester.Run(new WaitDynamicFile(), args);
+            var expectedFileName = await createFile.ConfigureAwait(false);
+            var info = result.Get(p => p.Result) as FileInfo;
+            if (setDate)
+            {
+                Assert.AreEqual(Path.GetFullPath(expectedFileName), info.FullName);
+            }
+            else
+            {
+                Assert.IsNull(info);
+            }            
         }
 
         [TestMethod]

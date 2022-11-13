@@ -18,6 +18,7 @@
 		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageIcon>packageIcon.png</PackageIcon>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<ItemGroup>

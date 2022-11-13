@@ -16,13 +16,13 @@ namespace Autossential.Core.Security.Algorithms
 
         public override byte[] Decrypt(byte[] data, byte[] password)
         {
-            using (var alg = new RC2CryptoServiceProvider())
+            using (var alg = RC2.Create())
                 return SymmetricDecrypt(alg, data, password);
         }
 
         public override byte[] Encrypt(byte[] data, byte[] password)
         {
-            using (var alg = new RC2CryptoServiceProvider())
+            using (var alg = RC2.Create())
                 return SymmetricEncrypt(alg, data, password);
         }
     }

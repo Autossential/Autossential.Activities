@@ -16,13 +16,13 @@ namespace Autossential.Core.Security.Algorithms
 
         public override byte[] Decrypt(byte[] data, byte[] password)
         {
-            using (var alg = new TripleDESCryptoServiceProvider())
+            using (var alg = TripleDES.Create())
                 return SymmetricDecrypt(alg, data, password);
         }
 
         public override byte[] Encrypt(byte[] data, byte[] password)
         {
-            using (var alg = new TripleDESCryptoServiceProvider())
+            using (var alg = TripleDES.Create())
                 return SymmetricEncrypt(alg, data, password);
         }
     }

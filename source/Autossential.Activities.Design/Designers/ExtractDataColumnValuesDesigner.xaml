@@ -42,7 +42,7 @@
                                     OwnerActivity="{Binding Path=ModelItem}"
                                     UseLocationExpression="False"
                                     Expression="{Binding Path=ModelItem.InputDataTable, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=In, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                    HintText="Enter a data table variable" />
+                                    HintText="Enter a data table" />
 
                 <Label 
                     Content="{x:Static as:Resources.ExtractDataColumnValues_Column_DisplayName}" 
@@ -64,7 +64,7 @@
                 Badge="Out"/>
             <sapv:ExpressionTextBox ExpressionType="{Binding ModelItem.Properties[Result].PropertyType.GenericTypeArguments[0]}"
                                     OwnerActivity="{Binding Path=ModelItem}"
-                                    HintText="Enter an array variable"
+                                    HintText="Enter an array"
                                     UseLocationExpression="True"
                                     Expression="{Binding Path=ModelItem.Result, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=Out, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 

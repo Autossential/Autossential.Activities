@@ -75,7 +75,7 @@
                     OwnerActivity="{Binding ModelItem}"
                     UseLocationExpression="True"
                     Expression="{Binding ModelItem.Result, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}"
-                    HintText="Enter the FileInfo variable"/>
+                    HintText="Enter the FileInfo"/>
             </Grid>
         </StackPanel>
     </c:ActivityDecoratorControl>

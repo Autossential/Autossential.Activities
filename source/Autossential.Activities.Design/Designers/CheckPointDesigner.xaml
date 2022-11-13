@@ -39,7 +39,7 @@
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
                 Expression="{Binding ModelItem.Exception, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
-                HintText="Enter the Exception to thrown"/>
+                HintText="Enter the exception to thrown"/>
         </StackPanel>
     </c:ActivityDecoratorControl>
 </sap:ActivityDesigner>

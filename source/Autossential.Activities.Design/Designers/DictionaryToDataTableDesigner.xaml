@@ -42,7 +42,8 @@
                 ExpressionType="{Binding ModelItem.Properties[InputDictionary].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
-                Expression="{Binding ModelItem.InputDictionary, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
+                Expression="{Binding ModelItem.InputDictionary, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" 
+                HintText="Enter a dictionary"/>
 
             <c:BadgeLabelControl 
                 Label="{x:Static as:Resources.DictionaryToDataTable_Result_DisplayName}" 
@@ -54,7 +55,8 @@
                 ExpressionType="{Binding ModelItem.Properties[Result].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="True"
-                Expression="{Binding ModelItem.Result, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}" />
+                Expression="{Binding ModelItem.Result, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}" 
+                HintText="Enter a data table"/>
         </Grid>
     </c:ActivityDecoratorControl>
 </sap:ActivityDesigner>

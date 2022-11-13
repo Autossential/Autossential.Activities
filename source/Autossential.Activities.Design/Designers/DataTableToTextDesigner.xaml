@@ -63,7 +63,7 @@
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="True"
                 Expression="{Binding ModelItem.Result, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}"
-                HintText="Enter a string variable"/>
+                HintText="Enter a string"/>
         </StackPanel>
 
     </c:ActivityDecoratorControl>

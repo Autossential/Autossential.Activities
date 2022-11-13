@@ -65,7 +65,7 @@
                     UseLocationExpression="True"
                     Expression="{Binding ModelItem.Result, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}"
                     Grid.Column="2" Grid.Row="1"
-                    HintText="Enter a enumerator variable"/>
+                    HintText="Enter a enumerator"/>
             </Grid>
         </StackPanel>
         <!--

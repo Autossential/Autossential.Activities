@@ -41,7 +41,7 @@
                     OwnerActivity="{Binding ModelItem}"
                     UseLocationExpression="False"
                     Expression="{Binding ModelItem.InputDataTable, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
-                    HintText="Enter a DataTable"/>
+                    HintText="Enter a data table"/>
                 <Label Content="{x:Static as:Resources.Aggregate_Function_DisplayName}" 
                        ToolTip="{x:Static as:Resources.Aggregate_Function_Description}"
                        Grid.Row="0" Grid.Column="2" />
@@ -55,7 +55,7 @@
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="True"
                 Expression="{Binding ModelItem.Result, ConverterParameter=Out, Converter={StaticResource ArgumentToExpressionConverter}}" 
-                HintText="Enter an array variable" />
+                HintText="Enter an array" />
         </StackPanel>
     </c:ActivityDecoratorControl>
 </sap:ActivityDesigner>

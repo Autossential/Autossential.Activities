@@ -26,7 +26,7 @@
             ExpressionType="{Binding ModelItem.Properties[Value].PropertyType.GenericTypeArguments[0]}"
             OwnerActivity="{Binding ModelItem}"
             UseLocationExpression="False"
-            HintText="Enter a expression to be evaluated"
+            HintText="Enter an expression to be evaluated"
             Expression="{Binding ModelItem.Value, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" />
     </StackPanel>
 </sap:ActivityDesigner>

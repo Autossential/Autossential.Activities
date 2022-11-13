@@ -41,7 +41,7 @@
                     OwnerActivity="{Binding ModelItem}"
                     UseLocationExpression="True"
                     Expression="{Binding ModelItem.ReferenceStopwatch, ConverterParameter=InOut, Converter={StaticResource ArgumentToExpressionConverter}}" 
-                    HintText="Enter a stopwatch variable"/>
+                    HintText="Enter a stopwatch"/>
 
             <Label
                 Content="{x:Static as:Resources.Stopwatch_Method_DisplayName}"

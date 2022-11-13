@@ -33,7 +33,7 @@
             OwnerActivity="{Binding ModelItem}"
             UseLocationExpression="True"
             Expression="{Binding ModelItem.Variable, ConverterParameter=InOut, Converter={StaticResource ArgumentToExpressionConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-            HintText="Enter a integer variable" />
+            HintText="Enter an integer" />
 
         <Label Grid.Column="1" Content="By" HorizontalAlignment="Center" />
         <sapv:ExpressionTextBox
@@ -42,6 +42,6 @@
             OwnerActivity="{Binding ModelItem}"
             UseLocationExpression="False"
             Expression="{Binding ModelItem.Value, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-            HintText="Enter a integer expression"/>
+            HintText="Enter an integer"/>
     </Grid>
 </sap:ActivityDesigner>

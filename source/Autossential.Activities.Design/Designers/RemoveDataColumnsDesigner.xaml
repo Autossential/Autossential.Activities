@@ -38,7 +38,7 @@
                                     OwnerActivity="{Binding Path=ModelItem}"
                                     UseLocationExpression="True"
                                     Expression="{Binding Path=ModelItem.ReferenceDataTable, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=InOut, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                    HintText="Enter a data table variable">
+                                    HintText="Enter a data table">
             </sapv:ExpressionTextBox>
 
             <Label 

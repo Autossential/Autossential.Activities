@@ -41,7 +41,7 @@
                                     OwnerActivity="{Binding Path=ModelItem}"
                                     UseLocationExpression="False"
                                     Expression="{Binding Path=ModelItem.InputDataTable, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=In, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                    HintText="Enter a data table variable">
+                                    HintText="Enter a data table">
             </sapv:ExpressionTextBox>
 
             <c:BadgeLabelControl
@@ -53,7 +53,7 @@
                                     OwnerActivity="{Binding Path=ModelItem}"
                                     UseLocationExpression="True"
                                     Expression="{Binding Path=ModelItem.Result, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=Out, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                    HintText="Enter a data table variable">
+                                    HintText="Enter a data table">
             </sapv:ExpressionTextBox>
         </Grid>
     </c:ActivityDecoratorControl>

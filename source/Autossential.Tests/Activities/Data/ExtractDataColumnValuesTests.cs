@@ -72,6 +72,19 @@ namespace Autossential.Activities.Test
             }, GetArgs(Initialize(), 1)));
         }
 
+        [TestMethod]
+        public void EmptyTable()
+        {
+            var dt = new DataTable();
+            var result = WorkflowTester.Invoke(new ExtractDataColumnValues<string>
+            {
+                Column = new InArgument<string>("Col0")
+            }, GetArgs(dt, null));
+
+            Assert.AreEqual(0, result.Length);
+
+        }
+
         private static IDictionary<string, object> GetArgs(DataTable inputDataTable, object defaultValue)
         {
             return new Dictionary<string, object>

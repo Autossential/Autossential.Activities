@@ -12,6 +12,8 @@
 		<Reference Include="System.Activities.Presentation" />
 		<Reference Include="System.Data.DataSetExtensions" />
 		<Reference Include="System.IO.Compression" />
+		<Reference Include="System.Net.Http" />
+		<Reference Include="System.Net.Http.WebRequest" />
 		<Reference Include="WindowsBase" />
 	</ItemGroup>
 	

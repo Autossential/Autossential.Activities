@@ -498,7 +498,7 @@
     <comment>property description</comment>
   </data>
   <data name="DownloadFile_Description" xml:space="preserve">
-    <value>Downloads any file from a public access URL directly to a local file path.</value>
+    <value>Downloads any file from a public access URI directly to a local file path.</value>
     <comment>activity description</comment>
   </data>
   <data name="DownloadFile_DestinationFilePath_Description" xml:space="preserve">

@@ -1191,7 +1191,7 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'Downloads any file from a public access URL directly to a local file path.'.
+        /// Looks up a localized string similar to 'Downloads any file from a public access URI directly to a local file path.'.
         /// </summary>
         public static string DownloadFile_Description => ResourceManager.GetString("DownloadFile_Description", Culture);
     

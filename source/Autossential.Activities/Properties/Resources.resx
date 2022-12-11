@@ -493,26 +493,6 @@
     <value>Result</value>
     <comment>property name</comment>
   </data>
-  <data name="DownloadFile_AllowUntrustedSSLCertificate_Description" xml:space="preserve">
-    <value>Determines if the resource can be downloaded from URIs with untrusted SSL certificates. (Not recommended).</value>
-    <comment>property description</comment>
-  </data>
-  <data name="DownloadFile_Description" xml:space="preserve">
-    <value>Downloads any file from a public access URI directly to a local file path.</value>
-    <comment>activity description</comment>
-  </data>
-  <data name="DownloadFile_DestinationFilePath_Description" xml:space="preserve">
-    <value>The local file path where the downloaded resource will be saved.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="DownloadFile_DisplayName" xml:space="preserve">
-    <value>Download File</value>
-    <comment>activity name</comment>
-  </data>
-  <data name="DownloadFile_RequestURI_Description" xml:space="preserve">
-    <value>The URI of the resource to download.</value>
-    <comment>property description</comment>
-  </data>
   <data name="EncryptionBase_ErrorMsg_AlgorithmMissing" xml:space="preserve">
     <value>An algorithm is required.</value>
     <comment>error message</comment>

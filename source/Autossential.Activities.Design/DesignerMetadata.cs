@@ -1,6 +1,5 @@
 ﻿using Autossential.Activities.Design.Designers;
 using Autossential.Activities.Design.PropertyEditors;
-using Autossential.Activities.Files;
 using Autossential.Activities.Properties;
 using Autossential.Activities.Security.Algorithms;
 using Autossential.Activities.Workflow;
@@ -91,8 +90,7 @@ namespace Autossential.Activities.Design
                     })
                     .Register<EnumerateFiles, EnumerateFilesDesigner>(file, m => m.Register(new CategoryAttribute(Resources.Options_Category), p => p.SearchPattern))
                     .Register<WaitFile, WaitFileDesigner>(file)
-                    .Register<WaitDynamicFile, WaitDynamicFileDesigner>(file)
-                    .Register<DownloadFile, DownloadFileDesigner>(file);
+                    .Register<WaitDynamicFile, WaitDynamicFileDesigner>(file);
 
 
                 // FILE COMPRESSION

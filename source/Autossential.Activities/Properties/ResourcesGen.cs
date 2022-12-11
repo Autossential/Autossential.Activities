@@ -573,12 +573,6 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'The URI of the resource to download.'.
-        /// </summary>
-        public static string DownloadFile_RequestURI_Description => ResourceManager.GetString("DownloadFile_RequestURI_Description", Culture);
-    
-
-        /// <summary>
         /// Looks up a localized string similar to 'Iterations'.
         /// </summary>
         public static string SymmetricAlgorithmEncryptionBase_Iterations_DisplayName => ResourceManager.GetString("SymmetricAlgorithmEncryptionBase_Iterations_DisplayName", Culture);
@@ -927,12 +921,6 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'The local file path where the downloaded resource will be saved.'.
-        /// </summary>
-        public static string DownloadFile_DestinationFilePath_Description => ResourceManager.GetString("DownloadFile_DestinationFilePath_Description", Culture);
-    
-
-        /// <summary>
         /// Looks up a localized string similar to 'Deletes all files and folders from a specified folder.'.
         /// </summary>
         public static string CleanUpFolder_Description => ResourceManager.GetString("CleanUpFolder_Description", Culture);
@@ -1191,12 +1179,6 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'Downloads any file from a public access URI directly to a local file path.'.
-        /// </summary>
-        public static string DownloadFile_Description => ResourceManager.GetString("DownloadFile_Description", Culture);
-    
-
-        /// <summary>
         /// Looks up a localized string similar to 'Specifies the amount of time (in milliseconds) for the file re-check. Any values out of the range of 100-20000 milliseconds is reseted to its nearest limit. The default value is 500.'.
         /// </summary>
         public static string WaitDynamicFile_Interval_Description => ResourceManager.GetString("WaitDynamicFile_Interval_Description", Culture);
@@ -1320,12 +1302,6 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The encrypted or decrypted DataTable.'.
         /// </summary>
         public static string DataTableEncryption_Result_Description => ResourceManager.GetString("DataTableEncryption_Result_Description", Culture);
-    
-
-        /// <summary>
-        /// Looks up a localized string similar to 'Determines if the resource can be downloaded from URIs with untrusted SSL certificates. (Not recommended).'.
-        /// </summary>
-        public static string DownloadFile_AllowUntrustedSSLCertificate_Description => ResourceManager.GetString("DownloadFile_AllowUntrustedSSLCertificate_Description", Culture);
     
 
         /// <summary>
@@ -1590,12 +1566,6 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Wait Dynamic File'.
         /// </summary>
         public static string WaitDynamicFile_DisplayName => ResourceManager.GetString("WaitDynamicFile_DisplayName", Culture);
-    
-
-        /// <summary>
-        /// Looks up a localized string similar to 'Download File'.
-        /// </summary>
-        public static string DownloadFile_DisplayName => ResourceManager.GetString("DownloadFile_DisplayName", Culture);
     
 
         /// <summary>

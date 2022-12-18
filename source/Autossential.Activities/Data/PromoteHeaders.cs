@@ -21,6 +21,7 @@ namespace Autossential.Activities
             metadata.AddRuntimeArgument(InputDataTable, nameof(InputDataTable), true);
             metadata.AddRuntimeArgument(EmptyColumnName, nameof(EmptyColumnName), true);
             metadata.AddRuntimeArgument(Result, nameof(Result), true);
+            metadata.AddRuntimeArgument(AutoRename, nameof(AutoRename), true);
 
             if (EmptyColumnName != null && EmptyColumnName.Expression is Literal<string> prop && string.IsNullOrEmpty(prop.Value))
                 metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(EmptyColumnName)));

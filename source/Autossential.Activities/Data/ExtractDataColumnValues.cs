@@ -36,6 +36,9 @@ namespace Autossential.Activities
         protected override T[] Execute(CodeActivityContext context)
         {
             var dt = InputDataTable.Get(context);
+            if (dt.Columns.Count == 0)
+                return new T[0];
+
             var col = Column.Get(context);
 
             int index = 0;

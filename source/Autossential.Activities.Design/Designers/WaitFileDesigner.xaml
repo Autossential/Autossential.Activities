@@ -4,8 +4,7 @@
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
-    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls"
-    xmlns:as="clr-namespace:Autossential.Activities.Properties;assembly=Autossential.Activities">
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls">
 
     <sap:ActivityDesigner.Resources>
         <ResourceDictionary>

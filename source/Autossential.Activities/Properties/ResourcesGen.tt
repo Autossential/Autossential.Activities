@@ -20,7 +20,6 @@
 namespace <#= resourceNamespace #>
 {
     using System.Resources;   
-    
 
     public partial class Resources 
     {
@@ -66,27 +65,15 @@ namespace <#= resourceNamespace #>
             }
         }
 
-        // ####### FORMATTERS ###############################################
-        
+        #region FORMATTERS
         <# GenerateFormatters(resourceSet); #>   
+        #endregion
 
-        // ####### GETTERS ##################################################
-
+        #region GETTERS
         <# GenerateGetters(resourceSet); #>   
-
-        // ####### RESOURCE NAMES ###########################################
-
-        /// <summary>
-        /// Contains all resource names stored in their respective constants.
-        /// </summary>
-        public static class ResourceNames
-        {
-            <# GenerateNames(resourceSet); #>
-        }
+        #endregion
     }
 }
-    
-
 <#+
     void GenerateFormatters(ResourceSet resourceSet)
     {
@@ -134,18 +121,4 @@ $@"        /// <returns>A copy of format string in which the format items have b
     ");
         }
     }
-
-    void GenerateNames(ResourceSet resourceSet)
-    {
-        foreach (DictionaryEntry entry in resourceSet)
-        {
-        WriteLine($@"
-            /// <summary>
-            /// Stores the resource name '{entry.Key}'.
-            /// </summary>
-            public const string {entry.Key} = ""{entry.Key}"";
-        ");
-        }
-    }
-    
 #>

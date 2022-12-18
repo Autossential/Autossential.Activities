@@ -22,6 +22,12 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
+        
+    - name: Adding nuget package sources (MyGet-UiPath)
+      run: dotnet nuget add source https://www.myget.org/F/uipath/ --name MyGet-UiPath
+      
+    - name: Adding nuget package sources (UiPath-Internal)
+      run: dotnet nuget add source https://uipath.pkgs.visualstudio.com/Public.Feeds/_packaging/UiPath-Internal/nuget/v3/index.json --name UiPath-Internal
      
     - name: Restore
       run: dotnet restore ${{env.project}}

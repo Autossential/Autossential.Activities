@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Activities.Presentation.Metadata;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 
 namespace Autossential.Shared.Activities.Design

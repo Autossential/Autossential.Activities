@@ -1,0 +1,54 @@
+﻿<sap:ActivityDesigner x:Class="Autossential.Activities.Design.Designers.TimeLoopDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sa="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls"
+    xmlns:sapv="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+    xmlns:as="clr-namespace:Autossential.Activities.Properties;assembly=Autossential.Activities">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush Drawing="{StaticResource TimeLoopIcon}" Stretch="Uniform"></DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+
+    <Border Padding="4,0">
+        <c:ActivityDecoratorControl>
+            <StackPanel MinWidth="300">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label 
+                        Content="{x:Static as:Resources.TimeLoop_ExitAfter_DisplayName}" 
+                        ToolTip="{x:Static as:Resources.TimeLoop_ExitAfter_Description}"
+                        Grid.Column="0" />
+                    <sapv:ExpressionTextBox
+                        Grid.Column="1"
+                        ExpressionType="{Binding ModelItem.Properties[ExitAfter].PropertyType.GenericTypeArguments[0]}"
+                        OwnerActivity="{Binding ModelItem}"
+                        UseLocationExpression="False"
+                        HintText='Enter with a time value, e.g: 00:01:00'
+                        Expression="{Binding ModelItem.ExitAfter, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+
+                <sap:WorkflowItemPresenter
+                    AutomationProperties.AutomationId="Activity"
+                    Margin="0"
+                    Item="{Binding Path=ModelItem.Body.Handler, Mode=TwoWay}"
+                    AllowedItemType="sa:Activity"
+                    HintText="Drop activities here" />
+            </StackPanel>
+        </c:ActivityDecoratorControl>
+    </Border>
+</sap:ActivityDesigner>

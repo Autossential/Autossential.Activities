@@ -741,6 +741,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Repeats an action for the specified period of time.'.
+        /// </summary>
+        public static string TimeLoop_Description => ResourceManager.GetString("TimeLoop_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'RC2'.
         /// </summary>
         public static string RC2AlgorithmEncryption_DisplayName => ResourceManager.GetString("RC2AlgorithmEncryption_DisplayName", Culture);
@@ -786,6 +792,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'DataTable'.
         /// </summary>
         public static string TransposeData_InputDataTable_DisplayName => ResourceManager.GetString("TransposeData_InputDataTable_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The amount of time to wait on each loop iteration.'.
+        /// </summary>
+        public static string TimeLoop_LoopInterval_Description => ResourceManager.GetString("TimeLoop_LoopInterval_Description", Culture);
     
 
         /// <summary>
@@ -885,6 +897,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Exits from the loop after the period of time.'.
+        /// </summary>
+        public static string TimeLoop_ExitAfter_Description => ResourceManager.GetString("TimeLoop_ExitAfter_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'TextFormat'.
         /// </summary>
         public static string DataTableToText_TextFormat_DisplayName => ResourceManager.GetString("DataTableToText_TextFormat_DisplayName", Culture);
@@ -948,6 +966,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The column names or column indexes to be removed. Can be either a collection of string or int.'.
         /// </summary>
         public static string RemoveDataColumns_Columns_Description => ResourceManager.GetString("RemoveDataColumns_Columns_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The current iteration (one-based) that is being processed.'.
+        /// </summary>
+        public static string TimeLoop_IterationNumber_Description => ResourceManager.GetString("TimeLoop_IterationNumber_Description", Culture);
     
 
         /// <summary>
@@ -1239,6 +1263,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Time Loop'.
+        /// </summary>
+        public static string TimeLoop_DisplayName => ResourceManager.GetString("TimeLoop_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Inverted'.
         /// </summary>
         public static string WhenDo_Inverted_DisplayName => ResourceManager.GetString("WhenDo_Inverted_DisplayName", Culture);
@@ -1458,6 +1488,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Removes the empty rows from a DataTable.'.
         /// </summary>
         public static string RemoveEmptyRows_Description => ResourceManager.GetString("RemoveEmptyRows_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'ExitOnException'.
+        /// </summary>
+        public static string TimeLoop_ExitOnException_DisplayName => ResourceManager.GetString("TimeLoop_ExitOnException_DisplayName", Culture);
     
 
         /// <summary>
@@ -1683,6 +1719,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Exits form the loop in case of an exception occur.'.
+        /// </summary>
+        public static string TimeLoop_ExitOnException_Description => ResourceManager.GetString("TimeLoop_ExitOnException_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Method'.
         /// </summary>
         public static string Stopwatch_Method_DisplayName => ResourceManager.GetString("Stopwatch_Method_DisplayName", Culture);
@@ -1722,6 +1764,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The directory to be monitored.'.
         /// </summary>
         public static string WaitDynamicFile_DirectoryPath_Description => ResourceManager.GetString("WaitDynamicFile_DirectoryPath_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'IterationNumber'.
+        /// </summary>
+        public static string TimeLoop_IterationNumber_DisplayName => ResourceManager.GetString("TimeLoop_IterationNumber_DisplayName", Culture);
     
 
         /// <summary>
@@ -1863,6 +1911,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The exception which caused the loop break. This result can be null in case of no exceptions did occur.'.
+        /// </summary>
+        public static string TimeLoop_OutputException_Description => ResourceManager.GetString("TimeLoop_OutputException_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The aggregate function.'.
         /// </summary>
         public static string Aggregate_Function_Description => ResourceManager.GetString("Aggregate_Function_Description", Culture);
@@ -1884,6 +1938,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The accepted range is from {0} and {1}. The value will be clamped.'.
         /// </summary>
         public static string WaitFile_ErrorMsg_IntervalRange => ResourceManager.GetString("WaitFile_ErrorMsg_IntervalRange", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'ExitAfter'.
+        /// </summary>
+        public static string TimeLoop_ExitAfter_DisplayName => ResourceManager.GetString("TimeLoop_ExitAfter_DisplayName", Culture);
     
 
         /// <summary>
@@ -1926,6 +1986,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'FoldersCount'.
         /// </summary>
         public static string ZipEntriesCount_FoldersCount_DisplayName => ResourceManager.GetString("ZipEntriesCount_FoldersCount_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'LoopInterval'.
+        /// </summary>
+        public static string TimeLoop_LoopInterval_DisplayName => ResourceManager.GetString("TimeLoop_LoopInterval_DisplayName", Culture);
     
 
         /// <summary>
@@ -2022,6 +2088,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Specifies whether the search operation should include only the current directory or should include all subdirectories.'.
         /// </summary>
         public static string EnumerateFiles_SearchOption_Description => ResourceManager.GetString("EnumerateFiles_SearchOption_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Exception'.
+        /// </summary>
+        public static string TimeLoop_OutputException_DisplayName => ResourceManager.GetString("TimeLoop_OutputException_DisplayName", Culture);
     
    
         #endregion

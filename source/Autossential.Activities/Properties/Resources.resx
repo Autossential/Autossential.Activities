@@ -605,12 +605,44 @@
     <value>Result</value>
     <comment>property name</comment>
   </data>
+  <data name="ExtractDataColumnValues_Sanitize_Description" xml:space="preserve">
+    <value>Removes null values, empty strings, or those which consists only of white-space characters.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ExtractDataColumnValues_Sanitize_DisplayName" xml:space="preserve">
+    <value>Sanitize</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ExtractDataColumnValues_TextCase_Description" xml:space="preserve">
+    <value>Allows to transform the text casing during the extraction. Applied only if the TypeArgument is set to System.String.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ExtractDataColumnValues_TextCase_DisplayName" xml:space="preserve">
+    <value>TextCase</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ExtractDataColumnValues_Trim_Description" xml:space="preserve">
+    <value>Removes all leading and trailing occurrences of a set of specified characters from each extracted value. Applied only if the TypeArgument is set to System.String.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ExtractDataColumnValues_Trim_DisplayName" xml:space="preserve">
+    <value>Trim</value>
+    <comment>property description</comment>
+  </data>
   <data name="ExtractDataColumnValues_TypeArgument_Description" xml:space="preserve">
     <value>Determines the type of each value extracted from the data column.</value>
     <comment>property description</comment>
   </data>
   <data name="ExtractDataColumnValues_TypeArgument_DisplayName" xml:space="preserve">
     <value>TypeArgument</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ExtractDataColumnValues_Unique_Description" xml:space="preserve">
+    <value>Returns only a list of unique values.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ExtractDataColumnValues_Unique_DisplayName" xml:space="preserve">
+    <value>Unique</value>
     <comment>property name</comment>
   </data>
   <data name="Increment_Description" xml:space="preserve">
@@ -1055,6 +1087,54 @@
   </data>
   <data name="TextEncryption_TextEncoding_DisplayName" xml:space="preserve">
     <value>TextEncoding</value>
+    <comment>property name</comment>
+  </data>
+  <data name="TimeLoop_Description" xml:space="preserve">
+    <value>Repeats an action for the specified period of time.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="TimeLoop_DisplayName" xml:space="preserve">
+    <value>Time Loop</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="TimeLoop_ExitAfter_Description" xml:space="preserve">
+    <value>Exits from the loop after the period of time.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TimeLoop_ExitAfter_DisplayName" xml:space="preserve">
+    <value>ExitAfter</value>
+    <comment>property name</comment>
+  </data>
+  <data name="TimeLoop_ExitOnException_Description" xml:space="preserve">
+    <value>Exits form the loop in case of an exception occur.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TimeLoop_ExitOnException_DisplayName" xml:space="preserve">
+    <value>ExitOnException</value>
+    <comment>property name</comment>
+  </data>
+  <data name="TimeLoop_IterationNumber_Description" xml:space="preserve">
+    <value>The current iteration (one-based) that is being processed.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TimeLoop_IterationNumber_DisplayName" xml:space="preserve">
+    <value>IterationNumber</value>
+    <comment>property name</comment>
+  </data>
+  <data name="TimeLoop_LoopInterval_Description" xml:space="preserve">
+    <value>The amount of time to wait on each loop iteration.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TimeLoop_LoopInterval_DisplayName" xml:space="preserve">
+    <value>LoopInterval</value>
+    <comment>property name</comment>
+  </data>
+  <data name="TimeLoop_OutputException_Description" xml:space="preserve">
+    <value>The exception which caused the loop break. This result can be null in case of no exceptions did occur.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TimeLoop_OutputException_DisplayName" xml:space="preserve">
+    <value>Exception</value>
     <comment>property name</comment>
   </data>
   <data name="TransposeData_Description" xml:space="preserve">

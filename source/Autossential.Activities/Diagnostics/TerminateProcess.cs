@@ -25,8 +25,6 @@ namespace Autossential.Activities
 
         public InArgument ProcessName { get; set; }
 
-        public InArgument<bool> ContinueOnError { get; set; }
-
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
             base.CacheMetadata(metadata);
@@ -61,41 +59,45 @@ namespace Autossential.Activities
 
             foreach (var name in (IEnumerable<string>)names)
             {
-                do
+                try
                 {
-                    // Processes with GUI
-                    processes = Process.GetProcessesByName(name)
-                        .Where(p => p.MainWindowHandle != IntPtr.Zero).ToArray();
-
-                    foreach (var process in processes)
+                    do
                     {
-                        if (process.HasExited)
-                            continue;
+                        // Processes with GUI
+                        processes = Process.GetProcessesByName(name)
+                            .Where(p => p.MainWindowHandle != IntPtr.Zero).ToArray();
 
-                        hasGui = true;
-
-                        if (process.CloseMainWindow())
+                        foreach (var process in processes)
                         {
-                            process.Close();
-                            Thread.Sleep(DelayForNext);
+                            if (process.HasExited)
+                                continue;
+
+                            hasGui = true;
+
+                            if (process.CloseMainWindow())
+                            {
+                                process.Close();
+                                Thread.Sleep(DelayForNext);
+                                switched = false;
+                                continue;
+                            }
+
+                            if (!switched)
+                            {
+                                SetWindowPos(process.MainWindowHandle, _hWND_BOTTOM, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_NOACTIVATE);
+                                switched = true;
+                                continue;
+                            }
+
                             switched = false;
-                            continue;
+                            process.Kill();
+                            process.WaitForExit(WaitForExit);
+                            Thread.Sleep(DelayForNext);
                         }
 
-                        if (!switched)
-                        {
-                            SetWindowPos(process.MainWindowHandle, _hWND_BOTTOM, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_NOACTIVATE);
-                            switched = true;
-                            continue;
-                        }
-
-                        switched = false;
-                        process.Kill();
-                        process.WaitForExit(WaitForExit);
-                        Thread.Sleep(DelayForNext);
-                    }
-
-                } while (processes.Length > 0 && timer.ElapsedMilliseconds <= timeout);
+                    } while (processes.Length > 0 && timer.ElapsedMilliseconds <= timeout);
+                }
+                catch { }
 
                 if (hasGui)
                     Thread.Sleep(DelayNonGUI); // holds for a brief moment before search for non-GUI processes

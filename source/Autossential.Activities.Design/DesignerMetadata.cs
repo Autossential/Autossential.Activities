@@ -119,6 +119,10 @@ namespace Autossential.Activities.Design
                 .AddToMember(typeof(SymmetricAlgorithmEncryptionBase<>), nameof(ActivityWithResult.Result), new BrowsableAttribute(false))
                 .AddToMember(typeof(SymmetricAlgorithmEncryptionBase<>), nameof(SymmetricAlgorithmEncryptionBase<AesEncryption>.Iterations), new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description));
 
+
+            builder.Obsolete<RepeatUntilFailure>();
+            
+
 #if NET6_0_OR_GREATER
             builder
                 .Add<AesGcmAlgorithmEncryption, CryptoAlgorithmDesigner>(securityAlgorithms)

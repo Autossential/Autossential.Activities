@@ -25,6 +25,9 @@ namespace Autossential.Activities
             metadata.AddRuntimeArgument(InputDataTable, nameof(InputDataTable), true);
             metadata.AddRuntimeArgument(DefaultValue, nameof(DefaultValue), false);
             metadata.AddRuntimeArgument(Result, nameof(Result), true);
+            metadata.AddRuntimeArgument(Sanitize, nameof(Sanitize), false);
+            metadata.AddRuntimeArgument(Unique, nameof(Unique), false);
+            metadata.AddRuntimeArgument(Trim, nameof(Trim), false);
 
             if (Column == null)
             {
@@ -101,7 +104,8 @@ namespace Autossential.Activities
 
         private static IEnumerable<T> ConvertValues(object[] values, T defaultValue = default)
         {
-            var value = defaultValue;
+            T value;
+
             for (int i = 0; i < values.Length; i++)
             {
                 if (values[i] == DBNull.Value)
@@ -129,9 +133,9 @@ namespace Autossential.Activities
                 {
                     value = defaultValue;
                 }
+             
+                yield return value;
             }
-
-            yield return value;
         }
     }
 }

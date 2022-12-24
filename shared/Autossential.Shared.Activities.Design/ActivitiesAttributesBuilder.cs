@@ -76,6 +76,13 @@ namespace Autossential.Shared.Activities.Design
             return this;
         }
 
+        public ActivitiesTableBuilder Obsolete<TActivity>()
+        {
+            AddCustomAttributes(typeof(TActivity), new BrowsableAttribute(false));
+            AddCustomAttributes(typeof(TActivity), new ObsoleteAttribute());
+            return this;
+        }
+
         private static string GetMemberName<TActivity>(Expression<Func<TActivity, object>> property)
         {
             var me = property.Body as MemberExpression ?? (property.Body as UnaryExpression)?.Operand as MemberExpression;

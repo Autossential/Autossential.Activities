@@ -1090,23 +1090,15 @@
     <comment>property name</comment>
   </data>
   <data name="TimeLoop_Description" xml:space="preserve">
-    <value>Repeats an action for the specified period of time.</value>
+    <value>Executes the contained activities once and continues to do so for a specified period of time.</value>
     <comment>activity description</comment>
   </data>
   <data name="TimeLoop_DisplayName" xml:space="preserve">
     <value>Time Loop</value>
     <comment>activity name</comment>
   </data>
-  <data name="TimeLoop_ExitAfter_Description" xml:space="preserve">
-    <value>Exits from the loop after the period of time.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="TimeLoop_ExitAfter_DisplayName" xml:space="preserve">
-    <value>ExitAfter</value>
-    <comment>property name</comment>
-  </data>
   <data name="TimeLoop_ExitOnException_Description" xml:space="preserve">
-    <value>Exits form the loop in case of an exception occur.</value>
+    <value>Exits immediately from the loop in case of an unhandled exception occur.</value>
     <comment>property description</comment>
   </data>
   <data name="TimeLoop_ExitOnException_DisplayName" xml:space="preserve">
@@ -1135,6 +1127,14 @@
   </data>
   <data name="TimeLoop_OutputException_DisplayName" xml:space="preserve">
     <value>Exception</value>
+    <comment>property name</comment>
+  </data>
+  <data name="TimeLoop_Timer_Description" xml:space="preserve">
+    <value>The Timer determines when the loop must be stopped. Its value is checked after each iteration. The current iteration of the loop is not affected by the Timer.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TimeLoop_Timer_DisplayName" xml:space="preserve">
+    <value>Timer</value>
     <comment>property name</comment>
   </data>
   <data name="TransposeData_Description" xml:space="preserve">

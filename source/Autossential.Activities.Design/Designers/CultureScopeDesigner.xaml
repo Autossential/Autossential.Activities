@@ -20,15 +20,14 @@
         <DrawingBrush Drawing="{StaticResource CultureScopeIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <Border Padding="4,0">
-        <c:ActivityDecoratorControl>
-            <StackPanel MinWidth="300">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <sapv:ExpressionTextBox
+    <c:ActivityDecoratorControl>
+        <StackPanel Style="{StaticResource WrapperMinWidth}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <sapv:ExpressionTextBox
                         Grid.Column="0"
                         ExpressionType="{Binding ModelItem.Properties[CultureName].PropertyType.GenericTypeArguments[0]}"
                         OwnerActivity="{Binding ModelItem}"
@@ -36,18 +35,17 @@
                         HintText='"en-US"'
                         Expression="{Binding ModelItem.CultureName, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         HorizontalAlignment="Right"
-                        Width="70"
+                        Width="80"
                         EditorLostLogicalFocus="ExpressionTextBox_EditorLostLogicalFocus" />
-                    <Label Content="..." Grid.Column="1" Name="CultureLabel" Foreground="#999999" Loaded="CultureLabel_Loaded" />
-                </Grid>
+                <Label Content="..." Grid.Column="1" Name="CultureLabel" Foreground="#999999" Loaded="CultureLabel_Loaded" />
+            </Grid>
 
-                <sap:WorkflowItemPresenter
+            <sap:WorkflowItemPresenter
                     AutomationProperties.AutomationId="Activity"
                     Margin="0"
                     Item="{Binding Path=ModelItem.Body.Handler, Mode=TwoWay}"
                     AllowedItemType="sa:Activity"
                     HintText="Drop activities here" />
-            </StackPanel>
-        </c:ActivityDecoratorControl>
-    </Border>
+        </StackPanel>
+    </c:ActivityDecoratorControl>
 </sap:ActivityDesigner>

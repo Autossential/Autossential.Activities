@@ -21,13 +21,13 @@
     </sap:ActivityDesigner.Icon>
 
     <c:ActivityDecoratorControl>
-        <Grid Width="300">
+        <Grid Width="340">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="1.5*" />
                 <ColumnDefinition Width="10" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>

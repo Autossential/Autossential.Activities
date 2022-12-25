@@ -20,7 +20,7 @@
     </sap:ActivityDesigner.Icon>
 
     <c:ActivityDecoratorControl>
-        <Grid Width="300">
+        <Grid Style="{StaticResource DefaultWidth}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="23"></ColumnDefinition>

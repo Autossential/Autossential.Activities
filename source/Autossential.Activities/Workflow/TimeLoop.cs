@@ -12,7 +12,7 @@ namespace Autossential.Activities.Workflow
     {
         [Browsable(false)]
         public ActivityDelegate Body { get; set; }
-        public InArgument<TimeSpan> ExitAfter { get; set; }
+        public InArgument<TimeSpan> Timer { get; set; }
         public InArgument<bool> ExitOnException { get; set; }
         public InArgument<TimeSpan> LoopInterval { get; set; }
         public OutArgument<Exception> OutputException { get; set; }
@@ -20,8 +20,8 @@ namespace Autossential.Activities.Workflow
 
         protected override void CacheMetadata(ActivityMetadata metadata)
         {
-            if (ExitAfter == null)
-                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(ExitAfter)));
+            if (Timer == null)
+                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Timer)));
 
             base.CacheMetadata(metadata);
         }
@@ -58,12 +58,12 @@ namespace Autossential.Activities.Workflow
                     {
                         Condition = new LessThanOrEqual<TimeSpan, TimeSpan, bool>
                         {
-                            Left = new InArgument<TimeSpan>(context => ExitAfter.Get(context)),
+                            Left = new InArgument<TimeSpan>(context => Timer.Get(context)),
                             Right = new InArgument<TimeSpan>(TimeSpan.Zero)
                         },
                         Then = new Throw
                         {
-                            Exception = new InArgument<Exception>(_ => new ArgumentOutOfRangeException(nameof(ExitAfter)))
+                            Exception = new InArgument<Exception>(_ => new ArgumentOutOfRangeException(nameof(Timer)))
                         }
                     },
                     new Assign<DiagStopwatch>
@@ -78,7 +78,7 @@ namespace Autossential.Activities.Workflow
                             Left = new LessThanOrEqual<TimeSpan, TimeSpan, bool>
                             {
                                 Left = new InArgument<TimeSpan>(context => sw.Get(context).Elapsed),
-                                Right = new InArgument<TimeSpan>(context => ExitAfter.Get(context))
+                                Right = new InArgument<TimeSpan>(context => Timer.Get(context))
                             },
                             Right = new Not<bool, bool>
                             {

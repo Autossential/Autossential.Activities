@@ -21,12 +21,12 @@
     </sap:ActivityDesigner.Icon>
 
     <c:ActivityDecoratorControl>
-        <StackPanel Width="300">
+        <StackPanel Style="{StaticResource MajorWidth}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="10" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="130" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />

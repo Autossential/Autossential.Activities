@@ -20,7 +20,7 @@
     </sap:ActivityDesigner.Icon>
 
 
-    <c:ActivityDecoratorControl Width="186">
+    <c:ActivityDecoratorControl Width="220">
         <sapv:ExpressionTextBox
                 Grid.Column="0"
                 ExpressionType="{Binding ModelItem.Properties[Condition].PropertyType.GenericTypeArguments[0]}"

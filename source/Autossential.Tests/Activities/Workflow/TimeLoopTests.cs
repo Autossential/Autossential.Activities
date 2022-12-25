@@ -21,7 +21,7 @@ namespace Autossential.Tests.Activities
             var dyn = new DynamicActivity<int>();
             dyn.Implementation = () => new TimeLoop
             {
-                ExitAfter = new InArgument<TimeSpan>(TimeSpan.FromMilliseconds(100)),
+                Timer = new InArgument<TimeSpan>(TimeSpan.FromMilliseconds(100)),
                 Body = new ActivityAction
                 {
                     Handler = new Assign<int>
@@ -45,7 +45,7 @@ namespace Autossential.Tests.Activities
             var dyn = new DynamicActivity<int>();
             dyn.Implementation = () => new TimeLoop
             {
-                ExitAfter = new InArgument<TimeSpan>(TimeSpan.FromMilliseconds(100)),
+                Timer = new InArgument<TimeSpan>(TimeSpan.FromMilliseconds(100)),
                 ExitOnException = exitOnException,
                 Body = new ActivityAction
                 {
@@ -94,7 +94,7 @@ namespace Autossential.Tests.Activities
                 var dyn = new DynamicActivity<int>();
                 dyn.Implementation = () => new TimeLoop
                 {
-                    ExitAfter = new InArgument<TimeSpan>(TimeSpan.FromSeconds(0)),
+                    Timer = new InArgument<TimeSpan>(TimeSpan.FromSeconds(0)),
                     Body = new ActivityAction
                     {
                         Handler = new Sequence { }

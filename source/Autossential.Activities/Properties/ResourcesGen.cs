@@ -303,6 +303,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Timer'.
+        /// </summary>
+        public static string TimeLoop_Timer_DisplayName => ResourceManager.GetString("TimeLoop_Timer_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Variable'.
         /// </summary>
         public static string Increment_Variable_DisplayName => ResourceManager.GetString("Increment_Variable_DisplayName", Culture);
@@ -336,6 +342,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'LastWriteTime'.
         /// </summary>
         public static string CleanUpFolder_LastWriteTime_DisplayName => ResourceManager.GetString("CleanUpFolder_LastWriteTime_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Returns only a list of unique values.'.
+        /// </summary>
+        public static string ExtractDataColumnValues_Unique_Description => ResourceManager.GetString("ExtractDataColumnValues_Unique_Description", Culture);
     
 
         /// <summary>
@@ -741,7 +753,7 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'Repeats an action for the specified period of time.'.
+        /// Looks up a localized string similar to 'Repeats an action for a specified period of time.'.
         /// </summary>
         public static string TimeLoop_Description => ResourceManager.GetString("TimeLoop_Description", Culture);
     
@@ -897,12 +909,6 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'Exits from the loop after the period of time.'.
-        /// </summary>
-        public static string TimeLoop_ExitAfter_Description => ResourceManager.GetString("TimeLoop_ExitAfter_Description", Culture);
-    
-
-        /// <summary>
         /// Looks up a localized string similar to 'TextFormat'.
         /// </summary>
         public static string DataTableToText_TextFormat_DisplayName => ResourceManager.GetString("DataTableToText_TextFormat_DisplayName", Culture);
@@ -960,6 +966,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The input DataTable.'.
         /// </summary>
         public static string PromoteHeaders_InputDataTable_Description => ResourceManager.GetString("PromoteHeaders_InputDataTable_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Allows to transform the text casing during the extraction. Applied only if the TypeArgument is set to System.String.'.
+        /// </summary>
+        public static string ExtractDataColumnValues_TextCase_Description => ResourceManager.GetString("ExtractDataColumnValues_TextCase_Description", Culture);
     
 
         /// <summary>
@@ -1161,6 +1173,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Removes null values, empty strings, or those which consists only of white-space characters.'.
+        /// </summary>
+        public static string ExtractDataColumnValues_Sanitize_Description => ResourceManager.GetString("ExtractDataColumnValues_Sanitize_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Input'.
         /// </summary>
         public static string DataTableEncryption_Input_DisplayName => ResourceManager.GetString("DataTableEncryption_Input_DisplayName", Culture);
@@ -1200,6 +1218,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Value'.
         /// </summary>
         public static string Decrement_Value_DisplayName => ResourceManager.GetString("Decrement_Value_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Unique'.
+        /// </summary>
+        public static string ExtractDataColumnValues_Unique_DisplayName => ResourceManager.GetString("ExtractDataColumnValues_Unique_DisplayName", Culture);
     
 
         /// <summary>
@@ -1515,6 +1539,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Sanitize'.
+        /// </summary>
+        public static string ExtractDataColumnValues_Sanitize_DisplayName => ResourceManager.GetString("ExtractDataColumnValues_Sanitize_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'ZipFilePath'.
         /// </summary>
         public static string Zip_ZipFilePath_DisplayName => ResourceManager.GetString("Zip_ZipFilePath_DisplayName", Culture);
@@ -1626,6 +1656,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Result'.
         /// </summary>
         public static string CleanUpFolder_Result_DisplayName => ResourceManager.GetString("CleanUpFolder_Result_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The Timer determines when the loop must be stopped. Its value is checked after each iteration. The current iteration of the loop is not affected by the Timer.'.
+        /// </summary>
+        public static string TimeLoop_Timer_Description => ResourceManager.GetString("TimeLoop_Timer_Description", Culture);
     
 
         /// <summary>
@@ -1875,6 +1911,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Removes all leading and trailing occurrences of a set of specified characters from each extracted value. Applied only if the TypeArgument is set to System.String.'.
+        /// </summary>
+        public static string ExtractDataColumnValues_Trim_Description => ResourceManager.GetString("ExtractDataColumnValues_Trim_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The number of iterations that must be run.'.
         /// </summary>
         public static string Iterate_Iterations_Description => ResourceManager.GetString("Iterate_Iterations_Description", Culture);
@@ -1923,6 +1965,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Trim'.
+        /// </summary>
+        public static string ExtractDataColumnValues_Trim_DisplayName => ResourceManager.GetString("ExtractDataColumnValues_Trim_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Exits from the Container or Iterate Activities interrupting any child executions after it.'.
         /// </summary>
         public static string Exit_Description => ResourceManager.GetString("Exit_Description", Culture);
@@ -1938,12 +1986,6 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The accepted range is from {0} and {1}. The value will be clamped.'.
         /// </summary>
         public static string WaitFile_ErrorMsg_IntervalRange => ResourceManager.GetString("WaitFile_ErrorMsg_IntervalRange", Culture);
-    
-
-        /// <summary>
-        /// Looks up a localized string similar to 'ExitAfter'.
-        /// </summary>
-        public static string TimeLoop_ExitAfter_DisplayName => ResourceManager.GetString("TimeLoop_ExitAfter_DisplayName", Culture);
     
 
         /// <summary>
@@ -1998,6 +2040,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Culture Scope'.
         /// </summary>
         public static string CultureScope_DisplayName => ResourceManager.GetString("CultureScope_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'TextCase'.
+        /// </summary>
+        public static string ExtractDataColumnValues_TextCase_DisplayName => ResourceManager.GetString("ExtractDataColumnValues_TextCase_DisplayName", Culture);
     
 
         /// <summary>

@@ -4,8 +4,7 @@
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
-    Collapsible="False"
-    xmlns:as="clr-namespace:Autossential.Activities.Properties;assembly=Autossential.Activities">
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls">
 
     <sap:ActivityDesigner.Resources>
         <ResourceDictionary>
@@ -20,13 +19,15 @@
         <DrawingBrush Drawing="{StaticResource CloseProcessesIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <StackPanel Width="230">
-        <sapv:ExpressionTextBox
+    <c:ActivityDecoratorControl>
+        <StackPanel Style="{StaticResource MinorWidth}">
+            <sapv:ExpressionTextBox
             Grid.Column="0"
             ExpressionType="{Binding ModelItem.Properties[ProcessName].PropertyType.GenericTypeArguments[0]}"
             OwnerActivity="{Binding ModelItem}"
             UseLocationExpression="False"
             HintText="Enter a process name or collection of process names"
             Expression="{Binding ModelItem.ProcessName, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"/>
-    </StackPanel>
+        </StackPanel>
+    </c:ActivityDecoratorControl>
 </sap:ActivityDesigner>

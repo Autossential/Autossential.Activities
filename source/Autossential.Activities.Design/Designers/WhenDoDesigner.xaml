@@ -22,7 +22,7 @@
     </sap:ActivityDesigner.Icon>
 
     <c:ActivityDecoratorControl>
-        <StackPanel MinWidth="300">
+        <StackPanel Style="{StaticResource WrapperMinWidth}">
             <Label Content="{Binding Path=WhenLabel, Mode=TwoWay}" />
             <sap:WorkflowItemPresenter
                         AutomationProperties.AutomationId="Activity"

@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Autossential.Activities.Design": {
+      "commandName": "Project"
+    },
+    "Rehosted WF": {
+      "commandName": "Executable",
+      "executablePath": "D:\\Users\\alexa\\source\\repos\\Rehosted-Workflow-Designer\\RehostedDesigner\\bin\\Debug\\Rehosted WF Designer.exe",
+      "workingDirectory": "D:\\Users\\alexa\\source\\repos\\Rehosted-Workflow-Designer\\RehostedDesigner"
+    }
+  }
+}

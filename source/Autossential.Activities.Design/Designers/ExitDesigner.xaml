@@ -21,6 +21,7 @@
 
     <c:ActivityDecoratorControl>
         <sapv:ExpressionTextBox
+                Style="{StaticResource MinorWidth}"
                 Grid.Column="0"
                 ExpressionType="{Binding ModelItem.Properties[Condition].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"

@@ -35,11 +35,11 @@
                         Grid.Column="0" />
                 <sapv:ExpressionTextBox
                         Grid.Column="1"
-                        ExpressionType="{Binding ModelItem.Properties[ExitAfter].PropertyType.GenericTypeArguments[0]}"
+                        ExpressionType="{Binding ModelItem.Properties[Timer].PropertyType.GenericTypeArguments[0]}"
                         OwnerActivity="{Binding ModelItem}"
                         UseLocationExpression="False"
                         HintText='Enter with a time value, e.g: 00:01:00'
-                        Expression="{Binding ModelItem.ExitAfter, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        Expression="{Binding ModelItem.Timer, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
 
             <sap:WorkflowItemPresenter

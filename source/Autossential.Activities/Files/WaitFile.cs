@@ -16,29 +16,20 @@ namespace Autossential.Activities
 
         public InArgument<int> Timeout { get; set; } = 30000;
 
-        public bool WaitForExist { get; set; }
+        public InArgument<bool> WaitForExist { get; set; }
 
-        public int Interval { get; set; } = 500;
+        public InArgument<int> Interval { get; set; } = 500;
 
         public OutArgument<FileInfo> Result { get; set; }
-
-        private const int MINIMUM_INTERVAL = 100;
-        private const int MAXIMUM_INTERVAL = 20000;
-
-        protected override void CacheMetadata(CodeActivityMetadata metadata)
-        {
-            base.CacheMetadata(metadata);
-
-            if (Interval < MINIMUM_INTERVAL || Interval > MAXIMUM_INTERVAL)
-                metadata.AddValidationWarning(Resources.WaitFile_ErrorMsg_IntervalRangeFormat(MINIMUM_INTERVAL, MAXIMUM_INTERVAL));
-        }
 
         protected override async Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
             var path = FilePath.Get(context);
             var time = Timeout.Get(context);
+            var waitForExist = WaitForExist.Get(context);
+            var interval = Math.Max(Interval.Get(context), 50);
 
-            await ExecuteWithTimeoutAsync(context, token, ExecuteMainAsync(token, path), time, defaultHandler =>
+            await ExecuteWithTimeoutAsync(context, token, ExecuteMainAsync(path, waitForExist, interval, token), time, defaultHandler =>
             {
                 throw new TimeoutException("The operation has timed-out.", _fileException);
 
@@ -49,14 +40,12 @@ namespace Autossential.Activities
 
         private Exception _fileException;
 
-        private Task<bool> ExecuteMainAsync(CancellationToken token, string path)
+        private Task<bool> ExecuteMainAsync(string path, bool waitForExist, int interval, CancellationToken token)
         {
-            var interval = GetInterval();
-
             return Task.Run(() =>
             {
                 var done = false;
-                if (!WaitForExist && !File.Exists(path))
+                if (!waitForExist && !File.Exists(path))
                     throw new FileNotFoundException(Resources.WaitFile_ErrorMsg_FilePathDoesNotExists, path);
 
                 do
@@ -84,11 +73,6 @@ namespace Autossential.Activities
 
                 return done;
             }, token);
-        }
-
-        private int GetInterval()
-        {
-            return Interval < MINIMUM_INTERVAL ? MINIMUM_INTERVAL : Math.Min(Interval, MAXIMUM_INTERVAL);
         }
     }
 }

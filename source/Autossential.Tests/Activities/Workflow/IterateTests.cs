@@ -1,11 +1,12 @@
-﻿using Autossential.Shared.Tests;
+﻿using Autossential.Activities;
+using Autossential.Shared.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Activities;
 using System.Activities.Statements;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Autossential.Activities.Test
+namespace Autossential.Tests
 {
     [TestClass]
     public class IterateTests
@@ -38,8 +39,8 @@ namespace Autossential.Activities.Test
                                     {
                                         TargetObject = new InArgument<List<int>>(_ => list),
                                         MethodName = "Add",
-                                        Parameters = 
-                                        { 
+                                        Parameters =
+                                        {
                                             new InArgument<int>(ctx => index.Get(ctx))
                                         }
                                     }

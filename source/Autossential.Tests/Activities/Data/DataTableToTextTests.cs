@@ -1,4 +1,5 @@
-﻿using Autossential.Core.Enums;
+﻿using Autossential.Activities;
+using Autossential.Core.Enums;
 using Autossential.Shared.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -6,7 +7,7 @@ using System.Activities;
 using System.Collections.Generic;
 using System.Data;
 
-namespace Autossential.Activities.Test
+namespace Autossential.Tests
 {
     [TestClass]
     public class DataTableToTextTests

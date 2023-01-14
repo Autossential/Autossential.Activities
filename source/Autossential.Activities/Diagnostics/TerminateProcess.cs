@@ -21,7 +21,7 @@ namespace Autossential.Activities
         const uint SWP_NOMOVE = 0x0002;
         const uint SWP_NOACTIVATE = 0x0010;
 
-        public InArgument<int> Timeout { get; set; }
+        public InArgument<int> Timeout { get; set; } = 30000;
 
         public InArgument ProcessName { get; set; }
 
@@ -45,9 +45,6 @@ namespace Autossential.Activities
         protected override void Execute(CodeActivityContext context)
         {
             var timeout = Timeout.Get(context);
-            if (timeout <= 0)
-                timeout = 30000;
-
             var names = ProcessName.Get(context);
             if (names is string)
                 names = new string[] { names.ToString() };
@@ -108,11 +105,15 @@ namespace Autossential.Activities
 
                 foreach (var process in processes)
                 {
-                    if (process.HasExited)
-                        continue;
+                    try
+                    {
+                        if (process.HasExited)
+                            continue;
 
-                    process.Kill();
-                    process.WaitForExit(WaitForExit);
+                        process.Kill();
+                        process.WaitForExit(WaitForExit);
+                    }
+                    catch { }
                 }
             }
         }

@@ -1,24 +1,27 @@
 ﻿using Autossential.Activities.Properties;
+using Autossential.Shared.Activities.Base;
 using System;
 using System.Activities;
-using System.Activities.Expressions;
-using System.Activities.Statements;
 using System.ComponentModel;
-using DiagStopwatch = System.Diagnostics.Stopwatch;
+using System.Threading;
 
 namespace Autossential.Activities.Workflow
 {
-    public sealed class TimeLoop : Activity
+    public sealed class TimeLoop : ScopeActivity
     {
-        [Browsable(false)]
-        public ActivityDelegate Body { get; set; }
+        private TimeSpan _timer;
+        private TimeSpan _interval;
+        private int _index;
+        private bool _stop;
+        private System.Diagnostics.Stopwatch _sw;
+
         public InArgument<TimeSpan> Timer { get; set; }
         public InArgument<bool> ExitOnException { get; set; }
         public InArgument<TimeSpan> LoopInterval { get; set; }
         public OutArgument<Exception> OutputException { get; set; }
-        public OutArgument<int> IterationNumber { get; set; }
+        public OutArgument<int> Index { get; set; }
 
-        protected override void CacheMetadata(ActivityMetadata metadata)
+        protected override void CacheMetadata(NativeActivityMetadata metadata)
         {
             if (Timer == null)
                 metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Timer)));
@@ -26,142 +29,83 @@ namespace Autossential.Activities.Workflow
             base.CacheMetadata(metadata);
         }
 
-        public TimeLoop()
+        protected override void Execute(NativeActivityContext context)
         {
-            InitializeBody();
-            Implementation = Build;
+            _timer = Timer.Get(context);
+            if (_timer <= TimeSpan.Zero)
+                throw new ArgumentOutOfRangeException(nameof(Timer), _timer, "The value need to be greater than zero");
+
+            _interval = LoopInterval.Get(context);
+            _index = Index.Get(context);
+            _stop = false;
+
+            CreateBookmarks(context);
+
+            _sw = System.Diagnostics.Stopwatch.StartNew();
+            ExecuteNext(context);
         }
 
-        private void InitializeBody()
+        private void ApplyDelay()
         {
-            Body = new ActivityAction
-            {
-                Handler = new Sequence
-                {
-                    DisplayName = "Do"
-                }
-            };
+            if (_interval > TimeSpan.Zero)
+                Thread.Sleep(_interval);
         }
 
-        private Activity Build()
+        private void ExecuteNext(NativeActivityContext context)
         {
-            var interval = new Variable<TimeSpan>("interval", context => LoopInterval.Expression == null ? TimeSpan.Zero : LoopInterval.Get(context));
-            var sw = new Variable<DiagStopwatch>("sw");
-            var ex = new DelegateInArgument<Exception>("ex");
-
-            return new Sequence
+            if (context.IsCancellationRequested)
             {
-                Variables = { interval, sw },
-                Activities =
-                {
-                    new If
-                    {
-                        Condition = new LessThanOrEqual<TimeSpan, TimeSpan, bool>
-                        {
-                            Left = new InArgument<TimeSpan>(context => Timer.Get(context)),
-                            Right = new InArgument<TimeSpan>(TimeSpan.Zero)
-                        },
-                        Then = new Throw
-                        {
-                            Exception = new InArgument<Exception>(_ => new ArgumentOutOfRangeException(nameof(Timer)))
-                        }
-                    },
-                    new Assign<DiagStopwatch>
-                    {
-                        To = sw,
-                        Value = new InArgument<DiagStopwatch>(_ => DiagStopwatch.StartNew())
-                    },
-                    new DoWhile
-                    {
-                        Condition = new And<bool, bool, bool>
-                        {
-                            Left = new LessThanOrEqual<TimeSpan, TimeSpan, bool>
-                            {
-                                Left = new InArgument<TimeSpan>(context => sw.Get(context).Elapsed),
-                                Right = new InArgument<TimeSpan>(context => Timer.Get(context))
-                            },
-                            Right = new Not<bool, bool>
-                            {
-                                Operand=new And<bool, bool, bool>
-                                {
-                                    Left = new Equal<bool, bool, bool>
-                                    {
-                                        Left = new InArgument<bool>(context => ExitOnException.Get(context)),
-                                        Right = new InArgument<bool>(true)
-                                    },
-                                    Right = new NotEqual<Exception, Exception, bool>
-                                    {
-                                        Left = new InArgument<Exception>(context => OutputException.Get(context)),
-                                        Right = new InArgument<Exception>(_ => null)
-                                    }
-                                }
-                            }
-                        },
-                        Body = new Sequence
-                        {
-                            Activities =
-                            {
-                                new TryCatch
-                                {
-                                    Try = new Sequence
-                                    {
-                                        Activities =
-                                        {
-                                            new Assign<int>
-                                            {
-                                                To = new OutArgument<int>(context => IterationNumber.Get(context)),
-                                                Value = new InArgument<int>(context => IterationNumber.Get(context) + 1)
-                                            },
-                                            new InvokeDelegate
-                                            {
-                                                Delegate = Body
-                                            },
-                                            new Delay
-                                            {
-                                                Duration = new InArgument<TimeSpan>(interval)
-                                            }
-                                        }
-                                    },
+                context.MarkCanceled();
+                return;
+            }
 
-                                    Catches =
-                                    {
-                                        new Catch<Exception>
-                                        {
-                                            Action = new ActivityAction<Exception>
-                                            {
-                                                Argument = ex,
-                                                Handler = new Sequence
-                                                {
-                                                   Activities =
-                                                   {
-                                                        new Assign<Exception>
-                                                        {
-                                                            To = new OutArgument<Exception>(context => OutputException.Get(context)),
-                                                            Value = new InArgument<Exception>(context => ex.Get(context))
-                                                        },
+            if (_sw.Elapsed > _timer || _stop)
+                return;
 
-                                                        new If
-                                                        {
-                                                            Condition = new Not<bool, bool>
-                                                            {
-                                                                Operand = new InArgument<bool>(context => ExitOnException.Get(context))
-                                                            },
-                                                            Then = new Delay
-                                                            {
-                                                                Duration = new InArgument<TimeSpan>(interval)
-                                                            }
-                                                        }
-                                                   }
-                                                }
-                                            }
-                                        }
-                                    }
-                                },
-                            }
-                        }
-                    }
-                }
-            };
+            Index.Set(context, _index);
+            context.ScheduleAction(Body, OnIterationCompleted, OnIterationFaulted);
+            _index++;
+        }
+
+        private void OnIterationCompleted(NativeActivityContext context, ActivityInstance completedInstance)
+        {
+            ApplyDelay();
+            ExecuteNext(context);
+        }
+
+        private void OnIterationFaulted(NativeActivityFaultContext faultContext, Exception propagatedException, ActivityInstance propagatedFrom)
+        {
+            faultContext.HandleFault();
+            faultContext.CancelChild(propagatedFrom);
+
+            if (ExitOnException.Get(faultContext))
+            {
+                _stop = true;
+                faultContext.CancelChildren();
+                OutputException.Set(faultContext, propagatedException);
+            }
+        }
+
+        private void CreateBookmarks(NativeActivityContext context)
+        {
+            var exitBookmark = context.CreateBookmark(OnExit, BookmarkOptions.NonBlocking);
+            context.Properties.Add(Exit.BOOKMARK_NAME, exitBookmark);
+
+            var nextBookmark = context.CreateBookmark(OnNext, BookmarkOptions.MultipleResume | BookmarkOptions.NonBlocking);
+            context.Properties.Add(Next.BOOKMARK_NAME, nextBookmark);
+        }
+
+        private void OnNext(NativeActivityContext context, Bookmark bookmark, object value)
+        {
+            context.CancelChildren();
+            if (value is Bookmark b)
+                context.ResumeBookmark(b, value);
+        }
+
+        private void OnExit(NativeActivityContext context, Bookmark bookmark, object value)
+        {
+            _stop = true;
+            OnNext(context, bookmark, value);
         }
     }
 }

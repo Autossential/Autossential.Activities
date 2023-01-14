@@ -1,4 +1,5 @@
-﻿using Autossential.Activities.Security.Algorithms;
+﻿using Autossential.Activities;
+using Autossential.Activities.Security.Algorithms;
 using Autossential.Core.Security;
 using Autossential.Shared.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -10,7 +11,7 @@ using System.Net;
 using System.Security;
 using System.Text;
 
-namespace Autossential.Activities.Test
+namespace Autossential.Tests
 {
     [TestClass]
     public class TextEncryptionTests

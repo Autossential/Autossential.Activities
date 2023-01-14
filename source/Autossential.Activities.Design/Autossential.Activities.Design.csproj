@@ -77,4 +77,8 @@
 	</ItemGroup>
 
 	<Import Project="..\..\shared\Autossential.Shared.Activities.Design\Autossential.Shared.Activities.Design.projitems" Label="Shared" />
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="SET REHOSTPATH=..\..\..\..\Rehosted-Workflow-Designer\RehostedDesigner\bin\Debug&#xD;&#xA;SET SOURCEPATH=.\bin\Debug\net461&#xD;&#xA;if $(TargetFramework) == net461 (&#xD;&#xA;  if $(ConfigurationName) == Debug (&#xD;&#xA;    if exist %25REHOSTPATH%25 (&#xD;&#xA;      xcopy /Y %25SOURCEPATH%25 %25REHOSTPATH%25&#xD;&#xA;    )   &#xD;&#xA;  )&#xD;&#xA;)" />
+	</Target>
 </Project>

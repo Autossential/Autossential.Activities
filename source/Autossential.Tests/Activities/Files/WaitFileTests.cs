@@ -1,11 +1,12 @@
-﻿using Autossential.Shared.Tests;
+﻿using Autossential.Activities;
+using Autossential.Shared.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Autossential.Activities.Test
+namespace Autossential.Tests
 {
     [TestClass]
     public class WaitFileTests

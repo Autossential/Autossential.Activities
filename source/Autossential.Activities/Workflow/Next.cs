@@ -1,4 +1,5 @@
 ﻿using Autossential.Activities.Properties;
+using Autossential.Activities.Workflow;
 using Autossential.Shared.Activities.Constraints;
 using System.Activities;
 
@@ -12,7 +13,9 @@ namespace Autossential.Activities
 
         public Next()
         {
-            Constraints.Add(ActivityConstraints.CreateConstraint<Next, Iterate>(Resources.Validation_ScopeErrorFormat(nameof(Iterate))));
+            Constraints.Add(
+                ActivityConstraints.CreateConstraint<Next>(activity => activity is Iterate || activity is TimeLoop,
+                Resources.Validation_ScopesErrorFormat($"({nameof(Iterate)} or {nameof(TimeLoop)})")));
         }
 
         protected override void Execute(NativeActivityContext context)

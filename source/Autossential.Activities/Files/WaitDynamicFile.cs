@@ -1,6 +1,4 @@
-﻿using Autossential.Activities.Properties;
-using Autossential.Shared;
-using Autossential.Shared.Activities.Base;
+﻿using Autossential.Shared.Activities.Base;
 using System;
 using System.Activities;
 using System.IO;
@@ -17,29 +15,19 @@ namespace Autossential.Activities
         public InArgument<string> SearchPattern { get; set; }
         public InArgument<int> Timeout { get; set; } = 30000;
         public InArgument<DateTime?> FromDateTime { get; set; }
-        public int Interval { get; set; } = 500;
+        public InArgument<int> Interval { get; set; } = 500;
         public OutArgument<FileInfo> Result { get; set; }
-
-        private const int MINIMUM_INTERVAL = 100;
-        private const int MAXIMUM_INTERVAL = 20000;
-
-        protected override void CacheMetadata(CodeActivityMetadata metadata)
-        {
-            base.CacheMetadata(metadata);
-
-            if (Interval < MINIMUM_INTERVAL || Interval > MAXIMUM_INTERVAL)
-                metadata.AddValidationWarning(Resources.WaitDynamicFile_ErrorMsg_IntervalRangeFormat(MINIMUM_INTERVAL, MAXIMUM_INTERVAL));
-        }
 
         protected override async Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
             var dir = DirectoryPath.Get(context);
-            var time = Timeout.Get(context);
+            var timeout = Timeout.Get(context);
             var searchPattern = SearchPattern.Get(context) ?? "*.*";
             var fromDateTime = FromDateTime.Get(context);
             var afterDate = (fromDateTime == null) ? CalculateDate(dir) : fromDateTime.Value;
+            var interval = Math.Max(Interval.Get(context), 50);
 
-            var filePath = await ExecuteWithTimeoutAsync(context, token, ExecuteMainAsync(dir, searchPattern, afterDate, token), time).ConfigureAwait(false);
+            var filePath = await ExecuteWithTimeoutAsync(context, token, ExecuteMainAsync(dir, searchPattern, afterDate, interval, token), timeout).ConfigureAwait(false);
             return ctx => Result.Set(ctx, filePath != null ? new FileInfo(filePath) : null);
         }
 
@@ -52,9 +40,8 @@ namespace Autossential.Activities
             return DateTime.Now;
         }
 
-        private Task<string> ExecuteMainAsync(string dir, string searchPattern, DateTime afterDate, CancellationToken token)
+        private Task<string> ExecuteMainAsync(string dir, string searchPattern, DateTime afterDate, int interval, CancellationToken token)
         {
-            var interval = GetInterval();
             return Task.Run(() =>
             {
                 var done = false;
@@ -87,11 +74,6 @@ namespace Autossential.Activities
 
                 return null;
             });
-        }
-
-        private int GetInterval()
-        {
-            return Interval < MINIMUM_INTERVAL ? MINIMUM_INTERVAL : Math.Min(Interval, MAXIMUM_INTERVAL);
         }
     }
 }

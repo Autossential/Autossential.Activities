@@ -113,6 +113,8 @@ namespace Autossential.Activities.Design
 
                 .AddToMembers<CleanUpFolder>(options, p => p.LastWriteTime, p => p.SearchPattern)
                 .AddToMember<EnumerateFiles>(p => p.SearchPattern, options)
+                .AddToMembers<WaitFile>(options, p => p.Interval, p => p.WaitForExist)
+                .AddToMembers<WaitDynamicFile>(options, p => p.Interval, p => p.FromDateTime)
 
                 .AddToMember<CheckPoint>(p => p.Data, new EditorAttribute(typeof(ArgumentDictionaryPropertyEditor), typeof(DialogPropertyValueEditor)))
                 .AddToMember<Iterate>(p => p.Reverse, options)

@@ -4,13 +4,8 @@ using System;
 using System.Activities;
 using System.Activities.Expressions;
 using System.Activities.Statements;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Autossential.Tests.Activities
+namespace Autossential.Tests
 {
     [TestClass]
     public class TimeLoopTests
@@ -37,8 +32,8 @@ namespace Autossential.Tests.Activities
         }
 
         [TestMethod]
-        [DataRow(false)]
         [DataRow(true)]
+        [DataRow(false)]
         public void ExitOnError(bool exitOnException)
         {
             int max = 30;
@@ -69,7 +64,7 @@ namespace Autossential.Tests.Activities
                                 {
                                     Exception = new InArgument<Exception>(_ => new Exception("Value greater than expected"))
                                 }
-                            }                            
+                            }
                         }
                     }
                 }

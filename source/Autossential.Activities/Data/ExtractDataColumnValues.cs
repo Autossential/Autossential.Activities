@@ -133,7 +133,7 @@ namespace Autossential.Activities
                 {
                     value = defaultValue;
                 }
-             
+
                 yield return value;
             }
         }

@@ -1,12 +1,12 @@
-﻿using Autossential.Shared.Tests;
+﻿using Autossential.Activities;
+using Autossential.Shared.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading;
 using System.Threading.Tasks;
 
-namespace Autossential.Activities.Test
+namespace Autossential.Tests
 {
     [TestClass]
     public class WaitDynamicFileTests
@@ -59,7 +59,7 @@ namespace Autossential.Activities.Test
             else
             {
                 Assert.IsNull(info);
-            }            
+            }
         }
 
         [TestMethod]
@@ -75,8 +75,8 @@ namespace Autossential.Activities.Test
         }
 
         [TestMethod]
-        [DataRow(1, 50)] // clamps 100
-        [DataRow(1, 30000)] // clamps 20000
+        [DataRow(1, 50)]
+        [DataRow(1, 2000)]
         public async Task Intervals(int secondsToCreateFile, int interval)
         {
             var createFile = CreateFileAfter(secondsToCreateFile, ".txt");

@@ -20,7 +20,7 @@
     </sap:ActivityDesigner.Icon>
 
     <c:ActivityDecoratorControl>
-        <StackPanel Style="{StaticResource MinorWidth}">
+        <StackPanel Style="{StaticResource DefaultWidth}">
             <sapv:ExpressionTextBox
             Grid.Column="0"
             ExpressionType="{Binding ModelItem.Properties[ProcessName].PropertyType.GenericTypeArguments[0]}"

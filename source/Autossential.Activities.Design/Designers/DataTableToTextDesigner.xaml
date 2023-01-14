@@ -21,7 +21,7 @@
     </sap:ActivityDesigner.Icon>
 
     <c:ActivityDecoratorControl>
-        <StackPanel Style="{StaticResource DefaultWidth}">
+        <StackPanel Style="{StaticResource MajorWidth}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />

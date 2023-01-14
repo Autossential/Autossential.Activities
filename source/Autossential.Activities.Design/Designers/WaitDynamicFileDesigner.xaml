@@ -21,7 +21,7 @@
     </sap:ActivityDesigner.Icon>
 
      <c:ActivityDecoratorControl>
-        <StackPanel Style="{StaticResource DefaultWidth}">
+        <StackPanel Style="{StaticResource MajorWidth}">
             <Label 
                 Content="{x:Static as:Resources.WaitDynamicFile_DirectoryPath_DisplayName}" 
                 ToolTip="{x:Static as:Resources.WaitDynamicFile_DirectoryPath_Description}" 

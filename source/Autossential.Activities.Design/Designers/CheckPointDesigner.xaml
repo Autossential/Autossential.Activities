@@ -21,7 +21,7 @@
     </sap:ActivityDesigner.Icon>
 
     <c:ActivityDecoratorControl>
-        <StackPanel Style="{StaticResource MinorWidth}">
+        <StackPanel Style="{StaticResource DefaultWidth}">
             <Label 
                 Content="{x:Static as:Resources.CheckPoint_Expression_DisplayName}" 
                 ToolTip="{x:Static as:Resources.CheckPoint_Expression_Description}" />

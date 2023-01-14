@@ -4,7 +4,7 @@
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
     xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
-    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls" Collapsible="False">
+    xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls">
 
     <sap:ActivityDesigner.Resources>
         <ResourceDictionary>
@@ -20,7 +20,7 @@
     </sap:ActivityDesigner.Icon>
 
     <c:ActivityDecoratorControl>
-        <StackPanel Style="{StaticResource MinorWidth}">
+        <StackPanel Style="{StaticResource DefaultWidth}">
             <sapv:ExpressionTextBox
             Grid.Column="0"
             ExpressionType="{Binding ModelItem.Properties[Value].PropertyType.GenericTypeArguments[0]}"

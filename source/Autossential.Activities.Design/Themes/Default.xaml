@@ -8,20 +8,16 @@
         <ResourceDictionary Source="Icons.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="MinorWidth" TargetType="FrameworkElement">
-        <Setter Property="Width" Value="260"/>
-    </Style>
-
     <Style x:Key="DefaultWidth" TargetType="FrameworkElement">
-        <Setter Property="Width" Value="300"/>
+        <Setter Property="Width" Value="320"/>
     </Style>
 
     <Style x:Key="MajorWidth" TargetType="FrameworkElement">
-        <Setter Property="Width" Value="340"/>
+        <Setter Property="Width" Value="400"/>
     </Style>
 
     <Style x:Key="WrapperMinWidth" TargetType="FrameworkElement">
-        <Setter Property="MinWidth" Value="340"/>
+        <Setter Property="MinWidth" Value="400"/>
     </Style>
 
     <Style TargetType="sapv:ExpressionTextBox">

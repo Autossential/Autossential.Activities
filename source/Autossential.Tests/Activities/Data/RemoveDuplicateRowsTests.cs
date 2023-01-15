@@ -1,11 +1,12 @@
-﻿using Autossential.Shared.Tests;
+﻿using Autossential.Activities;
+using Autossential.Shared.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Activities;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace Autossential.Activities.Test
+namespace Autossential.Tests
 {
     [TestClass]
     public class RemoveDuplicateRowsTests

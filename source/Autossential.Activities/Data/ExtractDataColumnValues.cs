@@ -1,23 +1,33 @@
 ﻿using Autossential.Activities.Properties;
+using Autossential.Core.Enums;
 using Autossential.Shared;
 using System;
 using System.Activities;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
 namespace Autossential.Activities
 {
+
     public class ExtractDataColumnValues<T> : CodeActivity<T[]>
     {
         public InArgument<DataTable> InputDataTable { get; set; }
         public InArgument Column { get; set; }
         public InArgument<T> DefaultValue { get; set; }
+        public InArgument<char[]> Trim { get; set; }
+        public InArgument<bool> Sanitize { get; set; }
+        public InArgument<bool> Unique { get; set; }
+        public TextCase TextCase { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
             metadata.AddRuntimeArgument(InputDataTable, nameof(InputDataTable), true);
             metadata.AddRuntimeArgument(DefaultValue, nameof(DefaultValue), false);
             metadata.AddRuntimeArgument(Result, nameof(Result), true);
+            metadata.AddRuntimeArgument(Sanitize, nameof(Sanitize), false);
+            metadata.AddRuntimeArgument(Unique, nameof(Unique), false);
+            metadata.AddRuntimeArgument(Trim, nameof(Trim), false);
 
             if (Column == null)
             {
@@ -60,46 +70,72 @@ namespace Autossential.Activities
                     throw new ArgumentException(Resources.ExtractDataColumnValues_ErrorMsg_InvalidColumnIndexFormat(index));
             }
 
-            var values = dt.AsEnumerable().Select(row => row[index]).ToArray();
-            return ConvertValues(values, DefaultValue.Get(context));
+            var rows = dt.AsEnumerable();
+            if (Sanitize.Get(context))
+            {
+                rows = rows.Where(row =>
+                    !row.IsNull(index)
+                    && row[index].ToString().Trim() != string.Empty
+                );
+            }
+
+            var result = ConvertValues(rows.Select(row => row[index]).ToArray(), DefaultValue.Get(context));
+            if (typeof(T) == typeof(string))
+            {
+                var trim = Trim.Get(context);
+                if (trim != null && trim.Length > 0)
+                    result = result.Select(value => (value as string)?.Trim(trim)) as IEnumerable<T>;
+
+                if (TextCase == TextCase.ToLower)
+                {
+                    result = result.Select(value => (value as string)?.ToLower()) as IEnumerable<T>;
+                }
+                else if (TextCase == TextCase.ToUpper)
+                {
+                    result = result.Select(value => (value as string)?.ToUpper()) as IEnumerable<T>;
+                }
+            }
+
+            if (Unique.Get(context))
+                result = result.Distinct();
+
+            return result.ToArray();
         }
 
-        private static T[] ConvertValues(object[] values, T defaultValue = default)
+        private static IEnumerable<T> ConvertValues(object[] values, T defaultValue = default)
         {
-            if (values.Length == 0)
-                return new T[0];
+            T value;
 
-            var result = new T[values.Length];
             for (int i = 0; i < values.Length; i++)
             {
                 if (values[i] == DBNull.Value)
                 {
-                    result[i] = defaultValue;
+                    yield return defaultValue;
                     continue;
                 }
 
                 try
                 {
-                    result[i] = (T)values[i];
+                    value = (T)values[i];
                 }
                 catch (InvalidCastException)
                 {
                     try
                     {
-                        result[i] = (T)Convert.ChangeType(values[i], typeof(T));
+                        value = (T)Convert.ChangeType(values[i], typeof(T));
                     }
                     catch (Exception)
                     {
-                        result[i] = defaultValue;
+                        value = defaultValue;
                     }
                 }
                 catch (Exception)
                 {
-                    result[i] = defaultValue;
+                    value = defaultValue;
                 }
-            }
 
-            return result;
+                yield return value;
+            }
         }
     }
 }

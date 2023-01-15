@@ -21,11 +21,9 @@ namespace Autossential.Activities
         const uint SWP_NOMOVE = 0x0002;
         const uint SWP_NOACTIVATE = 0x0010;
 
-        public InArgument<int> Timeout { get; set; }
+        public InArgument<int> Timeout { get; set; } = 30000;
 
         public InArgument ProcessName { get; set; }
-
-        public InArgument<bool> ContinueOnError { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
@@ -47,9 +45,6 @@ namespace Autossential.Activities
         protected override void Execute(CodeActivityContext context)
         {
             var timeout = Timeout.Get(context);
-            if (timeout <= 0)
-                timeout = 30000;
-
             var names = ProcessName.Get(context);
             if (names is string)
                 names = new string[] { names.ToString() };
@@ -61,41 +56,45 @@ namespace Autossential.Activities
 
             foreach (var name in (IEnumerable<string>)names)
             {
-                do
+                try
                 {
-                    // Processes with GUI
-                    processes = Process.GetProcessesByName(name)
-                        .Where(p => p.MainWindowHandle != IntPtr.Zero).ToArray();
-
-                    foreach (var process in processes)
+                    do
                     {
-                        if (process.HasExited)
-                            continue;
+                        // Processes with GUI
+                        processes = Process.GetProcessesByName(name)
+                            .Where(p => p.MainWindowHandle != IntPtr.Zero).ToArray();
 
-                        hasGui = true;
-
-                        if (process.CloseMainWindow())
+                        foreach (var process in processes)
                         {
-                            process.Close();
-                            Thread.Sleep(DelayForNext);
+                            if (process.HasExited)
+                                continue;
+
+                            hasGui = true;
+
+                            if (process.CloseMainWindow())
+                            {
+                                process.Close();
+                                Thread.Sleep(DelayForNext);
+                                switched = false;
+                                continue;
+                            }
+
+                            if (!switched)
+                            {
+                                SetWindowPos(process.MainWindowHandle, _hWND_BOTTOM, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_NOACTIVATE);
+                                switched = true;
+                                continue;
+                            }
+
                             switched = false;
-                            continue;
+                            process.Kill();
+                            process.WaitForExit(WaitForExit);
+                            Thread.Sleep(DelayForNext);
                         }
 
-                        if (!switched)
-                        {
-                            SetWindowPos(process.MainWindowHandle, _hWND_BOTTOM, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_NOACTIVATE);
-                            switched = true;
-                            continue;
-                        }
-
-                        switched = false;
-                        process.Kill();
-                        process.WaitForExit(WaitForExit);
-                        Thread.Sleep(DelayForNext);
-                    }
-
-                } while (processes.Length > 0 && timer.ElapsedMilliseconds <= timeout);
+                    } while (processes.Length > 0 && timer.ElapsedMilliseconds <= timeout);
+                }
+                catch { }
 
                 if (hasGui)
                     Thread.Sleep(DelayNonGUI); // holds for a brief moment before search for non-GUI processes
@@ -106,11 +105,15 @@ namespace Autossential.Activities
 
                 foreach (var process in processes)
                 {
-                    if (process.HasExited)
-                        continue;
+                    try
+                    {
+                        if (process.HasExited)
+                            continue;
 
-                    process.Kill();
-                    process.WaitForExit(WaitForExit);
+                        process.Kill();
+                        process.WaitForExit(WaitForExit);
+                    }
+                    catch { }
                 }
             }
         }

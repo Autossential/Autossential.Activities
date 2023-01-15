@@ -2,6 +2,7 @@
 using System.Activities;
 using System.Activities.Expressions;
 using System.Activities.Statements;
+using System.Activities.Validation;
 using System.ComponentModel;
 
 namespace Autossential.Activities.Workflow
@@ -14,6 +15,12 @@ namespace Autossential.Activities.Workflow
         public OutArgument<int> IterationNumber { get; set; }
         public InArgument<int> MaximumRepetitions { get; set; }
         public InArgument<TimeSpan> LoopInterval { get; set; }
+
+        protected override void CacheMetadata(ActivityMetadata metadata)
+        {
+            metadata.AddValidationError(new ValidationError("This activity is now obsolete", true));
+            base.CacheMetadata(metadata);
+        }
 
 
         public RepeatUntilFailure()

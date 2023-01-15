@@ -605,12 +605,44 @@
     <value>Result</value>
     <comment>property name</comment>
   </data>
+  <data name="ExtractDataColumnValues_Sanitize_Description" xml:space="preserve">
+    <value>Removes null values, empty strings, or those which consists only of white-space characters.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ExtractDataColumnValues_Sanitize_DisplayName" xml:space="preserve">
+    <value>Sanitize</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ExtractDataColumnValues_TextCase_Description" xml:space="preserve">
+    <value>Allows to transform the text casing during the extraction. Applied only if the TypeArgument is set to System.String.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ExtractDataColumnValues_TextCase_DisplayName" xml:space="preserve">
+    <value>TextCase</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ExtractDataColumnValues_Trim_Description" xml:space="preserve">
+    <value>Removes all leading and trailing occurrences of a set of specified characters from each extracted value. Applied only if the TypeArgument is set to System.String.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ExtractDataColumnValues_Trim_DisplayName" xml:space="preserve">
+    <value>Trim</value>
+    <comment>property name</comment>
+  </data>
   <data name="ExtractDataColumnValues_TypeArgument_Description" xml:space="preserve">
     <value>Determines the type of each value extracted from the data column.</value>
     <comment>property description</comment>
   </data>
   <data name="ExtractDataColumnValues_TypeArgument_DisplayName" xml:space="preserve">
     <value>TypeArgument</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ExtractDataColumnValues_Unique_Description" xml:space="preserve">
+    <value>Returns only a list of unique values.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ExtractDataColumnValues_Unique_DisplayName" xml:space="preserve">
+    <value>Unique</value>
     <comment>property name</comment>
   </data>
   <data name="Increment_Description" xml:space="preserve">
@@ -1057,6 +1089,54 @@
     <value>TextEncoding</value>
     <comment>property name</comment>
   </data>
+  <data name="TimeLoop_Description" xml:space="preserve">
+    <value>Executes the contained activities once and continues to do so for a specified period of time.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="TimeLoop_DisplayName" xml:space="preserve">
+    <value>Time Loop</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="TimeLoop_ExitOnException_Description" xml:space="preserve">
+    <value>Exits immediately from the loop in case of an unhandled exception occur.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TimeLoop_ExitOnException_DisplayName" xml:space="preserve">
+    <value>ExitOnException</value>
+    <comment>property name</comment>
+  </data>
+  <data name="TimeLoop_IterationNumber_Description" xml:space="preserve">
+    <value>The current iteration (one-based) that is being processed.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TimeLoop_IterationNumber_DisplayName" xml:space="preserve">
+    <value>IterationNumber</value>
+    <comment>property name</comment>
+  </data>
+  <data name="TimeLoop_LoopInterval_Description" xml:space="preserve">
+    <value>The amount of time to wait on each loop iteration.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TimeLoop_LoopInterval_DisplayName" xml:space="preserve">
+    <value>LoopInterval</value>
+    <comment>property name</comment>
+  </data>
+  <data name="TimeLoop_OutputException_Description" xml:space="preserve">
+    <value>The exception which caused the loop break. This result can be null in case of no exceptions did occur.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TimeLoop_OutputException_DisplayName" xml:space="preserve">
+    <value>Exception</value>
+    <comment>property name</comment>
+  </data>
+  <data name="TimeLoop_Timer_Description" xml:space="preserve">
+    <value>Determines for how long the loop iterations must happen. Its value is checked after each iteration. The current iteration of the loop is not interrupted when the timer has end.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TimeLoop_Timer_DisplayName" xml:space="preserve">
+    <value>Timer</value>
+    <comment>property name</comment>
+  </data>
   <data name="TransposeData_Description" xml:space="preserve">
     <value>Transposes a DataTable by swapping its rows and columns so that rows become columns and columns become rows.</value>
     <comment>activity description</comment>
@@ -1153,10 +1233,6 @@
     <value>Wait Dynamic File</value>
     <comment>activity name</comment>
   </data>
-  <data name="WaitDynamicFile_ErrorMsg_IntervalRange" xml:space="preserve">
-    <value>The accepted range is from {0} and {1}. The value will be clamped.</value>
-    <comment>error message</comment>
-  </data>
   <data name="WaitDynamicFile_FromDateTime_Description" xml:space="preserve">
     <value>Considers only the files whose last write time is greater than this value. If is not set, the value used is the same as the last write time of the most recent file in the folder. If the folder is empty, the current date and time is used.</value>
     <comment>property description</comment>
@@ -1166,7 +1242,7 @@
     <comment>property name</comment>
   </data>
   <data name="WaitDynamicFile_Interval_Description" xml:space="preserve">
-    <value>Specifies the amount of time (in milliseconds) for the file re-check. Any values out of the range of 100-20000 milliseconds is reseted to its nearest limit. The default value is 500.</value>
+    <value>Specifies the amount of time (in milliseconds) for the file re-check. Any value less than 50 will be clamped to 50. Make sure to keep this value lesser than Timeout value.</value>
     <comment>property description</comment>
   </data>
   <data name="WaitDynamicFile_Interval_DisplayName" xml:space="preserve">
@@ -1190,7 +1266,7 @@
     <comment>property name</comment>
   </data>
   <data name="WaitDynamicFile_Timeout_Description" xml:space="preserve">
-    <value>The maximum timeout to wait in milliseconds.</value>
+    <value>The maximum time to wait (in milliseconds) the operation to complete.</value>
     <comment>property description</comment>
   </data>
   <data name="WaitDynamicFile_Timeout_DisplayName" xml:space="preserve">
@@ -1209,10 +1285,6 @@
     <value>The specified file path does not exists.</value>
     <comment>error message</comment>
   </data>
-  <data name="WaitFile_ErrorMsg_IntervalRange" xml:space="preserve">
-    <value>The accepted range is from {0} and {1}. The value will be clamped.</value>
-    <comment>error message</comment>
-  </data>
   <data name="WaitFile_FilePath_Description" xml:space="preserve">
     <value>The storage path of the file.</value>
     <comment>property description</comment>
@@ -1222,7 +1294,7 @@
     <comment>property name</comment>
   </data>
   <data name="WaitFile_Interval_Description" xml:space="preserve">
-    <value>Specifies the amount of time (in milliseconds) for the file re-check. Any values out of the range of 100-20000 milliseconds is reseted to its nearest limit. The default value is 500.</value>
+    <value>Specifies the amount of time (in milliseconds) for the file re-check. Any value less than 50 will be clamped to 50. Make sure to keep this value lesser than Timeout value.</value>
     <comment>property description</comment>
   </data>
   <data name="WaitFile_Interval_DisplayName" xml:space="preserve">
@@ -1238,7 +1310,7 @@
     <comment>property name</comment>
   </data>
   <data name="WaitFile_Timeout_Description" xml:space="preserve">
-    <value>The maximum timeout to wait in milliseconds.</value>
+    <value>The maximum time to wait (in milliseconds) the operation to complete.</value>
     <comment>property description</comment>
   </data>
   <data name="WaitFile_Timeout_DisplayName" xml:space="preserve">

@@ -20,40 +20,39 @@
         <DrawingBrush Drawing="{StaticResource IterateIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
-    <Border Padding="4,0">
-        <c:ActivityDecoratorControl>
-            <StackPanel MinWidth="300">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="30"/>
-                        <ColumnDefinition Width="80"/>
-                        <ColumnDefinition Width="40"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="60"/>
-                    </Grid.ColumnDefinitions>
-                    <Label Content="For" Grid.Column="0" />
-                    <sapv:ExpressionTextBox
-                        Grid.Column="1"
-                        ExpressionType="{Binding ModelItem.Properties[Iterations].PropertyType.GenericTypeArguments[0]}"
-                        OwnerActivity="{Binding ModelItem}"
-                        UseLocationExpression="False"
-                        Expression="{Binding ModelItem.Iterations, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
-                        HintText="# number of"/>
-                    <Label Content="times" Grid.Column="2" />
-                    <Label Content="{Binding Path=IndexLabel}" Grid.Column="3" HorizontalAlignment="Right" />
-                    <TextBox AutomationProperties.AutomationId="ArgumentName"
-                       Grid.Column="4" Text="{Binding Path=ModelItem.Body.Argument.Name, Mode=TwoWay, ValidatesOnExceptions=True}" 
-                             BorderThickness="0 0 0 1" Background="#11999999"
-                             VerticalContentAlignment="Center" Padding="2 2 2 0">
-                    </TextBox>
-                </Grid>
-                <sap:WorkflowItemPresenter
-                    AutomationProperties.AutomationId="Activity"
-                    Margin="0"
-                    Item="{Binding Path=ModelItem.Body.Handler, Mode=TwoWay}"
-                    AllowedItemType="sa:Activity"
-                    HintText="Drop activities here" />
-            </StackPanel>
-        </c:ActivityDecoratorControl>
-    </Border>
+    <c:ActivityDecoratorControl>
+        <StackPanel Style="{StaticResource WrapperMinWidth}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="60"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="For" Grid.Column="0" />
+                <sapv:ExpressionTextBox
+                    Grid.Column="1"
+                    ExpressionType="{Binding ModelItem.Properties[Iterations].PropertyType.GenericTypeArguments[0]}"
+                    OwnerActivity="{Binding ModelItem}"
+                    UseLocationExpression="False"
+                    Expression="{Binding ModelItem.Iterations, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
+                    HintText="# number of"/>
+                <Label Content="times" Grid.Column="2" />
+                <Label Content="{Binding Path=IndexLabel}" Grid.Column="3" HorizontalAlignment="Right" />
+                <TextBox AutomationProperties.AutomationId="ArgumentName"
+                    Grid.Column="4" Text="{Binding Path=ModelItem.Body.Argument.Name, Mode=TwoWay, ValidatesOnExceptions=True}" 
+                            BorderThickness="0 0 0 1" Background="#11999999"
+                            VerticalContentAlignment="Center" Padding="2 2 2 0">
+                </TextBox>
+            </Grid>
+            <sap:WorkflowItemPresenter
+                AutomationProperties.AutomationId="Activity"
+                Margin="0"
+                Item="{Binding Path=ModelItem.Body.Handler, Mode=TwoWay}"
+                AllowedItemType="sa:Activity"
+                HintText="Drop activities here" />
+        </StackPanel>
+    </c:ActivityDecoratorControl>
+
 </sap:ActivityDesigner>

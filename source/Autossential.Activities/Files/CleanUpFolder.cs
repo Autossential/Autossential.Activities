@@ -68,7 +68,7 @@ namespace Autossential.Activities
                     }
                 }
 
-                
+
                 if (deleteEmptyFolders)
                 {
                     foreach (var f in Directory.EnumerateDirectories(folder, "*", SearchOption.AllDirectories).Reverse())

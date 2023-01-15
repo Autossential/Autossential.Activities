@@ -1,10 +1,11 @@
-﻿using Autossential.Shared.Tests;
+﻿using Autossential.Activities;
+using Autossential.Shared.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Activities;
 using System.Collections.Generic;
 using System.Data;
 
-namespace Autossential.Activities.Test
+namespace Autossential.Tests
 {
     [TestClass]
     public class RemoveDataColumnsTests
@@ -51,7 +52,7 @@ namespace Autossential.Activities.Test
 
             WorkflowTester.CompileAndRun(new RemoveDataColumns
             {
-                Columns = new InArgument<int[]>(_ => new int[] { 2, 0, 3  })
+                Columns = new InArgument<int[]>(_ => new int[] { 2, 0, 3 })
             }, GetArgs(dt));
 
             Assert.AreEqual(dt.Columns.Count, 1);

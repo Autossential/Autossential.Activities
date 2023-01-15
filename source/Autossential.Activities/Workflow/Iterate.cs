@@ -8,6 +8,10 @@ namespace Autossential.Activities
 {
     public sealed class Iterate : ScopeActivity<int>
     {
+        private int _iterations;
+        private int _index;
+        private bool _break;
+
         public InArgument<int> Iterations { get; set; }
 
         public bool Reverse { get; set; }
@@ -22,6 +26,7 @@ namespace Autossential.Activities
         protected override void CacheMetadata(NativeActivityMetadata metadata)
         {
             base.CacheMetadata(metadata);
+
             if (Iterations == null)
             {
                 metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Iterations)));
@@ -35,13 +40,11 @@ namespace Autossential.Activities
 
         protected override void Execute(NativeActivityContext context)
         {
-            Reset();
+            _iterations = 0;
+            _break = false;
+            _index = 0;
 
-            var exitBookmark = context.CreateBookmark(OnExit, BookmarkOptions.NonBlocking);
-            context.Properties.Add(Exit.BOOKMARK_NAME, exitBookmark);
-
-            var nextBookmark = context.CreateBookmark(OnNext, BookmarkOptions.MultipleResume | BookmarkOptions.NonBlocking);
-            context.Properties.Add(Next.BOOKMARK_NAME, nextBookmark);
+            CreateBookmarks(context);
 
             _iterations = Iterations.Get(context);
             if (_iterations <= 0)
@@ -50,12 +53,22 @@ namespace Autossential.Activities
             ExecuteNext(context);
         }
 
+        private void CreateBookmarks(NativeActivityContext context)
+        {
+            var exitBookmark = context.CreateBookmark(OnExit, BookmarkOptions.NonBlocking);
+            context.Properties.Add(Exit.BOOKMARK_NAME, exitBookmark);
+
+            var nextBookmark = context.CreateBookmark(OnNext, BookmarkOptions.MultipleResume | BookmarkOptions.NonBlocking);
+            context.Properties.Add(Next.BOOKMARK_NAME, nextBookmark);
+        }
+
         private Variable<int> Index { get; set; }
+
         private void ExecuteNext(NativeActivityContext context)
         {
             var value = Reverse ? _iterations - 1 - _index : _index;
             Index.Set(context, value);
-            context.ScheduleAction<int>(Body, value, OnIterateCompleted);
+            context.ScheduleAction(Body, value, OnIterateCompleted);
         }
 
         private void OnIterateCompleted(NativeActivityContext context, ActivityInstance completedInstance)
@@ -79,21 +92,8 @@ namespace Autossential.Activities
 
         private void OnExit(NativeActivityContext context, Bookmark bookmark, object value)
         {
-            context.CancelChildren();
             _break = true;
-            if (value is Bookmark b)
-                context.ResumeBookmark(b, value);
-        }
-
-        private int _iterations;
-        private int _index;
-        private bool _break;
-
-        private void Reset()
-        {
-            _iterations = 0;
-            _break = false;
-            _index = 0;
+            OnNext(context, bookmark, value);
         }
     }
 }

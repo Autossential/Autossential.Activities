@@ -4,15 +4,11 @@ using Autossential.Activities.Properties;
 using Autossential.Activities.Security.Algorithms;
 using Autossential.Activities.Workflow;
 using Autossential.Core.Security.Algorithms;
-using Autossential.Shared.Activities.Base;
 using Autossential.Shared.Activities.Design;
-using System;
 using System.Activities;
-using System.Activities.Presentation;
 using System.Activities.Presentation.Metadata;
 using System.Activities.Presentation.PropertyEditing;
 using System.ComponentModel;
-using System.Linq;
 
 namespace Autossential.Activities.Design
 {
@@ -40,133 +36,103 @@ namespace Autossential.Activities.Design
             var securityAlgorithms = new CategoryAttribute(SECURITY_ALGORITHMS_CATEGORY);
             var appsAndDiagnostics = new CategoryAttribute(APPS_AND_DIAGNOSTICS_CATEGORY);
 
-            // CUSTOM EDITOR ATTRIBUTES
-            var booleanPropertyEditorAttribute = new EditorAttribute(typeof(BooleanPropertyEditor), typeof(DialogPropertyValueEditor));
+            var options = new CategoryAttribute(Resources.Options_Category);
 
-            ActivitiesAttributesBuilder.Build(Resources.ResourceManager, builder =>
-            {
-                builder.SetDefaultCategories(
-                    Resources.Input_Category,
-                    Resources.Output_Category,
-                    Resources.InputOutput_Category,
-                    Resources.Options_Category);
+            var builder = new ActivitiesTableBuilder(Resources.ResourceManager);
 
-                // DATA TABLE
-                builder
-                    .Register<DataTableToText, DataTableToTextDesigner>(dataTable)
-                    .Register<TransposeData, TransposeDataDesigner>(dataTable)
-                    .Register<Aggregate, AggregateDesigner>(dataTable, m =>
-                    {
-                        //m.Register(new CategoryAttribute(Resources.Output_Category), p => p.Detached);
-                        m.Register(new CategoryAttribute(Resources.Options_Category), p => p.Columns);
-                    })
-                    .Register<DataRowToDictionary, DataRowToDictionaryDesigner>(dataTable)
-                    .Register<DictionaryToDataTable, DictionaryToDataTableDesigner>(dataTable)
-                    .Register<RemoveEmptyRows, RemoveEmptyRowsDesigner>(dataTable, m =>
-                    {
-                        m.Register(new CategoryAttribute(Resources.RemoveEmptyRows_CustomOptions_Category),
-                            p => p.Columns,
-                            p => p.Operator);
-                    })
-                    .Register<RemoveDataColumns, RemoveDataColumnsDesigner>(dataTable)
-                    .Register<RemoveDuplicateRows, RemoveDuplicateRowsDesigner>(dataTable, m => m.Register(p => p.Columns, new CategoryAttribute(Resources.Options_Category)))
-                    .Register<PromoteHeaders, PromoteHeadersDesigner>(dataTable, m =>
-                    {
-                        m.Register(p => p.EmptyColumnName, new CategoryAttribute(Resources.Options_Category));
-                        m.Register(p => p.AutoRename, booleanPropertyEditorAttribute);
-                    })
-                    .Register(typeof(ExtractDataColumnValues<>), typeof(ExtractDataColumnValuesDesigner), new Attribute[] { dataTable, new DefaultTypeArgumentAttribute(typeof(object)) });
+            builder
+                .Add<Stopwatch, StopwatchDesigner>(appsAndDiagnostics)
+                .Add<TerminateProcess, TerminateProcessDesigner>(appsAndDiagnostics);
 
+            builder
+                .Add<Aggregate, AggregateDesigner>(dataTable)
+                .Add<DataRowToDictionary, DataRowToDictionaryDesigner>(dataTable)
+                .Add<DataTableToText, DataTableToTextDesigner>(dataTable)
+                .Add<DictionaryToDataTable, DictionaryToDataTableDesigner>(dataTable)
+                .Add(typeof(ExtractDataColumnValues<>), typeof(ExtractDataColumnValuesDesigner), dataTable)
+                .Add<PromoteHeaders, PromoteHeadersDesigner>(dataTable)
+                .Add<RemoveDataColumns, RemoveDataColumnsDesigner>(dataTable)
+                .Add<RemoveDuplicateRows, RemoveDuplicateRowsDesigner>(dataTable)
+                .Add<RemoveEmptyRows, RemoveEmptyRowsDesigner>(dataTable)
+                .Add<TransposeData, TransposeDataDesigner>(dataTable);
 
-                // FILE
-                builder
-                    .Register<CleanUpFolder, CleanUpFolderDesigner>(file, m =>
-                    {
-                        m.Register(new CategoryAttribute(Resources.Options_Category),
-                            p => p.LastWriteTime,
-                            p => p.SearchPattern);
+            builder
+                .Add<CleanUpFolder, CleanUpFolderDesigner>(file)
+                .Add<EnumerateFiles, EnumerateFilesDesigner>(file)
+                .Add<WaitFile, WaitFileDesigner>(file)
+                .Add<WaitDynamicFile, WaitDynamicFileDesigner>(file);
 
-                        m.Register(p => p.DeleteEmptyFolders, booleanPropertyEditorAttribute);
-                    })
-                    .Register<EnumerateFiles, EnumerateFilesDesigner>(file, m => m.Register(new CategoryAttribute(Resources.Options_Category), p => p.SearchPattern))
-                    .Register<WaitFile, WaitFileDesigner>(file)
-                    .Register<WaitDynamicFile, WaitDynamicFileDesigner>(file);
+            builder
+                .Add<Zip, ZipDesigner>(fileCompression)
+                .Add<ZipEntriesCount, ZipEntriesCountDesigner>(fileCompression)
+                .Add<Unzip, UnzipDesigner>(fileCompression);
 
+            builder
+                .Add<CheckPoint, CheckPointDesigner>(workflow)
+                .Add<Container, ContainerDesigner>(workflow)
+                .Add<Exit, ExitDesigner>(workflow)
+                .Add<Iterate, IterateDesigner>(workflow)
+                .Add<Next, NextDesigner>(workflow)
+                .Add<RepeatUntilFailure, RepeatUntilFailureDesigner>(workflow)
+                .Add<TimeLoop, TimeLoopDesigner>(workflow)
+                .Add<WhenDo, WhenDoDesigner>(workflow);
 
-                // FILE COMPRESSION
-                builder
-                    .Register<Zip, ZipDesigner>(fileCompression, m =>
-                        m.Register(p => p.ShortEntryNames, booleanPropertyEditorAttribute))
-                    .Register<ZipEntriesCount, ZipEntriesCountDesigner>(fileCompression)
-                    .Register<Unzip, UnzipDesigner>(fileCompression, m =>
-                        m.Register(p => p.Overwrite, booleanPropertyEditorAttribute));
+            builder
+                .Add(typeof(AddRangeToCollection<>), typeof(AddRangeToCollectionDesigner), programming)
+                .Add<CultureScope, CultureScopeDesigner>(programming)
+                .Add<Decrement, DecrementDesigner>(programming)
+                .Add<Increment, IncrementDesigner>(programming)
+                .Add<IsTrue, IsTrueDesigner>(programming)
+                .Add<ReplaceTokens, ReplaceTokensDesigner>(programming);
 
+            builder
+                .Add<DataTableEncryption, EncryptionDesigner>(security)
+                .Add<TextEncryption, EncryptionDesigner>(security);
 
-                // WORKFLOW
-                builder
-                    .Register<CheckPoint, CheckPointDesigner>(workflow, m =>
-                        m.Register(new EditorAttribute(typeof(ArgumentDictionaryPropertyEditor), typeof(DialogPropertyValueEditor)), p => p.Data))
-                    .Register<Container, ContainerDesigner>(workflow)
-                    .Register<Exit, ExitDesigner>(workflow)
-                    .Register<Next, NextDesigner>(workflow)
-                    .Register<Iterate, IterateDesigner>(workflow, m => m.Register(new CategoryAttribute(Resources.Options_Category), p => p.Reverse))
-                    .Register<WhenDo, WhenDoDesigner>(workflow)
-                    .Register<RepeatUntilFailure, RepeatUntilFailureDesigner>(workflow);
+            builder
+                .Add<AesAlgorithmEncryption, CryptoAlgorithmDesigner>(securityAlgorithms)
+                .Add<DESAlgorithmEncryption, CryptoAlgorithmDesigner>(securityAlgorithms)
+                .Add<RC2AlgorithmEncryption, CryptoAlgorithmDesigner>(securityAlgorithms)
+                .Add<RijndaelAlgorithmEncryption, CryptoAlgorithmDesigner>(securityAlgorithms)
+                .Add<TripleDESAlgorithmEncryption, CryptoAlgorithmDesigner>(securityAlgorithms);
 
+            builder
+                .AddToMembers<Aggregate>(options, p => p.Columns)
+                .AddToMembers(typeof(ExtractDataColumnValues<>), options, new[]
+                {
+                    nameof(ExtractDataColumnValues<object>.Sanitize),
+                    nameof(ExtractDataColumnValues<object>.Trim),
+                    nameof(ExtractDataColumnValues<object>.Unique),
+                    nameof(ExtractDataColumnValues<object>.TextCase)})
+                .AddToMembers(typeof(ExtractDataColumnValues<>), new BrowsableAttribute(false), new[]
+                {
+                    nameof(ExtractDataColumnValues<object>.TextCase),
+                    nameof(ExtractDataColumnValues<object>.Trim)})
+                .AddToMembers<ExtractDataColumnValues<string>>(new BrowsableAttribute(true), p => p.TextCase, p => p.Trim)
+                .AddToMembers<RemoveEmptyRows>(new CategoryAttribute(Resources.RemoveEmptyRows_CustomOptions_Category), p => p.Columns, p => p.Operator) // AddCallback
 
-                // PROGRAMMING
-                builder
-                    .Register(typeof(AddRangeToCollection<>), typeof(AddRangeToCollectionDesigner), new Attribute[] { programming, new DefaultTypeArgumentAttribute(typeof(object)) })
-                    .Register<CultureScope, CultureScopeDesigner>(programming)
-                    .Register<Decrement, DecrementDesigner>(programming)
-                    .Register<Increment, IncrementDesigner>(programming)
-                    .Register<IsTrue, IsTrueDesigner>(programming)
-                    .Register<ReplaceTokens, ReplaceTokensDesigner>(programming);
+                .AddToMembers<CleanUpFolder>(options, p => p.LastWriteTime, p => p.SearchPattern)
+                .AddToMember<EnumerateFiles>(p => p.SearchPattern, options)
+                .AddToMembers<WaitFile>(options, p => p.Interval, p => p.WaitForExist)
+                .AddToMembers<WaitDynamicFile>(options, p => p.Interval, p => p.FromDateTime)
 
-
-                // SECURITY
-                builder
-                    .Register<TextEncryption, EncryptionDesigner>(security)
-                    .Register<DataTableEncryption, EncryptionDesigner>(security)
-                    .Register<AesAlgorithmEncryption, CryptoAlgorithmDesigner>(securityAlgorithms)
-                    .Register<DESAlgorithmEncryption, CryptoAlgorithmDesigner>(securityAlgorithms)
-                    .Register<RC2AlgorithmEncryption, CryptoAlgorithmDesigner>(securityAlgorithms)
-                    .Register<RijndaelAlgorithmEncryption, CryptoAlgorithmDesigner>(securityAlgorithms)
-                    .Register<TripleDESAlgorithmEncryption, CryptoAlgorithmDesigner>(securityAlgorithms);
-
-                var encryptionTypes = typeof(SymmetricAlgorithmEncryptionBase<>).GetDerivedTypes().ToArray();
-
-                builder
-                    .RegisterToMember(
-                        new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description),
-                        nameof(SymmetricAlgorithmEncryptionBase<AesEncryption>.Iterations),
-                        encryptionTypes)
-                    .RegisterToMember(new BrowsableAttribute(false), nameof(ActivityWithResult.Result), encryptionTypes);
+                .AddToMember<CheckPoint>(p => p.Data, new EditorAttribute(typeof(ArgumentDictionaryPropertyEditor), typeof(DialogPropertyValueEditor)))
+                .AddToMember<Iterate>(p => p.Reverse, options)
+                .AddToMember(typeof(SymmetricAlgorithmEncryptionBase<>), nameof(ActivityWithResult.Result), new BrowsableAttribute(false))
+                .AddToMember(typeof(SymmetricAlgorithmEncryptionBase<>), nameof(SymmetricAlgorithmEncryptionBase<AesEncryption>.Iterations), new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description));
 
 
-#if NET6_0
-                builder
-                    .Register<AesGcmAlgorithmEncryption, CryptoAlgorithmDesigner>(securityAlgorithms, m =>
-                    {
-                        m.Register<SymmetricAlgorithmEncryptionBase<AesGcmEncryption>>(new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description), p => p.Iterations);
-                        m.Register<SymmetricAlgorithmEncryptionBase<AesGcmEncryption>>(new BrowsableAttribute(false), p => p.Result);
-                    });
+            builder.Obsolete<RepeatUntilFailure>();
+            
+
+#if NET6_0_OR_GREATER
+            builder
+                .Add<AesGcmAlgorithmEncryption, CryptoAlgorithmDesigner>(securityAlgorithms)
+                .AddToMember<AesGcmAlgorithmEncryption>(p => p.Iterations, new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description))
+                .AddToMember<AesGcmAlgorithmEncryption>(p => p.Result, new BrowsableAttribute(false));
 #endif
 
-                // APPS & DIAGNOSTICS
-                builder
-                    .Register<Stopwatch, StopwatchDesigner>(appsAndDiagnostics)
-                    .Register<TerminateProcess, TerminateProcessDesigner>(appsAndDiagnostics, m =>
-                        m.Register(p => p.ContinueOnError, booleanPropertyEditorAttribute));
-
-
-                // COMMON / SHARED
-                var continuableActivityTypes = typeof(ContinuableAsyncTaskCodeActivity).GetDerivedTypes().ToArray();
-                builder.RegisterToMember(
-                    booleanPropertyEditorAttribute,
-                    nameof(ContinuableAsyncTaskCodeActivity.ContinueOnError),
-                    continuableActivityTypes);
-            });
+            builder.Commit();
         }
     }
 }

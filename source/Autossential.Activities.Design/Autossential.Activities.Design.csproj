@@ -3,7 +3,7 @@
 		<TargetFrameworks>net461;net6.0-windows</TargetFrameworks>
 		<UseWPF>true</UseWPF>
 		<UseWindowsForms>true</UseWindowsForms>
-		<Version>3.2.2</Version>
+		<Version>3.3.0</Version>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -19,6 +19,7 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageIcon>packageIcon.png</PackageIcon>
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<RunPostBuildEvent>Always</RunPostBuildEvent>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -77,4 +78,8 @@
 	</ItemGroup>
 
 	<Import Project="..\..\shared\Autossential.Shared.Activities.Design\Autossential.Shared.Activities.Design.projitems" Label="Shared" />
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="SET REHOSTPATH=..\..\..\..\Rehosted-Workflow-Designer\RehostedDesigner\bin\Debug&#xD;&#xA;SET SOURCEPATH=.\bin\Debug\net461&#xD;&#xA;if $(TargetFramework) == net461 (&#xD;&#xA;  echo =================== REHOST ===================&#xD;&#xA;  if $(ConfigurationName) == Debug (&#xD;&#xA;    if exist %25REHOSTPATH%25 (&#xD;&#xA;      xcopy /Y %25SOURCEPATH%25 %25REHOSTPATH%25&#xD;&#xA;    )   &#xD;&#xA;  )&#xD;&#xA;)" />
+	</Target>
 </Project>

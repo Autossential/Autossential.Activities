@@ -21,7 +21,7 @@
     </sap:ActivityDesigner.Icon>
 
     <c:ActivityDecoratorControl>
-        <StackPanel Width="300">
+        <StackPanel Style="{StaticResource MajorWidth}">
             <Grid>
                 <sapv:ExpressionTextBox
                     ExpressionType="{Binding ModelItem.Properties[DirectoryPath].PropertyType.GenericTypeArguments[0]}"
@@ -68,8 +68,6 @@
                     HintText="Enter a enumerator"/>
             </Grid>
         </StackPanel>
-        <!--
-            -->
 
     </c:ActivityDecoratorControl>
 </sap:ActivityDesigner>

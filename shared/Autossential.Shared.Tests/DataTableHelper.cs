@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace Autossential.Activities.Test
+namespace Autossential.Tests
 {
     public static class DataTableHelper
     {

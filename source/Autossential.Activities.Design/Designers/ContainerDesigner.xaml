@@ -15,10 +15,9 @@
     <sap:ActivityDesigner.Icon>
         <DrawingBrush Drawing="{StaticResource ContainerIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
+
+    <StackPanel Style="{StaticResource WrapperMinWidth}">
+        <ContentPresenter Content="{Binding}" Style="{x:Static sacdt:DesignerStylesDictionary.SequenceStyle}" />
+    </StackPanel>
     
-    <Grid>
-        <StackPanel>
-            <ContentPresenter Content="{Binding}" Style="{x:Static sacdt:DesignerStylesDictionary.SequenceStyle}" />
-        </StackPanel>
-    </Grid>
 </sap:ActivityDesigner>

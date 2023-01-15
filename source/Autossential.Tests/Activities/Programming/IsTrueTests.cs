@@ -1,9 +1,10 @@
+using Autossential.Activities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Activities;
 using System.Collections.Generic;
 
-namespace Autossential.Activities.Test
+namespace Autossential.Tests
 {
     [TestClass]
     public class IsTrueTests

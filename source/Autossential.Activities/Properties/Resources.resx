@@ -627,7 +627,7 @@
   </data>
   <data name="ExtractDataColumnValues_Trim_DisplayName" xml:space="preserve">
     <value>Trim</value>
-    <comment>property description</comment>
+    <comment>property name</comment>
   </data>
   <data name="ExtractDataColumnValues_TypeArgument_Description" xml:space="preserve">
     <value>Determines the type of each value extracted from the data column.</value>

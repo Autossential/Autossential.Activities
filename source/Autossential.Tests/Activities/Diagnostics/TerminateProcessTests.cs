@@ -13,10 +13,18 @@ namespace Autossential.Tests
         [TestMethod]
         public void ManualTest()
         {
-            var processes = new[] { "notepad", "msedge" };
+            var processes = new[] {
+                "CalculatorApp",
+                "msedge",
+                "notepad",
+                "aseprite",
+                "lupasrename",
+                "linqpad" };
+
             WorkflowTester.Invoke(new TerminateProcess()
             {
-                ProcessName = new InArgument<string[]>(_ => processes)
+                ProcessName = new InArgument<string[]>(_ => processes),
+                Timeout = 120000*5
             });
 
             foreach (var name in processes)

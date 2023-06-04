@@ -21,6 +21,7 @@ namespace Autossential.Activities
         public OutArgument<CleanUpFolderResult> Result { get; set; }
         public InArgument<DateTime?> LastWriteTime { get; set; }
         public InArgument<bool> DeleteEmptyFolders { get; set; } = true;
+        public SearchOption SearchOption { get; set; } = SearchOption.AllDirectories;
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
@@ -40,7 +41,8 @@ namespace Autossential.Activities
         protected async override Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
             var folder = Folder.Get(context);
-            var patterns = SearchPattern?.GetAsArray<string>(context) ?? new[] { "*" };
+            var patterns = SearchPattern?.GetAsHashSet<string>(context) ?? new HashSet<string>(new[] { "*" });
+
             var lastWriteTime = LastWriteTime?.Get(context) ?? DateTime.Now;
             var deleteEmptyFolders = DeleteEmptyFolders.Get(context);
 
@@ -51,10 +53,13 @@ namespace Autossential.Activities
             {
                 foreach (var p in patterns)
                 {
-                    foreach (var f in Directory.EnumerateFiles(folder, p, SearchOption.AllDirectories).Reverse())
+                    foreach (var f in Directory.EnumerateFiles(folder, p, SearchOption).Reverse())
                     {
                         try
                         {
+                            if (token.IsCancellationRequested)
+                                break;
+
                             if (File.GetLastWriteTime(f) > lastWriteTime)
                                 continue;
 
@@ -68,11 +73,13 @@ namespace Autossential.Activities
                     }
                 }
 
-
                 if (deleteEmptyFolders)
                 {
-                    foreach (var f in Directory.EnumerateDirectories(folder, "*", SearchOption.AllDirectories).Reverse())
+                    foreach (var f in Directory.EnumerateDirectories(folder, "*", SearchOption).Reverse())
                     {
+                        if (token.IsCancellationRequested)
+                            break;
+
                         if (Directory.EnumerateFileSystemEntries(f, "*").Any())
                             continue;
 
@@ -87,7 +94,7 @@ namespace Autossential.Activities
                         }
                     }
                 }
-            }).ConfigureAwait(false);
+            }, token).ConfigureAwait(false);
 
             return ctx =>
             {

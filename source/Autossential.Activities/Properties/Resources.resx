@@ -265,8 +265,16 @@
     <value>Result</value>
     <comment>property name</comment>
   </data>
+  <data name="CleanUpFolder_SearchOption_Description" xml:space="preserve">
+    <value>Specifies whether the search operation should include only the current directory or should include all subdirectories.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="CleanUpFolder_SearchOption_DisplayName" xml:space="preserve">
+    <value>SearchOption</value>
+    <comment>property name</comment>
+  </data>
   <data name="CleanUpFolder_SearchPattern_Description" xml:space="preserve">
-    <value>The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings. Default value is "*.*".</value>
+    <value>The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It supports a string or a collection of strings. Default value is all files (*.*).</value>
     <comment>property description</comment>
   </data>
   <data name="CleanUpFolder_SearchPattern_DisplayName" xml:space="preserve">

@@ -54,10 +54,10 @@ namespace Autossential.Activities
 
         protected override IEnumerable<string> Execute(CodeActivityContext context)
         {
-            var directories = DirectoryPath.GetAsArray<string>(context);
-            var patterns = SearchPattern.GetAsArray<string>(context);
-            if (patterns.Length == 0)
-                patterns = new[] { "*.*" };
+            var directories = DirectoryPath.GetAsHashSet<string>(context);
+            var patterns = SearchPattern.GetAsHashSet<string>(context);
+            if (patterns.Count == 0)
+                patterns = new HashSet<string>(new[] { "*" });
 
             IEnumerable<string> result = new string[] { };
             foreach (var directory in directories)

@@ -293,6 +293,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Specifies whether the search operation should include only the current directory or should include all subdirectories.'.
+        /// </summary>
+        public static string CleanUpFolder_SearchOption_Description => ResourceManager.GetString("CleanUpFolder_SearchOption_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Check Point'.
         /// </summary>
         public static string CheckPoint_DisplayName => ResourceManager.GetString("CheckPoint_DisplayName", Culture);
@@ -470,6 +476,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Result'.
         /// </summary>
         public static string ExtractDataColumnValues_Result_DisplayName => ResourceManager.GetString("ExtractDataColumnValues_Result_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It supports a string or a collection of strings. Default value is all files (*.*). This features can be extended by SearchPatternMode property.'.
+        /// </summary>
+        public static string Common_SearchPattern => ResourceManager.GetString("Common_SearchPattern", Culture);
     
 
         /// <summary>
@@ -1247,7 +1259,7 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings. Default value is "*.*".'.
+        /// Looks up a localized string similar to 'The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It supports a string or a collection of strings. Default value is all files (*.*).'.
         /// </summary>
         public static string WaitDynamicFile_SearchPattern_Description => ResourceManager.GetString("WaitDynamicFile_SearchPattern_Description", Culture);
     
@@ -1358,12 +1370,6 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'EmptyColumnName'.
         /// </summary>
         public static string PromoteHeaders_EmptyColumnName_DisplayName => ResourceManager.GetString("PromoteHeaders_EmptyColumnName_DisplayName", Culture);
-    
-
-        /// <summary>
-        /// Looks up a localized string similar to 'The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings. Default value is "*.*".'.
-        /// </summary>
-        public static string CleanUpFolder_SearchPattern_Description => ResourceManager.GetString("CleanUpFolder_SearchPattern_Description", Culture);
     
 
         /// <summary>
@@ -1688,6 +1694,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The number of entries (files and folders) in the zip archive.'.
         /// </summary>
         public static string ZipEntriesCount_EntriesCount_Description => ResourceManager.GetString("ZipEntriesCount_EntriesCount_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Native: applies the search pattern using the native standards. Extended: allows the use of an additional wildcard (!) to create negative patterns, e.g: (!*.txt) means to match everything except (*.txt) files. Complete: It also allows negative patterns and perform the testing in the full file path instead of only in the file name.'.
+        /// </summary>
+        public static string Common_SearchPatternMode => ResourceManager.GetString("Common_SearchPatternMode", Culture);
     
 
         /// <summary>
@@ -2087,15 +2099,15 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings. Default value is "*.*".'.
-        /// </summary>
-        public static string EnumerateFiles_SearchPattern_Description => ResourceManager.GetString("EnumerateFiles_SearchPattern_Description", Culture);
-    
-
-        /// <summary>
         /// Looks up a localized string similar to 'A variable that represents the instance of System.Diagnostics.Stopwatch class.'.
         /// </summary>
         public static string Stopwatch_ReferenceStopwatch_Description => ResourceManager.GetString("Stopwatch_ReferenceStopwatch_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'SearchOption'.
+        /// </summary>
+        public static string CleanUpFolder_SearchOption_DisplayName => ResourceManager.GetString("CleanUpFolder_SearchOption_DisplayName", Culture);
     
 
         /// <summary>

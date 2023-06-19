@@ -1,4 +1,6 @@
 ﻿using Autossential.Activities.Properties;
+using Autossential.Core.Enums;
+using Autossential.Core.Extensions;
 using Autossential.Shared;
 using System.Activities;
 using System.Collections.Generic;
@@ -20,6 +22,7 @@ namespace Autossential.Activities
                                                         | FileAttributes.Device
                                                         | FileAttributes.Offline;
 
+        public PatternSearchMode SearchPatternMode { get; set; } = PatternSearchMode.Native;
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
@@ -54,17 +57,24 @@ namespace Autossential.Activities
 
         protected override IEnumerable<string> Execute(CodeActivityContext context)
         {
-            var directories = DirectoryPath.GetAsArray<string>(context);
-            var patterns = SearchPattern.GetAsArray<string>(context);
-            if (patterns.Length == 0)
-                patterns = new[] { "*.*" };
+            var directories = DirectoryPath.GetAsHashSet<string>(context);
+            var patterns = SearchPattern.GetAsHashSet<string>(context);
+
+            if (patterns.Count == 0)
+                patterns = new HashSet<string>(new[] { "*" });
 
             IEnumerable<string> result = new string[] { };
             foreach (var directory in directories)
             {
                 foreach (var pattern in patterns)
                 {
-                    result = result.Union(Directory.EnumerateFiles(directory, pattern, SearchOption));
+                    var files = SearchPatternMode == PatternSearchMode.Native
+                        ? Directory.EnumerateFiles(directory, pattern, SearchOption)
+                        : SearchPatternMode == PatternSearchMode.Extended
+                            ? Directory.EnumerateFiles(directory, "*", SearchOption).Where(path => Path.GetFileName(path).IsMatch(pattern))
+                            : Directory.EnumerateFiles(directory, "*", SearchOption).Where(path => path.IsMatch(pattern));
+
+                    result = result.Union(files);
                 }
             }
 

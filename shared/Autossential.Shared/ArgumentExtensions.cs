@@ -21,13 +21,13 @@ namespace Autossential.Shared
                 || IsArgumentTypeCompatible<T2>(arg);
         }
 
-        public static T[] GetAsArray<T>(this Argument arg, CodeActivityContext context)
+        public static HashSet<T> GetAsHashSet<T>(this Argument arg, CodeActivityContext context)
         {
             var result = new HashSet<T>();
             var value = arg?.Get(context) ?? default(T);
 
             if (value == null)
-                return result.ToArray();
+                return result;
 
             void forEachItem(IEnumerable<T> collection)
             {
@@ -50,7 +50,7 @@ namespace Autossential.Shared
                 result.Add((T)value);
             }
 
-            return result.ToArray();
+            return result;
         }
     }
 }

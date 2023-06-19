@@ -4,24 +4,13 @@ using System;
 using System.Activities;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Runtime.InteropServices;
 using System.Threading;
 
 namespace Autossential.Activities
 {
     public sealed class TerminateProcess : CodeActivity
     {
-        [DllImport("user32.dll")]
-        static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
-
-        static readonly IntPtr _hWND_BOTTOM = new IntPtr(1);
-
-        const uint SWP_NOSIZE = 0x0001;
-        const uint SWP_NOMOVE = 0x0002;
-        const uint SWP_NOACTIVATE = 0x0010;
-
-        public InArgument<int> Timeout { get; set; } = 30000;
+        public InArgument<int> Timeout { get; set; }
 
         public InArgument ProcessName { get; set; }
 
@@ -38,84 +27,84 @@ namespace Autossential.Activities
             }
         }
 
-        const int WaitForExit = 3000;
-        const int DelayForNext = 125;
-        const int DelayNonGUI = 1000;
-
         protected override void Execute(CodeActivityContext context)
         {
             var timeout = Timeout.Get(context);
+            if (Timeout.Expression is null)
+                timeout = 30000;
+
             var names = ProcessName.Get(context);
             if (names is string)
                 names = new string[] { names.ToString() };
 
             var timer = System.Diagnostics.Stopwatch.StartNew();
-            var processes = Array.Empty<Process>();
-            var switched = false;
-            var hasGui = false;
-
             foreach (var name in (IEnumerable<string>)names)
             {
                 try
                 {
-                    do
+                    var processes = Process.GetProcessesByName(name);
+                    if (processes.Length == 0)
+                        continue;
+
+                    var closedGUI = CloseProcesses(processes, timer, timeout);
+                    if (closedGUI)
                     {
-                        // Processes with GUI
-                        processes = Process.GetProcessesByName(name)
-                            .Where(p => p.MainWindowHandle != IntPtr.Zero).ToArray();
-
-                        foreach (var process in processes)
+                        processes = Process.GetProcessesByName(name);
+                        if (processes.Length > 0)
                         {
-                            if (process.HasExited)
-                                continue;
-
-                            hasGui = true;
-
-                            if (process.CloseMainWindow())
-                            {
-                                process.Close();
-                                Thread.Sleep(DelayForNext);
-                                switched = false;
-                                continue;
-                            }
-
-                            if (!switched)
-                            {
-                                SetWindowPos(process.MainWindowHandle, _hWND_BOTTOM, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_NOACTIVATE);
-                                switched = true;
-                                continue;
-                            }
-
-                            switched = false;
-                            process.Kill();
-                            process.WaitForExit(WaitForExit);
-                            Thread.Sleep(DelayForNext);
+                            // holds for possible delayed GUI termination
+                            Thread.Sleep(2000);
                         }
 
-                    } while (processes.Length > 0 && timer.ElapsedMilliseconds <= timeout);
-                }
-                catch { }
-
-                if (hasGui)
-                    Thread.Sleep(DelayNonGUI); // holds for a brief moment before search for non-GUI processes
-
-                // Processes without GUI
-                processes = Process.GetProcessesByName(name)
-                    .Where(p => p.MainWindowHandle == IntPtr.Zero).ToArray();
-
-                foreach (var process in processes)
-                {
-                    try
-                    {
-                        if (process.HasExited)
-                            continue;
-
-                        process.Kill();
-                        process.WaitForExit(WaitForExit);
+                        KillProcesses(Process.GetProcessesByName(name));
+                        continue;
                     }
-                    catch { }
+
+                    KillProcesses(Process.GetProcessesByName(name));
+                }
+                catch (Exception e)
+                {
+                    Trace.WriteLine(e.Message);
                 }
             }
+        }
+
+        private void KillProcesses(Process[] processes)
+        {
+            foreach (var proc in processes)
+            {
+                if (!proc.HasExited)
+                    proc.Kill();
+            }
+        }
+
+        bool CloseProcesses(Process[] processes, System.Diagnostics.Stopwatch timer, int timeout)
+        {
+            string processName = null;
+            foreach (var process in processes)
+            {
+                if (process.HasExited
+                    || !process.Responding
+                    || process.MainWindowHandle == IntPtr.Zero)
+                {
+                    continue;
+                }
+
+                if (process.CloseMainWindow())
+                {
+                    processName = process.ProcessName;
+                }
+
+                process.Close();
+            }
+
+            if (processName != null && timer.ElapsedMilliseconds <= timeout)
+            {
+                CloseProcesses(Process.GetProcessesByName(processName), timer, timeout);
+                return true;
+            }
+
+            return false;
         }
     }
 }

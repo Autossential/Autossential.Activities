@@ -1,4 +1,5 @@
 ﻿using Autossential.Activities;
+using Autossential.Core.Enums;
 using Autossential.Shared.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -104,6 +105,42 @@ namespace Autossential.Tests
             }));
 
             Assert.ThrowsException<ArgumentException>(() => WorkflowTester.CompileAndInvoke(new EnumerateFiles()));
+        }
+
+
+        [TestMethod]
+
+        [DataRow(PatternSearchMode.Native, "T1.txt", 1)]
+        [DataRow(PatternSearchMode.Extended, "T1.txt", 1)]
+        [DataRow(PatternSearchMode.Complete, "T1.txt", 0)]
+        [DataRow(PatternSearchMode.Complete, "*T1.txt", 1)]
+
+        [DataRow(PatternSearchMode.Native, "J?.*", 2)]
+        [DataRow(PatternSearchMode.Extended, "J?.*", 2)]
+        [DataRow(PatternSearchMode.Complete, "J?.*", 0)]
+        [DataRow(PatternSearchMode.Complete, "*J?.*", 2)]
+
+        [DataRow(PatternSearchMode.Native, "!Y?.yml", 0)]
+        [DataRow(PatternSearchMode.Extended, "!Y?.yml", 5)]
+        [DataRow(PatternSearchMode.Complete, "!Y?.yml", 7)]
+        [DataRow(PatternSearchMode.Complete, "!*Y?.yml", 5)]
+
+        [DataRow(PatternSearchMode.Native, "*inner?*", 0)]
+        [DataRow(PatternSearchMode.Extended, "*inner?*", 0)]
+        [DataRow(PatternSearchMode.Complete, "*inner?*", 4)]
+
+        public void SearchMode(PatternSearchMode mode, string pattern, int expectedCount)
+        {
+            var path = IOSamples.GetTestPath("output");
+            var result = WorkflowTester.CompileAndInvoke(new EnumerateFiles()
+            {
+                DirectoryPath = new InArgument<string>(path),
+                SearchPattern = new InArgument<string>(pattern),
+                SearchOption = SearchOption.AllDirectories,
+                SearchPatternMode = mode
+            });
+
+            Assert.AreEqual(expectedCount, result.Count());
         }
     }
 }

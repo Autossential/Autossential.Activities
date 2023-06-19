@@ -24,7 +24,7 @@
         <StackPanel Style="{StaticResource MajorWidth}">
             <Label 
                 Content="{x:Static as:Resources.WaitDynamicFile_DirectoryPath_DisplayName}" 
-                ToolTip="{x:Static as:Resources.WaitDynamicFile_DirectoryPath_Description}" 
+                ToolTip="{x:Static as:Resources.WaitDynamicFile_SearchPattern_Description}" 
                 Grid.Row="0" />
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -54,7 +54,7 @@
                 </Grid.ColumnDefinitions>
                 <Label
                     Content="{x:Static as:Resources.WaitDynamicFile_SearchPattern_DisplayName}" 
-                    ToolTip="{x:Static as:Resources.WaitDynamicFile_SearchPattern_Description}" 
+                    ToolTip="{x:Static as:Resources.Common_SearchPattern}" 
                     Grid.Row="0" Grid.Column="0"/>
                 <sapv:ExpressionTextBox
                     Grid.Row="1"

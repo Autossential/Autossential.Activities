@@ -10,7 +10,7 @@ namespace Autossential.Activities
 {
     public sealed class TerminateProcess : CodeActivity
     {
-        public InArgument<int> Timeout { get; set; } = 30000;
+        public InArgument<int> Timeout { get; set; }
 
         public InArgument ProcessName { get; set; }
 
@@ -30,33 +30,42 @@ namespace Autossential.Activities
         protected override void Execute(CodeActivityContext context)
         {
             var timeout = Timeout.Get(context);
+            if (Timeout.Expression is null)
+                timeout = 30000;
+
             var names = ProcessName.Get(context);
             if (names is string)
                 names = new string[] { names.ToString() };
 
             var timer = System.Diagnostics.Stopwatch.StartNew();
-
             foreach (var name in (IEnumerable<string>)names)
             {
-                var processes = Process.GetProcessesByName(name);
-                if (processes.Length == 0)
-                    continue;
-
-                var closedGUI = CloseProcesses(processes, timer, timeout);
-                if (closedGUI)
+                try
                 {
-                    processes = Process.GetProcessesByName(name);
-                    if (processes.Length > 0)
+                    var processes = Process.GetProcessesByName(name);
+                    if (processes.Length == 0)
+                        continue;
+
+                    var closedGUI = CloseProcesses(processes, timer, timeout);
+                    if (closedGUI)
                     {
-                        // holds for possible delayed GUI termination
-                        Thread.Sleep(1000);
+                        processes = Process.GetProcessesByName(name);
+                        if (processes.Length > 0)
+                        {
+                            // holds for possible delayed GUI termination
+                            Thread.Sleep(2000);
+                        }
+
+                        KillProcesses(Process.GetProcessesByName(name));
+                        continue;
                     }
 
-                    KillProcesses(processes);
-                    continue;
+                    KillProcesses(Process.GetProcessesByName(name));
                 }
-
-                KillProcesses(processes);
+                catch (Exception e)
+                {
+                    Trace.WriteLine(e.Message);
+                }
             }
         }
 
@@ -74,8 +83,12 @@ namespace Autossential.Activities
             string processName = null;
             foreach (var process in processes)
             {
-                if (process.HasExited || process.MainWindowHandle == IntPtr.Zero)
+                if (process.HasExited
+                    || !process.Responding
+                    || process.MainWindowHandle == IntPtr.Zero)
+                {
                     continue;
+                }
 
                 if (process.CloseMainWindow())
                 {

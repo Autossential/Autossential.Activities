@@ -37,6 +37,8 @@ namespace Autossential.Activities.Design
             var appsAndDiagnostics = new CategoryAttribute(APPS_AND_DIAGNOSTICS_CATEGORY);
 
             var options = new CategoryAttribute(Resources.Options_Category);
+            var searchPattern = new DescriptionAttribute(Resources.Common_SearchPattern);
+            var searchPatternMode = new DescriptionAttribute(Resources.Common_SearchPatternMode);
 
             var builder = new ActivitiesTableBuilder(Resources.ResourceManager);
 
@@ -111,8 +113,13 @@ namespace Autossential.Activities.Design
                 .AddToMembers<ExtractDataColumnValues<string>>(new BrowsableAttribute(true), p => p.TextCase, p => p.Trim)
                 .AddToMembers<RemoveEmptyRows>(new CategoryAttribute(Resources.RemoveEmptyRows_CustomOptions_Category), p => p.Columns, p => p.Operator) // AddCallback
 
-                .AddToMembers<CleanUpFolder>(options, p => p.LastWriteTime, p => p.SearchPattern)
-                .AddToMember<EnumerateFiles>(p => p.SearchPattern, options)
+                .AddToMember<CleanUpFolder>(p => p.LastWriteTime, options)
+                .AddToMember<CleanUpFolder>(p => p.SearchPattern, options, searchPattern)
+                .AddToMember<CleanUpFolder>(p => p.SearchPatternMode, options, searchPatternMode)
+
+                .AddToMember<EnumerateFiles>(p => p.SearchPattern, options, searchPattern)
+                .AddToMember<EnumerateFiles>(p => p.SearchPatternMode, options, searchPatternMode)
+
                 .AddToMembers<WaitFile>(options, p => p.Interval, p => p.WaitForExist)
                 .AddToMembers<WaitDynamicFile>(options, p => p.Interval, p => p.FromDateTime)
 
@@ -121,9 +128,8 @@ namespace Autossential.Activities.Design
                 .AddToMember(typeof(SymmetricAlgorithmEncryptionBase<>), nameof(ActivityWithResult.Result), new BrowsableAttribute(false))
                 .AddToMember(typeof(SymmetricAlgorithmEncryptionBase<>), nameof(SymmetricAlgorithmEncryptionBase<AesEncryption>.Iterations), new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description));
 
-
             builder.Obsolete<RepeatUntilFailure>();
-            
+
 
 #if NET6_0_OR_GREATER
             builder

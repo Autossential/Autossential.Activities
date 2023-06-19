@@ -45,7 +45,7 @@
 
                 <Label
                     Content="{x:Static as:Resources.EnumerateFiles_SearchPattern_DisplayName}" 
-                    ToolTip="{x:Static as:Resources.EnumerateFiles_SearchPattern_Description}" 
+                    ToolTip="{x:Static as:Resources.Common_SearchPattern}" 
                     Grid.Column="0" Grid.Row="0" />
                 <sapv:ExpressionTextBox
                     ExpressionType="{Binding ModelItem.Properties[SearchPattern].PropertyType.GenericTypeArguments[0]}"

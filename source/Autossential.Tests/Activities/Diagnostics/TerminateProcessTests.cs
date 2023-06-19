@@ -23,8 +23,7 @@ namespace Autossential.Tests
 
             WorkflowTester.Invoke(new TerminateProcess()
             {
-                ProcessName = new InArgument<string[]>(_ => processes),
-                Timeout = 30000
+                ProcessName = new InArgument<string[]>(_ => processes)
             });
 
             foreach (var name in processes)

@@ -52,7 +52,7 @@
 
             <Label 
                 Content="{x:Static as:Resources.CleanUpFolder_SearchPattern_DisplayName}" 
-                ToolTip="{x:Static as:Resources.CleanUpFolder_SearchPattern_Description}"
+                ToolTip="{x:Static as:Resources.Common_SearchPattern}"
                 Grid.Row="2"/>
 
             <sapv:ExpressionTextBox

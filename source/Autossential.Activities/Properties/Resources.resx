@@ -273,10 +273,6 @@
     <value>SearchOption</value>
     <comment>property name</comment>
   </data>
-  <data name="CleanUpFolder_SearchPattern_Description" xml:space="preserve">
-    <value>The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It supports a string or a collection of strings. Default value is all files (*.*).</value>
-    <comment>property description</comment>
-  </data>
   <data name="CleanUpFolder_SearchPattern_DisplayName" xml:space="preserve">
     <value>SearchPattern</value>
     <comment>property name</comment>
@@ -287,6 +283,14 @@
   </data>
   <data name="Common_ContinueOnError" xml:space="preserve">
     <value>If set, continue executing the remaining activities even if the current activity has failed.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Common_SearchPattern" xml:space="preserve">
+    <value>The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It supports a string or a collection of strings. Default value is all files (*.*). The features can be extended by SearchPatternMode property.</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Common_SearchPatternMode" xml:space="preserve">
+    <value>Native: applies the search pattern using the native standards. Extended: allows the use of an additional wildcard (!) to create negative patterns, e.g: (!*.txt) means to match everything except (*.txt) files. Complete: It also allows negative patterns and perform the testing in the full file path instead of only in the file name.</value>
     <comment>property description</comment>
   </data>
   <data name="Common_Timeout" xml:space="preserve">
@@ -544,10 +548,6 @@
   <data name="EnumerateFiles_SearchOption_DisplayName" xml:space="preserve">
     <value>SearchOption</value>
     <comment>property name</comment>
-  </data>
-  <data name="EnumerateFiles_SearchPattern_Description" xml:space="preserve">
-    <value>The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings. Default value is "*.*".</value>
-    <comment>property description</comment>
   </data>
   <data name="EnumerateFiles_SearchPattern_DisplayName" xml:space="preserve">
     <value>SearchPattern</value>
@@ -1266,8 +1266,7 @@
     <comment>property name</comment>
   </data>
   <data name="WaitDynamicFile_SearchPattern_Description" xml:space="preserve">
-    <value>The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It also supports a collection of strings. Default value is "*.*".</value>
-    <comment>property description</comment>
+    <value>The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It supports a string or a collection of strings. Default value is all files (*.*).</value>
   </data>
   <data name="WaitDynamicFile_SearchPattern_DisplayName" xml:space="preserve">
     <value>SearchPattern</value>

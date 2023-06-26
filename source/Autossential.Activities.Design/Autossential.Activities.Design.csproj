@@ -3,7 +3,7 @@
 		<TargetFrameworks>net461;net6.0-windows</TargetFrameworks>
 		<UseWPF>true</UseWPF>
 		<UseWindowsForms>true</UseWindowsForms>
-		<Version>3.3.2</Version>
+		<Version>3.3.3</Version>
 	</PropertyGroup>
 
 	<PropertyGroup>

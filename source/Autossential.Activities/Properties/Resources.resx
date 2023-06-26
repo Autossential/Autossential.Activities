@@ -413,14 +413,6 @@
     <value>TextEncoding</value>
     <comment>property name</comment>
   </data>
-  <data name="DataTableToText_DataTable_Description" xml:space="preserve">
-    <value>The DataTable.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
-    <comment>property name</comment>
-  </data>
   <data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
     <value>The date format to be used on the string representation for DateTime column types.</value>
     <comment>property description</comment>
@@ -436,6 +428,14 @@
   <data name="DataTableToText_DisplayName" xml:space="preserve">
     <value>DataTable To Text</value>
     <comment>activity name</comment>
+  </data>
+  <data name="DataTableToText_InputDataTable_Description" xml:space="preserve">
+    <value>The DataTable.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="DataTableToText_InputDataTable_DisplayName" xml:space="preserve">
+    <value>DataTable</value>
+    <comment>property name</comment>
   </data>
   <data name="DataTableToText_Result_Description" xml:space="preserve">
     <value>The string representation of the DataTable.</value>
@@ -1113,12 +1113,12 @@
     <value>ExitOnException</value>
     <comment>property name</comment>
   </data>
-  <data name="TimeLoop_IterationNumber_Description" xml:space="preserve">
-    <value>The current iteration (one-based) that is being processed.</value>
+  <data name="TimeLoop_Index_Description" xml:space="preserve">
+    <value>The current iteration (zero-based) that is being processed.</value>
     <comment>property description</comment>
   </data>
-  <data name="TimeLoop_IterationNumber_DisplayName" xml:space="preserve">
-    <value>IterationNumber</value>
+  <data name="TimeLoop_Index_DisplayName" xml:space="preserve">
+    <value>Index</value>
     <comment>property name</comment>
   </data>
   <data name="TimeLoop_LoopInterval_Description" xml:space="preserve">

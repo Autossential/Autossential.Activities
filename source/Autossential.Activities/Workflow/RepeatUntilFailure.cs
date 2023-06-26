@@ -5,7 +5,7 @@ using System.Activities.Statements;
 using System.Activities.Validation;
 using System.ComponentModel;
 
-namespace Autossential.Activities.Workflow
+namespace Autossential.Activities
 {
     public sealed class RepeatUntilFailure : Activity
     {

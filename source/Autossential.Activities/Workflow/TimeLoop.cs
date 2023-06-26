@@ -2,10 +2,9 @@
 using Autossential.Shared.Activities.Base;
 using System;
 using System.Activities;
-using System.ComponentModel;
 using System.Threading;
 
-namespace Autossential.Activities.Workflow
+namespace Autossential.Activities
 {
     public sealed class TimeLoop : ScopeActivity
     {

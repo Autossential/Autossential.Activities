@@ -34,8 +34,8 @@
                 </Grid.ColumnDefinitions>
 
                 <Label 
-                    Content="{x:Static as:Resources.ExtractDataColumnValues_DataTable_DisplayName}" 
-                    ToolTip="{x:Static as:Resources.ExtractDataColumnValues_DataTable_Description}"
+                    Content="{x:Static as:Resources.ExtractDataColumnValues_InputDataTable_DisplayName}" 
+                    ToolTip="{x:Static as:Resources.ExtractDataColumnValues_InputDataTable_Description}"
                     Grid.Row="0" Grid.Column="0" />
                 <sapv:ExpressionTextBox Grid.Row="1" Grid.Column="0"
                                     ExpressionType="{Binding ModelItem.Properties[InputDataTable].PropertyType.GenericTypeArguments[0]}"

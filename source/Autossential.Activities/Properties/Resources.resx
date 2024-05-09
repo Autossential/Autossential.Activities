@@ -573,14 +573,6 @@
     <value>Column</value>
     <comment>property name</comment>
   </data>
-  <data name="ExtractDataColumnValues_DataTable_Description" xml:space="preserve">
-    <value>The data table where the values will be extracted from.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="ExtractDataColumnValues_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
-    <comment>property name</comment>
-  </data>
   <data name="ExtractDataColumnValues_DefaultValue_Description" xml:space="preserve">
     <value>The value to be use in case of the extract value cannot be converted to the specified type.</value>
     <comment>property description</comment>
@@ -604,6 +596,14 @@
   <data name="ExtractDataColumnValues_ErrorMsg_InvalidColumnName" xml:space="preserve">
     <value>The column '{0}' does not exist on the DataTable.</value>
     <comment>error message</comment>
+  </data>
+  <data name="ExtractDataColumnValues_InputDataTable_Description" xml:space="preserve">
+    <value>The data table where the values will be extracted from.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ExtractDataColumnValues_InputDataTable_DisplayName" xml:space="preserve">
+    <value>DataTable</value>
+    <comment>property name</comment>
   </data>
   <data name="ExtractDataColumnValues_Result_Description" xml:space="preserve">
     <value>The array of values extracted from the data column.</value>

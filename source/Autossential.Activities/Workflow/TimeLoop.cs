@@ -46,7 +46,7 @@ namespace Autossential.Activities
 
         private void ApplyDelay()
         {
-            if (_interval > TimeSpan.Zero)
+            if (_interval > TimeSpan.Zero && !_stop)
                 Thread.Sleep(_interval);
         }
 

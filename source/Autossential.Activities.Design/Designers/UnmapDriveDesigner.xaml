@@ -1,0 +1,36 @@
+﻿<sap:ActivityDesigner x:Class="Autossential.Activities.Design.Designers.UnmapDriveDesigner"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+   xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
+   xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
+   xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls"
+   xmlns:as="clr-namespace:Autossential.Activities.Properties;assembly=Autossential.Activities">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush Drawing="{StaticResource UnmapDriveIcon}" Stretch="Uniform"></DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+
+    <c:ActivityDecoratorControl>
+        <StackPanel Style="{StaticResource DefaultWidth}">
+
+            <Label Content="{x:Static as:Resources.UnmapDrive_DriveLetter_DisplayName}"
+                    ToolTip="{x:Static as:Resources.UnmapDrive_DriveLetter_Description}"></Label>
+            <sapv:ExpressionTextBox 
+                    ExpressionType="{Binding ModelItem.Properties[DriveLetter].PropertyType.GenericTypeArguments[0]}"
+                    OwnerActivity="{Binding ModelItem}"
+                    UseLocationExpression="False"
+                    HintText="e.g: Z:"
+                    Expression="{Binding ModelItem.DriveLetter, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"/>
+        </StackPanel>
+    </c:ActivityDecoratorControl>
+</sap:ActivityDesigner>

@@ -43,7 +43,9 @@ namespace Autossential.Activities.Design
 
             builder
                 .Add<Stopwatch, StopwatchDesigner>(appsAndDiagnostics)
-                .Add<TerminateProcess, TerminateProcessDesigner>(appsAndDiagnostics);
+                .Add<TerminateProcess, TerminateProcessDesigner>(appsAndDiagnostics)
+                .Add<MapDrive, MapDriveDesigner>(appsAndDiagnostics)
+                .Add<UnmapDrive, UnmapDriveDesigner>(appsAndDiagnostics);
 
             builder
                 .Add<Aggregate, AggregateDesigner>(dataTable)
@@ -125,7 +127,9 @@ namespace Autossential.Activities.Design
                 .AddToMember<CheckPoint>(p => p.Data, new EditorAttribute(typeof(ArgumentDictionaryPropertyEditor), typeof(DialogPropertyValueEditor)))
                 .AddToMember<Iterate>(p => p.Reverse, options)
                 .AddToMember(typeof(SymmetricAlgorithmEncryptionBase<>), nameof(ActivityWithResult.Result), new BrowsableAttribute(false))
-                .AddToMember(typeof(SymmetricAlgorithmEncryptionBase<>), nameof(SymmetricAlgorithmEncryptionBase<AesEncryption>.Iterations), new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description));
+                .AddToMember(typeof(SymmetricAlgorithmEncryptionBase<>), nameof(SymmetricAlgorithmEncryptionBase<AesEncryption>.Iterations), new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description))
+                
+                .AddToMember<MapDrive>(p=>p.Force, options);
 
             builder.Obsolete<RepeatUntilFailure>();
 

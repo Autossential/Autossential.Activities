@@ -78,7 +78,7 @@ namespace Autossential.Activities
             }
         }
 
-        bool CloseProcesses(Process[] processes, System.Diagnostics.Stopwatch timer, int timeout)
+        private bool CloseProcesses(Process[] processes, System.Diagnostics.Stopwatch timer, int timeout)
         {
             string processName = null;
             foreach (var process in processes)

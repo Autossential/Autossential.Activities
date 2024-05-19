@@ -16,7 +16,7 @@
     </sap:ActivityDesigner.Resources>
 
     <sap:ActivityDesigner.Icon>
-        <DrawingBrush Drawing="{StaticResource CloseProcessesIcon}" Stretch="Uniform"></DrawingBrush>
+        <DrawingBrush Drawing="{StaticResource TerminateProcessIcon}" Stretch="Uniform"></DrawingBrush>
     </sap:ActivityDesigner.Icon>
 
     <c:ActivityDecoratorControl>

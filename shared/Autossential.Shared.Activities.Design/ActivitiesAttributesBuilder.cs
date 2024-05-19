@@ -110,7 +110,7 @@ namespace Autossential.Shared.Activities.Design
                 return;
 
             var argType = property.PropertyType.GetGenericArgumentType();
-            if (argType == typeof(bool))
+            if (argType == typeof(bool) && baseType == typeof(InArgument))
                 AddCustomAttributes(activityType, property, new EditorAttribute(typeof(BooleanPropertyEditor), typeof(DialogPropertyValueEditor)));
         }
 

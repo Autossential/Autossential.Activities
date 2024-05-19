@@ -16,6 +16,7 @@ namespace Autossential.Activities
 
         public InArgument<TimeSpan> Timer { get; set; }
         public InArgument<bool> ExitOnException { get; set; }
+        public InArgument<bool> PropagateException { get; set; }
         public InArgument<TimeSpan> LoopInterval { get; set; }
         public OutArgument<Exception> OutputException { get; set; }
         public OutArgument<int> Index { get; set; }
@@ -82,6 +83,8 @@ namespace Autossential.Activities
                 _stop = true;
                 faultContext.CancelChildren();
                 OutputException.Set(faultContext, propagatedException);
+                if (PropagateException.Get(faultContext))
+                    throw propagatedException;
             }
         }
 

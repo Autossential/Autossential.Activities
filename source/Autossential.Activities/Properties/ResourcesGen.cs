@@ -215,6 +215,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Map Drive'.
+        /// </summary>
+        public static string MapDrive_DisplayName => ResourceManager.GetString("MapDrive_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Returns the number of entries (files and folders) from a Zip archive.'.
         /// </summary>
         public static string ZipEntriesCount_Description => ResourceManager.GetString("ZipEntriesCount_Description", Culture);
@@ -260,6 +266,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'EntriesCount'.
         /// </summary>
         public static string ZipEntriesCount_EntriesCount_DisplayName => ResourceManager.GetString("ZipEntriesCount_EntriesCount_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'DriveLetter'.
+        /// </summary>
+        public static string UnmapDrive_DriveLetter_DisplayName => ResourceManager.GetString("UnmapDrive_DriveLetter_DisplayName", Culture);
     
 
         /// <summary>
@@ -332,6 +344,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Returns only a list of unique values.'.
         /// </summary>
         public static string ExtractDataColumnValues_Unique_Description => ResourceManager.GetString("ExtractDataColumnValues_Unique_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'No drivers available'.
+        /// </summary>
+        public static string NetworkDrive_ErrorMsg_NoDriversAvailable => ResourceManager.GetString("NetworkDrive_ErrorMsg_NoDriversAvailable", Culture);
     
 
         /// <summary>
@@ -425,6 +443,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Tries to force the unmap of the mapped drive.'.
+        /// </summary>
+        public static string UnmapDrive_Force_Description => ResourceManager.GetString("UnmapDrive_Force_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Specifies the amount of time in milliseconds to wait for the activity to run before an error is thrown. The default value is 30000 (30s).'.
         /// </summary>
         public static string Common_Timeout => ResourceManager.GetString("Common_Timeout", Culture);
@@ -464,6 +488,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'An object containing the number of files deleted, folders deleted and total deleted.'.
         /// </summary>
         public static string CleanUpFolder_Result_Description => ResourceManager.GetString("CleanUpFolder_Result_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Returns true if the drive was successfully mapped, false otherwise.'.
+        /// </summary>
+        public static string MapDrive_Result_Description => ResourceManager.GetString("MapDrive_Result_Description", Culture);
     
 
         /// <summary>
@@ -617,6 +647,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The drive letter to be mapped, if not specified, a random one will be chosen.'.
+        /// </summary>
+        public static string MapDrive_DriveLetter_Description => ResourceManager.GetString("MapDrive_DriveLetter_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Data'.
         /// </summary>
         public static string CheckPoint_Data_DisplayName => ResourceManager.GetString("CheckPoint_Data_DisplayName", Culture);
@@ -755,6 +791,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Force'.
+        /// </summary>
+        public static string UnmapDrive_Force_DisplayName => ResourceManager.GetString("UnmapDrive_Force_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Executes the contained activities once and continues to do so for a specified period of time.'.
         /// </summary>
         public static string TimeLoop_Description => ResourceManager.GetString("TimeLoop_Description", Culture);
@@ -839,6 +881,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Maps a Network Drive into the system.'.
+        /// </summary>
+        public static string MapDrive_Description => ResourceManager.GetString("MapDrive_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'IterationNumber'.
         /// </summary>
         public static string RepeatUntilFailure_IterationNumber_DisplayName => ResourceManager.GetString("RepeatUntilFailure_IterationNumber_DisplayName", Culture);
@@ -875,6 +923,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string UnmapDrive_Result_DisplayName => ResourceManager.GetString("UnmapDrive_Result_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'TextEncoding'.
         /// </summary>
         public static string Zip_TextEncoding_DisplayName => ResourceManager.GetString("Zip_TextEncoding_DisplayName", Culture);
@@ -890,6 +944,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Common'.
         /// </summary>
         public static string Common_Category => ResourceManager.GetString("Common_Category", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The drive letter of the mapped drive.'.
+        /// </summary>
+        public static string UnmapDrive_DriveLetter_Description => ResourceManager.GetString("UnmapDrive_DriveLetter_Description", Culture);
     
 
         /// <summary>
@@ -971,6 +1031,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Force'.
+        /// </summary>
+        public static string MapDrive_Force_DisplayName => ResourceManager.GetString("MapDrive_Force_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The input DataTable.'.
         /// </summary>
         public static string PromoteHeaders_InputDataTable_Description => ResourceManager.GetString("PromoteHeaders_InputDataTable_Description", Culture);
@@ -1046,6 +1112,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The input DataRow.'.
         /// </summary>
         public static string DataRowToDictionary_InputDataRow_Description => ResourceManager.GetString("DataRowToDictionary_InputDataRow_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Returns true if the drive was successfully unmapped, false otherise.'.
+        /// </summary>
+        public static string UnmapDrive_Result_Description => ResourceManager.GetString("UnmapDrive_Result_Description", Culture);
     
 
         /// <summary>
@@ -1229,6 +1301,24 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The drive letter is invalid'.
+        /// </summary>
+        public static string NetworkDrive_ErrorMsg_InvalidDriveLetter => ResourceManager.GetString("NetworkDrive_ErrorMsg_InvalidDriveLetter", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'PropagateException'.
+        /// </summary>
+        public static string TimeLoop_PropagateException_DisplayName => ResourceManager.GetString("TimeLoop_PropagateException_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'SharedDrivePath'.
+        /// </summary>
+        public static string MapDrive_SharedDrivePath_DisplayName => ResourceManager.GetString("MapDrive_SharedDrivePath_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Unique'.
         /// </summary>
         public static string ExtractDataColumnValues_Unique_DisplayName => ResourceManager.GetString("ExtractDataColumnValues_Unique_DisplayName", Culture);
@@ -1238,6 +1328,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Specifies the amount of time (in milliseconds) for the file re-check. Any value less than 50 will be clamped to 50. Make sure to keep this value lesser than Timeout value.'.
         /// </summary>
         public static string WaitDynamicFile_Interval_Description => ResourceManager.GetString("WaitDynamicFile_Interval_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Result'.
+        /// </summary>
+        public static string MapDrive_Result_DisplayName => ResourceManager.GetString("MapDrive_Result_DisplayName", Culture);
     
 
         /// <summary>
@@ -1733,6 +1829,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Propagates the exception instead of handling it.'.
+        /// </summary>
+        public static string TimeLoop_PropagateException_Description => ResourceManager.GetString("TimeLoop_PropagateException_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'AES GCM'.
         /// </summary>
         public static string AesGcmAlgorithmEncryption_DisplayName => ResourceManager.GetString("AesGcmAlgorithmEncryption_DisplayName", Culture);
@@ -1865,6 +1967,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'DriveLetter'.
+        /// </summary>
+        public static string MapDrive_DriveLetter_DisplayName => ResourceManager.GetString("MapDrive_DriveLetter_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The folder path to be cleaned up.'.
         /// </summary>
         public static string CleanUpFolder_Folder_Description => ResourceManager.GetString("CleanUpFolder_Folder_Description", Culture);
@@ -1901,6 +2009,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Tries to force the connection if the drive letter is already being in use'.
+        /// </summary>
+        public static string MapDrive_Force_Description => ResourceManager.GetString("MapDrive_Force_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The number of iterations that must be run.'.
         /// </summary>
         public static string Iterate_Iterations_Description => ResourceManager.GetString("Iterate_Iterations_Description", Culture);
@@ -1910,6 +2024,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Considers only the files whose last write time is greater than this value. If is not set, the value used is the same as the last write time of the most recent file in the folder. If the folder is empty, the current date and time is used.'.
         /// </summary>
         public static string WaitDynamicFile_FromDateTime_Description => ResourceManager.GetString("WaitDynamicFile_FromDateTime_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The shared drive path to connect with.'.
+        /// </summary>
+        public static string MapDrive_SharedDrivePath_Description => ResourceManager.GetString("MapDrive_SharedDrivePath_Description", Culture);
     
 
         /// <summary>

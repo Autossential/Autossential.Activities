@@ -733,6 +733,78 @@
     <value>Reverse</value>
     <comment>property name</comment>
   </data>
+  <data name="MapDrive_Credential_Description" xml:space="preserve">
+    <value>The credential to be used for the drive mapping.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
+    <value>Credential</value>
+    <comment>property name</comment>
+  </data>
+  <data name="MapDrive_Description" xml:space="preserve">
+    <value>Maps a Network Drive into the system.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="MapDrive_DisplayName" xml:space="preserve">
+    <value>Map Drive</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
+    <value>The drive letter to be mapped, if not specified, a random one will be chosen.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
+    <value>DriveLetter</value>
+    <comment>property name</comment>
+  </data>
+  <data name="MapDrive_Force_Description" xml:space="preserve">
+    <value>Tries to force the connection if the drive letter is already being in use.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="MapDrive_Force_DisplayName" xml:space="preserve">
+    <value>Force</value>
+    <comment>property name</comment>
+  </data>
+  <data name="MapDrive_MappedDrive_Description" xml:space="preserve">
+    <value>The mapped drive letter if the mapping was successful, it is represented in the format "&lt;letter&gt;:\".</value>
+    <comment>property description</comment>
+  </data>
+  <data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
+    <value>MappedDrive</value>
+    <comment>property name</comment>
+  </data>
+  <data name="MapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>The response code of the WNetAddConnection2A.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>ResponseCode</value>
+    <comment>property name</comment>
+  </data>
+  <data name="MapDrive_Result_Description" xml:space="preserve">
+    <value>Returns true if the drive was successfully mapped, false otherwise.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="MapDrive_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
+  <data name="MapDrive_SharedDrivePath_Description" xml:space="preserve">
+    <value>The shared drive path to connect with.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
+    <value>SharedDrivePath</value>
+    <comment>property name</comment>
+  </data>
+  <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
+    <value>The drive letter is invalid</value>
+    <comment>error message</comment>
+  </data>
+  <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
+    <value>No drivers available</value>
+    <comment>error message</comment>
+  </data>
   <data name="Next_Condition_Description" xml:space="preserve">
     <value>Condition which determines if the activity will be evaluated. If empty it assumes True.</value>
     <comment>property description</comment>
@@ -1137,6 +1209,14 @@
     <value>Exception</value>
     <comment>property name</comment>
   </data>
+  <data name="TimeLoop_PropagateException_Description" xml:space="preserve">
+    <value>Propagates the exception instead of handling it.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TimeLoop_PropagateException_DisplayName" xml:space="preserve">
+    <value>PropagateException</value>
+    <comment>property name</comment>
+  </data>
   <data name="TimeLoop_Timer_Description" xml:space="preserve">
     <value>Determines for how long the loop iterations must happen. Its value is checked after each iteration. The current iteration of the loop is not interrupted when the timer has end.</value>
     <comment>property description</comment>
@@ -1172,6 +1252,30 @@
   <data name="TripleDESAlgorithmEncryption_DisplayName" xml:space="preserve">
     <value>Triple DES</value>
     <comment>activity name</comment>
+  </data>
+  <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
+    <value>The drive letter of the mapped drive.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
+    <value>DriveLetter</value>
+    <comment>property name</comment>
+  </data>
+  <data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>The response code of the WNetCancelConnection2A.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>ResponseCode</value>
+    <comment>property name</comment>
+  </data>
+  <data name="UnmapDrive_Result_Description" xml:space="preserve">
+    <value>Returns true if the drive was successfully unmapped, false otherise.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
   </data>
   <data name="Unzip_Description" xml:space="preserve">
     <value>Decompress files from a zip archive.</value>
@@ -1267,6 +1371,7 @@
   </data>
   <data name="WaitDynamicFile_SearchPattern_Description" xml:space="preserve">
     <value>The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions. It supports a string or a collection of strings. Default value is all files (*.*).</value>
+    <comment>property description</comment>
   </data>
   <data name="WaitDynamicFile_SearchPattern_DisplayName" xml:space="preserve">
     <value>SearchPattern</value>

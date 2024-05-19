@@ -28,7 +28,7 @@
                 ExpressionType="{Binding ModelItem.Properties[SharedDrivePath].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
-                HintText="e.g: \\network\path\etc"
+                HintText="e.g: \\hostname\path\etc"
                 Expression="{Binding ModelItem.SharedDrivePath, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"/>
             
             <Label Content="{x:Static as:Resources.MapDrive_DriveLetter_DisplayName}"

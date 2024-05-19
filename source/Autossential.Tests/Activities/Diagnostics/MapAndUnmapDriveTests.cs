@@ -1,0 +1,151 @@
+﻿using Autossential.Activities;
+using Autossential.Shared.Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+
+namespace Autossential.Tests
+{
+
+    [TestClass]
+    public class MapAndUnmapDriveTests
+    {
+        private const string SharedPath = @"\\WINDEV2112EVAL\Shared";
+
+        [TestMethod]
+        [DataRow("   ")]
+        [DataRow("9")]
+        [DataRow("|")]
+        [DataRow("ABC")]
+        [DataRow("X*")]
+        public void InvalidDriveLettersTest_Map(string letter)
+        {
+            Assert.ThrowsException<ArgumentException>(() =>
+            {
+                WorkflowTester.Invoke(new MapDrive()
+                {
+                    DriveLetter = letter,
+                    SharedDrivePath = @"\\hostname\shared"
+                });
+            });
+        }
+
+        [TestMethod]
+        [DataRow("   ")]
+        [DataRow("9")]
+        [DataRow("|")]
+        [DataRow("ABC")]
+        [DataRow("X*")]
+        public void InvalidDriveLettersTest_Unmap(string letter)
+        {
+            Assert.ThrowsException<ArgumentException>(() =>
+            {
+                WorkflowTester.Invoke(new UnmapDrive()
+                {
+                    DriveLetter = letter
+                });
+            });
+        }
+
+        [TestMethod]
+        [DataRow("A:")]
+        [DataRow("B:")]
+        [DataRow(null)]
+        public void MapWithoutCredentials(string driveLetter)
+        {
+            var result = WorkflowTester.Invoke(new MapDrive(), GetArgsWithoutCredentials(driveLetter));
+
+            Assert.IsTrue(result, "Check VirtualBox connection");
+            if (driveLetter != null)
+            {
+                Assert.IsTrue(Environment.GetLogicalDrives().Contains(driveLetter + "\\"));
+            }
+        }
+
+        [TestMethod]
+        [DataRow("A:")]
+        [DataRow("B:")]
+        [DataRow(null)]
+        public void MapWithCredentials(string driveLetter)
+        {
+            var result = WorkflowTester.Invoke(new MapDrive(), GetArgsWithCredentials(driveLetter, false));
+
+            Assert.IsTrue(result, "Check VirtualBox connection");
+            if (driveLetter != null)
+            {
+                Assert.IsTrue(Environment.GetLogicalDrives().Contains(driveLetter + "\\"));
+            }
+        }
+
+        [TestMethod]
+        [DataRow("A:", false, 0)]
+        [DataRow("A:", false, 1)]
+        [DataRow("A:", true, 2)]
+        public void MapWithCredentialsAndForceOption(string driveLetter, bool force, int index)
+        {
+            var result = WorkflowTester.Invoke(new MapDrive(), GetArgsWithCredentials(driveLetter, force));
+            if (index == 1)
+            {
+                Assert.IsFalse(result);
+            }
+            else
+            {
+                Assert.IsTrue(result);
+            }
+        }
+
+        [TestMethod]
+        public void UnmapDrivers()
+        {
+            var allResults = new List<bool>();
+            var drivers = Environment.GetLogicalDrives();
+            if (drivers.Length > 2)
+            {
+                foreach (var driver in drivers)
+                {
+                    if (driver[0] == 'C' || driver[0] == 'D')
+                        continue;
+
+                    var result = WorkflowTester.Invoke(new UnmapDrive(), GetArgsForUnmap(driver[0].ToString()));
+                    allResults.Add(result);
+                }
+
+                Assert.IsTrue(allResults.All(p => p));
+                Assert.AreEqual(Environment.GetLogicalDrives().Length, 2);
+            }
+            else
+            {
+                Assert.Inconclusive();
+            }
+        }
+
+        private static Dictionary<string, object> GetArgsForUnmap(string driveLetter)
+        {
+            return new Dictionary<string, object>
+            {
+                { nameof(UnmapDrive.DriveLetter), driveLetter }
+            };
+        }
+        private static Dictionary<string, object> GetArgsWithoutCredentials(string driveLetter)
+        {
+            return new Dictionary<string, object>
+            {
+                { nameof(MapDrive.SharedDrivePath), SharedPath },
+                { nameof(MapDrive.DriveLetter), driveLetter }
+            };
+        }
+
+        private static Dictionary<string, object> GetArgsWithCredentials(string driveLetter, bool force)
+        {
+            return new Dictionary<string, object>
+            {
+                { nameof(MapDrive.SharedDrivePath), SharedPath },
+                { nameof(MapDrive.DriveLetter), driveLetter },
+                { nameof(MapDrive.Force), force },
+                { nameof(MapDrive.Credential), new NetworkCredential("user", "dev123") }
+            };
+        }
+    }
+}

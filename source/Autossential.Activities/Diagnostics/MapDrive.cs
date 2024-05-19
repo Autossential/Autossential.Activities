@@ -7,7 +7,6 @@ namespace Autossential.Activities
 {
     public sealed class MapDrive : NetworkDrive
     {
-        private const uint ResourceType_Disk = 0x1;
         public InArgument<string> SharedDrivePath { get; set; }
         public InArgument<NetworkCredential> Credential { get; set; }
         public OutArgument<string> MappedDrive { get; set; }
@@ -27,14 +26,16 @@ namespace Autossential.Activities
         {
             var resource = new NetResource
             {
-                dwType = ResourceType_Disk,
+                dwType = 1,         // disk
+                dwScope = 2,        // global network
+                dwDisplayType = 3,  // share
                 lpLocalName = GetNormalizedDriveLetter(context, true),
                 lpRemoteName = SharedDrivePath.Get(context)
             };
 
             if (Force.Get(context) && IsDriveMapped(resource.lpLocalName))
             {
-                WNetCancelConnection2A(resource.lpLocalName, 0, true);
+                _ = WNetCancelConnection2A(resource.lpLocalName, 0, true);
             }
 
             string username = null;

@@ -144,7 +144,7 @@ namespace Autossential.Tests
                 { nameof(MapDrive.SharedDrivePath), SharedPath },
                 { nameof(MapDrive.DriveLetter), driveLetter },
                 { nameof(MapDrive.Force), force },
-                { nameof(MapDrive.Credential), new NetworkCredential("user", "dev123") }
+                { nameof(MapDrive.Credential), new NetworkCredential("user", "dev123", "windev2112eval") }
             };
         }
     }

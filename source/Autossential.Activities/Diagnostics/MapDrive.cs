@@ -1,6 +1,6 @@
 ﻿using Autossential.Activities.Properties;
-using System;
 using System.Activities;
+using System.IO;
 using System.Net;
 
 namespace Autossential.Activities
@@ -46,12 +46,14 @@ namespace Autossential.Activities
                 var c = Credential.Get(context);
                 if (c != null)
                 {
-                    username = c.UserName;
+                    username = string.IsNullOrEmpty(c.Domain) ? c.UserName : Path.Combine(c.Domain, c.UserName);
                     password = c.Password;
                 }
             }
 
-            var result = WNetAddConnection3(IntPtr.Zero, ref resource, password, username, 0);
+            var result = WNetAddConnection2A(ref resource, password, username, 0);
+            ResponseCode.Set(context, result);
+
             if (result == 0)
             {
                 MappedDrive.Set(context, resource.lpLocalName + "\\");

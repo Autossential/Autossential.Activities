@@ -11,6 +11,8 @@ namespace Autossential.Activities
     {
         public InArgument<string> DriveLetter { get; set; }
 
+        public OutArgument<uint> ResponseCode { get; set; }
+
         public static bool IsDriveMapped(string driveLetter)
         {
             foreach (var drive in Environment.GetLogicalDrives())
@@ -56,7 +58,10 @@ namespace Autossential.Activities
         }
 
         [DllImport("mpr.dll")]
-        protected static extern uint WNetAddConnection3(IntPtr hWndOwner, ref NetResource lpNetResource, string lpPassword, string lpUserName, uint dwFlags);
+        protected static extern uint WNetAddConnection2A(ref NetResource lpNetResource, string lpPassword, string lpUserName, uint dwFlags);
+
+        [DllImport("mpr.dll")]
+        protected static extern uint WNetCancelConnection2A(string lpName, int dwFlags, bool fForce);
 
         [StructLayout(LayoutKind.Sequential)]
         protected struct NetResource
@@ -69,9 +74,6 @@ namespace Autossential.Activities
             public string lpRemoteName;
             public string lpComment;
             public string lpProvider;
-        }
-
-        [DllImport("mpr.dll")]
-        protected static extern uint WNetCancelConnection2A(string lpName, int dwFlags, bool fForce);
+        }        
     }
 }

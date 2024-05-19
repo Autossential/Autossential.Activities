@@ -733,6 +733,14 @@
     <value>Reverse</value>
     <comment>property name</comment>
   </data>
+  <data name="MapDrive_Credential_Description" xml:space="preserve">
+    <value>The credential to be used for the drive mapping.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
+    <value>Credential</value>
+    <comment>property name</comment>
+  </data>
   <data name="MapDrive_Description" xml:space="preserve">
     <value>Maps a Network Drive into the system.</value>
     <comment>activity description</comment>
@@ -750,7 +758,7 @@
     <comment>property name</comment>
   </data>
   <data name="MapDrive_Force_Description" xml:space="preserve">
-    <value>Tries to force the connection if the drive letter is already being in use</value>
+    <value>Tries to force the connection if the drive letter is already being in use.</value>
     <comment>property description</comment>
   </data>
   <data name="MapDrive_Force_DisplayName" xml:space="preserve">
@@ -763,6 +771,14 @@
   </data>
   <data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
     <value>MappedDrive</value>
+    <comment>property name</comment>
+  </data>
+  <data name="MapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>The response code of the WNetAddConnection2A.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>ResponseCode</value>
     <comment>property name</comment>
   </data>
   <data name="MapDrive_Result_Description" xml:space="preserve">
@@ -1243,6 +1259,14 @@
   </data>
   <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>DriveLetter</value>
+    <comment>property name</comment>
+  </data>
+  <data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>The response code of the WNetCancelConnection2A.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>ResponseCode</value>
     <comment>property name</comment>
   </data>
   <data name="UnmapDrive_Result_Description" xml:space="preserve">

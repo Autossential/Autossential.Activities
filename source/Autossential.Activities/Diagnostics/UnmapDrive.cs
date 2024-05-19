@@ -18,6 +18,8 @@ namespace Autossential.Activities
         {
             var drive = GetNormalizedDriveLetter(context, false);
             var result = WNetCancelConnection2A(drive, 0, true);
+            ResponseCode.Set(context, result);
+
             return result == 0;
         }
     }

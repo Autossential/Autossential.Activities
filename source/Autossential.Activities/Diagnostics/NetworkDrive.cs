@@ -1,6 +1,7 @@
 ﻿using Autossential.Activities.Properties;
 using System;
 using System.Activities;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -10,8 +11,14 @@ namespace Autossential.Activities
     public abstract class NetworkDrive : CodeActivity<bool>
     {
         public InArgument<string> DriveLetter { get; set; }
+        public OutArgument<int> ResponseCode { get; set; }
+        public OutArgument<string> ResponseMessage { get; set; }
 
-        public OutArgument<uint> ResponseCode { get; set; }
+        protected bool Fail(CodeActivityContext context, int responseCode)
+        {
+            ResponseMessage.Set(context, new Win32Exception(responseCode).Message);
+            return false;
+        }
 
         public static bool IsDriveMapped(string driveLetter)
         {
@@ -58,10 +65,10 @@ namespace Autossential.Activities
         }
 
         [DllImport("mpr.dll")]
-        protected static extern uint WNetAddConnection2A(ref NetResource lpNetResource, string lpPassword, string lpUserName, uint dwFlags);
+        protected static extern int WNetAddConnection2A(ref NetResource lpNetResource, string lpPassword, string lpUserName, uint dwFlags);
 
         [DllImport("mpr.dll")]
-        protected static extern uint WNetCancelConnection2A(string lpName, int dwFlags, bool fForce);
+        protected static extern int WNetCancelConnection2A(string lpName, int dwFlags, bool fForce);
 
         [StructLayout(LayoutKind.Sequential)]
         protected struct NetResource
@@ -74,6 +81,6 @@ namespace Autossential.Activities
             public string lpRemoteName;
             public string lpComment;
             public string lpProvider;
-        }        
+        }
     }
 }

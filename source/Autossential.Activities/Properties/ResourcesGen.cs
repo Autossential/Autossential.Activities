@@ -74,6 +74,16 @@ namespace Autossential.Activities.Properties
         }
 
         /// <summary>
+        /// Looks up a localized string similar to 'The column {0} was not found in the specified table.'.
+        /// </summary>
+        /// <param name="arg0">An object (0) to format.</param>
+        /// <returns>A copy of format string in which the format items have been replaced by the String equivalent of the corresponding instances of Object in arguments.</returns>
+        public static string FillDataTable_ErrorMsg_ColumnFormat(object arg0)
+        {
+            return string.Format(Culture, FillDataTable_ErrorMsg_Column, arg0);
+        }
+
+        /// <summary>
         /// Looks up a localized string similar to 'Cannot be used outside of {0} activities.'.
         /// </summary>
         /// <param name="arg0">An object (0) to format.</param>
@@ -149,6 +159,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Column'.
+        /// </summary>
+        public static string FillDataColumn_Column_DisplayName => ResourceManager.GetString("FillDataColumn_Column_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'There is no rows in the input data table to promote.'.
         /// </summary>
         public static string PromoteHeaders_ErrorMsg_NoData => ResourceManager.GetString("PromoteHeaders_ErrorMsg_NoData", Culture);
@@ -164,6 +180,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The expression to be evaluated.'.
         /// </summary>
         public static string CheckPoint_Expression_Description => ResourceManager.GetString("CheckPoint_Expression_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The data table containing the column that is going to be updated.'.
+        /// </summary>
+        public static string FillDataColumn_ReferenceDataTable_Description => ResourceManager.GetString("FillDataColumn_ReferenceDataTable_Description", Culture);
     
 
         /// <summary>
@@ -353,6 +375,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'ResponseCode'.
+        /// </summary>
+        public static string MapDrive_ResponseCode_DisplayName => ResourceManager.GetString("MapDrive_ResponseCode_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The items to be added to the collection.'.
         /// </summary>
         public static string AddRangeToCollection_Items_Description => ResourceManager.GetString("AddRangeToCollection_Items_Description", Culture);
@@ -419,6 +447,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Value'.
+        /// </summary>
+        public static string FillDataColumn_Value_DisplayName => ResourceManager.GetString("FillDataColumn_Value_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Cannot be used outside of {0} activity.'.
         /// </summary>
         public static string Validation_ScopeError => ResourceManager.GetString("Validation_ScopeError", Culture);
@@ -440,12 +474,6 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Executes the 'Do' block if the condition activity returns true.'.
         /// </summary>
         public static string WhenDo_Description => ResourceManager.GetString("WhenDo_Description", Culture);
-    
-
-        /// <summary>
-        /// Looks up a localized string similar to 'Tries to force the unmap of the mapped drive.'.
-        /// </summary>
-        public static string UnmapDrive_Force_Description => ResourceManager.GetString("UnmapDrive_Force_Description", Culture);
     
 
         /// <summary>
@@ -608,6 +636,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Clean Up Folder'.
         /// </summary>
         public static string CleanUpFolder_DisplayName => ResourceManager.GetString("CleanUpFolder_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'ResponseCode'.
+        /// </summary>
+        public static string UnmapDrive_ResponseCode_DisplayName => ResourceManager.GetString("UnmapDrive_ResponseCode_DisplayName", Culture);
     
 
         /// <summary>
@@ -791,12 +825,6 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'Force'.
-        /// </summary>
-        public static string UnmapDrive_Force_DisplayName => ResourceManager.GetString("UnmapDrive_Force_DisplayName", Culture);
-    
-
-        /// <summary>
         /// Looks up a localized string similar to 'Executes the contained activities once and continues to do so for a specified period of time.'.
         /// </summary>
         public static string TimeLoop_Description => ResourceManager.GetString("TimeLoop_Description", Culture);
@@ -899,6 +927,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The column {0} was not found in the specified table.'.
+        /// </summary>
+        public static string FillDataTable_ErrorMsg_Column => ResourceManager.GetString("FillDataTable_ErrorMsg_Column", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Waits until the file exists.'.
         /// </summary>
         public static string WaitFile_WaitForExist_Description => ResourceManager.GetString("WaitFile_WaitForExist_Description", Culture);
@@ -920,6 +954,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The string representation of the DataTable.'.
         /// </summary>
         public static string DataTableToText_Result_Description => ResourceManager.GetString("DataTableToText_Result_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Fills all rows of a data table column with the specified value.'.
+        /// </summary>
+        public static string FillDataColumn_Description => ResourceManager.GetString("FillDataColumn_Description", Culture);
     
 
         /// <summary>
@@ -956,6 +996,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Pattern'.
         /// </summary>
         public static string ReplaceTokens_Pattern_DisplayName => ResourceManager.GetString("ReplaceTokens_Pattern_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The column name or column index that is going to be updated.'.
+        /// </summary>
+        public static string FillDataColumn_Column_Description => ResourceManager.GetString("FillDataColumn_Column_Description", Culture);
     
 
         /// <summary>
@@ -1181,6 +1227,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'ResponseMessage'.
+        /// </summary>
+        public static string UnmapDrive_ResponseMessage_DisplayName => ResourceManager.GetString("UnmapDrive_ResponseMessage_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The specified file path does not exists.'.
         /// </summary>
         public static string WaitFile_ErrorMsg_FilePathDoesNotExists => ResourceManager.GetString("WaitFile_ErrorMsg_FilePathDoesNotExists", Culture);
@@ -1223,6 +1275,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The value assigned to all rows of the data table column. The value will default to DBNull if no value is provided, which in this scenario, requires a column configured to accept null values.'.
+        /// </summary>
+        public static string FillDataColumn_Value_Description => ResourceManager.GetString("FillDataColumn_Value_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Collection'.
         /// </summary>
         public static string AddRangeToCollection_Collection_DisplayName => ResourceManager.GetString("AddRangeToCollection_Collection_DisplayName", Culture);
@@ -1250,6 +1308,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Adds a set of items to the specified collection.'.
         /// </summary>
         public static string AddRangeToCollection_Description => ResourceManager.GetString("AddRangeToCollection_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The mapped drive letter if the mapping was successful, it is represented in the format "<letter>:\".'.
+        /// </summary>
+        public static string MapDrive_MappedDrive_Description => ResourceManager.GetString("MapDrive_MappedDrive_Description", Culture);
     
 
         /// <summary>
@@ -1325,6 +1389,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Credential'.
+        /// </summary>
+        public static string MapDrive_Credential_DisplayName => ResourceManager.GetString("MapDrive_Credential_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Specifies the amount of time (in milliseconds) for the file re-check. Any value less than 50 will be clamped to 50. Make sure to keep this value lesser than Timeout value.'.
         /// </summary>
         public static string WaitDynamicFile_Interval_Description => ResourceManager.GetString("WaitDynamicFile_Interval_Description", Culture);
@@ -1340,6 +1410,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'One of the enumeration values that indicates whether to emphasize speed or compression.'.
         /// </summary>
         public static string Zip_CompressionLevel_Description => ResourceManager.GetString("Zip_CompressionLevel_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'MappedDrive'.
+        /// </summary>
+        public static string MapDrive_MappedDrive_DisplayName => ResourceManager.GetString("MapDrive_MappedDrive_DisplayName", Culture);
     
 
         /// <summary>
@@ -1553,6 +1629,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The credential to be used for the drive mapping.'.
+        /// </summary>
+        public static string MapDrive_Credential_Description => ResourceManager.GetString("MapDrive_Credential_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'DataTable'.
         /// </summary>
         public static string Aggregate_InputDataTable_DisplayName => ResourceManager.GetString("Aggregate_InputDataTable_DisplayName", Culture);
@@ -1655,6 +1737,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The response code of the WNetCancelConnection2A.'.
+        /// </summary>
+        public static string UnmapDrive_ResponseCode_Description => ResourceManager.GetString("UnmapDrive_ResponseCode_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The maximum time to wait (in milliseconds) the operation to complete.'.
         /// </summary>
         public static string WaitDynamicFile_Timeout_Description => ResourceManager.GetString("WaitDynamicFile_Timeout_Description", Culture);
@@ -1706,6 +1794,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Transposes a DataTable by swapping its rows and columns so that rows become columns and columns become rows.'.
         /// </summary>
         public static string TransposeData_Description => ResourceManager.GetString("TransposeData_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Determines if the time loop reached the time limit.'.
+        /// </summary>
+        public static string TimeLoop_IsTimeout_Description => ResourceManager.GetString("TimeLoop_IsTimeout_Description", Culture);
     
 
         /// <summary>
@@ -1973,6 +2067,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The response code of the WNetAddConnection2A.'.
+        /// </summary>
+        public static string MapDrive_ResponseCode_Description => ResourceManager.GetString("MapDrive_ResponseCode_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The folder path to be cleaned up.'.
         /// </summary>
         public static string CleanUpFolder_Folder_Description => ResourceManager.GetString("CleanUpFolder_Folder_Description", Culture);
@@ -1988,6 +2088,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'The column indexes or column names to verify.'.
         /// </summary>
         public static string RemoveEmptyRows_Columns_Description => ResourceManager.GetString("RemoveEmptyRows_Columns_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The equivalent response message of the response code.'.
+        /// </summary>
+        public static string MapDrive_ResponseMessage_Description => ResourceManager.GetString("MapDrive_ResponseMessage_Description", Culture);
     
 
         /// <summary>
@@ -2009,7 +2115,7 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'Tries to force the connection if the drive letter is already being in use'.
+        /// Looks up a localized string similar to 'Tries to force the connection if the drive letter is already being in use.'.
         /// </summary>
         public static string MapDrive_Force_Description => ResourceManager.GetString("MapDrive_Force_Description", Culture);
     
@@ -2033,6 +2139,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'DataTable'.
+        /// </summary>
+        public static string FillDataColumn_ReferenceDataTable_DisplayName => ResourceManager.GetString("FillDataColumn_ReferenceDataTable_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Result'.
         /// </summary>
         public static string RemoveEmptyRows_Result_DisplayName => ResourceManager.GetString("RemoveEmptyRows_Result_DisplayName", Culture);
@@ -2048,6 +2160,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Result'.
         /// </summary>
         public static string TransposeData_Result_DisplayName => ResourceManager.GetString("TransposeData_Result_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Fill Data Column'.
+        /// </summary>
+        public static string FillDataColumn_DisplayName => ResourceManager.GetString("FillDataColumn_DisplayName", Culture);
     
 
         /// <summary>
@@ -2078,6 +2196,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Trim'.
         /// </summary>
         public static string ExtractDataColumnValues_Trim_DisplayName => ResourceManager.GetString("ExtractDataColumnValues_Trim_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'IsTimeout'.
+        /// </summary>
+        public static string TimeLoop_IsTimeout_DisplayName => ResourceManager.GetString("TimeLoop_IsTimeout_DisplayName", Culture);
     
 
         /// <summary>
@@ -2123,9 +2247,21 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The equivalent response message of the response code.'.
+        /// </summary>
+        public static string UnmapDrive_ResponseMessage_Description => ResourceManager.GetString("UnmapDrive_ResponseMessage_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'FoldersCount'.
         /// </summary>
         public static string ZipEntriesCount_FoldersCount_DisplayName => ResourceManager.GetString("ZipEntriesCount_FoldersCount_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'ResponseMessage'.
+        /// </summary>
+        public static string MapDrive_ResponseMessage_DisplayName => ResourceManager.GetString("MapDrive_ResponseMessage_DisplayName", Culture);
     
 
         /// <summary>

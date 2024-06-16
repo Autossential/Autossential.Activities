@@ -20,6 +20,7 @@ namespace Autossential.Activities
         public InArgument<TimeSpan> LoopInterval { get; set; }
         public OutArgument<Exception> OutputException { get; set; }
         public OutArgument<int> Index { get; set; }
+        public OutArgument<bool> IsTimeout { get; set; }
 
         protected override void CacheMetadata(NativeActivityMetadata metadata)
         {
@@ -59,8 +60,12 @@ namespace Autossential.Activities
                 return;
             }
 
-            if (_sw.Elapsed > _timer || _stop)
+            var timeout = _sw.Elapsed > _timer;
+            if (timeout || _stop)
+            {
+                IsTimeout.Set(context, timeout);
                 return;
+            }
 
             Index.Set(context, _index);
             context.ScheduleAction(Body, OnIterationCompleted, OnIterationFaulted);

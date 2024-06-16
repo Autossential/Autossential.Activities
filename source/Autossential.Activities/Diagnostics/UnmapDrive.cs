@@ -20,7 +20,13 @@ namespace Autossential.Activities
             var result = WNetCancelConnection2A(drive, 0, true);
             ResponseCode.Set(context, result);
 
-            return result == 0;
+            if (result == 0)
+            {
+                ResponseMessage.Set(context, "Success");
+                return true;
+            }
+
+            return Fail(context, result);
         }
     }
 }

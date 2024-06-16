@@ -34,6 +34,17 @@ namespace Autossential.Shared.Utils
             }
         }
 
+        public static int IdentifyDataColumn(DataTable dataTable, object column, int defaultValue = 0)
+        {
+            if (column is string str && dataTable.Columns.Contains(str))
+                return dataTable.Columns[str].Ordinal;
+
+            if (column is int index && index < dataTable.Columns.Count)
+                return index;
+
+            return defaultValue;
+        }
+
         public static bool IsNumericDataType(Type type)
         {
             return type == typeof(byte)

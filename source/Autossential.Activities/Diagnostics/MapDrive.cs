@@ -57,10 +57,11 @@ namespace Autossential.Activities
             if (result == 0)
             {
                 MappedDrive.Set(context, resource.lpLocalName + "\\");
+                ResponseMessage.Set(context, "Success");
                 return true;
             }
 
-            return false;
+            return Fail(context, result);
         }
     }
 }

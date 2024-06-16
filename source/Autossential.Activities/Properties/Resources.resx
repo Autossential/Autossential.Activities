@@ -653,6 +653,42 @@
     <value>Unique</value>
     <comment>property name</comment>
   </data>
+  <data name="FillDataColumn_Column_Description" xml:space="preserve">
+    <value>The column name or column index that is going to be updated.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="FillDataColumn_Column_DisplayName" xml:space="preserve">
+    <value>Column</value>
+    <comment>property name</comment>
+  </data>
+  <data name="FillDataColumn_Description" xml:space="preserve">
+    <value>Fills all rows of a data table column with the specified value.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="FillDataColumn_DisplayName" xml:space="preserve">
+    <value>Fill Data Column</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="FillDataColumn_ReferenceDataTable_Description" xml:space="preserve">
+    <value>The data table containing the column that is going to be updated.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="FillDataColumn_ReferenceDataTable_DisplayName" xml:space="preserve">
+    <value>DataTable</value>
+    <comment>property name</comment>
+  </data>
+  <data name="FillDataColumn_Value_Description" xml:space="preserve">
+    <value>The value assigned to all rows of the data table column. The value will default to DBNull if no value is provided, which in this scenario, requires a column configured to accept null values.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="FillDataColumn_Value_DisplayName" xml:space="preserve">
+    <value>Value</value>
+    <comment>property name</comment>
+  </data>
+  <data name="FillDataTable_ErrorMsg_Column" xml:space="preserve">
+    <value>The column {0} was not found in the specified table.</value>
+    <comment>error message</comment>
+  </data>
   <data name="Increment_Description" xml:space="preserve">
     <value>Increments the value of a variable by the specified increment value.</value>
     <comment>activity description</comment>
@@ -779,6 +815,14 @@
   </data>
   <data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
     <value>ResponseCode</value>
+    <comment>property name</comment>
+  </data>
+  <data name="MapDrive_ResponseMessage_Description" xml:space="preserve">
+    <value>The equivalent response message of the response code.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="MapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+    <value>ResponseMessage</value>
     <comment>property name</comment>
   </data>
   <data name="MapDrive_Result_Description" xml:space="preserve">
@@ -1193,6 +1237,14 @@
     <value>Index</value>
     <comment>property name</comment>
   </data>
+  <data name="TimeLoop_IsTimeout_Description" xml:space="preserve">
+    <value>Determines if the time loop reached the time limit.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TimeLoop_IsTimeout_DisplayName" xml:space="preserve">
+    <value>IsTimeout</value>
+    <comment>property name</comment>
+  </data>
   <data name="TimeLoop_LoopInterval_Description" xml:space="preserve">
     <value>The amount of time to wait on each loop iteration.</value>
     <comment>property description</comment>
@@ -1267,6 +1319,14 @@
   </data>
   <data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
     <value>ResponseCode</value>
+    <comment>property name</comment>
+  </data>
+  <data name="UnmapDrive_ResponseMessage_Description" xml:space="preserve">
+    <value>The equivalent response message of the response code.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="UnmapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+    <value>ResponseMessage</value>
     <comment>property name</comment>
   </data>
   <data name="UnmapDrive_Result_Description" xml:space="preserve">

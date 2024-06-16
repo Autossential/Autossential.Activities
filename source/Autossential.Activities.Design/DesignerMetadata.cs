@@ -57,7 +57,8 @@ namespace Autossential.Activities.Design
                 .Add<RemoveDataColumns, RemoveDataColumnsDesigner>(dataTable)
                 .Add<RemoveDuplicateRows, RemoveDuplicateRowsDesigner>(dataTable)
                 .Add<RemoveEmptyRows, RemoveEmptyRowsDesigner>(dataTable)
-                .Add<TransposeData, TransposeDataDesigner>(dataTable);
+                .Add<TransposeData, TransposeDataDesigner>(dataTable)
+                .Add<FillDataColumn, FillDataColumnDesigner>(dataTable);
 
             builder
                 .Add<CleanUpFolder, CleanUpFolderDesigner>(file)
@@ -128,8 +129,8 @@ namespace Autossential.Activities.Design
                 .AddToMember<Iterate>(p => p.Reverse, options)
                 .AddToMember(typeof(SymmetricAlgorithmEncryptionBase<>), nameof(ActivityWithResult.Result), new BrowsableAttribute(false))
                 .AddToMember(typeof(SymmetricAlgorithmEncryptionBase<>), nameof(SymmetricAlgorithmEncryptionBase<AesEncryption>.Iterations), new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description))
-                
-                .AddToMember<MapDrive>(p=>p.Force, options);
+
+                .AddToMember<MapDrive>(p => p.Force, options);
 
             builder.Obsolete<RepeatUntilFailure>();
 

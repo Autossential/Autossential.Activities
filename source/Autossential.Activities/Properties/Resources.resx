@@ -1617,4 +1617,76 @@
     <value>ZipFilePath</value>
     <comment>property name</comment>
   </data>
+  <data name="AddToDictionary_DisplayName" xml:space="preserve">
+    <value>Add To/Update Dictionary</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="AddToDictionary_ReferenceDictionary_DisplayName" xml:space="preserve">
+    <value>Dictionary</value>
+    <comment>property name</comment>
+  </data>
+  <data name="AddToDictionary_Key_DisplayName" xml:space="preserve">
+    <value>Key</value>
+    <comment>property name</comment>
+  </data>
+  <data name="AddToDictionary_Value_DisplayName" xml:space="preserve">
+    <value>Value</value>
+    <comment>property name</comment>
+  </data>
+  <data name="AddToDictionary_UpdateIfExists_DisplayName" xml:space="preserve">
+    <value>UpdateIfExists</value>
+    <comment>property name</comment>
+  </data>
+  <data name="AddToDictionary_Description" xml:space="preserve">
+    <value>Adds a new key-value pair to the Dictionary. If the Dictionary does not exist, a new instance is created. If the key already exists in it, an exception will be thrown except if the Update If Exists option is enabled.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="AddToDictionary_ReferenceDictionary_Description" xml:space="preserve">
+    <value>The Dictionary instance to receive the new key-value pair.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="AddToDictionary_Key_Description" xml:space="preserve">
+    <value>The key of the element to add.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="AddToDictionary_UpdateIfExists_Description" xml:space="preserve">
+    <value>If the key already exists in the Dictionary, updates its value.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="AddToDictionary_Value_Description" xml:space="preserve">
+    <value>The value of the element to add. The value can be null for reference types.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="AddToDictionary_ErrorMsg_KeyAlreadyExists" xml:space="preserve">
+    <value>An item with the same key has already been added. Key: {0}</value>
+    <comment>error message</comment>
+  </data>
+  <data name="RemoveFromDictionary_DisplayName" xml:space="preserve">
+    <value>Remove From Dictionary</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="RemoveFromDictionary_Description" xml:space="preserve">
+    <value>Removes the value with the specified key from the Dictionary.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="RemoveFromDictionary_InputDictionary_DisplayName" xml:space="preserve">
+    <value>Dictionary</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RemoveFromDictionary_InputDictionary_Description" xml:space="preserve">
+    <value>The Dictionary where the element will be removed from.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RemoveFromDictionary_ErrorMsg_NullDictionary" xml:space="preserve">
+    <value>The Dictionary instance cannot be null.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="RemoveFromDictionary_Key_DisplayName" xml:space="preserve">
+    <value>Key</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RemoveFromDictionary_Key_Description" xml:space="preserve">
+    <value>The key of the element to remove.</value>
+    <comment>property description</comment>
+  </data>
 </root>

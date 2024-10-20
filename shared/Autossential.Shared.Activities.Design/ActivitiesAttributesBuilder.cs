@@ -4,8 +4,10 @@ using System.Activities;
 using System.Activities.Presentation;
 using System.Activities.Presentation.Metadata;
 using System.Activities.Presentation.PropertyEditing;
+using System.Activities.Statements;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Resources;
@@ -26,25 +28,21 @@ namespace Autossential.Shared.Activities.Design
             => Add(typeof(TActivity), typeof(TActivityDesigner), attributes);
 
         public ActivitiesTableBuilder Add(Type activityType, Type activityTypeDesigner, params Attribute[] attributes)
+            => Add<object>(activityType, activityTypeDesigner, attributes);
+
+        public ActivitiesTableBuilder Add<T>(Type activityType, Type activityTypeDesigner, params Attribute[] attributes)
         {
             _activityTypes.Add(activityType);
 
-            Attribute[] attrs;
+            AddCustomAttributes(activityType, new DesignerAttribute(activityTypeDesigner));
+            AddCustomAttributes(activityType, attributes);
 
             if (activityType.IsGenericType)
             {
-                attrs = new Attribute[attributes.Length + 2];
-                attrs[1] = new DefaultTypeArgumentAttribute(typeof(object));
-            }
-            else
-            {
-                attrs = new Attribute[attributes.Length + 1];
+                if (activityType.GetGenericArguments().Length == 1 && !activityType.GetCustomAttributes().Any(a => a is DefaultTypeArgumentAttribute))
+                    AddCustomAttributes(activityType, new DefaultTypeArgumentAttribute(typeof(T)));
             }
 
-            attrs[0] = new DesignerAttribute(activityTypeDesigner);
-
-            Array.Copy(attributes, 0, attrs, attrs.Length - attributes.Length, attributes.Length);
-            AddCustomAttributes(activityType, attrs);
             return this;
         }
 

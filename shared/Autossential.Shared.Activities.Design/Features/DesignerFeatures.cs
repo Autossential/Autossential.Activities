@@ -9,35 +9,42 @@ namespace Autossential.Shared.Activities.Design.Features
 {
     public static class DesignerFeatures
     {
-        internal const string TypeArgumentPropertyName = "TypeArgument";
+        internal const string TypeArgumentPropertyName = "ArgumentType";
         internal const string DisplayName = "DisplayName";
 
-        public static void AddSupportForUpdatingTypeArgument(ModelItem modelItem)
+        public static void AddSupportForUpdatingTypeArgument(ModelItem modelItem, string[] labels = null)
         {
             var argTypes = modelItem.ItemType.GetGenericArguments();
-            if (argTypes.Length == 0)
+            var argsLength = argTypes.Length;
+            if (argsLength == 0)
                 return;
 
+            if (labels != null && labels.Length != argsLength)
+                throw new ArgumentException("When labels is set, its length must match the number of generic arguments of the model item type");
+
             var service = modelItem.GetEditingContext().Services.GetService<AttachedPropertiesService>();
-            for (int argIndex = 0; argIndex < argTypes.Length; argIndex++)
+            for (int argIndex = 0; argIndex < argsLength; argIndex++)
             {
-                ExposeArgumentTypeForUpdate(modelItem, service, argIndex, argTypes.Length);
+                var propertyName = labels != null
+                    ? labels[argIndex]
+                    : argsLength > 1
+                        ? TypeArgumentPropertyName + (argIndex + 1)
+                        : TypeArgumentPropertyName;
+
+                ExposeArgumentTypeForUpdate(modelItem, service, argIndex, propertyName);
             }
         }
 
-        private static void ExposeArgumentTypeForUpdate(ModelItem modelItem, AttachedPropertiesService service, int argIndex, int argsLength)
+        private static void ExposeArgumentTypeForUpdate(ModelItem modelItem, AttachedPropertiesService service, int argIndex, string propertyName)
         {
             service.AddProperty(new AttachedProperty<Type>
             {
-                Name = argsLength > 1
-                    ? TypeArgumentPropertyName + (argIndex + 1)
-                    : TypeArgumentPropertyName,
-
+                Name = propertyName,
                 OwnerType = modelItem.ItemType,
                 Getter = (mItem) => GetTypeArgument(mItem, argIndex),
                 Setter = (mItem, argType) => UpdateTypeArgument(mItem, argType, argIndex),
                 IsBrowsable = true
-            });
+            });            
         }
 
         private static void UpdateTypeArgument(ModelItem modelItem, Type argType, int argIndex)

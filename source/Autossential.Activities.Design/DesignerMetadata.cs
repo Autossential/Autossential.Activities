@@ -22,18 +22,18 @@ namespace Autossential.Activities.Design
         public const string WORKFLOW_CATEGORY = MAIN_CATEGORY + ".Workflow";
         public const string SECURITY_CATEGORY = MAIN_CATEGORY + ".Security";
         public const string SECURITY_ALGORITHMS_CATEGORY = SECURITY_CATEGORY + ".Algorithms";
-        public const string APPS_AND_DIAGNOSTICS_CATEGORY = MAIN_CATEGORY + ".Apps & Diagnostics";
+        public const string MISCELLANEOUS_CATEGORY = MAIN_CATEGORY + ".Misc";
 
         public void Register()
         {
-            var dataTable = new CategoryAttribute(DATA_CATEGORY);
+            var data = new CategoryAttribute(DATA_CATEGORY);
             var workflow = new CategoryAttribute(WORKFLOW_CATEGORY);
             var file = new CategoryAttribute(FILE_CATEGORY);
             var fileCompression = new CategoryAttribute(FILE_COMPRESSION_CATEGORY);
             var programming = new CategoryAttribute(PROGRAMMING_CATEGORY);
             var security = new CategoryAttribute(SECURITY_CATEGORY);
             var securityAlgorithms = new CategoryAttribute(SECURITY_ALGORITHMS_CATEGORY);
-            var appsAndDiagnostics = new CategoryAttribute(APPS_AND_DIAGNOSTICS_CATEGORY);
+            var miscellaneous = new CategoryAttribute(MISCELLANEOUS_CATEGORY);
 
             var options = new CategoryAttribute(Resources.Options_Category);
             var searchPattern = new DescriptionAttribute(Resources.Common_SearchPattern);
@@ -42,23 +42,26 @@ namespace Autossential.Activities.Design
             var builder = new ActivitiesTableBuilder(Resources.ResourceManager);
 
             builder
-                .Add<Stopwatch, StopwatchDesigner>(appsAndDiagnostics)
-                .Add<TerminateProcess, TerminateProcessDesigner>(appsAndDiagnostics)
-                .Add<MapDrive, MapDriveDesigner>(appsAndDiagnostics)
-                .Add<UnmapDrive, UnmapDriveDesigner>(appsAndDiagnostics);
+                .Add<Stopwatch, StopwatchDesigner>(miscellaneous)
+                .Add<TerminateProcess, TerminateProcessDesigner>(miscellaneous)
+                .Add<MapDrive, MapDriveDesigner>(miscellaneous)
+                .Add<UnmapDrive, UnmapDriveDesigner>(miscellaneous);
 
             builder
-                .Add<Aggregate, AggregateDesigner>(dataTable)
-                .Add<DataRowToDictionary, DataRowToDictionaryDesigner>(dataTable)
-                .Add<DataTableToText, DataTableToTextDesigner>(dataTable)
-                .Add<DictionaryToDataTable, DictionaryToDataTableDesigner>(dataTable)
-                .Add(typeof(ExtractDataColumnValues<>), typeof(ExtractDataColumnValuesDesigner), dataTable)
-                .Add<PromoteHeaders, PromoteHeadersDesigner>(dataTable)
-                .Add<RemoveDataColumns, RemoveDataColumnsDesigner>(dataTable)
-                .Add<RemoveDuplicateRows, RemoveDuplicateRowsDesigner>(dataTable)
-                .Add<RemoveEmptyRows, RemoveEmptyRowsDesigner>(dataTable)
-                .Add<TransposeData, TransposeDataDesigner>(dataTable)
-                .Add<FillDataColumn, FillDataColumnDesigner>(dataTable);
+                .Add<Aggregate, AggregateDesigner>(data)
+                .Add<DataRowToDictionary, DataRowToDictionaryDesigner>(data)
+                .Add<DataTableToText, DataTableToTextDesigner>(data)
+                .Add<DictionaryToDataTable, DictionaryToDataTableDesigner>(data)
+                .Add(typeof(ExtractDataColumnValues<>), typeof(ExtractDataColumnValuesDesigner), data)
+                .Add<PromoteHeaders, PromoteHeadersDesigner>(data)
+                .Add<RemoveDataColumns, RemoveDataColumnsDesigner>(data)
+                .Add<RemoveDuplicateRows, RemoveDuplicateRowsDesigner>(data)
+                .Add<RemoveEmptyRows, RemoveEmptyRowsDesigner>(data)
+                .Add<TransposeData, TransposeDataDesigner>(data)
+                .Add<FillDataColumn, FillDataColumnDesigner>(data)
+                .Add(typeof(AddRangeToCollection<>), typeof(AddRangeToCollectionDesigner), data)
+                .Add(typeof(AddToDictionary<,>), typeof(AddToDictionaryDesigner), data)
+                .Add(typeof(RemoveFromDictionary<,>), typeof(RemoveFromDictionaryDesigner), data);
 
             builder
                 .Add<CleanUpFolder, CleanUpFolderDesigner>(file)
@@ -77,12 +80,10 @@ namespace Autossential.Activities.Design
                 .Add<Exit, ExitDesigner>(workflow)
                 .Add<Iterate, IterateDesigner>(workflow)
                 .Add<Next, NextDesigner>(workflow)
-                .Add<RepeatUntilFailure, RepeatUntilFailureDesigner>(workflow)
                 .Add<TimeLoop, TimeLoopDesigner>(workflow)
                 .Add<WhenDo, WhenDoDesigner>(workflow);
 
             builder
-                .Add(typeof(AddRangeToCollection<>), typeof(AddRangeToCollectionDesigner), programming)
                 .Add<CultureScope, CultureScopeDesigner>(programming)
                 .Add<Decrement, DecrementDesigner>(programming)
                 .Add<Increment, IncrementDesigner>(programming)
@@ -130,10 +131,8 @@ namespace Autossential.Activities.Design
                 .AddToMember(typeof(SymmetricAlgorithmEncryptionBase<>), nameof(ActivityWithResult.Result), new BrowsableAttribute(false))
                 .AddToMember(typeof(SymmetricAlgorithmEncryptionBase<>), nameof(SymmetricAlgorithmEncryptionBase<AesEncryption>.Iterations), new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description))
 
-                .AddToMember<MapDrive>(p => p.Force, options);
-
-            builder.Obsolete<RepeatUntilFailure>();
-
+                .AddToMember<MapDrive>(p => p.Force, options)
+                .AddToMember(typeof(AddToDictionary<,>), nameof(AddToDictionary<object, object>.UpdateIfExists), options);
 
 #if NET6_0_OR_GREATER
             builder

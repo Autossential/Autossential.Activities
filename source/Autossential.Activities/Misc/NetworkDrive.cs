@@ -4,7 +4,9 @@ using System.Activities;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
+using System.Xml.Linq;
 
 namespace Autossential.Activities
 {
@@ -34,16 +36,36 @@ namespace Autossential.Activities
         protected string GetNormalizedDriveLetter(CodeActivityContext context, bool allowAutoSelection)
         {
             var name = DriveLetter.Get(context);
+
             if (string.IsNullOrEmpty(name) && allowAutoSelection)
             {
                 name = GetAvailableDriveLetter();
             }
-            else if (name.Trim().Length == 0 || !ALPHABET.Contains(char.ToUpper(name[0])) || name.Length > 2 || (name.Length > 1 && name[1] != ':'))
+            else
             {
-                throw new ArgumentException(Resources.NetworkDrive_ErrorMsg_InvalidDriveLetter, nameof(DriveLetter));
+                // despite this is not truly necessary
+                // it keeps a consistency for the inputs
+                ValidateName(name);
             }
 
             return char.ToUpper(name[0]) + ":";
+        }
+
+        private void ValidateName(string name)
+        {
+            var exception = new ArgumentException(Resources.NetworkDrive_ErrorMsg_InvalidDriveLetter, nameof(DriveLetter));
+
+            if (name.Length > 3)
+                throw exception;
+
+            if (!ALPHABET.Contains(name[0]))
+                throw exception;
+
+            if (name.Length > 1 && name[1] != ':')
+                throw exception;
+
+            if (name.Length > 2 && name[2] != '\\')
+                throw exception;
         }
 
         private const string ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

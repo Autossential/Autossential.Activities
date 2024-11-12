@@ -51,16 +51,17 @@ namespace Autossential.Tests
 
         [TestMethod]
         [DataRow("A:")]
-        [DataRow("B:")]
+        [DataRow("B:\\")]
         [DataRow(null)]
         public void MapWithoutCredentials(string driveLetter)
         {
-            var result = WorkflowTester.Invoke(new MapDrive(), GetArgsWithoutCredentials(driveLetter));
+            var result = WorkflowTester.Run(new MapDrive(), GetArgsWithoutCredentials(driveLetter));
+            driveLetter = (string)result.Get(p => p.MappedDrive);
+            Assert.IsTrue((bool)result.Get(p => p.Result), "Check VirtualBox connection");
 
-            Assert.IsTrue(result, "Check VirtualBox connection");
             if (driveLetter != null)
             {
-                Assert.IsTrue(Environment.GetLogicalDrives().Contains(driveLetter + "\\"));
+                Assert.IsTrue(Environment.GetLogicalDrives().Contains(driveLetter));
             }
         }
 
@@ -119,6 +120,14 @@ namespace Autossential.Tests
             {
                 Assert.Inconclusive();
             }
+        }
+
+        [TestMethod]
+
+        public void UnmapDriveWithInvalidParam()
+        {
+            var result = WorkflowTester.Invoke(new UnmapDrive(), GetArgsForUnmap("X"));
+            Assert.IsTrue(result);
         }
 
         private static Dictionary<string, object> GetArgsForUnmap(string driveLetter)

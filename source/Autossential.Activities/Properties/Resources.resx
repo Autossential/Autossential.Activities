@@ -786,7 +786,7 @@
     <comment>activity name</comment>
   </data>
   <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>The drive letter to be mapped, if not specified, a random one will be chosen.</value>
+    <value>The drive letter to be mapped, if not specified, a random one will be chosen. When specifing, the valid inputs are 'X', 'X:' or 'X:\', where X can be any letter.</value>
     <comment>property description</comment>
   </data>
   <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
@@ -842,7 +842,7 @@
     <comment>property name</comment>
   </data>
   <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
-    <value>The drive letter is invalid</value>
+    <value>The drive letter input is invalid. Valid inputs are 'X', 'X:' or 'X:\\', where X can be any letter.</value>
     <comment>error message</comment>
   </data>
   <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
@@ -1306,7 +1306,7 @@
     <comment>activity name</comment>
   </data>
   <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>The drive letter of the mapped drive.</value>
+    <value>The drive letter of the mapped drive. Valid inputs are 'X', 'X:' or 'X:\', where X can be any letter.</value>
     <comment>property description</comment>
   </data>
   <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">

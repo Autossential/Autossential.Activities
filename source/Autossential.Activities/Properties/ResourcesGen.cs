@@ -94,6 +94,16 @@ namespace Autossential.Activities.Properties
         }
 
         /// <summary>
+        /// Looks up a localized string similar to 'An item with the same key has already been added. Key: {0}'.
+        /// </summary>
+        /// <param name="arg0">An object (0) to format.</param>
+        /// <returns>A copy of format string in which the format items have been replaced by the String equivalent of the corresponding instances of Object in arguments.</returns>
+        public static string AddToDictionary_ErrorMsg_KeyAlreadyExistsFormat(object arg0)
+        {
+            return string.Format(Culture, AddToDictionary_ErrorMsg_KeyAlreadyExists, arg0);
+        }
+
+        /// <summary>
         /// Looks up a localized string similar to 'Please provide a value of type {0} for {1}.'.
         /// </summary>
         /// <param name="arg0">An object (0) to format.</param>
@@ -195,6 +205,18 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Value'.
+        /// </summary>
+        public static string AddToDictionary_Value_DisplayName => ResourceManager.GetString("AddToDictionary_Value_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Adds a new key-value pair to the Dictionary. If the Dictionary does not exist, a new instance is created. If the key already exists in it, an exception will be thrown except if the Update If Exists option is enabled.'.
+        /// </summary>
+        public static string AddToDictionary_Description => ResourceManager.GetString("AddToDictionary_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Increments the value of a variable by the specified increment value.'.
         /// </summary>
         public static string Increment_Description => ResourceManager.GetString("Increment_Description", Culture);
@@ -216,6 +238,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Result'.
         /// </summary>
         public static string TextEncryption_Result_DisplayName => ResourceManager.GetString("TextEncryption_Result_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The key of the element to remove.'.
+        /// </summary>
+        public static string RemoveFromDictionary_Key_Description => ResourceManager.GetString("RemoveFromDictionary_Key_Description", Culture);
     
 
         /// <summary>
@@ -264,6 +292,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'An object array containing the result of the aggregation.'.
         /// </summary>
         public static string Aggregate_Result_Description => ResourceManager.GetString("Aggregate_Result_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Add To/Update Dictionary'.
+        /// </summary>
+        public static string AddToDictionary_DisplayName => ResourceManager.GetString("AddToDictionary_DisplayName", Culture);
     
 
         /// <summary>
@@ -423,9 +457,27 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Remove From Dictionary'.
+        /// </summary>
+        public static string RemoveFromDictionary_DisplayName => ResourceManager.GetString("RemoveFromDictionary_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The Dictionary instance to receive the new key-value pair.'.
+        /// </summary>
+        public static string AddToDictionary_ReferenceDictionary_Description => ResourceManager.GetString("AddToDictionary_ReferenceDictionary_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Returns an enumerable collection of full file names that match a search pattern (or collection of patterns) and enumeration options in a specified path (or collection of paths).'.
         /// </summary>
         public static string EnumerateFiles_Description => ResourceManager.GetString("EnumerateFiles_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Dictionary'.
+        /// </summary>
+        public static string AddToDictionary_ReferenceDictionary_DisplayName => ResourceManager.GetString("AddToDictionary_ReferenceDictionary_DisplayName", Culture);
     
 
         /// <summary>
@@ -534,6 +586,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Exception'.
         /// </summary>
         public static string CheckPoint_Exception_DisplayName => ResourceManager.GetString("CheckPoint_Exception_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The key of the element to add.'.
+        /// </summary>
+        public static string AddToDictionary_Key_Description => ResourceManager.GetString("AddToDictionary_Key_Description", Culture);
     
 
         /// <summary>
@@ -681,7 +739,7 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'The drive letter to be mapped, if not specified, a random one will be chosen.'.
+        /// Looks up a localized string similar to 'The drive letter to be mapped, if not specified, a random one will be chosen. When specifing, the valid inputs are 'X', 'X:' or 'X:\', where X can be any letter.'.
         /// </summary>
         public static string MapDrive_DriveLetter_Description => ResourceManager.GetString("MapDrive_DriveLetter_Description", Culture);
     
@@ -801,6 +859,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'The Dictionary where the element will be removed from.'.
+        /// </summary>
+        public static string RemoveFromDictionary_InputDictionary_Description => ResourceManager.GetString("RemoveFromDictionary_InputDictionary_Description", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The maximum time to wait (in milliseconds) the operation to complete.'.
         /// </summary>
         public static string WaitFile_Timeout_Description => ResourceManager.GetString("WaitFile_Timeout_Description", Culture);
@@ -834,6 +898,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'RC2'.
         /// </summary>
         public static string RC2AlgorithmEncryption_DisplayName => ResourceManager.GetString("RC2AlgorithmEncryption_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'UpdateIfExists'.
+        /// </summary>
+        public static string AddToDictionary_UpdateIfExists_DisplayName => ResourceManager.GetString("AddToDictionary_UpdateIfExists_DisplayName", Culture);
     
 
         /// <summary>
@@ -987,7 +1057,7 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'The drive letter of the mapped drive.'.
+        /// Looks up a localized string similar to 'The drive letter of the mapped drive. Valid inputs are 'X', 'X:' or 'X:\', where X can be any letter.'.
         /// </summary>
         public static string UnmapDrive_DriveLetter_Description => ResourceManager.GetString("UnmapDrive_DriveLetter_Description", Culture);
     
@@ -1026,6 +1096,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'TextFormat'.
         /// </summary>
         public static string DataTableToText_TextFormat_DisplayName => ResourceManager.GetString("DataTableToText_TextFormat_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The Dictionary instance cannot be null.'.
+        /// </summary>
+        public static string RemoveFromDictionary_ErrorMsg_NullDictionary => ResourceManager.GetString("RemoveFromDictionary_ErrorMsg_NullDictionary", Culture);
     
 
         /// <summary>
@@ -1293,6 +1369,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Key'.
+        /// </summary>
+        public static string AddToDictionary_Key_DisplayName => ResourceManager.GetString("AddToDictionary_Key_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'Cannot be used outside of {0} activities.'.
         /// </summary>
         public static string Validation_ScopesError => ResourceManager.GetString("Validation_ScopesError", Culture);
@@ -1308,6 +1390,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Adds a set of items to the specified collection.'.
         /// </summary>
         public static string AddRangeToCollection_Description => ResourceManager.GetString("AddRangeToCollection_Description", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'The value of the element to add. The value can be null for reference types.'.
+        /// </summary>
+        public static string AddToDictionary_Value_Description => ResourceManager.GetString("AddToDictionary_Value_Description", Culture);
     
 
         /// <summary>
@@ -1365,7 +1453,7 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'The drive letter is invalid'.
+        /// Looks up a localized string similar to 'The drive letter input is invalid. Valid inputs are 'X', 'X:' or 'X:\\', where X can be any letter.'.
         /// </summary>
         public static string NetworkDrive_ErrorMsg_InvalidDriveLetter => ResourceManager.GetString("NetworkDrive_ErrorMsg_InvalidDriveLetter", Culture);
     
@@ -1509,6 +1597,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'An item with the same key has already been added. Key: {0}'.
+        /// </summary>
+        public static string AddToDictionary_ErrorMsg_KeyAlreadyExists => ResourceManager.GetString("AddToDictionary_ErrorMsg_KeyAlreadyExists", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'The DataTable object from which the columns is to be removed.'.
         /// </summary>
         public static string RemoveDataColumns_ReferenceDataTable_Description => ResourceManager.GetString("RemoveDataColumns_ReferenceDataTable_Description", Culture);
@@ -1530,6 +1624,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'MaximumRepetitions'.
         /// </summary>
         public static string RepeatUntilFailure_MaximumRepetitions_DisplayName => ResourceManager.GetString("RepeatUntilFailure_MaximumRepetitions_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'If the key already exists in the Dictionary, updates its value.'.
+        /// </summary>
+        public static string AddToDictionary_UpdateIfExists_Description => ResourceManager.GetString("AddToDictionary_UpdateIfExists_Description", Culture);
     
 
         /// <summary>
@@ -1572,6 +1672,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'Zip entry name ends in directory separator character but contains data.'.
         /// </summary>
         public static string Unzip_ErrorMsg_DirNameWithData => ResourceManager.GetString("Unzip_ErrorMsg_DirNameWithData", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Dictionary'.
+        /// </summary>
+        public static string RemoveFromDictionary_InputDictionary_DisplayName => ResourceManager.GetString("RemoveFromDictionary_InputDictionary_DisplayName", Culture);
     
 
         /// <summary>
@@ -2241,6 +2347,12 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
+        /// Looks up a localized string similar to 'Key'.
+        /// </summary>
+        public static string RemoveFromDictionary_Key_DisplayName => ResourceManager.GetString("RemoveFromDictionary_Key_DisplayName", Culture);
+    
+
+        /// <summary>
         /// Looks up a localized string similar to 'CustomOptions'.
         /// </summary>
         public static string RemoveEmptyRows_CustomOptions_DisplayName => ResourceManager.GetString("RemoveEmptyRows_CustomOptions_DisplayName", Culture);
@@ -2280,6 +2392,12 @@ namespace Autossential.Activities.Properties
         /// Looks up a localized string similar to 'TextCase'.
         /// </summary>
         public static string ExtractDataColumnValues_TextCase_DisplayName => ResourceManager.GetString("ExtractDataColumnValues_TextCase_DisplayName", Culture);
+    
+
+        /// <summary>
+        /// Looks up a localized string similar to 'Removes the value with the specified key from the Dictionary.'.
+        /// </summary>
+        public static string RemoveFromDictionary_Description => ResourceManager.GetString("RemoveFromDictionary_Description", Culture);
     
 
         /// <summary>

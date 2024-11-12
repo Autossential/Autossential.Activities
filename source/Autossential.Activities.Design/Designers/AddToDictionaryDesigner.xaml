@@ -1,0 +1,63 @@
+﻿<sap:ActivityDesigner x:Class="Autossential.Activities.Design.Designers.AddToDictionaryDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+  xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+  xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+  xmlns:c="clr-namespace:Autossential.Shared.Activities.Design.Controls"
+  xmlns:as="clr-namespace:Autossential.Activities.Properties;assembly=Autossential.Activities">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush Drawing="{StaticResource AddToDictionaryIcon}" Stretch="Uniform"></DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+
+    <c:ActivityDecoratorControl>
+        <StackPanel Style="{StaticResource DefaultWidth}">
+            <Label Content="{x:Static as:Resources.AddToDictionary_ReferenceDictionary_DisplayName}" ToolTip="{x:Static as:Resources.AddToDictionary_ReferenceDictionary_Description}" />
+            <sapv:ExpressionTextBox
+                   ExpressionType="{Binding ModelItem.Properties[ReferenceDictionary].PropertyType.GenericTypeArguments[0]}"
+                   OwnerActivity="{Binding ModelItem}"
+                   UseLocationExpression="True"
+                   Expression="{Binding ModelItem.ReferenceDictionary, ConverterParameter=InOut, Converter={StaticResource ArgumentToExpressionConverter}}"
+                   HintText="Dictionary to update"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="{x:Static as:Resources.AddToDictionary_Key_DisplayName}" ToolTip="{x:Static as:Resources.AddToDictionary_Key_Description}"/>
+                <sapv:ExpressionTextBox Grid.Row="1" Grid.Column="0"
+                    ExpressionType="{Binding ModelItem.Properties[Key].PropertyType.GenericTypeArguments[0]}"
+                    OwnerActivity="{Binding ModelItem}"
+                    UseLocationExpression="False"
+                    Expression="{Binding ModelItem.Key, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
+                    HintText="Key"/>
+
+                <Label Grid.Row="0" Grid.Column="2" Content="{x:Static as:Resources.AddToDictionary_Value_DisplayName}" ToolTip="{x:Static as:Resources.AddToDictionary_Value_Description}"/>
+                <sapv:ExpressionTextBox Grid.Row="1" Grid.Column="2"
+                    ExpressionType="{Binding ModelItem.Properties[Value].PropertyType.GenericTypeArguments[0]}"
+                    OwnerActivity="{Binding ModelItem}"
+                    UseLocationExpression="False"
+                    Expression="{Binding ModelItem.Value, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
+                    HintText="Value"/>
+            </Grid>
+
+        </StackPanel>
+    </c:ActivityDecoratorControl>
+</sap:ActivityDesigner>

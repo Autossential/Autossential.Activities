@@ -21,44 +21,28 @@
     </sap:ActivityDesigner.Icon>
 
     <c:ActivityDecoratorControl>
-        <Grid Style="{StaticResource MajorWidth}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="10" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
+        <StackPanel Style="{StaticResource DefaultWidth}">
             <Label 
                 Content="{x:Static as:Resources.AddRangeToCollection_Collection_DisplayName}" 
-                ToolTip="{x:Static as:Resources.AddRangeToCollection_Collection_Description}"
-                Grid.Row="0" Grid.Column="0" />
-            
+                ToolTip="{x:Static as:Resources.AddRangeToCollection_Collection_Description}" />
+
             <sapv:ExpressionTextBox
-                Grid.Row="1"
-                Grid.Column="0"
                 ExpressionType="{Binding ModelItem.Properties[Collection].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
                 Expression="{Binding ModelItem.Collection, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}"
                 HintText="Collection to modify"/>
-            
+
             <Label 
                 Content="{x:Static as:Resources.AddRangeToCollection_Items_DisplayName}" 
-                ToolTip="{x:Static as:Resources.AddRangeToCollection_Items_Description}"
-                Grid.Row="0" Grid.Column="2" />
-            <sapv:ExpressionTextBox
-                Grid.Row="1"
-                Grid.Column="2"
+                ToolTip="{x:Static as:Resources.AddRangeToCollection_Items_Description}"    />
+
+            <sapv:ExpressionTextBox        
                 ExpressionType="{Binding ModelItem.Properties[Items].PropertyType.GenericTypeArguments[0]}"
                 OwnerActivity="{Binding ModelItem}"
                 UseLocationExpression="False"
                 Expression="{Binding ModelItem.Items, ConverterParameter=In, Converter={StaticResource ArgumentToExpressionConverter}}" 
                 HintText="The new items to add"/>
-         
-        </Grid>
+        </StackPanel>
     </c:ActivityDecoratorControl>
 </sap:ActivityDesigner>

@@ -8,6 +8,10 @@
         <ResourceDictionary Source="Icons.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <Style x:Key="MinWidth" TargetType="FrameworkElement">
+        <Setter Property="Width" Value="260" />
+    </Style>
+
     <Style x:Key="DefaultWidth" TargetType="FrameworkElement">
         <Setter Property="Width" Value="320"/>
     </Style>

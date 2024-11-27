@@ -29,6 +29,8 @@ namespace Autossential.Activities
             }
         }
 
+        private int _sessionId;
+
         protected override async Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
             var timeout = Timeout.Get(context);
@@ -39,29 +41,28 @@ namespace Autossential.Activities
             if (processNames is string)
                 processNames = new string[] { processNames.ToString() };
 
+            _sessionId = Process.GetCurrentProcess().SessionId;
+
             await Task.Run(() =>
             {
                 var timer = System.Diagnostics.Stopwatch.StartNew();
                 var tasks = ((IEnumerable<string>)processNames).Select(name => TerminateProcessByNameAsync(name, timer, timeout));
 
-                Task.WhenAll(tasks).Wait(); // Executes all tasks asynchronously and waits for completion
-            });
+                Task.WhenAll(tasks).Wait(token); // Executes all tasks asynchronously and waits for completion
+            }, token);
 
             return null;
         }
 
+        private IEnumerable<Process> GetProcessesByName(string processName)
+            => Process.GetProcessesByName(processName).Where(p => p.SessionId == _sessionId);
 
-        private static async Task TerminateProcessByNameAsync(string processName, System.Diagnostics.Stopwatch timer, int timeout)
+        private async Task TerminateProcessByNameAsync(string processName, System.Diagnostics.Stopwatch timer, int timeout)
         {
             try
             {
-                var processes = Process.GetProcessesByName(processName);
-
-                if (processes.Length == 0)
-                    return;
-
-                await CloseProcessesAsync(processes, timer, timeout);
-                await KillProcessesAsync(Process.GetProcessesByName(processName));
+                await CloseProcessesAsync(GetProcessesByName(processName), timer, timeout);
+                await KillProcessesAsync(GetProcessesByName(processName));
             }
             catch (Exception e) when (e is InvalidOperationException || e is System.ComponentModel.Win32Exception)
             {
@@ -69,7 +70,7 @@ namespace Autossential.Activities
             }
         }
 
-        private static async Task KillProcessesAsync(Process[] processes)
+        private static async Task KillProcessesAsync(IEnumerable<Process> processes)
         {
             foreach (var proc in processes)
             {
@@ -88,8 +89,11 @@ namespace Autossential.Activities
             }
         }
 
-        private static async Task CloseProcessesAsync(Process[] processes, System.Diagnostics.Stopwatch timer, int timeout)
+        private async Task CloseProcessesAsync(IEnumerable<Process> processes, System.Diagnostics.Stopwatch timer, int timeout)
         {
+            if (!processes.Any())
+                return;
+
             string processName;
 
             do
@@ -113,7 +117,7 @@ namespace Autossential.Activities
 
                 if (processName != null && timer.ElapsedMilliseconds <= timeout)
                 {
-                    processes = Process.GetProcessesByName(processName);
+                    processes = GetProcessesByName(processName);
                 }
 
             } while (processName != null);

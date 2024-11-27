@@ -331,7 +331,7 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'Tries to gracefully close all instances of the applications corresponding to the specified processes. If not possible, it kills the process.'.
+        /// Looks up a localized string similar to 'Tries to gracefully close all instances of the applications corresponding to the specified processes. If not possible, it kills the process for the current user session.'.
         /// </summary>
         public static string TerminateProcess_Description => ResourceManager.GetString("TerminateProcess_Description", Culture);
     
@@ -955,7 +955,7 @@ namespace Autossential.Activities.Properties
     
 
         /// <summary>
-        /// Looks up a localized string similar to 'Checks if a given expression is true, if not, thrown the specified exception.'.
+        /// Looks up a localized string similar to 'Checks if a given expression is true, if is not, thrown the specified exception.'.
         /// </summary>
         public static string CheckPoint_Description => ResourceManager.GetString("CheckPoint_Description", Culture);
     

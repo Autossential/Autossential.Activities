@@ -202,7 +202,7 @@
     <comment>property name</comment>
   </data>
   <data name="CheckPoint_Description" xml:space="preserve">
-    <value>Checks if a given expression is true, if not, thrown the specified exception.</value>
+    <value>Checks if a given expression is true, if is not, thrown the specified exception.</value>
     <comment>activity description</comment>
   </data>
   <data name="CheckPoint_DisplayName" xml:space="preserve">
@@ -1150,7 +1150,7 @@
     <comment>property name</comment>
   </data>
   <data name="TerminateProcess_Description" xml:space="preserve">
-    <value>Tries to gracefully close all instances of the applications corresponding to the specified processes. If not possible, it kills the process.</value>
+    <value>Tries to gracefully close all instances of the applications corresponding to the specified processes. If not possible, it kills the process for the current user session.</value>
     <comment>activity description</comment>
   </data>
   <data name="TerminateProcess_DisplayName" xml:space="preserve">

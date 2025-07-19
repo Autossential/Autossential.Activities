@@ -33,10 +33,10 @@ namespace Autossential.Activities
                 lpRemoteName = SharedDrivePath.Get(context)
             };
 
-            if (Force.Get(context) && IsDriveMapped(resource.lpLocalName))
-            {
-                _ = WNetCancelConnection2A(resource.lpLocalName, 0, true);
-            }
+            var force = Force.Get(context);
+
+            if (force && IsDriveMapped(resource.lpLocalName))
+                DisconnectDrive(resource.lpLocalName);
 
             string username = null;
             string password = null;
@@ -52,6 +52,12 @@ namespace Autossential.Activities
             }
 
             var result = WNetAddConnection2A(ref resource, password, username, 0);
+            if (result == 1219 && force)
+            {
+                UnmapNetworkDrives();
+                result = WNetAddConnection2A(ref resource, password, username, 0);
+            }
+
             ResponseCode.Set(context, result);
 
             if (result == 0)

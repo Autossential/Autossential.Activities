@@ -17,7 +17,7 @@ namespace Autossential.Activities
         protected override bool Execute(CodeActivityContext context)
         {
             var drive = GetNormalizedDriveLetter(context, false);
-            var result = WNetCancelConnection2A(drive, 0, true);
+            var result = DisconnectDrive(drive);
             ResponseCode.Set(context, result);
 
             if (result == 0)

@@ -27,6 +27,10 @@ namespace Autossential.Activities
             {
                 metadata.AddRuntimeArgument(ProcessName, ProcessName.ArgumentType, nameof(ProcessName), true);
             }
+            else
+            {
+                metadata.AddValidationError(Resources.Validation_TypeErrorFormat("string or IEnumerable<string>", nameof(ProcessName)));
+            }
         }
 
         private int _sessionId;
@@ -74,17 +78,14 @@ namespace Autossential.Activities
         {
             foreach (var proc in processes)
             {
-                if (!proc.HasExited)
+                try
                 {
-                    try
-                    {
-                        proc.Kill();
-                        await Task.Delay(100); // small delay to ensure the process was terminated
-                    }
-                    catch (Exception e)
-                    {
-                        Trace.WriteLine($"Failed to kill process {proc.ProcessName}: {e.Message}");
-                    }
+                    proc.Kill();
+                    await Task.Delay(100); // small delay to ensure the process was terminated
+                }
+                catch (Exception e)
+                {
+                    Trace.WriteLine($"Failed to kill process {proc.ProcessName}: {e.Message}");
                 }
             }
         }

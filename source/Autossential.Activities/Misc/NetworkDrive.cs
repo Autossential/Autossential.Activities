@@ -4,9 +4,8 @@ using System.Activities;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
-using System.Xml.Linq;
+
 
 namespace Autossential.Activities
 {
@@ -31,6 +30,17 @@ namespace Autossential.Activities
             }
 
             return false;
+        }
+
+        protected static void UnmapNetworkDrives()
+        {
+            foreach (var drive in DriveInfo.GetDrives())
+            {
+                if (drive.IsReady && drive.DriveType == DriveType.Network)
+                {
+                    DisconnectDrive(drive.Name.TrimEnd('\\'));
+                }
+            }
         }
 
         protected string GetNormalizedDriveLetter(CodeActivityContext context, bool allowAutoSelection)
@@ -91,6 +101,10 @@ namespace Autossential.Activities
 
         [DllImport("mpr.dll")]
         protected static extern int WNetCancelConnection2A(string lpName, int dwFlags, bool fForce);
+
+        protected static int DisconnectDrive(string driveLetter) =>
+            WNetCancelConnection2A(driveLetter, 0, true);
+
 
         [StructLayout(LayoutKind.Sequential)]
         protected struct NetResource

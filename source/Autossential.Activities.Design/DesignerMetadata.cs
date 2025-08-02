@@ -36,8 +36,8 @@ namespace Autossential.Activities.Design
             var miscellaneous = new CategoryAttribute(MISCELLANEOUS_CATEGORY);
 
             var options = new CategoryAttribute(Resources.Options_Category);
-            var searchPattern = new DescriptionAttribute(Resources.Common_SearchPattern);
-            var searchPatternMode = new DescriptionAttribute(Resources.Common_SearchPatternMode);
+            //var searchPattern = new DescriptionAttribute(Resources.Common_SearchPattern);
+            //var searchPatternMode = new DescriptionAttribute(Resources.Common_SearchPatternMode);
 
             var builder = new ActivitiesTableBuilder(Resources.ResourceManager);
 

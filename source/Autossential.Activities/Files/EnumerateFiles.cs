@@ -1,5 +1,4 @@
 ﻿using Autossential.Activities.Properties;
-using Autossential.Core.Enums;
 using Autossential.Core.Extensions;
 using Autossential.Shared;
 using System.Activities;
@@ -22,7 +21,7 @@ namespace Autossential.Activities
                                                         | FileAttributes.Device
                                                         | FileAttributes.Offline;
 
-        public PatternSearchMode SearchPatternMode { get; set; } = PatternSearchMode.Native;
+        public InArgument<bool> FullPathMode { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
@@ -61,18 +60,18 @@ namespace Autossential.Activities
             var patterns = SearchPattern.GetAsHashSet<string>(context);
 
             if (patterns.Count == 0)
-                patterns = new HashSet<string>(new[] { "*" });
+                patterns = new HashSet<string>(["*"]);
 
-            IEnumerable<string> result = new string[] { };
+            var fullPathMode = FullPathMode.Get(context);
+
+            IEnumerable<string> result = [];
             foreach (var directory in directories)
             {
                 foreach (var pattern in patterns)
                 {
-                    var files = SearchPatternMode == PatternSearchMode.Native
-                        ? Directory.EnumerateFiles(directory, pattern, SearchOption)
-                        : SearchPatternMode == PatternSearchMode.Extended
-                            ? Directory.EnumerateFiles(directory, "*", SearchOption).Where(path => Path.GetFileName(path).IsMatch(pattern))
-                            : Directory.EnumerateFiles(directory, "*", SearchOption).Where(path => path.IsMatch(pattern));
+                    var files = fullPathMode
+                        ? Directory.EnumerateFiles(directory, "*", SearchOption).Where(path => path.IsMatch(pattern))
+                        : Directory.EnumerateFiles(directory, "*", SearchOption).Where(path => Path.GetFileName(path).IsMatch(pattern));
 
                     result = result.Union(files);
                 }

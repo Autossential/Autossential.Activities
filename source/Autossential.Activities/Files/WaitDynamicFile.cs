@@ -3,7 +3,6 @@ using Autossential.Core.Extensions;
 using Autossential.Shared.Activities.Base;
 using System;
 using System.Activities;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

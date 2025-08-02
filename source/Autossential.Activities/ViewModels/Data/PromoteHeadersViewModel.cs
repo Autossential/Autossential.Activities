@@ -4,7 +4,7 @@ using System.Data;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class PromoteHeadersViewModel : DesignPropertiesViewModel
+    public class PromoteHeadersViewModel : BaseViewModel
     {
         public PromoteHeadersViewModel(IDesignServices services) : base(services)
         {

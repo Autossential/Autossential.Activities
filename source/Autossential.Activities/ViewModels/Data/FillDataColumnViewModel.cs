@@ -4,7 +4,7 @@ using System.Data;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class FillDataColumnViewModel : DesignPropertiesViewModel
+    public class FillDataColumnViewModel : BaseViewModel
     {
         public FillDataColumnViewModel(IDesignServices services) : base(services)
         {

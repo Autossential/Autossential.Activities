@@ -62,7 +62,7 @@ namespace Autossential.Activities
             var dictType = dict.GetType();
             var containsKeyMethod = dictType.GetMethod("ContainsKey");
             var removeMethod = dictType.GetMethod("Remove", [key.GetType()]);
-            
+
             if ((bool)containsKeyMethod.Invoke(dict, [key]))
             {
                 removeMethod.Invoke(dict, [key]);

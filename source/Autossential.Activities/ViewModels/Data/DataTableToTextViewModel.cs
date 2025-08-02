@@ -1,11 +1,11 @@
-﻿using Autossential.Activities.Properties;
+using Autossential.Activities.Properties;
 using Autossential.Core.Enums;
 using System.Activities.DesignViewModels;
 using System.Data;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class DataTableToTextViewModel : DesignPropertiesViewModel
+    public class DataTableToTextViewModel : BaseViewModel
     {
         public DataTableToTextViewModel(IDesignServices services) : base(services)
         {
@@ -26,6 +26,7 @@ namespace Autossential.Activities.ViewModels.Data
             InputDataTable.Category = Resources.Input_Category;
             InputDataTable.DisplayName = Resources.DataTableToText_InputDataTable_DisplayName;
             InputDataTable.Placeholder = Resources.DataTableToText_InputDataTable_Description;
+            InputDataTable.Tooltip = Resources.DataTableToText_InputDataTable_Description;
             InputDataTable.OrderIndex = orderIndex++;
 
             TextFormat.IsPrincipal = true;
@@ -33,6 +34,7 @@ namespace Autossential.Activities.ViewModels.Data
             TextFormat.Category = Resources.Input_Category;
             TextFormat.DisplayName = Resources.DataTableToText_TextFormat_DisplayName;
             TextFormat.Placeholder = Resources.DataTableToText_TextFormat_Description;
+            TextFormat.Tooltip = Resources.DataTableToText_TextFormat_Description;
             TextFormat.OrderIndex = orderIndex++;
 
             DateTimeFormat.IsPrincipal = false;
@@ -40,6 +42,7 @@ namespace Autossential.Activities.ViewModels.Data
             DateTimeFormat.Category = Resources.Input_Category;
             DateTimeFormat.DisplayName = Resources.DataTableToText_DateTimeFormat_DisplayName;
             DateTimeFormat.Placeholder = Resources.DataTableToText_DateTimeFormat_Description;
+            DateTimeFormat.Tooltip = Resources.DataTableToText_DateTimeFormat_Description;
             DateTimeFormat.OrderIndex = orderIndex++;
         }
     }

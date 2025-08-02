@@ -1,11 +1,11 @@
-﻿using Autossential.Activities.Properties;
+using Autossential.Activities.Properties;
 using Autossential.Core.Enums;
 using System.Activities.DesignViewModels;
 using System.Data;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class AggregateViewModel : DesignPropertiesViewModel
+    public class AggregateViewModel : BaseViewModel
     {
         public AggregateViewModel(IDesignServices services) : base(services)
         {

@@ -1,12 +1,11 @@
 using Autossential.Activities.Properties;
 using Autossential.Core.Enums;
-using System;
 using System.Activities.DesignViewModels;
 using System.Data;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class RemoveEmptyRowsViewModel : DesignPropertiesViewModel
+    public class RemoveEmptyRowsViewModel : BaseViewModel
     {
         public RemoveEmptyRowsViewModel(IDesignServices services) : base(services)
         {

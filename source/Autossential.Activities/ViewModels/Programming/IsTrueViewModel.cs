@@ -1,9 +1,9 @@
-﻿using Autossential.Activities.Properties;
+using Autossential.Activities.Properties;
 using System.Activities.DesignViewModels;
 
-namespace Autossential.Activities.ViewModels
+namespace Autossential.Activities.ViewModels.Programming
 {
-    public class IsTrueViewModel : DesignPropertiesViewModel
+    public class IsTrueViewModel : BaseViewModel
     {
         public IsTrueViewModel(IDesignServices services) : base(services)
         {

@@ -1,4 +1,4 @@
-﻿using Autossential.Shared;
+using Autossential.Shared;
 using System;
 using System.Activities.DesignViewModels;
 using System.Activities.ViewModels;
@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Autossential.Activities.ViewModels
+namespace Autossential.Activities.ViewModels.Programming
 {
-    public class RandomStringViewModel : DesignPropertiesViewModel
+    public class RandomStringViewModel : BaseViewModel
     {
         public RandomStringViewModel(IDesignServices services) : base(services)
         {

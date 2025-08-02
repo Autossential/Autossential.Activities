@@ -1,10 +1,9 @@
-﻿using Autossential.Activities.Properties;
+using Autossential.Activities.Properties;
 using System.Activities.DesignViewModels;
-using System.Diagnostics;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class AddRangeToCollectionViewModel : DesignPropertiesViewModel
+    public class AddRangeToCollectionViewModel : BaseViewModel
     {
         public AddRangeToCollectionViewModel(IDesignServices services) : base(services)
         {

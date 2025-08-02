@@ -4,7 +4,7 @@ using System.Data;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class TransposeDataViewModel : DesignPropertiesViewModel
+    public class TransposeDataViewModel : BaseViewModel
     {
         public TransposeDataViewModel(IDesignServices services) : base(services)
         {

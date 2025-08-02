@@ -1,16 +1,13 @@
-﻿using Autossential.Activities.Properties;
-using System;
+using Autossential.Activities.Properties;
 using System.Activities.DesignViewModels;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class AddToDictionaryViewModel : DesignPropertiesViewModel
+    public class AddToDictionaryViewModel : BaseViewModel
     {
         public AddToDictionaryViewModel(IDesignServices services) : base(services)
         {
-
         }
 
         public DesignInOutArgument Dictionary { get; set; }

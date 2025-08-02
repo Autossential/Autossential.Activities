@@ -1,5 +1,4 @@
 ﻿using Autossential.Activities.Properties;
-using Autossential.Core.Enums;
 using Autossential.Core.Extensions;
 using Autossential.Core.Models;
 using Autossential.Shared;
@@ -24,8 +23,7 @@ namespace Autossential.Activities
         public InArgument<DateTime?> LastWriteTime { get; set; }
         public InArgument<bool> DeleteEmptyFolders { get; set; } = true;
         public SearchOption SearchOption { get; set; } = SearchOption.AllDirectories;
-        public PatternSearchMode SearchPatternMode { get; set; } = PatternSearchMode.Native;
-
+        public InArgument<bool> FullPathMode { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
@@ -45,10 +43,12 @@ namespace Autossential.Activities
         protected async override Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
             var folder = Folder.Get(context);
-            var patterns = SearchPattern?.GetAsHashSet<string>(context) ?? new HashSet<string>(new[] { "*" });
+            var patterns = SearchPattern?.GetAsHashSet<string>(context) ?? new HashSet<string>(["*"]);
 
             var lastWriteTime = LastWriteTime?.Get(context) ?? DateTime.Now;
             var deleteEmptyFolders = DeleteEmptyFolders.Get(context);
+
+            var fullPathMode = FullPathMode.Get(context);
 
             int filesDeleted = 0;
             int foldersDeleted = 0;
@@ -57,11 +57,9 @@ namespace Autossential.Activities
             {
                 foreach (var pattern in patterns)
                 {
-                    var files = SearchPatternMode == PatternSearchMode.Native
-                        ? Directory.EnumerateFiles(folder, pattern, SearchOption)
-                        : SearchPatternMode == PatternSearchMode.Extended
-                            ? Directory.EnumerateFiles(folder, "*", SearchOption).Where(path => Path.GetFileName(path).IsMatch(pattern))
-                            : Directory.EnumerateFiles(folder, "*", SearchOption).Where(path => path.IsMatch(pattern));
+                    var files = fullPathMode
+                        ? Directory.EnumerateFiles(folder, "*", SearchOption).Where(path => path.IsMatch(pattern))
+                        : Directory.EnumerateFiles(folder, "*", SearchOption).Where(path => Path.GetFileName(path).IsMatch(pattern));
 
                     foreach (var f in files.Reverse())
                     {

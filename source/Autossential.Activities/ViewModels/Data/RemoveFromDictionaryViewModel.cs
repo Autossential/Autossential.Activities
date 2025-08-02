@@ -1,11 +1,10 @@
 using Autossential.Activities.Properties;
-using System.Activities;
 using System.Activities.DesignViewModels;
 using System.Collections.Generic;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class RemoveFromDictionaryViewModel : DesignPropertiesViewModel
+    public class RemoveFromDictionaryViewModel : BaseViewModel
     {
         public RemoveFromDictionaryViewModel(IDesignServices services) : base(services)
         {
@@ -36,7 +35,6 @@ namespace Autossential.Activities.ViewModels.Data
             Key.OrderIndex = orderIndex++;
         }
 
-
         protected override void InitializeRules()
         {
             base.InitializeRules();
@@ -47,7 +45,7 @@ namespace Autossential.Activities.ViewModels.Data
         {
             Dictionary.DisplayName = Resources.AddToDictionary_ReferenceDictionary_DisplayName;
             Key.DisplayName = Resources.AddToDictionary_Key_DisplayName;
-            
+
             if (!Dictionary.HasValue)
                 return;
 

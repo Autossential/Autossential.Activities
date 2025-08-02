@@ -1,7 +1,7 @@
 {
   "resourceManagerName": "Autossential.Activities.Properties.Resources",
   "activities": [
-        {
+    {
       "fullName": "Autossential.Activities.AddRangeToCollection",
       "shortName": "AddRangeToCollection",
       "categoryKey": "Autossential.Data",

@@ -4,7 +4,7 @@ using System.Data;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class RemoveDataColumnsViewModel : DesignPropertiesViewModel
+    public class RemoveDataColumnsViewModel : BaseViewModel
     {
         public RemoveDataColumnsViewModel(IDesignServices services) : base(services)
         {

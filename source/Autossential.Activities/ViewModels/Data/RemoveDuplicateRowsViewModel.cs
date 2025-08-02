@@ -4,7 +4,7 @@ using System.Data;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class RemoveDuplicateRowsViewModel : DesignPropertiesViewModel
+    public class RemoveDuplicateRowsViewModel : BaseViewModel
     {
         public RemoveDuplicateRowsViewModel(IDesignServices services) : base(services)
         {

@@ -9,7 +9,7 @@ using UiPath.Studio.Activities.Api;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class ExtractDataColumnValuesViewModel<T> : DesignPropertiesViewModel
+    public class ExtractDataColumnValuesViewModel<T> : BaseViewModel
     {
         private readonly IWorkflowDesignApi _workflowDesignAPI;
         private bool _typePickerWidgetAvailable;
@@ -17,6 +17,7 @@ namespace Autossential.Activities.ViewModels.Data
         public ExtractDataColumnValuesViewModel(IDesignServices services) : base(services)
         {
             _workflowDesignAPI = services.GetService<IWorkflowDesignApi>();
+            _typePickerWidgetAvailable = IsWidgetSupported(ViewModelWidgetType.TypePicker);
         }
 
         public DesignInArgument<DataTable> InputDataTable { get; set; }
@@ -47,6 +48,7 @@ namespace Autossential.Activities.ViewModels.Data
             InputDataTable.Category = Resources.Input_Category;
             InputDataTable.DisplayName = Resources.ExtractDataColumnValues_InputDataTable_DisplayName;
             InputDataTable.Placeholder = Resources.ExtractDataColumnValues_InputDataTable_Description;
+            InputDataTable.Tooltip = Resources.ExtractDataColumnValues_InputDataTable_Description;
             InputDataTable.OrderIndex = orderIndex++;
 
             Column.IsPrincipal = true;
@@ -54,6 +56,7 @@ namespace Autossential.Activities.ViewModels.Data
             Column.Category = Resources.Input_Category;
             Column.DisplayName = Resources.ExtractDataColumnValues_Column_DisplayName;
             Column.Placeholder = Resources.ExtractDataColumnValues_Column_Description;
+            Column.Tooltip = Resources.ExtractDataColumnValues_Column_Description;
             Column.OrderIndex = orderIndex++;
 
             DefaultValue.IsPrincipal = false;
@@ -61,6 +64,7 @@ namespace Autossential.Activities.ViewModels.Data
             DefaultValue.Category = Resources.Options_Category;
             DefaultValue.DisplayName = Resources.ExtractDataColumnValues_DefaultValue_DisplayName;
             DefaultValue.Placeholder = Resources.ExtractDataColumnValues_DefaultValue_Description;
+            DefaultValue.Tooltip = Resources.ExtractDataColumnValues_DefaultValue_Description;
             DefaultValue.OrderIndex = orderIndex++;
 
             Trim.IsPrincipal = false;
@@ -68,6 +72,7 @@ namespace Autossential.Activities.ViewModels.Data
             Trim.Category = Resources.Options_Category;
             Trim.DisplayName = Resources.ExtractDataColumnValues_Trim_DisplayName;
             Trim.Placeholder = Resources.ExtractDataColumnValues_Trim_Description;
+            Trim.Tooltip = Resources.ExtractDataColumnValues_Trim_Description;
             Trim.OrderIndex = orderIndex++;
 
             Sanitize.IsPrincipal = false;
@@ -75,6 +80,7 @@ namespace Autossential.Activities.ViewModels.Data
             Sanitize.Category = Resources.Options_Category;
             Sanitize.DisplayName = Resources.ExtractDataColumnValues_Sanitize_DisplayName;
             Sanitize.Placeholder = Resources.ExtractDataColumnValues_Sanitize_Description;
+            Sanitize.Tooltip = Resources.ExtractDataColumnValues_Sanitize_Description;
             Sanitize.Widget = new DefaultWidget
             {
                 Type = ViewModelWidgetType.Toggle
@@ -86,6 +92,7 @@ namespace Autossential.Activities.ViewModels.Data
             Unique.Category = Resources.Options_Category;
             Unique.DisplayName = Resources.ExtractDataColumnValues_Unique_DisplayName;
             Unique.Placeholder = Resources.ExtractDataColumnValues_Unique_Description;
+            Unique.Tooltip = Resources.ExtractDataColumnValues_Unique_Description;
             Unique.Widget = new DefaultWidget
             {
                 Type = ViewModelWidgetType.Toggle
@@ -97,6 +104,7 @@ namespace Autossential.Activities.ViewModels.Data
             TextCase.Category = Resources.Options_Category;
             TextCase.DisplayName = Resources.ExtractDataColumnValues_TextCase_DisplayName;
             TextCase.Placeholder = Resources.ExtractDataColumnValues_TextCase_Description;
+            TextCase.Tooltip = Resources.ExtractDataColumnValues_TextCase_Description;
             TextCase.OrderIndex = orderIndex++;
 
             Result.IsPrincipal = false;
@@ -104,9 +112,10 @@ namespace Autossential.Activities.ViewModels.Data
             Result.Category = Resources.Output_Category;
             Result.DisplayName = Resources.ExtractDataColumnValues_Result_DisplayName;
             Result.Placeholder = Resources.ExtractDataColumnValues_Result_Description;
+            Result.Tooltip = Resources.ExtractDataColumnValues_Result_Description;
             Result.OrderIndex = orderIndex++;
 
-            if (_workflowDesignAPI.HasFeature(DesignFeatureKeys.WidgetSupportInfoService))
+            if (_typePickerWidgetAvailable)
             {
                 AddTypePicker();
             }
@@ -114,10 +123,6 @@ namespace Autossential.Activities.ViewModels.Data
 
         private void AddTypePicker()
         {
-            if (!_workflowDesignAPI.WidgetSupportInfoService.IsWidgetSupported(ViewModelWidgetType.TypePicker))
-                return;
-
-            _typePickerWidgetAvailable = true;
             ArgumentType.Widget = new TypePickerWidget();
             ArgumentType.Value = ModelItem.ItemType.GenericTypeArguments[0];
         }

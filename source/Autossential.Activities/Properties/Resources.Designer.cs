@@ -558,36 +558,72 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to If set, continue executing the remaining activities even if the current activity has failed..
         /// </summary>
-        public static string Common_ContinueOnError {
+        public static string Common_ContinueOnError_Description {
             get {
-                return ResourceManager.GetString("Common_ContinueOnError", resourceCulture);
+                return ResourceManager.GetString("Common_ContinueOnError_Description", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn&apos;t support regular expressions. It supports a string or a collection of strings. Default value is all files (*.*). The features can be extended by SearchPatternMode property..
+        ///   Looks up a localized string similar to Continue On Error.
         /// </summary>
-        public static string Common_SearchPattern {
+        public static string Common_ContinueOnError_DisplayName {
             get {
-                return ResourceManager.GetString("Common_SearchPattern", resourceCulture);
+                return ResourceManager.GetString("Common_ContinueOnError_DisplayName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Native: applies the search pattern using the native standards. Extended: allows the use of an additional wildcard (!) to create negative patterns, e.g: (!*.txt) means to match everything except (*.txt) files. Complete: It also allows negative patterns and perform the testing in the full file path instead of only in the file name..
+        ///   Looks up a localized string similar to When true, the Search Pattern is applied in the full file path instead of only in the file name..
         /// </summary>
-        public static string Common_SearchPatternMode {
+        public static string Common_FullPathMode_Description {
             get {
-                return ResourceManager.GetString("Common_SearchPatternMode", resourceCulture);
+                return ResourceManager.GetString("Common_FullPathMode_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Full Path Mode.
+        /// </summary>
+        public static string Common_FullPathMode_DisplayName {
+            get {
+                return ResourceManager.GetString("Common_FullPathMode_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (*, ? and !) characters, but it doesn&apos;t support regular expressions. It supports a string or a collection of strings. Default value is all files (*.*). The wildcard (!) creates negative patterns, e.g: (!*.txt) means to match everything except (*.txt) files..
+        /// </summary>
+        public static string Common_SearchPattern_Description {
+            get {
+                return ResourceManager.GetString("Common_SearchPattern_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search Pattern.
+        /// </summary>
+        public static string Common_SearchPattern_DisplayName {
+            get {
+                return ResourceManager.GetString("Common_SearchPattern_DisplayName", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Specifies the amount of time in milliseconds to wait for the activity to run before an error is thrown. The default value is 30000 (30s)..
         /// </summary>
-        public static string Common_Timeout {
+        public static string Common_Timeout_Description {
             get {
-                return ResourceManager.GetString("Common_Timeout", resourceCulture);
+                return ResourceManager.GetString("Common_Timeout_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timeout.
+        /// </summary>
+        public static string Common_Timeout_DisplayName {
+            get {
+                return ResourceManager.GetString("Common_Timeout_DisplayName", resourceCulture);
             }
         }
         
@@ -1978,6 +2014,24 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A sequence of letters to be used as replacement for the placeholder &apos;?&apos;..
+        /// </summary>
+        public static string RandomString_Custom_Description {
+            get {
+                return ResourceManager.GetString("RandomString_Custom_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom.
+        /// </summary>
+        public static string RandomString_Custom_DisplayName {
+            get {
+                return ResourceManager.GetString("RandomString_Custom_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generates a random string based on a pre-defined format. Useful to generate short references, labels, prefixes, etc. Do not use this activity for password generation, it is not suitable for this purpose..
         /// </summary>
         public static string RandomString_Description {
@@ -2001,6 +2055,24 @@ namespace Autossential.Activities.Properties {
         public static string RandomString_ErrorMsg_FormatIsNullOrEmpty {
             get {
                 return ResourceManager.GetString("RandomString_ErrorMsg_FormatIsNullOrEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A sequence of placeholders to form the random string..
+        /// </summary>
+        public static string RandomString_Format_Description {
+            get {
+                return ResourceManager.GetString("RandomString_Format_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Format.
+        /// </summary>
+        public static string RandomString_Format_DisplayName {
+            get {
+                return ResourceManager.GetString("RandomString_Format_DisplayName", resourceCulture);
             }
         }
         

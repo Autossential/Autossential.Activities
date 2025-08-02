@@ -1,15 +1,14 @@
-﻿using Autossential.Activities.Properties;
+using Autossential.Activities.Properties;
 using System.Activities.DesignViewModels;
 using System.Collections.Generic;
 using System.Data;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class DataRowToDictionaryViewModel : DesignPropertiesViewModel
+    public class DataRowToDictionaryViewModel : BaseViewModel
     {
         public DataRowToDictionaryViewModel(IDesignServices services) : base(services)
         {
-
         }
 
         public DesignInArgument<DataRow> InputDataRow { get; set; }
@@ -27,6 +26,7 @@ namespace Autossential.Activities.ViewModels.Data
             InputDataRow.Category = Resources.Input_Category;
             InputDataRow.DisplayName = Resources.DataRowToDictionary_InputDataRow_DisplayName;
             InputDataRow.Placeholder = Resources.DataRowToDictionary_InputDataRow_Description;
+            InputDataRow.Tooltip = Resources.DataRowToDictionary_InputDataRow_Description;
             InputDataRow.OrderIndex = orderIndex++;
 
             Result.IsPrincipal = false;
@@ -34,6 +34,7 @@ namespace Autossential.Activities.ViewModels.Data
             Result.Category = Resources.Output_Category;
             Result.DisplayName = Resources.DataRowToDictionary_Result_DisplayName;
             Result.Placeholder = Resources.DataRowToDictionary_Result_Description;
+            Result.Tooltip = Resources.DataRowToDictionary_Result_Description;
             Result.OrderIndex = orderIndex++;
         }
     }

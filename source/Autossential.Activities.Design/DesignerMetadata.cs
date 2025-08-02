@@ -48,7 +48,7 @@ namespace Autossential.Activities.Design
                 .Add<UnmapDrive, UnmapDriveDesigner>(miscellaneous);
 
             builder
-                .Add<Aggregate, AggregateDesigner>(data)
+                //.Add<Aggregate, AggregateDesigner>(data)
                 .Add<DataRowToDictionary, DataRowToDictionaryDesigner>(data)
                 .Add<DataTableToText, DataTableToTextDesigner>(data)
                 .Add<DictionaryToDataTable, DictionaryToDataTableDesigner>(data)
@@ -58,10 +58,10 @@ namespace Autossential.Activities.Design
                 .Add<RemoveDuplicateRows, RemoveDuplicateRowsDesigner>(data)
                 .Add<RemoveEmptyRows, RemoveEmptyRowsDesigner>(data)
                 .Add<TransposeData, TransposeDataDesigner>(data)
-                .Add<FillDataColumn, FillDataColumnDesigner>(data)
-                .Add(typeof(AddRangeToCollection<>), typeof(AddRangeToCollectionDesigner), data)
-                .Add(typeof(AddToDictionary<,>), typeof(AddToDictionaryDesigner), data)
-                .Add(typeof(RemoveFromDictionary<,>), typeof(RemoveFromDictionaryDesigner), data);
+                .Add<FillDataColumn, FillDataColumnDesigner>(data);
+                //.Add(typeof(AddRangeToCollection<>), typeof(AddRangeToCollectionDesigner), data)
+                //.Add(typeof(AddToDictionary<,>), typeof(AddToDictionaryDesigner), data)
+                //.Add(typeof(RemoveFromDictionary<,>), typeof(RemoveFromDictionaryDesigner), data);
 
             builder
                 .Add<CleanUpFolder, CleanUpFolderDesigner>(file)
@@ -87,7 +87,7 @@ namespace Autossential.Activities.Design
                 .Add<CultureScope, CultureScopeDesigner>(programming)
                 .Add<Decrement, DecrementDesigner>(programming)
                 .Add<Increment, IncrementDesigner>(programming)
-                .Add<IsTrue, IsTrueDesigner>(programming)
+                //.Add<IsTrue, IsTrueDesigner>(programming)
                 .Add<ReplaceTokens, ReplaceTokensDesigner>(programming);
 
             builder
@@ -131,8 +131,8 @@ namespace Autossential.Activities.Design
                 .AddToMember(typeof(SymmetricAlgorithmEncryptionBase<>), nameof(ActivityWithResult.Result), new BrowsableAttribute(false))
                 .AddToMember(typeof(SymmetricAlgorithmEncryptionBase<>), nameof(SymmetricAlgorithmEncryptionBase<AesEncryption>.Iterations), new DescriptionAttribute(Resources.SymmetricAlgorithmEncryptionBase_Iterations_Description))
 
-                .AddToMember<MapDrive>(p => p.Force, options)
-                .AddToMember(typeof(AddToDictionary<,>), nameof(AddToDictionary<object, object>.UpdateIfExists), options);
+                .AddToMember<MapDrive>(p => p.Force, options);
+                //.AddToMember(typeof(AddToDictionary<,>), nameof(AddToDictionary<object, object>.UpdateIfExists), options);
 
 #if NET6_0_OR_GREATER
             builder

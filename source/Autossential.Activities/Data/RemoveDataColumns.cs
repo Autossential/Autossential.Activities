@@ -20,7 +20,7 @@ namespace Autossential.Activities
 
             if (Columns == null)
             {
-                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Columns)));
+                metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(Columns)));
             }
             else if (Columns.IsArgumentTypeAnyCompatible<IEnumerable<int>, IEnumerable<string>>())
             {
@@ -28,7 +28,7 @@ namespace Autossential.Activities
             }
             else
             {
-                metadata.AddValidationError(Resources.Validation_TypeErrorFormat("IEnumerable<string> or IEnumerable<int>", nameof(Columns)));
+                metadata.AddValidationError(ResourcesFn.Validation_TypeErrorFormat("IEnumerable<string> or IEnumerable<int>", nameof(Columns)));
             }
         }
 

@@ -21,7 +21,7 @@ namespace Autossential.Tests
             });
 
             var result = WorkflowTester.Run(new PromoteHeaders(), GetArgs(dt, null));
-            var outDt = (DataTable)result.Get(p => p.Result);
+            var outDt = (DataTable)result.Get(p => p.DataTable);
 
             Assert.AreEqual(2, outDt.Rows.Count);
 
@@ -41,7 +41,7 @@ namespace Autossential.Tests
 
             var result = WorkflowTester.Run(new PromoteHeaders(), GetArgs(dt, emptyColName));
 
-            var outDt = (DataTable)result.Get(p => p.Result);
+            var outDt = (DataTable)result.Get(p => p.DataTable);
             Assert.AreEqual(0, outDt.Rows.Count);
             Assert.AreEqual(emptyColName, outDt.Columns[0].ColumnName);
         }
@@ -66,7 +66,7 @@ namespace Autossential.Tests
             if (rename)
             {
                 var result = Execute();
-                var outDt = (DataTable)result.Get(p => p.Result);
+                var outDt = (DataTable)result.Get(p => p.DataTable);
                 Assert.AreEqual("Name", outDt.Columns[0].ColumnName);
                 Assert.AreEqual("Name1", outDt.Columns[1].ColumnName);
                 Assert.AreEqual("Name2", outDt.Columns[2].ColumnName);
@@ -102,7 +102,7 @@ namespace Autossential.Tests
         {
             return new Dictionary<string, object>
             {
-                { nameof(PromoteHeaders.InputDataTable), inputDataTable },
+                { nameof(PromoteHeaders.DataTable), inputDataTable },
                 { nameof(PromoteHeaders.EmptyColumnName), emptyColumnName }
             };
         }

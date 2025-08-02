@@ -1,5 +1,5 @@
 ﻿<Project>
-	
+
 	<ItemGroup>
 		<PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.0.0" />
 		<PackageReference Update="MSTest.TestAdapter" Version="2.2.3" />
@@ -7,12 +7,14 @@
 		<PackageReference Update="coverlet.collector" Version="3.0.2" />
 	</ItemGroup>
 
-	<ItemGroup Condition="$(TargetFramework.StartsWith('net6'))">
-		<PackageReference Update="UiPath.Workflow" Version="6.0.0-20220401-03" PrivateAssets="All" />
-		<PackageReference Update="UiPath.Workflow.Runtime" Version="6.0.0-20220401-03" PrivateAssets="All" />
-		<PackageReference Update="System.Activities.Core.Presentation" Version="6.0.0-20220318.2" PrivateAssets="All" />
-		<PackageReference Update="System.Activities.Metadata" Version="6.0.0-20220831.1" PrivateAssets="All" />
-		<PackageReference Update="System.Activities.ViewModels" Version="1.0.0-20220906.1" PrivateAssets="All" />
+	<ItemGroup>
+		<PackageReference Update="System.Activities" Version="5.0.0-20210730-02" PrivateAssets="All"/>
+		<PackageReference Update="System.Activities.Core.Presentation" Version="6.0.0-20231204.1" PrivateAssets="All"/>
+		<PackageReference Update="System.Activities.Metadata" Version="6.0.0-20240517.13" PrivateAssets="All"/>
+		<PackageReference Update="System.Activities.ViewModels" Version="1.0.0-20250625.2"/>
+		<PackageReference Update="UiPath.Activities.Api" Version="24.10.1" PrivateAssets="All" />
+		<PackageReference Update="UiPath.Workflow" Version="6.0.0-20240401-07" PrivateAssets="All" />
+		<PackageReference Update="UiPath.Workflow.Runtime" Version="6.0.0-20240401-07" PrivateAssets="All" />
 	</ItemGroup>
-	
+
 </Project>

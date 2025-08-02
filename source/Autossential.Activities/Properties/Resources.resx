@@ -133,14 +133,6 @@
     <value>Add Range To Collection</value>
     <comment>activity name</comment>
   </data>
-  <data name="AddRangeToCollection_ErrorMsg_CollectionNull" xml:space="preserve">
-    <value>The Collection property value cannot be null.</value>
-    <comment>error message</comment>
-  </data>
-  <data name="AddRangeToCollection_ErrorMsg_ItemsNull" xml:space="preserve">
-    <value>The Items property value cannot be null.</value>
-    <comment>error message</comment>
-  </data>
   <data name="AddRangeToCollection_Items_Description" xml:space="preserve">
     <value>The items to be added to the collection.</value>
     <comment>property description</comment>
@@ -166,7 +158,7 @@
     <comment>property name</comment>
   </data>
   <data name="Aggregate_Description" xml:space="preserve">
-    <value>Aggregates the DataTable data by the specified function resulting in a DataRow, product of this aggregation.</value>
+    <value>Aggregates the DataTable data by the specified function resulting in a DataRow, product of the aggregation.</value>
     <comment>activity description</comment>
   </data>
   <data name="Aggregate_Function_Description" xml:space="preserve">
@@ -1634,7 +1626,7 @@
     <comment>property name</comment>
   </data>
   <data name="AddToDictionary_UpdateIfExists_DisplayName" xml:space="preserve">
-    <value>UpdateIfExists</value>
+    <value>Update If Exists</value>
     <comment>property name</comment>
   </data>
   <data name="AddToDictionary_Description" xml:space="preserve">
@@ -1677,10 +1669,6 @@
     <value>The Dictionary where the element will be removed from.</value>
     <comment>property description</comment>
   </data>
-  <data name="RemoveFromDictionary_ErrorMsg_NullDictionary" xml:space="preserve">
-    <value>The Dictionary instance cannot be null.</value>
-    <comment>error message</comment>
-  </data>
   <data name="RemoveFromDictionary_Key_DisplayName" xml:space="preserve">
     <value>Key</value>
     <comment>property name</comment>
@@ -1688,5 +1676,45 @@
   <data name="RemoveFromDictionary_Key_Description" xml:space="preserve">
     <value>The key of the element to remove.</value>
     <comment>property description</comment>
+  </data>
+  <data name="RandomString_DisplayName" xml:space="preserve">
+    <value>Random String</value>
+    <comment>activity label</comment>
+  </data>
+  <data name="RandomString_Description" xml:space="preserve">
+    <value>Generates a random string based on a pre-defined format. Useful to generate short references, labels, prefixes, etc. Do not use this activity for password generation, it is not suitable for this purpose.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="RandomString_ErrorMsg_FormatIsNullOrEmpty" xml:space="preserve">
+    <value>Format is null or empty</value>
+    <comment>error message</comment>
+  </data>
+  <data name="Validation_DerivedTypeError" xml:space="preserve">
+    <value>Please provide a value for {0} whose type is derived from {1}.</value>
+    <comment>validation</comment>
+  </data>
+  <data name="Validation_InstanceIsNull" xml:space="preserve">
+    <value>The value for {0} is null and couldn't be auto instantiated.</value>
+    <comment>validation</comment>
+  </data>
+  <data name="AddToDictionary_AutoInstantiate_DisplayName" xml:space="preserve">
+    <value>Auto Instantiate</value>
+    <comment>property name</comment>
+  </data>
+  <data name="AddToDictionary_AutoInstantiate_Description" xml:space="preserve">
+    <value>Instantiates the Dictionary if required.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="AddRangeToCollection_AutoInstantiate_DisplayName" xml:space="preserve">
+    <value>Auto Instantiate</value>
+    <comment>property name</comment>
+  </data>
+  <data name="AddRangeToCollection_AutoInstantiate_Description" xml:space="preserve">
+    <value>Instantiate the Collection if necessary.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Aggregate_DisplayName" xml:space="preserve">
+    <value>Aggregate</value>
+    <comment>activity name</comment>
   </data>
 </root>

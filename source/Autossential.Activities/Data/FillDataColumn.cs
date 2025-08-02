@@ -23,7 +23,7 @@ namespace Autossential.Activities
 
             if (Column == null)
             {
-                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Column)));
+                metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(Column)));
             }
             else if (Column.IsArgumentTypeAnyCompatible<int, string>())
             {
@@ -31,7 +31,7 @@ namespace Autossential.Activities
             }
             else
             {
-                metadata.AddValidationError(Resources.Validation_TypeErrorFormat("Int32 or String", nameof(Column)));
+                metadata.AddValidationError(ResourcesFn.Validation_TypeErrorFormat("Int32 or String", nameof(Column)));
             }
         }
 
@@ -45,9 +45,9 @@ namespace Autossential.Activities
             if (index == -1)
             {
                 if (column is int)
-                    throw new ArgumentOutOfRangeException(Resources.FillDataTable_ErrorMsg_ColumnFormat(column));
+                    throw new ArgumentOutOfRangeException(ResourcesFn.FillDataTable_ErrorMsg_ColumnFormat(column));
 
-                throw new ArgumentException(Resources.FillDataTable_ErrorMsg_ColumnFormat(column));
+                throw new ArgumentException(ResourcesFn.FillDataTable_ErrorMsg_ColumnFormat(column));
             }
 
             var col = table.Columns[index];

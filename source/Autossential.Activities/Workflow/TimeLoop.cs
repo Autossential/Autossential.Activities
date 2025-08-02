@@ -25,7 +25,7 @@ namespace Autossential.Activities
         protected override void CacheMetadata(NativeActivityMetadata metadata)
         {
             if (Timer == null)
-                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Timer)));
+                metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(Timer)));
 
             base.CacheMetadata(metadata);
         }

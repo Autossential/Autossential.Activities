@@ -1,23 +1,16 @@
-﻿using Autossential.Shared;
-using System.Activities;
+﻿using System.Activities;
 using System.Data;
 
 namespace Autossential.Activities
 {
-    public class TransposeData : CodeActivity<DataTable>
+    public class TransposeData : CodeActivity
     {
-        public InArgument<DataTable> InputDataTable { get; set; }
+        [RequiredArgument]
+        public InOutArgument<DataTable> DataTable { get; set; }
 
-        protected override void CacheMetadata(CodeActivityMetadata metadata)
+        protected override void Execute(CodeActivityContext context)
         {
-            metadata.AddRuntimeArgument(InputDataTable, nameof(InputDataTable), true);
-            metadata.AddRuntimeArgument(Result, nameof(Result), true);
-            base.CacheMetadata(metadata);
-        }
-
-        protected override DataTable Execute(CodeActivityContext context)
-        {
-            var input = InputDataTable.Get(context);
+            var input = DataTable.Get(context);
             var rowsCount = input.Rows.Count;
 
             var output = new DataTable();
@@ -36,7 +29,7 @@ namespace Autossential.Activities
                 output.Rows.Add(row);
             }
 
-            return output;
+            DataTable.Set(context, output);
         }
     }
 }

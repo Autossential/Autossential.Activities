@@ -9,16 +9,15 @@ using System.Linq;
 
 namespace Autossential.Activities
 {
-    public sealed class RemoveDuplicateRows : CodeActivity<DataTable>
+    public sealed class RemoveDuplicateRows : CodeActivity
     {
-        public InArgument<DataTable> InputDataTable { get; set; }
+        public InOutArgument<DataTable> DataTable { get; set; }
 
         public InArgument Columns { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
-            metadata.AddRuntimeArgument(InputDataTable, nameof(InputDataTable), true);
-            metadata.AddRuntimeArgument(Result, nameof(Result), true);
+            metadata.AddRuntimeArgument(DataTable, nameof(DataTable), true);
 
             if (Columns == null) return;
             if (Columns.IsArgumentTypeAnyCompatible<IEnumerable<int>, IEnumerable<string>>())
@@ -27,13 +26,13 @@ namespace Autossential.Activities
             }
             else
             {
-                metadata.AddValidationError(Resources.Validation_TypeErrorFormat("IEnumerable<string> or IEnumerable<int>", nameof(Columns)));
+                metadata.AddValidationError(ResourcesFn.Validation_TypeErrorFormat("IEnumerable<string> or IEnumerable<int>", nameof(Columns)));
             }
         }
 
-        protected override DataTable Execute(CodeActivityContext context)
+        protected override void Execute(CodeActivityContext context)
         {
-            var inputDt = InputDataTable.Get(context) ?? throw new ArgumentException(nameof(InputDataTable));
+            var inputDt = DataTable.Get(context) ?? throw new ArgumentException(nameof(DataTable));
             var columns = DataTableUtil.IdentifyDataColumns(inputDt, Columns?.Get(context));
 
             DataTable outputDt;
@@ -63,10 +62,10 @@ namespace Autossential.Activities
                 outputDt = inputDt.AsDataView().ToTable(true);
             }
 
-            return outputDt;
+            DataTable.Set(context, outputDt);
         }
 
-        private bool RowExist(object[] inputValues, object[] outputValues, int[] columns)
+        private static bool RowExist(object[] inputValues, object[] outputValues, int[] columns)
         {
             bool flag = true;
             foreach (var colIndex in columns)

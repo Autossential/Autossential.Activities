@@ -10,9 +10,9 @@ using System.Linq;
 
 namespace Autossential.Activities
 {
-    public sealed class RemoveEmptyRows : CodeActivity<DataTable>
+    public sealed class RemoveEmptyRows : CodeActivity
     {
-        public InArgument<DataTable> InputDataTable { get; set; }
+        public InOutArgument<DataTable> DataTable { get; set; }
 
         public DataRowEvaluationMode Mode { get; set; }
         public InArgument Columns { get; set; }
@@ -20,8 +20,7 @@ namespace Autossential.Activities
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
-            metadata.AddRuntimeArgument(InputDataTable, nameof(InputDataTable), true);
-            metadata.AddRuntimeArgument(Result, nameof(Result), true);
+            metadata.AddRuntimeArgument(DataTable, nameof(DataTable), true);
 
             if (Columns == null)
             {
@@ -37,13 +36,13 @@ namespace Autossential.Activities
             }
             else
             {
-                metadata.AddValidationError(Resources.Validation_TypeErrorFormat("IEnumerable<string> or IEnumerable<int>", nameof(Columns)));
+                metadata.AddValidationError(ResourcesFn.Validation_TypeErrorFormat("IEnumerable<string> or IEnumerable<int>", nameof(Columns)));
             }
         }
 
-        protected override DataTable Execute(CodeActivityContext context)
+        protected override void Execute(CodeActivityContext context)
         {
-            var inputDt = InputDataTable.Get(context);
+            var inputDt = DataTable.Get(context);
 
             bool predicate(object value) => value != null && value != DBNull.Value && !string.IsNullOrWhiteSpace(value.ToString());
 
@@ -60,9 +59,9 @@ namespace Autossential.Activities
             }
 
             var rows = inputDt.AsEnumerable().Where(handler);
-            var dtResult = rows.Any() ? rows.CopyToDataTable() : inputDt.Clone();
+            var outputDt = rows.Any() ? rows.CopyToDataTable() : inputDt.Clone();
 
-            return dtResult;
+            DataTable.Set(context, outputDt);
         }
 
         private Func<DataRow, bool> GetCustomModeHandler(CodeActivityContext context, DataTable dt, Func<object, bool> predicate)

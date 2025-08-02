@@ -1,25 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net461;net6.0-windows</TargetFrameworks>
+		<TargetFramework>net6.0-windows</TargetFramework>
 		<UseWPF>true</UseWPF>
 		<UseWindowsForms>true</UseWindowsForms>
-		<Version>3.3.8</Version>
-	</PropertyGroup>
-
-	<PropertyGroup>
-		<Description>Provides a collection of activities designed for a variety of purposes. It contains +30 activities organized in different categories, such as Apps &amp; Diagnostics, Data, Files, Programming, Security and Workflows.</Description>
-		<Authors>Alexandre Toledo Perez</Authors>
-		<Copyright>© 2020-2023 Alexandre Toledo Perez</Copyright>
-		<PackageProjectUrl>https://github.com/Autossential</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/Autossential/Autossential.Activities</RepositoryUrl>
-		<RepositoryType>GIT</RepositoryType>
-		<PackageTags>Custom Activity Windows Workflow Foundation UiPath</PackageTags>
-		<PackageId>$(MSBuildProjectName.Replace(".Design", ""))</PackageId>
-		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageIcon>packageIcon.png</PackageIcon>
-		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-		<RunPostBuildEvent>Always</RunPostBuildEvent>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -34,12 +17,6 @@
 	  <Page Remove="Designers\EncryptDataTableDesigner.xaml" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\Autossential.Activities\Autossential.Activities.csproj">
-			<PrivateAssets>All</PrivateAssets>
-			<Private>true</Private>
-		</ProjectReference>
-	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net461' ">
 		<Reference Include="Microsoft.CSharp" />
 		<Reference Include="PresentationCore" />
@@ -59,22 +36,10 @@
 		<PackageReference Include="UiPath.Workflow.Runtime" />
 		<PackageReference Include="System.Activities.Core.Presentation" />
 	</ItemGroup>
-	
-	<PropertyGroup Condition="'$(Configuration)' == 'Debug' AND '$(DesignTimeBuild)' != 'true'">
-		<PackageVersion>$(Version)-preview-$([System.DateTime]::UtcNow.ToString(MMddHHmmss))</PackageVersion>
-	</PropertyGroup>
-
-	<Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
-		<ItemGroup>
-			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadatavalue('ReferenceSourceTarget', 'ProjectReference'))" />
-		</ItemGroup>
-	</Target>
 
 	<ItemGroup>
-		<None Include="packageIcon.png">
-			<Pack>True</Pack>
-			<PackagePath></PackagePath>
-		</None>
+	  <ProjectReference Include="..\Autossential.Activities\Autossential.Activities.csproj" />
+	  <ProjectReference Include="..\Autossential.Core\Autossential.Core.csproj" />
 	</ItemGroup>
 
 	<Import Project="..\..\shared\Autossential.Shared.Activities.Design\Autossential.Shared.Activities.Design.projitems" Label="Shared" />

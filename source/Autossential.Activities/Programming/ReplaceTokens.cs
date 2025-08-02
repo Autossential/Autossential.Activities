@@ -15,11 +15,11 @@ namespace Autossential.Activities
         {
             base.CacheMetadata(metadata);
 
-            if (Content == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Content)));
-            if (InputDictionary == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(InputDictionary)));
-            if (Pattern == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Pattern)));
-            if (Placeholder == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Placeholder)));
-            if (Result == null) metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Result)));
+            if (Content == null) metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(Content)));
+            if (InputDictionary == null) metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(InputDictionary)));
+            if (Pattern == null) metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(Pattern)));
+            if (Placeholder == null) metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(Placeholder)));
+            if (Result == null) metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(Result)));
         }
 
         protected override string Execute(CodeActivityContext context)

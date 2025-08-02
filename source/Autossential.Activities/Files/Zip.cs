@@ -33,7 +33,7 @@ namespace Autossential.Activities
             base.CacheMetadata(metadata);
             if (ToCompress == null)
             {
-                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(ToCompress)));
+                metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(ToCompress)));
             }
             else if (ToCompress.IsArgumentTypeAnyCompatible<string, IEnumerable<string>>())
             {
@@ -41,7 +41,7 @@ namespace Autossential.Activities
             }
             else
             {
-                metadata.AddValidationError(Resources.Validation_TypeErrorFormat("IEnumerable<string> or IEnumerable<int>", nameof(ToCompress)));
+                metadata.AddValidationError(ResourcesFn.Validation_TypeErrorFormat("IEnumerable<string> or IEnumerable<int>", nameof(ToCompress)));
             }
         }
         protected override async Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token)

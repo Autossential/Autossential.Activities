@@ -18,7 +18,7 @@ namespace Autossential.Activities
 
             if (SharedDrivePath == null)
             {
-                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(SharedDrivePath)));
+                metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(SharedDrivePath)));
             }
         }
 

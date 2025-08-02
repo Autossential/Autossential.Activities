@@ -8,9 +8,9 @@ using System.Data;
 
 namespace Autossential.Activities
 {
-    public sealed class PromoteHeaders : CodeActivity<DataTable>
+    public sealed class PromoteHeaders : CodeActivity
     {
-        public InArgument<DataTable> InputDataTable { get; set; }
+        public InOutArgument<DataTable> DataTable { get; set; }
 
         public InArgument<bool> AutoRename { get; set; } = true;
 
@@ -18,22 +18,21 @@ namespace Autossential.Activities
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
-            metadata.AddRuntimeArgument(InputDataTable, nameof(InputDataTable), true);
+            metadata.AddRuntimeArgument(DataTable, nameof(DataTable), true);
             metadata.AddRuntimeArgument(EmptyColumnName, nameof(EmptyColumnName), true);
-            metadata.AddRuntimeArgument(Result, nameof(Result), true);
             metadata.AddRuntimeArgument(AutoRename, nameof(AutoRename), true);
 
             if (EmptyColumnName != null && EmptyColumnName.Expression is Literal<string> prop && string.IsNullOrEmpty(prop.Value))
-                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(EmptyColumnName)));
+                metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(EmptyColumnName)));
         }
 
-        protected override DataTable Execute(CodeActivityContext context)
+        protected override void Execute(CodeActivityContext context)
         {
             var names = new Dictionary<string, int>();
             var emptyName = EmptyColumnName.Get(context);
             var autoRename = AutoRename.Get(context);
 
-            var inputDT = InputDataTable.Get(context);
+            var inputDT = DataTable.Get(context);
             if (inputDT.Rows.Count == 0)
                 throw new InvalidOperationException(Resources.PromoteHeaders_ErrorMsg_NoData);
 
@@ -71,7 +70,7 @@ namespace Autossential.Activities
             }
 
             outputDT.Rows.Remove(row);
-            return outputDT;
+            DataTable.Set(context, outputDT);
         }
     }
 }

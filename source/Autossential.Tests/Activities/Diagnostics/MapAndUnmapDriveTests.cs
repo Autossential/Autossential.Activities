@@ -71,7 +71,7 @@ namespace Autossential.Tests
         [DataRow(null)]
         public void MapWithCredentials(string driveLetter)
         {
-            var result = WorkflowTester.Invoke(new MapDrive(), GetArgsWithCredentials(driveLetter, false));
+            var result = WorkflowTester.Invoke(new MapDrive(), GetArgsWithCredentials(driveLetter, "user", false));
 
             Assert.IsTrue(result, "Check VirtualBox connection");
             if (driveLetter != null)
@@ -81,12 +81,36 @@ namespace Autossential.Tests
         }
 
         [TestMethod]
+        public void MapWithDifferentUsers_ErrorCode_1219()
+        {
+            var result = WorkflowTester.Run(new MapDrive(), GetArgsWithCredentials("A", "user", false));
+            var code = result.Get(p => p.ResponseCode);
+            Assert.AreEqual(0, code);
+
+            result = WorkflowTester.Run(new MapDrive(), GetArgsWithCredentials("B", "temp", false));
+            code = result.Get(p => p.ResponseCode);
+            Assert.AreEqual(1219, code);
+        }
+
+        [TestMethod]
+        public void MapWithDifferentUsers_ForceMode_NoError()
+        {
+            var result = WorkflowTester.Run(new MapDrive(), GetArgsWithCredentials("A", "user", true));
+            var code = result.Get(p => p.ResponseCode);
+            Assert.AreEqual(0, code);
+
+            result = WorkflowTester.Run(new MapDrive(), GetArgsWithCredentials("B", "temp", true));
+            code = result.Get(p => p.ResponseCode);
+            Assert.AreEqual(0, code);
+        }
+
+        [TestMethod]
         [DataRow("A:", false, 0)]
         [DataRow("A:", false, 1)]
         [DataRow("A:", true, 2)]
         public void MapWithCredentialsAndForceOption(string driveLetter, bool force, int index)
         {
-            var result = WorkflowTester.Invoke(new MapDrive(), GetArgsWithCredentials(driveLetter, force));
+            var result = WorkflowTester.Invoke(new MapDrive(), GetArgsWithCredentials(driveLetter, "user", force));
             if (index == 1)
             {
                 Assert.IsFalse(result);
@@ -146,14 +170,14 @@ namespace Autossential.Tests
             };
         }
 
-        private static Dictionary<string, object> GetArgsWithCredentials(string driveLetter, bool force)
+        private static Dictionary<string, object> GetArgsWithCredentials(string driveLetter, string user, bool force)
         {
             return new Dictionary<string, object>
             {
                 { nameof(MapDrive.SharedDrivePath), SharedPath },
                 { nameof(MapDrive.DriveLetter), driveLetter },
                 { nameof(MapDrive.Force), force },
-                { nameof(MapDrive.Credential), new NetworkCredential("user", "dev123", "windev2112eval") }
+                { nameof(MapDrive.Credential), new NetworkCredential(user, "dev123", "windev2112eval") }
             };
         }
     }

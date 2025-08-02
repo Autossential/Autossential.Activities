@@ -31,7 +31,7 @@ namespace Autossential.Activities
                 return;
             }
 
-            metadata.AddValidationError(Resources.Validation_TypeErrorFormat("IEnumerable<string> or IEnumerable<int>", nameof(Columns)));
+            metadata.AddValidationError(ResourcesFn.Validation_TypeErrorFormat("IEnumerable<string> or IEnumerable<int>", nameof(Columns)));
         }
 
         protected override object[] Execute(CodeActivityContext context)

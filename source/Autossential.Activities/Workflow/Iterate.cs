@@ -29,7 +29,7 @@ namespace Autossential.Activities
 
             if (Iterations == null)
             {
-                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Iterations)));
+                metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(Iterations)));
             }
             else if (Iterations.Expression is Literal<int> expr && expr.Value < 1)
             {

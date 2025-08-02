@@ -21,7 +21,7 @@ namespace Autossential.Activities
             base.CacheMetadata(metadata);
             if (ProcessName == null)
             {
-                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(ProcessName)));
+                metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(ProcessName)));
             }
             else if (ProcessName.IsArgumentTypeAnyCompatible<string, IEnumerable<string>>())
             {
@@ -29,7 +29,7 @@ namespace Autossential.Activities
             }
             else
             {
-                metadata.AddValidationError(Resources.Validation_TypeErrorFormat("string or IEnumerable<string>", nameof(ProcessName)));
+                metadata.AddValidationError(ResourcesFn.Validation_TypeErrorFormat("string or IEnumerable<string>", nameof(ProcessName)));
             }
         }
 

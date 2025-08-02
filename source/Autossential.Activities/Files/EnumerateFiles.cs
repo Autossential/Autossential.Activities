@@ -38,7 +38,7 @@ namespace Autossential.Activities
             }
             else
             {
-                metadata.AddValidationError(Resources.Validation_TypeErrorFormat("string or IEnumerable<string>", nameof(DirectoryPath)));
+                metadata.AddValidationError(ResourcesFn.Validation_TypeErrorFormat("string or IEnumerable<string>", nameof(DirectoryPath)));
             }
 
             if (SearchPattern == null)
@@ -51,7 +51,7 @@ namespace Autossential.Activities
             }
             else
             {
-                metadata.AddValidationError(Resources.Validation_TypeErrorFormat("string or IEnumerable<string>", nameof(SearchPattern)));
+                metadata.AddValidationError(ResourcesFn.Validation_TypeErrorFormat("string or IEnumerable<string>", nameof(SearchPattern)));
             }
         }
 

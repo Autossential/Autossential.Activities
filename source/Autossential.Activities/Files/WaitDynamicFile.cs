@@ -1,6 +1,10 @@
-﻿using Autossential.Shared.Activities.Base;
+﻿using Autossential.Core.Enums;
+using Autossential.Core.Extensions;
+using Autossential.Shared.Activities.Base;
 using System;
 using System.Activities;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -17,6 +21,7 @@ namespace Autossential.Activities
         public InArgument<DateTime?> FromDateTime { get; set; }
         public InArgument<int> Interval { get; set; } = 500;
         public OutArgument<FileInfo> Result { get; set; }
+        public PatternSearchMode SearchPatternMode { get; set; } = PatternSearchMode.Native;
 
         protected override async Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
@@ -24,14 +29,14 @@ namespace Autossential.Activities
             var timeout = Timeout.Get(context);
             var searchPattern = SearchPattern.Get(context) ?? "*.*";
             var fromDateTime = FromDateTime.Get(context);
-            var afterDate = (fromDateTime == null) ? CalculateDate(dir) : fromDateTime.Value;
+            var afterDate = fromDateTime ?? WaitDynamicFile.CalculateDate(dir);
             var interval = Math.Max(Interval.Get(context), 50);
 
             var filePath = await ExecuteWithTimeoutAsync(context, token, ExecuteMainAsync(dir, searchPattern, afterDate, interval, token), timeout).ConfigureAwait(false);
             return ctx => Result.Set(ctx, filePath != null ? new FileInfo(filePath) : null);
         }
 
-        private DateTime CalculateDate(string dir)
+        private static DateTime CalculateDate(string dir)
         {
             var files = Directory.EnumerateFiles(dir, "*", SearchOption.TopDirectoryOnly);
             if (files.Any())
@@ -42,6 +47,20 @@ namespace Autossential.Activities
 
         private Task<string> ExecuteMainAsync(string dir, string searchPattern, DateTime afterDate, int interval, CancellationToken token)
         {
+            Func<IEnumerable<string>> fn = null;
+            switch (SearchPatternMode)
+            {
+                case PatternSearchMode.Native:
+                    fn = () => Directory.EnumerateFiles(dir, searchPattern);
+                    break;
+                case PatternSearchMode.Extended:
+                    fn = () => Directory.EnumerateFiles(dir, "*", SearchOption.AllDirectories).Where(path => Path.GetFileName(path).IsMatch(searchPattern));
+                    break;
+                case PatternSearchMode.Complete:
+                    fn = () => Directory.EnumerateFiles(dir, "*", SearchOption.AllDirectories).Where(path => path.IsMatch(searchPattern));
+                    break;
+            }
+
             return Task.Run(() =>
             {
                 var done = false;
@@ -53,7 +72,8 @@ namespace Autossential.Activities
                         if (token.IsCancellationRequested)
                             token.ThrowIfCancellationRequested();
 
-                        var files = Directory.EnumerateFiles(dir, searchPattern).Where(path => File.GetLastWriteTime(path) > afterDate);
+                        var files = fn().Where(path => File.GetLastWriteTime(path) > afterDate);
+
                         if (files.Any())
                         {
                             done = true;

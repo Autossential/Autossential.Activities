@@ -10,7 +10,7 @@ namespace Autossential.Activities
             base.CacheMetadata(metadata);
             if (DriveLetter == null)
             {
-                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(DriveLetter)));
+                metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(DriveLetter)));
             }
         }
 

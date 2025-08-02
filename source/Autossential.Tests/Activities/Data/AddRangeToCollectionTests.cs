@@ -13,7 +13,7 @@ namespace Autossential.Tests
         public void Default()
         {
             var list = new List<int>();
-            WorkflowTester.Run(new AddRangeToCollection<int>(), GetArgs(list, new[] { 1, 2, 3 }));
+            WorkflowTester.Run(new AddRangeToCollection(), GetArgs(list, new[] { 1, 2, 3 }));
             CollectionAssert.AreEqual(new[] { 1, 2, 3 }, list);
         }
 
@@ -22,7 +22,7 @@ namespace Autossential.Tests
         {
             List<int> list = null;
             Assert.ThrowsException<ArgumentNullException>(() =>
-                WorkflowTester.Run(new AddRangeToCollection<int>(), GetArgs(list, new[] { 1, 2, 3 })));
+                WorkflowTester.Run(new AddRangeToCollection(), GetArgs(list, new[] { 1, 2, 3 })));
         }
 
         [TestMethod]
@@ -30,15 +30,15 @@ namespace Autossential.Tests
         {
             var list = new List<int>();
             Assert.ThrowsException<ArgumentNullException>(() =>
-                WorkflowTester.Run(new AddRangeToCollection<int>(), GetArgs(list, null)));
+                WorkflowTester.Run(new AddRangeToCollection(), GetArgs(list, null)));
         }
 
         private static Dictionary<string, object> GetArgs<T>(ICollection<T> collection, T[] items)
         {
             return new Dictionary<string, object>
             {
-                { nameof(AddRangeToCollection<T>.Collection), collection },
-                { nameof(AddRangeToCollection<T>.Items), items }
+                { nameof(AddRangeToCollection.Collection), collection },
+                { nameof(AddRangeToCollection.Items), items }
             };
         }
     }

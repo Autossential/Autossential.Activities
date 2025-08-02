@@ -18,7 +18,7 @@ namespace Autossential.Activities
         {
             metadata.AddRuntimeArgument(InputDataTable, nameof(InputDataTable), true);
             metadata.AddRuntimeArgument(DateTimeFormat, nameof(DateTimeFormat), false);
-            metadata.AddRuntimeArgument(Result, nameof(Result), true);
+            metadata.AddRuntimeArgument(Result, nameof(Result), false);
         }
 
         protected override string Execute(CodeActivityContext context)
@@ -44,10 +44,10 @@ namespace Autossential.Activities
         private string ToJson(DataTable dt, string dateTimeFormat)
         {
             var sb = new StringBuilder();
-            sb.Append("[");
+            sb.Append('[');
             foreach (DataRow row in dt.Rows)
             {
-                sb.Append("{");
+                sb.Append('{');
                 foreach (DataColumn col in dt.Columns)
                 {
                     sb.AppendFormat("\"{0}\":", col.ColumnName.Replace("\"", "\\\""));
@@ -73,7 +73,7 @@ namespace Autossential.Activities
             if (sb.Length > 1)
                 sb.Length -= 1;
 
-            sb.Append("]");
+            sb.Append(']');
             return sb.ToString();
         }
 

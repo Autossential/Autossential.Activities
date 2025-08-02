@@ -24,7 +24,7 @@ namespace Autossential.Activities
         {
             metadata.AddRuntimeArgument(InputDataTable, nameof(InputDataTable), true);
             metadata.AddRuntimeArgument(DefaultValue, nameof(DefaultValue), false);
-            metadata.AddRuntimeArgument(Result, nameof(Result), true);
+            metadata.AddRuntimeArgument(Result, nameof(Result), false);
             metadata.AddRuntimeArgument(Sanitize, nameof(Sanitize), false);
             metadata.AddRuntimeArgument(Unique, nameof(Unique), false);
             metadata.AddRuntimeArgument(Trim, nameof(Trim), false);
@@ -39,7 +39,7 @@ namespace Autossential.Activities
             }
             else
             {
-                metadata.AddValidationError(Resources.Validation_TypeErrorFormat("int or string", nameof(Column)));
+                metadata.AddValidationError(ResourcesFn.Validation_TypeErrorFormat("int or string", nameof(Column)));
             }
         }
 
@@ -60,14 +60,14 @@ namespace Autossential.Activities
                 }
                 catch (NullReferenceException e)
                 {
-                    throw new ArgumentException(Resources.ExtractDataColumnValues_ErrorMsg_InvalidColumnNameFormat(colName), e);
+                    throw new ArgumentException(ResourcesFn.ExtractDataColumnValues_ErrorMsg_InvalidColumnNameFormat(colName), e);
                 }
             }
             else
             {
                 index = (int)col;
                 if (index >= dt.Columns.Count)
-                    throw new ArgumentException(Resources.ExtractDataColumnValues_ErrorMsg_InvalidColumnIndexFormat(index));
+                    throw new ArgumentException(ResourcesFn.ExtractDataColumnValues_ErrorMsg_InvalidColumnIndexFormat(index));
             }
 
             var rows = dt.AsEnumerable();

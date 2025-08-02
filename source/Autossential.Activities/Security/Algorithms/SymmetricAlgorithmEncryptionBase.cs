@@ -12,7 +12,7 @@ namespace Autossential.Activities.Security.Algorithms
         protected SymmetricAlgorithmEncryptionBase()
         {
             Constraints.Add(ActivityConstraints.CreateConstraint<SymmetricAlgorithmEncryptionBase<T>>(activity => activity is TextEncryption || activity is DataTableEncryption,
-              Resources.Validation_ScopesErrorFormat($"({Resources.TextEncryption_DisplayName} or {Resources.DataTableEncryption_DisplayName})")));
+              ResourcesFn.Validation_ScopesErrorFormat($"({Resources.TextEncryption_DisplayName} or {Resources.DataTableEncryption_DisplayName})")));
         }
 
 

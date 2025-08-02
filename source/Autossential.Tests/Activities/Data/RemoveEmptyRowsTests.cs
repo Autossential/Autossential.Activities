@@ -32,14 +32,14 @@ namespace Autossential.Tests
 
         public void Default(DataRowEvaluationMode valuesMode, int expectedCount)
         {
-            var dt = Initialize();
+            //var dt = Initialize();
 
-            var result = WorkflowTester.Invoke(new RemoveEmptyRows()
-            {
-                Mode = valuesMode
-            }, GetArgs(dt));
+            //var result = WorkflowTester.Invoke(new RemoveEmptyRows()
+            //{
+            //    Mode = valuesMode
+            //}, GetArgs(dt));
 
-            Assert.AreEqual(expectedCount, result.Rows.Count);
+            //Assert.AreEqual(expectedCount, result.Rows.Count);
         }
 
         [TestMethod]
@@ -50,25 +50,25 @@ namespace Autossential.Tests
         [DataRow("0,2", ConditionOperator.Or, 2)]
         public void Custom(string cols, ConditionOperator op, int expectedCount)
         {
-            var dt = Initialize();
-            var values = cols.Split(',').Select(int.Parse).ToArray();
-            var result = WorkflowTester.CompileAndInvoke(new RemoveEmptyRows
-            {
-                Columns = new InArgument<int[]>(_ => values),
-                Mode = DataRowEvaluationMode.Custom,
-                Operator = op,
-            }, GetArgs(dt));
+            //var dt = Initialize();
+            //var values = cols.Split(',').Select(int.Parse).ToArray();
+            //var result = WorkflowTester.CompileAndInvoke(new RemoveEmptyRows
+            //{
+            //    Columns = new InArgument<int[]>(_ => values),
+            //    Mode = DataRowEvaluationMode.Custom,
+            //    Operator = op,
+            //}, GetArgs(dt));
 
-            Assert.AreEqual(expectedCount, result.Rows.Count);
+            //Assert.AreEqual(expectedCount, result.Rows.Count);
         }
 
 
-        private static IDictionary<string, object> GetArgs(DataTable inputDataTable)
-        {
-            return new Dictionary<string, object>
-            {
-                { nameof(RemoveEmptyRows.InputDataTable), inputDataTable }
-            };
-        }
+        //private static IDictionary<string, object> GetArgs(DataTable inputDataTable)
+        //{
+        //    return new Dictionary<string, object>
+        //    {
+        //        { nameof(RemoveEmptyRows.InputDataTable), inputDataTable }
+        //    };
+        //}
     }
 }

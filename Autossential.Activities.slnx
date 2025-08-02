@@ -1,0 +1,21 @@
+<Solution>
+  <Folder Name="/Shared/">
+    <Project Path="shared/Autossential.Shared.Activities.Design/Autossential.Shared.Activities.Design.shproj" />
+    <Project Path="shared/Autossential.Shared.Activities/Autossential.Shared.Activities.shproj" />
+    <Project Path="shared/Autossential.Shared.Tests/Autossential.Shared.Tests.shproj" />
+    <Project Path="shared/Autossential.Shared/Autossential.Shared.shproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="source/Autossential.Activities.Design/Autossential.Activities.Design.csproj" />
+  <Project Path="source/Autossential.Activities.Packaging/Autossential.Activities.Packaging.csproj" />
+  <Project Path="source/Autossential.Activities/Autossential.Activities.csproj" />
+  <Project Path="source/Autossential.Core/Autossential.Core.csproj" />
+  <Project Path="source/Autossential.Tests/Autossential.Tests.csproj" />
+</Solution>

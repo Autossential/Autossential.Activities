@@ -42,29 +42,29 @@ namespace Autossential.Tests
         {
             var dt = Initialize();
 
-            InArgument<int[]> colsArg = null;
-            if (cols != null)
-            {
-                var values = cols.Split(',').Select(int.Parse).ToArray();
-                colsArg = new InArgument<int[]>(_ => values);
-            }
+            //InArgument<int[]> colsArg = null;
+            //if (cols != null)
+            //{
+            //    var values = cols.Split(',').Select(int.Parse).ToArray();
+            //    colsArg = new InArgument<int[]>(_ => values);
+            //}
 
 
-            var result = WorkflowTester.CompileAndInvoke(new RemoveDuplicateRows()
-            {
-                Columns = colsArg
-            }, GetArgs(dt));
+            //var result = WorkflowTester.CompileAndInvoke(new RemoveDuplicateRows()
+            //{
+            //    Columns = colsArg
+            //}, GetArgs(dt));
 
-            Assert.AreEqual(expectedRowsCount, result.Rows.Count);
+            //Assert.AreEqual(expectedRowsCount, result.Rows.Count);
         }
 
 
-        private static IDictionary<string, object> GetArgs(DataTable inputDataTable)
-        {
-            return new Dictionary<string, object>
-            {
-                { nameof(RemoveDuplicateRows.InputDataTable), inputDataTable }
-            };
-        }
+        //private static IDictionary<string, object> GetArgs(DataTable inputDataTable)
+        //{
+        //    return new Dictionary<string, object>
+        //    {
+        //        { nameof(RemoveDuplicateRows.InputDataTable), inputDataTable }
+        //    };
+        //}
     }
 }

@@ -14,7 +14,7 @@ namespace Autossential.Activities
         {
             Constraints.Add(
                 ActivityConstraints.CreateConstraint<Exit>(activity => activity is Container || activity is Iterate || activity is TimeLoop,
-                Resources.Validation_ScopesErrorFormat($"({nameof(Container)}, {nameof(Iterate)} or {nameof(TimeLoop)})")));
+                ResourcesFn.Validation_ScopesErrorFormat($"({nameof(Container)}, {nameof(Iterate)} or {nameof(TimeLoop)})")));
         }
 
         protected override void Execute(NativeActivityContext context)

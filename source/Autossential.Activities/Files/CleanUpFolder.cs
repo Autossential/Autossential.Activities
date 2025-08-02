@@ -39,7 +39,7 @@ namespace Autossential.Activities
                 return;
             }
 
-            metadata.AddValidationError(Resources.Validation_TypeErrorFormat("string or collection of strings", nameof(SearchPattern)));
+            metadata.AddValidationError(ResourcesFn.Validation_TypeErrorFormat("string or collection of strings", nameof(SearchPattern)));
         }
 
         protected async override Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token)

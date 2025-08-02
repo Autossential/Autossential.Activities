@@ -1,8 +1,12 @@
 ﻿using Autossential.Activities;
 using Autossential.Shared.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Activities;
 using System.Collections.Generic;
+using System.Windows.Input;
+using UiPath.Workflow.Debugger;
 
 namespace Autossential.Tests
 {
@@ -19,10 +23,24 @@ namespace Autossential.Tests
 
         private void AddItem(string key, int value, bool updateIfExists)
         {
-            WorkflowTester.Invoke(new AddToDictionary<string, int>()
+            WorkflowTester.Invoke(new AddToDictionary()
             {
-                ReferenceDictionary = new System.Activities.InOutArgument<Dictionary<string, int>>(_ => _dict)
-            }, GetArgs(key, value, updateIfExists));
+                Dictionary = new System.Activities.InOutArgument<Dictionary<string, int>>(_ => _dict),
+                Key = new System.Activities.InArgument<string>(key),
+                Value = new System.Activities.InArgument<int>(value)
+            });
+        }
+
+        [TestMethod]
+        public void TestCacheMetadata()
+        {
+            var dict = new Dictionary<string, object>();
+            WorkflowTester.Invoke(new AddToDictionary()
+            {
+                Dictionary = new System.Activities.InOutArgument<Dictionary<string, object>>(_ => dict),
+                Key = new System.Activities.InArgument<string>("A"),
+                Value = new System.Activities.InArgument<int>(10)
+            });
         }
 
         [TestMethod]
@@ -57,16 +75,6 @@ namespace Autossential.Tests
             AddItem("A", 1, false);
             Assert.IsNotNull(_dict);
             Assert.AreEqual(1, _dict.Count);
-        }
-
-        private static Dictionary<string, object> GetArgs<TKey, TValue>(TKey key, TValue value, bool updateIfExists)
-        {
-            return new Dictionary<string, object>
-            {
-                { nameof(AddToDictionary<TKey,TValue>.Key), key },
-                { nameof(AddToDictionary<TKey,TValue>.Value), value },
-                { nameof(AddToDictionary<TKey,TValue>.UpdateIfExists), updateIfExists }
-            };
         }
     }
 }

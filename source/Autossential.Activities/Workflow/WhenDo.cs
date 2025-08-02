@@ -55,7 +55,7 @@ namespace Autossential.Activities
         {
             base.CacheMetadata(metadata);
             if (Condition == null)
-                metadata.AddValidationError(Resources.Validation_ValueErrorFormat(nameof(Condition)));
+                metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(Condition)));
         }
 
         protected override void Execute(NativeActivityContext context)

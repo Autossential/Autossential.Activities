@@ -1,0 +1,419 @@
+{
+  "resourceManagerName": "Autossential.Activities.Properties.Resources",
+  "activities": [
+        {
+      "fullName": "Autossential.Activities.AddRangeToCollection",
+      "shortName": "AddRangeToCollection",
+      "categoryKey": "Autossential.Data",
+      "iconKey": "AddRangeToCollection.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Data.AddRangeToCollectionViewModel",
+      "displayNameKey": "AddRangeToCollection_DisplayName",
+      "descriptionKey": "AddRangeToCollection_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.AddToDictionary",
+      "shortName": "AddToDictionary",
+      "categoryKey": "Autossential.Data",
+      "iconKey": "AddToDictionary.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Data.AddToDictionaryViewModel",
+      "displayNameKey": "AddToDictionary_DisplayName",
+      "descriptionKey": "AddToDictionary_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Aggregate",
+      "shortName": "Aggregate",
+      "categoryKey": "Autossential.Data",
+      "iconKey": "Aggregate.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Data.AggregateViewModel",
+      "displayNameKey": "Aggregate_DisplayName",
+      "descriptionKey": "Aggregate_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.DataRowToDictionary",
+      "shortName": "DataRowToDictionary",
+      "categoryKey": "Autossential.Data",
+      "iconKey": "DataRowToDictionary.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Data.DataRowToDictionaryViewModel",
+      "displayNameKey": "DataRowToDictionary_DisplayName",
+      "descriptionKey": "DataRowToDictionary_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.DataTableToText",
+      "shortName": "DataTableToText",
+      "categoryKey": "Autossential.Data",
+      "iconKey": "DataTableToText.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Data.DataTableToTextViewModel",
+      "displayNameKey": "DataTableToText_DisplayName",
+      "descriptionKey": "DataTableToText_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.DictionaryToDataTable",
+      "shortName": "DictionaryToDataTable",
+      "categoryKey": "Autossential.Data",
+      "iconKey": "DictionaryToDataTable.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Data.DictionaryToDataTableViewModel",
+      "displayNameKey": "DictionaryToDataTable_DisplayName",
+      "descriptionKey": "DictionaryToDataTable_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.ExtractDataColumnValues`1",
+      "shortName": "ExtractDataColumnValues",
+      "categoryKey": "Autossential.Data",
+      "iconKey": "ExtractDataColumnValues.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Data.ExtractDataColumnValuesViewModel`1",
+      "displayNameKey": "ExtractDataColumnValues_DisplayName",
+      "descriptionKey": "ExtractDataColumnValues_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.FillDataColumn",
+      "shortName": "FillDataColumn",
+      "categoryKey": "Autossential.Data",
+      "iconKey": "FillDataColumn.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Data.FillDataColumnViewModel",
+      "displayNameKey": "FillDataColumn_DisplayName",
+      "descriptionKey": "FillDataColumn_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.PromoteHeaders",
+      "shortName": "PromoteHeaders",
+      "categoryKey": "Autossential.Data",
+      "iconKey": "PromoteHeaders.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Data.PromoteHeadersViewModel",
+      "displayNameKey": "PromoteHeaders_DisplayName",
+      "descriptionKey": "PromoteHeaders_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.RemoveDataColumns",
+      "shortName": "RemoveDataColumns",
+      "categoryKey": "Autossential.Data",
+      "iconKey": "RemoveDataColumns.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Data.RemoveDataColumnsViewModel",
+      "displayNameKey": "RemoveDataColumns_DisplayName",
+      "descriptionKey": "RemoveDataColumns_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.RemoveDuplicateRows",
+      "shortName": "RemoveDuplicateRows",
+      "categoryKey": "Autossential.Data",
+      "iconKey": "RemoveDuplicateRows.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Data.RemoveDuplicateRowsViewModel",
+      "displayNameKey": "RemoveDuplicateRows_DisplayName",
+      "descriptionKey": "RemoveDuplicateRows_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.RemoveEmptyRows",
+      "shortName": "RemoveEmptyRows",
+      "categoryKey": "Autossential.Data",
+      "iconKey": "RemoveEmptyRows.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Data.RemoveEmptyRowsViewModel",
+      "displayNameKey": "RemoveEmptyRows_DisplayName",
+      "descriptionKey": "RemoveEmptyRows_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.RemoveFromDictionary",
+      "shortName": "RemoveFromDictionary",
+      "categoryKey": "Autossential.Data",
+      "iconKey": "RemoveFromDictionary.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Data.RemoveFromDictionaryViewModel",
+      "displayNameKey": "RemoveFromDictionary_DisplayName",
+      "descriptionKey": "RemoveFromDictionary_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.TransposeData",
+      "shortName": "TransposeData",
+      "categoryKey": "Autossential.Data",
+      "iconKey": "TransposeData.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Data.TransposeDataViewModel",
+      "displayNameKey": "TransposeData_DisplayName",
+      "descriptionKey": "TransposeData_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.CleanUpFolder",
+      "shortName": "CleanUpFolder",
+      "categoryKey": "Autossential.Files",
+      "iconKey": "CleanUpFolder.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Files.CleanUpFolderViewModel",
+      "displayNameKey": "CleanUpFolder_DisplayName",
+      "descriptionKey": "CleanUpFolder_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.EnumerateFiles",
+      "shortName": "EnumerateFiles",
+      "categoryKey": "Autossential.Files",
+      "iconKey": "EnumerateFiles.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Files.EnumerateFilesViewModel",
+      "displayNameKey": "EnumerateFiles_DisplayName",
+      "descriptionKey": "EnumerateFiles_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Unzip",
+      "shortName": "Unzip",
+      "categoryKey": "Autossential.Files",
+      "iconKey": "Unzip.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Files.UnzipViewModel",
+      "displayNameKey": "Unzip_DisplayName",
+      "descriptionKey": "Unzip_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.WaitDynamicFile",
+      "shortName": "WaitDynamicFile",
+      "categoryKey": "Autossential.Files",
+      "iconKey": "WaitDynamicFile.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Files.WaitDynamicFileViewModel",
+      "displayNameKey": "WaitDynamicFile_DisplayName",
+      "descriptionKey": "WaitDynamicFile_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.WaitFile",
+      "shortName": "WaitFile",
+      "categoryKey": "Autossential.Files",
+      "iconKey": "WaitFile.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Files.WaitFileViewModel",
+      "displayNameKey": "WaitFile_DisplayName",
+      "descriptionKey": "WaitFile_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Zip",
+      "shortName": "Zip",
+      "categoryKey": "Autossential.Files",
+      "iconKey": "Zip.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Files.ZipViewModel",
+      "displayNameKey": "Zip_DisplayName",
+      "descriptionKey": "Zip_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.ZipEntriesCount",
+      "shortName": "ZipEntriesCount",
+      "categoryKey": "Autossential.Files",
+      "iconKey": "ZipEntriesCount.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Files.ZipEntriesCountViewModel",
+      "displayNameKey": "ZipEntriesCount_DisplayName",
+      "descriptionKey": "ZipEntriesCount_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.MapDrive",
+      "shortName": "MapDrive",
+      "categoryKey": "Autossential.Misc",
+      "iconKey": "MapDrive.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Misc.MapDriveViewModel",
+      "displayNameKey": "MapDrive_DisplayName",
+      "descriptionKey": "MapDrive_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Stopwatch",
+      "shortName": "Stopwatch",
+      "categoryKey": "Autossential.Misc",
+      "iconKey": "Stopwatch.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Misc.StopwatchViewModel",
+      "displayNameKey": "Stopwatch_DisplayName",
+      "descriptionKey": "Stopwatch_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.TerminateProcess",
+      "shortName": "TerminateProcess",
+      "categoryKey": "Autossential.Misc",
+      "iconKey": "TerminateProcess.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Misc.TerminateProcessViewModel",
+      "displayNameKey": "TerminateProcess_DisplayName",
+      "descriptionKey": "TerminateProcess_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.UnmapDrive",
+      "shortName": "UnmapDrive",
+      "categoryKey": "Autossential.Misc",
+      "iconKey": "UnmapDrive.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Misc.UnmapDriveViewModel",
+      "displayNameKey": "UnmapDrive_DisplayName",
+      "descriptionKey": "UnmapDrive_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.CultureScope",
+      "shortName": "CultureScope",
+      "categoryKey": "Autossential.Programming",
+      "iconKey": "CultureScope.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Programming.CultureScopeViewModel",
+      "displayNameKey": "CultureScope_DisplayName",
+      "descriptionKey": "CultureScope_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Decrement",
+      "shortName": "Decrement",
+      "categoryKey": "Autossential.Programming",
+      "iconKey": "Decrement.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Programming.DecrementViewModel",
+      "displayNameKey": "Decrement_DisplayName",
+      "descriptionKey": "Decrement_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Increment",
+      "shortName": "Increment",
+      "categoryKey": "Autossential.Programming",
+      "iconKey": "Increment.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Programming.IncrementViewModel",
+      "displayNameKey": "Increment_DisplayName",
+      "descriptionKey": "Increment_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.IsTrue",
+      "shortName": "IsTrue",
+      "categoryKey": "Autossential.Programming",
+      "iconKey": "IsTrue.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Programming.IsTrueViewModel",
+      "displayNameKey": "IsTrue_DisplayName",
+      "descriptionKey": "IsTrue_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.RandomString",
+      "shortName": "RandomString",
+      "categoryKey": "Autossential.Programming",
+      "iconKey": "RandomString.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Programming.RandomStringViewModel",
+      "displayNameKey": "RandomString_DisplayName",
+      "descriptionKey": "RandomString_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.ReplaceTokens",
+      "shortName": "ReplaceTokens",
+      "categoryKey": "Autossential.Programming",
+      "iconKey": "ReplaceTokens.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Programming.ReplaceTokensViewModel",
+      "displayNameKey": "ReplaceTokens_DisplayName",
+      "descriptionKey": "ReplaceTokens_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.DataTableEncryption",
+      "shortName": "DataTableEncryption",
+      "categoryKey": "Autossential.Security",
+      "iconKey": "DataTableEncryption.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Security.DataTableEncryptionViewModel",
+      "displayNameKey": "DataTableEncryption_DisplayName",
+      "descriptionKey": "DataTableEncryption_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.TextEncryption",
+      "shortName": "TextEncryption",
+      "categoryKey": "Autossential.Security",
+      "iconKey": "TextEncryption.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Security.TextEncryptionViewModel",
+      "displayNameKey": "TextEncryption_DisplayName",
+      "descriptionKey": "TextEncryption_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.CheckPoint",
+      "shortName": "CheckPoint",
+      "categoryKey": "Autossential.Workflow",
+      "iconKey": "CheckPoint.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Workflow.CheckPointViewModel",
+      "displayNameKey": "CheckPoint_DisplayName",
+      "descriptionKey": "CheckPoint_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Container",
+      "shortName": "Container",
+      "categoryKey": "Autossential.Workflow",
+      "iconKey": "Container.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Workflow.ContainerViewModel",
+      "displayNameKey": "Container_DisplayName",
+      "descriptionKey": "Container_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Exit",
+      "shortName": "Exit",
+      "categoryKey": "Autossential.Workflow",
+      "iconKey": "Exit.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Workflow.ExitViewModel",
+      "displayNameKey": "Exit_DisplayName",
+      "descriptionKey": "Exit_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Iterate",
+      "shortName": "Iterate",
+      "categoryKey": "Autossential.Workflow",
+      "iconKey": "Iterate.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Workflow.IterateViewModel",
+      "displayNameKey": "Iterate_DisplayName",
+      "descriptionKey": "Iterate_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Next",
+      "shortName": "Next",
+      "categoryKey": "Autossential.Workflow",
+      "iconKey": "Next.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Workflow.NextViewModel",
+      "displayNameKey": "Next_DisplayName",
+      "descriptionKey": "Next_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.TimeLoop",
+      "shortName": "TimeLoop",
+      "categoryKey": "Autossential.Workflow",
+      "iconKey": "TimeLoop.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Workflow.TimeLoopViewModel",
+      "displayNameKey": "TimeLoop_DisplayName",
+      "descriptionKey": "TimeLoop_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.WhenDo",
+      "shortName": "WhenDo",
+      "categoryKey": "Autossential.Workflow",
+      "iconKey": "WhenDo.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Workflow.WhenDoViewModel",
+      "displayNameKey": "WhenDo_DisplayName",
+      "descriptionKey": "WhenDo_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Security.Algorithms.AesAlgorithmEncryption",
+      "shortName": "AesAlgorithmEncryption",
+      "categoryKey": "Autossential.Security",
+      "iconKey": "AesAlgorithmEncryption.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Security.AesAlgorithmEncryptionViewModel",
+      "displayNameKey": "AesAlgorithmEncryption_DisplayName",
+      "descriptionKey": "AesAlgorithmEncryption_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Security.Algorithms.AesGcmAlgorithmEncryption",
+      "shortName": "AesGcmAlgorithmEncryption",
+      "categoryKey": "Autossential.Security",
+      "iconKey": "AesGcmAlgorithmEncryption.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Security.AesGcmAlgorithmEncryptionViewModel",
+      "displayNameKey": "AesGcmAlgorithmEncryption_DisplayName",
+      "descriptionKey": "AesGcmAlgorithmEncryption_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Security.Algorithms.DESAlgorithmEncryption",
+      "shortName": "DESAlgorithmEncryption",
+      "categoryKey": "Autossential.Security",
+      "iconKey": "DESAlgorithmEncryption.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Security.DESAlgorithmEncryptionViewModel",
+      "displayNameKey": "DESAlgorithmEncryption_DisplayName",
+      "descriptionKey": "DESAlgorithmEncryption_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Security.Algorithms.RC2AlgorithmEncryption",
+      "shortName": "RC2AlgorithmEncryption",
+      "categoryKey": "Autossential.Security",
+      "iconKey": "RC2AlgorithmEncryption.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Security.RC2AlgorithmEncryptionViewModel",
+      "displayNameKey": "RC2AlgorithmEncryption_DisplayName",
+      "descriptionKey": "RC2AlgorithmEncryption_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Security.Algorithms.RijndaelAlgorithmEncryption",
+      "shortName": "RijndaelAlgorithmEncryption",
+      "categoryKey": "Autossential.Security",
+      "iconKey": "RijndaelAlgorithmEncryption.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Security.RijndaelAlgorithmEncryptionViewModel",
+      "displayNameKey": "RijndaelAlgorithmEncryption_DisplayName",
+      "descriptionKey": "RijndaelAlgorithmEncryption_Description"
+    },
+    {
+      "fullName": "Autossential.Activities.Security.Algorithms.TripleDESAlgorithmEncryption",
+      "shortName": "TripleDESAlgorithmEncryption",
+      "categoryKey": "Autossential.Security",
+      "iconKey": "TripleDESAlgorithmEncryption.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.Security.TripleDESAlgorithmEncryptionViewModel",
+      "displayNameKey": "TripleDESAlgorithmEncryption_DisplayName",
+      "descriptionKey": "TripleDESAlgorithmEncryption_Description"
+    }
+  ]
+}

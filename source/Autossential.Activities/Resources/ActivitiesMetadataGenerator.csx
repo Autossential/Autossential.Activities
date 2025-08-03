@@ -1,7 +1,7 @@
-#r "..\bin\Debug\net6.0-windows\Autossential.Activities.dll"
-#r "..\..\Autossential.Core\bin\Debug\net6.0\Autossential.Core.dll"
-#r "..\..\..\..\..\..\.nuget\packages\system.activities\5.0.0-20211103-03\lib\net5.0-windows7.0\System.Activities.dll"
-#r "..\..\..\..\..\..\.nuget\packages\system.activities.viewmodels\1.0.0-20240905.3\lib\net6.0-windows7.0\System.Activities.ViewModels.dll"
+#r "D:\Users\alexa\source\Autossential_ORG\Autossential.Activities\source\Autossential.Activities\bin\Debug\net6.0-windows\Autossential.Activities.dll"
+#r "D:\Users\alexa\source\Autossential_ORG\Autossential.Activities\source\Autossential.Core\bin\Debug\net6.0\Autossential.Core.dll"
+#r "D:\Users\alexa\.nuget\packages\system.activities\5.0.0-20210730-02\lib\net5.0-windows7.0\System.Activities.dll"
+#r "D:\Users\alexa\.nuget\packages\system.activities.viewmodels\1.0.0-20250625.2\lib\net6.0-windows7.0\System.Activities.ViewModels.dll"
 
 using Autossential.Activities;
 using System;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Reflection;
 using System.Activities;
 
-//System.Diagnostics.Debugger.Launch();
+System.Diagnostics.Debugger.Launch();
 
 using (var sw = new StreamWriter("ActivitiesMetadata.json"))
 {
@@ -58,7 +58,8 @@ string BuildSchema()
         if (fileLocation == null)
             return "";
 
-        var category = fileLocation.Split("\\")[1];
+        var parts = fileLocation.Trim('.', '\\').Split("\\");
+        var category = string.Join(".", parts[..^1]);
         return $$"""
             {
               "fullName": "{{type.FullName}}",

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Autossential.Activities.ViewModels.Programming
 {
-    public class RandomStringViewModel : BaseViewModel
+    internal class RandomStringViewModel : BaseViewModel
     {
         public RandomStringViewModel(IDesignServices services) : base(services)
         {

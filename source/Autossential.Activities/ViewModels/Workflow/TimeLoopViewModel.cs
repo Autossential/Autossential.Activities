@@ -4,7 +4,7 @@ using System.Activities.DesignViewModels;
 
 namespace Autossential.Activities.ViewModels.Workflow
 {
-    public class TimeLoopViewModel : BaseViewModel
+    internal class TimeLoopViewModel : BaseViewModel
     {
         public TimeLoopViewModel(IDesignServices services) : base(services) { }
 

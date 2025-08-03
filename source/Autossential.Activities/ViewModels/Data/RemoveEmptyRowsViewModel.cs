@@ -5,7 +5,7 @@ using System.Data;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class RemoveEmptyRowsViewModel : BaseViewModel
+    internal class RemoveEmptyRowsViewModel : BaseViewModel
     {
         public RemoveEmptyRowsViewModel(IDesignServices services) : base(services)
         {

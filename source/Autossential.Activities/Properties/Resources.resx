@@ -174,7 +174,7 @@
     <comment>property description</comment>
   </data>
   <data name="Aggregate_InputDataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>Data Table</value>
     <comment>property name</comment>
   </data>
   <data name="Aggregate_Result_Description" xml:space="preserve">
@@ -222,7 +222,7 @@
     <comment>property description</comment>
   </data>
   <data name="CleanUpFolder_DeleteEmptyFolders_DisplayName" xml:space="preserve">
-    <value>DeleteEmptyFolders</value>
+    <value>Delete Empty Folders</value>
     <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_Description" xml:space="preserve">
@@ -238,7 +238,7 @@
     <comment>property description</comment>
   </data>
   <data name="CleanUpFolder_Folder_DisplayName" xml:space="preserve">
-    <value>FolderPath</value>
+    <value>Folder Path</value>
     <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_LastWriteTime_Description" xml:space="preserve">
@@ -246,7 +246,7 @@
     <comment>property description</comment>
   </data>
   <data name="CleanUpFolder_LastWriteTime_DisplayName" xml:space="preserve">
-    <value>LastWriteTime</value>
+    <value>Last Write Time</value>
     <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_Result_Description" xml:space="preserve">
@@ -262,11 +262,11 @@
     <comment>property description</comment>
   </data>
   <data name="CleanUpFolder_SearchOption_DisplayName" xml:space="preserve">
-    <value>SearchOption</value>
+    <value>Search Option</value>
     <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_SearchPattern_DisplayName" xml:space="preserve">
-    <value>SearchPattern</value>
+    <value>Search Pattern</value>
     <comment>property name</comment>
   </data>
   <data name="Common_Category" xml:space="preserve">
@@ -275,14 +275,14 @@
   </data>
   <data name="Common_ContinueOnError_Description" xml:space="preserve">
     <value>If set, continue executing the remaining activities even if the current activity has failed.</value>
-    <comment>property name</comment>
+    <comment>property description</comment>
   </data>
   <data name="Common_SearchPattern_Description" xml:space="preserve">
     <value>The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (*, ? and !) characters, but it doesn't support regular expressions. It supports a string or a collection of strings. Default value is all files (*.*). The wildcard (!) creates negative patterns, e.g: (!*.txt) means to match everything except (*.txt) files.</value>
-    <comment>property name</comment>
+    <comment>property description</comment>
   </data>
-  <data name="Common_Timeout_Description" xml:space="preserve">
-    <value>Specifies the amount of time in milliseconds to wait for the activity to run before an error is thrown. The default value is 30000 (30s).</value>
+  <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
+    <value>Specifies the amount of time in seconds to wait for the activity to run before an error is thrown. The default value is 30s.</value>
     <comment>property description</comment>
   </data>
   <data name="Container_Description" xml:space="preserve">
@@ -294,7 +294,7 @@
     <comment>property description</comment>
   </data>
   <data name="CultureScope_CultureName_DisplayName" xml:space="preserve">
-    <value>CultureName</value>
+    <value>Culture Name</value>
     <comment>property name</comment>
   </data>
   <data name="CultureScope_Description" xml:space="preserve">
@@ -318,7 +318,7 @@
     <comment>property description</comment>
   </data>
   <data name="DataRowToDictionary_InputDataRow_DisplayName" xml:space="preserve">
-    <value>DataRow</value>
+    <value>Data Row</value>
     <comment>property name</comment>
   </data>
   <data name="DataRowToDictionary_Result_Description" xml:space="preserve">
@@ -374,7 +374,7 @@
     <comment>property description</comment>
   </data>
   <data name="DataTableEncryption_ParallelProcessing_DisplayName" xml:space="preserve">
-    <value>ParallelProcessing</value>
+    <value>Parallel Processing</value>
     <comment>property name</comment>
   </data>
   <data name="DataTableEncryption_Result_Description" xml:space="preserve">
@@ -398,7 +398,7 @@
     <comment>property description</comment>
   </data>
   <data name="DataTableEncryption_TextEncoding_DisplayName" xml:space="preserve">
-    <value>TextEncoding</value>
+    <value>Text Encoding</value>
     <comment>property name</comment>
   </data>
   <data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
@@ -406,7 +406,7 @@
     <comment>property description</comment>
   </data>
   <data name="DataTableToText_DateTimeFormat_DisplayName" xml:space="preserve">
-    <value>DateTimeFormat</value>
+    <value>Date Time Format</value>
     <comment>property name</comment>
   </data>
   <data name="DataTableToText_Description" xml:space="preserve">
@@ -422,7 +422,7 @@
     <comment>property description</comment>
   </data>
   <data name="DataTableToText_InputDataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>Data Table</value>
     <comment>property name</comment>
   </data>
   <data name="DataTableToText_Result_Description" xml:space="preserve">
@@ -438,7 +438,7 @@
     <comment>property description</comment>
   </data>
   <data name="DataTableToText_TextFormat_DisplayName" xml:space="preserve">
-    <value>TextFormat</value>
+    <value>Text Format</value>
     <comment>property name</comment>
   </data>
   <data name="Decrement_Description" xml:space="preserve">
@@ -466,7 +466,7 @@
     <comment>property name</comment>
   </data>
   <data name="DESAlgorithmEncryption_DisplayName" xml:space="preserve">
-    <value>DES</value>
+    <value>DES (Legacy)</value>
     <comment>activity name</comment>
   </data>
   <data name="DictionaryToDataTable_Description" xml:space="preserve">
@@ -506,7 +506,7 @@
     <comment>property description</comment>
   </data>
   <data name="EnumerateFiles_DirectoryPath_DisplayName" xml:space="preserve">
-    <value>DirectoryPath</value>
+    <value>Directory Path</value>
     <comment>property name</comment>
   </data>
   <data name="EnumerateFiles_DisplayName" xml:space="preserve">
@@ -534,11 +534,11 @@
     <comment>property description</comment>
   </data>
   <data name="EnumerateFiles_SearchOption_DisplayName" xml:space="preserve">
-    <value>SearchOption</value>
+    <value>Search Option</value>
     <comment>property name</comment>
   </data>
   <data name="EnumerateFiles_SearchPattern_DisplayName" xml:space="preserve">
-    <value>SearchPattern</value>
+    <value>Search Pattern</value>
     <comment>property name</comment>
   </data>
   <data name="Exit_Condition_Description" xml:space="preserve">
@@ -566,7 +566,7 @@
     <comment>property description</comment>
   </data>
   <data name="ExtractDataColumnValues_DefaultValue_DisplayName" xml:space="preserve">
-    <value>DefaultValue</value>
+    <value>Default Value</value>
     <comment>property name</comment>
   </data>
   <data name="ExtractDataColumnValues_Description" xml:space="preserve">
@@ -590,7 +590,7 @@
     <comment>property description</comment>
   </data>
   <data name="ExtractDataColumnValues_InputDataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>Data Table</value>
     <comment>property name</comment>
   </data>
   <data name="ExtractDataColumnValues_Result_Description" xml:space="preserve">
@@ -630,7 +630,7 @@
     <comment>property description</comment>
   </data>
   <data name="ExtractDataColumnValues_TypeArgument_DisplayName" xml:space="preserve">
-    <value>TypeArgument</value>
+    <value>Type Argument</value>
     <comment>property name</comment>
   </data>
   <data name="ExtractDataColumnValues_Unique_Description" xml:space="preserve">
@@ -662,7 +662,7 @@
     <comment>property description</comment>
   </data>
   <data name="FillDataColumn_ReferenceDataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>Data Table</value>
     <comment>property name</comment>
   </data>
   <data name="FillDataColumn_Value_Description" xml:space="preserve">
@@ -730,7 +730,7 @@
     <comment>property description</comment>
   </data>
   <data name="IsTrue_Value_DisplayName" xml:space="preserve">
-    <value>Value</value>
+    <value>Value or Expression</value>
     <comment>property name</comment>
   </data>
   <data name="Iterate_Description" xml:space="preserve">
@@ -778,7 +778,7 @@
     <comment>property description</comment>
   </data>
   <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
-    <value>DriveLetter</value>
+    <value>Drive Letter</value>
     <comment>property name</comment>
   </data>
   <data name="MapDrive_Force_Description" xml:space="preserve">
@@ -794,7 +794,7 @@
     <comment>property description</comment>
   </data>
   <data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
-    <value>MappedDrive</value>
+    <value>Mapped Drive</value>
     <comment>property name</comment>
   </data>
   <data name="MapDrive_ResponseCode_Description" xml:space="preserve">
@@ -802,7 +802,7 @@
     <comment>property description</comment>
   </data>
   <data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
-    <value>ResponseCode</value>
+    <value>Response Code</value>
     <comment>property name</comment>
   </data>
   <data name="MapDrive_ResponseMessage_Description" xml:space="preserve">
@@ -810,7 +810,7 @@
     <comment>property description</comment>
   </data>
   <data name="MapDrive_ResponseMessage_DisplayName" xml:space="preserve">
-    <value>ResponseMessage</value>
+    <value>Response Message</value>
     <comment>property name</comment>
   </data>
   <data name="MapDrive_Result_Description" xml:space="preserve">
@@ -826,7 +826,7 @@
     <comment>property description</comment>
   </data>
   <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
-    <value>SharedDrivePath</value>
+    <value>Shared Drive Path</value>
     <comment>property name</comment>
   </data>
   <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
@@ -862,7 +862,7 @@
     <comment>property description</comment>
   </data>
   <data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
-    <value>AutoRename</value>
+    <value>Auto Rename</value>
     <comment>property name</comment>
   </data>
   <data name="PromoteHeaders_Description" xml:space="preserve">
@@ -878,7 +878,7 @@
     <comment>property description</comment>
   </data>
   <data name="PromoteHeaders_EmptyColumnName_DisplayName" xml:space="preserve">
-    <value>EmptyColumnName</value>
+    <value>Empty Column Name</value>
     <comment>property name</comment>
   </data>
   <data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
@@ -890,7 +890,7 @@
     <comment>property description</comment>
   </data>
   <data name="PromoteHeaders_InputDataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>Data Table</value>
     <comment>property name</comment>
   </data>
   <data name="PromoteHeaders_Result_Description" xml:space="preserve">
@@ -902,7 +902,7 @@
     <comment>property name</comment>
   </data>
   <data name="RC2AlgorithmEncryption_DisplayName" xml:space="preserve">
-    <value>RC2</value>
+    <value>RC2 (Legacy)</value>
     <comment>activity name</comment>
   </data>
   <data name="RemoveDataColumns_Columns_Description" xml:space="preserve">
@@ -926,7 +926,7 @@
     <comment>property description</comment>
   </data>
   <data name="RemoveDataColumns_ReferenceDataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>Data Table</value>
     <comment>property name</comment>
   </data>
   <data name="RemoveDuplicateRows_Columns_Description" xml:space="preserve">
@@ -950,7 +950,7 @@
     <comment>property description</comment>
   </data>
   <data name="RemoveDuplicateRows_InputDataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>Data Table</value>
     <comment>property name</comment>
   </data>
   <data name="RemoveDuplicateRows_Result_Description" xml:space="preserve">
@@ -974,7 +974,7 @@
     <comment>category</comment>
   </data>
   <data name="RemoveEmptyRows_CustomOptions_DisplayName" xml:space="preserve">
-    <value>CustomOptions</value>
+    <value>Custom Options</value>
     <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_Description" xml:space="preserve">
@@ -990,7 +990,7 @@
     <comment>property description</comment>
   </data>
   <data name="RemoveEmptyRows_InputDataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>Data Table</value>
     <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_Mode_Description" xml:space="preserve">
@@ -1030,7 +1030,7 @@
     <comment>property description</comment>
   </data>
   <data name="RepeatUntilFailure_IterationNumber_DisplayName" xml:space="preserve">
-    <value>IterationNumber</value>
+    <value>Iteration Number</value>
     <comment>property name</comment>
   </data>
   <data name="RepeatUntilFailure_LoopInterval_Description" xml:space="preserve">
@@ -1038,7 +1038,7 @@
     <comment>property description</comment>
   </data>
   <data name="RepeatUntilFailure_LoopInterval_DisplayName" xml:space="preserve">
-    <value>LoopInterval</value>
+    <value>Loop Interval</value>
     <comment>property name</comment>
   </data>
   <data name="RepeatUntilFailure_MaximumRepetitions_Description" xml:space="preserve">
@@ -1046,7 +1046,7 @@
     <comment>property description</comment>
   </data>
   <data name="RepeatUntilFailure_MaximumRepetitions_DisplayName" xml:space="preserve">
-    <value>MaximumRepetitions</value>
+    <value>Maximum Repetitions</value>
     <comment>property name</comment>
   </data>
   <data name="RepeatUntilFailure_OutputException_Description" xml:space="preserve">
@@ -1054,7 +1054,7 @@
     <comment>property description</comment>
   </data>
   <data name="RepeatUntilFailure_OutputException_DisplayName" xml:space="preserve">
-    <value>OutputException</value>
+    <value>Output Exception</value>
     <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Content_Description" xml:space="preserve">
@@ -1106,7 +1106,7 @@
     <comment>property name</comment>
   </data>
   <data name="RijndaelAlgorithmEncryption_DisplayName" xml:space="preserve">
-    <value>Rijndael</value>
+    <value>Rijndael (Legacy)</value>
     <comment>activity name</comment>
   </data>
   <data name="Stopwatch_Description" xml:space="preserve">
@@ -1150,7 +1150,7 @@
     <comment>property description</comment>
   </data>
   <data name="TerminateProcess_ProcessName_DisplayName" xml:space="preserve">
-    <value>ProcessName</value>
+    <value>Process Name</value>
     <comment>property name</comment>
   </data>
   <data name="TextEncryption_Action_Description" xml:space="preserve">
@@ -1198,7 +1198,7 @@
     <comment>property description</comment>
   </data>
   <data name="TextEncryption_TextEncoding_DisplayName" xml:space="preserve">
-    <value>TextEncoding</value>
+    <value>Text Encoding</value>
     <comment>property name</comment>
   </data>
   <data name="TimeLoop_Description" xml:space="preserve">
@@ -1214,7 +1214,7 @@
     <comment>property description</comment>
   </data>
   <data name="TimeLoop_ExitOnException_DisplayName" xml:space="preserve">
-    <value>ExitOnException</value>
+    <value>Exit On Exception</value>
     <comment>property name</comment>
   </data>
   <data name="TimeLoop_Index_Description" xml:space="preserve">
@@ -1230,7 +1230,7 @@
     <comment>property description</comment>
   </data>
   <data name="TimeLoop_IsTimeout_DisplayName" xml:space="preserve">
-    <value>IsTimeout</value>
+    <value>Is Timeout</value>
     <comment>property name</comment>
   </data>
   <data name="TimeLoop_LoopInterval_Description" xml:space="preserve">
@@ -1238,7 +1238,7 @@
     <comment>property description</comment>
   </data>
   <data name="TimeLoop_LoopInterval_DisplayName" xml:space="preserve">
-    <value>LoopInterval</value>
+    <value>Loop Interval</value>
     <comment>property name</comment>
   </data>
   <data name="TimeLoop_OutputException_Description" xml:space="preserve">
@@ -1254,7 +1254,7 @@
     <comment>property description</comment>
   </data>
   <data name="TimeLoop_PropagateException_DisplayName" xml:space="preserve">
-    <value>PropagateException</value>
+    <value>Propagate Exception</value>
     <comment>property name</comment>
   </data>
   <data name="TimeLoop_Timer_Description" xml:space="preserve">
@@ -1278,7 +1278,7 @@
     <comment>property description</comment>
   </data>
   <data name="TransposeData_InputDataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>Data Table</value>
     <comment>property name</comment>
   </data>
   <data name="TransposeData_Result_Description" xml:space="preserve">
@@ -1290,7 +1290,7 @@
     <comment>property name</comment>
   </data>
   <data name="TripleDESAlgorithmEncryption_DisplayName" xml:space="preserve">
-    <value>Triple DES</value>
+    <value>Triple DES (Legacy)</value>
     <comment>activity name</comment>
   </data>
   <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
@@ -1298,7 +1298,7 @@
     <comment>property description</comment>
   </data>
   <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
-    <value>DriveLetter</value>
+    <value>Drive Letter</value>
     <comment>property name</comment>
   </data>
   <data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
@@ -1306,7 +1306,7 @@
     <comment>property description</comment>
   </data>
   <data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
-    <value>ResponseCode</value>
+    <value>Response Code</value>
     <comment>property name</comment>
   </data>
   <data name="UnmapDrive_ResponseMessage_Description" xml:space="preserve">
@@ -1314,7 +1314,7 @@
     <comment>property description</comment>
   </data>
   <data name="UnmapDrive_ResponseMessage_DisplayName" xml:space="preserve">
-    <value>ResponseMessage</value>
+    <value>Response Message</value>
     <comment>property name</comment>
   </data>
   <data name="UnmapDrive_Result_Description" xml:space="preserve">
@@ -1342,7 +1342,7 @@
     <comment>property description</comment>
   </data>
   <data name="Unzip_ExtractTo_DisplayName" xml:space="preserve">
-    <value>ExtractTo</value>
+    <value>Extract To</value>
     <comment>property name</comment>
   </data>
   <data name="Unzip_Overwrite_Description" xml:space="preserve">
@@ -1358,7 +1358,7 @@
     <comment>property description</comment>
   </data>
   <data name="Unzip_ZipFilePath_DisplayName" xml:space="preserve">
-    <value>ZipFilePath</value>
+    <value>Zip File Path</value>
     <comment>property name</comment>
   </data>
   <data name="Validation_ScopeError" xml:space="preserve">
@@ -1386,7 +1386,7 @@
     <comment>property description</comment>
   </data>
   <data name="WaitDynamicFile_DirectoryPath_DisplayName" xml:space="preserve">
-    <value>FolderPath</value>
+    <value>Folder Path</value>
     <comment>property name</comment>
   </data>
   <data name="WaitDynamicFile_DisplayName" xml:space="preserve">
@@ -1398,14 +1398,14 @@
     <comment>property description</comment>
   </data>
   <data name="WaitDynamicFile_FromDateTime_DisplayName" xml:space="preserve">
-    <value>FromDateTime</value>
+    <value>From Date Time</value>
     <comment>property name</comment>
   </data>
-  <data name="WaitDynamicFile_Interval_Description" xml:space="preserve">
-    <value>Specifies the amount of time (in milliseconds) for the file re-check. Any value less than 50 will be clamped to 50. Make sure to keep this value lesser than Timeout value.</value>
+  <data name="Common_IntervalSeconds_Description" xml:space="preserve">
+    <value>Specifies the amount of time in seconds for the file re-check. Any value less than 0.5 will be clamped to 0.5. Make sure to keep this value lesser than Timeout value.</value>
     <comment>property description</comment>
   </data>
-  <data name="WaitDynamicFile_Interval_DisplayName" xml:space="preserve">
+  <data name="Common_IntervalSeconds_DisplayName" xml:space="preserve">
     <value>Interval</value>
     <comment>property name</comment>
   </data>
@@ -1422,15 +1422,7 @@
     <comment>property description</comment>
   </data>
   <data name="WaitDynamicFile_SearchPattern_DisplayName" xml:space="preserve">
-    <value>SearchPattern</value>
-    <comment>property name</comment>
-  </data>
-  <data name="WaitDynamicFile_Timeout_Description" xml:space="preserve">
-    <value>The maximum time to wait (in milliseconds) the operation to complete.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="WaitDynamicFile_Timeout_DisplayName" xml:space="preserve">
-    <value>Timeout</value>
+    <value>Search Pattern</value>
     <comment>property name</comment>
   </data>
   <data name="WaitFile_Description" xml:space="preserve">
@@ -1453,14 +1445,6 @@
     <value>FilePath</value>
     <comment>property name</comment>
   </data>
-  <data name="WaitFile_Interval_Description" xml:space="preserve">
-    <value>Specifies the amount of time (in milliseconds) for the file re-check. Any value less than 50 will be clamped to 50. Make sure to keep this value lesser than Timeout value.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="WaitFile_Interval_DisplayName" xml:space="preserve">
-    <value>Interval</value>
-    <comment>property name</comment>
-  </data>
   <data name="WaitFile_Result_Description" xml:space="preserve">
     <value>The FileInfo object of the respective file when found.</value>
     <comment>property description</comment>
@@ -1469,20 +1453,12 @@
     <value>Result</value>
     <comment>property name</comment>
   </data>
-  <data name="WaitFile_Timeout_Description" xml:space="preserve">
-    <value>The maximum time to wait (in milliseconds) the operation to complete.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="WaitFile_Timeout_DisplayName" xml:space="preserve">
-    <value>Timeout</value>
-    <comment>property name</comment>
-  </data>
   <data name="WaitFile_WaitForExist_Description" xml:space="preserve">
     <value>Waits until the file exists.</value>
     <comment>property description</comment>
   </data>
   <data name="WaitFile_WaitForExist_DisplayName" xml:space="preserve">
-    <value>WaitForExist</value>
+    <value>Wait For Exist</value>
     <comment>property name</comment>
   </data>
   <data name="WhenDo_Description" xml:space="preserve">
@@ -1506,7 +1482,7 @@
     <comment>property description</comment>
   </data>
   <data name="WhenDo_WithElse_DisplayName" xml:space="preserve">
-    <value>WithElse</value>
+    <value>With Else</value>
     <comment>property name</comment>
   </data>
   <data name="ZipEntriesCount_Description" xml:space="preserve">
@@ -1522,7 +1498,7 @@
     <comment>property description</comment>
   </data>
   <data name="ZipEntriesCount_EntriesCount_DisplayName" xml:space="preserve">
-    <value>EntriesCount</value>
+    <value>Entries Count</value>
     <comment>property name</comment>
   </data>
   <data name="ZipEntriesCount_ErrorMsg_OutputMissing" xml:space="preserve">
@@ -1534,7 +1510,7 @@
     <comment>property description</comment>
   </data>
   <data name="ZipEntriesCount_FilesCount_DisplayName" xml:space="preserve">
-    <value>FilesCount</value>
+    <value>Files Count</value>
     <comment>property name</comment>
   </data>
   <data name="ZipEntriesCount_FoldersCount_Description" xml:space="preserve">
@@ -1542,7 +1518,7 @@
     <comment>property description</comment>
   </data>
   <data name="ZipEntriesCount_FoldersCount_DisplayName" xml:space="preserve">
-    <value>FoldersCount</value>
+    <value>Folders Count</value>
     <comment>property name</comment>
   </data>
   <data name="ZipEntriesCount_ZipFilePath_Description" xml:space="preserve">
@@ -1550,7 +1526,7 @@
     <comment>property description</comment>
   </data>
   <data name="ZipEntriesCount_ZipFilePath_DisplayName" xml:space="preserve">
-    <value>ZipFilePath</value>
+    <value>Zip File Path</value>
     <comment>property name</comment>
   </data>
   <data name="Zip_CompressionLevel_Description" xml:space="preserve">
@@ -1558,7 +1534,7 @@
     <comment>property description</comment>
   </data>
   <data name="Zip_CompressionLevel_DisplayName" xml:space="preserve">
-    <value>CompressionLevel</value>
+    <value>Compression Level</value>
     <comment>property name</comment>
   </data>
   <data name="Zip_Description" xml:space="preserve">
@@ -1570,7 +1546,7 @@
     <comment>property description</comment>
   </data>
   <data name="Zip_FilesCount_DisplayName" xml:space="preserve">
-    <value>FilesCount</value>
+    <value>Files Count</value>
     <comment>property name</comment>
   </data>
   <data name="Zip_ShortEntryNames_Description" xml:space="preserve">
@@ -1578,7 +1554,7 @@
     <comment>property description</comment>
   </data>
   <data name="Zip_ShortEntryNames_DisplayName" xml:space="preserve">
-    <value>ShortEntryNames</value>
+    <value>Short Entry Names</value>
     <comment>property name</comment>
   </data>
   <data name="Zip_TextEncoding_Description" xml:space="preserve">
@@ -1586,7 +1562,7 @@
     <comment>property description</comment>
   </data>
   <data name="Zip_TextEncoding_DisplayName" xml:space="preserve">
-    <value>TextEncoding</value>
+    <value>Text Encoding</value>
     <comment>property name</comment>
   </data>
   <data name="Zip_ToCompress_Description" xml:space="preserve">
@@ -1594,7 +1570,7 @@
     <comment>property description</comment>
   </data>
   <data name="Zip_ToCompress_DisplayName" xml:space="preserve">
-    <value>ToCompress</value>
+    <value>To Compress</value>
     <comment>property name</comment>
   </data>
   <data name="Zip_ZipFilePath_Description" xml:space="preserve">
@@ -1602,7 +1578,7 @@
     <comment>property description</comment>
   </data>
   <data name="Zip_ZipFilePath_DisplayName" xml:space="preserve">
-    <value>ZipFilePath</value>
+    <value>Zip File Path</value>
     <comment>property name</comment>
   </data>
   <data name="AddToDictionary_DisplayName" xml:space="preserve">
@@ -1713,7 +1689,7 @@
     <value>Aggregate</value>
     <comment>activity name</comment>
   </data>
-  <data name="Common_Timeout_DisplayName" xml:space="preserve">
+  <data name="Common_TimeoutSeconds_DisplayName" xml:space="preserve">
     <value>Timeout</value>
     <comment>property name</comment>
   </data>
@@ -1742,5 +1718,46 @@
   </data>
   <data name="Common_SearchPattern_DisplayName" xml:space="preserve">
     <value>Search Pattern</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Unzip_DisplayName" xml:space="preserve">
+    <value>Unzip</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Zip_DisplayName" xml:space="preserve">
+    <value>Zip</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Container_DisplayName" xml:space="preserve">
+    <value>Container</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Decrement_DisplayName" xml:space="preserve">
+    <value>Decrement</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Exit_DisplayName" xml:space="preserve">
+    <value>Exit</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Increment_DisplayName" xml:space="preserve">
+    <value>Increment</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Iterate_DisplayName" xml:space="preserve">
+    <value>Iterate</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Next_DisplayName" xml:space="preserve">
+    <value>Next</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Stopwatch_DisplayName" xml:space="preserve">
+    <value>Stopwatch</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="UnmapDrive_DisplayName" xml:space="preserve">
+    <value>Unmap Drive</value>
+    <comment>activity name</comment>
   </data>
 </root>

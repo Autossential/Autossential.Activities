@@ -6,9 +6,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Samples\output\**" />
-	  <EmbeddedResource Remove="Samples\output\**" />
-	  <None Remove="Samples\output\**" />
+	  <Compile Remove="Activities\**" />
+	  <Compile Remove="Samples\**" />
+	  <EmbeddedResource Remove="Activities\**" />
+	  <EmbeddedResource Remove="Samples\**" />
+	  <None Remove="Activities\**" />
+	  <None Remove="Samples\**" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -26,9 +26,6 @@ namespace Autossential.Core.Security.Algorithms
 
         public byte[] Decrypt(byte[] data, byte[] password)
         {
-#if NET461
-            throw new NotImplementedException("This feature is not implemented for .NET 461.");
-#else
             var saltBytes = new byte[SALT_SIZE];
             var IV = new byte[IV_SIZE];
             var tag = new byte[TAG_SIZE];
@@ -47,7 +44,6 @@ namespace Autossential.Core.Security.Algorithms
             decryptedBytes = new byte[encryptedData.Length];
             aes.Decrypt(IV, encryptedData, tag, decryptedBytes);
             return decryptedBytes;
-#endif
         }
 
         public void Dispose()
@@ -58,9 +54,6 @@ namespace Autossential.Core.Security.Algorithms
 
         public byte[] Encrypt(byte[] data, byte[] password)
         {
-#if NET461
-            throw new NotImplementedException("This feature is not implemented for .NET 461.");
-#else
             var saltBytes = new byte[SALT_SIZE];
             var tag = new byte[TAG_SIZE];
             var IV = new byte[IV_SIZE];
@@ -81,7 +74,6 @@ namespace Autossential.Core.Security.Algorithms
             Array.Copy(tag, 0, result, SALT_SIZE + IV_SIZE + encryptedBytes.Length, TAG_SIZE);
 
             return result;
-#endif
         }
     }
 }

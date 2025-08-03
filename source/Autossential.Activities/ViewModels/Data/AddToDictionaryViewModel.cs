@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class AddToDictionaryViewModel : BaseViewModel
+    internal class AddToDictionaryViewModel : BaseViewModel
     {
         public AddToDictionaryViewModel(IDesignServices services) : base(services)
         {

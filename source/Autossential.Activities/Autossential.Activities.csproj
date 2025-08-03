@@ -18,6 +18,8 @@
 	  <None Remove="Resources\ActivitiesMetadata.json" />
 	  <None Remove="Resources\Icons\AddRangeToCollection.svg" />
 	  <None Remove="Resources\Icons\AddToDictionary.svg" />
+	  <None Remove="Resources\Icons\AesAlgorithmEncryption.svg" />
+	  <None Remove="Resources\Icons\AesGcmAlgorithmEncryption.svg" />
 	  <None Remove="Resources\Icons\Aggregate.svg" />
 	  <None Remove="Resources\Icons\CheckPoint.svg" />
 	  <None Remove="Resources\Icons\CleanUpFolder.svg" />
@@ -25,7 +27,9 @@
 	  <None Remove="Resources\Icons\CryptoAlgorithm.svg" />
 	  <None Remove="Resources\Icons\CultureScope.svg" />
 	  <None Remove="Resources\Icons\DataRowToDictionary.svg" />
+	  <None Remove="Resources\Icons\DataTableEncryption.svg" />
 	  <None Remove="Resources\Icons\Decrement.svg" />
+	  <None Remove="Resources\Icons\DESAlgorithmEncryption.svg" />
 	  <None Remove="Resources\Icons\DictionaryToDataTable.svg" />
 	  <None Remove="Resources\Icons\Encryption.svg" />
 	  <None Remove="Resources\Icons\EnumerateFiles.svg" />
@@ -40,16 +44,20 @@
 	  <None Remove="Resources\Icons\Next.svg" />
 	  <None Remove="Resources\Icons\PromoteHeaders.svg" />
 	  <None Remove="Resources\Icons\RandomString.svg" />
+	  <None Remove="Resources\Icons\RC2AlgorithmEncryption.svg" />
 	  <None Remove="Resources\Icons\RemoveDataColumns.svg" />
 	  <None Remove="Resources\Icons\RemoveDuplicateRows.svg" />
 	  <None Remove="Resources\Icons\RemoveEmptyRows.svg" />
 	  <None Remove="Resources\Icons\RemoveFromDictionary.svg" />
 	  <None Remove="Resources\Icons\RepeatUntilFailure.svg" />
 	  <None Remove="Resources\Icons\ReplaceTokens.svg" />
+	  <None Remove="Resources\Icons\RijndaelAlgorithmEncryption.svg" />
 	  <None Remove="Resources\Icons\Stopwatch.svg" />
 	  <None Remove="Resources\Icons\TerminateProcess.svg" />
+	  <None Remove="Resources\Icons\TextEncryption.svg" />
 	  <None Remove="Resources\Icons\TimeLoop.svg" />
 	  <None Remove="Resources\Icons\TransposeData.svg" />
+	  <None Remove="Resources\Icons\TripleDESAlgorithmEncryption.svg" />
 	  <None Remove="Resources\Icons\UnmapDrive.svg" />
 	  <None Remove="Resources\Icons\Unzip.svg" />
 	  <None Remove="Resources\Icons\WaitDynamicFile.svg" />
@@ -63,6 +71,8 @@
 	  <EmbeddedResource Include="Resources\ActivitiesMetadata.json" />
 	  <EmbeddedResource Include="Resources\Icons\AddRangeToCollection.svg" />
 	  <EmbeddedResource Include="Resources\Icons\AddToDictionary.svg" />
+	  <EmbeddedResource Include="Resources\Icons\AesAlgorithmEncryption.svg" />
+	  <EmbeddedResource Include="Resources\Icons\AesGcmAlgorithmEncryption.svg" />
 	  <EmbeddedResource Include="Resources\Icons\Aggregate.svg" />
 	  <EmbeddedResource Include="Resources\Icons\CheckPoint.svg" />
 	  <EmbeddedResource Include="Resources\Icons\CleanUpFolder.svg" />
@@ -70,8 +80,10 @@
 	  <EmbeddedResource Include="Resources\Icons\CryptoAlgorithm.svg" />
 	  <EmbeddedResource Include="Resources\Icons\CultureScope.svg" />
 	  <EmbeddedResource Include="Resources\Icons\DataRowToDictionary.svg" />
+	  <EmbeddedResource Include="Resources\Icons\DataTableEncryption.svg" />
 	  <EmbeddedResource Include="Resources\Icons\DataTableToText.svg" />
 	  <EmbeddedResource Include="Resources\Icons\Decrement.svg" />
+	  <EmbeddedResource Include="Resources\Icons\DESAlgorithmEncryption.svg" />
 	  <EmbeddedResource Include="Resources\Icons\DictionaryToDataTable.svg" />
 	  <EmbeddedResource Include="Resources\Icons\Encryption.svg" />
 	  <EmbeddedResource Include="Resources\Icons\EnumerateFiles.svg" />
@@ -86,16 +98,20 @@
 	  <EmbeddedResource Include="Resources\Icons\Next.svg" />
 	  <EmbeddedResource Include="Resources\Icons\PromoteHeaders.svg" />
 	  <EmbeddedResource Include="Resources\Icons\RandomString.svg" />
+	  <EmbeddedResource Include="Resources\Icons\RC2AlgorithmEncryption.svg" />
 	  <EmbeddedResource Include="Resources\Icons\RemoveDataColumns.svg" />
 	  <EmbeddedResource Include="Resources\Icons\RemoveDuplicateRows.svg" />
 	  <EmbeddedResource Include="Resources\Icons\RemoveEmptyRows.svg" />
 	  <EmbeddedResource Include="Resources\Icons\RemoveFromDictionary.svg" />
 	  <EmbeddedResource Include="Resources\Icons\RepeatUntilFailure.svg" />
 	  <EmbeddedResource Include="Resources\Icons\ReplaceTokens.svg" />
+	  <EmbeddedResource Include="Resources\Icons\RijndaelAlgorithmEncryption.svg" />
 	  <EmbeddedResource Include="Resources\Icons\Stopwatch.svg" />
 	  <EmbeddedResource Include="Resources\Icons\TerminateProcess.svg" />
+	  <EmbeddedResource Include="Resources\Icons\TextEncryption.svg" />
 	  <EmbeddedResource Include="Resources\Icons\TimeLoop.svg" />
 	  <EmbeddedResource Include="Resources\Icons\TransposeData.svg" />
+	  <EmbeddedResource Include="Resources\Icons\TripleDESAlgorithmEncryption.svg" />
 	  <EmbeddedResource Include="Resources\Icons\UnmapDrive.svg" />
 	  <EmbeddedResource Include="Resources\Icons\Unzip.svg" />
 	  <EmbeddedResource Include="Resources\Icons\WaitDynamicFile.svg" />
@@ -122,7 +138,6 @@
 
 	<ItemGroup>
 	  <Folder Include="ViewModels\Misc\" />
-	  <Folder Include="ViewModels\Security\" />
 	  <Folder Include="ViewModels\Programming\" />
 	</ItemGroup>
 

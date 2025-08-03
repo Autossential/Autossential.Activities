@@ -3,7 +3,7 @@ using System.Activities.DesignViewModels;
 
 namespace Autossential.Activities.ViewModels.Workflow
 {
-    public class WhenDoViewModel : BaseViewModel
+    internal class WhenDoViewModel : BaseViewModel
     {
         public WhenDoViewModel(IDesignServices services) : base(services) { }
 

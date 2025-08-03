@@ -71,9 +71,9 @@ namespace Autossential.Shared.Activities.Base
 
         protected abstract Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token);
 
-        protected async Task<T> ExecuteWithTimeoutAsync<T>(AsyncCodeActivityContext context, CancellationToken token, Task<T> task, int timeout, Action<Action> timeoutHandler = null)
+        protected async Task<T> ExecuteWithTimeoutAsync<T>(AsyncCodeActivityContext context, CancellationToken token, Task<T> task, int millisecondsTimeout, Action<Action> timeoutHandler = null)
         {
-            if (await Task.WhenAny(task, Task.Delay(timeout, token)).ConfigureAwait(false) != task)
+            if (await Task.WhenAny(task, Task.Delay(millisecondsTimeout, token)).ConfigureAwait(false) != task)
             {
                 if (token.CanBeCanceled)
                     Cancel(context);

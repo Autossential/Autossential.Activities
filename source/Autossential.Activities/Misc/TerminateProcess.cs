@@ -13,12 +13,13 @@ namespace Autossential.Activities
 {
     public sealed class TerminateProcess : ContinuableAsyncTaskCodeActivity
     {
-        public InArgument<int> Timeout { get; set; }
+        public InArgument<double> TimeoutSeconds { get; set; }
         public InArgument ProcessName { get; set; }
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
             base.CacheMetadata(metadata);
+
             if (ProcessName == null)
             {
                 metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(ProcessName)));
@@ -37,10 +38,7 @@ namespace Autossential.Activities
 
         protected override async Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
-            var timeout = Timeout.Get(context);
-            if (Timeout.Expression is null)
-                timeout = 30000;
-
+            var timeout = TimeoutSeconds.Get(context) * 1000;
             var processNames = ProcessName.Get(context);
             if (processNames is string)
                 processNames = new string[] { processNames.ToString() };
@@ -50,7 +48,7 @@ namespace Autossential.Activities
             await Task.Run(() =>
             {
                 var timer = System.Diagnostics.Stopwatch.StartNew();
-                var tasks = ((IEnumerable<string>)processNames).Select(name => TerminateProcessByNameAsync(name, timer, timeout));
+                var tasks = ((IEnumerable<string>)processNames).Select(name => TerminateProcessByNameAsync(name, timer, (int)timeout));
 
                 Task.WhenAll(tasks).Wait(token); // Executes all tasks asynchronously and waits for completion
             }, token);

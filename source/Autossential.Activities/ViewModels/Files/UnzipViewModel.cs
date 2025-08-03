@@ -1,9 +1,10 @@
 using Autossential.Activities.Properties;
 using System.Activities.DesignViewModels;
+using System.Activities.ViewModels;
 
 namespace Autossential.Activities.ViewModels.Files
 {
-    public class UnzipViewModel : BaseViewModel
+    internal class UnzipViewModel : BaseViewModel
     {
         public UnzipViewModel(IDesignServices services) : base(services)
         {
@@ -41,6 +42,14 @@ namespace Autossential.Activities.ViewModels.Files
             Overwrite.Placeholder = Resources.Unzip_Overwrite_Description;
             Overwrite.Tooltip = Resources.Unzip_Overwrite_Description;
             Overwrite.OrderIndex = orderIndex++;
+
+            if (IsWidgetSupported(ViewModelWidgetType.Toggle))
+            {
+                Overwrite.Widget = new DefaultWidget
+                {
+                    Type = ViewModelWidgetType.Toggle
+                };
+            }
         }
     }
 }

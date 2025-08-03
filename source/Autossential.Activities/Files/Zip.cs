@@ -31,6 +31,7 @@ namespace Autossential.Activities
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
             base.CacheMetadata(metadata);
+
             if (ToCompress == null)
             {
                 metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(ToCompress)));

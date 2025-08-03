@@ -16,22 +16,23 @@ namespace Autossential.Activities
         [RequiredArgument]
         public InArgument<string> DirectoryPath { get; set; }
         public InArgument<string> SearchPattern { get; set; }
-        public InArgument<int> Timeout { get; set; } = 30000;
+        public InArgument<double> TimeoutSeconds { get; set; } = 30;
         public InArgument<DateTime?> FromDateTime { get; set; }
-        public InArgument<int> Interval { get; set; } = 500;
+        public InArgument<double> IntervalSeconds { get; set; } = 0.5;
         public OutArgument<FileInfo> Result { get; set; }
-        public PatternSearchMode SearchPatternMode { get; set; } = PatternSearchMode.Native;
+        public InArgument<bool> FullPathMode { get; set; }
 
         protected override async Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
             var dir = DirectoryPath.Get(context);
-            var timeout = Timeout.Get(context);
+            var timeout = TimeoutSeconds.Get(context) * 1000;
             var searchPattern = SearchPattern.Get(context) ?? "*.*";
             var fromDateTime = FromDateTime.Get(context);
-            var afterDate = fromDateTime ?? WaitDynamicFile.CalculateDate(dir);
-            var interval = Math.Max(Interval.Get(context), 50);
+            var afterDate = fromDateTime ?? CalculateDate(dir);
+            var interval = Math.Max(IntervalSeconds.Get(context), 0.5) * 1000;
+            var fullPathMode = FullPathMode.Get(context);
 
-            var filePath = await ExecuteWithTimeoutAsync(context, token, ExecuteMainAsync(dir, searchPattern, afterDate, interval, token), timeout).ConfigureAwait(false);
+            var filePath = await ExecuteWithTimeoutAsync(context, token, ExecuteMainAsync(dir, searchPattern, fullPathMode, afterDate, (int)interval, token), (int)timeout).ConfigureAwait(false);
             return ctx => Result.Set(ctx, filePath != null ? new FileInfo(filePath) : null);
         }
 
@@ -44,21 +45,11 @@ namespace Autossential.Activities
             return DateTime.Now;
         }
 
-        private Task<string> ExecuteMainAsync(string dir, string searchPattern, DateTime afterDate, int interval, CancellationToken token)
+        private Task<string> ExecuteMainAsync(string dir, string searchPattern, bool fullPathMode, DateTime afterDate, int intervalMilliseconds, CancellationToken token)
         {
-            Func<IEnumerable<string>> fn = null;
-            switch (SearchPatternMode)
-            {
-                case PatternSearchMode.Native:
-                    fn = () => Directory.EnumerateFiles(dir, searchPattern);
-                    break;
-                case PatternSearchMode.Extended:
-                    fn = () => Directory.EnumerateFiles(dir, "*", SearchOption.AllDirectories).Where(path => Path.GetFileName(path).IsMatch(searchPattern));
-                    break;
-                case PatternSearchMode.Complete:
-                    fn = () => Directory.EnumerateFiles(dir, "*", SearchOption.AllDirectories).Where(path => path.IsMatch(searchPattern));
-                    break;
-            }
+            Func<IEnumerable<string>> fn = fullPathMode
+                ? () => Directory.EnumerateFiles(dir, "*", SearchOption.AllDirectories).Where(path => path.IsMatch(searchPattern))
+                : () => Directory.EnumerateFiles(dir, "*", SearchOption.AllDirectories).Where(path => Path.GetFileName(path).IsMatch(searchPattern));
 
             return Task.Run(() =>
             {
@@ -79,7 +70,7 @@ namespace Autossential.Activities
                             return files.FirstOrDefault();
                         }
 
-                        Thread.Sleep(interval);
+                        Thread.Sleep(intervalMilliseconds);
 
                     } while (!done);
 
@@ -88,7 +79,7 @@ namespace Autossential.Activities
                 {
                     done = e is OperationCanceledException || e is ObjectDisposedException;
                     if (!done)
-                        Thread.Sleep(interval);
+                        Thread.Sleep(intervalMilliseconds);
                 }
 
                 return null;

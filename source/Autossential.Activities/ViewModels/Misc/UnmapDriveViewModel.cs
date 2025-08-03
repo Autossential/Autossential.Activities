@@ -3,7 +3,7 @@ using System.Activities.DesignViewModels;
 
 namespace Autossential.Activities.ViewModels.Misc
 {
-    public class UnmapDriveViewModel : BaseViewModel
+    internal class UnmapDriveViewModel : BaseViewModel
     {
         public UnmapDriveViewModel(IDesignServices services) : base(services)
         {

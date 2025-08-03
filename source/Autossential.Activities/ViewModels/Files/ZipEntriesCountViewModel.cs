@@ -3,7 +3,7 @@ using System.Activities.DesignViewModels;
 
 namespace Autossential.Activities.ViewModels.Files
 {
-    public class ZipEntriesCountViewModel : BaseViewModel
+    internal class ZipEntriesCountViewModel : BaseViewModel
     {
         public ZipEntriesCountViewModel(IDesignServices services) : base(services) { }
 

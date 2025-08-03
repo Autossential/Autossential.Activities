@@ -21,14 +21,6 @@ namespace Autossential.Activities
 
         public OutArgument<int> FoldersCount { get; set; }
 
-        protected override void CacheMetadata(CodeActivityMetadata metadata)
-        {
-            if (EntriesCount == null && FilesCount == null && FoldersCount == null)
-                metadata.AddValidationError(Resources.ZipEntriesCount_ErrorMsg_OutputMissing);
-
-            base.CacheMetadata(metadata);
-        }
-
         protected override async Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
             var entriesCount = 0;

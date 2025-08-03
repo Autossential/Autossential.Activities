@@ -9,7 +9,7 @@ using UiPath.Studio.Activities.Api;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class ExtractDataColumnValuesViewModel<T> : BaseViewModel
+    internal class ExtractDataColumnValuesViewModel<T> : BaseViewModel
     {
         private readonly IWorkflowDesignApi _workflowDesignAPI;
         private bool _typePickerWidgetAvailable;

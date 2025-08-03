@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class RemoveFromDictionaryViewModel : BaseViewModel
+    internal class RemoveFromDictionaryViewModel : BaseViewModel
     {
         public RemoveFromDictionaryViewModel(IDesignServices services) : base(services)
         {

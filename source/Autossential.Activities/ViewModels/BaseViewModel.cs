@@ -3,7 +3,7 @@ using UiPath.Studio.Activities.Api;
 
 namespace Autossential.Activities.ViewModels
 {
-    public abstract class BaseViewModel : DesignPropertiesViewModel
+    internal abstract class BaseViewModel : DesignPropertiesViewModel
     {
         private readonly IWorkflowDesignApi _workflowDesignerAPI;
 

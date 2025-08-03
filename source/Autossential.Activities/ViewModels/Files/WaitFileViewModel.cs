@@ -1,19 +1,21 @@
 using Autossential.Activities.Properties;
 using System.Activities.DesignViewModels;
+using System.Activities.ViewModels;
+using System.IO;
 
 namespace Autossential.Activities.ViewModels.Files
 {
-    public class WaitFileViewModel : BaseViewModel
+    internal class WaitFileViewModel : BaseViewModel
     {
         public WaitFileViewModel(IDesignServices services) : base(services)
         {
         }
 
         public DesignInArgument<string> FilePath { get; set; }
-        public DesignInArgument<int> Timeout { get; set; }
+        public DesignInArgument<double> TimeoutSeconds { get; set; }
         public DesignInArgument<bool> WaitForExist { get; set; }
-        public DesignInArgument<int> Interval { get; set; }
-        public DesignOutArgument<System.IO.FileInfo> Result { get; set; }
+        public DesignInArgument<double> IntervalSeconds { get; set; }
+        public DesignOutArgument<FileInfo> Result { get; set; }
 
         protected override void InitializeModel()
         {
@@ -28,13 +30,13 @@ namespace Autossential.Activities.ViewModels.Files
             FilePath.Tooltip = Resources.WaitFile_FilePath_Description;
             FilePath.OrderIndex = orderIndex++;
 
-            Timeout.IsPrincipal = false;
-            Timeout.IsRequired = false;
-            Timeout.Category = Resources.Options_Category;
-            Timeout.DisplayName = Resources.WaitFile_Timeout_DisplayName;
-            Timeout.Placeholder = Resources.WaitFile_Timeout_Description;
-            Timeout.Tooltip = Resources.WaitFile_Timeout_Description;
-            Timeout.OrderIndex = orderIndex++;
+            TimeoutSeconds.IsPrincipal = false;
+            TimeoutSeconds.IsRequired = false;
+            TimeoutSeconds.Category = Resources.Options_Category;
+            TimeoutSeconds.DisplayName = Resources.Common_TimeoutSeconds_DisplayName;
+            TimeoutSeconds.Placeholder = Resources.Common_TimeoutSeconds_Description;
+            TimeoutSeconds.Tooltip = Resources.Common_TimeoutSeconds_Description;
+            TimeoutSeconds.OrderIndex = orderIndex++;
 
             WaitForExist.IsPrincipal = false;
             WaitForExist.IsRequired = false;
@@ -44,13 +46,13 @@ namespace Autossential.Activities.ViewModels.Files
             WaitForExist.Tooltip = Resources.WaitFile_WaitForExist_Description;
             WaitForExist.OrderIndex = orderIndex++;
 
-            Interval.IsPrincipal = false;
-            Interval.IsRequired = false;
-            Interval.Category = Resources.Options_Category;
-            Interval.DisplayName = Resources.WaitFile_Interval_DisplayName;
-            Interval.Placeholder = Resources.WaitFile_Interval_Description;
-            Interval.Tooltip = Resources.WaitFile_Interval_Description;
-            Interval.OrderIndex = orderIndex++;
+            IntervalSeconds.IsPrincipal = false;
+            IntervalSeconds.IsRequired = false;
+            IntervalSeconds.Category = Resources.Options_Category;
+            IntervalSeconds.DisplayName = Resources.Common_IntervalSeconds_DisplayName;
+            IntervalSeconds.Placeholder = Resources.Common_IntervalSeconds_Description;
+            IntervalSeconds.Tooltip = Resources.Common_IntervalSeconds_Description;
+            IntervalSeconds.OrderIndex = orderIndex++;
 
             Result.IsPrincipal = false;
             Result.IsRequired = false;
@@ -59,6 +61,14 @@ namespace Autossential.Activities.ViewModels.Files
             Result.Placeholder = Resources.WaitFile_Result_Description;
             Result.Tooltip = Resources.WaitFile_Result_Description;
             Result.OrderIndex = orderIndex++;
+
+            if (IsWidgetSupported(ViewModelWidgetType.Toggle))
+            {
+                WaitForExist.Widget = new DefaultWidget
+                {
+                    Type = ViewModelWidgetType.Toggle
+                };
+            }
         }
     }
 }

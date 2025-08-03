@@ -15,7 +15,6 @@ namespace Autossential.Activities.Security.Algorithms
               ResourcesFn.Validation_ScopesErrorFormat($"({Resources.TextEncryption_DisplayName} or {Resources.DataTableEncryption_DisplayName})")));
         }
 
-
         protected override IEncryption Execute(CodeActivityContext context)
         {
             return new T() { Iterations = Iterations };

@@ -8,6 +8,7 @@ using System.Activities;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Autossential.Activities
@@ -55,7 +56,7 @@ namespace Autossential.Activities
 
             var input = Input.Get(context);
             var colsLen = input.Columns.Count;
-            var encoding = TextEncoding.Get(context);
+            var encoding = TextEncoding.Get(context) ?? Encoding.UTF8;
             var pass = GetRawKey(context);
 
             var sortBy = Sort.Get(context);

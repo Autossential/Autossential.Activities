@@ -13,22 +13,22 @@ namespace Autossential.Activities
         [RequiredArgument]
         public InArgument<string> FilePath { get; set; }
 
-        public InArgument<int> Timeout { get; set; } = 30000;
+        public InArgument<double> TimeoutSeconds { get; set; } = 30;
 
         public InArgument<bool> WaitForExist { get; set; }
 
-        public InArgument<int> Interval { get; set; } = 500;
+        public InArgument<double> IntervalSeconds { get; set; } = 0.5;
 
         public OutArgument<FileInfo> Result { get; set; }
 
         protected override async Task<Action<AsyncCodeActivityContext>> ExecuteAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
             var path = FilePath.Get(context);
-            var time = Timeout.Get(context);
+            var timeout = TimeoutSeconds.Get(context) * 1000;
             var waitForExist = WaitForExist.Get(context);
-            var interval = Math.Max(Interval.Get(context), 50);
+            var interval = Math.Max(IntervalSeconds.Get(context), 0.5) * 1000;
 
-            await ExecuteWithTimeoutAsync(context, token, ExecuteMainAsync(path, waitForExist, interval, token), time, defaultHandler =>
+            await ExecuteWithTimeoutAsync(context, token, ExecuteMainAsync(path, waitForExist, (int)interval, token), (int)timeout, defaultHandler =>
             {
                 throw new TimeoutException("The operation has timed-out.", _fileException);
 

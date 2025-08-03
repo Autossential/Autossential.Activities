@@ -364,54 +364,54 @@
     {
       "fullName": "Autossential.Activities.Security.Algorithms.AesAlgorithmEncryption",
       "shortName": "AesAlgorithmEncryption",
-      "categoryKey": "Autossential.Security",
+      "categoryKey": "Autossential.Security.Algorithms",
       "iconKey": "AesAlgorithmEncryption.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.Security.AesAlgorithmEncryptionViewModel",
+      "viewModelType": "Autossential.Activities.ViewModels.Security.Algorithms.AesAlgorithmEncryptionViewModel",
       "displayNameKey": "AesAlgorithmEncryption_DisplayName",
       "descriptionKey": "AesAlgorithmEncryption_Description"
     },
     {
       "fullName": "Autossential.Activities.Security.Algorithms.AesGcmAlgorithmEncryption",
       "shortName": "AesGcmAlgorithmEncryption",
-      "categoryKey": "Autossential.Security",
+      "categoryKey": "Autossential.Security.Algorithms",
       "iconKey": "AesGcmAlgorithmEncryption.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.Security.AesGcmAlgorithmEncryptionViewModel",
+      "viewModelType": "Autossential.Activities.ViewModels.Security.Algorithms.AesGcmAlgorithmEncryptionViewModel",
       "displayNameKey": "AesGcmAlgorithmEncryption_DisplayName",
       "descriptionKey": "AesGcmAlgorithmEncryption_Description"
     },
     {
       "fullName": "Autossential.Activities.Security.Algorithms.DESAlgorithmEncryption",
       "shortName": "DESAlgorithmEncryption",
-      "categoryKey": "Autossential.Security",
+      "categoryKey": "Autossential.Security.Algorithms",
       "iconKey": "DESAlgorithmEncryption.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.Security.DESAlgorithmEncryptionViewModel",
+      "viewModelType": "Autossential.Activities.ViewModels.Security.Algorithms.DESAlgorithmEncryptionViewModel",
       "displayNameKey": "DESAlgorithmEncryption_DisplayName",
       "descriptionKey": "DESAlgorithmEncryption_Description"
     },
     {
       "fullName": "Autossential.Activities.Security.Algorithms.RC2AlgorithmEncryption",
       "shortName": "RC2AlgorithmEncryption",
-      "categoryKey": "Autossential.Security",
+      "categoryKey": "Autossential.Security.Algorithms",
       "iconKey": "RC2AlgorithmEncryption.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.Security.RC2AlgorithmEncryptionViewModel",
+      "viewModelType": "Autossential.Activities.ViewModels.Security.Algorithms.RC2AlgorithmEncryptionViewModel",
       "displayNameKey": "RC2AlgorithmEncryption_DisplayName",
       "descriptionKey": "RC2AlgorithmEncryption_Description"
     },
     {
       "fullName": "Autossential.Activities.Security.Algorithms.RijndaelAlgorithmEncryption",
       "shortName": "RijndaelAlgorithmEncryption",
-      "categoryKey": "Autossential.Security",
+      "categoryKey": "Autossential.Security.Algorithms",
       "iconKey": "RijndaelAlgorithmEncryption.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.Security.RijndaelAlgorithmEncryptionViewModel",
+      "viewModelType": "Autossential.Activities.ViewModels.Security.Algorithms.RijndaelAlgorithmEncryptionViewModel",
       "displayNameKey": "RijndaelAlgorithmEncryption_DisplayName",
       "descriptionKey": "RijndaelAlgorithmEncryption_Description"
     },
     {
       "fullName": "Autossential.Activities.Security.Algorithms.TripleDESAlgorithmEncryption",
       "shortName": "TripleDESAlgorithmEncryption",
-      "categoryKey": "Autossential.Security",
+      "categoryKey": "Autossential.Security.Algorithms",
       "iconKey": "TripleDESAlgorithmEncryption.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.Security.TripleDESAlgorithmEncryptionViewModel",
+      "viewModelType": "Autossential.Activities.ViewModels.Security.Algorithms.TripleDESAlgorithmEncryptionViewModel",
       "displayNameKey": "TripleDESAlgorithmEncryption_DisplayName",
       "descriptionKey": "TripleDESAlgorithmEncryption_Description"
     }

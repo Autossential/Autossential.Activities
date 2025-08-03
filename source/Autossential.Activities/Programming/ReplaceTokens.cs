@@ -19,7 +19,6 @@ namespace Autossential.Activities
             if (InputDictionary == null) metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(InputDictionary)));
             if (Pattern == null) metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(Pattern)));
             if (Placeholder == null) metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(Placeholder)));
-            if (Result == null) metadata.AddValidationError(ResourcesFn.Validation_ValueErrorFormat(nameof(Result)));
         }
 
         protected override string Execute(CodeActivityContext context)

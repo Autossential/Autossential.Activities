@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Autossential.Activities.ViewModels.Workflow
 {
-    public class CheckPointViewModel : BaseViewModel
+    internal class CheckPointViewModel : BaseViewModel
     {
         public CheckPointViewModel(IDesignServices services) : base(services) { }
 
@@ -17,6 +17,7 @@ namespace Autossential.Activities.ViewModels.Workflow
         {
             base.InitializeModel();
             PersistValuesChangedDuringInit();
+
             int orderIndex = 0;
             Expression.IsPrincipal = true;
             Expression.IsRequired = true;

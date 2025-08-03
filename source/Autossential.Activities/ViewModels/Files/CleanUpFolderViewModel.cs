@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Autossential.Activities.ViewModels.Files
 {
-    public class CleanUpFolderViewModel : BaseViewModel
+    internal class CleanUpFolderViewModel : BaseViewModel
     {
         public CleanUpFolderViewModel(IDesignServices services) : base(services)
         {

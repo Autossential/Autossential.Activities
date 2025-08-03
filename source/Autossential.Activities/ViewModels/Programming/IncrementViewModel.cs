@@ -3,7 +3,7 @@ using System.Activities.DesignViewModels;
 
 namespace Autossential.Activities.ViewModels.Programming
 {
-    public class IncrementViewModel : BaseViewModel
+    internal class IncrementViewModel : BaseViewModel
     {
         public IncrementViewModel(IDesignServices services) : base(services)
         {

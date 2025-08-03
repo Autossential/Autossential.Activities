@@ -35,7 +35,7 @@ namespace Autossential.Tests
             var result = WorkflowTester.Run(new WaitFile
             {
                 WaitForExist = true,
-                Interval = interval,
+                IntervalSeconds = interval,
             }, GetArgs(IOSamples.GetTestPath("output/sample.json")));
             var expectedFileName = await createFile.ConfigureAwait(false);
             var info = result.Get(p => p.Result) as FileInfo;
@@ -88,7 +88,7 @@ namespace Autossential.Tests
 
             object exec() => WorkflowTester.Run(new WaitFile()
             {
-                Timeout = 2000,
+                TimeoutSeconds = 2000,
                 WaitForExist = waitForExist,
 
             }, GetArgs(IOSamples.GetTestPath("output/missing.txt")));

@@ -3,7 +3,7 @@ using System.Activities.DesignViewModels;
 
 namespace Autossential.Activities.ViewModels.Programming
 {
-    public class IsTrueViewModel : BaseViewModel
+    internal class IsTrueViewModel : BaseViewModel
     {
         public IsTrueViewModel(IDesignServices services) : base(services)
         {

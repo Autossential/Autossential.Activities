@@ -1,10 +1,11 @@
 using Autossential.Activities.Properties;
 using System.Activities.DesignViewModels;
+using System.Activities.ViewModels;
 using System.Net;
 
 namespace Autossential.Activities.ViewModels.Misc
 {
-    public class MapDriveViewModel : BaseViewModel
+    internal class MapDriveViewModel : BaseViewModel
     {
         public MapDriveViewModel(IDesignServices services) : base(services)
         {
@@ -70,6 +71,14 @@ namespace Autossential.Activities.ViewModels.Misc
             ResponseMessage.DisplayName = Resources.MapDrive_ResponseMessage_DisplayName;
             ResponseMessage.Tooltip = Resources.MapDrive_ResponseMessage_Description;
             ResponseMessage.OrderIndex = orderIndex++;
+
+            if (IsWidgetSupported(ViewModelWidgetType.Toggle))
+            {
+                Force.Widget = new DefaultWidget
+                {
+                    Type = ViewModelWidgetType.Toggle
+                };
+            }
         }
     }
 }

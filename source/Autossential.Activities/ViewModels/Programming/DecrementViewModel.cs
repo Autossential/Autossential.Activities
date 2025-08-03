@@ -3,7 +3,7 @@ using System.Activities.DesignViewModels;
 
 namespace Autossential.Activities.ViewModels.Programming
 {
-    public class DecrementViewModel : BaseViewModel
+    internal class DecrementViewModel : BaseViewModel
     {
         public DecrementViewModel(IDesignServices services) : base(services)
         {

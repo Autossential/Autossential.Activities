@@ -5,7 +5,7 @@ using System.Data;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class DataTableToTextViewModel : BaseViewModel
+    internal class DataTableToTextViewModel : BaseViewModel
     {
         public DataTableToTextViewModel(IDesignServices services) : base(services)
         {

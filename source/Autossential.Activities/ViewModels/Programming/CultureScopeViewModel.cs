@@ -3,7 +3,7 @@ using System.Activities.DesignViewModels;
 
 namespace Autossential.Activities.ViewModels.Programming
 {
-    public class CultureScopeViewModel : BaseViewModel
+    internal class CultureScopeViewModel : BaseViewModel
     {
         public CultureScopeViewModel(IDesignServices services) : base(services)
         {

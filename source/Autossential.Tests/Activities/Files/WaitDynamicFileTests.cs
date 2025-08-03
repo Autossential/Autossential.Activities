@@ -82,7 +82,7 @@ namespace Autossential.Tests
             var createFile = CreateFileAfter(secondsToCreateFile, ".txt");
             var result = WorkflowTester.Run(new WaitDynamicFile
             {
-                Interval = interval
+                IntervalSeconds = interval
             }, GetArgs(IOSamples.GetTestPath("output"), "*.txt"));
             var expectedFileName = await createFile.ConfigureAwait(false);
             var info = result.Get(p => p.Result) as FileInfo;

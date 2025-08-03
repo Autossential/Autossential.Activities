@@ -5,7 +5,7 @@ using System.Data;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class AggregateViewModel : BaseViewModel
+    internal class AggregateViewModel : BaseViewModel
     {
         public AggregateViewModel(IDesignServices services) : base(services)
         {

@@ -5,7 +5,7 @@ using System.Data;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class DataRowToDictionaryViewModel : BaseViewModel
+    internal class DataRowToDictionaryViewModel : BaseViewModel
     {
         public DataRowToDictionaryViewModel(IDesignServices services) : base(services)
         {

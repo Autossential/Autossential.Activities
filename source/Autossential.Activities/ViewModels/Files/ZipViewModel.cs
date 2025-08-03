@@ -1,11 +1,12 @@
 using Autossential.Activities.Properties;
 using System.Activities.DesignViewModels;
+using System.Activities.ViewModels;
 using System.IO.Compression;
 using System.Text;
 
 namespace Autossential.Activities.ViewModels.Files
 {
-    public class ZipViewModel : BaseViewModel
+    internal class ZipViewModel : BaseViewModel
     {
         public ZipViewModel(IDesignServices services) : base(services) { }
 
@@ -68,6 +69,14 @@ namespace Autossential.Activities.ViewModels.Files
             FilesCount.Placeholder = Resources.Zip_FilesCount_Description;
             FilesCount.Tooltip = Resources.Zip_FilesCount_Description;
             FilesCount.OrderIndex = orderIndex++;
+
+            if (IsWidgetSupported(ViewModelWidgetType.Toggle))
+            {
+                ShortEntryNames.Widget = new DefaultWidget
+                {
+                    Type = ViewModelWidgetType.Toggle
+                };
+            }
         }
     }
 }

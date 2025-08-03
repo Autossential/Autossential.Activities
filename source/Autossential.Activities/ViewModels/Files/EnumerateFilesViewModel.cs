@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Autossential.Activities.ViewModels.Files
 {
-    public class EnumerateFilesViewModel : BaseViewModel
+    internal class EnumerateFilesViewModel : BaseViewModel
     {
         public EnumerateFilesViewModel(IDesignServices services) : base(services)
         {

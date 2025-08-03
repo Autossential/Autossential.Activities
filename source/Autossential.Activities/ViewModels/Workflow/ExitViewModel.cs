@@ -3,7 +3,7 @@ using System.Activities.DesignViewModels;
 
 namespace Autossential.Activities.ViewModels.Workflow
 {
-    public class ExitViewModel : BaseViewModel
+    internal class ExitViewModel : BaseViewModel
     {
         public ExitViewModel(IDesignServices services) : base(services) { }
 

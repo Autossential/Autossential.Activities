@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Autossential.Activities.ViewModels.Programming
 {
-    public class ReplaceTokensViewModel : BaseViewModel
+    internal class ReplaceTokensViewModel : BaseViewModel
     {
         public ReplaceTokensViewModel(IDesignServices services) : base(services)
         {

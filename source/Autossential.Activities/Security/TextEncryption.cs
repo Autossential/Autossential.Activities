@@ -2,6 +2,7 @@
 using Autossential.Core.Security;
 using System;
 using System.Activities;
+using System.Text;
 
 namespace Autossential.Activities
 {
@@ -17,7 +18,7 @@ namespace Autossential.Activities
             if (result == null)
                 throw new ArgumentNullException(nameof(result));
 
-            var encoding = TextEncoding.Get(context);
+            var encoding = TextEncoding.Get(context) ?? Encoding.UTF8;
             var input = Input.Get(context);
             var pass = GetRawKey(context);
 

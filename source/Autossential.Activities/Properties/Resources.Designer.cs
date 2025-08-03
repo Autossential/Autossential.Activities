@@ -331,7 +331,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DataTable.
+        ///   Looks up a localized string similar to Data Table.
         /// </summary>
         public static string Aggregate_InputDataTable_DisplayName {
             get {
@@ -439,7 +439,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DeleteEmptyFolders.
+        ///   Looks up a localized string similar to Delete Empty Folders.
         /// </summary>
         public static string CleanUpFolder_DeleteEmptyFolders_DisplayName {
             get {
@@ -475,7 +475,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FolderPath.
+        ///   Looks up a localized string similar to Folder Path.
         /// </summary>
         public static string CleanUpFolder_Folder_DisplayName {
             get {
@@ -493,7 +493,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LastWriteTime.
+        ///   Looks up a localized string similar to Last Write Time.
         /// </summary>
         public static string CleanUpFolder_LastWriteTime_DisplayName {
             get {
@@ -529,7 +529,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SearchOption.
+        ///   Looks up a localized string similar to Search Option.
         /// </summary>
         public static string CleanUpFolder_SearchOption_DisplayName {
             get {
@@ -538,7 +538,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SearchPattern.
+        ///   Looks up a localized string similar to Search Pattern.
         /// </summary>
         public static string CleanUpFolder_SearchPattern_DisplayName {
             get {
@@ -592,6 +592,24 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Specifies the amount of time in seconds for the file re-check. Any value less than 0.5 will be clamped to 0.5. Make sure to keep this value lesser than Timeout value..
+        /// </summary>
+        public static string Common_IntervalSeconds_Description {
+            get {
+                return ResourceManager.GetString("Common_IntervalSeconds_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interval.
+        /// </summary>
+        public static string Common_IntervalSeconds_DisplayName {
+            get {
+                return ResourceManager.GetString("Common_IntervalSeconds_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (*, ? and !) characters, but it doesn&apos;t support regular expressions. It supports a string or a collection of strings. Default value is all files (*.*). The wildcard (!) creates negative patterns, e.g: (!*.txt) means to match everything except (*.txt) files..
         /// </summary>
         public static string Common_SearchPattern_Description {
@@ -610,20 +628,20 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specifies the amount of time in milliseconds to wait for the activity to run before an error is thrown. The default value is 30000 (30s)..
+        ///   Looks up a localized string similar to Specifies the amount of time in seconds to wait for the activity to run before an error is thrown. The default value is 30s..
         /// </summary>
-        public static string Common_Timeout_Description {
+        public static string Common_TimeoutSeconds_Description {
             get {
-                return ResourceManager.GetString("Common_Timeout_Description", resourceCulture);
+                return ResourceManager.GetString("Common_TimeoutSeconds_Description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Timeout.
         /// </summary>
-        public static string Common_Timeout_DisplayName {
+        public static string Common_TimeoutSeconds_DisplayName {
             get {
-                return ResourceManager.GetString("Common_Timeout_DisplayName", resourceCulture);
+                return ResourceManager.GetString("Common_TimeoutSeconds_DisplayName", resourceCulture);
             }
         }
         
@@ -637,6 +655,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Container.
+        /// </summary>
+        public static string Container_DisplayName {
+            get {
+                return ResourceManager.GetString("Container_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The desired culture, eg.: en-US, pt-BR, jp-JP, etc..
         /// </summary>
         public static string CultureScope_CultureName_Description {
@@ -646,7 +673,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CultureName.
+        ///   Looks up a localized string similar to Culture Name.
         /// </summary>
         public static string CultureScope_CultureName_DisplayName {
             get {
@@ -700,7 +727,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DataRow.
+        ///   Looks up a localized string similar to Data Row.
         /// </summary>
         public static string DataRowToDictionary_InputDataRow_DisplayName {
             get {
@@ -826,7 +853,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ParallelProcessing.
+        ///   Looks up a localized string similar to Parallel Processing.
         /// </summary>
         public static string DataTableEncryption_ParallelProcessing_DisplayName {
             get {
@@ -880,7 +907,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TextEncoding.
+        ///   Looks up a localized string similar to Text Encoding.
         /// </summary>
         public static string DataTableEncryption_TextEncoding_DisplayName {
             get {
@@ -898,7 +925,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DateTimeFormat.
+        ///   Looks up a localized string similar to Date Time Format.
         /// </summary>
         public static string DataTableToText_DateTimeFormat_DisplayName {
             get {
@@ -934,7 +961,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DataTable.
+        ///   Looks up a localized string similar to Data Table.
         /// </summary>
         public static string DataTableToText_InputDataTable_DisplayName {
             get {
@@ -970,7 +997,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TextFormat.
+        ///   Looks up a localized string similar to Text Format.
         /// </summary>
         public static string DataTableToText_TextFormat_DisplayName {
             get {
@@ -984,6 +1011,15 @@ namespace Autossential.Activities.Properties {
         public static string Decrement_Description {
             get {
                 return ResourceManager.GetString("Decrement_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decrement.
+        /// </summary>
+        public static string Decrement_DisplayName {
+            get {
+                return ResourceManager.GetString("Decrement_DisplayName", resourceCulture);
             }
         }
         
@@ -1033,7 +1069,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DES.
+        ///   Looks up a localized string similar to DES (Legacy).
         /// </summary>
         public static string DESAlgorithmEncryption_DisplayName {
             get {
@@ -1123,7 +1159,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DirectoryPath.
+        ///   Looks up a localized string similar to Directory Path.
         /// </summary>
         public static string EnumerateFiles_DirectoryPath_DisplayName {
             get {
@@ -1186,7 +1222,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SearchOption.
+        ///   Looks up a localized string similar to Search Option.
         /// </summary>
         public static string EnumerateFiles_SearchOption_DisplayName {
             get {
@@ -1195,7 +1231,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SearchPattern.
+        ///   Looks up a localized string similar to Search Pattern.
         /// </summary>
         public static string EnumerateFiles_SearchPattern_DisplayName {
             get {
@@ -1231,6 +1267,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        public static string Exit_DisplayName {
+            get {
+                return ResourceManager.GetString("Exit_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The column name or index where the values will be extracted from..
         /// </summary>
         public static string ExtractDataColumnValues_Column_Description {
@@ -1258,7 +1303,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DefaultValue.
+        ///   Looks up a localized string similar to Default Value.
         /// </summary>
         public static string ExtractDataColumnValues_DefaultValue_DisplayName {
             get {
@@ -1312,7 +1357,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DataTable.
+        ///   Looks up a localized string similar to Data Table.
         /// </summary>
         public static string ExtractDataColumnValues_InputDataTable_DisplayName {
             get {
@@ -1402,7 +1447,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TypeArgument.
+        ///   Looks up a localized string similar to Type Argument.
         /// </summary>
         public static string ExtractDataColumnValues_TypeArgument_DisplayName {
             get {
@@ -1474,7 +1519,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DataTable.
+        ///   Looks up a localized string similar to Data Table.
         /// </summary>
         public static string FillDataColumn_ReferenceDataTable_DisplayName {
             get {
@@ -1515,6 +1560,15 @@ namespace Autossential.Activities.Properties {
         public static string Increment_Description {
             get {
                 return ResourceManager.GetString("Increment_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Increment.
+        /// </summary>
+        public static string Increment_DisplayName {
+            get {
+                return ResourceManager.GetString("Increment_DisplayName", resourceCulture);
             }
         }
         
@@ -1627,7 +1681,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Value.
+        ///   Looks up a localized string similar to Value or Expression.
         /// </summary>
         public static string IsTrue_Value_DisplayName {
             get {
@@ -1641,6 +1695,15 @@ namespace Autossential.Activities.Properties {
         public static string Iterate_Description {
             get {
                 return ResourceManager.GetString("Iterate_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Iterate.
+        /// </summary>
+        public static string Iterate_DisplayName {
+            get {
+                return ResourceManager.GetString("Iterate_DisplayName", resourceCulture);
             }
         }
         
@@ -1735,7 +1798,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DriveLetter.
+        ///   Looks up a localized string similar to Drive Letter.
         /// </summary>
         public static string MapDrive_DriveLetter_DisplayName {
             get {
@@ -1771,7 +1834,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MappedDrive.
+        ///   Looks up a localized string similar to Mapped Drive.
         /// </summary>
         public static string MapDrive_MappedDrive_DisplayName {
             get {
@@ -1789,7 +1852,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ResponseCode.
+        ///   Looks up a localized string similar to Response Code.
         /// </summary>
         public static string MapDrive_ResponseCode_DisplayName {
             get {
@@ -1807,7 +1870,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ResponseMessage.
+        ///   Looks up a localized string similar to Response Message.
         /// </summary>
         public static string MapDrive_ResponseMessage_DisplayName {
             get {
@@ -1843,7 +1906,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SharedDrivePath.
+        ///   Looks up a localized string similar to Shared Drive Path.
         /// </summary>
         public static string MapDrive_SharedDrivePath_DisplayName {
             get {
@@ -1897,6 +1960,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Next.
+        /// </summary>
+        public static string Next_DisplayName {
+            get {
+                return ResourceManager.GetString("Next_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Options.
         /// </summary>
         public static string Options_Category {
@@ -1924,7 +1996,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AutoRename.
+        ///   Looks up a localized string similar to Auto Rename.
         /// </summary>
         public static string PromoteHeaders_AutoRename_DisplayName {
             get {
@@ -1960,7 +2032,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to EmptyColumnName.
+        ///   Looks up a localized string similar to Empty Column Name.
         /// </summary>
         public static string PromoteHeaders_EmptyColumnName_DisplayName {
             get {
@@ -1987,7 +2059,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DataTable.
+        ///   Looks up a localized string similar to Data Table.
         /// </summary>
         public static string PromoteHeaders_InputDataTable_DisplayName {
             get {
@@ -2077,7 +2149,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RC2.
+        ///   Looks up a localized string similar to RC2 (Legacy).
         /// </summary>
         public static string RC2AlgorithmEncryption_DisplayName {
             get {
@@ -2131,7 +2203,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DataTable.
+        ///   Looks up a localized string similar to Data Table.
         /// </summary>
         public static string RemoveDataColumns_ReferenceDataTable_DisplayName {
             get {
@@ -2185,7 +2257,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DataTable.
+        ///   Looks up a localized string similar to Data Table.
         /// </summary>
         public static string RemoveDuplicateRows_InputDataTable_DisplayName {
             get {
@@ -2239,7 +2311,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CustomOptions.
+        ///   Looks up a localized string similar to Custom Options.
         /// </summary>
         public static string RemoveEmptyRows_CustomOptions_DisplayName {
             get {
@@ -2275,7 +2347,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DataTable.
+        ///   Looks up a localized string similar to Data Table.
         /// </summary>
         public static string RemoveEmptyRows_InputDataTable_DisplayName {
             get {
@@ -2419,7 +2491,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IterationNumber.
+        ///   Looks up a localized string similar to Iteration Number.
         /// </summary>
         public static string RepeatUntilFailure_IterationNumber_DisplayName {
             get {
@@ -2437,7 +2509,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LoopInterval.
+        ///   Looks up a localized string similar to Loop Interval.
         /// </summary>
         public static string RepeatUntilFailure_LoopInterval_DisplayName {
             get {
@@ -2455,7 +2527,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MaximumRepetitions.
+        ///   Looks up a localized string similar to Maximum Repetitions.
         /// </summary>
         public static string RepeatUntilFailure_MaximumRepetitions_DisplayName {
             get {
@@ -2473,7 +2545,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OutputException.
+        ///   Looks up a localized string similar to Output Exception.
         /// </summary>
         public static string RepeatUntilFailure_OutputException_DisplayName {
             get {
@@ -2590,7 +2662,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rijndael.
+        ///   Looks up a localized string similar to Rijndael (Legacy).
         /// </summary>
         public static string RijndaelAlgorithmEncryption_DisplayName {
             get {
@@ -2604,6 +2676,15 @@ namespace Autossential.Activities.Properties {
         public static string Stopwatch_Description {
             get {
                 return ResourceManager.GetString("Stopwatch_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stopwatch.
+        /// </summary>
+        public static string Stopwatch_DisplayName {
+            get {
+                return ResourceManager.GetString("Stopwatch_DisplayName", resourceCulture);
             }
         }
         
@@ -2689,7 +2770,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ProcessName.
+        ///   Looks up a localized string similar to Process Name.
         /// </summary>
         public static string TerminateProcess_ProcessName_DisplayName {
             get {
@@ -2797,7 +2878,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TextEncoding.
+        ///   Looks up a localized string similar to Text Encoding.
         /// </summary>
         public static string TextEncryption_TextEncoding_DisplayName {
             get {
@@ -2833,7 +2914,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ExitOnException.
+        ///   Looks up a localized string similar to Exit On Exception.
         /// </summary>
         public static string TimeLoop_ExitOnException_DisplayName {
             get {
@@ -2869,7 +2950,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IsTimeout.
+        ///   Looks up a localized string similar to Is Timeout.
         /// </summary>
         public static string TimeLoop_IsTimeout_DisplayName {
             get {
@@ -2887,7 +2968,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LoopInterval.
+        ///   Looks up a localized string similar to Loop Interval.
         /// </summary>
         public static string TimeLoop_LoopInterval_DisplayName {
             get {
@@ -2923,7 +3004,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PropagateException.
+        ///   Looks up a localized string similar to Propagate Exception.
         /// </summary>
         public static string TimeLoop_PropagateException_DisplayName {
             get {
@@ -2977,7 +3058,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DataTable.
+        ///   Looks up a localized string similar to Data Table.
         /// </summary>
         public static string TransposeData_InputDataTable_DisplayName {
             get {
@@ -3004,11 +3085,20 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Triple DES.
+        ///   Looks up a localized string similar to Triple DES (Legacy).
         /// </summary>
         public static string TripleDESAlgorithmEncryption_DisplayName {
             get {
                 return ResourceManager.GetString("TripleDESAlgorithmEncryption_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unmap Drive.
+        /// </summary>
+        public static string UnmapDrive_DisplayName {
+            get {
+                return ResourceManager.GetString("UnmapDrive_DisplayName", resourceCulture);
             }
         }
         
@@ -3022,7 +3112,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DriveLetter.
+        ///   Looks up a localized string similar to Drive Letter.
         /// </summary>
         public static string UnmapDrive_DriveLetter_DisplayName {
             get {
@@ -3040,7 +3130,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ResponseCode.
+        ///   Looks up a localized string similar to Response Code.
         /// </summary>
         public static string UnmapDrive_ResponseCode_DisplayName {
             get {
@@ -3058,7 +3148,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ResponseMessage.
+        ///   Looks up a localized string similar to Response Message.
         /// </summary>
         public static string UnmapDrive_ResponseMessage_DisplayName {
             get {
@@ -3094,6 +3184,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unzip.
+        /// </summary>
+        public static string Unzip_DisplayName {
+            get {
+                return ResourceManager.GetString("Unzip_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zip entry name ends in directory separator character but contains data..
         /// </summary>
         public static string Unzip_ErrorMsg_DirNameWithData {
@@ -3121,7 +3220,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ExtractTo.
+        ///   Looks up a localized string similar to Extract To.
         /// </summary>
         public static string Unzip_ExtractTo_DisplayName {
             get {
@@ -3157,7 +3256,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ZipFilePath.
+        ///   Looks up a localized string similar to Zip File Path.
         /// </summary>
         public static string Unzip_ZipFilePath_DisplayName {
             get {
@@ -3238,7 +3337,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FolderPath.
+        ///   Looks up a localized string similar to Folder Path.
         /// </summary>
         public static string WaitDynamicFile_DirectoryPath_DisplayName {
             get {
@@ -3265,29 +3364,11 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FromDateTime.
+        ///   Looks up a localized string similar to From Date Time.
         /// </summary>
         public static string WaitDynamicFile_FromDateTime_DisplayName {
             get {
                 return ResourceManager.GetString("WaitDynamicFile_FromDateTime_DisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Specifies the amount of time (in milliseconds) for the file re-check. Any value less than 50 will be clamped to 50. Make sure to keep this value lesser than Timeout value..
-        /// </summary>
-        public static string WaitDynamicFile_Interval_Description {
-            get {
-                return ResourceManager.GetString("WaitDynamicFile_Interval_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Interval.
-        /// </summary>
-        public static string WaitDynamicFile_Interval_DisplayName {
-            get {
-                return ResourceManager.GetString("WaitDynamicFile_Interval_DisplayName", resourceCulture);
             }
         }
         
@@ -3319,29 +3400,11 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SearchPattern.
+        ///   Looks up a localized string similar to Search Pattern.
         /// </summary>
         public static string WaitDynamicFile_SearchPattern_DisplayName {
             get {
                 return ResourceManager.GetString("WaitDynamicFile_SearchPattern_DisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The maximum time to wait (in milliseconds) the operation to complete..
-        /// </summary>
-        public static string WaitDynamicFile_Timeout_Description {
-            get {
-                return ResourceManager.GetString("WaitDynamicFile_Timeout_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Timeout.
-        /// </summary>
-        public static string WaitDynamicFile_Timeout_DisplayName {
-            get {
-                return ResourceManager.GetString("WaitDynamicFile_Timeout_DisplayName", resourceCulture);
             }
         }
         
@@ -3391,24 +3454,6 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specifies the amount of time (in milliseconds) for the file re-check. Any value less than 50 will be clamped to 50. Make sure to keep this value lesser than Timeout value..
-        /// </summary>
-        public static string WaitFile_Interval_Description {
-            get {
-                return ResourceManager.GetString("WaitFile_Interval_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Interval.
-        /// </summary>
-        public static string WaitFile_Interval_DisplayName {
-            get {
-                return ResourceManager.GetString("WaitFile_Interval_DisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The FileInfo object of the respective file when found..
         /// </summary>
         public static string WaitFile_Result_Description {
@@ -3427,24 +3472,6 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The maximum time to wait (in milliseconds) the operation to complete..
-        /// </summary>
-        public static string WaitFile_Timeout_Description {
-            get {
-                return ResourceManager.GetString("WaitFile_Timeout_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Timeout.
-        /// </summary>
-        public static string WaitFile_Timeout_DisplayName {
-            get {
-                return ResourceManager.GetString("WaitFile_Timeout_DisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Waits until the file exists..
         /// </summary>
         public static string WaitFile_WaitForExist_Description {
@@ -3454,7 +3481,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WaitForExist.
+        ///   Looks up a localized string similar to Wait For Exist.
         /// </summary>
         public static string WaitFile_WaitForExist_DisplayName {
             get {
@@ -3508,7 +3535,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WithElse.
+        ///   Looks up a localized string similar to With Else.
         /// </summary>
         public static string WhenDo_WithElse_DisplayName {
             get {
@@ -3526,7 +3553,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CompressionLevel.
+        ///   Looks up a localized string similar to Compression Level.
         /// </summary>
         public static string Zip_CompressionLevel_DisplayName {
             get {
@@ -3544,6 +3571,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zip.
+        /// </summary>
+        public static string Zip_DisplayName {
+            get {
+                return ResourceManager.GetString("Zip_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Returns the amount of files added to zip archive..
         /// </summary>
         public static string Zip_FilesCount_Description {
@@ -3553,7 +3589,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FilesCount.
+        ///   Looks up a localized string similar to Files Count.
         /// </summary>
         public static string Zip_FilesCount_DisplayName {
             get {
@@ -3571,7 +3607,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ShortEntryNames.
+        ///   Looks up a localized string similar to Short Entry Names.
         /// </summary>
         public static string Zip_ShortEntryNames_DisplayName {
             get {
@@ -3589,7 +3625,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TextEncoding.
+        ///   Looks up a localized string similar to Text Encoding.
         /// </summary>
         public static string Zip_TextEncoding_DisplayName {
             get {
@@ -3607,7 +3643,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ToCompress.
+        ///   Looks up a localized string similar to To Compress.
         /// </summary>
         public static string Zip_ToCompress_DisplayName {
             get {
@@ -3625,7 +3661,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ZipFilePath.
+        ///   Looks up a localized string similar to Zip File Path.
         /// </summary>
         public static string Zip_ZipFilePath_DisplayName {
             get {
@@ -3661,7 +3697,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to EntriesCount.
+        ///   Looks up a localized string similar to Entries Count.
         /// </summary>
         public static string ZipEntriesCount_EntriesCount_DisplayName {
             get {
@@ -3688,7 +3724,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FilesCount.
+        ///   Looks up a localized string similar to Files Count.
         /// </summary>
         public static string ZipEntriesCount_FilesCount_DisplayName {
             get {
@@ -3706,7 +3742,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FoldersCount.
+        ///   Looks up a localized string similar to Folders Count.
         /// </summary>
         public static string ZipEntriesCount_FoldersCount_DisplayName {
             get {
@@ -3724,7 +3760,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ZipFilePath.
+        ///   Looks up a localized string similar to Zip File Path.
         /// </summary>
         public static string ZipEntriesCount_ZipFilePath_DisplayName {
             get {

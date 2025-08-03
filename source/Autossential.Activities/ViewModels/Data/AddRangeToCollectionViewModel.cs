@@ -3,7 +3,7 @@ using System.Activities.DesignViewModels;
 
 namespace Autossential.Activities.ViewModels.Data
 {
-    public class AddRangeToCollectionViewModel : BaseViewModel
+    internal class AddRangeToCollectionViewModel : BaseViewModel
     {
         public AddRangeToCollectionViewModel(IDesignServices services) : base(services)
         {

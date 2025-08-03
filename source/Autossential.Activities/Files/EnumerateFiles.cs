@@ -25,7 +25,7 @@ namespace Autossential.Activities
 
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
-            metadata.AddRuntimeArgument(Result, nameof(Result), true);
+            metadata.AddRuntimeArgument(Result, nameof(Result), false);
 
             if (DirectoryPath == null)
             {

@@ -4,7 +4,7 @@ using System.Activities.DesignViewModels;
 
 namespace Autossential.Activities.ViewModels.Misc
 {
-    public class StopwatchViewModel : BaseViewModel
+    internal class StopwatchViewModel : BaseViewModel
     {
         public StopwatchViewModel(IDesignServices services) : base(services)
         {

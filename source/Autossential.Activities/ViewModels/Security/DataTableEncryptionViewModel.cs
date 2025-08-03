@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Autossential.Activities.ViewModels.Security
 {
-    public class DataTableEncryptionViewModel : BaseViewModel
+    internal class DataTableEncryptionViewModel : BaseViewModel
     {
         public DataTableEncryptionViewModel(IDesignServices services) : base(services)
         {
@@ -32,6 +32,7 @@ namespace Autossential.Activities.ViewModels.Security
             Input.Category = Resources.Input_Category;
             Input.DisplayName = Resources.DataTableEncryption_Input_DisplayName;
             Input.Tooltip = Resources.DataTableEncryption_Input_Description;
+            Input.Placeholder = Resources.DataTableEncryption_Input_Description;
             Input.OrderIndex = orderIndex++;
 
             Key.IsRequired = true;
@@ -39,6 +40,7 @@ namespace Autossential.Activities.ViewModels.Security
             Key.Category = Resources.Input_Category;
             Key.DisplayName = Resources.DataTableEncryption_Key_DisplayName;
             Key.Tooltip = Resources.DataTableEncryption_Key_Description;
+            Key.Placeholder = Resources.DataTableEncryption_Key_Description;
             Key.OrderIndex = orderIndex++;
 
             Action.IsRequired = true;
@@ -46,6 +48,7 @@ namespace Autossential.Activities.ViewModels.Security
             Action.Category = Resources.Input_Category;
             Action.DisplayName = Resources.DataTableEncryption_Action_DisplayName;
             Action.Tooltip = Resources.DataTableEncryption_Action_Description;
+            Action.Placeholder = Resources.DataTableEncryption_Action_Description;
             Action.OrderIndex = orderIndex++;
 
             Columns.IsRequired = false;
@@ -53,6 +56,7 @@ namespace Autossential.Activities.ViewModels.Security
             Columns.Category = Resources.Options_Category;
             Columns.DisplayName = Resources.DataTableEncryption_Columns_DisplayName;
             Columns.Tooltip = Resources.DataTableEncryption_Columns_Description;
+            Columns.Placeholder = Resources.DataTableEncryption_Columns_Description;
             Columns.OrderIndex = orderIndex++;
 
             Sort.IsRequired = false;
@@ -60,6 +64,7 @@ namespace Autossential.Activities.ViewModels.Security
             Sort.Category = Resources.Options_Category;
             Sort.DisplayName = Resources.DataTableEncryption_Sort_DisplayName;
             Sort.Tooltip = Resources.DataTableEncryption_Sort_Description;
+            Sort.Placeholder = Resources.DataTableEncryption_Sort_Description;
             Sort.OrderIndex = orderIndex++;
 
             ParallelProcessing.IsRequired = false;
@@ -67,6 +72,7 @@ namespace Autossential.Activities.ViewModels.Security
             ParallelProcessing.Category = Resources.Options_Category;
             ParallelProcessing.DisplayName = Resources.DataTableEncryption_ParallelProcessing_DisplayName;
             ParallelProcessing.Tooltip = Resources.DataTableEncryption_ParallelProcessing_Description;
+            ParallelProcessing.Placeholder = Resources.DataTableEncryption_ParallelProcessing_Description;
             ParallelProcessing.OrderIndex = orderIndex++;
 
             TextEncoding.IsRequired = false;
@@ -74,6 +80,7 @@ namespace Autossential.Activities.ViewModels.Security
             TextEncoding.Category = Resources.Options_Category;
             TextEncoding.DisplayName = Resources.DataTableEncryption_TextEncoding_DisplayName;
             TextEncoding.Tooltip = Resources.DataTableEncryption_TextEncoding_Description;
+            TextEncoding.Placeholder = Resources.DataTableEncryption_TextEncoding_Description;
             TextEncoding.OrderIndex = orderIndex++;
         }
     }

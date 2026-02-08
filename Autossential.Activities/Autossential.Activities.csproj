@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFrameworks>net6.0;net6.0-windows</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<PackageId>Autossential.Activities.Activities</PackageId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net6.0-windows'">
+		<UseWindowsForms>true</UseWindowsForms>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Resources\Tools\**" />
+		<EmbeddedResource Remove="Resources\Tools\**" />
+		<None Remove="Resources\Tools\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="Resources\Gen.cs" />
+		<Compile Remove="WaitDynamicFile.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Resources\ActivitiesMetadata.json" />
+		<None Remove="Resources\Icons\WaitFile.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\ActivitiesMetadata.json" />
+		<EmbeddedResource Include="Resources\Icons\WaitFile.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Activities.ViewModels" Version="1.20251127.3" />
+		<PackageReference Include="UiPath.Activities.Api" Version="24.10.1" PrivateAssets="All" />
+		<PackageReference Include="UiPath.Workflow" Version="6.0.0-20240401-07" PrivateAssets="All" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+</Project>

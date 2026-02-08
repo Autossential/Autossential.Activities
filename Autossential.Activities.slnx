@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/Solution Items/" />
+  <Project Path="Autossential.Activities.Packaging/Autossential.Activities.Packaging.csproj" />
+  <Project Path="Autossential.Activities.Tests/Autossential.Activities.Tests.csproj" />
+  <Project Path="Autossential.Activities/Autossential.Activities.csproj" />
+</Solution>

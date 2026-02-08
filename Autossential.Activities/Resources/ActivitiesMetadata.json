@@ -1,0 +1,14 @@
+{
+    "resourceManagerName": "Autossential.Activities.Properties.Resources",
+    "activities": [
+        {
+            "fullName": "Autossential.Activities.WaitFile",
+            "shortName": "WaitFile",
+            "categoryKey": "Autossential.Files",
+            "iconKey": "WaitFile.svg",
+            "viewModelType": "Autossential.Activities.ViewModels.WaitFileViewModel",
+            "displayNameKey": "WaitFile_DisplayName",
+            "descriptionKey": "WaitFile_Description"
+        }
+    ]
+}

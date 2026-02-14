@@ -10,13 +10,11 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<VersionBuild>$([System.DateTime]::UtcNow.DayOfYear.ToString("F0"))</VersionBuild>
 		<VersionRevision>$([System.DateTime]::UtcNow.TimeOfDay.TotalMinutes.ToString("F0"))</VersionRevision>
-		<PackageId>Autossential.Activities</PackageId>
 		<VersionPrefix Condition="'$(Configuration)' == 'Release'">4.0.0</VersionPrefix>
 		<VersionPrefix Condition="'$(Configuration)' == 'Debug'">4.0.$(VersionBuild)-dev.$(VersionRevision)</VersionPrefix>
-		<Authors>UiPath</Authors>
-		<PackageTags>UiPathActivities</PackageTags>
+		<Authors>Alexandre T. Perez</Authors>
 		<Product>Autossential.Activities.Packaging</Product>
-		<!--<PackageIconUrl>https://download.uipath.com/UI_icon.png?web</PackageIconUrl>-->
+		<PackageId>Autossential.Activities</PackageId>
 		<PackageIcon>icon.png</PackageIcon>
 		<PackageOutputPath>..\..\Output</PackageOutputPath>
 		<TargetsForTfmSpecificBuildOutput>AddDlls</TargetsForTfmSpecificBuildOutput>
@@ -30,6 +28,7 @@
 		</ItemGroup>
 		<ItemGroup>
 			<BuildOutputInPackage Include="$(OutputPath)Autossential.Activities.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)pt-BR\Autossential.Activities.resources.dll" TargetPath="pt-BR\Autossential.Activities.resources.dll" />
 		</ItemGroup>
 	</Target>
 

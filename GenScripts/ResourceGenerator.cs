@@ -3,14 +3,15 @@
 
 #:package UiPath.Workflow@6.0.0-20240401-07
 #:package UiPath.Activities.Api@24.10.1
-#:package System.Activities.ViewModels@1.0.0-20250625.2
+#:package System.Activities.ViewModels@1.20251127.3
 #:project D:\Development\Autossential-4\Autossential.Activities\Autossential.Activities.csproj
 
 using System.Collections;
 using System.Globalization;
+using System.Resources;
 using System.Text.RegularExpressions;
 
-var rm = Autossential.Activities.Resources.ResourceManager;
+var rm = Autossential.Activities.Properties.Resources.ResourceManager;
 
 using var sw = new StreamWriter("..\\Autossential.Activities\\Resources\\Resources.gen.cs");
 sw.WriteLine($$"""

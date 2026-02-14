@@ -4,12 +4,15 @@ namespace Autossential.Activities.Extensions
 {
     internal static class DesignExtensions
     {
-        public static void AddWidget<T>(this DesignInArgument<T> argument, string widgetType)
+        extension<T>(DesignInArgument<T> argument)
         {
-            argument.Widget = new DefaultWidget
+            public void AddWidget(string widgetType)
             {
-                Type = widgetType,
-            };
-        }
+                argument.Widget = new DefaultWidget
+                {
+                    Type = widgetType,
+                };
+            }
+        }       
     }
 }

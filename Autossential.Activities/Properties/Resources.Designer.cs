@@ -22,7 +22,7 @@ namespace Autossential.Activities.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Autossential.Activities.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Autossential.Activities.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Autossential.Activities.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Common.
         /// </summary>
-        internal static string Categories_Common {
+        public static string Categories_Common {
             get {
                 return ResourceManager.GetString("Categories_Common", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Input.
         /// </summary>
-        internal static string Categories_Input {
+        public static string Categories_Input {
             get {
                 return ResourceManager.GetString("Categories_Input", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Options.
         /// </summary>
-        internal static string Categories_Options {
+        public static string Categories_Options {
             get {
                 return ResourceManager.GetString("Categories_Options", resourceCulture);
             }
@@ -90,16 +90,142 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Output.
         /// </summary>
-        internal static string Categories_Output {
+        public static string Categories_Output {
             get {
                 return ResourceManager.GetString("Categories_Output", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Determines if the left empty folders after files deletion must also be deleted..
+        /// </summary>
+        public static string CleanUpFolder_DeleteEmptyFolders_Description {
+            get {
+                return ResourceManager.GetString("CleanUpFolder_DeleteEmptyFolders_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Empty Folders.
+        /// </summary>
+        public static string CleanUpFolder_DeleteEmptyFolders_DisplayName {
+            get {
+                return ResourceManager.GetString("CleanUpFolder_DeleteEmptyFolders_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deletes all files and folders from a specified folder..
+        /// </summary>
+        public static string CleanUpFolder_Description {
+            get {
+                return ResourceManager.GetString("CleanUpFolder_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clean Up Folder.
+        /// </summary>
+        public static string CleanUpFolder_DisplayName {
+            get {
+                return ResourceManager.GetString("CleanUpFolder_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The number of files that were deleted..
+        /// </summary>
+        public static string CleanUpFolder_FilesDeleted_Description {
+            get {
+                return ResourceManager.GetString("CleanUpFolder_FilesDeleted_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Files Deleted.
+        /// </summary>
+        public static string CleanUpFolder_FilesDeleted_DisplayName {
+            get {
+                return ResourceManager.GetString("CleanUpFolder_FilesDeleted_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The folder path to be cleaned up..
+        /// </summary>
+        public static string CleanUpFolder_Folder_Description {
+            get {
+                return ResourceManager.GetString("CleanUpFolder_Folder_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder Path.
+        /// </summary>
+        public static string CleanUpFolder_Folder_DisplayName {
+            get {
+                return ResourceManager.GetString("CleanUpFolder_Folder_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The number of folders that were deleted..
+        /// </summary>
+        public static string CleanUpFolder_FoldersDeleted_Description {
+            get {
+                return ResourceManager.GetString("CleanUpFolder_FoldersDeleted_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folders Deleted.
+        /// </summary>
+        public static string CleanUpFolder_FoldersDeleted_DisplayName {
+            get {
+                return ResourceManager.GetString("CleanUpFolder_FoldersDeleted_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deletes only the files with last write time till this reference date. Default is DateTime.Now..
+        /// </summary>
+        public static string CleanUpFolder_LastWriteTime_Description {
+            get {
+                return ResourceManager.GetString("CleanUpFolder_LastWriteTime_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Write Time.
+        /// </summary>
+        public static string CleanUpFolder_LastWriteTime_DisplayName {
+            get {
+                return ResourceManager.GetString("CleanUpFolder_LastWriteTime_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specifies whether the search operation should include only the current directory or should include all subdirectories..
+        /// </summary>
+        public static string CleanUpFolder_SearchOption_Description {
+            get {
+                return ResourceManager.GetString("CleanUpFolder_SearchOption_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search Option.
+        /// </summary>
+        public static string CleanUpFolder_SearchOption_DisplayName {
+            get {
+                return ResourceManager.GetString("CleanUpFolder_SearchOption_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Specifies to continue executing the remaining activities even if the current activity failed. Only boolean values are allowed..
         /// </summary>
-        internal static string Common_ContinueOnError_Description {
+        public static string Common_ContinueOnError_Description {
             get {
                 return ResourceManager.GetString("Common_ContinueOnError_Description", resourceCulture);
             }
@@ -108,34 +234,43 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Continue on error.
         /// </summary>
-        internal static string Common_ContinueOnError_DisplayName {
+        public static string Common_ContinueOnError_DisplayName {
             get {
                 return ResourceManager.GetString("Common_ContinueOnError_DisplayName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specifies the amount of time in seconds for the file re-check. Any value less than 0.5 will be clamped to 0.5. Make sure to keep this value lesser than Timeout value..
+        ///   Looks up a localized string similar to Value for a required activity argument &apos;{0}&apos; was not supplied..
         /// </summary>
-        internal static string Common_IntervalSeconds_Description {
+        public static string Common_ErrorMsg_ValueNotSupplied {
             get {
-                return ResourceManager.GetString("Common_IntervalSeconds_Description", resourceCulture);
+                return ResourceManager.GetString("Common_ErrorMsg_ValueNotSupplied", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Interval.
+        ///   Looks up a localized string similar to The search string defines file name patterns in the path. It supports literal text and wildcards (*, ?, !, |), but not regular expressions. Use ! for exclusions (e.g., !*.txt), and | for multiple patterns (e.g., *.png|*.gif|*.jpeg). Default is *.* (all files)..
         /// </summary>
-        internal static string Common_IntervalSeconds_DisplayName {
+        public static string Common_SearchPattern_Description {
             get {
-                return ResourceManager.GetString("Common_IntervalSeconds_DisplayName", resourceCulture);
+                return ResourceManager.GetString("Common_SearchPattern_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search Pattern.
+        /// </summary>
+        public static string Common_SearchPattern_DisplayName {
+            get {
+                return ResourceManager.GetString("Common_SearchPattern_DisplayName", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Specifies the amount of time in seconds to wait for the activity to run before an error is thrown. The default value is 30s..
         /// </summary>
-        internal static string Common_TimeoutSeconds_Description {
+        public static string Common_TimeoutSeconds_Description {
             get {
                 return ResourceManager.GetString("Common_TimeoutSeconds_Description", resourceCulture);
             }
@@ -144,7 +279,7 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Timeout.
         /// </summary>
-        internal static string Common_TimeoutSeconds_DisplayName {
+        public static string Common_TimeoutSeconds_DisplayName {
             get {
                 return ResourceManager.GetString("Common_TimeoutSeconds_DisplayName", resourceCulture);
             }
@@ -153,7 +288,7 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Waits until the file be available..
         /// </summary>
-        internal static string WaitFile_Description {
+        public static string WaitFile_Description {
             get {
                 return ResourceManager.GetString("WaitFile_Description", resourceCulture);
             }
@@ -162,7 +297,7 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Directory path to be monitored..
         /// </summary>
-        internal static string WaitFile_DirectoryPath_Description {
+        public static string WaitFile_DirectoryPath_Description {
             get {
                 return ResourceManager.GetString("WaitFile_DirectoryPath_Description", resourceCulture);
             }
@@ -171,7 +306,7 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Directory Path.
         /// </summary>
-        internal static string WaitFile_DirectoryPath_DisplayName {
+        public static string WaitFile_DirectoryPath_DisplayName {
             get {
                 return ResourceManager.GetString("WaitFile_DirectoryPath_DisplayName", resourceCulture);
             }
@@ -180,7 +315,7 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Wait File.
         /// </summary>
-        internal static string WaitFile_DisplayName {
+        public static string WaitFile_DisplayName {
             get {
                 return ResourceManager.GetString("WaitFile_DisplayName", resourceCulture);
             }
@@ -189,7 +324,7 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to When true, the behavior of the activity changes to monitor a specific folder until find a file that corresponds to the search pattern informed..
         /// </summary>
-        internal static string WaitFile_DynamicFile_Description {
+        public static string WaitFile_DynamicFile_Description {
             get {
                 return ResourceManager.GetString("WaitFile_DynamicFile_Description", resourceCulture);
             }
@@ -198,7 +333,7 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to File name is dynamic.
         /// </summary>
-        internal static string WaitFile_DynamicFile_DisplayName {
+        public static string WaitFile_DynamicFile_DisplayName {
             get {
                 return ResourceManager.GetString("WaitFile_DynamicFile_DisplayName", resourceCulture);
             }
@@ -207,7 +342,7 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to No file found..
         /// </summary>
-        internal static string WaitFile_ErrorMsg_NoFileFound {
+        public static string WaitFile_ErrorMsg_NoFileFound {
             get {
                 return ResourceManager.GetString("WaitFile_ErrorMsg_NoFileFound", resourceCulture);
             }
@@ -216,7 +351,7 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to The path to the file..
         /// </summary>
-        internal static string WaitFile_FilePath_Description {
+        public static string WaitFile_FilePath_Description {
             get {
                 return ResourceManager.GetString("WaitFile_FilePath_Description", resourceCulture);
             }
@@ -225,16 +360,34 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to File Path.
         /// </summary>
-        internal static string WaitFile_FilePath_DisplayName {
+        public static string WaitFile_FilePath_DisplayName {
             get {
                 return ResourceManager.GetString("WaitFile_FilePath_DisplayName", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Specifies the amount of time in seconds for the file re-check. Any value less than 0.5 will be clamped to 0.5. Make sure to keep this value lesser than Timeout value..
+        /// </summary>
+        public static string WaitFile_PollingIntervalSeconds_Description {
+            get {
+                return ResourceManager.GetString("WaitFile_PollingIntervalSeconds_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interval.
+        /// </summary>
+        public static string WaitFile_PollingIntervalSeconds_DisplayName {
+            get {
+                return ResourceManager.GetString("WaitFile_PollingIntervalSeconds_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The FileInfo object of the respective file when found..
         /// </summary>
-        internal static string WaitFile_Result_Description {
+        public static string WaitFile_Result_Description {
             get {
                 return ResourceManager.GetString("WaitFile_Result_Description", resourceCulture);
             }
@@ -243,34 +396,16 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Result.
         /// </summary>
-        internal static string WaitFile_Result_DisplayName {
+        public static string WaitFile_Result_DisplayName {
             get {
                 return ResourceManager.GetString("WaitFile_Result_DisplayName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn&apos;t support regular expressions. It supports a string or a collection of strings. Default value is all files (*.*)..
-        /// </summary>
-        internal static string WaitFile_SearchPattern_Description {
-            get {
-                return ResourceManager.GetString("WaitFile_SearchPattern_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Search Pattern.
-        /// </summary>
-        internal static string WaitFile_SearchPattern_DisplayName {
-            get {
-                return ResourceManager.GetString("WaitFile_SearchPattern_DisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Browse for file.
         /// </summary>
-        internal static string WaitFile_ViewModel_BrowseForFile {
+        public static string WaitFile_ViewModel_BrowseForFile {
             get {
                 return ResourceManager.GetString("WaitFile_ViewModel_BrowseForFile", resourceCulture);
             }
@@ -279,7 +414,7 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Browse for folder.
         /// </summary>
-        internal static string WaitFile_ViewModel_BrowseForFolder {
+        public static string WaitFile_ViewModel_BrowseForFolder {
             get {
                 return ResourceManager.GetString("WaitFile_ViewModel_BrowseForFolder", resourceCulture);
             }
@@ -288,7 +423,7 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Waits until the file exists..
         /// </summary>
-        internal static string WaitFile_WaitForExist_Description {
+        public static string WaitFile_WaitForExist_Description {
             get {
                 return ResourceManager.GetString("WaitFile_WaitForExist_Description", resourceCulture);
             }
@@ -297,7 +432,7 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Wait For Exist.
         /// </summary>
-        internal static string WaitFile_WaitForExist_DisplayName {
+        public static string WaitFile_WaitForExist_DisplayName {
             get {
                 return ResourceManager.GetString("WaitFile_WaitForExist_DisplayName", resourceCulture);
             }

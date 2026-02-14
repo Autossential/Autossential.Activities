@@ -1,48 +1,51 @@
 ﻿namespace Autossential.Activities.Extensions
 {
-    public static class StringExtensions
+    internal static class StringExtensions
     {
-        public static bool IsMatch(this string str, string pattern)
+        extension(string str)
         {
-            int i = 0, j = 0, star = -1, offset = -1;
-
-            bool except = false;
-            if (pattern.Length > 0 && pattern[0] == '!')
+            public bool IsMatch(string pattern)
             {
-                except = true;
-                j++;
-            }
+                int i = 0, j = 0, star = -1, offset = -1;
 
-            while (i < str.Length)
-            {
-                if (j < pattern.Length && (pattern[j] == '?' || str[i] == pattern[j]))
+                bool except = false;
+                if (pattern.Length > 0 && pattern[0] == '!')
                 {
-                    i++;
+                    except = true;
                     j++;
-                    continue;
                 }
 
-                if (j < pattern.Length && pattern[j] == '*')
+                while (i < str.Length)
                 {
-                    star = j++;
-                    offset = i;
-                    continue;
+                    if (j < pattern.Length && (pattern[j] == '?' || str[i] == pattern[j]))
+                    {
+                        i++;
+                        j++;
+                        continue;
+                    }
+
+                    if (j < pattern.Length && pattern[j] == '*')
+                    {
+                        star = j++;
+                        offset = i;
+                        continue;
+                    }
+
+                    if (star > -1)
+                    {
+                        j = star + 1;
+                        i = ++offset;
+                        continue;
+                    }
+
+                    return except;
                 }
 
-                if (star > -1)
-                {
-                    j = star + 1;
-                    i = ++offset;
-                    continue;
-                }
+                while (j < pattern.Length && pattern[j] == '*')
+                    j++;
 
-                return except;
+                return except ? j < pattern.Length : j == pattern.Length;
             }
-
-            while (j < pattern.Length && pattern[j] == '*')
-                j++;
-
-            return except ? j < pattern.Length : j == pattern.Length;
         }
     }
 }

@@ -1,14 +1,189 @@
 {
-    "resourceManagerName": "Autossential.Activities.Properties.Resources",
-    "activities": [
+  "activities": [
+    {
+      "fullName": "Autossential.Activities.CleanUpFolder",
+      "shortName": "CleanUpFolder",
+      "displayNameKey": "CleanUpFolder_DisplayName",
+      "descriptionKey": "CleanUpFolder_Description",
+      "iconKey": "CleanUpFolder.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.CleanUpFolderViewModel",
+      "categoryKey": "Autossential.Files",
+      "properties": [
         {
-            "fullName": "Autossential.Activities.WaitFile",
-            "shortName": "WaitFile",
-            "categoryKey": "Autossential.Files",
-            "iconKey": "WaitFile.svg",
-            "viewModelType": "Autossential.Activities.ViewModels.WaitFileViewModel",
-            "displayNameKey": "WaitFile_DisplayName",
-            "descriptionKey": "WaitFile_Description"
+          "name": "Folder",
+          "displayNameKey": "CleanUpFolder_Folder_DisplayName",
+          "tooltipKey": "CleanUpFolder_Folder_Description",
+          "isVisible": true
+        },
+        {
+          "name": "SearchPattern",
+          "displayNameKey": "Common_SearchPattern_DisplayName",
+          "tooltipKey": "Common_SearchPattern_Description",
+          "isVisible": true
+        },
+        {
+          "name": "FilesDeleted",
+          "displayNameKey": "CleanUpFolder_FilesDeleted_DisplayName",
+          "tooltipKey": "CleanUpFolder_FilesDeleted_Description",
+          "isVisible": true
+        },
+        {
+          "name": "FoldersDeleted",
+          "displayNameKey": "CleanUpFolder_FoldersDeleted_DisplayName",
+          "tooltipKey": "CleanUpFolder_FoldersDeleted_Description",
+          "isVisible": true
+        },
+        {
+          "name": "LastWriteTime",
+          "displayNameKey": "CleanUpFolder_LastWriteTime_DisplayName",
+          "tooltipKey": "CleanUpFolder_LastWriteTime_Description",
+          "isVisible": true
+        },
+        {
+          "name": "DeleteEmptyFolders",
+          "displayNameKey": "CleanUpFolder_DeleteEmptyFolders_DisplayName",
+          "tooltipKey": "CleanUpFolder_DeleteEmptyFolders_Description",
+          "isVisible": true
+        },
+        {
+          "name": "SearchOption",
+          "displayNameKey": "CleanUpFolder_SearchOption_DisplayName",
+          "tooltipKey": "CleanUpFolder_SearchOption_Description",
+          "isVisible": true
+        },
+        {
+          "name": "TimeoutSeconds",
+          "displayNameKey": "Common_TimeoutSeconds_DisplayName",
+          "tooltipKey": "Common_TimeoutSeconds_Description",
+          "isVisible": true
+        },
+        {
+          "name": "ContinueOnError",
+          "displayNameKey": "Common_ContinueOnError_DisplayName",
+          "tooltipKey": "Common_ContinueOnError_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "CleanUpFolder_Result_DisplayName",
+          "tooltipKey": "CleanUpFolder_Result_Description",
+          "isVisible": true
+        },
+        {
+          "name": "ResultType",
+          "displayNameKey": "CleanUpFolder_ResultType_DisplayName",
+          "tooltipKey": "CleanUpFolder_ResultType_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "CleanUpFolder_Result_DisplayName",
+          "tooltipKey": "CleanUpFolder_Result_Description",
+          "isVisible": true
+        },
+        {
+          "name": "DisplayName",
+          "displayNameKey": "CleanUpFolder_DisplayName_DisplayName",
+          "tooltipKey": "CleanUpFolder_DisplayName_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Id",
+          "displayNameKey": "CleanUpFolder_Id_DisplayName",
+          "tooltipKey": "CleanUpFolder_Id_Description",
+          "isVisible": true
         }
-    ]
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.WaitFile",
+      "shortName": "WaitFile",
+      "displayNameKey": "WaitFile_DisplayName",
+      "descriptionKey": "WaitFile_Description",
+      "iconKey": "WaitFile.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.WaitFileViewModel",
+      "categoryKey": "Autossential.Files",
+      "properties": [
+        {
+          "name": "FilePath",
+          "displayNameKey": "WaitFile_FilePath_DisplayName",
+          "tooltipKey": "WaitFile_FilePath_Description",
+          "isVisible": true
+        },
+        {
+          "name": "PollingIntervalSeconds",
+          "displayNameKey": "WaitFile_PollingIntervalSeconds_DisplayName",
+          "tooltipKey": "WaitFile_PollingIntervalSeconds_Description",
+          "isVisible": true
+        },
+        {
+          "name": "WaitForExist",
+          "displayNameKey": "WaitFile_WaitForExist_DisplayName",
+          "tooltipKey": "WaitFile_WaitForExist_Description",
+          "isVisible": true
+        },
+        {
+          "name": "DirectoryPath",
+          "displayNameKey": "WaitFile_DirectoryPath_DisplayName",
+          "tooltipKey": "WaitFile_DirectoryPath_Description",
+          "isVisible": true
+        },
+        {
+          "name": "SearchPattern",
+          "displayNameKey": "Common_SearchPattern_DisplayName",
+          "tooltipKey": "Common_SearchPattern_Description",
+          "isVisible": true
+        },
+        {
+          "name": "DynamicFile",
+          "displayNameKey": "WaitFile_DynamicFile_DisplayName",
+          "tooltipKey": "WaitFile_DynamicFile_Description",
+          "isVisible": true
+        },
+        {
+          "name": "TimeoutSeconds",
+          "displayNameKey": "Common_TimeoutSeconds_DisplayName",
+          "tooltipKey": "Common_TimeoutSeconds_Description",
+          "isVisible": true
+        },
+        {
+          "name": "ContinueOnError",
+          "displayNameKey": "Common_ContinueOnError_DisplayName",
+          "tooltipKey": "Common_ContinueOnError_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "WaitFile_Result_DisplayName",
+          "tooltipKey": "WaitFile_Result_Description",
+          "isVisible": true
+        },
+        {
+          "name": "ResultType",
+          "displayNameKey": "WaitFile_ResultType_DisplayName",
+          "tooltipKey": "WaitFile_ResultType_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "WaitFile_Result_DisplayName",
+          "tooltipKey": "WaitFile_Result_Description",
+          "isVisible": true
+        },
+        {
+          "name": "DisplayName",
+          "displayNameKey": "WaitFile_DisplayName_DisplayName",
+          "tooltipKey": "WaitFile_DisplayName_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Id",
+          "displayNameKey": "WaitFile_Id_DisplayName",
+          "tooltipKey": "WaitFile_Id_Description",
+          "isVisible": true
+        }
+      ]
+    }
+  ],
+  "resourceManagerName": "Autossential.Activities.Properties.Resources"
 }

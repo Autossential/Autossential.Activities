@@ -4,7 +4,8 @@
 		<OutputType>Library</OutputType>
 		<TargetFrameworks>net6.0;net6.0-windows</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<PackageId>Autossential.Activities.Activities</PackageId>
+		<LangVersion>14.0</LangVersion>
+		<PackageId>Autossential</PackageId>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)' == 'net6.0-windows'">
@@ -29,6 +30,7 @@
 
 	<ItemGroup>
 		<EmbeddedResource Include="Resources\ActivitiesMetadata.json" />
+		<EmbeddedResource Include="Resources\Icons\CleanUpFolder.svg" />
 		<EmbeddedResource Include="Resources\Icons\WaitFile.svg" />
 	</ItemGroup>
 
@@ -48,7 +50,7 @@
 
 	<ItemGroup>
 		<EmbeddedResource Update="Properties\Resources.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
+			<Generator>PublicResXFileCodeGenerator</Generator>
 			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
 	</ItemGroup>

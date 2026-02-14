@@ -4,7 +4,7 @@ using Xunit;
 namespace Autossential.Activities.Tests.Unit
 {
     public class WaitFileTests
-    {    
+    {
         [Fact]
         public void Invoke_WhenFileAccessible_ReturnsFileInfo()
         {
@@ -29,8 +29,10 @@ namespace Autossential.Activities.Tests.Unit
             }
         }
 
-        [Fact]
-        public void Invoke_WhenFileLocked_TimesOut()
+        [Theory]
+        [InlineData(false)]
+        [InlineData(true)]
+        public void Invoke_WhenFileLocked_TimesOut(bool continueOnError)
         {
             var path = Path.GetTempFileName();
             try
@@ -44,10 +46,12 @@ namespace Autossential.Activities.Tests.Unit
                 {
                     ["FilePath"] = path,
                     ["TimeoutSeconds"] = 1.0,             // short timeout to keep test fast
-                    ["PollingIntervalSeconds"] = 0.5
+                    ["PollingIntervalSeconds"] = 0.5,
+                    ["ContinueOnError"] = continueOnError
                 };
 
-                Assert.Throws<TimeoutException>(() => WorkflowInvoker.Invoke(new WaitFile(), inputs));
+                if (!continueOnError)
+                    Assert.Throws<TimeoutException>(() => WorkflowInvoker.Invoke(new WaitFile(), inputs));
             }
             finally
             {

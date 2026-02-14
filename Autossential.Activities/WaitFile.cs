@@ -1,4 +1,5 @@
-﻿using Autossential.Activities.Extensions;
+﻿using Autossential.Activities.Base;
+using Autossential.Activities.Extensions;
 using Autossential.Activities.Properties;
 using System.Activities;
 
@@ -12,6 +13,22 @@ namespace Autossential.Activities
         public InArgument<string> DirectoryPath { get; set; }
         public InArgument<string> SearchPattern { get; set; }
         public bool DynamicFile { get; set; } = false;
+
+        protected override void CacheMetadata(CodeActivityMetadata metadata)
+        {
+            base.CacheMetadata(metadata);
+
+            if (DynamicFile)
+            {
+                if (DirectoryPath == null || DirectoryPath.Expression == null)
+                    metadata.AddValidationError(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.WaitFile_DirectoryPath_DisplayName));
+            }
+            else
+            {
+                if (FilePath == null || FilePath.Expression == null)
+                    metadata.AddValidationError(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.WaitFile_FilePath_DisplayName));
+            }
+        }
 
         protected override Task<FileInfo> RunAsync(AsyncCodeActivityContext context, CancellationToken token)
         {

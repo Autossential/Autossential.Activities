@@ -58,7 +58,8 @@ namespace Autossential.Activities.ViewModels
                         var ofd = new Microsoft.Win32.OpenFileDialog
                         {
                             Filter = "All files (*.*)|*.*",
-                            Multiselect = false
+                            Multiselect = false,
+                            CheckFileExists = true
                         };
 
                         if (ofd.ShowDialog() == true)
@@ -85,7 +86,6 @@ namespace Autossential.Activities.ViewModels
                                 using (var dialog = new FolderBrowserDialog())
                                 {
                                     dialog.ShowNewFolderButton = true;
-
                                     if (dialog.ShowDialog() == DialogResult.OK)
                                     {
                                         DirectoryPath.Value = dialog.SelectedPath;

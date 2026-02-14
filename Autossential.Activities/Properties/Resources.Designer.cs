@@ -286,6 +286,96 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Extracts files and folders from a zip archive..
+        /// </summary>
+        public static string Unzip_Description {
+            get {
+                return ResourceManager.GetString("Unzip_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unzip.
+        /// </summary>
+        public static string Unzip_DisplayName {
+            get {
+                return ResourceManager.GetString("Unzip_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Directory entry in the archive contains file data, which is invalid..
+        /// </summary>
+        public static string Unzip_ErrorMsg_DirNameWithData {
+            get {
+                return ResourceManager.GetString("Unzip_ErrorMsg_DirNameWithData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Archive entry would extract outside the target directory..
+        /// </summary>
+        public static string Unzip_ErrorMsg_OutsideDir {
+            get {
+                return ResourceManager.GetString("Unzip_ErrorMsg_OutsideDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The folder where the archive contents will be extracted..
+        /// </summary>
+        public static string Unzip_ExtractTo_Description {
+            get {
+                return ResourceManager.GetString("Unzip_ExtractTo_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extract To.
+        /// </summary>
+        public static string Unzip_ExtractTo_DisplayName {
+            get {
+                return ResourceManager.GetString("Unzip_ExtractTo_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If true, existing files will be overwritten during extraction..
+        /// </summary>
+        public static string Unzip_Overwrite_Description {
+            get {
+                return ResourceManager.GetString("Unzip_Overwrite_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overwrite.
+        /// </summary>
+        public static string Unzip_Overwrite_DisplayName {
+            get {
+                return ResourceManager.GetString("Unzip_Overwrite_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The path to the zip archive to extract..
+        /// </summary>
+        public static string Unzip_ZipFilePath_Description {
+            get {
+                return ResourceManager.GetString("Unzip_ZipFilePath_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zip File Path.
+        /// </summary>
+        public static string Unzip_ZipFilePath_DisplayName {
+            get {
+                return ResourceManager.GetString("Unzip_ZipFilePath_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Waits until the file be available..
         /// </summary>
         public static string WaitFile_Description {
@@ -435,6 +525,168 @@ namespace Autossential.Activities.Properties {
         public static string WaitFile_WaitForExist_DisplayName {
             get {
                 return ResourceManager.GetString("WaitFile_WaitForExist_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index or identifier of the compressed file created (when applicable)..
+        /// </summary>
+        public static string Zip_CompressedFile_Description {
+            get {
+                return ResourceManager.GetString("Zip_CompressedFile_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compressed File.
+        /// </summary>
+        public static string Zip_CompressedFile_DisplayName {
+            get {
+                return ResourceManager.GetString("Zip_CompressedFile_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compression level used when creating the archive..
+        /// </summary>
+        public static string Zip_CompressionLevel_Description {
+            get {
+                return ResourceManager.GetString("Zip_CompressionLevel_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compression Level.
+        /// </summary>
+        public static string Zip_CompressionLevel_DisplayName {
+            get {
+                return ResourceManager.GetString("Zip_CompressionLevel_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compresses files and folders into a zip archive..
+        /// </summary>
+        public static string Zip_Description {
+            get {
+                return ResourceManager.GetString("Zip_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zip.
+        /// </summary>
+        public static string Zip_DisplayName {
+            get {
+                return ResourceManager.GetString("Zip_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The number of files added to the archive..
+        /// </summary>
+        public static string Zip_FilesCount_Description {
+            get {
+                return ResourceManager.GetString("Zip_FilesCount_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Files Count.
+        /// </summary>
+        public static string Zip_FilesCount_DisplayName {
+            get {
+                return ResourceManager.GetString("Zip_FilesCount_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use full entry names (absolute paths) instead of relative paths..
+        /// </summary>
+        public static string Zip_FullEntryNames_Description {
+            get {
+                return ResourceManager.GetString("Zip_FullEntryNames_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Full Entry Names.
+        /// </summary>
+        public static string Zip_FullEntryNames_DisplayName {
+            get {
+                return ResourceManager.GetString("Zip_FullEntryNames_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use short entry names (relative paths) instead of full paths..
+        /// </summary>
+        public static string Zip_ShortEntryNames_Description {
+            get {
+                return ResourceManager.GetString("Zip_ShortEntryNames_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Short Entry Names.
+        /// </summary>
+        public static string Zip_ShortEntryNames_DisplayName {
+            get {
+                return ResourceManager.GetString("Zip_ShortEntryNames_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encoding used for entry names inside the zip archive..
+        /// </summary>
+        public static string Zip_TextEncoding_Description {
+            get {
+                return ResourceManager.GetString("Zip_TextEncoding_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text Encoding.
+        /// </summary>
+        public static string Zip_TextEncoding_DisplayName {
+            get {
+                return ResourceManager.GetString("Zip_TextEncoding_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Collection of file and directory paths to compress..
+        /// </summary>
+        public static string Zip_ToCompress_Description {
+            get {
+                return ResourceManager.GetString("Zip_ToCompress_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Compress.
+        /// </summary>
+        public static string Zip_ToCompress_DisplayName {
+            get {
+                return ResourceManager.GetString("Zip_ToCompress_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Path where the zip archive will be created..
+        /// </summary>
+        public static string Zip_ZipFilePath_Description {
+            get {
+                return ResourceManager.GetString("Zip_ZipFilePath_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zip File Path.
+        /// </summary>
+        public static string Zip_ZipFilePath_DisplayName {
+            get {
+                return ResourceManager.GetString("Zip_ZipFilePath_DisplayName", resourceCulture);
             }
         }
     }

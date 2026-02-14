@@ -281,8 +281,120 @@
     <value>The number of folders that were deleted.</value>
     <comment>property description</comment>
   </data>
+  <data name="Zip_Description" xml:space="preserve">
+    <value>Compresses files and folders into a zip archive.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="Zip_DisplayName" xml:space="preserve">
+    <value>Zip</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Zip_ToCompress_Description" xml:space="preserve">
+    <value>Collection of file and directory paths to compress.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Zip_ToCompress_DisplayName" xml:space="preserve">
+    <value>To Compress</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Zip_TextEncoding_Description" xml:space="preserve">
+    <value>Encoding used for entry names inside the zip archive.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Zip_TextEncoding_DisplayName" xml:space="preserve">
+    <value>Text Encoding</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Zip_CompressionLevel_Description" xml:space="preserve">
+    <value>Compression level used when creating the archive.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Zip_CompressionLevel_DisplayName" xml:space="preserve">
+    <value>Compression Level</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Zip_CompressedFile_Description" xml:space="preserve">
+    <value>Index or identifier of the compressed file created (when applicable).</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Zip_CompressedFile_DisplayName" xml:space="preserve">
+    <value>Compressed File</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Zip_ShortEntryNames_Description" xml:space="preserve">
+    <value>Use short entry names (relative paths) instead of full paths.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Zip_ShortEntryNames_DisplayName" xml:space="preserve">
+    <value>Short Entry Names</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Zip_FullEntryNames_Description" xml:space="preserve">
+    <value>Use full entry names (absolute paths) instead of relative paths.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Zip_FullEntryNames_DisplayName" xml:space="preserve">
+    <value>Full Entry Names</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Zip_FilesCount_Description" xml:space="preserve">
+    <value>The number of files added to the archive.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Zip_FilesCount_DisplayName" xml:space="preserve">
+    <value>Files Count</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Zip_ZipFilePath_Description" xml:space="preserve">
+    <value>Path where the zip archive will be created.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Zip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>Zip File Path</value>
+    <comment>property name</comment>
+  </data>
   <data name="Common_ErrorMsg_ValueNotSupplied" xml:space="preserve">
     <value>Value for a required activity argument '{0}' was not supplied.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="Unzip_Description" xml:space="preserve">
+    <value>Extracts files and folders from a zip archive.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="Unzip_DisplayName" xml:space="preserve">
+    <value>Unzip</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Unzip_ZipFilePath_Description" xml:space="preserve">
+    <value>The path to the zip archive to extract.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Unzip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>Zip File Path</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Unzip_ExtractTo_Description" xml:space="preserve">
+    <value>The folder where the archive contents will be extracted.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Unzip_ExtractTo_DisplayName" xml:space="preserve">
+    <value>Extract To</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Unzip_Overwrite_Description" xml:space="preserve">
+    <value>If true, existing files will be overwritten during extraction.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Unzip_Overwrite_DisplayName" xml:space="preserve">
+    <value>Overwrite</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Unzip_ErrorMsg_OutsideDir" xml:space="preserve">
+    <value>Archive entry would extract outside the target directory.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
+    <value>Directory entry in the archive contains file data, which is invalid.</value>
     <comment>error message</comment>
   </data>
 </root>

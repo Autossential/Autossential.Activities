@@ -112,8 +112,8 @@ public class Activity
         {
             return ShortName switch
             {
-                "WaitFile" or "CleanUpFolder" => "Autossential.Files",
-                _ => "Autossential.General"
+                "WaitFile" or "CleanUpFolder" or "Zip" or "Unzip" => "Autossential.Files",
+                _ => "Autossential.Misc"
             };
         }
     }

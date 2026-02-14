@@ -2,6 +2,7 @@
 using Autossential.Activities.Extensions;
 using Autossential.Activities.Properties;
 using System.Activities;
+using System.ComponentModel.DataAnnotations;
 
 namespace Autossential.Activities
 {
@@ -17,15 +18,14 @@ namespace Autossential.Activities
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
             base.CacheMetadata(metadata);
-
             if (DynamicFile)
             {
-                if (DirectoryPath == null || DirectoryPath.Expression == null)
+                if (DirectoryPath == null)
                     metadata.AddValidationError(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.WaitFile_DirectoryPath_DisplayName));
             }
             else
             {
-                if (FilePath == null || FilePath.Expression == null)
+                if (FilePath == null)
                     metadata.AddValidationError(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.WaitFile_FilePath_DisplayName));
             }
         }

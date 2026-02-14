@@ -281,8 +281,112 @@
     <value>O número de pastas que foram excluídas.</value>
     <comment>property description</comment>
   </data>
+  <data name="Zip_Description" xml:space="preserve">
+    <value>Compacta arquivos e pastas em um arquivo zip.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="Zip_DisplayName" xml:space="preserve">
+    <value>Zip</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Zip_ToCompress_Description" xml:space="preserve">
+    <value>Coleção de caminhos de arquivos e diretórios a serem compactados.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Zip_ToCompress_DisplayName" xml:space="preserve">
+    <value>Para Compactar</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Zip_TextEncoding_Description" xml:space="preserve">
+    <value>Codificação usada para os nomes das entradas dentro do arquivo zip.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Zip_TextEncoding_DisplayName" xml:space="preserve">
+    <value>Codificação de Texto</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Zip_CompressionLevel_Description" xml:space="preserve">
+    <value>Nível de compactação usado ao criar o arquivo.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Zip_CompressionLevel_DisplayName" xml:space="preserve">
+    <value>Nível de Compactação</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Zip_CompressedFile_Description" xml:space="preserve">
+    <value>Índice ou identificador do arquivo compactado criado (quando aplicável).</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Zip_CompressedFile_DisplayName" xml:space="preserve">
+    <value>Arquivo Compactado</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Zip_FullEntryNames_Description" xml:space="preserve">
+    <value>Use nomes completos de entrada (caminhos absolutos) em vez de caminhos relativos.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Zip_FullEntryNames_DisplayName" xml:space="preserve">
+    <value>Nomes de Entrada Completos</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Zip_FilesCount_Description" xml:space="preserve">
+    <value>O número de arquivos adicionados ao arquivo.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Zip_FilesCount_DisplayName" xml:space="preserve">
+    <value>Contagem de Arquivos</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Zip_ZipFilePath_Description" xml:space="preserve">
+    <value>Caminho onde o arquivo zip será criado.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Zip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>Caminho do Arquivo Zip</value>
+    <comment>property name</comment>
+  </data>
   <data name="Common_ErrorMsg_ValueNotSupplied" xml:space="preserve">
     <value>O valor para um argumento obrigatório da atividade '{0}' não foi fornecido.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="Unzip_Description" xml:space="preserve">
+    <value>Extrai arquivos e pastas de um arquivo zip.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="Unzip_DisplayName" xml:space="preserve">
+    <value>Descompactar</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Unzip_ZipFilePath_Description" xml:space="preserve">
+    <value>O caminho para o arquivo zip a ser extraído.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Unzip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>Caminho do Arquivo Zip</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Unzip_ExtractTo_Description" xml:space="preserve">
+    <value>A pasta onde o conteúdo do arquivo será extraído.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Unzip_ExtractTo_DisplayName" xml:space="preserve">
+    <value>Extrair Para</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Unzip_Overwrite_Description" xml:space="preserve">
+    <value>Se verdadeiro, arquivos existentes serão sobrescritos durante a extração.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Unzip_Overwrite_DisplayName" xml:space="preserve">
+    <value>Sobrescrever</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Unzip_ErrorMsg_OutsideDir" xml:space="preserve">
+    <value>A entrada do arquivo seria extraída para fora do diretório de destino.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
+    <value>A entrada de diretório no arquivo contém dados, o que é inválido.</value>
     <comment>error message</comment>
   </data>
 </root>

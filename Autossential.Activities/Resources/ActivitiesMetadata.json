@@ -64,24 +64,6 @@
           "isVisible": true
         },
         {
-          "name": "Result",
-          "displayNameKey": "CleanUpFolder_Result_DisplayName",
-          "tooltipKey": "CleanUpFolder_Result_Description",
-          "isVisible": true
-        },
-        {
-          "name": "ResultType",
-          "displayNameKey": "CleanUpFolder_ResultType_DisplayName",
-          "tooltipKey": "CleanUpFolder_ResultType_Description",
-          "isVisible": true
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "CleanUpFolder_Result_DisplayName",
-          "tooltipKey": "CleanUpFolder_Result_Description",
-          "isVisible": true
-        },
-        {
           "name": "DisplayName",
           "displayNameKey": "CleanUpFolder_DisplayName_DisplayName",
           "tooltipKey": "CleanUpFolder_DisplayName_Description",
@@ -91,6 +73,47 @@
           "name": "Id",
           "displayNameKey": "CleanUpFolder_Id_DisplayName",
           "tooltipKey": "CleanUpFolder_Id_Description",
+          "isVisible": true
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.Unzip",
+      "shortName": "Unzip",
+      "displayNameKey": "Unzip_DisplayName",
+      "descriptionKey": "Unzip_Description",
+      "iconKey": "Unzip.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.UnzipViewModel",
+      "categoryKey": "Autossential.Files",
+      "properties": [
+        {
+          "name": "ZipFilePath",
+          "displayNameKey": "Unzip_ZipFilePath_DisplayName",
+          "tooltipKey": "Unzip_ZipFilePath_Description",
+          "isVisible": true
+        },
+        {
+          "name": "ExtractTo",
+          "displayNameKey": "Unzip_ExtractTo_DisplayName",
+          "tooltipKey": "Unzip_ExtractTo_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Overwrite",
+          "displayNameKey": "Unzip_Overwrite_DisplayName",
+          "tooltipKey": "Unzip_Overwrite_Description",
+          "isVisible": true
+        },
+        {
+          "name": "DisplayName",
+          "displayNameKey": "Unzip_DisplayName_DisplayName",
+          "tooltipKey": "Unzip_DisplayName_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Id",
+          "displayNameKey": "Unzip_Id_DisplayName",
+          "tooltipKey": "Unzip_Id_Description",
           "isVisible": true
         }
       ]
@@ -180,6 +203,71 @@
           "name": "Id",
           "displayNameKey": "WaitFile_Id_DisplayName",
           "tooltipKey": "WaitFile_Id_Description",
+          "isVisible": true
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.Zip",
+      "shortName": "Zip",
+      "displayNameKey": "Zip_DisplayName",
+      "descriptionKey": "Zip_Description",
+      "iconKey": "Zip.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.ZipViewModel",
+      "categoryKey": "Autossential.Files",
+      "properties": [
+        {
+          "name": "ZipFilePath",
+          "displayNameKey": "Zip_ZipFilePath_DisplayName",
+          "tooltipKey": "Zip_ZipFilePath_Description",
+          "isVisible": true
+        },
+        {
+          "name": "ToCompress",
+          "displayNameKey": "Zip_ToCompress_DisplayName",
+          "tooltipKey": "Zip_ToCompress_Description",
+          "isVisible": true
+        },
+        {
+          "name": "TextEncoding",
+          "displayNameKey": "Zip_TextEncoding_DisplayName",
+          "tooltipKey": "Zip_TextEncoding_Description",
+          "isVisible": true
+        },
+        {
+          "name": "CompressionLevel",
+          "displayNameKey": "Zip_CompressionLevel_DisplayName",
+          "tooltipKey": "Zip_CompressionLevel_Description",
+          "isVisible": true
+        },
+        {
+          "name": "FullEntryNames",
+          "displayNameKey": "Zip_FullEntryNames_DisplayName",
+          "tooltipKey": "Zip_FullEntryNames_Description",
+          "isVisible": true
+        },
+        {
+          "name": "CompressedFile",
+          "displayNameKey": "Zip_CompressedFile_DisplayName",
+          "tooltipKey": "Zip_CompressedFile_Description",
+          "isVisible": true
+        },
+        {
+          "name": "FilesCount",
+          "displayNameKey": "Zip_FilesCount_DisplayName",
+          "tooltipKey": "Zip_FilesCount_Description",
+          "isVisible": true
+        },
+        {
+          "name": "DisplayName",
+          "displayNameKey": "Zip_DisplayName_DisplayName",
+          "tooltipKey": "Zip_DisplayName_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Id",
+          "displayNameKey": "Zip_Id_DisplayName",
+          "tooltipKey": "Zip_Id_Description",
           "isVisible": true
         }
       ]

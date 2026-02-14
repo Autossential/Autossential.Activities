@@ -31,6 +31,8 @@
 	<ItemGroup>
 		<EmbeddedResource Include="Resources\ActivitiesMetadata.json" />
 		<EmbeddedResource Include="Resources\Icons\CleanUpFolder.svg" />
+		<EmbeddedResource Include="Resources\Icons\Zip.svg" />
+		<EmbeddedResource Include="Resources\Icons\Unzip.svg" />
 		<EmbeddedResource Include="Resources\Icons\WaitFile.svg" />
 	</ItemGroup>
 

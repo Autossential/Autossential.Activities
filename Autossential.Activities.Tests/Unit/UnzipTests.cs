@@ -2,9 +2,6 @@ using System.Activities;
 using System.IO.Compression;
 using System.Text;
 using Xunit;
-using System.IO;
-using System.Linq;
-using System.Collections.Generic;
 
 namespace Autossential.Activities.Tests.Unit
 {

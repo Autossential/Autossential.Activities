@@ -112,8 +112,17 @@ public class Activity
         {
             return ShortName switch
             {
-                "WaitFile" or "CleanUpFolder" or "Zip" or "Unzip" => "Autossential.Files",
-                "RandomString" => "Autossential.Programming",
+                "WaitFile" or 
+                "CleanUpFolder" or 
+                "Zip" or 
+                "Unzip" => "Autossential.Files",
+                
+                "RandomString" or 
+                "Increment" or 
+                "Decrement" or
+                "ReplaceTokens" or
+                "CultureScope" => "Autossential.Programming",
+
                 _ => "Autossential.Misc"
             };
         }

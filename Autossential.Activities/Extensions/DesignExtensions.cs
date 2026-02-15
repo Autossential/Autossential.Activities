@@ -13,6 +13,6 @@ namespace Autossential.Activities.Extensions
                     Type = widgetType,
                 };
             }
-        }       
+        }
     }
 }

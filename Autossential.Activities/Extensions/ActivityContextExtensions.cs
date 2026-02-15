@@ -1,7 +1,7 @@
 ﻿using System.Activities;
 using UiPath.Robot.Activities.Api;
 
-namespace Autossential.Activities.Helpers
+namespace Autossential.Activities.Extensions
 {
     public static class ActivityContextExtensions
     {

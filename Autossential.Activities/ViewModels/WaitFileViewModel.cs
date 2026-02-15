@@ -119,7 +119,7 @@ namespace Autossential.Activities.ViewModels
 
         private void DynamicFileChanged()
         {
-            bool isDynamic = DynamicFile.Value; 
+            bool isDynamic = DynamicFile.Value;
 
             DirectoryPath.IsVisible = DynamicFile.Value;
             SearchPattern.IsVisible = DynamicFile.Value;

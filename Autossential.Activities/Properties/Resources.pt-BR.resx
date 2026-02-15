@@ -417,8 +417,112 @@
     <value>Resultado</value>
     <comment>property name</comment>
   </data>
+  <data name="Increment_Description" xml:space="preserve">
+    <value>Incrementa uma variável numérica por um valor especificado.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="Increment_DisplayName" xml:space="preserve">
+    <value>Incrementar</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Increment_Value_Description" xml:space="preserve">
+    <value>Quantidade a ser adicionada à variável. Deve ser maior ou igual a 1.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Increment_Value_DisplayName" xml:space="preserve">
+    <value>Valor</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Increment_Variable_Description" xml:space="preserve">
+    <value>Variável a ser incrementada.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Increment_Variable_DisplayName" xml:space="preserve">
+    <value>Variável</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Decrement_Description" xml:space="preserve">
+    <value>Decrementa uma variável numérica por um valor especificado.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="Decrement_DisplayName" xml:space="preserve">
+    <value>Decrementar</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Decrement_Value_Description" xml:space="preserve">
+    <value>Quantidade a ser subtraída da variável. Deve ser maior ou igual a 1.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Decrement_Value_DisplayName" xml:space="preserve">
+    <value>Valor</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Decrement_Variable_Description" xml:space="preserve">
+    <value>Variável a ser decrementada.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Decrement_Variable_DisplayName" xml:space="preserve">
+    <value>Variável</value>
+    <comment>property name</comment>
+  </data>
   <data name="RandomString_Result_Description" xml:space="preserve">
     <value>A string aleatória gerada</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
+    <value>O valor mínimo permitido é 1.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+    <value>O valor mínimo permitido é 1.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="ReplaceTokens_Description" xml:space="preserve">
+    <value>Substitui os tokens de uma string pelos valores de um Dicionário. Tokens são cadeias de texto escritas em um padrão específico, geralmente delimitadas por caracteres especiais. Use a combinação das propriedades 'Padrão' e 'Marcador de posição' para definir o formato do seu token.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="ReplaceTokens_DisplayName" xml:space="preserve">
+    <value>Substituir Tokens</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="ReplaceTokens_Dictionary_Description" xml:space="preserve">
+    <value>O dicionário contendo os pares chave-valor usados para a substituição dos tokens.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Dictionary_DisplayName" xml:space="preserve">
+    <value>Dicionário</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
+    <value>O padrão de texto do token. Pode ter caracteres antes e depois do marcador de posição.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Pattern_DisplayName" xml:space="preserve">
+    <value>Padrão</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
+    <value>O caractere usado como marcador de posição dentro do padrão do token.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Placeholder_DisplayName" xml:space="preserve">
+    <value>Marcador de posição</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ReplaceTokens_Result_Description" xml:space="preserve">
+    <value>O texto resultante após todos os tokens terem sido substituídos.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Result_DisplayName" xml:space="preserve">
+    <value>Resultado</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ReplaceTokens_Content_DisplayName" xml:space="preserve">
+    <value>O texto de entrada onde os tokens serão substituídos.</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ReplaceTokens_Content_Description" xml:space="preserve">
+    <value>Conteúdo</value>
     <comment>property description</comment>
   </data>
 </root>

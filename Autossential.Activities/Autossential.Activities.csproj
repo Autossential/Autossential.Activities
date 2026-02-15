@@ -25,14 +25,47 @@
 
 	<ItemGroup>
 		<None Remove="Resources\ActivitiesMetadata.json" />
+		<None Remove="Resources\Icons\AddRangeToCollection.svg" />
+		<None Remove="Resources\Icons\AddToDictionary.svg" />
+		<None Remove="Resources\Icons\Aggregate.svg" />
+		<None Remove="Resources\Icons\CheckPoint.svg" />
+		<None Remove="Resources\Icons\Container.svg" />
+		<None Remove="Resources\Icons\CultureScope.svg" />
+		<None Remove="Resources\Icons\DataRowToDictionary.svg" />
+		<None Remove="Resources\Icons\DataTableEncryption.svg" />
+		<None Remove="Resources\Icons\DataTableToText.svg" />
+		<None Remove="Resources\Icons\Decrement.svg" />
+		<None Remove="Resources\Icons\DictionaryToDataTable.svg" />
+		<None Remove="Resources\Icons\Exit.svg" />
+		<None Remove="Resources\Icons\ExtractDataColumnValues.svg" />
+		<None Remove="Resources\Icons\FillDataColumn.svg" />
+		<None Remove="Resources\Icons\Increment.svg" />
+		<None Remove="Resources\Icons\IsTrue.svg" />
+		<None Remove="Resources\Icons\Iterate.svg" />
+		<None Remove="Resources\Icons\MapDrive.svg" />
+		<None Remove="Resources\Icons\Next.svg" />
+		<None Remove="Resources\Icons\PromoteHeaders.svg" />
 		<None Remove="Resources\Icons\RandomString.svg" />
+		<None Remove="Resources\Icons\RemoveDataColumns.svg" />
+		<None Remove="Resources\Icons\RemoveDuplicateRows.svg" />
+		<None Remove="Resources\Icons\RemoveEmptyRows.svg" />
+		<None Remove="Resources\Icons\RemoveFromDictionary.svg" />
+		<None Remove="Resources\Icons\ReplaceTokens.svg" />
+		<None Remove="Resources\Icons\TerminateProcess.svg" />
+		<None Remove="Resources\Icons\TimeLoop.svg" />
+		<None Remove="Resources\Icons\TransposeData.svg" />
+		<None Remove="Resources\Icons\UnmapDrive.svg" />
 		<None Remove="Resources\Icons\WaitFile.svg" />
+		<None Remove="Resources\Icons\WhenDo.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<EmbeddedResource Include="Resources\ActivitiesMetadata.json" />
 		<EmbeddedResource Include="Resources\Icons\CleanUpFolder.svg" />
+		<EmbeddedResource Include="Resources\Icons\Decrement.svg" />
+		<EmbeddedResource Include="Resources\Icons\Increment.svg" />
 		<EmbeddedResource Include="Resources\Icons\RandomString.svg" />
+		<EmbeddedResource Include="Resources\Icons\ReplaceTokens.svg" />
 		<EmbeddedResource Include="Resources\Icons\Zip.svg" />
 		<EmbeddedResource Include="Resources\Icons\Unzip.svg" />
 		<EmbeddedResource Include="Resources\Icons\WaitFile.svg" />

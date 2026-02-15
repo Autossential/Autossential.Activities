@@ -417,8 +417,112 @@
     <value>Result</value>
     <comment>property name</comment>
   </data>
+  <data name="Increment_Description" xml:space="preserve">
+    <value>Increments a numeric variable by a specified value.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="Increment_DisplayName" xml:space="preserve">
+    <value>Increment</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Increment_Value_Description" xml:space="preserve">
+    <value>Amount to add to the variable. Must be greater than or equal to 1.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Increment_Value_DisplayName" xml:space="preserve">
+    <value>Value</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Increment_Variable_Description" xml:space="preserve">
+    <value>Variable to be incremented.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Increment_Variable_DisplayName" xml:space="preserve">
+    <value>Variable</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Decrement_Description" xml:space="preserve">
+    <value>Decrements a numeric variable by a specified value.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="Decrement_DisplayName" xml:space="preserve">
+    <value>Decrement</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Decrement_Value_Description" xml:space="preserve">
+    <value>Amount to subtract from the variable. Must be greater than or equal to 1.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Decrement_Value_DisplayName" xml:space="preserve">
+    <value>Value</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Decrement_Variable_Description" xml:space="preserve">
+    <value>Variable to be decremented.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Decrement_Variable_DisplayName" xml:space="preserve">
+    <value>Variable</value>
+    <comment>property name</comment>
+  </data>
   <data name="RandomString_Result_Description" xml:space="preserve">
     <value>The generated random string.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
+    <value>Minimum allowed value is 1.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+    <value>Minimum allowed value is 1.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="ReplaceTokens_Description" xml:space="preserve">
+    <value>Replaces the tokens of a string by the values of a Dictionary. Tokens are strings written in a specific pattern, usually enclosed in special characters. Use the combination of 'Pattern' and 'Placeholder' properties to define your token format.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="ReplaceTokens_DisplayName" xml:space="preserve">
+    <value>Replace Tokens</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="ReplaceTokens_Dictionary_Description" xml:space="preserve">
+    <value>The dictionary where each key/value pair are used to replace the tokens.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Dictionary_DisplayName" xml:space="preserve">
+    <value>Dictionary</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
+    <value>The token text pattern. It can have characters either before and after the placeholder.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Pattern_DisplayName" xml:space="preserve">
+    <value>Pattern</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
+    <value>The character used as the placeholder inside the token pattern.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Placeholder_DisplayName" xml:space="preserve">
+    <value>Placeholder opa</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ReplaceTokens_Result_Description" xml:space="preserve">
+    <value> The resulting text after all tokens have been replaced.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ReplaceTokens_Content_DisplayName" xml:space="preserve">
+    <value>Content</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ReplaceTokens_Content_Description" xml:space="preserve">
+    <value>The input text where tokens will be replaced.</value>
     <comment>property description</comment>
   </data>
 </root>

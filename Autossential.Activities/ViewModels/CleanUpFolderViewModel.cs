@@ -1,9 +1,8 @@
 ﻿using Autossential.Activities.Base;
+using Autossential.Activities.Extensions;
+using Autossential.Activities.Properties;
 using System.Activities.DesignViewModels;
 using System.Activities.ViewModels;
-using Autossential.Activities.Properties;
-using Autossential.Activities.Extensions;
-using System.Activities;
 
 
 namespace Autossential.Activities.ViewModels

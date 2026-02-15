@@ -286,6 +286,132 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Decrements a numeric variable by a specified value..
+        /// </summary>
+        public static string Decrement_Description {
+            get {
+                return ResourceManager.GetString("Decrement_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decrement.
+        /// </summary>
+        public static string Decrement_DisplayName {
+            get {
+                return ResourceManager.GetString("Decrement_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimum allowed value is 1..
+        /// </summary>
+        public static string Decrement_ErrorMsg_MinValueAllowed {
+            get {
+                return ResourceManager.GetString("Decrement_ErrorMsg_MinValueAllowed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount to subtract from the variable. Must be greater than or equal to 1..
+        /// </summary>
+        public static string Decrement_Value_Description {
+            get {
+                return ResourceManager.GetString("Decrement_Value_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        public static string Decrement_Value_DisplayName {
+            get {
+                return ResourceManager.GetString("Decrement_Value_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Variable to be decremented..
+        /// </summary>
+        public static string Decrement_Variable_Description {
+            get {
+                return ResourceManager.GetString("Decrement_Variable_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Variable.
+        /// </summary>
+        public static string Decrement_Variable_DisplayName {
+            get {
+                return ResourceManager.GetString("Decrement_Variable_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Increments a numeric variable by a specified value..
+        /// </summary>
+        public static string Increment_Description {
+            get {
+                return ResourceManager.GetString("Increment_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Increment.
+        /// </summary>
+        public static string Increment_DisplayName {
+            get {
+                return ResourceManager.GetString("Increment_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimum allowed value is 1..
+        /// </summary>
+        public static string Increment_ErrorMsg_MinValueAllowed {
+            get {
+                return ResourceManager.GetString("Increment_ErrorMsg_MinValueAllowed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount to add to the variable. Must be greater than or equal to 1..
+        /// </summary>
+        public static string Increment_Value_Description {
+            get {
+                return ResourceManager.GetString("Increment_Value_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        public static string Increment_Value_DisplayName {
+            get {
+                return ResourceManager.GetString("Increment_Value_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Variable to be incremented..
+        /// </summary>
+        public static string Increment_Variable_Description {
+            get {
+                return ResourceManager.GetString("Increment_Variable_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Variable.
+        /// </summary>
+        public static string Increment_Variable_DisplayName {
+            get {
+                return ResourceManager.GetString("Increment_Variable_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Additional characters used when the &apos;?&apos; placeholder is present..
         /// </summary>
         public static string RandomString_Custom_Description {
@@ -354,6 +480,114 @@ namespace Autossential.Activities.Properties {
         public static string RandomString_Result_DisplayName {
             get {
                 return ResourceManager.GetString("RandomString_Result_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The input text where tokens will be replaced..
+        /// </summary>
+        public static string ReplaceTokens_Content_Description {
+            get {
+                return ResourceManager.GetString("ReplaceTokens_Content_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Content.
+        /// </summary>
+        public static string ReplaceTokens_Content_DisplayName {
+            get {
+                return ResourceManager.GetString("ReplaceTokens_Content_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Replaces the tokens of a string by the values of a Dictionary. Tokens are strings written in a specific pattern, usually enclosed in special characters. Use the combination of &apos;Pattern&apos; and &apos;Placeholder&apos; properties to define your token format..
+        /// </summary>
+        public static string ReplaceTokens_Description {
+            get {
+                return ResourceManager.GetString("ReplaceTokens_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The dictionary where each key/value pair are used to replace the tokens..
+        /// </summary>
+        public static string ReplaceTokens_Dictionary_Description {
+            get {
+                return ResourceManager.GetString("ReplaceTokens_Dictionary_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dictionary.
+        /// </summary>
+        public static string ReplaceTokens_Dictionary_DisplayName {
+            get {
+                return ResourceManager.GetString("ReplaceTokens_Dictionary_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Replace Tokens.
+        /// </summary>
+        public static string ReplaceTokens_DisplayName {
+            get {
+                return ResourceManager.GetString("ReplaceTokens_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The token text pattern. It can have characters either before and after the placeholder..
+        /// </summary>
+        public static string ReplaceTokens_Pattern_Description {
+            get {
+                return ResourceManager.GetString("ReplaceTokens_Pattern_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pattern.
+        /// </summary>
+        public static string ReplaceTokens_Pattern_DisplayName {
+            get {
+                return ResourceManager.GetString("ReplaceTokens_Pattern_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The character used as the placeholder inside the token pattern..
+        /// </summary>
+        public static string ReplaceTokens_Placeholder_Description {
+            get {
+                return ResourceManager.GetString("ReplaceTokens_Placeholder_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Placeholder opa.
+        /// </summary>
+        public static string ReplaceTokens_Placeholder_DisplayName {
+            get {
+                return ResourceManager.GetString("ReplaceTokens_Placeholder_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  The resulting text after all tokens have been replaced..
+        /// </summary>
+        public static string ReplaceTokens_Result_Description {
+            get {
+                return ResourceManager.GetString("ReplaceTokens_Result_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Result.
+        /// </summary>
+        public static string ReplaceTokens_Result_DisplayName {
+            get {
+                return ResourceManager.GetString("ReplaceTokens_Result_DisplayName", resourceCulture);
             }
         }
         

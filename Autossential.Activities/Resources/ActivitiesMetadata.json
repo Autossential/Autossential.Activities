@@ -66,6 +66,76 @@
       ]
     },
     {
+      "fullName": "Autossential.Activities.Decrement",
+      "shortName": "Decrement",
+      "displayNameKey": "Decrement_DisplayName",
+      "descriptionKey": "Decrement_Description",
+      "iconKey": "Decrement.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.DecrementViewModel",
+      "categoryKey": "Autossential.Programming",
+      "properties": [
+        {
+          "name": "Value",
+          "displayNameKey": "Decrement_Value_DisplayName",
+          "tooltipKey": "Decrement_Value_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Variable",
+          "displayNameKey": "Decrement_Variable_DisplayName",
+          "tooltipKey": "Decrement_Variable_Description",
+          "isVisible": true
+        },
+        {
+          "name": "DisplayName",
+          "displayNameKey": "Decrement_DisplayName_DisplayName",
+          "tooltipKey": "Decrement_DisplayName_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Id",
+          "displayNameKey": "Decrement_Id_DisplayName",
+          "tooltipKey": "Decrement_Id_Description",
+          "isVisible": true
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.Increment",
+      "shortName": "Increment",
+      "displayNameKey": "Increment_DisplayName",
+      "descriptionKey": "Increment_Description",
+      "iconKey": "Increment.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.IncrementViewModel",
+      "categoryKey": "Autossential.Programming",
+      "properties": [
+        {
+          "name": "Value",
+          "displayNameKey": "Increment_Value_DisplayName",
+          "tooltipKey": "Increment_Value_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Variable",
+          "displayNameKey": "Increment_Variable_DisplayName",
+          "tooltipKey": "Increment_Variable_Description",
+          "isVisible": true
+        },
+        {
+          "name": "DisplayName",
+          "displayNameKey": "Increment_DisplayName_DisplayName",
+          "tooltipKey": "Increment_DisplayName_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Id",
+          "displayNameKey": "Increment_Id_DisplayName",
+          "tooltipKey": "Increment_Id_Description",
+          "isVisible": true
+        }
+      ]
+    },
+    {
       "fullName": "Autossential.Activities.RandomString",
       "shortName": "RandomString",
       "displayNameKey": "RandomString_DisplayName",
@@ -114,6 +184,71 @@
           "name": "Id",
           "displayNameKey": "RandomString_Id_DisplayName",
           "tooltipKey": "RandomString_Id_Description",
+          "isVisible": true
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.ReplaceTokens",
+      "shortName": "ReplaceTokens",
+      "displayNameKey": "ReplaceTokens_DisplayName",
+      "descriptionKey": "ReplaceTokens_Description",
+      "iconKey": "ReplaceTokens.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.ReplaceTokensViewModel",
+      "categoryKey": "Autossential.Programming",
+      "properties": [
+        {
+          "name": "Content",
+          "displayNameKey": "ReplaceTokens_Content_DisplayName",
+          "tooltipKey": "ReplaceTokens_Content_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Dictionary",
+          "displayNameKey": "ReplaceTokens_Dictionary_DisplayName",
+          "tooltipKey": "ReplaceTokens_Dictionary_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Pattern",
+          "displayNameKey": "ReplaceTokens_Pattern_DisplayName",
+          "tooltipKey": "ReplaceTokens_Pattern_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Placeholder",
+          "displayNameKey": "ReplaceTokens_Placeholder_DisplayName",
+          "tooltipKey": "ReplaceTokens_Placeholder_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "ReplaceTokens_Result_DisplayName",
+          "tooltipKey": "ReplaceTokens_Result_Description",
+          "isVisible": true
+        },
+        {
+          "name": "ResultType",
+          "displayNameKey": "ReplaceTokens_ResultType_DisplayName",
+          "tooltipKey": "ReplaceTokens_ResultType_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "ReplaceTokens_Result_DisplayName",
+          "tooltipKey": "ReplaceTokens_Result_Description",
+          "isVisible": true
+        },
+        {
+          "name": "DisplayName",
+          "displayNameKey": "ReplaceTokens_DisplayName_DisplayName",
+          "tooltipKey": "ReplaceTokens_DisplayName_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Id",
+          "displayNameKey": "ReplaceTokens_Id_DisplayName",
+          "tooltipKey": "ReplaceTokens_Id_Description",
           "isVisible": true
         }
       ]

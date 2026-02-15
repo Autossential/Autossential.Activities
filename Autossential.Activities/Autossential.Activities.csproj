@@ -25,12 +25,14 @@
 
 	<ItemGroup>
 		<None Remove="Resources\ActivitiesMetadata.json" />
+		<None Remove="Resources\Icons\RandomString.svg" />
 		<None Remove="Resources\Icons\WaitFile.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<EmbeddedResource Include="Resources\ActivitiesMetadata.json" />
 		<EmbeddedResource Include="Resources\Icons\CleanUpFolder.svg" />
+		<EmbeddedResource Include="Resources\Icons\RandomString.svg" />
 		<EmbeddedResource Include="Resources\Icons\Zip.svg" />
 		<EmbeddedResource Include="Resources\Icons\Unzip.svg" />
 		<EmbeddedResource Include="Resources\Icons\WaitFile.svg" />

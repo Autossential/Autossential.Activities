@@ -1,5 +1,6 @@
 ﻿using System.Activities.DesignViewModels;
 using UiPath.Studio.Activities.Api;
+using UiPath.Studio.Activities.Api.ProjectProperties;
 
 namespace Autossential.Activities.Base
 {
@@ -24,5 +25,7 @@ namespace Autossential.Activities.Base
         }
 
         protected IWorkflowDesignApi GetWorkflowDesignApi() => _workflowDesignerAPI;
+
+        public bool IsCSharpProject() => _workflowDesignerAPI.ProjectPropertiesService.GetExpressionLanguage() == (int)ExpressionLanguage.CSharp;
     }
 }

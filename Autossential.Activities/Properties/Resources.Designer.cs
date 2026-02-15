@@ -286,6 +286,78 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Additional characters used when the &apos;?&apos; placeholder is present..
+        /// </summary>
+        public static string RandomString_Custom_Description {
+            get {
+                return ResourceManager.GetString("RandomString_Custom_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom Characters.
+        /// </summary>
+        public static string RandomString_Custom_DisplayName {
+            get {
+                return ResourceManager.GetString("RandomString_Custom_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generates a random string based on a format pattern..
+        /// </summary>
+        public static string RandomString_Description {
+            get {
+                return ResourceManager.GetString("RandomString_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Random String.
+        /// </summary>
+        public static string RandomString_DisplayName {
+            get {
+                return ResourceManager.GetString("RandomString_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pattern that defines the generated string. Placeholders: &apos;a&apos; lowercase, &apos;A&apos; uppercase, &apos;0&apos; digit, &apos;*&apos; any alphanumeric, &apos;?&apos; custom characters, &apos;\\&apos; escape..
+        /// </summary>
+        public static string RandomString_Format_Description {
+            get {
+                return ResourceManager.GetString("RandomString_Format_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Format.
+        /// </summary>
+        public static string RandomString_Format_DisplayName {
+            get {
+                return ResourceManager.GetString("RandomString_Format_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The generated random string..
+        /// </summary>
+        public static string RandomString_Result_Description {
+            get {
+                return ResourceManager.GetString("RandomString_Result_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Result.
+        /// </summary>
+        public static string RandomString_Result_DisplayName {
+            get {
+                return ResourceManager.GetString("RandomString_Result_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extracts files and folders from a zip archive..
         /// </summary>
         public static string Unzip_Description {
@@ -615,24 +687,6 @@ namespace Autossential.Activities.Properties {
         public static string Zip_FullEntryNames_DisplayName {
             get {
                 return ResourceManager.GetString("Zip_FullEntryNames_DisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Use short entry names (relative paths) instead of full paths..
-        /// </summary>
-        public static string Zip_ShortEntryNames_Description {
-            get {
-                return ResourceManager.GetString("Zip_ShortEntryNames_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Short Entry Names.
-        /// </summary>
-        public static string Zip_ShortEntryNames_DisplayName {
-            get {
-                return ResourceManager.GetString("Zip_ShortEntryNames_DisplayName", resourceCulture);
             }
         }
         

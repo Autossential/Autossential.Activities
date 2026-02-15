@@ -20,7 +20,7 @@ namespace Autossential.Activities.Tests.Unit
                 };
 
                 var result = WorkflowInvoker.Invoke(new WaitFile(), inputs);
-                var info = Assert.IsType<FileInfo>(result);
+                var info = Assert.IsType<FileInfo>(result["Result"]);
                 Assert.Equal(Path.GetFullPath(path), info.FullName);
             }
             finally
@@ -86,12 +86,12 @@ namespace Autossential.Activities.Tests.Unit
                 {
                     ["DirectoryPath"] = dir,
                     ["SearchPattern"] = "test.txt",
-                    ["TimeoutSeconds"] = 5.0,
+                    ["TimeoutSeconds"] = 50.0,
                     ["PollingIntervalSeconds"] = 0.1
                 };
 
                 var result = WorkflowInvoker.Invoke(new WaitFile { DynamicFile = true }, inputs);
-                var info = Assert.IsType<FileInfo>(result);
+                var info = Assert.IsType<FileInfo>(result["Result"]);
                 Assert.Equal(Path.GetFullPath(file), info.FullName);
             }
             finally

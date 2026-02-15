@@ -113,6 +113,7 @@ public class Activity
             return ShortName switch
             {
                 "WaitFile" or "CleanUpFolder" or "Zip" or "Unzip" => "Autossential.Files",
+                "RandomString" => "Autossential.Programming",
                 _ => "Autossential.Misc"
             };
         }

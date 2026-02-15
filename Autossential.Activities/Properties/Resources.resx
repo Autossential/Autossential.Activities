@@ -321,14 +321,6 @@
     <value>Compressed File</value>
     <comment>property name</comment>
   </data>
-  <data name="Zip_ShortEntryNames_Description" xml:space="preserve">
-    <value>Use short entry names (relative paths) instead of full paths.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="Zip_ShortEntryNames_DisplayName" xml:space="preserve">
-    <value>Short Entry Names</value>
-    <comment>property name</comment>
-  </data>
   <data name="Zip_FullEntryNames_Description" xml:space="preserve">
     <value>Use full entry names (absolute paths) instead of relative paths.</value>
     <comment>property description</comment>
@@ -396,5 +388,37 @@
   <data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
     <value>Directory entry in the archive contains file data, which is invalid.</value>
     <comment>error message</comment>
+  </data>
+  <data name="RandomString_Description" xml:space="preserve">
+    <value>Generates a random string based on a format pattern.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="RandomString_DisplayName" xml:space="preserve">
+    <value>Random String</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="RandomString_Format_Description" xml:space="preserve">
+    <value>Pattern that defines the generated string. Placeholders: 'a' lowercase, 'A' uppercase, '0' digit, '*' any alphanumeric, '?' custom characters, '\\' escape.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RandomString_Format_DisplayName" xml:space="preserve">
+    <value>Format</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RandomString_Custom_Description" xml:space="preserve">
+    <value>Additional characters used when the '?' placeholder is present.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RandomString_Custom_DisplayName" xml:space="preserve">
+    <value>Custom Characters</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RandomString_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RandomString_Result_Description" xml:space="preserve">
+    <value>The generated random string.</value>
+    <comment>property description</comment>
   </data>
 </root>

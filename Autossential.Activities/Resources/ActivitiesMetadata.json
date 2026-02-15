@@ -52,18 +52,6 @@
           "isVisible": true
         },
         {
-          "name": "TimeoutSeconds",
-          "displayNameKey": "Common_TimeoutSeconds_DisplayName",
-          "tooltipKey": "Common_TimeoutSeconds_Description",
-          "isVisible": true
-        },
-        {
-          "name": "ContinueOnError",
-          "displayNameKey": "Common_ContinueOnError_DisplayName",
-          "tooltipKey": "Common_ContinueOnError_Description",
-          "isVisible": true
-        },
-        {
           "name": "DisplayName",
           "displayNameKey": "CleanUpFolder_DisplayName_DisplayName",
           "tooltipKey": "CleanUpFolder_DisplayName_Description",
@@ -73,6 +61,59 @@
           "name": "Id",
           "displayNameKey": "CleanUpFolder_Id_DisplayName",
           "tooltipKey": "CleanUpFolder_Id_Description",
+          "isVisible": true
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.RandomString",
+      "shortName": "RandomString",
+      "displayNameKey": "RandomString_DisplayName",
+      "descriptionKey": "RandomString_Description",
+      "iconKey": "RandomString.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.RandomStringViewModel",
+      "categoryKey": "Autossential.Programming",
+      "properties": [
+        {
+          "name": "Format",
+          "displayNameKey": "RandomString_Format_DisplayName",
+          "tooltipKey": "RandomString_Format_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Custom",
+          "displayNameKey": "RandomString_Custom_DisplayName",
+          "tooltipKey": "RandomString_Custom_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "RandomString_Result_DisplayName",
+          "tooltipKey": "RandomString_Result_Description",
+          "isVisible": true
+        },
+        {
+          "name": "ResultType",
+          "displayNameKey": "RandomString_ResultType_DisplayName",
+          "tooltipKey": "RandomString_ResultType_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "RandomString_Result_DisplayName",
+          "tooltipKey": "RandomString_Result_Description",
+          "isVisible": true
+        },
+        {
+          "name": "DisplayName",
+          "displayNameKey": "RandomString_DisplayName_DisplayName",
+          "tooltipKey": "RandomString_DisplayName_Description",
+          "isVisible": true
+        },
+        {
+          "name": "Id",
+          "displayNameKey": "RandomString_Id_DisplayName",
+          "tooltipKey": "RandomString_Id_Description",
           "isVisible": true
         }
       ]
@@ -128,6 +169,18 @@
       "categoryKey": "Autossential.Files",
       "properties": [
         {
+          "name": "ContinueOnError",
+          "displayNameKey": "Common_ContinueOnError_DisplayName",
+          "tooltipKey": "Common_ContinueOnError_Description",
+          "isVisible": true
+        },
+        {
+          "name": "TimeoutSeconds",
+          "displayNameKey": "Common_TimeoutSeconds_DisplayName",
+          "tooltipKey": "Common_TimeoutSeconds_Description",
+          "isVisible": true
+        },
+        {
           "name": "FilePath",
           "displayNameKey": "WaitFile_FilePath_DisplayName",
           "tooltipKey": "WaitFile_FilePath_Description",
@@ -161,30 +214,6 @@
           "name": "DynamicFile",
           "displayNameKey": "WaitFile_DynamicFile_DisplayName",
           "tooltipKey": "WaitFile_DynamicFile_Description",
-          "isVisible": true
-        },
-        {
-          "name": "TimeoutSeconds",
-          "displayNameKey": "Common_TimeoutSeconds_DisplayName",
-          "tooltipKey": "Common_TimeoutSeconds_Description",
-          "isVisible": true
-        },
-        {
-          "name": "ContinueOnError",
-          "displayNameKey": "Common_ContinueOnError_DisplayName",
-          "tooltipKey": "Common_ContinueOnError_Description",
-          "isVisible": true
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "WaitFile_Result_DisplayName",
-          "tooltipKey": "WaitFile_Result_Description",
-          "isVisible": true
-        },
-        {
-          "name": "ResultType",
-          "displayNameKey": "WaitFile_ResultType_DisplayName",
-          "tooltipKey": "WaitFile_ResultType_Description",
           "isVisible": true
         },
         {

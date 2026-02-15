@@ -19,9 +19,11 @@ namespace Autossential.Activities.ViewModels
             var orderIndex = 0;
 
             ZipFilePath.IsPrincipal = true;
+            ZipFilePath.IsRequired = true;
             ZipFilePath.OrderIndex = orderIndex++;
 
             ExtractTo.IsPrincipal = true;
+            ExtractTo.IsRequired = true;
             ExtractTo.OrderIndex = orderIndex++;
 
             if (IsWidgetSupported(ViewModelWidgetType.Toggle))

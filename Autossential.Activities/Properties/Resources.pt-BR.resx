@@ -389,4 +389,36 @@
     <value>A entrada de diretório no arquivo contém dados, o que é inválido.</value>
     <comment>error message</comment>
   </data>
+  <data name="RandomString_Description" xml:space="preserve">
+    <value>Gera uma string aleatória com base em um padrão de formato.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="RandomString_DisplayName" xml:space="preserve">
+    <value>String Aleatória</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="RandomString_Format_Description" xml:space="preserve">
+    <value>Padrão que define a string gerada. Placeholders: 'a' minúscula, 'A' maiúscula, '0' dígito, '*' qualquer alfanumérico, '?' caracteres customizados, '\\' escape.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RandomString_Format_DisplayName" xml:space="preserve">
+    <value>Formato</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RandomString_Custom_Description" xml:space="preserve">
+    <value>Caracteres adicionais usados quando o placeholder '?' está presente.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RandomString_Custom_DisplayName" xml:space="preserve">
+    <value>Caracteres Customizados</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RandomString_Result_DisplayName" xml:space="preserve">
+    <value>Resultado</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RandomString_Result_Description" xml:space="preserve">
+    <value>A string aleatória gerada</value>
+    <comment>property description</comment>
+  </data>
 </root>

@@ -18,6 +18,17 @@ namespace Autossential.Activities
 
         public InArgument<bool> Overwrite { get; set; }
 
+        protected override void CacheMetadata(CodeActivityMetadata metadata)
+        {
+            base.CacheMetadata(metadata);
+
+            if (ZipFilePath == null)
+                metadata.AddValidationError(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.Unzip_ZipFilePath_DisplayName));
+
+            if (ExtractTo == null)
+                metadata.AddValidationError(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.Unzip_ExtractTo_DisplayName));
+        }
+
         protected override Task<Action<AsyncCodeActivityContext>> RunAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
             var zipFilePath = ZipFilePath.Get(context);
@@ -31,21 +42,15 @@ namespace Autossential.Activities
                     var dir = Directory.CreateDirectory(extractTo);
                     var dirPath = dir.FullName;
 
-                    foreach(var entry in zip.Entries)
+                    foreach (var entry in zip.Entries)
                     {
                         if (token.IsCancellationRequested)
                             token.ThrowIfCancellationRequested();
 
                         var fullPath = Path.GetFullPath(Path.Combine(dirPath, entry.FullName));
 
-                        //if (!fullPath.StartsWith(dirPath, StringComparison.OrdinalIgnoreCase))
-                        //    throw new IOException(Resources.Unzip_ErrorMsg_OutsideDir);
-
                         if (Path.GetFileName(fullPath).Length == 0)
                         {
-                            //if (entry.Length != 0L)
-                            //    throw new IOException(Resources.Unzip_ErrorMsg_DirNameWithData);
-
                             Directory.CreateDirectory(fullPath);
                         }
                         else

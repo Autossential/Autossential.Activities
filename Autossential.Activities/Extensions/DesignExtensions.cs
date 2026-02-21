@@ -4,7 +4,7 @@ namespace Autossential.Activities.Extensions
 {
     internal static class DesignExtensions
     {
-        extension<T>(DesignInArgument<T> argument)
+        extension<T>(DesignProperty<T> argument)
         {
             public void AddWidget(string widgetType)
             {

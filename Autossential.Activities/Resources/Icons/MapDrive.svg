@@ -1,3 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path d="M4,1C2.89,1 2,1.89 2,3V7C2,8.11 2.89,9 4,9H1V11H13V9H10C11.11,9 12,8.11 12,7V3C12,1.89 11.11,1 10,1H4M4,3H10V7H4V3M3,13V18L3,20H10V18H5V13H3M14,13C12.89,13 12,13.89 12,15V19C12,20.11 12.89,21 14,21H11V23H23V21H20C21.11,21 22,20.11 22,19V15C22,13.89 21.11,13 20,13H14M14,15H20V19H14V15Z" fill="#F161FF" />
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <path d="M3,13L3,20L10,20L10,18L5,18L5,13L3,13" style="fill:#0067df;fill-rule:nonzero;"/>
+    <path d="M4,1C2.89,1 2,1.89 2,3L2,7C2,8.11 2.89,9 4,9L1,9L1,11L13,11L13,9L10,9C11.11,9 12,8.11 12,7L12,3C12,1.89 11.11,1 10,1L4,1M4,3L10,3L10,7L4,7L4,3M14,13C12.89,13 12,13.89 12,15L12,19C12,20.11 12.89,21 14,21L11,21L11,23L23,23L23,21L20,21C21.11,21 22,20.11 22,19L22,15C22,13.89 21.11,13 20,13L14,13M14,15L20,15L20,19L14,19L14,15Z" style="fill:#526069;fill-rule:nonzero;"/>
 </svg>

@@ -13,55 +13,100 @@
           "name": "Folder",
           "displayNameKey": "CleanUpFolder_Folder_DisplayName",
           "tooltipKey": "CleanUpFolder_Folder_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "SearchPattern",
           "displayNameKey": "Common_SearchPattern_DisplayName",
           "tooltipKey": "Common_SearchPattern_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "FilesDeleted",
           "displayNameKey": "CleanUpFolder_FilesDeleted_DisplayName",
           "tooltipKey": "CleanUpFolder_FilesDeleted_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
         },
         {
           "name": "FoldersDeleted",
           "displayNameKey": "CleanUpFolder_FoldersDeleted_DisplayName",
           "tooltipKey": "CleanUpFolder_FoldersDeleted_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
         },
         {
           "name": "LastWriteTime",
           "displayNameKey": "CleanUpFolder_LastWriteTime_DisplayName",
           "tooltipKey": "CleanUpFolder_LastWriteTime_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "DeleteEmptyFolders",
           "displayNameKey": "CleanUpFolder_DeleteEmptyFolders_DisplayName",
           "tooltipKey": "CleanUpFolder_DeleteEmptyFolders_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "SearchOption",
           "displayNameKey": "CleanUpFolder_SearchOption_DisplayName",
           "tooltipKey": "CleanUpFolder_SearchOption_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         },
         {
           "name": "DisplayName",
           "displayNameKey": "CleanUpFolder_DisplayName_DisplayName",
           "tooltipKey": "CleanUpFolder_DisplayName_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         },
         {
           "name": "Id",
           "displayNameKey": "CleanUpFolder_Id_DisplayName",
           "tooltipKey": "CleanUpFolder_Id_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         }
       ]
     },
@@ -78,25 +123,45 @@
           "name": "Value",
           "displayNameKey": "Decrement_Value_DisplayName",
           "tooltipKey": "Decrement_Value_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "Variable",
           "displayNameKey": "Decrement_Variable_DisplayName",
           "tooltipKey": "Decrement_Variable_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "InputOutput",
+            "displayNameKey": "Categories_InputOutput"
+          }
         },
         {
           "name": "DisplayName",
           "displayNameKey": "Decrement_DisplayName_DisplayName",
           "tooltipKey": "Decrement_DisplayName_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         },
         {
           "name": "Id",
           "displayNameKey": "Decrement_Id_DisplayName",
           "tooltipKey": "Decrement_Id_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         }
       ]
     },
@@ -113,25 +178,188 @@
           "name": "Value",
           "displayNameKey": "Increment_Value_DisplayName",
           "tooltipKey": "Increment_Value_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "Variable",
           "displayNameKey": "Increment_Variable_DisplayName",
           "tooltipKey": "Increment_Variable_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "InputOutput",
+            "displayNameKey": "Categories_InputOutput"
+          }
         },
         {
           "name": "DisplayName",
           "displayNameKey": "Increment_DisplayName_DisplayName",
           "tooltipKey": "Increment_DisplayName_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         },
         {
           "name": "Id",
           "displayNameKey": "Increment_Id_DisplayName",
           "tooltipKey": "Increment_Id_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.MapDrive",
+      "shortName": "MapDrive",
+      "displayNameKey": "MapDrive_DisplayName",
+      "descriptionKey": "MapDrive_Description",
+      "iconKey": "MapDrive.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.MapDriveViewModel",
+      "categoryKey": "Autossential.Misc",
+      "properties": [
+        {
+          "name": "SharedDrivePath",
+          "displayNameKey": "MapDrive_SharedDrivePath_DisplayName",
+          "tooltipKey": "MapDrive_SharedDrivePath_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "Credential",
+          "displayNameKey": "MapDrive_Credential_DisplayName",
+          "tooltipKey": "MapDrive_Credential_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "Force",
+          "displayNameKey": "MapDrive_Force_DisplayName",
+          "tooltipKey": "MapDrive_Force_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "DriveLetter",
+          "displayNameKey": "MapDrive_DriveLetter_DisplayName",
+          "tooltipKey": "MapDrive_DriveLetter_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "InputOutput",
+            "displayNameKey": "Categories_InputOutput"
+          }
+        },
+        {
+          "name": "MappedDrive",
+          "displayNameKey": "MapDrive_MappedDrive_DisplayName",
+          "tooltipKey": "MapDrive_MappedDrive_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        },
+        {
+          "name": "ResponseCode",
+          "displayNameKey": "MapDrive_ResponseCode_DisplayName",
+          "tooltipKey": "MapDrive_ResponseCode_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        },
+        {
+          "name": "ResponseMessage",
+          "displayNameKey": "MapDrive_ResponseMessage_DisplayName",
+          "tooltipKey": "MapDrive_ResponseMessage_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "MapDrive_Result_DisplayName",
+          "tooltipKey": "MapDrive_Result_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        },
+        {
+          "name": "ResultType",
+          "displayNameKey": "MapDrive_ResultType_DisplayName",
+          "tooltipKey": "MapDrive_ResultType_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "MapDrive_Result_DisplayName",
+          "tooltipKey": "MapDrive_Result_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        },
+        {
+          "name": "DisplayName",
+          "displayNameKey": "MapDrive_DisplayName_DisplayName",
+          "tooltipKey": "MapDrive_DisplayName_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
+        },
+        {
+          "name": "Id",
+          "displayNameKey": "MapDrive_Id_DisplayName",
+          "tooltipKey": "MapDrive_Id_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         }
       ]
     },
@@ -148,43 +376,78 @@
           "name": "Format",
           "displayNameKey": "RandomString_Format_DisplayName",
           "tooltipKey": "RandomString_Format_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "Custom",
           "displayNameKey": "RandomString_Custom_DisplayName",
           "tooltipKey": "RandomString_Custom_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "Result",
           "displayNameKey": "RandomString_Result_DisplayName",
           "tooltipKey": "RandomString_Result_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
         },
         {
           "name": "ResultType",
           "displayNameKey": "RandomString_ResultType_DisplayName",
           "tooltipKey": "RandomString_ResultType_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         },
         {
           "name": "Result",
           "displayNameKey": "RandomString_Result_DisplayName",
           "tooltipKey": "RandomString_Result_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
         },
         {
           "name": "DisplayName",
           "displayNameKey": "RandomString_DisplayName_DisplayName",
           "tooltipKey": "RandomString_DisplayName_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         },
         {
           "name": "Id",
           "displayNameKey": "RandomString_Id_DisplayName",
           "tooltipKey": "RandomString_Id_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         }
       ]
     },
@@ -201,55 +464,210 @@
           "name": "Content",
           "displayNameKey": "ReplaceTokens_Content_DisplayName",
           "tooltipKey": "ReplaceTokens_Content_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "Dictionary",
           "displayNameKey": "ReplaceTokens_Dictionary_DisplayName",
           "tooltipKey": "ReplaceTokens_Dictionary_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "Pattern",
           "displayNameKey": "ReplaceTokens_Pattern_DisplayName",
           "tooltipKey": "ReplaceTokens_Pattern_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "Placeholder",
           "displayNameKey": "ReplaceTokens_Placeholder_DisplayName",
           "tooltipKey": "ReplaceTokens_Placeholder_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "CaseSensitive",
+          "displayNameKey": "ReplaceTokens_CaseSensitive_DisplayName",
+          "tooltipKey": "ReplaceTokens_CaseSensitive_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         },
         {
           "name": "Result",
           "displayNameKey": "ReplaceTokens_Result_DisplayName",
           "tooltipKey": "ReplaceTokens_Result_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
         },
         {
           "name": "ResultType",
           "displayNameKey": "ReplaceTokens_ResultType_DisplayName",
           "tooltipKey": "ReplaceTokens_ResultType_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         },
         {
           "name": "Result",
           "displayNameKey": "ReplaceTokens_Result_DisplayName",
           "tooltipKey": "ReplaceTokens_Result_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
         },
         {
           "name": "DisplayName",
           "displayNameKey": "ReplaceTokens_DisplayName_DisplayName",
           "tooltipKey": "ReplaceTokens_DisplayName_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         },
         {
           "name": "Id",
           "displayNameKey": "ReplaceTokens_Id_DisplayName",
           "tooltipKey": "ReplaceTokens_Id_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.UnmapDrive",
+      "shortName": "UnmapDrive",
+      "displayNameKey": "UnmapDrive_DisplayName",
+      "descriptionKey": "UnmapDrive_Description",
+      "iconKey": "UnmapDrive.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.UnmapDriveViewModel",
+      "categoryKey": "Autossential.Misc",
+      "properties": [
+        {
+          "name": "DriveLetter",
+          "displayNameKey": "UnmapDrive_DriveLetter_DisplayName",
+          "tooltipKey": "UnmapDrive_DriveLetter_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "ResponseCode",
+          "displayNameKey": "UnmapDrive_ResponseCode_DisplayName",
+          "tooltipKey": "UnmapDrive_ResponseCode_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        },
+        {
+          "name": "ResponseMessage",
+          "displayNameKey": "UnmapDrive_ResponseMessage_DisplayName",
+          "tooltipKey": "UnmapDrive_ResponseMessage_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "UnmapDrive_Result_DisplayName",
+          "tooltipKey": "UnmapDrive_Result_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        },
+        {
+          "name": "ResultType",
+          "displayNameKey": "UnmapDrive_ResultType_DisplayName",
+          "tooltipKey": "UnmapDrive_ResultType_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "UnmapDrive_Result_DisplayName",
+          "tooltipKey": "UnmapDrive_Result_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        },
+        {
+          "name": "DisplayName",
+          "displayNameKey": "UnmapDrive_DisplayName_DisplayName",
+          "tooltipKey": "UnmapDrive_DisplayName_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
+        },
+        {
+          "name": "Id",
+          "displayNameKey": "UnmapDrive_Id_DisplayName",
+          "tooltipKey": "UnmapDrive_Id_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         }
       ]
     },
@@ -266,31 +684,56 @@
           "name": "ZipFilePath",
           "displayNameKey": "Unzip_ZipFilePath_DisplayName",
           "tooltipKey": "Unzip_ZipFilePath_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "ExtractTo",
           "displayNameKey": "Unzip_ExtractTo_DisplayName",
           "tooltipKey": "Unzip_ExtractTo_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "Overwrite",
           "displayNameKey": "Unzip_Overwrite_DisplayName",
           "tooltipKey": "Unzip_Overwrite_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "DisplayName",
           "displayNameKey": "Unzip_DisplayName_DisplayName",
           "tooltipKey": "Unzip_DisplayName_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         },
         {
           "name": "Id",
           "displayNameKey": "Unzip_Id_DisplayName",
           "tooltipKey": "Unzip_Id_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         }
       ]
     },
@@ -307,67 +750,122 @@
           "name": "ContinueOnError",
           "displayNameKey": "Common_ContinueOnError_DisplayName",
           "tooltipKey": "Common_ContinueOnError_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "TimeoutSeconds",
           "displayNameKey": "Common_TimeoutSeconds_DisplayName",
           "tooltipKey": "Common_TimeoutSeconds_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "FilePath",
           "displayNameKey": "WaitFile_FilePath_DisplayName",
           "tooltipKey": "WaitFile_FilePath_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "PollingIntervalSeconds",
           "displayNameKey": "WaitFile_PollingIntervalSeconds_DisplayName",
           "tooltipKey": "WaitFile_PollingIntervalSeconds_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "WaitForExist",
           "displayNameKey": "WaitFile_WaitForExist_DisplayName",
           "tooltipKey": "WaitFile_WaitForExist_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "DirectoryPath",
           "displayNameKey": "WaitFile_DirectoryPath_DisplayName",
           "tooltipKey": "WaitFile_DirectoryPath_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "SearchPattern",
           "displayNameKey": "Common_SearchPattern_DisplayName",
           "tooltipKey": "Common_SearchPattern_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "DynamicFile",
           "displayNameKey": "WaitFile_DynamicFile_DisplayName",
           "tooltipKey": "WaitFile_DynamicFile_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         },
         {
           "name": "Result",
           "displayNameKey": "WaitFile_Result_DisplayName",
           "tooltipKey": "WaitFile_Result_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
         },
         {
           "name": "DisplayName",
           "displayNameKey": "WaitFile_DisplayName_DisplayName",
           "tooltipKey": "WaitFile_DisplayName_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         },
         {
           "name": "Id",
           "displayNameKey": "WaitFile_Id_DisplayName",
           "tooltipKey": "WaitFile_Id_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         }
       ]
     },
@@ -384,55 +882,100 @@
           "name": "ZipFilePath",
           "displayNameKey": "Zip_ZipFilePath_DisplayName",
           "tooltipKey": "Zip_ZipFilePath_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "ToCompress",
           "displayNameKey": "Zip_ToCompress_DisplayName",
           "tooltipKey": "Zip_ToCompress_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "TextEncoding",
           "displayNameKey": "Zip_TextEncoding_DisplayName",
           "tooltipKey": "Zip_TextEncoding_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "CompressionLevel",
           "displayNameKey": "Zip_CompressionLevel_DisplayName",
           "tooltipKey": "Zip_CompressionLevel_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         },
         {
           "name": "FullEntryNames",
           "displayNameKey": "Zip_FullEntryNames_DisplayName",
           "tooltipKey": "Zip_FullEntryNames_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         },
         {
           "name": "CompressedFile",
           "displayNameKey": "Zip_CompressedFile_DisplayName",
           "tooltipKey": "Zip_CompressedFile_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
         },
         {
           "name": "FilesCount",
           "displayNameKey": "Zip_FilesCount_DisplayName",
           "tooltipKey": "Zip_FilesCount_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
         },
         {
           "name": "DisplayName",
           "displayNameKey": "Zip_DisplayName_DisplayName",
           "tooltipKey": "Zip_DisplayName_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         },
         {
           "name": "Id",
           "displayNameKey": "Zip_Id_DisplayName",
           "tooltipKey": "Zip_Id_Description",
-          "isVisible": true
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
         }
       ]
     }

@@ -469,14 +469,6 @@
     <value>A string aleatória gerada</value>
     <comment>property description</comment>
   </data>
-  <data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>O valor mínimo permitido é 1.</value>
-    <comment>error message</comment>
-  </data>
-  <data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>O valor mínimo permitido é 1.</value>
-    <comment>error message</comment>
-  </data>
   <data name="ReplaceTokens_Description" xml:space="preserve">
     <value>Substitui os tokens de uma string pelos valores de um Dicionário. Tokens são cadeias de texto escritas em um padrão específico, geralmente delimitadas por caracteres especiais. Use a combinação das propriedades 'Padrão' e 'Marcador de posição' para definir o formato do seu token.</value>
     <comment>activity description</comment>
@@ -518,11 +510,155 @@
     <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Content_DisplayName" xml:space="preserve">
-    <value>O texto de entrada onde os tokens serão substituídos.</value>
+    <value>Conteúdo</value>
     <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Content_Description" xml:space="preserve">
-    <value>Conteúdo</value>
+    <value>O texto de entrada onde os tokens serão substituídos.</value>
     <comment>property description</comment>
+  </data>
+  <data name="Categories_InputOutput" xml:space="preserve">
+    <value>Entrada/Saída</value>
+    <comment>category</comment>
+  </data>
+  <data name="ReplaceTokens_CaseSensitive_Description" xml:space="preserve">
+    <value>Determina se a busca por tokens diferencia maiúsculas de minúsculas. O Padrão também é afetado.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ReplaceTokens_CaseSensitive_DisplayName" xml:space="preserve">
+    <value>Diferenciar Maiúsculas e Minúsculas</value>
+    <comment>property name</comment>
+  </data>
+  <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
+    <value>Sucesso</value>
+    <comment>response message</comment>
+  </data>
+  <data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+    <value>O valor mínimo permitido é 1.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
+    <value>O valor mínimo permitido é 1.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
+    <value>Não há unidades disponíveis</value>
+    <comment>error message</comment>
+  </data>
+  <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
+    <value>A letra da unidade inserida é inválida. As entradas válidas são 'X', 'X:' ou 'X:\\', onde X pode ser qualquer letra.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="MapDrive_Credential_Description" xml:space="preserve">
+    <value>A credencial a ser usada para o mapeamento da unidade.</value>
+    <comment>descrição da propriedade</comment>
+  </data>
+  <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
+    <value>Credencial</value>
+    <comment>nome da propriedade</comment>
+  </data>
+  <data name="MapDrive_Description" xml:space="preserve">
+    <value>Mapeia uma Unidade de Rede no sistema.</value>
+    <comment>descrição da atividade</comment>
+  </data>
+  <data name="MapDrive_DisplayName" xml:space="preserve">
+    <value>Mapear Unidade</value>
+    <comment>nome da atividade</comment>
+  </data>
+  <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
+    <value>A letra da unidade a ser mapeada; se não especificada, uma aleatória será escolhida. Quando especificada, as entradas válidas são 'X', 'X:' ou 'X:\', onde X pode ser qualquer letra.</value>
+    <comment>descrição da propriedade</comment>
+  </data>
+  <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
+    <value>Letra da Unidade</value>
+    <comment>nome da propriedade</comment>
+  </data>
+  <data name="MapDrive_Force_Description" xml:space="preserve">
+    <value>Tenta forçar a conexão se a letra da unidade já estiver em uso.</value>
+    <comment>descrição da propriedade</comment>
+  </data>
+  <data name="MapDrive_Force_DisplayName" xml:space="preserve">
+    <value>Forçar</value>
+    <comment>nome da propriedade</comment>
+  </data>
+  <data name="MapDrive_MappedDrive_Description" xml:space="preserve">
+    <value>A letra da unidade mapeada se o mapeamento foi bem-sucedido, representada no formato "&lt;letra&gt;:\".</value>
+    <comment>descrição da propriedade</comment>
+  </data>
+  <data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
+    <value>Unidade Mapeada</value>
+    <comment>nome da propriedade</comment>
+  </data>
+  <data name="MapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>O código de resposta do WNetAddConnection2A.</value>
+    <comment>descrição da propriedade</comment>
+  </data>
+  <data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>Código de Resposta</value>
+    <comment>nome da propriedade</comment>
+  </data>
+  <data name="MapDrive_ResponseMessage_Description" xml:space="preserve">
+    <value>A mensagem equivalente ao código de resposta.</value>
+    <comment>descrição da propriedade</comment>
+  </data>
+  <data name="MapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+    <value>Mensagem de Resposta</value>
+    <comment>nome da propriedade</comment>
+  </data>
+  <data name="MapDrive_Result_Description" xml:space="preserve">
+    <value>Retorna verdadeiro se a unidade foi mapeada com sucesso, falso caso contrário.</value>
+    <comment>descrição da propriedade</comment>
+  </data>
+  <data name="MapDrive_Result_DisplayName" xml:space="preserve">
+    <value>Resultado</value>
+    <comment>nome da propriedade</comment>
+  </data>
+  <data name="MapDrive_SharedDrivePath_Description" xml:space="preserve">
+    <value>O caminho da unidade compartilhada para se conectar.</value>
+    <comment>descrição da propriedade</comment>
+  </data>
+  <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
+    <value>Caminho da Unidade Compartilhada</value>
+    <comment>nome da propriedade</comment>
+  </data>
+  <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
+    <value>Resultado</value>
+    <comment>nome da propriedade</comment>
+  </data>
+  <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
+    <value>A letra da unidade mapeada. Entradas válidas são 'X', 'X:' ou 'X:\', onde X pode ser qualquer letra.</value>
+    <comment>descrição da propriedade</comment>
+  </data>
+  <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
+    <value>Letra da Unidade</value>
+    <comment>nome da propriedade</comment>
+  </data>
+  <data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>O código de resposta do WNetCancelConnection2A.</value>
+    <comment>descrição da propriedade</comment>
+  </data>
+  <data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>Código de Resposta</value>
+    <comment>nome da propriedade</comment>
+  </data>
+  <data name="UnmapDrive_ResponseMessage_Description" xml:space="preserve">
+    <value>A mensagem equivalente ao código de resposta.</value>
+    <comment>descrição da propriedade</comment>
+  </data>
+  <data name="UnmapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+    <value>Mensagem de Resposta</value>
+    <comment>nome da propriedade</comment>
+  </data>
+  <data name="UnmapDrive_Result_Description" xml:space="preserve">
+    <value>Retorna verdadeiro se a unidade foi desmapeada com sucesso, falso caso contrário.</value>
+    <comment>descrição da propriedade</comment>
+  </data>
+  <data name="UnmapDrive_DisplayName" xml:space="preserve">
+    <value>Desmapear Unidade</value>
+    <comment>nome da atividade</comment>
+  </data>
+  <data name="MapDrive_Credential_Placeholder" xml:space="preserve">
+    <value>Se não informado, credencial do usuário atual será usada.</value>
+    <comment>placeholder</comment>
   </data>
 </root>

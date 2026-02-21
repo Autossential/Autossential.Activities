@@ -1,3 +1,5 @@
+using Autossential.Activities.Attributes;
+using Autossential.Activities.Properties;
 using System.Activities;
 
 namespace Autossential.Activities
@@ -14,7 +16,10 @@ namespace Autossential.Activities
         public InArgument<string> Pattern { get; set; } = "{{0}}";
 
         [RequiredArgument]
+        [LocalizedDisplayName(nameof(Resources.ReplaceTokens_Placeholder_DisplayName))]
         public InArgument<char> Placeholder { get; set; } = '0';
+
+        public bool CaseSensitive { get; set; } = true;
 
         protected override string Execute(CodeActivityContext context)
         {
@@ -30,13 +35,10 @@ namespace Autossential.Activities
             var prefix = token[0];
             var suffix = token[1];
 
-            foreach (var item in value)
-            {
-                if (!content.Contains(prefix, StringComparison.CurrentCulture))
-                    break;
+            var caseSensitive = CaseSensitive ? StringComparison.Ordinal : StringComparison.OrdinalIgnoreCase;
 
-                content = content.Replace(prefix + item.Key + suffix, item.Value?.ToString());
-            }
+            foreach (var item in value)
+                content = content.Replace(prefix + item.Key + suffix, item.Value?.ToString(), caseSensitive);
 
             return content;
         }

@@ -79,6 +79,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Input/Output.
+        /// </summary>
+        public static string Categories_InputOutput {
+            get {
+                return ResourceManager.GetString("Categories_InputOutput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Options.
         /// </summary>
         public static string Categories_Options {
@@ -412,6 +421,204 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The credential to be used for the drive mapping..
+        /// </summary>
+        public static string MapDrive_Credential_Description {
+            get {
+                return ResourceManager.GetString("MapDrive_Credential_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Credential.
+        /// </summary>
+        public static string MapDrive_Credential_DisplayName {
+            get {
+                return ResourceManager.GetString("MapDrive_Credential_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If not provided, current user credentials will be used..
+        /// </summary>
+        public static string MapDrive_Credential_Placeholder {
+            get {
+                return ResourceManager.GetString("MapDrive_Credential_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maps a Network Drive into the system..
+        /// </summary>
+        public static string MapDrive_Description {
+            get {
+                return ResourceManager.GetString("MapDrive_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map Drive.
+        /// </summary>
+        public static string MapDrive_DisplayName {
+            get {
+                return ResourceManager.GetString("MapDrive_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The drive letter to be mapped, if not specified, a random one will be chosen. When specifing, the valid inputs are &apos;X&apos;, &apos;X:&apos; or &apos;X:\&apos;, where X can be any letter..
+        /// </summary>
+        public static string MapDrive_DriveLetter_Description {
+            get {
+                return ResourceManager.GetString("MapDrive_DriveLetter_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drive Letter.
+        /// </summary>
+        public static string MapDrive_DriveLetter_DisplayName {
+            get {
+                return ResourceManager.GetString("MapDrive_DriveLetter_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tries to force the connection if the drive letter is already being in use..
+        /// </summary>
+        public static string MapDrive_Force_Description {
+            get {
+                return ResourceManager.GetString("MapDrive_Force_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Force.
+        /// </summary>
+        public static string MapDrive_Force_DisplayName {
+            get {
+                return ResourceManager.GetString("MapDrive_Force_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The mapped drive letter if the mapping was successful, it is represented in the format &quot;&lt;letter&gt;:\&quot;..
+        /// </summary>
+        public static string MapDrive_MappedDrive_Description {
+            get {
+                return ResourceManager.GetString("MapDrive_MappedDrive_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mapped Drive.
+        /// </summary>
+        public static string MapDrive_MappedDrive_DisplayName {
+            get {
+                return ResourceManager.GetString("MapDrive_MappedDrive_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The response code of the WNetAddConnection2A..
+        /// </summary>
+        public static string MapDrive_ResponseCode_Description {
+            get {
+                return ResourceManager.GetString("MapDrive_ResponseCode_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Response Code.
+        /// </summary>
+        public static string MapDrive_ResponseCode_DisplayName {
+            get {
+                return ResourceManager.GetString("MapDrive_ResponseCode_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The equivalent response message of the response code..
+        /// </summary>
+        public static string MapDrive_ResponseMessage_Description {
+            get {
+                return ResourceManager.GetString("MapDrive_ResponseMessage_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Response Message.
+        /// </summary>
+        public static string MapDrive_ResponseMessage_DisplayName {
+            get {
+                return ResourceManager.GetString("MapDrive_ResponseMessage_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Returns true if the drive was successfully mapped, false otherwise..
+        /// </summary>
+        public static string MapDrive_Result_Description {
+            get {
+                return ResourceManager.GetString("MapDrive_Result_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Result.
+        /// </summary>
+        public static string MapDrive_Result_DisplayName {
+            get {
+                return ResourceManager.GetString("MapDrive_Result_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The shared drive path to connect with..
+        /// </summary>
+        public static string MapDrive_SharedDrivePath_Description {
+            get {
+                return ResourceManager.GetString("MapDrive_SharedDrivePath_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shared Drive Path.
+        /// </summary>
+        public static string MapDrive_SharedDrivePath_DisplayName {
+            get {
+                return ResourceManager.GetString("MapDrive_SharedDrivePath_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The drive letter input is invalid. Valid inputs are &apos;X&apos;, &apos;X:&apos; or &apos;X:\\&apos;, where X can be any letter..
+        /// </summary>
+        public static string NetworkDrive_ErrorMsg_InvalidDriveLetter {
+            get {
+                return ResourceManager.GetString("NetworkDrive_ErrorMsg_InvalidDriveLetter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No drivers available.
+        /// </summary>
+        public static string NetworkDrive_ErrorMsg_NoDriversAvailable {
+            get {
+                return ResourceManager.GetString("NetworkDrive_ErrorMsg_NoDriversAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Success.
+        /// </summary>
+        public static string NetworkDrive_ResponseMsg_Success {
+            get {
+                return ResourceManager.GetString("NetworkDrive_ResponseMsg_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Additional characters used when the &apos;?&apos; placeholder is present..
         /// </summary>
         public static string RandomString_Custom_Description {
@@ -480,6 +687,24 @@ namespace Autossential.Activities.Properties {
         public static string RandomString_Result_DisplayName {
             get {
                 return ResourceManager.GetString("RandomString_Result_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Determines if the searching for tokens are case sensitive. The Pattern is also affected..
+        /// </summary>
+        public static string ReplaceTokens_CaseSensitive_Description {
+            get {
+                return ResourceManager.GetString("ReplaceTokens_CaseSensitive_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Case Sensitive.
+        /// </summary>
+        public static string ReplaceTokens_CaseSensitive_DisplayName {
+            get {
+                return ResourceManager.GetString("ReplaceTokens_CaseSensitive_DisplayName", resourceCulture);
             }
         }
         
@@ -565,7 +790,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Placeholder opa.
+        ///   Looks up a localized string similar to Placeholder.
         /// </summary>
         public static string ReplaceTokens_Placeholder_DisplayName {
             get {
@@ -588,6 +813,87 @@ namespace Autossential.Activities.Properties {
         public static string ReplaceTokens_Result_DisplayName {
             get {
                 return ResourceManager.GetString("ReplaceTokens_Result_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unmap Drive.
+        /// </summary>
+        public static string UnmapDrive_DisplayName {
+            get {
+                return ResourceManager.GetString("UnmapDrive_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The drive letter of the mapped drive. Valid inputs are &apos;X&apos;, &apos;X:&apos; or &apos;X:\&apos;, where X can be any letter..
+        /// </summary>
+        public static string UnmapDrive_DriveLetter_Description {
+            get {
+                return ResourceManager.GetString("UnmapDrive_DriveLetter_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drive Letter.
+        /// </summary>
+        public static string UnmapDrive_DriveLetter_DisplayName {
+            get {
+                return ResourceManager.GetString("UnmapDrive_DriveLetter_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The response code of the WNetCancelConnection2A..
+        /// </summary>
+        public static string UnmapDrive_ResponseCode_Description {
+            get {
+                return ResourceManager.GetString("UnmapDrive_ResponseCode_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Response Code.
+        /// </summary>
+        public static string UnmapDrive_ResponseCode_DisplayName {
+            get {
+                return ResourceManager.GetString("UnmapDrive_ResponseCode_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The equivalent response message of the response code..
+        /// </summary>
+        public static string UnmapDrive_ResponseMessage_Description {
+            get {
+                return ResourceManager.GetString("UnmapDrive_ResponseMessage_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Response Message.
+        /// </summary>
+        public static string UnmapDrive_ResponseMessage_DisplayName {
+            get {
+                return ResourceManager.GetString("UnmapDrive_ResponseMessage_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Returns true if the drive was successfully unmapped, false otherise..
+        /// </summary>
+        public static string UnmapDrive_Result_Description {
+            get {
+                return ResourceManager.GetString("UnmapDrive_Result_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Result.
+        /// </summary>
+        public static string UnmapDrive_Result_DisplayName {
+            get {
+                return ResourceManager.GetString("UnmapDrive_Result_DisplayName", resourceCulture);
             }
         }
         

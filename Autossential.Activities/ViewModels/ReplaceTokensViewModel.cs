@@ -1,5 +1,7 @@
 using Autossential.Activities.Base;
+using Autossential.Activities.Extensions;
 using System.Activities.DesignViewModels;
+using System.Activities.ViewModels;
 
 namespace Autossential.Activities.ViewModels
 {
@@ -9,6 +11,7 @@ namespace Autossential.Activities.ViewModels
         public DesignInArgument<Dictionary<string, object>> Dictionary { get; set; }
         public DesignInArgument<string> Pattern { get; set; }
         public DesignInArgument<char> Placeholder { get; set; }
+        public DesignProperty<bool> CaseSensitive { get; set; }
 
         protected override void InitializeModel()
         {
@@ -17,13 +20,17 @@ namespace Autossential.Activities.ViewModels
 
             int orderIndex = 0;
 
-            Content.IsRequired = true;
             Content.IsPrincipal = true;
             Content.OrderIndex = orderIndex++;
 
-            Dictionary.IsRequired = true;
             Dictionary.IsPrincipal = true;
             Dictionary.OrderIndex = orderIndex++;
+
+            if (IsWidgetSupported(ViewModelWidgetType.Toggle))
+            {
+                CaseSensitive.AddWidget(ViewModelWidgetType.Toggle);
+                CaseSensitive.OrderIndex = orderIndex++;
+            }
         }
     }
 }

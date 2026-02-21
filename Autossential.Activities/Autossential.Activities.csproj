@@ -64,8 +64,11 @@
 		<EmbeddedResource Include="Resources\Icons\CleanUpFolder.svg" />
 		<EmbeddedResource Include="Resources\Icons\Decrement.svg" />
 		<EmbeddedResource Include="Resources\Icons\Increment.svg" />
+		<EmbeddedResource Include="Resources\Icons\MapDrive.svg" />
 		<EmbeddedResource Include="Resources\Icons\RandomString.svg" />
 		<EmbeddedResource Include="Resources\Icons\ReplaceTokens.svg" />
+		<EmbeddedResource Include="Resources\Icons\TerminateProcess.svg" />
+		<EmbeddedResource Include="Resources\Icons\UnmapDrive.svg" />
 		<EmbeddedResource Include="Resources\Icons\Zip.svg" />
 		<EmbeddedResource Include="Resources\Icons\Unzip.svg" />
 		<EmbeddedResource Include="Resources\Icons\WaitFile.svg" />

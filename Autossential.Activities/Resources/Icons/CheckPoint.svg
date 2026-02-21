@@ -1,3 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path d="M14.4,6L20,6 20,16 13,16 12.6,14 7,14 7,21 5,21 5,4 14,4 14.4,6 M14,14L16,14 16,12 18,12 18,10 16,10 16,8 14,8 14,10 13,8 13,6 11,6 11,8 9,8 9,6 7,6 7,8 9,8 9,10 7,10 7,12 9,12 9,10 11,10 11,12 13,12 13,10 14,12 14,14 M11,10L11,8 13,8 13,10 11,10 M14,10L16,10 16,12 14,12 14,10z" fill="#7769FF" />
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <path d="M14.4,6L20,6L20,16L13,16L12.6,14L7,14L7,21L5,21L5,4L14,4L14.4,6ZM9,8L9,6L7,6L7,8L9,8ZM9,10L7,10L7,12L9,12L9,10ZM9,8L9,10L11,10L11,12L13,12L13,10L14,12L14,14L16,14L16,12L18,12L18,10L16,10L16,8L14,8L14,10L13,8L13,6L11,6L11,8L9,8Z" style="fill:rgb(82,96,105);"/>
+    <rect x="14" y="10" width="2" height="2" style="fill:rgb(86,169,114);"/>
+    <rect x="11" y="8" width="2" height="2" style="fill:rgb(86,169,114);"/>
 </svg>

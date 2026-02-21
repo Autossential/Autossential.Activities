@@ -2,10 +2,10 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <rect x="7" y="3" width="10" height="2" style="fill:rgb(119,119,119);"/>
-    <rect x="9" y="7" width="6" height="2" style="fill:rgb(240,105,0);"/>
+    <rect x="9" y="7" width="6" height="2" style="fill:rgb(0,103,223);"/>
     <path d="M2,7.96L2,16.04L6.03,12L2,7.96Z" style="fill:rgb(119,119,119);"/>
     <path d="M22.03,7.96L18,12L22.03,16.04L22.03,7.96Z" style="fill:rgb(119,119,119);"/>
-    <rect x="7" y="11" width="10" height="2" style="fill:rgb(240,105,0);"/>
+    <rect x="7" y="11" width="10" height="2" style="fill:rgb(0,103,223);"/>
     <rect x="9" y="15" width="6" height="2" style="fill:rgb(119,119,119);"/>
     <rect x="7" y="19" width="10" height="2" style="fill:rgb(119,119,119);"/>
 </svg>

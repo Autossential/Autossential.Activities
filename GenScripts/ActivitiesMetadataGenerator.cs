@@ -7,6 +7,7 @@
 #:package System.Activities.ViewModels@1.20251127.3
 #:project D:\Development\Autossential-4\Autossential.Activities\Autossential.Activities.csproj
 
+using System.Activities;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -58,13 +59,14 @@ foreach (var t in types)
     {
         var propPrefix = GetPropertyPrefix(name, p.Name);
 
-        var property = new Property
+        var requiredAttr = p.GetCustomAttribute<RequiredArgumentAttribute>();
+        var property = new Property(p.PropertyType)
         {
             Name = p.Name,
             DisplayNameKey = $"{propPrefix}_DisplayName",
             TooltipKey = $"{propPrefix}_Description",
             // IsPrincipal = false,
-            // IsRequired = false,
+            IsRequired = requiredAttr != null,
             IsVisible = true
         };
 
@@ -112,13 +114,13 @@ public class Activity
         {
             return ShortName switch
             {
-                "WaitFile" or 
-                "CleanUpFolder" or 
-                "Zip" or 
+                "WaitFile" or
+                "CleanUpFolder" or
+                "Zip" or
                 "Unzip" => "Autossential.Files",
-                
-                "RandomString" or 
-                "Increment" or 
+
+                "RandomString" or
+                "Increment" or
                 "Decrement" or
                 "ReplaceTokens" or
                 "CultureScope" => "Autossential.Programming",
@@ -130,20 +132,39 @@ public class Activity
     public List<Property> Properties { get; set; }
 }
 
-public class Category
+public class Category(string name, string displayNameKey)
 {
-    public string Name { get; set; }
-    public string DisplayNameKey { get; set; }
+    public string Name { get; set; } = name;
+    public string DisplayNameKey { get; set; } = displayNameKey;
 }
 
 public class Property
 {
+    public Property(Type propType)
+    {
+        if (propType == typeof(InArgument) || (propType.IsGenericType && propType.GetGenericTypeDefinition() == typeof(InArgument<>)))
+        {
+            Category = new Category("Input", "Categories_Input");
+        }
+        else if (propType == typeof(OutArgument) || (propType.IsGenericType && propType.GetGenericTypeDefinition() == typeof(OutArgument<>)))
+        {
+            Category = new Category("Output", "Categories_Output");
+        }
+        else if (propType == typeof(InOutArgument) || (propType.IsGenericType && propType.GetGenericTypeDefinition() == typeof(InOutArgument<>)))
+        {
+            Category = new Category("InputOutput", "Categories_InputOutput");
+        }
+        else
+        {
+            Category = new Category("Options", "Categories_Options");
+        }
+    }
     public string Name { get; set; }
     public string DisplayNameKey { get; set; }
     public string TooltipKey { get; set; }
-    // public bool IsRequired { get; set; }
-    // public bool IsPrincipal { get; set; }
     public bool IsVisible { get; set; }
+    public bool IsRequired { get; set; }
+    public Category Category { get; }
 }
 
 public class Root

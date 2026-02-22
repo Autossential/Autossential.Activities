@@ -295,6 +295,51 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The desired culture, eg.: en-US, pt-BR, jp-JP, etc..
+        /// </summary>
+        public static string CultureScope_CultureName_Description {
+            get {
+                return ResourceManager.GetString("CultureScope_CultureName_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Culture Name.
+        /// </summary>
+        public static string CultureScope_CultureName_DisplayName {
+            get {
+                return ResourceManager.GetString("CultureScope_CultureName_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A container that allows you to run a set of activities over a different culture..
+        /// </summary>
+        public static string CultureScope_Description {
+            get {
+                return ResourceManager.GetString("CultureScope_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Culture Scope.
+        /// </summary>
+        public static string CultureScope_DisplayName {
+            get {
+                return ResourceManager.GetString("CultureScope_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The culture name cannot be null or empty..
+        /// </summary>
+        public static string CultureScope_ErrorMsg_CultureNameNullOrEmpty {
+            get {
+                return ResourceManager.GetString("CultureScope_ErrorMsg_CultureNameNullOrEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Decrements a numeric variable by a specified value..
         /// </summary>
         public static string Decrement_Description {
@@ -417,15 +462,6 @@ namespace Autossential.Activities.Properties {
         public static string Increment_Variable_DisplayName {
             get {
                 return ResourceManager.GetString("Increment_Variable_DisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The credential to be used for the drive mapping..
-        /// </summary>
-        public static string MapDrive_Credential_Description {
-            get {
-                return ResourceManager.GetString("MapDrive_Credential_Description", resourceCulture);
             }
         }
         

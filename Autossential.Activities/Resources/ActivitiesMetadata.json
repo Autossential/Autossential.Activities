@@ -14,7 +14,7 @@
           "displayNameKey": "CleanUpFolder_Folder_DisplayName",
           "tooltipKey": "CleanUpFolder_Folder_Description",
           "isVisible": true,
-          "isRequired": false,
+          "isRequired": true,
           "category": {
             "name": "Input",
             "displayNameKey": "Categories_Input"
@@ -85,27 +85,27 @@
             "name": "Options",
             "displayNameKey": "Categories_Options"
           }
-        },
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.CultureScope",
+      "shortName": "CultureScope",
+      "displayNameKey": "CultureScope_DisplayName",
+      "descriptionKey": "CultureScope_Description",
+      "iconKey": "CultureScope.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.CultureScopeViewModel",
+      "categoryKey": "Autossential.Programming",
+      "properties": [
         {
-          "name": "DisplayName",
-          "displayNameKey": "CleanUpFolder_DisplayName_DisplayName",
-          "tooltipKey": "CleanUpFolder_DisplayName_Description",
+          "name": "CultureName",
+          "displayNameKey": "CultureScope_CultureName_DisplayName",
+          "tooltipKey": "CultureScope_CultureName_Description",
           "isVisible": true,
-          "isRequired": false,
+          "isRequired": true,
           "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Id",
-          "displayNameKey": "CleanUpFolder_Id_DisplayName",
-          "tooltipKey": "CleanUpFolder_Id_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
           }
         }
       ]
@@ -140,28 +140,6 @@
             "name": "InputOutput",
             "displayNameKey": "Categories_InputOutput"
           }
-        },
-        {
-          "name": "DisplayName",
-          "displayNameKey": "Decrement_DisplayName_DisplayName",
-          "tooltipKey": "Decrement_DisplayName_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Id",
-          "displayNameKey": "Decrement_Id_DisplayName",
-          "tooltipKey": "Decrement_Id_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
         }
       ]
     },
@@ -194,28 +172,6 @@
           "category": {
             "name": "InputOutput",
             "displayNameKey": "Categories_InputOutput"
-          }
-        },
-        {
-          "name": "DisplayName",
-          "displayNameKey": "Increment_DisplayName_DisplayName",
-          "tooltipKey": "Increment_DisplayName_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Id",
-          "displayNameKey": "Increment_Id_DisplayName",
-          "tooltipKey": "Increment_Id_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
           }
         }
       ]
@@ -274,17 +230,6 @@
           }
         },
         {
-          "name": "MappedDrive",
-          "displayNameKey": "MapDrive_MappedDrive_DisplayName",
-          "tooltipKey": "MapDrive_MappedDrive_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        },
-        {
           "name": "ResponseCode",
           "displayNameKey": "MapDrive_ResponseCode_DisplayName",
           "tooltipKey": "MapDrive_ResponseCode_Description",
@@ -338,28 +283,6 @@
             "name": "Output",
             "displayNameKey": "Categories_Output"
           }
-        },
-        {
-          "name": "DisplayName",
-          "displayNameKey": "MapDrive_DisplayName_DisplayName",
-          "tooltipKey": "MapDrive_DisplayName_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Id",
-          "displayNameKey": "MapDrive_Id_DisplayName",
-          "tooltipKey": "MapDrive_Id_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
         }
       ]
     },
@@ -377,7 +300,7 @@
           "displayNameKey": "RandomString_Format_DisplayName",
           "tooltipKey": "RandomString_Format_Description",
           "isVisible": true,
-          "isRequired": false,
+          "isRequired": true,
           "category": {
             "name": "Input",
             "displayNameKey": "Categories_Input"
@@ -425,28 +348,6 @@
           "category": {
             "name": "Output",
             "displayNameKey": "Categories_Output"
-          }
-        },
-        {
-          "name": "DisplayName",
-          "displayNameKey": "RandomString_DisplayName_DisplayName",
-          "tooltipKey": "RandomString_DisplayName_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Id",
-          "displayNameKey": "RandomString_Id_DisplayName",
-          "tooltipKey": "RandomString_Id_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
           }
         }
       ]
@@ -547,28 +448,6 @@
             "name": "Output",
             "displayNameKey": "Categories_Output"
           }
-        },
-        {
-          "name": "DisplayName",
-          "displayNameKey": "ReplaceTokens_DisplayName_DisplayName",
-          "tooltipKey": "ReplaceTokens_DisplayName_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Id",
-          "displayNameKey": "ReplaceTokens_Id_DisplayName",
-          "tooltipKey": "ReplaceTokens_Id_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
         }
       ]
     },
@@ -646,28 +525,6 @@
             "name": "Output",
             "displayNameKey": "Categories_Output"
           }
-        },
-        {
-          "name": "DisplayName",
-          "displayNameKey": "UnmapDrive_DisplayName_DisplayName",
-          "tooltipKey": "UnmapDrive_DisplayName_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Id",
-          "displayNameKey": "UnmapDrive_Id_DisplayName",
-          "tooltipKey": "UnmapDrive_Id_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
         }
       ]
     },
@@ -685,7 +542,7 @@
           "displayNameKey": "Unzip_ZipFilePath_DisplayName",
           "tooltipKey": "Unzip_ZipFilePath_Description",
           "isVisible": true,
-          "isRequired": false,
+          "isRequired": true,
           "category": {
             "name": "Input",
             "displayNameKey": "Categories_Input"
@@ -696,7 +553,7 @@
           "displayNameKey": "Unzip_ExtractTo_DisplayName",
           "tooltipKey": "Unzip_ExtractTo_Description",
           "isVisible": true,
-          "isRequired": false,
+          "isRequired": true,
           "category": {
             "name": "Input",
             "displayNameKey": "Categories_Input"
@@ -711,28 +568,6 @@
           "category": {
             "name": "Input",
             "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "DisplayName",
-          "displayNameKey": "Unzip_DisplayName_DisplayName",
-          "tooltipKey": "Unzip_DisplayName_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Id",
-          "displayNameKey": "Unzip_Id_DisplayName",
-          "tooltipKey": "Unzip_Id_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
           }
         }
       ]
@@ -844,28 +679,6 @@
             "name": "Output",
             "displayNameKey": "Categories_Output"
           }
-        },
-        {
-          "name": "DisplayName",
-          "displayNameKey": "WaitFile_DisplayName_DisplayName",
-          "tooltipKey": "WaitFile_DisplayName_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Id",
-          "displayNameKey": "WaitFile_Id_DisplayName",
-          "tooltipKey": "WaitFile_Id_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
         }
       ]
     },
@@ -953,28 +766,6 @@
           "category": {
             "name": "Output",
             "displayNameKey": "Categories_Output"
-          }
-        },
-        {
-          "name": "DisplayName",
-          "displayNameKey": "Zip_DisplayName_DisplayName",
-          "tooltipKey": "Zip_DisplayName_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Id",
-          "displayNameKey": "Zip_Id_DisplayName",
-          "tooltipKey": "Zip_Id_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
           }
         }
       ]

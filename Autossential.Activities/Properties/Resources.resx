@@ -549,10 +549,6 @@
     <value>The drive letter input is invalid. Valid inputs are 'X', 'X:' or 'X:\\', where X can be any letter.</value>
     <comment>error message</comment>
   </data>
-  <data name="MapDrive_Credential_Description" xml:space="preserve">
-    <value>The credential to be used for the drive mapping.</value>
-    <comment>property description</comment>
-  </data>
   <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
     <value>Credential</value>
     <comment>property name</comment>
@@ -660,5 +656,25 @@
   <data name="MapDrive_Credential_Placeholder" xml:space="preserve">
     <value>If not provided, current user credentials will be used.</value>
     <comment>placeholder</comment>
+  </data>
+  <data name="CultureScope_ErrorMsg_CultureNameNullOrEmpty" xml:space="preserve">
+    <value>The culture name cannot be null or empty.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="CultureScope_CultureName_Description" xml:space="preserve">
+    <value>The desired culture, eg.: en-US, pt-BR, jp-JP, etc.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="CultureScope_CultureName_DisplayName" xml:space="preserve">
+    <value>Culture Name</value>
+    <comment>property name</comment>
+  </data>
+  <data name="CultureScope_Description" xml:space="preserve">
+    <value>A container that allows you to run a set of activities over a different culture.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="CultureScope_DisplayName" xml:space="preserve">
+    <value>Culture Scope</value>
+    <comment>activity name</comment>
   </data>
 </root>

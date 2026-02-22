@@ -7,6 +7,7 @@ namespace Autossential.Activities
 {
     public sealed class CleanUpFolder : AsynchronousCodeActivity
     {
+        [RequiredArgument]
         public InArgument<string> Folder { get; set; }
         public InArgument<string> SearchPattern { get; set; }
         public OutArgument<int> FilesDeleted { get; set; }
@@ -14,13 +15,6 @@ namespace Autossential.Activities
         public InArgument<DateTime?> LastWriteTime { get; set; }
         public InArgument<bool> DeleteEmptyFolders { get; set; } = true;
         public SearchOption SearchOption { get; set; } = SearchOption.AllDirectories;
-
-        override protected void CacheMetadata(CodeActivityMetadata metadata)
-        {
-            base.CacheMetadata(metadata);
-            if (Folder == null)
-                metadata.AddValidationError(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.CleanUpFolder_Folder_DisplayName));
-        }
         protected override Task<Action<AsyncCodeActivityContext>> RunAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
             var folder = Folder.Get(context) ?? throw new NullReferenceException(nameof(Folder));

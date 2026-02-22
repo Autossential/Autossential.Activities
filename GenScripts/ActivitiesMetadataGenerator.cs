@@ -8,6 +8,7 @@
 #:project D:\Development\Autossential-4\Autossential.Activities\Autossential.Activities.csproj
 
 using System.Activities;
+using System.ComponentModel;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -57,15 +58,21 @@ foreach (var t in types)
 
     foreach (var p in t.GetProperties(BindingFlags.Public | BindingFlags.Instance))
     {
+        if (p.Name == "Id" || p.Name == "DisplayName")
+            continue;
+
+        var browsable = p.GetCustomAttribute<BrowsableAttribute>();
+        if (browsable != null && !browsable.Browsable)
+            continue;  
+
         var propPrefix = GetPropertyPrefix(name, p.Name);
 
         var requiredAttr = p.GetCustomAttribute<RequiredArgumentAttribute>();
-        var property = new Property(p.PropertyType)
+        var property = new Property(p.PropertyType, t)
         {
             Name = p.Name,
             DisplayNameKey = $"{propPrefix}_DisplayName",
             TooltipKey = $"{propPrefix}_Description",
-            // IsPrincipal = false,
             IsRequired = requiredAttr != null,
             IsVisible = true
         };
@@ -140,7 +147,9 @@ public class Category(string name, string displayNameKey)
 
 public class Property
 {
-    public Property(Type propType)
+    private readonly Type _activityType;
+
+    public Property(Type propType, Type activityType)
     {
         if (propType == typeof(InArgument) || (propType.IsGenericType && propType.GetGenericTypeDefinition() == typeof(InArgument<>)))
         {
@@ -158,6 +167,8 @@ public class Property
         {
             Category = new Category("Options", "Categories_Options");
         }
+
+        _activityType = activityType;
     }
     public string Name { get; set; }
     public string DisplayNameKey { get; set; }
@@ -165,6 +176,13 @@ public class Property
     public bool IsVisible { get; set; }
     public bool IsRequired { get; set; }
     public Category Category { get; }
+    // public bool IsPrincipal
+    // {
+    //     get
+    //     {
+    //         return _activityType.Name == "CultureScope" && Name == "CultureName";
+    //     }
+    // }
 }
 
 public class Root

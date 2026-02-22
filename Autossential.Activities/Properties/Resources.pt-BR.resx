@@ -549,10 +549,6 @@
     <value>A letra da unidade inserida é inválida. As entradas válidas são 'X', 'X:' ou 'X:\\', onde X pode ser qualquer letra.</value>
     <comment>error message</comment>
   </data>
-  <data name="MapDrive_Credential_Description" xml:space="preserve">
-    <value>A credencial a ser usada para o mapeamento da unidade.</value>
-    <comment>descrição da propriedade</comment>
-  </data>
   <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
     <value>Credencial</value>
     <comment>nome da propriedade</comment>
@@ -660,5 +656,25 @@
   <data name="MapDrive_Credential_Placeholder" xml:space="preserve">
     <value>Se não informado, credencial do usuário atual será usada.</value>
     <comment>placeholder</comment>
+  </data>
+  <data name="CultureScope_ErrorMsg_CultureNameNullOrEmpty" xml:space="preserve">
+    <value>O nome da cultura não pode ser nulo ou vazio.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="CultureScope_CultureName_Description" xml:space="preserve">
+    <value>A cultura desejada, por exemplo: en-US, pt-BR, jp-JP, etc.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="CultureScope_CultureName_DisplayName" xml:space="preserve">
+    <value>Nome da Cultura</value>
+    <comment>property name</comment>
+  </data>
+  <data name="CultureScope_Description" xml:space="preserve">
+    <value>Um contêiner que permite executar um conjunto de atividades em uma cultura diferente.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="CultureScope_DisplayName" xml:space="preserve">
+    <value>Escopo Cultural</value>
+    <comment>activity name</comment>
   </data>
 </root>

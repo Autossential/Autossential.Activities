@@ -6,6 +6,7 @@ namespace Autossential.Activities
 {
     public sealed class RandomString : CodeActivity<string>
     {
+        [RequiredArgument]
         public InArgument<string> Format { get; set; } = "Aa*0*Aa?";
         public InArgument<string> Custom { get; set; }
 
@@ -13,13 +14,6 @@ namespace Autossential.Activities
         private const string Uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         private const string Digits = "0123456789";
         private static readonly ThreadLocal<Random> _rng = new(() => new Random());
-
-        protected override void CacheMetadata(CodeActivityMetadata metadata)
-        {
-            base.CacheMetadata(metadata);
-            if (Format == null)
-                metadata.AddValidationError(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(""));
-        }
 
         protected override string Execute(CodeActivityContext context)
         {

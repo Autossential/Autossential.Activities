@@ -7,22 +7,13 @@ namespace Autossential.Activities
 {
     public sealed class Unzip : AsynchronousCodeActivity
     {
+        [RequiredArgument]
         public InArgument<string> ZipFilePath { get; set; }
 
+        [RequiredArgument]
         public InArgument<string> ExtractTo { get; set; }
 
         public InArgument<bool> Overwrite { get; set; }
-
-        protected override void CacheMetadata(CodeActivityMetadata metadata)
-        {
-            base.CacheMetadata(metadata);
-
-            if (ZipFilePath == null)
-                metadata.AddValidationError(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.Unzip_ZipFilePath_DisplayName));
-
-            if (ExtractTo == null)
-                metadata.AddValidationError(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.Unzip_ExtractTo_DisplayName));
-        }
 
         protected override Task<Action<AsyncCodeActivityContext>> RunAsync(AsyncCodeActivityContext context, CancellationToken token)
         {

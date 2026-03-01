@@ -62,6 +62,7 @@
 
 	<ItemGroup>
 		<EmbeddedResource Include="Resources\ActivitiesMetadata.json" />
+		<EmbeddedResource Include="Resources\Icons\CheckPoint.svg" />
 		<EmbeddedResource Include="Resources\Icons\CleanUpFolder.svg" />
 		<EmbeddedResource Include="Resources\Icons\Container.svg" />
 		<EmbeddedResource Include="Resources\Icons\CultureScope.svg" />

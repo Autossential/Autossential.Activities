@@ -773,4 +773,36 @@
     <value>Its a wrapper that when combined with Exit Activity, interrupts the children execution flow exiting the Container beforehand.</value>
     <comment>activity description</comment>
   </data>
+  <data name="CheckPoint_Data_Description" xml:space="preserve">
+    <value>A collection of key/value pairs that provide additional user-defined information about the exception.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="CheckPoint_Data_DisplayName" xml:space="preserve">
+    <value>Data</value>
+    <comment>property name</comment>
+  </data>
+  <data name="CheckPoint_Description" xml:space="preserve">
+    <value>Checks if a given expression is true, if is not, thrown the specified exception.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="CheckPoint_DisplayName" xml:space="preserve">
+    <value>Check Point</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="CheckPoint_Exception_Description" xml:space="preserve">
+    <value>The exception to throw if the expression is not true.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="CheckPoint_Exception_DisplayName" xml:space="preserve">
+    <value>Exception</value>
+    <comment>property name</comment>
+  </data>
+  <data name="CheckPoint_Expression_Description" xml:space="preserve">
+    <value>The expression to be evaluated.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="CheckPoint_Expression_DisplayName" xml:space="preserve">
+    <value>Expression</value>
+    <comment>property name</comment>
+  </data>
 </root>

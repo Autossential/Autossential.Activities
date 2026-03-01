@@ -1,6 +1,50 @@
 {
   "activities": [
     {
+      "fullName": "Autossential.Activities.CheckPoint",
+      "shortName": "CheckPoint",
+      "displayNameKey": "CheckPoint_DisplayName",
+      "descriptionKey": "CheckPoint_Description",
+      "iconKey": "CheckPoint.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.CheckPointViewModel",
+      "categoryKey": "Autossential.Workflow",
+      "properties": [
+        {
+          "name": "Expression",
+          "displayNameKey": "CheckPoint_Expression_DisplayName",
+          "tooltipKey": "CheckPoint_Expression_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "Exception",
+          "displayNameKey": "CheckPoint_Exception_DisplayName",
+          "tooltipKey": "CheckPoint_Exception_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "Data",
+          "displayNameKey": "CheckPoint_Data_DisplayName",
+          "tooltipKey": "CheckPoint_Data_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        }
+      ]
+    },
+    {
       "fullName": "Autossential.Activities.CleanUpFolder",
       "shortName": "CleanUpFolder",
       "displayNameKey": "CleanUpFolder_DisplayName",

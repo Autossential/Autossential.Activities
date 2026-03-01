@@ -609,4 +609,28 @@
   <data name="Container_Description" xml:space="preserve">
     <value>É um componente que, quando combinado com a atividade Exit, interrompe o fluxo de execução dos componentes filhos, saindo do Container antecipadamente.</value>
   </data>
+  <data name="CheckPoint_Data_Description" xml:space="preserve">
+    <value>Uma coleção de pares chave/valor que fornece informações adicionais definidas pelo usuário sobre a exceção.</value>
+  </data>
+  <data name="CheckPoint_Data_DisplayName" xml:space="preserve">
+    <value>Dados</value>
+  </data>
+  <data name="CheckPoint_Description" xml:space="preserve">
+    <value>Verifica se uma determinada expressão é verdadeira; caso contrário, lança a exceção especificada.</value>
+  </data>
+  <data name="CheckPoint_DisplayName" xml:space="preserve">
+    <value>Ponto de Verificação</value>
+  </data>
+  <data name="CheckPoint_Exception_Description" xml:space="preserve">
+    <value>A exceção a ser lançada se a expressão não for verdadeira.</value>
+  </data>
+  <data name="CheckPoint_Exception_DisplayName" xml:space="preserve">
+    <value>Exceção</value>
+  </data>
+  <data name="CheckPoint_Expression_Description" xml:space="preserve">
+    <value>A expressão a ser avaliada.</value>
+  </data>
+  <data name="CheckPoint_Expression_DisplayName" xml:space="preserve">
+    <value>Expressão</value>
+  </data>
 </root>

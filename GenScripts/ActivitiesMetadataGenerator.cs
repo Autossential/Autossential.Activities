@@ -14,6 +14,10 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Json.Serialization.Metadata;
 
+
+// <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+// <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
 var types = Assembly.Load("Autossential.Activities").GetTypes()
     .Where(t =>
         t.IsClass
@@ -135,6 +139,7 @@ public class Activity
                 "IfActivity" or
                 "TimeLoop" or
                 "Container" or
+                "CheckPoint" or
                 "Exit" => "Autossential.Workflow",
 
                 _ => "Autossential.Misc"

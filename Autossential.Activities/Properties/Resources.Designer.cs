@@ -106,6 +106,78 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A collection of key/value pairs that provide additional user-defined information about the exception..
+        /// </summary>
+        public static string CheckPoint_Data_Description {
+            get {
+                return ResourceManager.GetString("CheckPoint_Data_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data.
+        /// </summary>
+        public static string CheckPoint_Data_DisplayName {
+            get {
+                return ResourceManager.GetString("CheckPoint_Data_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checks if a given expression is true, if is not, thrown the specified exception..
+        /// </summary>
+        public static string CheckPoint_Description {
+            get {
+                return ResourceManager.GetString("CheckPoint_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check Point.
+        /// </summary>
+        public static string CheckPoint_DisplayName {
+            get {
+                return ResourceManager.GetString("CheckPoint_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The exception to throw if the expression is not true..
+        /// </summary>
+        public static string CheckPoint_Exception_Description {
+            get {
+                return ResourceManager.GetString("CheckPoint_Exception_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exception.
+        /// </summary>
+        public static string CheckPoint_Exception_DisplayName {
+            get {
+                return ResourceManager.GetString("CheckPoint_Exception_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The expression to be evaluated..
+        /// </summary>
+        public static string CheckPoint_Expression_Description {
+            get {
+                return ResourceManager.GetString("CheckPoint_Expression_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expression.
+        /// </summary>
+        public static string CheckPoint_Expression_DisplayName {
+            get {
+                return ResourceManager.GetString("CheckPoint_Expression_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Determines if the left empty folders after files deletion must also be deleted..
         /// </summary>
         public static string CleanUpFolder_DeleteEmptyFolders_Description {

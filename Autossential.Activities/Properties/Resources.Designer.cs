@@ -295,6 +295,24 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Its a wrapper that when combined with Exit Activity, interrupts the children execution flow exiting the Container beforehand..
+        /// </summary>
+        public static string Container_Description {
+            get {
+                return ResourceManager.GetString("Container_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Container.
+        /// </summary>
+        public static string Container_DisplayName {
+            get {
+                return ResourceManager.GetString("Container_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The desired culture, eg.: en-US, pt-BR, jp-JP, etc..
         /// </summary>
         public static string CultureScope_CultureName_Description {
@@ -399,6 +417,96 @@ namespace Autossential.Activities.Properties {
         public static string Decrement_Variable_DisplayName {
             get {
                 return ResourceManager.GetString("Decrement_Variable_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Condition which determines if the activity will be evaluated. If empty it assumes True..
+        /// </summary>
+        public static string Exit_Condition_Description {
+            get {
+                return ResourceManager.GetString("Exit_Condition_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Condition.
+        /// </summary>
+        public static string Exit_Condition_DisplayName {
+            get {
+                return ResourceManager.GetString("Exit_Condition_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exits from the Container or Time Loop activities interrupting any child executions after it..
+        /// </summary>
+        public static string Exit_Description {
+            get {
+                return ResourceManager.GetString("Exit_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        public static string Exit_DisplayName {
+            get {
+                return ResourceManager.GetString("Exit_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit activity must be placed inside a Container or Time Loop activities..
+        /// </summary>
+        public static string Exit_ErrorMsg_InvalidParent {
+            get {
+                return ResourceManager.GetString("Exit_ErrorMsg_InvalidParent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Evaluates if the condition results true..
+        /// </summary>
+        public static string IfActivity_CheckTrue_Description {
+            get {
+                return ResourceManager.GetString("IfActivity_CheckTrue_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check True.
+        /// </summary>
+        public static string IfActivity_CheckTrue_DisplayName {
+            get {
+                return ResourceManager.GetString("IfActivity_CheckTrue_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Evaluates the result of a boolean-returning activity and executes the associated code block if the condition is met..
+        /// </summary>
+        public static string IfActivity_Description {
+            get {
+                return ResourceManager.GetString("IfActivity_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If Activity.
+        /// </summary>
+        public static string IfActivity_DisplayName {
+            get {
+                return ResourceManager.GetString("IfActivity_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Condition field requires activities that returns a boolean value..
+        /// </summary>
+        public static string IfActivity_ErrorMsg_ConditionReturnsBoolean {
+            get {
+                return ResourceManager.GetString("IfActivity_ErrorMsg_ConditionReturnsBoolean", resourceCulture);
             }
         }
         
@@ -849,6 +957,114 @@ namespace Autossential.Activities.Properties {
         public static string ReplaceTokens_Result_DisplayName {
             get {
                 return ResourceManager.GetString("ReplaceTokens_Result_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tries to gracefully close all instances of the applications corresponding to the specified processes. If not possible, it kills the process for the current user session..
+        /// </summary>
+        public static string TerminateProcess_Description {
+            get {
+                return ResourceManager.GetString("TerminateProcess_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terminate Process.
+        /// </summary>
+        public static string TerminateProcess_DisplayName {
+            get {
+                return ResourceManager.GetString("TerminateProcess_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The list of names of the processes to be terminated..
+        /// </summary>
+        public static string TerminateProcess_ProcessNames_Description {
+            get {
+                return ResourceManager.GetString("TerminateProcess_ProcessNames_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process Names.
+        /// </summary>
+        public static string TerminateProcess_ProcessNames_DisplayName {
+            get {
+                return ResourceManager.GetString("TerminateProcess_ProcessNames_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repeats the body activities until the timeout expires, with optional iteration intervals and index tracking. Returns true if the loop ended due to timeout..
+        /// </summary>
+        public static string TimeLoop_Description {
+            get {
+                return ResourceManager.GetString("TimeLoop_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time Loop.
+        /// </summary>
+        public static string TimeLoop_DisplayName {
+            get {
+                return ResourceManager.GetString("TimeLoop_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The interval in seconds to wait before the next loop..
+        /// </summary>
+        public static string TimeLoop_IntervalSeconds_Description {
+            get {
+                return ResourceManager.GetString("TimeLoop_IntervalSeconds_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interval.
+        /// </summary>
+        public static string TimeLoop_IntervalSeconds_DisplayName {
+            get {
+                return ResourceManager.GetString("TimeLoop_IntervalSeconds_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The current iteration (zero-based) that is being processed..
+        /// </summary>
+        public static string TimeLoop_IterationIndex_Description {
+            get {
+                return ResourceManager.GetString("TimeLoop_IterationIndex_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index.
+        /// </summary>
+        public static string TimeLoop_IterationIndex_DisplayName {
+            get {
+                return ResourceManager.GetString("TimeLoop_IterationIndex_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defines how long the loop runs. The timeout is checked after each iteration, and ongoing iterations are not interrupted..
+        /// </summary>
+        public static string TimeLoop_Timeout_Description {
+            get {
+                return ResourceManager.GetString("TimeLoop_Timeout_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timeout.
+        /// </summary>
+        public static string TimeLoop_Timeout_DisplayName {
+            get {
+                return ResourceManager.GetString("TimeLoop_Timeout_DisplayName", resourceCulture);
             }
         }
         

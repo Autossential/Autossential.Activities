@@ -677,4 +677,100 @@
     <value>Culture Scope</value>
     <comment>activity name</comment>
   </data>
+  <data name="TerminateProcess_Description" xml:space="preserve">
+    <value>Tries to gracefully close all instances of the applications corresponding to the specified processes. If not possible, it kills the process for the current user session.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="TerminateProcess_DisplayName" xml:space="preserve">
+    <value>Terminate Process</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="TerminateProcess_ProcessNames_Description" xml:space="preserve">
+    <value>The list of names of the processes to be terminated.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TerminateProcess_ProcessNames_DisplayName" xml:space="preserve">
+    <value>Process Names</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IfActivity_DisplayName" xml:space="preserve">
+    <value>If Activity</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="IfActivity_Description" xml:space="preserve">
+    <value>Evaluates the result of a boolean-returning activity and executes the associated code block if the condition is met.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IfActivity_CheckTrue_DisplayName" xml:space="preserve">
+    <value>Check True</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IfActivity_CheckTrue_Description" xml:space="preserve">
+    <value>Evaluates if the condition results true.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
+    <value>The Condition field requires activities that returns a boolean value.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="Exit_DisplayName" xml:space="preserve">
+    <value>Exit</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Exit_Condition_Description" xml:space="preserve">
+    <value>Condition which determines if the activity will be evaluated. If empty it assumes True.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Exit_Condition_DisplayName" xml:space="preserve">
+    <value>Condition</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Exit_Description" xml:space="preserve">
+    <value>Exits from the Container or Time Loop activities interrupting any child executions after it.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="Exit_ErrorMsg_InvalidParent" xml:space="preserve">
+    <value>Exit activity must be placed inside a Container or Time Loop activities.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="TimeLoop_DisplayName" xml:space="preserve">
+    <value>Time Loop</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="TimeLoop_Description" xml:space="preserve">
+    <value>Repeats the body activities until the timeout expires, with optional iteration intervals and index tracking. Returns true if the loop ended due to timeout.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="TimeLoop_Timeout_DisplayName" xml:space="preserve">
+    <value>Timeout</value>
+    <comment>property name</comment>
+  </data>
+  <data name="TimeLoop_Timeout_Description" xml:space="preserve">
+    <value>Defines how long the loop runs. The timeout is checked after each iteration, and ongoing iterations are not interrupted.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TimeLoop_IntervalSeconds_DisplayName" xml:space="preserve">
+    <value>Interval</value>
+    <comment>property name</comment>
+  </data>
+  <data name="TimeLoop_IntervalSeconds_Description" xml:space="preserve">
+    <value>The interval in seconds to wait before the next loop.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TimeLoop_IterationIndex_DisplayName" xml:space="preserve">
+    <value>Index</value>
+    <comment>property name</comment>
+  </data>
+  <data name="TimeLoop_IterationIndex_Description" xml:space="preserve">
+    <value>The current iteration (zero-based) that is being processed.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Container_DisplayName" xml:space="preserve">
+    <value>Container</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="Container_Description" xml:space="preserve">
+    <value>Its a wrapper that when combined with Exit Activity, interrupts the children execution flow exiting the Container beforehand.</value>
+    <comment>activity description</comment>
+  </data>
 </root>

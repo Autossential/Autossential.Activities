@@ -132,6 +132,11 @@ public class Activity
                 "ReplaceTokens" or
                 "CultureScope" => "Autossential.Programming",
 
+                "IfActivity" or
+                "TimeLoop" or
+                "Container" or
+                "Exit" => "Autossential.Workflow",
+
                 _ => "Autossential.Misc"
             };
         }

@@ -5,7 +5,7 @@ using System.IO.Compression;
 
 namespace Autossential.Activities
 {
-    public sealed class Unzip : AsynchronousCodeActivity
+    public sealed class Unzip : AsyncActivity
     {
         [RequiredArgument]
         public InArgument<string> ZipFilePath { get; set; }

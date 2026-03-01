@@ -2,7 +2,7 @@
 
 namespace Autossential.Activities.Base
 {
-    public abstract class AsynchronousCodeActivity : AsyncCodeActivity
+    public abstract class AsyncActivity : AsyncCodeActivity
     {
         protected override IAsyncResult BeginExecute(AsyncCodeActivityContext context, AsyncCallback callback, object state)
         {

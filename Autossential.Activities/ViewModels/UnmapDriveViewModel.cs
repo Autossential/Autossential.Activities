@@ -8,6 +8,7 @@ namespace Autossential.Activities.ViewModels
         public DesignInArgument<string> DriveLetter { get; set; }
         public DesignOutArgument<int> ResponseCode { get; set; }
         public DesignOutArgument<string> ResponseMessage { get; set; }
+        public DesignOutArgument<bool> Result { get; set; }
         protected override void InitializeModel()
         {
             base.InitializeModel();
@@ -20,6 +21,7 @@ namespace Autossential.Activities.ViewModels
 
             ResponseCode.OrderIndex = orderIndex++;
             ResponseMessage.OrderIndex = orderIndex++;
+            Result.OrderIndex = orderIndex;
         }
     }
 }

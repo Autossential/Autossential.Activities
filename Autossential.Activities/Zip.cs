@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Autossential.Activities
 {
-    public sealed class Zip : AsynchronousCodeActivity
+    public sealed class Zip : AsyncActivity
     {
         public InArgument<string> ZipFilePath { get; set; }
         public InArgument<IEnumerable<string>> ToCompress { get; set; }

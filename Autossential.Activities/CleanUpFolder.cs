@@ -5,7 +5,7 @@ using System.Activities;
 
 namespace Autossential.Activities
 {
-    public sealed class CleanUpFolder : AsynchronousCodeActivity
+    public sealed class CleanUpFolder : AsyncActivity
     {
         [RequiredArgument]
         public InArgument<string> Folder { get; set; }

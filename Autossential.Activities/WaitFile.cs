@@ -5,7 +5,7 @@ using System.Activities;
 
 namespace Autossential.Activities
 {
-    public sealed class WaitFile : AsynchronousCodeActivity
+    public sealed class WaitFile : AsyncActivity
     {
         public InArgument<bool> ContinueOnError { get; set; }
         public InArgument<double> TimeoutSeconds { get; set; }

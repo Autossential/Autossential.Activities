@@ -89,6 +89,16 @@
       ]
     },
     {
+      "fullName": "Autossential.Activities.Container",
+      "shortName": "Container",
+      "displayNameKey": "Container_DisplayName",
+      "descriptionKey": "Container_Description",
+      "iconKey": "Container.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.ContainerViewModel",
+      "categoryKey": "Autossential.Workflow",
+      "properties": []
+    },
+    {
       "fullName": "Autossential.Activities.CultureScope",
       "shortName": "CultureScope",
       "displayNameKey": "CultureScope_DisplayName",
@@ -139,6 +149,50 @@
           "category": {
             "name": "InputOutput",
             "displayNameKey": "Categories_InputOutput"
+          }
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.Exit",
+      "shortName": "Exit",
+      "displayNameKey": "Exit_DisplayName",
+      "descriptionKey": "Exit_Description",
+      "iconKey": "Exit.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.ExitViewModel",
+      "categoryKey": "Autossential.Workflow",
+      "properties": [
+        {
+          "name": "Condition",
+          "displayNameKey": "Exit_Condition_DisplayName",
+          "tooltipKey": "Exit_Condition_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.IfActivity",
+      "shortName": "IfActivity",
+      "displayNameKey": "IfActivity_DisplayName",
+      "descriptionKey": "IfActivity_Description",
+      "iconKey": "IfActivity.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.IfActivityViewModel",
+      "categoryKey": "Autossential.Workflow",
+      "properties": [
+        {
+          "name": "CheckTrue",
+          "displayNameKey": "IfActivity_CheckTrue_DisplayName",
+          "tooltipKey": "IfActivity_CheckTrue_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
           }
         }
       ]
@@ -442,6 +496,105 @@
           "name": "Result",
           "displayNameKey": "ReplaceTokens_Result_DisplayName",
           "tooltipKey": "ReplaceTokens_Result_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.TerminateProcess",
+      "shortName": "TerminateProcess",
+      "displayNameKey": "TerminateProcess_DisplayName",
+      "descriptionKey": "TerminateProcess_Description",
+      "iconKey": "TerminateProcess.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.TerminateProcessViewModel",
+      "categoryKey": "Autossential.Misc",
+      "properties": [
+        {
+          "name": "ProcessNames",
+          "displayNameKey": "TerminateProcess_ProcessNames_DisplayName",
+          "tooltipKey": "TerminateProcess_ProcessNames_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.TimeLoop",
+      "shortName": "TimeLoop",
+      "displayNameKey": "TimeLoop_DisplayName",
+      "descriptionKey": "TimeLoop_Description",
+      "iconKey": "TimeLoop.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.TimeLoopViewModel",
+      "categoryKey": "Autossential.Workflow",
+      "properties": [
+        {
+          "name": "Timeout",
+          "displayNameKey": "TimeLoop_Timeout_DisplayName",
+          "tooltipKey": "TimeLoop_Timeout_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "IntervalSeconds",
+          "displayNameKey": "TimeLoop_IntervalSeconds_DisplayName",
+          "tooltipKey": "TimeLoop_IntervalSeconds_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "IterationIndex",
+          "displayNameKey": "TimeLoop_IterationIndex_DisplayName",
+          "tooltipKey": "TimeLoop_IterationIndex_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "TimeLoop_Result_DisplayName",
+          "tooltipKey": "TimeLoop_Result_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        },
+        {
+          "name": "ResultType",
+          "displayNameKey": "TimeLoop_ResultType_DisplayName",
+          "tooltipKey": "TimeLoop_ResultType_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "TimeLoop_Result_DisplayName",
+          "tooltipKey": "TimeLoop_Result_Description",
           "isVisible": true,
           "isRequired": false,
           "category": {

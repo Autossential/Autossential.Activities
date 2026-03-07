@@ -873,4 +873,92 @@
     <value>Output Format</value>
     <comment>property name</comment>
   </data>
+  <data name="RemoveEmptyRows_ColumnNames_Description" xml:space="preserve">
+    <value>The column names to be evaluated.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RemoveEmptyRows_ColumnNames_DisplayName" xml:space="preserve">
+    <value>Column Names</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RemoveEmptyRows_Description" xml:space="preserve">
+    <value>Removes the empty rows from a Data Table.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
+    <value>Remove Empty Rows</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_Description" xml:space="preserve">
+    <value>The Data Table whose empty rows will be removed.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_DisplayName" xml:space="preserve">
+    <value>Data Table</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_Description" xml:space="preserve">
+    <value>Determines how a row is evaluated for removal: All — the row is removed if all specified columns are empty. Any — the row is removed if any specified column is empty. If no columns are specified, all columns of the Data Table are considered.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
+    <value>Matching Mode</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_DisplayName" xml:space="preserve">
+    <value>Column Indexes</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_Description" xml:space="preserve">
+    <value>The column indexes to be evaluated.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
+    <value>Data Table</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+    <value>The column names to be removed.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">
+    <value>Column Names</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RemoveDataColumns_Description" xml:space="preserve">
+    <value>Removes the specified columns from a Data Table</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="RemoveDataColumns_DisplayName" xml:space="preserve">
+    <value>Remove Data Columns</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="RemoveDataColumns_DataTable_Description" xml:space="preserve">
+    <value>The Data Table from which the columns is to be removed.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RemoveDataColumns_ColumnIndexes_DisplayName" xml:space="preserve">
+    <value>Column Indexes</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RemoveDataColumns_ColumnIndexes_Description" xml:space="preserve">
+    <value>The column indexes to be removed.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TransposeData_Description" xml:space="preserve">
+    <value>Transposes a DataTable by swapping its rows and columns so that rows become columns and columns become rows.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="TransposeData_DisplayName" xml:space="preserve">
+    <value>Transpose Data</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="TransposeData_DataTable_Description" xml:space="preserve">
+    <value>The Data Table to be transposed.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
+    <value>Data Table</value>
+    <comment>property name</comment>
+  </data>
 </root>

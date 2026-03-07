@@ -9,7 +9,7 @@ namespace Autossential.Activities
     public sealed class Zip : AsyncActivity
     {
         public InArgument<string> ZipFilePath { get; set; }
-        public InArgument<IEnumerable<string>> ToCompress { get; set; }
+        public InArgument<IReadOnlyList<string>> ToCompress { get; set; }
         public InArgument<Encoding> TextEncoding { get; set; }
         public CompressionLevel CompressionLevel { get; set; } = CompressionLevel.Optimal;
         public InArgument<bool> FullEntryNames { get; set; } = false;
@@ -28,9 +28,9 @@ namespace Autossential.Activities
 
         protected override Task<Action<AsyncCodeActivityContext>> RunAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
-            var zipFilePath = Path.GetFullPath(ZipFilePath.Get(context));
-            var toCompress = ToCompress.Get(context);
-            var encoding = TextEncoding.Get(context);
+            var zipFilePath = Path.GetFullPath(ZipFilePath.Get(context)) ?? throw new InvalidOperationException(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.Zip_ZipFilePath_DisplayName));
+            var toCompress = ToCompress.Get(context) ?? throw new InvalidOperationException(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.Zip_ToCompress_DisplayName));
+            var encoding = TextEncoding.Get(context) ?? Encoding.UTF8;
             var fullEntryNames = FullEntryNames.Get(context);
 
             return Task.Run<Action<AsyncCodeActivityContext>>(() =>

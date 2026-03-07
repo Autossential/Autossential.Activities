@@ -143,6 +143,9 @@ public class Activity
                 "Exit" => "Autossential.Workflow",
 
                 "PromoteHeaders" or
+                "RemoveEmptyRows" or
+                "RemoveDataColumns" or
+                "TransposeData" or
                 "DataTableToText" => "Autossential.Data",
 
                 _ => "Autossential.Misc"

@@ -1060,6 +1060,168 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The column indexes to be removed..
+        /// </summary>
+        public static string RemoveDataColumns_ColumnIndexes_Description {
+            get {
+                return ResourceManager.GetString("RemoveDataColumns_ColumnIndexes_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Column Indexes.
+        /// </summary>
+        public static string RemoveDataColumns_ColumnIndexes_DisplayName {
+            get {
+                return ResourceManager.GetString("RemoveDataColumns_ColumnIndexes_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Column Names.
+        /// </summary>
+        public static string RemoveDataColumns_ColumnNames_DisplayName {
+            get {
+                return ResourceManager.GetString("RemoveDataColumns_ColumnNames_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The column names to be removed..
+        /// </summary>
+        public static string RemoveDataColumns_ColumnsNames_Description {
+            get {
+                return ResourceManager.GetString("RemoveDataColumns_ColumnsNames_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Data Table from which the columns is to be removed..
+        /// </summary>
+        public static string RemoveDataColumns_DataTable_Description {
+            get {
+                return ResourceManager.GetString("RemoveDataColumns_DataTable_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Table.
+        /// </summary>
+        public static string RemoveDataColumns_DataTable_DisplayName {
+            get {
+                return ResourceManager.GetString("RemoveDataColumns_DataTable_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Removes the specified columns from a Data Table.
+        /// </summary>
+        public static string RemoveDataColumns_Description {
+            get {
+                return ResourceManager.GetString("RemoveDataColumns_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove Data Columns.
+        /// </summary>
+        public static string RemoveDataColumns_DisplayName {
+            get {
+                return ResourceManager.GetString("RemoveDataColumns_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The column indexes to be evaluated..
+        /// </summary>
+        public static string RemoveEmptyRows_ColumnIndexes_Description {
+            get {
+                return ResourceManager.GetString("RemoveEmptyRows_ColumnIndexes_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Column Indexes.
+        /// </summary>
+        public static string RemoveEmptyRows_ColumnIndexes_DisplayName {
+            get {
+                return ResourceManager.GetString("RemoveEmptyRows_ColumnIndexes_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The column names to be evaluated..
+        /// </summary>
+        public static string RemoveEmptyRows_ColumnNames_Description {
+            get {
+                return ResourceManager.GetString("RemoveEmptyRows_ColumnNames_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Column Names.
+        /// </summary>
+        public static string RemoveEmptyRows_ColumnNames_DisplayName {
+            get {
+                return ResourceManager.GetString("RemoveEmptyRows_ColumnNames_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Data Table whose empty rows will be removed..
+        /// </summary>
+        public static string RemoveEmptyRows_DataTable_Description {
+            get {
+                return ResourceManager.GetString("RemoveEmptyRows_DataTable_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Table.
+        /// </summary>
+        public static string RemoveEmptyRows_DataTable_DisplayName {
+            get {
+                return ResourceManager.GetString("RemoveEmptyRows_DataTable_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Removes the empty rows from a Data Table..
+        /// </summary>
+        public static string RemoveEmptyRows_Description {
+            get {
+                return ResourceManager.GetString("RemoveEmptyRows_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove Empty Rows.
+        /// </summary>
+        public static string RemoveEmptyRows_DisplayName {
+            get {
+                return ResourceManager.GetString("RemoveEmptyRows_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Determines how a row is evaluated for removal: All — the row is removed if all specified columns are empty. Any — the row is removed if any specified column is empty. If no columns are specified, all columns of the Data Table are considered..
+        /// </summary>
+        public static string RemoveEmptyRows_MatchingMode_Description {
+            get {
+                return ResourceManager.GetString("RemoveEmptyRows_MatchingMode_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Matching Mode.
+        /// </summary>
+        public static string RemoveEmptyRows_MatchingMode_DisplayName {
+            get {
+                return ResourceManager.GetString("RemoveEmptyRows_MatchingMode_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Determines if the searching for tokens are case sensitive. The Pattern is also affected..
         /// </summary>
         public static string ReplaceTokens_CaseSensitive_Description {
@@ -1290,6 +1452,42 @@ namespace Autossential.Activities.Properties {
         public static string TimeLoop_Timeout_DisplayName {
             get {
                 return ResourceManager.GetString("TimeLoop_Timeout_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Data Table to be transposed..
+        /// </summary>
+        public static string TransposeData_DataTable_Description {
+            get {
+                return ResourceManager.GetString("TransposeData_DataTable_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Table.
+        /// </summary>
+        public static string TransposeData_DataTable_DisplayName {
+            get {
+                return ResourceManager.GetString("TransposeData_DataTable_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transposes a DataTable by swapping its rows and columns so that rows become columns and columns become rows..
+        /// </summary>
+        public static string TransposeData_Description {
+            get {
+                return ResourceManager.GetString("TransposeData_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transpose Data.
+        /// </summary>
+        public static string TransposeData_DisplayName {
+            get {
+                return ResourceManager.GetString("TransposeData_DisplayName", resourceCulture);
             }
         }
         

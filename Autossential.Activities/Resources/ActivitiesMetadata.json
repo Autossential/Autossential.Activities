@@ -185,9 +185,9 @@
           }
         },
         {
-          "name": "TextFormat",
-          "displayNameKey": "DataTableToText_TextFormat_DisplayName",
-          "tooltipKey": "DataTableToText_TextFormat_Description",
+          "name": "OutputFormat",
+          "displayNameKey": "DataTableToText_OutputFormat_DisplayName",
+          "tooltipKey": "DataTableToText_OutputFormat_Description",
           "isVisible": true,
           "isRequired": false,
           "category": {
@@ -561,6 +561,105 @@
       ]
     },
     {
+      "fullName": "Autossential.Activities.RemoveDataColumns",
+      "shortName": "RemoveDataColumns",
+      "displayNameKey": "RemoveDataColumns_DisplayName",
+      "descriptionKey": "RemoveDataColumns_Description",
+      "iconKey": "RemoveDataColumns.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.RemoveDataColumnsViewModel",
+      "categoryKey": "Autossential.Data",
+      "properties": [
+        {
+          "name": "DataTable",
+          "displayNameKey": "RemoveDataColumns_DataTable_DisplayName",
+          "tooltipKey": "RemoveDataColumns_DataTable_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "InputOutput",
+            "displayNameKey": "Categories_InputOutput"
+          }
+        },
+        {
+          "name": "ColumnNames",
+          "displayNameKey": "RemoveDataColumns_ColumnNames_DisplayName",
+          "tooltipKey": "RemoveDataColumns_ColumnNames_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "ColumnIndexes",
+          "displayNameKey": "RemoveDataColumns_ColumnIndexes_DisplayName",
+          "tooltipKey": "RemoveDataColumns_ColumnIndexes_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.RemoveEmptyRows",
+      "shortName": "RemoveEmptyRows",
+      "displayNameKey": "RemoveEmptyRows_DisplayName",
+      "descriptionKey": "RemoveEmptyRows_Description",
+      "iconKey": "RemoveEmptyRows.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.RemoveEmptyRowsViewModel",
+      "categoryKey": "Autossential.Data",
+      "properties": [
+        {
+          "name": "DataTable",
+          "displayNameKey": "RemoveEmptyRows_DataTable_DisplayName",
+          "tooltipKey": "RemoveEmptyRows_DataTable_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "InputOutput",
+            "displayNameKey": "Categories_InputOutput"
+          }
+        },
+        {
+          "name": "ColumnNames",
+          "displayNameKey": "RemoveEmptyRows_ColumnNames_DisplayName",
+          "tooltipKey": "RemoveEmptyRows_ColumnNames_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "ColumnIndexes",
+          "displayNameKey": "RemoveEmptyRows_ColumnIndexes_DisplayName",
+          "tooltipKey": "RemoveEmptyRows_ColumnIndexes_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "MatchingMode",
+          "displayNameKey": "RemoveEmptyRows_MatchingMode_DisplayName",
+          "tooltipKey": "RemoveEmptyRows_MatchingMode_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
+        }
+      ]
+    },
+    {
       "fullName": "Autossential.Activities.ReplaceTokens",
       "shortName": "ReplaceTokens",
       "displayNameKey": "ReplaceTokens_DisplayName",
@@ -754,6 +853,28 @@
           "category": {
             "name": "Output",
             "displayNameKey": "Categories_Output"
+          }
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.TransposeData",
+      "shortName": "TransposeData",
+      "displayNameKey": "TransposeData_DisplayName",
+      "descriptionKey": "TransposeData_Description",
+      "iconKey": "TransposeData.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.TransposeDataViewModel",
+      "categoryKey": "Autossential.Data",
+      "properties": [
+        {
+          "name": "DataTable",
+          "displayNameKey": "TransposeData_DataTable_DisplayName",
+          "tooltipKey": "TransposeData_DataTable_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "InputOutput",
+            "displayNameKey": "Categories_InputOutput"
           }
         }
       ]

@@ -74,9 +74,12 @@
 		<EmbeddedResource Include="Resources\Icons\MapDrive.svg" />
 		<EmbeddedResource Include="Resources\Icons\PromoteHeaders.svg" />
 		<EmbeddedResource Include="Resources\Icons\RandomString.svg" />
+		<EmbeddedResource Include="Resources\Icons\RemoveDataColumns.svg" />
+		<EmbeddedResource Include="Resources\Icons\RemoveEmptyRows.svg" />
 		<EmbeddedResource Include="Resources\Icons\ReplaceTokens.svg" />
 		<EmbeddedResource Include="Resources\Icons\TerminateProcess.svg" />
 		<EmbeddedResource Include="Resources\Icons\TimeLoop.svg" />
+		<EmbeddedResource Include="Resources\Icons\TransposeData.svg" />
 		<EmbeddedResource Include="Resources\Icons\UnmapDrive.svg" />
 		<EmbeddedResource Include="Resources\Icons\Zip.svg" />
 		<EmbeddedResource Include="Resources\Icons\Unzip.svg" />

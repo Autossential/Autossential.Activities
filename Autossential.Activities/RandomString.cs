@@ -19,7 +19,7 @@ namespace Autossential.Activities
         {
             var format = Format.Get(context);
             if (string.IsNullOrEmpty(format))
-                throw new NullReferenceException();
+                throw new InvalidOperationException(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.RandomString_Format_DisplayName));
 
             var custom = Custom.Get(context) ?? "";
 

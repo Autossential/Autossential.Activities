@@ -45,7 +45,7 @@ namespace Autossential.Activities
 
         private Task<Action<AsyncCodeActivityContext>> WaitForFile(AsyncCodeActivityContext context, CancellationToken token)
         {
-            var filePath = FilePath.Get(context) ?? throw new NullReferenceException(nameof(FilePath));
+            var filePath = FilePath.Get(context) ?? throw new InvalidOperationException(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.WaitFile_FilePath_DisplayName));
             var pollingInterval = TimeSpan.FromSeconds(Math.Max(PollingIntervalSeconds.Get(context), 0.1)); // Minimum 0.1 seconds
 
             if (!WaitForExist.Get(context) && !File.Exists(filePath))
@@ -83,7 +83,7 @@ namespace Autossential.Activities
 
         private Task<Action<AsyncCodeActivityContext>> WaitForDynamicFile(AsyncCodeActivityContext context, CancellationToken token)
         {
-            var dirPath = DirectoryPath.Get(context) ?? throw new NullReferenceException(nameof(DirectoryPath));
+            var dirPath = DirectoryPath.Get(context) ?? throw new InvalidOperationException(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.WaitFile_DirectoryPath_DisplayName));
             var searchPattern = SearchPattern.Get(context) ?? "*.*";
             var pollingInterval = TimeSpan.FromSeconds(Math.Max(PollingIntervalSeconds.Get(context), 0.1)); // Minimum 0.1 seconds
             string filePath = null;

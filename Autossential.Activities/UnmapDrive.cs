@@ -1,4 +1,5 @@
-﻿using System.Activities;
+﻿using Autossential.Activities.Properties;
+using System.Activities;
 
 namespace Autossential.Activities
 {
@@ -9,7 +10,7 @@ namespace Autossential.Activities
 
         protected override bool Execute(CodeActivityContext context)
         {
-            var driveLetter = DriveLetter.Get(context) ?? throw new NullReferenceException(nameof(DriveLetter));
+            var driveLetter = DriveLetter.Get(context) ?? throw new InvalidOperationException(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.UnmapDrive_DriveLetter_DisplayName));
             ValidateDriveLetterFormat(driveLetter);
 
             var result = DisconnectDrive(driveLetter);

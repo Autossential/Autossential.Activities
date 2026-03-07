@@ -17,8 +17,8 @@ namespace Autossential.Activities
 
         protected override Task<Action<AsyncCodeActivityContext>> RunAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
-            var zipFilePath = ZipFilePath.Get(context);
-            var extractTo = ExtractTo.Get(context);
+            var zipFilePath = ZipFilePath.Get(context) ?? throw new InvalidOperationException(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.Unzip_ZipFilePath_DisplayName));
+            var extractTo = ExtractTo.Get(context) ?? throw new InvalidOperationException(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.Unzip_ExtractTo_DisplayName));
             var overwrite = Overwrite.Get(context);
 
             return Task.Run<Action<AsyncCodeActivityContext>>(() =>

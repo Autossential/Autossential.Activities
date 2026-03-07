@@ -684,4 +684,70 @@
   <data name="DataTableToText_OutputFormat_DisplayName" xml:space="preserve">
     <value>Formato de Saída</value>
   </data>
+  <data name="RemoveEmptyRows_ColumnNames_Description" xml:space="preserve">
+    <value>Os nomes das colunas a serem avaliadas.</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnNames_DisplayName" xml:space="preserve">
+    <value>Nome das Colunas</value>
+  </data>
+  <data name="RemoveEmptyRows_Description" xml:space="preserve">
+    <value>Remove as linhas vazias de uma Tabela de Dados.</value>
+  </data>
+  <data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
+    <value>Remover Linhas Vazias</value>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_Description" xml:space="preserve">
+    <value>A tabela de dados cujas linhas vazias serão removidas.</value>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_DisplayName" xml:space="preserve">
+    <value>Tabela de Dados</value>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_Description" xml:space="preserve">
+    <value>Determina como uma linha é avaliada para remoção: All — a linha é removida se todas as colunas especificadas estiverem vazias. Any— a linha é removida se qualquer coluna especificada estiver vazia. Se nenhuma coluna for especificada, todas as colunas da tabela de dados serão consideradas.</value>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
+    <value>Modo de Correspondência</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_DisplayName" xml:space="preserve">
+    <value>Índices das Colunas</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_Description" xml:space="preserve">
+    <value>Os índices das colunas a serem avaliadas.</value>
+  </data>
+  <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
+    <value>Tabela de Dados</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+    <value>Os nomes das colunas a serem removidas.</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">
+    <value>Nome das Colunas</value>
+  </data>
+  <data name="RemoveDataColumns_Description" xml:space="preserve">
+    <value>Remove as colunas de dados especificadas de uma Tabela de Dados.</value>
+  </data>
+  <data name="RemoveDataColumns_DisplayName" xml:space="preserve">
+    <value>Remove Colunas de Dados</value>
+  </data>
+  <data name="RemoveDataColumns_DataTable_Description" xml:space="preserve">
+    <value>A tabela de dados da qual as colunas devem ser removidas.</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnIndexes_DisplayName" xml:space="preserve">
+    <value>Índice das Colunas</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnIndexes_Description" xml:space="preserve">
+    <value>Os índices das colunas a serem removidas.</value>
+  </data>
+  <data name="TransposeData_Description" xml:space="preserve">
+    <value>Transpõe uma Tabela de Dados trocando suas linhas e colunas de forma que as linhas se tornem colunas e as colunas se tornem linhas.</value>
+  </data>
+  <data name="TransposeData_DisplayName" xml:space="preserve">
+    <value>Transpor Dados</value>
+  </data>
+  <data name="TransposeData_DataTable_Description" xml:space="preserve">
+    <value>A Tabela de Dados a ser transposta.</value>
+  </data>
+  <data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
+    <value>Tabela de Dados</value>
+  </data>
 </root>

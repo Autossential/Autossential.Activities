@@ -17,7 +17,7 @@ namespace Autossential.Activities
         public SearchOption SearchOption { get; set; } = SearchOption.AllDirectories;
         protected override Task<Action<AsyncCodeActivityContext>> RunAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
-            var folder = Folder.Get(context) ?? throw new NullReferenceException(nameof(Folder));
+            var folder = Folder.Get(context) ?? throw new InvalidOperationException(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.CleanUpFolder_DisplayName));
             var searchPatterns = new HashSet<string>((SearchPattern.Get(context) ?? "*.*").Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries));
             var lastWriteTime = LastWriteTime.Get(context) ?? DateTime.Now;
             var deleteEmptyFolders = DeleteEmptyFolders.Get(context);

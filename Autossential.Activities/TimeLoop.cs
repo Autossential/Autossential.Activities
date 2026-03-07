@@ -7,6 +7,7 @@ namespace Autossential.Activities
 {
     public sealed class TimeLoop : NativeActivity<bool>
     {
+        [RequiredArgument]
         public InArgument<TimeSpan> Timeout { get; set; }
         public InArgument<double> IntervalSeconds { get; set; }
         public OutArgument<int> IterationIndex { get; set; }

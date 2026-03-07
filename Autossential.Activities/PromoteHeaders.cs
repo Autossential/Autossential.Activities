@@ -15,7 +15,7 @@ namespace Autossential.Activities
         {
             var autoRename = AutoRename.Get(context);
 
-            var dt = DataTable.Get(context);
+            var dt = DataTable.Get(context) ?? throw new InvalidOperationException(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.PromoteHeaders_DataTable_DisplayName));
             if (dt.Rows.Count == 0)
                 throw new InvalidOperationException(Resources.PromoteHeaders_ErrorMsg_NoData);
 

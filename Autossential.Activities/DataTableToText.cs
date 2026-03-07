@@ -1,4 +1,5 @@
-﻿using System.Activities;
+﻿using Autossential.Activities.Properties;
+using System.Activities;
 using System.Data;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -23,7 +24,7 @@ namespace Autossential.Activities
 
         protected override string Execute(CodeActivityContext context)
         {
-            var dt = DataTable.Get(context) ?? throw new NullReferenceException("");
+            var dt = DataTable.Get(context) ?? throw new InvalidOperationException(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.DataTableToText_DataTable_DisplayName));
             if (dt.Rows.Count == 0)
                 return string.Empty;
 

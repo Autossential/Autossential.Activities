@@ -1,3 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M10,19H7V17H10V19M10,16H7V14H10V16M10,13H7V11H10V13M14,19H11V17H14V19M14,16H11V14H14V16M14,13H11V11H14V13M13,9V3.5L18.5,9H13Z" fill="#00C373" />
+<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <path d="M4,3L18,3C19.11,3 20,3.9 20,5L20,12.08C18.45,11.82 16.92,12.18 15.68,13L12,13L12,17L13.08,17C12.97,17.68 12.97,18.35 13.08,19L4,19C2.9,19 2,18.11 2,17L2,5C2,3.9 2.9,3 4,3ZM12,7L12,11L18,11L18,7L12,7ZM4,13L4,17L10,17L10,13L4,13ZM4,7L4,11L10,11L10,7L4,7Z" style="fill:rgb(82,96,105);"/>
+    <g transform="matrix(1,0,0,1,0.637663,3.307487)">
+        <g transform="matrix(11,0,0,11,21.475759,18.192513)">
+        </g>
+        <text x="14.535px" y="18.193px" style="font-family:'Rubik-Bold', 'Rubik';font-weight:700;font-size:11px;fill:rgb(0,103,223);">T</text>
+    </g>
 </svg>

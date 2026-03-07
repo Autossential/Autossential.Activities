@@ -142,6 +142,9 @@ public class Activity
                 "CheckPoint" or
                 "Exit" => "Autossential.Workflow",
 
+                "PromoteHeaders" or
+                "DataTableToText" => "Autossential.Data",
+
                 _ => "Autossential.Misc"
             };
         }

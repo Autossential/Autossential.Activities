@@ -430,6 +430,96 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The DataTable..
+        /// </summary>
+        public static string DataTableToText_DataTable_Description {
+            get {
+                return ResourceManager.GetString("DataTableToText_DataTable_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Table.
+        /// </summary>
+        public static string DataTableToText_DataTable_DisplayName {
+            get {
+                return ResourceManager.GetString("DataTableToText_DataTable_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The date format to be used on the string representation for DateTime types..
+        /// </summary>
+        public static string DataTableToText_DateTimeFormat_Description {
+            get {
+                return ResourceManager.GetString("DataTableToText_DateTimeFormat_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date Time Format.
+        /// </summary>
+        public static string DataTableToText_DateTimeFormat_DisplayName {
+            get {
+                return ResourceManager.GetString("DataTableToText_DateTimeFormat_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Returns a string representation of a datatable on the specified text format (HTML, JSON or XML)..
+        /// </summary>
+        public static string DataTableToText_Description {
+            get {
+                return ResourceManager.GetString("DataTableToText_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Table To Text.
+        /// </summary>
+        public static string DataTableToText_DisplayName {
+            get {
+                return ResourceManager.GetString("DataTableToText_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The output text format..
+        /// </summary>
+        public static string DataTableToText_OutputFormat_Description {
+            get {
+                return ResourceManager.GetString("DataTableToText_OutputFormat_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output Format.
+        /// </summary>
+        public static string DataTableToText_OutputFormat_DisplayName {
+            get {
+                return ResourceManager.GetString("DataTableToText_OutputFormat_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The string representation of the DataTable..
+        /// </summary>
+        public static string DataTableToText_Result_Description {
+            get {
+                return ResourceManager.GetString("DataTableToText_Result_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Result.
+        /// </summary>
+        public static string DataTableToText_Result_DisplayName {
+            get {
+                return ResourceManager.GetString("DataTableToText_Result_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Decrements a numeric variable by a specified value..
         /// </summary>
         public static string Decrement_Description {
@@ -831,6 +921,69 @@ namespace Autossential.Activities.Properties {
         public static string NetworkDrive_ResponseMsg_Success {
             get {
                 return ResourceManager.GetString("NetworkDrive_ResponseMsg_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When true, adds a numeric suffix if the column name is already present in the Data Table..
+        /// </summary>
+        public static string PromoteHeaders_AutoRename_Description {
+            get {
+                return ResourceManager.GetString("PromoteHeaders_AutoRename_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto Rename.
+        /// </summary>
+        public static string PromoteHeaders_AutoRename_DisplayName {
+            get {
+                return ResourceManager.GetString("PromoteHeaders_AutoRename_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The data table which first row will be promoted to headers..
+        /// </summary>
+        public static string PromoteHeaders_DataTable_Description {
+            get {
+                return ResourceManager.GetString("PromoteHeaders_DataTable_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Table.
+        /// </summary>
+        public static string PromoteHeaders_DataTable_DisplayName {
+            get {
+                return ResourceManager.GetString("PromoteHeaders_DataTable_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Promotes the first row of values to new column headers..
+        /// </summary>
+        public static string PromoteHeaders_Description {
+            get {
+                return ResourceManager.GetString("PromoteHeaders_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Promote Headers.
+        /// </summary>
+        public static string PromoteHeaders_DisplayName {
+            get {
+                return ResourceManager.GetString("PromoteHeaders_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is no rows in the input data table to promote..
+        /// </summary>
+        public static string PromoteHeaders_ErrorMsg_NoData {
+            get {
+                return ResourceManager.GetString("PromoteHeaders_ErrorMsg_NoData", resourceCulture);
             }
         }
         

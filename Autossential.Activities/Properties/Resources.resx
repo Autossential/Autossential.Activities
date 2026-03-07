@@ -805,4 +805,72 @@
     <value>Expression</value>
     <comment>property name</comment>
   </data>
+  <data name="PromoteHeaders_AutoRename_Description" xml:space="preserve">
+    <value>When true, adds a numeric suffix if the column name is already present in the Data Table.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
+    <value>Auto Rename</value>
+    <comment>property name</comment>
+  </data>
+  <data name="PromoteHeaders_Description" xml:space="preserve">
+    <value>Promotes the first row of values to new column headers.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="PromoteHeaders_DisplayName" xml:space="preserve">
+    <value>Promote Headers</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
+    <value>There is no rows in the input data table to promote.</value>
+    <comment>error message</comment>
+  </data>
+  <data name="PromoteHeaders_DataTable_Description" xml:space="preserve">
+    <value>The data table which first row will be promoted to headers.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="PromoteHeaders_DataTable_DisplayName" xml:space="preserve">
+    <value>Data Table</value>
+    <comment>property name</comment>
+  </data>
+  <data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
+    <value>The date format to be used on the string representation for DateTime types.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="DataTableToText_DateTimeFormat_DisplayName" xml:space="preserve">
+    <value>Date Time Format</value>
+    <comment>property name</comment>
+  </data>
+  <data name="DataTableToText_Description" xml:space="preserve">
+    <value>Returns a string representation of a datatable on the specified text format (HTML, JSON or XML).</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="DataTableToText_DisplayName" xml:space="preserve">
+    <value>Data Table To Text</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="DataTableToText_DataTable_Description" xml:space="preserve">
+    <value>The DataTable.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
+    <value>Data Table</value>
+    <comment>property name</comment>
+  </data>
+  <data name="DataTableToText_Result_Description" xml:space="preserve">
+    <value>The string representation of the DataTable.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="DataTableToText_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
+  <data name="DataTableToText_OutputFormat_Description" xml:space="preserve">
+    <value>The output text format.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="DataTableToText_OutputFormat_DisplayName" xml:space="preserve">
+    <value>Output Format</value>
+    <comment>property name</comment>
+  </data>
 </root>

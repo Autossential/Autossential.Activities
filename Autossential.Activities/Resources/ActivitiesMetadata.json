@@ -165,6 +165,83 @@
       ]
     },
     {
+      "fullName": "Autossential.Activities.DataTableToText",
+      "shortName": "DataTableToText",
+      "displayNameKey": "DataTableToText_DisplayName",
+      "descriptionKey": "DataTableToText_Description",
+      "iconKey": "DataTableToText.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.DataTableToTextViewModel",
+      "categoryKey": "Autossential.Data",
+      "properties": [
+        {
+          "name": "DataTable",
+          "displayNameKey": "DataTableToText_DataTable_DisplayName",
+          "tooltipKey": "DataTableToText_DataTable_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "TextFormat",
+          "displayNameKey": "DataTableToText_TextFormat_DisplayName",
+          "tooltipKey": "DataTableToText_TextFormat_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
+        },
+        {
+          "name": "DateTimeFormat",
+          "displayNameKey": "DataTableToText_DateTimeFormat_DisplayName",
+          "tooltipKey": "DataTableToText_DateTimeFormat_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "DataTableToText_Result_DisplayName",
+          "tooltipKey": "DataTableToText_Result_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        },
+        {
+          "name": "ResultType",
+          "displayNameKey": "DataTableToText_ResultType_DisplayName",
+          "tooltipKey": "DataTableToText_ResultType_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "DataTableToText_Result_DisplayName",
+          "tooltipKey": "DataTableToText_Result_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        }
+      ]
+    },
+    {
       "fullName": "Autossential.Activities.Decrement",
       "shortName": "Decrement",
       "displayNameKey": "Decrement_DisplayName",
@@ -380,6 +457,39 @@
           "category": {
             "name": "Output",
             "displayNameKey": "Categories_Output"
+          }
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.PromoteHeaders",
+      "shortName": "PromoteHeaders",
+      "displayNameKey": "PromoteHeaders_DisplayName",
+      "descriptionKey": "PromoteHeaders_Description",
+      "iconKey": "PromoteHeaders.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.PromoteHeadersViewModel",
+      "categoryKey": "Autossential.Data",
+      "properties": [
+        {
+          "name": "DataTable",
+          "displayNameKey": "PromoteHeaders_DataTable_DisplayName",
+          "tooltipKey": "PromoteHeaders_DataTable_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "InputOutput",
+            "displayNameKey": "Categories_InputOutput"
+          }
+        },
+        {
+          "name": "AutoRename",
+          "displayNameKey": "PromoteHeaders_AutoRename_DisplayName",
+          "tooltipKey": "PromoteHeaders_AutoRename_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
           }
         }
       ]

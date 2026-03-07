@@ -633,4 +633,55 @@
   <data name="CheckPoint_Expression_DisplayName" xml:space="preserve">
     <value>Expressão</value>
   </data>
+  <data name="PromoteHeaders_AutoRename_Description" xml:space="preserve">
+    <value>Quando verdadeiro, adiciona um sufixo numérico se o nome da coluna já estiver presente na tabela de dados.</value>
+  </data>
+  <data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
+    <value>Renomear Automaticamente</value>
+  </data>
+  <data name="PromoteHeaders_Description" xml:space="preserve">
+    <value>Promove a primeira linha de valores para novos cabeçalhos de coluna.</value>
+  </data>
+  <data name="PromoteHeaders_DisplayName" xml:space="preserve">
+    <value>Promover Cabeçalhos</value>
+  </data>
+  <data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
+    <value>Não há linhas na tabela de dados de entrada para promover.</value>
+  </data>
+  <data name="PromoteHeaders_DataTable_Description" xml:space="preserve">
+    <value>A tabela de dados cuja primeira linha será promovida a cabeçalhos.</value>
+  </data>
+  <data name="PromoteHeaders_DataTable_DisplayName" xml:space="preserve">
+    <value>Tabela de Dados</value>
+  </data>
+  <data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
+    <value>O formato de data a ser usado na representação em string para tipos DateTime.</value>
+  </data>
+  <data name="DataTableToText_DateTimeFormat_DisplayName" xml:space="preserve">
+    <value>Formato de Data e Hora</value>
+  </data>
+  <data name="DataTableToText_Description" xml:space="preserve">
+    <value>Retorna uma representação em formato de string de uma tabela de dados no formato de texto especificado (HTML, JSON ou XML).</value>
+  </data>
+  <data name="DataTableToText_DisplayName" xml:space="preserve">
+    <value>Tabela de Dados para Texto</value>
+  </data>
+  <data name="DataTableToText_DataTable_Description" xml:space="preserve">
+    <value>A tabela de dados.</value>
+  </data>
+  <data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
+    <value>Tabela de Dados</value>
+  </data>
+  <data name="DataTableToText_Result_Description" xml:space="preserve">
+    <value>A representação em formato de string da Tabela de Dados</value>
+  </data>
+  <data name="DataTableToText_Result_DisplayName" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="DataTableToText_OutputFormat_Description" xml:space="preserve">
+    <value>O formato de texto de saída.</value>
+  </data>
+  <data name="DataTableToText_OutputFormat_DisplayName" xml:space="preserve">
+    <value>Formato de Saída</value>
+  </data>
 </root>

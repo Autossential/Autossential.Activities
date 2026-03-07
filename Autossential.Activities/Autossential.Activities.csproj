@@ -66,11 +66,13 @@
 		<EmbeddedResource Include="Resources\Icons\CleanUpFolder.svg" />
 		<EmbeddedResource Include="Resources\Icons\Container.svg" />
 		<EmbeddedResource Include="Resources\Icons\CultureScope.svg" />
+		<EmbeddedResource Include="Resources\Icons\DataTableToText.svg" />
 		<EmbeddedResource Include="Resources\Icons\Decrement.svg" />
 		<EmbeddedResource Include="Resources\Icons\Exit.svg" />
 		<EmbeddedResource Include="Resources\Icons\IfActivity.svg" />
 		<EmbeddedResource Include="Resources\Icons\Increment.svg" />
 		<EmbeddedResource Include="Resources\Icons\MapDrive.svg" />
+		<EmbeddedResource Include="Resources\Icons\PromoteHeaders.svg" />
 		<EmbeddedResource Include="Resources\Icons\RandomString.svg" />
 		<EmbeddedResource Include="Resources\Icons\ReplaceTokens.svg" />
 		<EmbeddedResource Include="Resources\Icons\TerminateProcess.svg" />

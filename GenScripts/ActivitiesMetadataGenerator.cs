@@ -128,27 +128,29 @@ public class Activity
                 "WaitFile" or
                 "CleanUpFolder" or
                 "Zip" or
-                "Unzip" => "Autossential.Files",
+                "Unzip" => "ActivityCategories_Files",
 
                 "RandomString" or
                 "Increment" or
                 "Decrement" or
                 "ReplaceTokens" or
-                "CultureScope" => "Autossential.Programming",
+                "ParseData" or
+                "LoadDataFile" or
+                "CultureScope" => "ActivityCategories_Programming",
 
                 "IfActivity" or
                 "TimeLoop" or
                 "Container" or
                 "CheckPoint" or
-                "Exit" => "Autossential.Workflow",
+                "Exit" => "ActivityCategories_Workflow",
 
                 "PromoteHeaders" or
                 "RemoveEmptyRows" or
                 "RemoveDataColumns" or
                 "TransposeData" or
-                "DataTableToText" => "Autossential.Data",
+                "DataTableToText" => "ActivityCategories_Data",
 
-                _ => "Autossential.Misc"
+                _ => "ActivityCategories_System"
             };
         }
     }

@@ -35,7 +35,7 @@ namespace Autossential.Activities.ViewModels
 #if WINDOWS
             Folder.AddMenuAction(new MenuAction()
             {
-                DisplayName = Resources.WaitFile_ViewModel_BrowseForFolder,
+                DisplayName = Resources.Common_ViewModel_BrowseForFolder,
                 IsVisible = true,
                 IsMain = true,
                 Handler = _ =>

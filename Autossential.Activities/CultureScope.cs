@@ -8,7 +8,7 @@ namespace Autossential.Activities
     public sealed class CultureScope : NativeActivity
     {
         [RequiredArgument]
-        public InArgument<string> CultureName { get; set; }
+        public InArgument<string> Culture { get; set; }
 
         [Browsable(false)]
         public ActivityAction Body { get; set; }
@@ -25,8 +25,8 @@ namespace Autossential.Activities
 
         protected override void Execute(NativeActivityContext context)
         {
-            var cultureName = CultureName.Get(context) ?? "";
-            context.Properties.Add(typeof(CultureScopeHandler).FullName, new CultureScopeHandler(CultureInfo.GetCultureInfo(cultureName)));
+            var culture = Culture.Get(context) ?? "";
+            context.Properties.Add(typeof(CultureScopeHandler).FullName, new CultureScopeHandler(CultureInfo.GetCultureInfo(culture)));
             context.ScheduleAction(Body);
         }
 

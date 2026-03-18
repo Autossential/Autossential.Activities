@@ -105,9 +105,11 @@ namespace Autossential.Activities.Tests.Core
         name: Alice
         age: 30
         active: true
+
         tags:
           - admin
           - user
+
         address:
           city: Curitiba
           state: PR

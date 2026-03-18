@@ -49,7 +49,7 @@ namespace Autossential.Activities
             var pollingInterval = TimeSpan.FromSeconds(Math.Max(PollingIntervalSeconds.Get(context), 0.1)); // Minimum 0.1 seconds
 
             if (!WaitForExist.Get(context) && !File.Exists(filePath))
-                throw new FileNotFoundException(Resources.WaitFile_ErrorMsg_NoFileFound);
+                throw new FileNotFoundException();
 
             return Task.Run<Action<AsyncCodeActivityContext>>(async () =>
             {
@@ -89,7 +89,7 @@ namespace Autossential.Activities
             string filePath = null;
 
             if (!WaitForExist.Get(context) && !Directory.EnumerateFiles(dirPath, "*", SearchOption.TopDirectoryOnly).Any(path => Path.GetFileName(path).IsMatch(searchPattern)))
-                throw new FileNotFoundException(Resources.WaitFile_ErrorMsg_NoFileFound);
+                throw new FileNotFoundException();
 
             return Task.Run<Action<AsyncCodeActivityContext>>(() =>
             {

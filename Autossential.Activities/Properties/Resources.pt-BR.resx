@@ -141,9 +141,6 @@
   <data name="WaitFile_DisplayName" xml:space="preserve">
     <value>Aguardar Arquivo</value>
   </data>
-  <data name="WaitFile_ErrorMsg_NoFileFound" xml:space="preserve">
-    <value>Nenhum arquivo encontrado.</value>
-  </data>
   <data name="WaitFile_FilePath_Description" xml:space="preserve">
     <value>O caminho para o arquivo.</value>
   </data>
@@ -165,10 +162,10 @@
   <data name="Common_TimeoutSeconds_DisplayName" xml:space="preserve">
     <value>Tempo Limite</value>
   </data>
-  <data name="WaitFile_ViewModel_BrowseForFile" xml:space="preserve">
+  <data name="Common_ViewModel_BrowseForFile" xml:space="preserve">
     <value>Procurar arquivo</value>
   </data>
-  <data name="WaitFile_ViewModel_BrowseForFolder" xml:space="preserve">
+  <data name="Common_ViewModel_BrowseForFolder" xml:space="preserve">
     <value>Procurar pasta</value>
   </data>
   <data name="Categories_Common" xml:space="preserve">
@@ -517,7 +514,7 @@
     <value>Retorna verdadeiro se a unidade foi desmapeada com sucesso, falso caso contrário.</value>
   </data>
   <data name="UnmapDrive_DisplayName" xml:space="preserve">
-    <value>Desmapear Unidade</value>
+    <value>Desconectar Unidade</value>
   </data>
   <data name="MapDrive_Credential_Placeholder" xml:space="preserve">
     <value>Se não informado, credencial do usuário atual será usada.</value>
@@ -525,11 +522,11 @@
   <data name="CultureScope_ErrorMsg_CultureNameNullOrEmpty" xml:space="preserve">
     <value>O nome da cultura não pode ser nulo ou vazio.</value>
   </data>
-  <data name="CultureScope_CultureName_Description" xml:space="preserve">
+  <data name="CultureScope_Culture_Description" xml:space="preserve">
     <value>A cultura desejada, por exemplo: en-US, pt-BR, jp-JP, etc.</value>
   </data>
-  <data name="CultureScope_CultureName_DisplayName" xml:space="preserve">
-    <value>Nome da Cultura</value>
+  <data name="CultureScope_Culture_DisplayName" xml:space="preserve">
+    <value>Cultura</value>
   </data>
   <data name="CultureScope_Description" xml:space="preserve">
     <value>Um contêiner que permite executar um conjunto de atividades em uma cultura diferente.</value>
@@ -749,5 +746,77 @@
   </data>
   <data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
     <value>Tabela de Dados</value>
+  </data>
+  <data name="ParseData_DisplayName" xml:space="preserve">
+    <value>Analisar Dados</value>
+  </data>
+  <data name="ParseData_Description" xml:space="preserve">
+    <value>Analisa entradas em JSON ou YAML e as converte em um DataNode para acesso e manipulação simplificados.</value>
+  </data>
+  <data name="ParseData_Content_DisplayName" xml:space="preserve">
+    <value>Conteúdo</value>
+  </data>
+  <data name="ParseData_Content_Description" xml:space="preserve">
+    <value>O texto em JSON ou YAML que será analisado e convertido em um DataNode.</value>
+  </data>
+  <data name="ParseData_Culture_DisplayName" xml:space="preserve">
+    <value>Cultura</value>
+  </data>
+  <data name="ParseData_Culture_Description" xml:space="preserve">
+    <value>Define as informações de cultura aplicadas durante as conversões de valores (como int, long, double ou decimal) dentro do DataNode.</value>
+  </data>
+  <data name="ParseData_Result_DisplayName" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="ParseData_Result_Description" xml:space="preserve">
+    <value>O DataNode resultante criado a partir do conteúdo JSON ou YAML analisado.</value>
+  </data>
+  <data name="LoadDataFile_DisplayName" xml:space="preserve">
+    <value>Carregar Arquivo de Dados</value>
+  </data>
+  <data name="LoadDataFile_Description" xml:space="preserve">
+    <value>Analisa um arquivo JSON ou YAML e o converte em um DataNode para acesso e manipulação simplificados.</value>
+  </data>
+  <data name="LoadDataFile_Encoding_Description" xml:space="preserve">
+    <value>Especifica a codificação de texto utilizada ao ler o arquivo. O padrão é UTF-8.</value>
+  </data>
+  <data name="LoadDataFile_Culture_Description" xml:space="preserve">
+    <value>Especifica a cultura utilizada ao converter valores do nó para tipos numéricos (por exemplo, int, long, double, decimal).</value>
+  </data>
+  <data name="LoadDataFile_Result_Description" xml:space="preserve">
+    <value>O DataNode gerado a partir do conteúdo do arquivo analisado.</value>
+  </data>
+  <data name="LoadDataFile_Culture_DisplayName" xml:space="preserve">
+    <value>Cultura</value>
+  </data>
+  <data name="LoadDataFile_Encoding_DisplayName" xml:space="preserve">
+    <value>Codificação</value>
+  </data>
+  <data name="LoadDataFile_Result_DisplayName" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="LoadDataFile_FilePath_Description" xml:space="preserve">
+    <value>O caminho para o arquivo JSON ou YAML a ser carregado.</value>
+  </data>
+  <data name="LoadDataFile_FilePath_DisplayName" xml:space="preserve">
+    <value>Caminho do Arquivo</value>
+  </data>
+  <data name="ActivityCategories_Data" xml:space="preserve">
+    <value>Autossential.Dados</value>
+  </data>
+  <data name="ActivityCategories_Files" xml:space="preserve">
+    <value>Autossential.Arquivos</value>
+  </data>
+  <data name="ActivityCategories_Programming" xml:space="preserve">
+    <value>Autossential.Programação</value>
+  </data>
+  <data name="ActivityCategories_System" xml:space="preserve">
+    <value>Autossential.Sistema</value>
+  </data>
+  <data name="ActivityCategories_Workflow" xml:space="preserve">
+    <value>Autossential.Fluxo de Trabalho</value>
+  </data>
+  <data name="UnmapDrive_Description" xml:space="preserve">
+    <value>Desconecta uma unidade de rede mapeada do sistema.</value>
   </data>
 </root>

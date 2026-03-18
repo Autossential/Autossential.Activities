@@ -149,10 +149,6 @@
     <value>Wait File</value>
     <comment>activity name</comment>
   </data>
-  <data name="WaitFile_ErrorMsg_NoFileFound" xml:space="preserve">
-    <value>No file found.</value>
-    <comment>error message</comment>
-  </data>
   <data name="WaitFile_FilePath_Description" xml:space="preserve">
     <value>The path to the file.</value>
     <comment>property description</comment>
@@ -181,11 +177,11 @@
     <value>Timeout</value>
     <comment>property name</comment>
   </data>
-  <data name="WaitFile_ViewModel_BrowseForFile" xml:space="preserve">
+  <data name="Common_ViewModel_BrowseForFile" xml:space="preserve">
     <value>Browse for file</value>
     <comment>view model label</comment>
   </data>
-  <data name="WaitFile_ViewModel_BrowseForFolder" xml:space="preserve">
+  <data name="Common_ViewModel_BrowseForFolder" xml:space="preserve">
     <value>Browse for folder</value>
     <comment>view model label</comment>
   </data>
@@ -661,12 +657,12 @@
     <value>The culture name cannot be null or empty.</value>
     <comment>error message</comment>
   </data>
-  <data name="CultureScope_CultureName_Description" xml:space="preserve">
+  <data name="CultureScope_Culture_Description" xml:space="preserve">
     <value>The desired culture, eg.: en-US, pt-BR, jp-JP, etc.</value>
     <comment>property description</comment>
   </data>
-  <data name="CultureScope_CultureName_DisplayName" xml:space="preserve">
-    <value>Culture Name</value>
+  <data name="CultureScope_Culture_DisplayName" xml:space="preserve">
+    <value>Culture</value>
     <comment>property name</comment>
   </data>
   <data name="CultureScope_Description" xml:space="preserve">
@@ -960,5 +956,101 @@
   <data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
     <value>Data Table</value>
     <comment>property name</comment>
+  </data>
+  <data name="ParseData_DisplayName" xml:space="preserve">
+    <value>Parse Data</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="ParseData_Description" xml:space="preserve">
+    <value>Parses JSON or YAML input into a DataNode for simplified access and manipulation.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="ParseData_Content_DisplayName" xml:space="preserve">
+    <value>Content</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ParseData_Content_Description" xml:space="preserve">
+    <value>The JSON or YAML text to be parsed into a DataNode.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ParseData_Culture_DisplayName" xml:space="preserve">
+    <value>Culture</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ParseData_Culture_Description" xml:space="preserve">
+    <value>Defines the culture information applied during value conversions (such as int, long, double, or decimal) within the DataNode.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="ParseData_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ParseData_Result_Description" xml:space="preserve">
+    <value>The resulting DataNode created from the parsed JSON or YAML content.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="LoadDataFile_DisplayName" xml:space="preserve">
+    <value>Load Data File</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="LoadDataFile_Description" xml:space="preserve">
+    <value>Parses a JSON or YAML file into a DataNode for simplified access and manipulation.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="LoadDataFile_Encoding_Description" xml:space="preserve">
+    <value>Specifies the text encoding used when reading the file. Defaults to UTF-8.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="LoadDataFile_Culture_Description" xml:space="preserve">
+    <value>Specifies the culture used when converting node values to numeric types (e.g., int, long, double, decimal).</value>
+    <comment>property description</comment>
+  </data>
+  <data name="LoadDataFile_Result_Description" xml:space="preserve">
+    <value>The DataNode generated from the parsed file content.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="LoadDataFile_Culture_DisplayName" xml:space="preserve">
+    <value>Culture</value>
+    <comment>property name</comment>
+  </data>
+  <data name="LoadDataFile_Encoding_DisplayName" xml:space="preserve">
+    <value>Encoding</value>
+    <comment>property name</comment>
+  </data>
+  <data name="LoadDataFile_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
+  <data name="LoadDataFile_FilePath_Description" xml:space="preserve">
+    <value>The path to the JSON or YAML file to be loaded.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="LoadDataFile_FilePath_DisplayName" xml:space="preserve">
+    <value>File Path</value>
+    <comment>property name</comment>
+  </data>
+  <data name="ActivityCategories_Data" xml:space="preserve">
+    <value>Autossential.Data</value>
+    <comment>category</comment>
+  </data>
+  <data name="ActivityCategories_Files" xml:space="preserve">
+    <value>Autossential.Files</value>
+    <comment>category</comment>
+  </data>
+  <data name="ActivityCategories_Programming" xml:space="preserve">
+    <value>Autossential.Programming</value>
+    <comment>category</comment>
+  </data>
+  <data name="ActivityCategories_System" xml:space="preserve">
+    <value>Autossential.System</value>
+    <comment>category</comment>
+  </data>
+  <data name="ActivityCategories_Workflow" xml:space="preserve">
+    <value>Autossential.Workflow</value>
+    <comment>category</comment>
+  </data>
+  <data name="UnmapDrive_Description" xml:space="preserve">
+    <value>Removes a mapped network drive from the system.</value>
+    <comment>activity description</comment>
   </data>
 </root>

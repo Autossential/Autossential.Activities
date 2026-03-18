@@ -50,7 +50,7 @@ namespace Autossential.Activities.ViewModels
             {
                 FilePath.AddMenuAction(new MenuAction()
                 {
-                    DisplayName = Resources.WaitFile_ViewModel_BrowseForFile,
+                    DisplayName = Resources.Common_ViewModel_BrowseForFile,
                     IsVisible = true,
                     IsMain = true,
                     Handler = _ => Task.Run(() =>
@@ -71,7 +71,7 @@ namespace Autossential.Activities.ViewModels
 
                 DirectoryPath.AddMenuAction(new MenuAction()
                 {
-                    DisplayName = Resources.WaitFile_ViewModel_BrowseForFolder,
+                    DisplayName = Resources.Common_ViewModel_BrowseForFolder,
                     IsVisible = true,
                     IsMain = true,
                     Handler = _ =>

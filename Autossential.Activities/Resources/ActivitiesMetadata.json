@@ -7,7 +7,7 @@
       "descriptionKey": "CheckPoint_Description",
       "iconKey": "CheckPoint.svg",
       "viewModelType": "Autossential.Activities.ViewModels.CheckPointViewModel",
-      "categoryKey": "Autossential.Workflow",
+      "categoryKey": "ActivityCategories_Workflow",
       "properties": [
         {
           "name": "Expression",
@@ -51,7 +51,7 @@
       "descriptionKey": "CleanUpFolder_Description",
       "iconKey": "CleanUpFolder.svg",
       "viewModelType": "Autossential.Activities.ViewModels.CleanUpFolderViewModel",
-      "categoryKey": "Autossential.Files",
+      "categoryKey": "ActivityCategories_Files",
       "properties": [
         {
           "name": "Folder",
@@ -139,7 +139,7 @@
       "descriptionKey": "Container_Description",
       "iconKey": "Container.svg",
       "viewModelType": "Autossential.Activities.ViewModels.ContainerViewModel",
-      "categoryKey": "Autossential.Workflow",
+      "categoryKey": "ActivityCategories_Workflow",
       "properties": []
     },
     {
@@ -149,12 +149,12 @@
       "descriptionKey": "CultureScope_Description",
       "iconKey": "CultureScope.svg",
       "viewModelType": "Autossential.Activities.ViewModels.CultureScopeViewModel",
-      "categoryKey": "Autossential.Programming",
+      "categoryKey": "ActivityCategories_Programming",
       "properties": [
         {
-          "name": "CultureName",
-          "displayNameKey": "CultureScope_CultureName_DisplayName",
-          "tooltipKey": "CultureScope_CultureName_Description",
+          "name": "Culture",
+          "displayNameKey": "CultureScope_Culture_DisplayName",
+          "tooltipKey": "CultureScope_Culture_Description",
           "isVisible": true,
           "isRequired": true,
           "category": {
@@ -171,7 +171,7 @@
       "descriptionKey": "DataTableToText_Description",
       "iconKey": "DataTableToText.svg",
       "viewModelType": "Autossential.Activities.ViewModels.DataTableToTextViewModel",
-      "categoryKey": "Autossential.Data",
+      "categoryKey": "ActivityCategories_Data",
       "properties": [
         {
           "name": "DataTable",
@@ -248,7 +248,7 @@
       "descriptionKey": "Decrement_Description",
       "iconKey": "Decrement.svg",
       "viewModelType": "Autossential.Activities.ViewModels.DecrementViewModel",
-      "categoryKey": "Autossential.Programming",
+      "categoryKey": "ActivityCategories_Programming",
       "properties": [
         {
           "name": "Value",
@@ -281,7 +281,7 @@
       "descriptionKey": "Exit_Description",
       "iconKey": "Exit.svg",
       "viewModelType": "Autossential.Activities.ViewModels.ExitViewModel",
-      "categoryKey": "Autossential.Workflow",
+      "categoryKey": "ActivityCategories_Workflow",
       "properties": [
         {
           "name": "Condition",
@@ -303,7 +303,7 @@
       "descriptionKey": "IfActivity_Description",
       "iconKey": "IfActivity.svg",
       "viewModelType": "Autossential.Activities.ViewModels.IfActivityViewModel",
-      "categoryKey": "Autossential.Workflow",
+      "categoryKey": "ActivityCategories_Workflow",
       "properties": [
         {
           "name": "CheckTrue",
@@ -325,7 +325,7 @@
       "descriptionKey": "Increment_Description",
       "iconKey": "Increment.svg",
       "viewModelType": "Autossential.Activities.ViewModels.IncrementViewModel",
-      "categoryKey": "Autossential.Programming",
+      "categoryKey": "ActivityCategories_Programming",
       "properties": [
         {
           "name": "Value",
@@ -352,13 +352,90 @@
       ]
     },
     {
+      "fullName": "Autossential.Activities.LoadDataFile",
+      "shortName": "LoadDataFile",
+      "displayNameKey": "LoadDataFile_DisplayName",
+      "descriptionKey": "LoadDataFile_Description",
+      "iconKey": "LoadDataFile.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.LoadDataFileViewModel",
+      "categoryKey": "ActivityCategories_Programming",
+      "properties": [
+        {
+          "name": "FilePath",
+          "displayNameKey": "LoadDataFile_FilePath_DisplayName",
+          "tooltipKey": "LoadDataFile_FilePath_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "Encoding",
+          "displayNameKey": "LoadDataFile_Encoding_DisplayName",
+          "tooltipKey": "LoadDataFile_Encoding_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "Culture",
+          "displayNameKey": "LoadDataFile_Culture_DisplayName",
+          "tooltipKey": "LoadDataFile_Culture_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "LoadDataFile_Result_DisplayName",
+          "tooltipKey": "LoadDataFile_Result_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        },
+        {
+          "name": "ResultType",
+          "displayNameKey": "LoadDataFile_ResultType_DisplayName",
+          "tooltipKey": "LoadDataFile_ResultType_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "LoadDataFile_Result_DisplayName",
+          "tooltipKey": "LoadDataFile_Result_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        }
+      ]
+    },
+    {
       "fullName": "Autossential.Activities.MapDrive",
       "shortName": "MapDrive",
       "displayNameKey": "MapDrive_DisplayName",
       "descriptionKey": "MapDrive_Description",
       "iconKey": "MapDrive.svg",
       "viewModelType": "Autossential.Activities.ViewModels.MapDriveViewModel",
-      "categoryKey": "Autossential.Misc",
+      "categoryKey": "ActivityCategories_System",
       "properties": [
         {
           "name": "SharedDrivePath",
@@ -462,13 +539,79 @@
       ]
     },
     {
+      "fullName": "Autossential.Activities.ParseData",
+      "shortName": "ParseData",
+      "displayNameKey": "ParseData_DisplayName",
+      "descriptionKey": "ParseData_Description",
+      "iconKey": "ParseData.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.ParseDataViewModel",
+      "categoryKey": "ActivityCategories_Programming",
+      "properties": [
+        {
+          "name": "Content",
+          "displayNameKey": "ParseData_Content_DisplayName",
+          "tooltipKey": "ParseData_Content_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "Culture",
+          "displayNameKey": "ParseData_Culture_DisplayName",
+          "tooltipKey": "ParseData_Culture_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "ParseData_Result_DisplayName",
+          "tooltipKey": "ParseData_Result_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        },
+        {
+          "name": "ResultType",
+          "displayNameKey": "ParseData_ResultType_DisplayName",
+          "tooltipKey": "ParseData_ResultType_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
+        },
+        {
+          "name": "Result",
+          "displayNameKey": "ParseData_Result_DisplayName",
+          "tooltipKey": "ParseData_Result_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
+          }
+        }
+      ]
+    },
+    {
       "fullName": "Autossential.Activities.PromoteHeaders",
       "shortName": "PromoteHeaders",
       "displayNameKey": "PromoteHeaders_DisplayName",
       "descriptionKey": "PromoteHeaders_Description",
       "iconKey": "PromoteHeaders.svg",
       "viewModelType": "Autossential.Activities.ViewModels.PromoteHeadersViewModel",
-      "categoryKey": "Autossential.Data",
+      "categoryKey": "ActivityCategories_Data",
       "properties": [
         {
           "name": "DataTable",
@@ -501,7 +644,7 @@
       "descriptionKey": "RandomString_Description",
       "iconKey": "RandomString.svg",
       "viewModelType": "Autossential.Activities.ViewModels.RandomStringViewModel",
-      "categoryKey": "Autossential.Programming",
+      "categoryKey": "ActivityCategories_Programming",
       "properties": [
         {
           "name": "Format",
@@ -567,7 +710,7 @@
       "descriptionKey": "RemoveDataColumns_Description",
       "iconKey": "RemoveDataColumns.svg",
       "viewModelType": "Autossential.Activities.ViewModels.RemoveDataColumnsViewModel",
-      "categoryKey": "Autossential.Data",
+      "categoryKey": "ActivityCategories_Data",
       "properties": [
         {
           "name": "DataTable",
@@ -611,7 +754,7 @@
       "descriptionKey": "RemoveEmptyRows_Description",
       "iconKey": "RemoveEmptyRows.svg",
       "viewModelType": "Autossential.Activities.ViewModels.RemoveEmptyRowsViewModel",
-      "categoryKey": "Autossential.Data",
+      "categoryKey": "ActivityCategories_Data",
       "properties": [
         {
           "name": "DataTable",
@@ -666,7 +809,7 @@
       "descriptionKey": "ReplaceTokens_Description",
       "iconKey": "ReplaceTokens.svg",
       "viewModelType": "Autossential.Activities.ViewModels.ReplaceTokensViewModel",
-      "categoryKey": "Autossential.Programming",
+      "categoryKey": "ActivityCategories_Programming",
       "properties": [
         {
           "name": "Content",
@@ -765,7 +908,7 @@
       "descriptionKey": "TerminateProcess_Description",
       "iconKey": "TerminateProcess.svg",
       "viewModelType": "Autossential.Activities.ViewModels.TerminateProcessViewModel",
-      "categoryKey": "Autossential.Misc",
+      "categoryKey": "ActivityCategories_System",
       "properties": [
         {
           "name": "ProcessNames",
@@ -787,14 +930,14 @@
       "descriptionKey": "TimeLoop_Description",
       "iconKey": "TimeLoop.svg",
       "viewModelType": "Autossential.Activities.ViewModels.TimeLoopViewModel",
-      "categoryKey": "Autossential.Workflow",
+      "categoryKey": "ActivityCategories_Workflow",
       "properties": [
         {
           "name": "Timeout",
           "displayNameKey": "TimeLoop_Timeout_DisplayName",
           "tooltipKey": "TimeLoop_Timeout_Description",
           "isVisible": true,
-          "isRequired": false,
+          "isRequired": true,
           "category": {
             "name": "Input",
             "displayNameKey": "Categories_Input"
@@ -864,7 +1007,7 @@
       "descriptionKey": "TransposeData_Description",
       "iconKey": "TransposeData.svg",
       "viewModelType": "Autossential.Activities.ViewModels.TransposeDataViewModel",
-      "categoryKey": "Autossential.Data",
+      "categoryKey": "ActivityCategories_Data",
       "properties": [
         {
           "name": "DataTable",
@@ -886,7 +1029,7 @@
       "descriptionKey": "UnmapDrive_Description",
       "iconKey": "UnmapDrive.svg",
       "viewModelType": "Autossential.Activities.ViewModels.UnmapDriveViewModel",
-      "categoryKey": "Autossential.Misc",
+      "categoryKey": "ActivityCategories_System",
       "properties": [
         {
           "name": "DriveLetter",
@@ -963,7 +1106,7 @@
       "descriptionKey": "Unzip_Description",
       "iconKey": "Unzip.svg",
       "viewModelType": "Autossential.Activities.ViewModels.UnzipViewModel",
-      "categoryKey": "Autossential.Files",
+      "categoryKey": "ActivityCategories_Files",
       "properties": [
         {
           "name": "ZipFilePath",
@@ -1007,7 +1150,7 @@
       "descriptionKey": "WaitFile_Description",
       "iconKey": "WaitFile.svg",
       "viewModelType": "Autossential.Activities.ViewModels.WaitFileViewModel",
-      "categoryKey": "Autossential.Files",
+      "categoryKey": "ActivityCategories_Files",
       "properties": [
         {
           "name": "ContinueOnError",
@@ -1117,7 +1260,7 @@
       "descriptionKey": "Zip_Description",
       "iconKey": "Zip.svg",
       "viewModelType": "Autossential.Activities.ViewModels.ZipViewModel",
-      "categoryKey": "Autossential.Files",
+      "categoryKey": "ActivityCategories_Files",
       "properties": [
         {
           "name": "ZipFilePath",

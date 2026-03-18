@@ -2,6 +2,18 @@
 
 namespace Autossential.Activities.Core
 {
+    // ─────────────────────────────────────────────────────────────────────────
+    //  Returns one of three native types:
+    //    • string                        — scalar value (null for YAML null/~)
+    //    • List<object>                  — sequence
+    //    • Dictionary<string, object>    — mapping
+    //
+    //  Supported features:
+    //    1. Scalars, Lists, Maps
+    //    2. Block scalars  |  |-  |+  >  >-  >+
+    //    3. Anchors (&) and Aliases (*)
+    //    4. Merge keys (<<)  — including <<: [*a, *b]
+    // ─────────────────────────────────────────────────────────────────────────
     public class YamlParser(string input)
     {
         // Each entry: (indentation, full-line content after comment strip, 1-based line number)
@@ -20,7 +32,7 @@ namespace Autossential.Activities.Core
 
         private static List<(int, string, int)> PreProcess(string input)
         {
-            string[] raw = input.Replace("\r\n", "\n").Replace("\r", "\n").Split('\n');
+            string[] raw = input.Replace("\r\n", "\n").Replace("\r", "\n").Split(['\n'], StringSplitOptions.RemoveEmptyEntries);
             var result = new List<(int, string, int)>(raw.Length);
             for (int i = 0; i < raw.Length; i++)
             {

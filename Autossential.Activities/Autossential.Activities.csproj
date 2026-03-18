@@ -43,8 +43,10 @@
 		<None Remove="Resources\Icons\Increment.svg" />
 		<None Remove="Resources\Icons\IsTrue.svg" />
 		<None Remove="Resources\Icons\Iterate.svg" />
+		<None Remove="Resources\Icons\LoadDataFile.svg" />
 		<None Remove="Resources\Icons\MapDrive.svg" />
 		<None Remove="Resources\Icons\Next.svg" />
+		<None Remove="Resources\Icons\ParseData.svg" />
 		<None Remove="Resources\Icons\PromoteHeaders.svg" />
 		<None Remove="Resources\Icons\RandomString.svg" />
 		<None Remove="Resources\Icons\RemoveDataColumns.svg" />
@@ -71,7 +73,9 @@
 		<EmbeddedResource Include="Resources\Icons\Exit.svg" />
 		<EmbeddedResource Include="Resources\Icons\IfActivity.svg" />
 		<EmbeddedResource Include="Resources\Icons\Increment.svg" />
+		<EmbeddedResource Include="Resources\Icons\LoadDataFile.svg" />
 		<EmbeddedResource Include="Resources\Icons\MapDrive.svg" />
+		<EmbeddedResource Include="Resources\Icons\ParseData.svg" />
 		<EmbeddedResource Include="Resources\Icons\PromoteHeaders.svg" />
 		<EmbeddedResource Include="Resources\Icons\RandomString.svg" />
 		<EmbeddedResource Include="Resources\Icons\RemoveDataColumns.svg" />

@@ -61,6 +61,51 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Autossential.Data.
+        /// </summary>
+        public static string ActivityCategories_Data {
+            get {
+                return ResourceManager.GetString("ActivityCategories_Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autossential.Files.
+        /// </summary>
+        public static string ActivityCategories_Files {
+            get {
+                return ResourceManager.GetString("ActivityCategories_Files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autossential.Programming.
+        /// </summary>
+        public static string ActivityCategories_Programming {
+            get {
+                return ResourceManager.GetString("ActivityCategories_Programming", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autossential.System.
+        /// </summary>
+        public static string ActivityCategories_System {
+            get {
+                return ResourceManager.GetString("ActivityCategories_System", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autossential.Workflow.
+        /// </summary>
+        public static string ActivityCategories_Workflow {
+            get {
+                return ResourceManager.GetString("ActivityCategories_Workflow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Common.
         /// </summary>
         public static string Categories_Common {
@@ -367,6 +412,24 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Browse for file.
+        /// </summary>
+        public static string Common_ViewModel_BrowseForFile {
+            get {
+                return ResourceManager.GetString("Common_ViewModel_BrowseForFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browse for folder.
+        /// </summary>
+        public static string Common_ViewModel_BrowseForFolder {
+            get {
+                return ResourceManager.GetString("Common_ViewModel_BrowseForFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Its a wrapper that when combined with Exit Activity, interrupts the children execution flow exiting the Container beforehand..
         /// </summary>
         public static string Container_Description {
@@ -387,18 +450,18 @@ namespace Autossential.Activities.Properties {
         /// <summary>
         ///   Looks up a localized string similar to The desired culture, eg.: en-US, pt-BR, jp-JP, etc..
         /// </summary>
-        public static string CultureScope_CultureName_Description {
+        public static string CultureScope_Culture_Description {
             get {
-                return ResourceManager.GetString("CultureScope_CultureName_Description", resourceCulture);
+                return ResourceManager.GetString("CultureScope_Culture_Description", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Culture Name.
+        ///   Looks up a localized string similar to Culture.
         /// </summary>
-        public static string CultureScope_CultureName_DisplayName {
+        public static string CultureScope_Culture_DisplayName {
             get {
-                return ResourceManager.GetString("CultureScope_CultureName_DisplayName", resourceCulture);
+                return ResourceManager.GetString("CultureScope_Culture_DisplayName", resourceCulture);
             }
         }
         
@@ -736,6 +799,96 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Specifies the culture used when converting node values to numeric types (e.g., int, long, double, decimal)..
+        /// </summary>
+        public static string LoadDataFile_Culture_Description {
+            get {
+                return ResourceManager.GetString("LoadDataFile_Culture_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Culture.
+        /// </summary>
+        public static string LoadDataFile_Culture_DisplayName {
+            get {
+                return ResourceManager.GetString("LoadDataFile_Culture_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parses a JSON or YAML file into a DataNode for simplified access and manipulation..
+        /// </summary>
+        public static string LoadDataFile_Description {
+            get {
+                return ResourceManager.GetString("LoadDataFile_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Load Data File.
+        /// </summary>
+        public static string LoadDataFile_DisplayName {
+            get {
+                return ResourceManager.GetString("LoadDataFile_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specifies the text encoding used when reading the file. Defaults to UTF-8..
+        /// </summary>
+        public static string LoadDataFile_Encoding_Description {
+            get {
+                return ResourceManager.GetString("LoadDataFile_Encoding_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encoding.
+        /// </summary>
+        public static string LoadDataFile_Encoding_DisplayName {
+            get {
+                return ResourceManager.GetString("LoadDataFile_Encoding_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The path to the JSON or YAML file to be loaded..
+        /// </summary>
+        public static string LoadDataFile_FilePath_Description {
+            get {
+                return ResourceManager.GetString("LoadDataFile_FilePath_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File Path.
+        /// </summary>
+        public static string LoadDataFile_FilePath_DisplayName {
+            get {
+                return ResourceManager.GetString("LoadDataFile_FilePath_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The DataNode generated from the parsed file content..
+        /// </summary>
+        public static string LoadDataFile_Result_Description {
+            get {
+                return ResourceManager.GetString("LoadDataFile_Result_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Result.
+        /// </summary>
+        public static string LoadDataFile_Result_DisplayName {
+            get {
+                return ResourceManager.GetString("LoadDataFile_Result_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Credential.
         /// </summary>
         public static string MapDrive_Credential_DisplayName {
@@ -921,6 +1074,78 @@ namespace Autossential.Activities.Properties {
         public static string NetworkDrive_ResponseMsg_Success {
             get {
                 return ResourceManager.GetString("NetworkDrive_ResponseMsg_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The JSON or YAML text to be parsed into a DataNode..
+        /// </summary>
+        public static string ParseData_Content_Description {
+            get {
+                return ResourceManager.GetString("ParseData_Content_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Content.
+        /// </summary>
+        public static string ParseData_Content_DisplayName {
+            get {
+                return ResourceManager.GetString("ParseData_Content_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defines the culture information applied during value conversions (such as int, long, double, or decimal) within the DataNode..
+        /// </summary>
+        public static string ParseData_Culture_Description {
+            get {
+                return ResourceManager.GetString("ParseData_Culture_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Culture.
+        /// </summary>
+        public static string ParseData_Culture_DisplayName {
+            get {
+                return ResourceManager.GetString("ParseData_Culture_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parses JSON or YAML input into a DataNode for simplified access and manipulation..
+        /// </summary>
+        public static string ParseData_Description {
+            get {
+                return ResourceManager.GetString("ParseData_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parse Data.
+        /// </summary>
+        public static string ParseData_DisplayName {
+            get {
+                return ResourceManager.GetString("ParseData_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The resulting DataNode created from the parsed JSON or YAML content..
+        /// </summary>
+        public static string ParseData_Result_Description {
+            get {
+                return ResourceManager.GetString("ParseData_Result_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Result.
+        /// </summary>
+        public static string ParseData_Result_DisplayName {
+            get {
+                return ResourceManager.GetString("ParseData_Result_DisplayName", resourceCulture);
             }
         }
         
@@ -1492,6 +1717,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Removes a mapped network drive from the system..
+        /// </summary>
+        public static string UnmapDrive_Description {
+            get {
+                return ResourceManager.GetString("UnmapDrive_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unmap Drive.
         /// </summary>
         public static string UnmapDrive_DisplayName {
@@ -1717,15 +1951,6 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No file found..
-        /// </summary>
-        public static string WaitFile_ErrorMsg_NoFileFound {
-            get {
-                return ResourceManager.GetString("WaitFile_ErrorMsg_NoFileFound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The path to the file..
         /// </summary>
         public static string WaitFile_FilePath_Description {
@@ -1776,24 +2001,6 @@ namespace Autossential.Activities.Properties {
         public static string WaitFile_Result_DisplayName {
             get {
                 return ResourceManager.GetString("WaitFile_Result_DisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Browse for file.
-        /// </summary>
-        public static string WaitFile_ViewModel_BrowseForFile {
-            get {
-                return ResourceManager.GetString("WaitFile_ViewModel_BrowseForFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Browse for folder.
-        /// </summary>
-        public static string WaitFile_ViewModel_BrowseForFolder {
-            get {
-                return ResourceManager.GetString("WaitFile_ViewModel_BrowseForFolder", resourceCulture);
             }
         }
         

@@ -43,7 +43,7 @@ namespace Autossential.Activities.ViewModels
             {
                 ZipFilePath.AddMenuAction(new MenuAction()
                 {
-                    DisplayName = Resources.WaitFile_ViewModel_BrowseForFile,
+                    DisplayName = Resources.Common_ViewModel_BrowseForFile,
                     IsVisible = true,
                     IsMain = true,
                     Handler = _ => Task.Run(() =>

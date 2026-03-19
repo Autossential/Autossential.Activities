@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Activities.Statements;
+using System.Collections;
 using System.Globalization;
 
 namespace Autossential.Activities.Models
@@ -22,145 +23,116 @@ namespace Autossential.Activities.Models
     // ─────────────────────────────────────────────────────────────────────────
     public sealed class DataNode
     {
-        // ── Internal state ────────────────────────────────────────────────────
+        /// <summary>
+        /// Gets the type of the node represented by this instance.
+        /// </summary>
+        public NodeType Type { get; private set; }
 
-        private readonly object _value;
+        /// <summary>
+        /// Gets a value indicating whether the current instance contains a non-null value.
+        /// </summary>
+        public bool HasValue => RawValue is not null;
 
-        public NodeType Type { get; }
-        public bool HasValue => _value is not null;
+        private object _value;
+        /// <summary>
+        /// Returns the raw internal value without any conversion.
+        /// </summary>
+        public object RawValue
+        {
+            get => _value;
+            private set
+            {
+                _value = value;
 
-        // ── Construction ──────────────────────────────────────────────────────
+                if (value is null || value is string)
+                {
+                    Type = NodeType.Scalar;
+                    return;
+                }
+
+                if (value is DataNode dn)
+                {
+                    Type = dn.Type; // unwrap nested DataNode
+                    return;
+                }
+
+                if (value is IDictionary)
+                {
+                    Type = NodeType.Map;
+                    return;
+                }
+
+                if (value is IEnumerable)
+                {
+                    Type = NodeType.Sequence;
+                    return;
+                }
+
+                Type = NodeType.Scalar;
+            }
+        }
+
+        /// <summary>
+        /// Gets the culture information associated with the current context.
+        /// </summary>
+        public CultureInfo Culture { get; }
 
         public DataNode(object value, CultureInfo culture = null)
         {
-            (_value, Type) = Normalize(value);
+            RawValue = Normalize(value);
             Culture = culture ?? CultureInfo.InvariantCulture;
         }
 
-        // ── Normalization ─────────────────────────────────────────────────────
-
-        private (object normalized, NodeType type) Normalize(object value)
+        public DataNode(CultureInfo culture = null) : this(new Dictionary<string, object>(), culture)
         {
-            object NormalizeChild(object value) => new DataNode(value, Culture)._value;
+        }
 
-            if (value is null || value is string)
-                return (value, NodeType.Scalar);
+        private object Normalize(object value)
+        {
+            object NormalizeChild(object value) => new DataNode(value, Culture).RawValue;
 
-            if (value is DataNode dn)
-                return (dn._value, dn.Type);  // unwrap nested DataNode
+            if (value is null || value is string) return value;
+            if (value is DataNode dn) return dn.RawValue;
 
-            // Map: any IDictionary → Dictionary<string, object>
+            // Map: any IDictionary -> Dictionary<string, object>
             if (value is IDictionary dict)
             {
                 var map = new Dictionary<string, object>(StringComparer.Ordinal);
                 foreach (DictionaryEntry entry in dict)
                     map[entry.Key.ToString()!] = NormalizeChild(entry.Value);
-                return (map, NodeType.Map);
+
+                return map;
             }
 
-            // Sequence: any IEnumerable (except string, already handled) → List<object>
+            // Sequence: any IEnumerable (except string, already handled) -> List<object>
             if (value is IEnumerable enumerable)
-            {
-                var list = enumerable.Cast<object>().Select(NormalizeChild).ToList();
-                return (list, NodeType.Sequence);
-            }
+                return enumerable.Cast<object>().Select(NormalizeChild).ToList();
 
             // Scalar: primitives, DateTime, Guid, etc.
-            return (value, NodeType.Scalar);
+            return value;
         }
 
-        // ── Raw access ────────────────────────────────────────────────────────
-
-        /// <summary>Returns the raw internal value without any conversion.</summary>
-        public object RawValue => _value;
-
-        public CultureInfo Culture { get; }
-
-        /// <summary>Returns the internal map. Throws if Type is not Map.</summary>
-        public Dictionary<string, object> AsDictionary()
+        private static object ResolveKey(object current, string key, string keyPath)
         {
-            EnsureType(NodeType.Map);
-            return (Dictionary<string, object>)_value;
+            if (current is Dictionary<string, object> map)
+                return map.TryGetValue(key, out object val) ? val : null;
+
+            throw new InvalidOperationException(
+                $"Expected a Map at segment '{key}' in path '{keyPath}', " +
+                $"but found {current.GetType().Name}.");
         }
 
-        /// <summary>Returns the internal sequence. Throws if Type is not Sequence.</summary>
-        public List<object> AsList()
+        private static object ResolveIndex(object current, int index, string keyPath)
         {
-            EnsureType(NodeType.Sequence);
-            return (List<object>)_value;
-        }
-
-        // ── Scalar accessors (no key path) ────────────────────────────────────
-
-        /// <summary>Returns the scalar value as string, or null if HasValue is false.</summary>
-        public string AsString() => _value?.ToString();
-
-        /// <summary>Returns the scalar value as string, or <paramref name="defaultValue"/> if null.</summary>
-        public string AsStringOrDefault(string defaultValue) => _value is not null ? _value.ToString()! : defaultValue;
-        public int AsInt(int defaultValue = 0) => TryConvert(_value, defaultValue, v => Convert.ToInt32(v, Culture));
-        public long AsLong(long defaultValue = 0L) => TryConvert(_value, defaultValue, v => Convert.ToInt64(v, Culture));
-        public double AsDouble(double defaultValue = 0d) => TryConvert(_value, defaultValue, v => Convert.ToDouble(v, Culture));
-        public bool AsBool(bool defaultValue = false) => TryConvert(_value, defaultValue, ParseBool);
-        public DateTime AsDateTime(DateTime defaultValue = default) => TryConvert(_value, defaultValue, v => Convert.ToDateTime(v, Culture));
-        public decimal AsDecimal(decimal defaultValue = 0m) => TryConvert(_value, defaultValue, v => Convert.ToDecimal(v, Culture));
-
-        // ── Key-path navigation ───────────────────────────────────────────────
-
-        /// <summary>
-        /// Navigates to the node at <paramref name="keyPath"/> and returns a DataNode.
-        /// Returns an empty Scalar DataNode (null value) if the path does not exist.
-        /// </summary>
-        internal DataNode Navigate(string keyPath)
-        {
-            object current = _value;
-            foreach (PathSegment seg in ParsePath(keyPath))
+            if (current is List<object> list)
             {
-                if (current is null) return new DataNode(null);
-                current = seg.IsIndex
-                    ? ResolveIndex(current, seg.Index, keyPath)
-                    : ResolveKey(current, seg.Key, keyPath);
+                if (index < 0 || index >= list.Count) return null;
+                return list[index];
             }
-            return new DataNode(current);
-        }
 
-        // Typed accessors with key-path ───────────────────────────────────────
-
-        /// <summary>Navigate to <paramref name="keyPath"/> and return value as string.</summary>
-        public string AsString(string keyPath, string defaultValue = null) =>
-            Navigate(keyPath).AsStringOrDefault(defaultValue);
-
-        public int AsInt(string keyPath, int defaultValue = 0) =>
-            Navigate(keyPath).AsInt(defaultValue);
-
-        public long AsLong(string keyPath, long defaultValue = 0L) =>
-            Navigate(keyPath).AsLong(defaultValue);
-
-        public double AsDouble(string keyPath, double defaultValue = 0d) =>
-            Navigate(keyPath).AsDouble(defaultValue);
-
-        public bool AsBool(string keyPath, bool defaultValue = false) =>
-            Navigate(keyPath).AsBool(defaultValue);
-
-        public DateTime AsDateTime(string keyPath, DateTime defaultValue = default) =>
-            Navigate(keyPath).AsDateTime(defaultValue);
-        public decimal AsDecimal(string keyPath, decimal defaultValue = 0) =>
-            Navigate(keyPath).AsDecimal(defaultValue);
-
-        /// <summary>
-        /// Navigate to <paramref name="keyPath"/> and return the child node as a DataNode.
-        /// Useful when the target is a Map or Sequence that you want to keep navigating.
-        /// </summary>
-        public DataNode Get(string keyPath) => Navigate(keyPath);
-
-        /// <summary>
-        /// Navigate to <paramref name="keyPath"/> and return all children as a list of DataNodes.
-        /// Returns an empty list if the path does not exist or is not a Sequence.
-        /// </summary>
-        public List<DataNode> GetSequence(string keyPath)
-        {
-            DataNode node = Navigate(keyPath);
-            if (node.Type != NodeType.Sequence) return [];
-            return [.. node.AsList().Select(item => new DataNode(item))];
+            throw new InvalidOperationException(
+                $"Expected a Sequence at index [{index}] in path '{keyPath}', " +
+                $"but found {current.GetType().Name}.");
         }
 
         /// <summary>
@@ -168,11 +140,9 @@ namespace Autossential.Activities.Models
         /// </summary>
         public bool Exists(string keyPath)
         {
-            try { return Navigate(keyPath).HasValue; }
+            try { return GetNode(keyPath).HasValue; }
             catch { return false; }
         }
-
-        // ── Path parsing ──────────────────────────────────────────────────────
 
         private record PathSegment(bool IsIndex, string Key = null, int Index = 0);
 
@@ -183,7 +153,7 @@ namespace Autossential.Activities.Models
         //   "metrics[\"error.rate\"]"    → ["metrics", "error.rate"]
         private static IEnumerable<PathSegment> ParsePath(string keyPath)
         {
-            if (string.IsNullOrEmpty(keyPath)) 
+            if (string.IsNullOrEmpty(keyPath))
                 yield break;
 
             // Tokenize: split on '.' but respect [brackets] and quoted keys
@@ -222,42 +192,17 @@ namespace Autossential.Activities.Models
                 // Plain key: read until '.' or '['
                 int end = i;
                 while (end < keyPath.Length && keyPath[end] != '.' && keyPath[end] != '[') end++;
-                string plainKey = keyPath[i..end];
+
+                var plainKey = keyPath[i..end];
                 if (!string.IsNullOrEmpty(plainKey))
                     segments.Add(new PathSegment(false, Key: plainKey));
+
                 i = end;
             }
 
             foreach (var seg in segments)
                 yield return seg;
         }
-
-        // ── Resolution helpers ────────────────────────────────────────────────
-
-        private static object ResolveKey(object current, string key, string keyPath)
-        {
-            if (current is Dictionary<string, object> map)
-                return map.TryGetValue(key, out object val) ? val : null;
-
-            throw new InvalidOperationException(
-                $"Expected a Map at segment '{key}' in path '{keyPath}', " +
-                $"but found {current.GetType().Name}.");
-        }
-
-        private static object ResolveIndex(object current, int index, string keyPath)
-        {
-            if (current is List<object> list)
-            {
-                if (index < 0 || index >= list.Count) return null;
-                return list[index];
-            }
-
-            throw new InvalidOperationException(
-                $"Expected a Sequence at index [{index}] in path '{keyPath}', " +
-                $"but found {current.GetType().Name}.");
-        }
-
-        // ── Type conversion helpers ───────────────────────────────────────────
 
         private static T TryConvert<T>(object value, T defaultValue, Func<object, T> converter)
         {
@@ -273,13 +218,11 @@ namespace Autossential.Activities.Models
 
             return value.ToString()!.ToLowerInvariant() switch
             {
-                "true" or "yes" or "on" or "1" => true,
-                "false" or "no" or "off" or "0" => false,
+                "true" or "1" => true,
+                "false" or "0" => false,
                 _ => throw new FormatException($"Cannot convert '{value}' to bool.")
             };
         }
-
-        // ── Guard ─────────────────────────────────────────────────────────────
 
         private void EnsureType(NodeType expected)
         {
@@ -288,14 +231,111 @@ namespace Autossential.Activities.Models
                     $"Expected NodeType.{expected} but node is NodeType.{Type}.");
         }
 
-        // ── Equality & display ────────────────────────────────────────────────
-
         public override string ToString() => Type switch
         {
-            NodeType.Scalar => _value?.ToString() ?? "(null)",
-            NodeType.Sequence => $"[Sequence, {((List<object>)_value).Count} items]",
-            NodeType.Map => $"[Map, {((Dictionary<string, object>)_value).Count} keys]",
+            NodeType.Scalar => RawValue?.ToString() ?? "(null)",
+            NodeType.Sequence => $"[Sequence, {((List<object>)RawValue).Count} items]",
+            NodeType.Map => $"[Map, {((Dictionary<string, object>)RawValue).Count} keys]",
             _ => "(unknown)"
         };
+
+        /// <summary>Returns the internal map. Throws if Type is not Map.</summary>
+        public Dictionary<string, object> AsMap()
+        {
+            EnsureType(NodeType.Map);
+            return (Dictionary<string, object>)RawValue;
+        }
+
+        /// <summary>Returns the internal sequence. Throws if Type is not Sequence.</summary>
+        public List<object> AsSequence()
+        {
+            EnsureType(NodeType.Sequence);
+            return (List<object>)RawValue;
+        }
+
+        public object this[string keyPath]
+        {
+            set
+            {
+                EnsureType(NodeType.Map);
+
+                var keys = keyPath.Split('.');
+                var lastKey = keys[^1];
+
+                var map = ((Dictionary<string, object>)RawValue);
+                foreach (var key in keys[..^1])
+                {
+                    if (!map.ContainsKey(key))
+                        map[key] = new Dictionary<string, object>();
+
+                    map = (Dictionary<string, object>)map[key];
+                }
+
+                map[lastKey] = value;
+            }
+        }
+
+        /// <summary>
+        /// Navigates to the node at <paramref name="keyPath"/> and returns a DataNode.
+        /// Returns an empty Scalar DataNode (null value) if the path does not exist.
+        /// </summary>
+        public DataNode GetNode(string keyPath)
+        {
+            object current = RawValue;
+            foreach (PathSegment seg in ParsePath(keyPath))
+            {
+                if (current is null) return new DataNode(null, Culture);
+                current = seg.IsIndex
+                    ? ResolveIndex(current, seg.Index, keyPath)
+                    : ResolveKey(current, seg.Key, keyPath);
+            }
+            return new DataNode(current, Culture);
+        }
+
+        /// <summary>
+        /// Navigate to <paramref name="keyPath"/> and return all children as a list of DataNodes.
+        /// Returns an empty list if the path does not exist or is not a Sequence.
+        /// </summary>
+        public List<DataNode> GetSequenceNode(string keyPath)
+        {
+            DataNode node = GetNode(keyPath);
+            if (node.Type != NodeType.Sequence) return [];
+            return [.. node.AsSequence().Select(item => new DataNode(item, Culture))];
+        }
+
+        public string AsString() => RawValue?.ToString();
+        public string AsString(string keyPath) => GetNode(keyPath).AsString();
+        public string AsStringOrDefault(string defaultValue) => RawValue is not null ? RawValue.ToString()! : defaultValue;
+        public string AsStringOrDefault(string keyPath, string defaultValue) => GetNode(keyPath).AsStringOrDefault(defaultValue);
+
+        public int AsInt() => Convert.ToInt32(RawValue, Culture);
+        public int AsInt(string keyPath) => GetNode(keyPath).AsInt();
+        public int AsIntOrDefault(int defaultValue) => TryConvert(RawValue, defaultValue, v => Convert.ToInt32(v, Culture));
+        public int AsIntOrDefault(string keyPath, int defaultValue) => GetNode(keyPath).AsIntOrDefault(defaultValue);
+
+        public long AsLong() => Convert.ToInt64(RawValue, Culture);
+        public long AsLong(string keyPath) => GetNode(keyPath).AsLong();
+        public long AsLongOrDefault(long defaultValue) => TryConvert(RawValue, defaultValue, v => Convert.ToInt64(v, Culture));
+        public long AsLongOrDefault(string keyPath, long defaultValue) => GetNode(keyPath).AsLongOrDefault(defaultValue);
+
+        public double AsDouble() => Convert.ToDouble(RawValue, Culture);
+        public double AsDouble(string keyPath) => GetNode(keyPath).AsDouble();
+        public double AsDoubleOrDefault(double defaultValue) => TryConvert(RawValue, defaultValue, v => Convert.ToDouble(v, Culture));
+        public double AsDoubleOrDefault(string keyPath, double defaultValue) => GetNode(keyPath).AsDoubleOrDefault(defaultValue);
+
+        public decimal AsDecimal() => Convert.ToDecimal(RawValue, Culture);
+        public decimal AsDecimal(string keyPath) => GetNode(keyPath).AsDecimal();
+        public decimal AsDecimalOrDefault(decimal defaultValue) => TryConvert(RawValue, defaultValue, v => Convert.ToDecimal(v, Culture));
+        public decimal AsDecimalOrDefault(string keyPath, decimal defaultValue) => GetNode(keyPath).AsDecimalOrDefault(defaultValue);
+
+        public DateTime AsDateTime() => Convert.ToDateTime(RawValue, Culture);
+        public DateTime AsDateTime(string keyPath) => GetNode(keyPath).AsDateTime();
+        public DateTime AsDateTimeOrDefault(DateTime defaultValue) => TryConvert(RawValue, defaultValue, v => Convert.ToDateTime(v, Culture));
+        public DateTime AsDateTimeOrDefault(string keyPath, DateTime defaultValue) => GetNode(keyPath).AsDateTimeOrDefault(defaultValue);
+
+        public bool AsBool() => ParseBool(RawValue);
+        public bool AsBool(string keyPath) => GetNode(keyPath).AsBool();
+        public bool AsBoolOrDefault(bool defaultValue) => TryConvert(RawValue, defaultValue, ParseBool);
+        public bool AsBoolOrDefault(string keyPath, bool defaultValue) => GetNode(keyPath).AsBoolOrDefault(defaultValue);
     }
 }

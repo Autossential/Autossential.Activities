@@ -60,7 +60,7 @@ namespace Autossential.Activities.Tests.Unit
         }
 
         [Fact]
-        public void Invoke_WhenFilePathIsNull_ThrowsArgumentNullException()
+        public void Invoke_WhenFilePathIsNull_ThrowsInvalidOperationException()
         {
             var inputs = new Dictionary<string, object>
             {
@@ -69,7 +69,7 @@ namespace Autossential.Activities.Tests.Unit
             };
 
             // The activity throws NullReferenceException when the FilePath argument is null
-            Assert.Throws<NullReferenceException>(() => WorkflowInvoker.Invoke(new WaitFile(), inputs));
+            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new WaitFile(), inputs));
         }
 
         [Fact]
@@ -101,7 +101,7 @@ namespace Autossential.Activities.Tests.Unit
         }
 
         [Fact]
-        public void Invoke_DynamicFile_WhenDirectoryPathIsNull_ThrowsNullReferenceException()
+        public void Invoke_DynamicFile_WhenDirectoryPathIsNull_ThrowsInvalidOperationException()
         {
             var inputs = new Dictionary<string, object>
             {
@@ -109,7 +109,7 @@ namespace Autossential.Activities.Tests.Unit
                 ["TimeoutSeconds"] = 1.0
             };
 
-            Assert.Throws<NullReferenceException>(() => WorkflowInvoker.Invoke(new WaitFile { DynamicFile = true }, inputs));
+            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new WaitFile { DynamicFile = true }, inputs));
         }
 
         [Fact]

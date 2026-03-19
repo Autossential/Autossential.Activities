@@ -43,14 +43,14 @@ namespace Autossential.Activities.Tests.Unit
         }
 
         [Fact]
-        public void Invoke_EmptyFormat_Throws()
+        public void Invoke_EmptyFormat_ThrowsInvalidOperationException()
         {
             var inputs = new Dictionary<string, object>
             {
                 ["Format"] = string.Empty
             };
 
-            Assert.Throws<NullReferenceException>(() => WorkflowInvoker.Invoke(new RandomString(), inputs));
+            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new RandomString(), inputs));
         }
     }
 }

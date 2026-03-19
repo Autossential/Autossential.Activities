@@ -49,7 +49,7 @@ namespace Autossential.Activities.Tests.Unit
         }
 
         [Fact]
-        public void Invoke_WhenFolderArgumentIsNull_ThrowsNullReferenceException()
+        public void Invoke_WhenFolderArgumentIsNull_ThrowsInvalidOperationException()
         {
             var inputs = new Dictionary<string, object>
             {
@@ -57,7 +57,7 @@ namespace Autossential.Activities.Tests.Unit
                 ["SearchPattern"] = "*.*"
             };
 
-            Assert.Throws<NullReferenceException>(() => WorkflowInvoker.Invoke(new CleanUpFolder(), inputs));
+            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new CleanUpFolder(), inputs));
         }
 
         [Fact]

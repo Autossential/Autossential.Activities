@@ -28,11 +28,6 @@ namespace Autossential.Activities.Models
         /// </summary>
         public NodeType Type { get; private set; }
 
-        /// <summary>
-        /// Gets a value indicating whether the current instance contains a non-null value.
-        /// </summary>
-        public bool HasValue => RawValue is not null;
-
         private object _value;
         /// <summary>
         /// Returns the raw internal value without any conversion.
@@ -47,12 +42,6 @@ namespace Autossential.Activities.Models
                 if (value is null || value is string)
                 {
                     Type = NodeType.Scalar;
-                    return;
-                }
-
-                if (value is DataNode dn)
-                {
-                    Type = dn.Type; // unwrap nested DataNode
                     return;
                 }
 
@@ -77,15 +66,35 @@ namespace Autossential.Activities.Models
         /// </summary>
         public CultureInfo Culture { get; }
 
+        /// <summary>
+        /// Initializes a new instance of the DataNode class with the specified value and culture information.
+        /// </summary>
+        /// <param name="value">The value to be stored in the data node. Can be of any type supported by the node.</param>
+        /// <param name="culture">The culture information to use for formatting and parsing operations. If null, the invariant culture is
+        /// used.</param>
         public DataNode(object value, CultureInfo culture = null)
         {
             RawValue = Normalize(value);
             Culture = culture ?? CultureInfo.InvariantCulture;
         }
 
-        public DataNode(CultureInfo culture = null) : this(new Dictionary<string, object>(), culture)
+        /// <summary>
+        /// Initializes a new instance of the DataNode class with default values.
+        /// </summary>
+        /// <remarks>This constructor creates a DataNode using an empty dictionary and the invariant
+        /// culture. It is equivalent to calling the main constructor with default parameters.</remarks>
+        public DataNode() : this(new Dictionary<string, object>(), CultureInfo.InvariantCulture)
         {
+
         }
+
+        /// <summary>
+        /// Creates an empty DataNode instance with the specified culture information.
+        /// </summary>
+        /// <param name="culture">The culture to associate with the DataNode. If null, the default culture is used.</param>
+        /// <returns>A DataNode instance that contains no data and is associated with the specified culture.</returns>
+        public static DataNode Empty(CultureInfo culture = null) => new(new Dictionary<string, object>(), culture);
+
 
         private object Normalize(object value)
         {
@@ -136,13 +145,54 @@ namespace Autossential.Activities.Models
         }
 
         /// <summary>
-        /// Returns whether the given key path exists and has a non-null value.
+        /// Returns whether the given key path exists
         /// </summary>
         public bool Exists(string keyPath)
         {
-            try { return GetNode(keyPath).HasValue; }
+            try
+            {
+                var segments = ParsePath(keyPath).ToList();
+                if (segments.Count == 0) return false;
+
+                object current = RawValue;
+                foreach (var seg in segments.Take(segments.Count - 1))
+                {
+                    if (current is null) return false;
+                    current = seg.IsIndex
+                        ? ResolveIndex(current, seg.Index, keyPath)
+                        : ResolveKey(current, seg.Key, keyPath);
+                }
+
+                var last = segments[^1];
+                if (last.IsIndex)
+                    return current is List<object> list && last.Index < list.Count;
+                else
+                    return current is Dictionary<string, object> map && map.ContainsKey(last.Key);
+            }
             catch { return false; }
         }
+
+
+
+        /// <summary>
+        /// Gets an enumerable collection containing the keys of the map node.
+        /// </summary>
+        /// <remarks>If the node is not of type Map, the collection is empty. The order of the keys is not
+        /// guaranteed.</remarks>
+        public IEnumerable<string> Keys => Type == NodeType.Map ? ((Dictionary<string, object>)RawValue).Keys : [];
+
+        /// <summary>
+        /// Determines whether the current instance contains a non-null value.
+        /// </summary>
+        /// <returns>true if the underlying value is not null; otherwise, false.</returns>
+        public bool HasValue() => RawValue is not null;
+
+        /// <summary>
+        /// Determines whether the specified key path exists and has an associated value.
+        /// </summary>
+        /// <param name="keyPath">The hierarchical path of the key to check for a value. Cannot be null or empty.</param>
+        /// <returns>true if the key path exists and has a value; otherwise, false.</returns>
+        public bool HasValue(string keyPath) => GetNode(keyPath).HasValue();
 
         private record PathSegment(bool IsIndex, string Key = null, int Index = 0);
 
@@ -239,6 +289,76 @@ namespace Autossential.Activities.Models
             _ => "(unknown)"
         };
 
+        /// <summary>
+        /// Merges another DataNode into the current instance.
+        /// Scalar and Sequence values from <paramref name="other"/> overwrite existing ones.
+        /// Map values are merged recursively.
+        /// </summary>
+        /// <param name="other">The DataNode to merge into the current instance.</param>
+        public void Merge(DataNode other)
+        {
+            EnsureType(NodeType.Map);
+
+            if (other is null || !other.HasValue() || other.Type != NodeType.Map)
+                return;
+
+            MergeMaps(
+                (Dictionary<string, object>)RawValue,
+                (Dictionary<string, object>)other.RawValue
+            );
+        }
+
+        private static void MergeMaps(Dictionary<string, object> target, Dictionary<string, object> source)
+        {
+            foreach (var (key, sourceValue) in source)
+            {
+                // Se ambos são Map, merge recursivo
+                if (target.TryGetValue(key, out object targetValue)
+                    && targetValue is Dictionary<string, object> targetMap
+                    && sourceValue is Dictionary<string, object> sourceMap)
+                {
+                    MergeMaps(targetMap, sourceMap);
+                }
+                else
+                {
+                    // Scalar ou Sequence: source sobrescreve target
+                    target[key] = sourceValue;
+                }
+            }
+        }
+
+        public DataNode this[string keyPath]
+        {
+            get => GetNode(keyPath);
+            set
+            {
+                EnsureType(NodeType.Map);
+
+                var segments = ParsePath(keyPath).ToList();
+                object current = RawValue;
+
+                for (int i = 0; i < segments.Count - 1; i++)
+                {
+                    var seg = segments[i];
+                    if (seg.IsIndex)
+                        current = ((List<object>)current)[seg.Index];
+                    else
+                    {
+                        var map = (Dictionary<string, object>)current;
+                        if (!map.ContainsKey(seg.Key))
+                            map[seg.Key] = new Dictionary<string, object>();
+                        current = map[seg.Key];
+                    }
+                }
+
+                var last = segments[^1];
+                if (last.IsIndex)
+                    ((List<object>)current)[last.Index] = value?.RawValue;
+                else
+                    ((Dictionary<string, object>)current)[last.Key] = value?.RawValue;
+            }
+        }
+
         /// <summary>Returns the internal map. Throws if Type is not Map.</summary>
         public Dictionary<string, object> AsMap()
         {
@@ -251,28 +371,6 @@ namespace Autossential.Activities.Models
         {
             EnsureType(NodeType.Sequence);
             return (List<object>)RawValue;
-        }
-
-        public object this[string keyPath]
-        {
-            set
-            {
-                EnsureType(NodeType.Map);
-
-                var keys = keyPath.Split('.');
-                var lastKey = keys[^1];
-
-                var map = ((Dictionary<string, object>)RawValue);
-                foreach (var key in keys[..^1])
-                {
-                    if (!map.ContainsKey(key))
-                        map[key] = new Dictionary<string, object>();
-
-                    map = (Dictionary<string, object>)map[key];
-                }
-
-                map[lastKey] = value;
-            }
         }
 
         /// <summary>

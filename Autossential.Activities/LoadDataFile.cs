@@ -15,7 +15,7 @@ namespace Autossential.Activities
         {
             var filePath = FilePath.Get(context);
 
-            if (File.Exists(filePath))
+            if (!File.Exists(filePath))
                 throw new FileNotFoundException();
 
             var encoding = Encoding.Get(context) ?? System.Text.Encoding.UTF8.BodyName;

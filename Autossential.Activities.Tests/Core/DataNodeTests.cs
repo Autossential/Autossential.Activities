@@ -1,3 +1,4 @@
+using Autossential.Activities.Core;
 using Autossential.Activities.Models;
 using System;
 using System.Collections;
@@ -10,615 +11,1129 @@ using Xunit;
 
 namespace Autossential.Activities.Tests.Core
 {
+    // ─────────────────────────────────────────────────────────────────────────
+    //  DataNodeTests
+    //
+    //  Coverage:
+    //    1.  Construction & Normalization
+    //    2.  NodeType detection
+    //    3.  RawValue & HasValue
+    //    4.  Keys
+    //    5.  Exists
+    //    6.  GetNode
+    //    7.  GetSequenceNode
+    //    8.  Indexer (get & set)
+    //    9.  AsMap / AsSequence
+    //    10. AsString / AsStringOrDefault
+    //    11. AsInt / AsIntOrDefault
+    //    12. AsLong / AsLongOrDefault
+    //    13. AsDouble / AsDoubleOrDefault
+    //    14. AsDecimal / AsDecimalOrDefault
+    //    15. AsDateTime / AsDateTimeOrDefault
+    //    16. AsBool / AsBoolOrDefault
+    //    17. Merge
+    //    18. ToString
+    //    19. CultureInfo
+    // ─────────────────────────────────────────────────────────────────────────
     public class DataNodeTests
     {
-        // ─────────────────────────────────────────────
-        // Construction & Type inference
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void Constructor_WithNull_IsScalarWithNoValue()
+        private static DataNode SampleMap() => new(new Dictionary<string, object>
         {
-            var node = new DataNode((object)null);
-            Assert.Equal(NodeType.Scalar, node.Type);
-            Assert.False(node.HasValue);
-            Assert.Null(node.RawValue);
-        }
-
-        [Fact]
-        public void Constructor_WithString_IsScalar()
-        {
-            var node = new DataNode("hello");
-            Assert.Equal(NodeType.Scalar, node.Type);
-            Assert.True(node.HasValue);
-            Assert.Equal("hello", node.RawValue);
-        }
-
-        [Fact]
-        public void Constructor_WithInt_IsScalar()
-        {
-            var node = new DataNode(42);
-            Assert.Equal(NodeType.Scalar, node.Type);
-            Assert.True(node.HasValue);
-        }
-
-        [Fact]
-        public void Constructor_WithDictionary_IsMap()
-        {
-            var dict = new Dictionary<string, object> { { "key", "value" } };
-            var node = new DataNode(dict);
-            Assert.Equal(NodeType.Map, node.Type);
-        }
-
-        [Fact]
-        public void Constructor_WithList_IsSequence()
-        {
-            var list = new List<object> { "a", "b" };
-            var node = new DataNode(list);
-            Assert.Equal(NodeType.Sequence, node.Type);
-        }
-
-        [Fact]
-        public void Constructor_WithNestedDataNode_Unwraps()
-        {
-            var inner = new DataNode("unwrapped");
-            var outer = new DataNode(inner);
-            Assert.Equal(NodeType.Scalar, outer.Type);
-            Assert.Equal("unwrapped", outer.RawValue);
-        }
-
-        [Fact]
-        public void DefaultConstructor_CreatesEmptyMap()
-        {
-            var node = new DataNode();
-            Assert.Equal(NodeType.Map, node.Type);
-        }
-
-        [Fact]
-        public void Constructor_WithCulture_StoresCulture()
-        {
-            var culture = new CultureInfo("pt-BR");
-            var node = new DataNode("val", culture);
-            Assert.Equal(culture, node.Culture);
-        }
-
-        [Fact]
-        public void Constructor_WithoutCulture_UsesInvariantCulture()
-        {
-            var node = new DataNode("val");
-            Assert.Equal(CultureInfo.InvariantCulture, node.Culture);
-        }
-
-        // ─────────────────────────────────────────────
-        // Normalization
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void Normalize_NonGenericDictionary_ConvertsToDictionaryOfStringObject()
-        {
-            var raw = new System.Collections.Hashtable { { "x", 1 } };
-            var node = new DataNode(raw);
-            Assert.Equal(NodeType.Map, node.Type);
-            Assert.IsType<Dictionary<string, object>>(node.RawValue);
-        }
-
-        [Fact]
-        public void Normalize_Array_ConvertsToListOfObject()
-        {
-            var node = new DataNode(new[] { "a", "b", "c" });
-            Assert.Equal(NodeType.Sequence, node.Type);
-            Assert.IsType<List<object>>(node.RawValue);
-        }
-
-        [Fact]
-        public void Normalize_NestedDictInList_IsNormalized()
-        {
-            var nested = new Dictionary<string, object> { { "k", "v" } };
-            var node = new DataNode(new List<object> { nested });
-            var seq = node.AsSequence();
-            Assert.IsType<Dictionary<string, object>>(seq[0]);
-        }
-
-        // ─────────────────────────────────────────────
-        // GetNode – dot notation
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void GetNode_SimpleKey_ReturnsCorrectValue()
-        {
-            var node = new DataNode(new Dictionary<string, object> { { "name", "Alex" } });
-            Assert.Equal("Alex", node.GetNode("name").AsString());
-        }
-
-        [Fact]
-        public void GetNode_NestedDotPath_ReturnsCorrectValue()
-        {
-            var node = new DataNode(new Dictionary<string, object>
+            ["name"] = "Alice",
+            ["age"] = "30",
+            ["active"] = "true",
+            ["score"] = "9.5",
+            ["tags"] = new List<object> { "admin", "user" },
+            ["address"] = new Dictionary<string, object>
             {
-                { "person", new Dictionary<string, object> { { "city", "Curitiba" } } }
-            });
-            Assert.Equal("Curitiba", node.GetNode("person.city").AsString());
-        }
+                ["city"] = "Curitiba",
+                ["state"] = "PR",
+                ["zipcode"] = null
+            }
+        });
 
-        [Fact]
-        public void GetNode_MissingKey_ReturnsNullScalar()
+        // ═════════════════════════════════════════════════════════════════════
+        //  1. Construction & Normalization
+        // ═════════════════════════════════════════════════════════════════════
+        public class ConstructionAndNormalization
         {
-            var node = new DataNode(new Dictionary<string, object>());
-            var result = node.GetNode("missing");
-            Assert.False(result.HasValue);
-        }
-
-        [Fact]
-        public void GetNode_MissingIntermediateKey_ReturnsNullScalar()
-        {
-            var node = new DataNode(new Dictionary<string, object>());
-            var result = node.GetNode("a.b.c");
-            Assert.False(result.HasValue);
-        }
-
-        // ─────────────────────────────────────────────
-        // GetNode – bracket index notation
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void GetNode_BracketIndex_ReturnsCorrectItem()
-        {
-            var node = new DataNode(new Dictionary<string, object>
+            [Fact]
+            public void NullValue_CreatesScalar()
             {
-                { "items", new List<object> { "first", "second" } }
-            });
-            Assert.Equal("second", node.GetNode("items[1]").AsString());
-        }
+                var node = new DataNode(null);
+                Assert.Equal(NodeType.Scalar, node.Type);
+                Assert.Null(node.RawValue);
+            }
 
-        [Fact]
-        public void GetNode_OutOfRangeIndex_ReturnsNullScalar()
-        {
-            var node = new DataNode(new Dictionary<string, object>
+            [Fact]
+            public void StringValue_CreatesScalar()
             {
-                { "items", new List<object> { "only" } }
-            });
-            Assert.False(node.GetNode("items[5]").HasValue);
-        }
+                var node = new DataNode("hello");
+                Assert.Equal(NodeType.Scalar, node.Type);
+                Assert.Equal("hello", node.RawValue);
+            }
 
-        [Fact]
-        public void GetNode_BracketQuotedKey_ReturnsCorrectValue()
-        {
-            var node = new DataNode(new Dictionary<string, object>
+            [Fact]
+            public void IntValue_CreatesScalar()
             {
-                { "metrics", new Dictionary<string, object> { { "error.rate", "0.01" } } }
-            });
-            Assert.Equal("0.01", node.GetNode("metrics['error.rate']").AsString());
-        }
+                var node = new DataNode(42);
+                Assert.Equal(NodeType.Scalar, node.Type);
+                Assert.Equal(42, node.RawValue);
+            }
 
-        [Fact]
-        public void GetNode_BracketDoubleQuotedKey_ReturnsCorrectValue()
-        {
-            var node = new DataNode(new Dictionary<string, object>
+            [Fact]
+            public void BoolValue_CreatesScalar()
             {
-                { "metrics", new Dictionary<string, object> { { "error.rate", "0.01" } } }
-            });
-            Assert.Equal("0.01", node.GetNode("metrics[\"error.rate\"]").AsString());
-        }
+                var node = new DataNode(true);
+                Assert.Equal(NodeType.Scalar, node.Type);
+            }
 
-        [Fact]
-        public void GetNode_MixedPath_ReturnsCorrectValue()
-        {
-            var node = new DataNode(new Dictionary<string, object>
+            [Fact]
+            public void DateTimeValue_CreatesScalar()
             {
+                var dt = new DateTime(2024, 1, 15);
+                var node = new DataNode(dt);
+                Assert.Equal(NodeType.Scalar, node.Type);
+                Assert.Equal(dt, node.RawValue);
+            }
+
+            [Fact]
+            public void GuidValue_CreatesScalar()
+            {
+                var guid = Guid.NewGuid();
+                var node = new DataNode(guid);
+                Assert.Equal(NodeType.Scalar, node.Type);
+            }
+
+            [Fact]
+            public void DictionaryStringObject_CreatesMap()
+            {
+                var node = new DataNode(new Dictionary<string, object> { ["k"] = "v" });
+                Assert.Equal(NodeType.Map, node.Type);
+            }
+
+            [Fact]
+            public void DictionaryStringString_NormalizesToMap()
+            {
+                var node = new DataNode(new Dictionary<string, string> { ["k"] = "v" });
+                Assert.Equal(NodeType.Map, node.Type);
+                Assert.IsType<Dictionary<string, object>>(node.RawValue);
+            }
+
+            [Fact]
+            public void DictionaryIntObject_NormalizesKeysToString()
+            {
+                var node = new DataNode(new Dictionary<int, object> { [1] = "one" });
+                Assert.Equal(NodeType.Map, node.Type);
+                var map = (Dictionary<string, object>)node.RawValue;
+                Assert.True(map.ContainsKey("1"));
+            }
+
+            [Fact]
+            public void ListObject_CreatesSequence()
+            {
+                var node = new DataNode(new List<object> { "a", "b" });
+                Assert.Equal(NodeType.Sequence, node.Type);
+            }
+
+            [Fact]
+            public void ListString_NormalizesToSequence()
+            {
+                var node = new DataNode(new List<string> { "a", "b" });
+                Assert.Equal(NodeType.Sequence, node.Type);
+                Assert.IsType<List<object>>(node.RawValue);
+            }
+
+            [Fact]
+            public void Array_NormalizesToSequence()
+            {
+                var node = new DataNode(new[] { 1, 2, 3 });
+                Assert.Equal(NodeType.Sequence, node.Type);
+                Assert.IsType<List<object>>(node.RawValue);
+            }
+
+            [Fact]
+            public void NestedDataNode_IsUnwrapped()
+            {
+                var inner = new DataNode("value");
+                var outer = new DataNode(inner);
+                Assert.Equal(NodeType.Scalar, outer.Type);
+                Assert.Equal("value", outer.RawValue);
+            }
+
+            [Fact]
+            public void NestedDictionary_IsNormalizedRecursively()
+            {
+                var node = new DataNode(new Dictionary<string, object>
                 {
-                    "servers", new List<object>
-                    {
-                        new Dictionary<string, object> { { "host", "localhost" } }
-                    }
-                }
-            });
-            Assert.Equal("localhost", node.GetNode("servers[0].host").AsString());
-        }
+                    ["nested"] = new Dictionary<string, string> { ["k"] = "v" }
+                });
+                var map = (Dictionary<string, object>)node.RawValue;
+                var nested = map["nested"];
+                Assert.IsType<Dictionary<string, object>>(nested);
+            }
 
-        [Fact]
-        public void GetNode_UnclosedBracket_ThrowsArgumentException()
-        {
-            var node = new DataNode(new Dictionary<string, object> { { "x", "y" } });
-            Assert.Throws<ArgumentException>(() => node.GetNode("x[0"));
-        }
-
-        [Fact]
-        public void GetNode_OnNonMap_ThrowsInvalidOperationException()
-        {
-            var node = new DataNode(new Dictionary<string, object>
+            [Fact]
+            public void NestedList_IsNormalizedRecursively()
             {
-                { "scalar", "value" }
-            });
-            Assert.Throws<InvalidOperationException>(() => node.GetNode("scalar.nested"));
-        }
-
-        [Fact]
-        public void GetNode_IndexOnNonSequence_ThrowsInvalidOperationException()
-        {
-            var node = new DataNode(new Dictionary<string, object>
-            {
-                { "scalar", "value" }
-            });
-            Assert.Throws<InvalidOperationException>(() => node.GetNode("scalar[0]"));
-        }
-
-        // ─────────────────────────────────────────────
-        // Exists
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void Exists_ExistingKey_ReturnsTrue()
-        {
-            var node = new DataNode(new Dictionary<string, object> { { "key", "val" } });
-            Assert.True(node.Exists("key"));
-        }
-
-        [Fact]
-        public void Exists_MissingKey_ReturnsFalse()
-        {
-            var node = new DataNode(new Dictionary<string, object>());
-            Assert.False(node.Exists("nope"));
-        }
-
-        [Fact]
-        public void Exists_NullValue_ReturnsFalse()
-        {
-            var node = new DataNode(new Dictionary<string, object> { { "key", null } });
-            Assert.False(node.Exists("key"));
-        }
-
-        [Fact]
-        public void Exists_NestedPath_ReturnsTrue()
-        {
-            var node = new DataNode(new Dictionary<string, object>
-            {
-                { "a", new Dictionary<string, object> { { "b", "found" } } }
-            });
-            Assert.True(node.Exists("a.b"));
-        }
-
-        // ─────────────────────────────────────────────
-        // GetSequenceNode
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void GetSequenceNode_ValidPath_ReturnsDataNodes()
-        {
-            var node = new DataNode(new Dictionary<string, object>
-            {
-                { "tags", new List<object> { "a", "b", "c" } }
-            });
-            var seq = node.GetSequenceNode("tags");
-            Assert.Equal(3, seq.Count);
-            Assert.Equal("a", seq[0].AsString());
-        }
-
-        [Fact]
-        public void GetSequenceNode_NonSequencePath_ReturnsEmptyList()
-        {
-            var node = new DataNode(new Dictionary<string, object> { { "x", "scalar" } });
-            Assert.Empty(node.GetSequenceNode("x"));
-        }
-
-        [Fact]
-        public void GetSequenceNode_MissingPath_ReturnsEmptyList()
-        {
-            var node = new DataNode(new Dictionary<string, object>());
-            Assert.Empty(node.GetSequenceNode("missing"));
-        }
-
-        // ─────────────────────────────────────────────
-        // Indexer setter
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void Indexer_SetSimpleKey_StoresValue()
-        {
-            var node = new DataNode();
-            node["name"] = "Alex";
-            Assert.Equal("Alex", node.GetNode("name").AsString());
-        }
-
-        [Fact]
-        public void Indexer_SetNestedKey_CreatesIntermediates()
-        {
-            var node = new DataNode();
-            node["a.b"] = "deep";
-            Assert.Equal("deep", node.GetNode("a.b").AsString());
-        }
-
-        [Fact]
-        public void Indexer_OnScalarNode_ThrowsInvalidOperationException()
-        {
-            var node = new DataNode("scalar");
-            Assert.Throws<InvalidOperationException>(() => node["key"] = "value");
-        }
-
-        // ─────────────────────────────────────────────
-        // AsMap / AsSequence
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void AsMap_OnMapNode_ReturnsDictionary()
-        {
-            var node = new DataNode(new Dictionary<string, object> { { "k", "v" } });
-            Assert.IsType<Dictionary<string, object>>(node.AsMap());
-        }
-
-        [Fact]
-        public void AsMap_OnNonMap_ThrowsInvalidOperationException()
-        {
-            var node = new DataNode("text");
-            Assert.Throws<InvalidOperationException>(() => node.AsMap());
-        }
-
-        [Fact]
-        public void AsSequence_OnSequenceNode_ReturnsList()
-        {
-            var node = new DataNode(new List<object> { 1, 2 });
-            Assert.IsType<List<object>>(node.AsSequence());
-        }
-
-        [Fact]
-        public void AsSequence_OnNonSequence_ThrowsInvalidOperationException()
-        {
-            var node = new DataNode("text");
-            Assert.Throws<InvalidOperationException>(() => node.AsSequence());
-        }
-
-        // ─────────────────────────────────────────────
-        // Typed accessors – AsString
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void AsString_ReturnsStringValue()
-        {
-            Assert.Equal("hello", new DataNode("hello").AsString());
-        }
-
-        [Fact]
-        public void AsString_OnNull_ReturnsNull()
-        {
-            Assert.Null(new DataNode((object)null).AsString());
-        }
-
-        [Fact]
-        public void AsString_WithKeyPath_ReturnsCorrectValue()
-        {
-            var node = new DataNode(new Dictionary<string, object> { { "k", "v" } });
-            Assert.Equal("v", node.AsString("k"));
-        }
-
-        [Fact]
-        public void AsStringOrDefault_OnNull_ReturnsDefault()
-        {
-            Assert.Equal("default", new DataNode((object)null).AsStringOrDefault("default"));
-        }
-
-        [Fact]
-        public void AsStringOrDefault_WithKeyPath_MissingReturnsDefault()
-        {
-            var node = new DataNode(new Dictionary<string, object>());
-            Assert.Equal("fallback", node.AsStringOrDefault("missing", "fallback"));
-        }
-
-        // ─────────────────────────────────────────────
-        // Typed accessors – AsInt
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void AsInt_StringNumber_Converts()
-        {
-            Assert.Equal(7, new DataNode("7").AsInt());
-        }
-
-        [Fact]
-        public void AsInt_IntValue_Returns()
-        {
-            Assert.Equal(42, new DataNode(42).AsInt());
-        }
-
-        [Fact]
-        public void AsIntOrDefault_OnNull_ReturnsDefault()
-        {
-            Assert.Equal(-1, new DataNode((object)null).AsIntOrDefault(-1));
-        }
-
-        [Fact]
-        public void AsIntOrDefault_InvalidValue_ReturnsDefault()
-        {
-            Assert.Equal(0, new DataNode("not-a-number").AsIntOrDefault(0));
-        }
-
-        [Fact]
-        public void AsInt_WithKeyPath_ReturnsCorrectValue()
-        {
-            var node = new DataNode(new Dictionary<string, object> { { "count", "10" } });
-            Assert.Equal(10, node.AsInt("count"));
-        }
-
-        // ─────────────────────────────────────────────
-        // Typed accessors – AsLong
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void AsLong_LargeValue_Converts()
-        {
-            Assert.Equal(9999999999L, new DataNode("9999999999").AsLong());
-        }
-
-        [Fact]
-        public void AsLongOrDefault_InvalidValue_ReturnsDefault()
-        {
-            Assert.Equal(0L, new DataNode("bad").AsLongOrDefault(0L));
-        }
-
-        // ─────────────────────────────────────────────
-        // Typed accessors – AsDouble
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void AsDouble_StringDecimal_Converts()
-        {
-            Assert.Equal(3.14, new DataNode("3.14").AsDouble(), precision: 5);
-        }
-
-        [Fact]
-        public void AsDoubleOrDefault_InvalidValue_ReturnsDefault()
-        {
-            Assert.Equal(0.0, new DataNode("oops").AsDoubleOrDefault(0.0));
-        }
-
-        // ─────────────────────────────────────────────
-        // Typed accessors – AsDecimal
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void AsDecimal_StringDecimal_Converts()
-        {
-            Assert.Equal(1.23m, new DataNode("1.23").AsDecimal());
-        }
-
-        [Fact]
-        public void AsDecimalOrDefault_InvalidValue_ReturnsDefault()
-        {
-            Assert.Equal(0m, new DataNode("bad").AsDecimalOrDefault(0m));
-        }
-
-        // ─────────────────────────────────────────────
-        // Typed accessors – AsBool
-        // ─────────────────────────────────────────────
-
-        [Theory]
-        [InlineData("true", true)]
-        [InlineData("false", false)]
-        [InlineData("1", true)]
-        [InlineData("0", false)]
-        [InlineData("TRUE", true)]
-        [InlineData("FALSE", false)]
-        public void AsBool_StringVariants_Converts(string input, bool expected)
-        {
-            Assert.Equal(expected, new DataNode(input).AsBool());
-        }
-
-        [Fact]
-        public void AsBool_BoolTrue_ReturnsTrue()
-        {
-            Assert.True(new DataNode(true).AsBool());
-        }
-
-        [Fact]
-        public void AsBool_BoolFalse_ReturnsFalse()
-        {
-            Assert.False(new DataNode(false).AsBool());
-        }
-
-        [Fact]
-        public void AsBool_InvalidString_ThrowsFormatException()
-        {
-            Assert.Throws<FormatException>(() => new DataNode("yes").AsBool());
-        }
-
-        [Fact]
-        public void AsBoolOrDefault_InvalidValue_ReturnsDefault()
-        {
-            Assert.True(new DataNode("maybe").AsBoolOrDefault(true));
-        }
-
-        [Fact]
-        public void AsBool_WithKeyPath_ReturnsCorrectValue()
-        {
-            var node = new DataNode(new Dictionary<string, object> { { "enabled", "true" } });
-            Assert.True(node.AsBool("enabled"));
-        }
-
-        // ─────────────────────────────────────────────
-        // Typed accessors – AsDateTime
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void AsDateTime_IsoString_Converts()
-        {
-            var node = new DataNode("2024-01-15");
-            var dt = node.AsDateTime();
-            Assert.Equal(2024, dt.Year);
-            Assert.Equal(1, dt.Month);
-            Assert.Equal(15, dt.Day);
-        }
-
-        [Fact]
-        public void AsDateTimeOrDefault_InvalidValue_ReturnsDefault()
-        {
-            var fallback = new DateTime(2000, 1, 1);
-            Assert.Equal(fallback, new DataNode("not-a-date").AsDateTimeOrDefault(fallback));
-        }
-
-        // ─────────────────────────────────────────────
-        // ToString
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void ToString_Scalar_ReturnsValue()
-        {
-            Assert.Equal("hi", new DataNode("hi").ToString());
-        }
-
-        [Fact]
-        public void ToString_NullScalar_ReturnsNullLabel()
-        {
-            Assert.Equal("(null)", new DataNode((object)null).ToString());
-        }
-
-        [Fact]
-        public void ToString_Map_IncludesKeyCount()
-        {
-            var node = new DataNode(new Dictionary<string, object> { { "a", 1 }, { "b", 2 } });
-            Assert.Contains("2 keys", node.ToString());
-        }
-
-        [Fact]
-        public void ToString_Sequence_IncludesItemCount()
-        {
-            var node = new DataNode(new List<object> { "x", "y", "z" });
-            Assert.Contains("3 items", node.ToString());
-        }
-
-        // ─────────────────────────────────────────────
-        // Edge cases
-        // ─────────────────────────────────────────────
-
-        [Fact]
-        public void GetNode_EmptyPath_ReturnsRootNode()
-        {
-            var node = new DataNode(new Dictionary<string, object> { { "k", "v" } });
-            var result = node.GetNode("");
-            Assert.Equal(NodeType.Map, result.Type);
-        }
-
-        [Fact]
-        public void GetNode_NegativeIndex_ReturnsNull()
-        {
-            var node = new DataNode(new Dictionary<string, object>
-            {
-                { "items", new List<object> { "a" } }
-            });
-            Assert.False(node.GetNode("items[-1]").HasValue);
-        }
-
-        [Fact]
-        public void Normalize_DeeplyNestedStructure_IsFullyNormalized()
-        {
-            var deep = new Dictionary<string, object>
-            {
+                var node = new DataNode(new Dictionary<string, object>
                 {
-                    "level1", new Dictionary<string, object>
+                    ["items"] = new List<string> { "a", "b" }
+                });
+                var map = (Dictionary<string, object>)node.RawValue;
+                var items = map["items"];
+                Assert.IsType<List<object>>(items);
+            }
+
+            [Fact]
+            public void ParameterlessConstructor_CreatesEmptyMap()
+            {
+                var node = new DataNode();
+                Assert.Equal(NodeType.Map, node.Type);
+                Assert.Empty(((Dictionary<string, object>)node.RawValue));
+            }
+
+            [Fact]
+            public void CultureInfo_DefaultsToInvariant()
+            {
+                var node = new DataNode("x");
+                Assert.Equal(CultureInfo.InvariantCulture, node.Culture);
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  2. NodeType detection
+        // ═════════════════════════════════════════════════════════════════════
+        public class NodeTypeDetection
+        {
+            [Fact]
+            public void Null_IsScalar() => Assert.Equal(NodeType.Scalar, new DataNode(null).Type);
+
+            [Fact]
+            public void String_IsScalar() => Assert.Equal(NodeType.Scalar, new DataNode("x").Type);
+
+            [Fact]
+            public void Int_IsScalar() => Assert.Equal(NodeType.Scalar, new DataNode(1).Type);
+
+            [Fact]
+            public void Dict_IsMap() => Assert.Equal(NodeType.Map, new DataNode(new Dictionary<string, object>()).Type);
+
+            [Fact]
+            public void List_IsSequence() => Assert.Equal(NodeType.Sequence, new DataNode(new List<object>()).Type);
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  3. RawValue & HasValue
+        // ═════════════════════════════════════════════════════════════════════
+        public class RawValueAndHasValue
+        {
+            [Fact]
+            public void HasValue_NullRawValue_ReturnsFalse()
+            {
+                var node = new DataNode(null);
+                Assert.False(node.HasValue());
+            }
+
+            [Fact]
+            public void HasValue_NonNullRawValue_ReturnsTrue()
+            {
+                var node = new DataNode("hello");
+                Assert.True(node.HasValue());
+            }
+
+            [Fact]
+            public void HasValue_WithKeyPath_ExistsAndNonNull_ReturnsTrue()
+            {
+                var node = SampleMap();
+                Assert.True(node.HasValue("name"));
+            }
+
+            [Fact]
+            public void HasValue_WithKeyPath_ExistsButNull_ReturnsFalse()
+            {
+                var node = SampleMap();
+                Assert.False(node.HasValue("address.zipcode"));
+            }
+
+            [Fact]
+            public void HasValue_WithKeyPath_NotExists_ReturnsFalse()
+            {
+                var node = SampleMap();
+                Assert.False(node.HasValue("nonexistent"));
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  4. Keys
+        // ═════════════════════════════════════════════════════════════════════
+        public class KeysProperty
+        {
+            [Fact]
+            public void Keys_OnMap_ReturnsAllKeys()
+            {
+                var node = new DataNode(new Dictionary<string, object>
+                {
+                    ["a"] = 1,
+                    ["b"] = 2,
+                    ["c"] = 3
+                });
+                Assert.Equal(3, new List<string>(node.Keys).Count);
+                Assert.Contains("a", node.Keys);
+                Assert.Contains("b", node.Keys);
+                Assert.Contains("c", node.Keys);
+            }
+
+            [Fact]
+            public void Keys_OnScalar_ReturnsEmpty()
+            {
+                var node = new DataNode("scalar");
+                Assert.Empty(node.Keys);
+            }
+
+            [Fact]
+            public void Keys_OnSequence_ReturnsEmpty()
+            {
+                var node = new DataNode(new List<object> { "a", "b" });
+                Assert.Empty(node.Keys);
+            }
+
+            [Fact]
+            public void Keys_OnEmptyMap_ReturnsEmpty()
+            {
+                var node = new DataNode();
+                Assert.Empty(node.Keys);
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  5. Exists
+        // ═════════════════════════════════════════════════════════════════════
+        public class ExistsMethod
+        {
+            [Fact]
+            public void Exists_ExistingKey_ReturnsTrue()
+            {
+                var node = SampleMap();
+                Assert.True(node.Exists("name"));
+            }
+
+            [Fact]
+            public void Exists_NonExistingKey_ReturnsFalse()
+            {
+                var node = SampleMap();
+                Assert.False(node.Exists("nonexistent"));
+            }
+
+            [Fact]
+            public void Exists_NestedKey_ReturnsTrue()
+            {
+                var node = SampleMap();
+                Assert.True(node.Exists("address.city"));
+            }
+
+            [Fact]
+            public void Exists_NullValueKey_ReturnsTrue()
+            {
+                var node = SampleMap();
+                Assert.True(node.Exists("address.zipcode"));
+            }
+
+            [Fact]
+            public void Exists_SequenceIndex_ReturnsTrue()
+            {
+                var node = SampleMap();
+                Assert.True(node.Exists("tags[0]"));
+            }
+
+            [Fact]
+            public void Exists_OutOfRangeIndex_ReturnsFalse()
+            {
+                var node = SampleMap();
+                Assert.False(node.Exists("tags[99]"));
+            }
+
+            [Fact]
+            public void Exists_InvalidStructuralPath_ReturnsFalse()
+            {
+                var node = SampleMap();
+                Assert.False(node.Exists("tags[0].invalid"));
+            }
+
+            [Fact]
+            public void Exists_EmptyPath_ReturnsFalse()
+            {
+                var node = SampleMap();
+                Assert.False(node.Exists(""));
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  6. GetNode
+        // ═════════════════════════════════════════════════════════════════════
+        public class GetNodeMethod
+        {
+            [Fact]
+            public void GetNode_ExistingKey_ReturnsCorrectNode()
+            {
+                var node = SampleMap();
+                var result = node.GetNode("name");
+                Assert.Equal("Alice", result.AsString());
+            }
+
+            [Fact]
+            public void GetNode_NestedKey_ReturnsCorrectNode()
+            {
+                var node = SampleMap();
+                var result = node.GetNode("address.city");
+                Assert.Equal("Curitiba", result.AsString());
+            }
+
+            [Fact]
+            public void GetNode_SequenceIndex_ReturnsCorrectNode()
+            {
+                var node = SampleMap();
+                var result = node.GetNode("tags[0]");
+                Assert.Equal("admin", result.AsString());
+            }
+
+            [Fact]
+            public void GetNode_NonExistingKey_ReturnsNullScalar()
+            {
+                var node = SampleMap();
+                var result = node.GetNode("nonexistent");
+                Assert.Equal(NodeType.Scalar, result.Type);
+                Assert.Null(result.RawValue);
+            }
+
+            [Fact]
+            public void GetNode_NullValueKey_ReturnsNullScalar()
+            {
+                var node = SampleMap();
+                var result = node.GetNode("address.zipcode");
+                Assert.False(result.HasValue());
+            }
+
+            [Fact]
+            public void GetNode_InvalidIndex_ThrowsInvalidOperation()
+            {
+                var node = SampleMap();
+                Assert.Throws<InvalidOperationException>(() => node.GetNode("name[0]"));
+            }
+
+            [Fact]
+            public void GetNode_QuotedKeyWithDots_ReturnsCorrectNode()
+            {
+                var node = new DataNode(new Dictionary<string, object>
+                {
+                    ["error.rate"] = "0.5"
+                });
+                var result = node.GetNode("['error.rate']");
+                Assert.Equal("0.5", result.AsString());
+            }
+
+            [Fact]
+            public void GetNode_ChainedIndexes_ReturnsCorrectNode()
+            {
+                var node = new DataNode(new Dictionary<string, object>
+                {
+                    ["matrix"] = new List<object>
                     {
-                        { "level2", new List<object> { new Dictionary<string, object> { { "leaf", "value" } } } }
+                        new List<object> { "a", "b" },
+                        new List<object> { "c", "d" }
                     }
-                }
-            };
-            var node = new DataNode(deep);
-            Assert.Equal("value", node.GetNode("level1.level2[0].leaf").AsString());
+                });
+                Assert.Equal("d", node.GetNode("matrix[1][1]").AsString());
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  7. GetSequenceNode
+        // ═════════════════════════════════════════════════════════════════════
+        public class GetSequenceNodeMethod
+        {
+            [Fact]
+            public void GetSequenceNode_ExistingSequence_ReturnsDataNodeList()
+            {
+                var node = SampleMap();
+                var items = node.GetSequenceNode("tags");
+                Assert.Equal(2, items.Count);
+                Assert.IsType<DataNode>(items[0]);
+            }
+
+            [Fact]
+            public void GetSequenceNode_CorrectValues()
+            {
+                var node = SampleMap();
+                var items = node.GetSequenceNode("tags");
+                Assert.Equal("admin", items[0].AsString());
+                Assert.Equal("user", items[1].AsString());
+            }
+
+            [Fact]
+            public void GetSequenceNode_NonExistingPath_ReturnsEmpty()
+            {
+                var node = SampleMap();
+                var items = node.GetSequenceNode("nonexistent");
+                Assert.Empty(items);
+            }
+
+            [Fact]
+            public void GetSequenceNode_NonSequencePath_ReturnsEmpty()
+            {
+                var node = SampleMap();
+                var items = node.GetSequenceNode("name");
+                Assert.Empty(items);
+            }
+
+            [Fact]
+            public void GetSequenceNode_ItemsInheritCulture()
+            {
+                var culture = new CultureInfo("pt-BR");
+                var node = new DataNode(new Dictionary<string, object>
+                {
+                    ["items"] = new List<object> { "a", "b" }
+                }, culture);
+                var items = node.GetSequenceNode("items");
+                Assert.Equal(culture, items[0].Culture);
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  8. Indexer
+        // ═════════════════════════════════════════════════════════════════════
+        public class Indexer
+        {
+            [Fact]
+            public void Getter_ReturnsCorrectNode()
+            {
+                var node = SampleMap();
+                Assert.Equal("Alice", node["name"].AsString());
+            }
+
+            [Fact]
+            public void Getter_NestedPath_ReturnsCorrectNode()
+            {
+                var node = SampleMap();
+                Assert.Equal("Curitiba", node["address.city"].AsString());
+            }
+
+            [Fact]
+            public void Getter_InvalidStructuralPath_Throws()
+            {
+                var node = SampleMap();
+                Assert.Throws<InvalidOperationException>(() => node["tags[0].invalid"].AsString());
+            }
+
+            [Fact]
+            public void Setter_AddsNewKey()
+            {
+                var node = new DataNode();
+                node["newkey"] = new DataNode("value");
+                Assert.Equal("value", node.AsString("newkey"));
+            }
+
+            [Fact]
+            public void Setter_OverwritesExistingKey()
+            {
+                var node = SampleMap();
+                node["name"] = new DataNode("Bob");
+                Assert.Equal("Bob", node.AsString("name"));
+            }
+
+            [Fact]
+            public void Setter_NestedPath_CreatesIntermediateMaps()
+            {
+                var node = new DataNode();
+                node["a.b.c"] = new DataNode("deep");
+                Assert.Equal("deep", node.AsString("a.b.c"));
+            }
+
+            [Fact]
+            public void Setter_NestedPath_OverwritesExisting()
+            {
+                var node = SampleMap();
+                node["address.city"] = new DataNode("São Paulo");
+                Assert.Equal("São Paulo", node.AsString("address.city"));
+            }
+
+            [Fact]
+            public void Setter_NullDataNode_StoresNull()
+            {
+                var node = new DataNode();
+                node["key"] = new DataNode(null);
+                Assert.True(node.Exists("key"));
+                Assert.False(node.HasValue("key"));
+            }
+
+            [Fact]
+            public void Setter_OnNonMap_Throws()
+            {
+                var node = new DataNode("scalar");
+                Assert.Throws<InvalidOperationException>(() => node["key"] = new DataNode("v"));
+            }
+
+            [Fact]
+            public void Setter_WithIndex_UpdatesSequenceItem()
+            {
+                var node = new DataNode(new Dictionary<string, object>
+                {
+                    ["items"] = new List<object> { "a", "b", "c" }
+                });
+                node["items[1]"] = new DataNode("updated");
+                Assert.Equal("updated", node.AsString("items[1]"));
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  9. AsMap / AsSequence
+        // ═════════════════════════════════════════════════════════════════════
+        public class AsMapAndAsSequence
+        {
+            [Fact]
+            public void AsMap_OnMap_ReturnsDictionary()
+            {
+                var node = SampleMap();
+                Assert.IsType<Dictionary<string, object>>(node.AsMap());
+            }
+
+            [Fact]
+            public void AsMap_OnNonMap_Throws()
+            {
+                var node = new DataNode("scalar");
+                Assert.Throws<InvalidOperationException>(() => node.AsMap());
+            }
+
+            [Fact]
+            public void AsSequence_OnSequence_ReturnsList()
+            {
+                var node = new DataNode(new List<object> { "a", "b" });
+                Assert.IsType<List<object>>(node.AsSequence());
+            }
+
+            [Fact]
+            public void AsSequence_OnNonSequence_Throws()
+            {
+                var node = new DataNode("scalar");
+                Assert.Throws<InvalidOperationException>(() => node.AsSequence());
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  10. AsString / AsStringOrDefault
+        // ═════════════════════════════════════════════════════════════════════
+        public class AsStringMethods
+        {
+            [Fact]
+            public void AsString_ReturnsValue()
+            {
+                Assert.Equal("Alice", new DataNode("Alice").AsString());
+            }
+
+            [Fact]
+            public void AsString_NullValue_ReturnsNull()
+            {
+                Assert.Null(new DataNode(null).AsString());
+            }
+
+            [Fact]
+            public void AsString_WithKeyPath_ReturnsValue()
+            {
+                Assert.Equal("Alice", SampleMap().AsString("name"));
+            }
+
+            [Fact]
+            public void AsString_WithKeyPath_NonExisting_ReturnsNull()
+            {
+                Assert.Null(SampleMap().AsString("nonexistent"));
+            }
+
+            [Fact]
+            public void AsStringOrDefault_NullValue_ReturnsDefault()
+            {
+                Assert.Equal("default", new DataNode(null).AsStringOrDefault("default"));
+            }
+
+            [Fact]
+            public void AsStringOrDefault_NonNull_ReturnsValue()
+            {
+                Assert.Equal("Alice", new DataNode("Alice").AsStringOrDefault("default"));
+            }
+
+            [Fact]
+            public void AsStringOrDefault_WithKeyPath_NonExisting_ReturnsDefault()
+            {
+                Assert.Equal("N/A", SampleMap().AsStringOrDefault("nonexistent", "N/A"));
+            }
+
+            [Fact]
+            public void AsStringOrDefault_WithKeyPath_Existing_ReturnsValue()
+            {
+                Assert.Equal("Alice", SampleMap().AsStringOrDefault("name", "N/A"));
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  11. AsInt / AsIntOrDefault
+        // ═════════════════════════════════════════════════════════════════════
+        public class AsIntMethods
+        {
+            [Fact]
+            public void AsInt_ValidString_ReturnsInt()
+            {
+                Assert.Equal(30, new DataNode("30").AsInt());
+            }
+
+            [Fact]
+            public void AsInt_IntValue_ReturnsInt()
+            {
+                Assert.Equal(42, new DataNode(42).AsInt());
+            }
+
+            [Fact]
+            public void AsInt_WithKeyPath_ReturnsInt()
+            {
+                Assert.Equal(30, SampleMap().AsInt("age"));
+            }
+
+            [Fact]
+            public void AsInt_InvalidString_Throws()
+            {
+                Assert.Throws<FormatException>(() => new DataNode("notanumber").AsInt());
+            }
+
+            [Fact]
+            public void AsIntOrDefault_InvalidString_ReturnsDefault()
+            {
+                Assert.Equal(0, new DataNode("notanumber").AsIntOrDefault(0));
+            }
+
+            [Fact]
+            public void AsIntOrDefault_NullValue_ReturnsDefault()
+            {
+                Assert.Equal(-1, new DataNode(null).AsIntOrDefault(-1));
+            }
+
+            [Fact]
+            public void AsIntOrDefault_WithKeyPath_NonExisting_ReturnsDefault()
+            {
+                Assert.Equal(99, SampleMap().AsIntOrDefault("nonexistent", 99));
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  12. AsLong / AsLongOrDefault
+        // ═════════════════════════════════════════════════════════════════════
+        public class AsLongMethods
+        {
+            [Fact]
+            public void AsLong_ValidString_ReturnsLong()
+            {
+                Assert.Equal(9999999999L, new DataNode("9999999999").AsLong());
+            }
+
+            [Fact]
+            public void AsLong_WithKeyPath_ReturnsLong()
+            {
+                Assert.Equal(30L, SampleMap().AsLong("age"));
+            }
+
+            [Fact]
+            public void AsLongOrDefault_NullValue_ReturnsDefault()
+            {
+                Assert.Equal(0L, new DataNode(null).AsLongOrDefault(0L));
+            }
+
+            [Fact]
+            public void AsLongOrDefault_InvalidString_ReturnsDefault()
+            {
+                Assert.Equal(-1L, new DataNode("invalid").AsLongOrDefault(-1L));
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  13. AsDouble / AsDoubleOrDefault
+        // ═════════════════════════════════════════════════════════════════════
+        public class AsDoubleMethods
+        {
+            [Fact]
+            public void AsDouble_ValidString_ReturnsDouble()
+            {
+                Assert.Equal(9.5, new DataNode("9.5").AsDouble());
+            }
+
+            [Fact]
+            public void AsDouble_WithKeyPath_ReturnsDouble()
+            {
+                Assert.Equal(9.5, SampleMap().AsDouble("score"));
+            }
+
+            [Fact]
+            public void AsDoubleOrDefault_NullValue_ReturnsDefault()
+            {
+                Assert.Equal(0.0, new DataNode(null).AsDoubleOrDefault(0.0));
+            }
+
+            [Fact]
+            public void AsDoubleOrDefault_InvalidString_ReturnsDefault()
+            {
+                Assert.Equal(-1.0, new DataNode("invalid").AsDoubleOrDefault(-1.0));
+            }
+
+            [Fact]
+            public void AsDoubleOrDefault_WithKeyPath_NonExisting_ReturnsDefault()
+            {
+                Assert.Equal(1.5, SampleMap().AsDoubleOrDefault("nonexistent", 1.5));
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  14. AsDecimal / AsDecimalOrDefault
+        // ═════════════════════════════════════════════════════════════════════
+        public class AsDecimalMethods
+        {
+            [Fact]
+            public void AsDecimal_ValidString_ReturnsDecimal()
+            {
+                Assert.Equal(9.5m, new DataNode("9.5").AsDecimal());
+            }
+
+            [Fact]
+            public void AsDecimal_WithKeyPath_ReturnsDecimal()
+            {
+                Assert.Equal(9.5m, SampleMap().AsDecimal("score"));
+            }
+
+            [Fact]
+            public void AsDecimalOrDefault_NullValue_ReturnsDefault()
+            {
+                Assert.Equal(0m, new DataNode(null).AsDecimalOrDefault(0m));
+            }
+
+            [Fact]
+            public void AsDecimalOrDefault_InvalidString_ReturnsDefault()
+            {
+                Assert.Equal(-1m, new DataNode("invalid").AsDecimalOrDefault(-1m));
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  15. AsDateTime / AsDateTimeOrDefault
+        // ═════════════════════════════════════════════════════════════════════
+        public class AsDateTimeMethods
+        {
+            [Fact]
+            public void AsDateTime_ValidString_ReturnsDateTime()
+            {
+                var expected = new DateTime(2024, 1, 15);
+                var node = new DataNode("2024-01-15");
+                Assert.Equal(expected, node.AsDateTime());
+            }
+
+            [Fact]
+            public void AsDateTime_WithKeyPath_ReturnsDateTime()
+            {
+                var node = new DataNode(new Dictionary<string, object>
+                {
+                    ["date"] = "2024-01-15"
+                });
+                Assert.Equal(new DateTime(2024, 1, 15), node.AsDateTime("date"));
+            }
+
+            [Fact]
+            public void AsDateTimeOrDefault_NullValue_ReturnsDefault()
+            {
+                var def = new DateTime(2000, 1, 1);
+                var result = new DataNode(null).AsDateTimeOrDefault(def);
+                Assert.Equal(def, result);
+            }
+
+            [Fact]
+            public void AsDateTimeOrDefault_InvalidString_ReturnsDefault()
+            {
+                var def = new DateTime(2000, 1, 1);
+                var result = new DataNode("notadate").AsDateTimeOrDefault(def);
+                Assert.Equal(def, result);
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  16. AsBool / AsBoolOrDefault
+        // ═════════════════════════════════════════════════════════════════════
+        public class AsBoolMethods
+        {
+            [Theory]
+            [InlineData("true", true)]
+            [InlineData("True", true)]
+            [InlineData("TRUE", true)]
+            [InlineData("1", true)]
+            [InlineData("false", false)]
+            [InlineData("False", false)]
+            [InlineData("FALSE", false)]
+            [InlineData("0", false)]
+            public void AsBool_ValidStrings_ReturnsExpected(string input, bool expected)
+            {
+                Assert.Equal(expected, new DataNode(input).AsBool());
+            }
+
+            [Fact]
+            public void AsBool_NativeBool_ReturnsValue()
+            {
+                Assert.True(new DataNode(true).AsBool());
+                Assert.False(new DataNode(false).AsBool());
+            }
+
+            [Fact]
+            public void AsBool_WithKeyPath_ReturnsValue()
+            {
+                Assert.True(SampleMap().AsBool("active"));
+            }
+
+            [Fact]
+            public void AsBool_InvalidString_Throws()
+            {
+                Assert.Throws<FormatException>(() => new DataNode("maybe").AsBool());
+            }
+
+            [Fact]
+            public void AsBoolOrDefault_InvalidString_ReturnsDefault()
+            {
+                Assert.False(new DataNode("maybe").AsBoolOrDefault(false));
+            }
+
+            [Fact]
+            public void AsBoolOrDefault_NullValue_ReturnsDefault()
+            {
+                Assert.True(new DataNode(null).AsBoolOrDefault(true));
+            }
+
+            [Fact]
+            public void AsBoolOrDefault_WithKeyPath_NonExisting_ReturnsDefault()
+            {
+                Assert.True(SampleMap().AsBoolOrDefault("nonexistent", true));
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  17. Merge
+        // ═════════════════════════════════════════════════════════════════════
+        public class MergeMethod
+        {
+            [Fact]
+            public void Merge_AddsNewKeys()
+            {
+                var node1 = new DataNode(new Dictionary<string, object> { ["a"] = "1" });
+                var node2 = new DataNode(new Dictionary<string, object> { ["b"] = "2" });
+
+                node1.Merge(node2);
+
+                Assert.True(node1.Exists("a"));
+                Assert.True(node1.Exists("b"));
+            }
+
+            [Fact]
+            public void Merge_OverwritesExistingScalar()
+            {
+                var node1 = new DataNode(new Dictionary<string, object> { ["id"] = "1" });
+                var node2 = new DataNode(new Dictionary<string, object> { ["id"] = "2" });
+
+                node1.Merge(node2);
+
+                Assert.Equal("2", node1.AsString("id"));
+            }
+
+            [Fact]
+            public void Merge_NestedMaps_MergesRecursively()
+            {
+                var node1 = new DataNode(new Dictionary<string, object>
+                {
+                    ["user"] = new Dictionary<string, object>
+                    {
+                        ["name"] = "Ana",
+                        ["email"] = "ana@email.com"
+                    }
+                });
+
+                var node2 = new DataNode(new Dictionary<string, object>
+                {
+                    ["user"] = new Dictionary<string, object>
+                    {
+                        ["name"] = "Bob",
+                        ["phone"] = "9999-9999"
+                    }
+                });
+
+                node1.Merge(node2);
+
+                // name sobrescrito
+                Assert.Equal("Bob", node1.AsString("user.name"));
+                // email preservado
+                Assert.Equal("ana@email.com", node1.AsString("user.email"));
+                // phone adicionado
+                Assert.Equal("9999-9999", node1.AsString("user.phone"));
+            }
+
+            [Fact]
+            public void Merge_OverwritesSequenceWithSequence()
+            {
+                var node1 = new DataNode(new Dictionary<string, object>
+                {
+                    ["tags"] = new List<object> { "a", "b" }
+                });
+                var node2 = new DataNode(new Dictionary<string, object>
+                {
+                    ["tags"] = new List<object> { "c", "d", "e" }
+                });
+
+                node1.Merge(node2);
+
+                var tags = node1.GetSequenceNode("tags");
+                Assert.Equal(3, tags.Count);
+                Assert.Equal("c", tags[0].AsString());
+            }
+
+            [Fact]
+            public void Merge_OverwritesMapWithSequence()
+            {
+                var node1 = new DataNode(new Dictionary<string, object>
+                {
+                    ["data"] = new Dictionary<string, object> { ["k"] = "v" }
+                });
+                var node2 = new DataNode(new Dictionary<string, object>
+                {
+                    ["data"] = new List<object> { "x", "y" }
+                });
+
+                node1.Merge(node2);
+
+                Assert.Equal(NodeType.Sequence, node1.GetNode("data").Type);
+            }
+
+            [Fact]
+            public void Merge_SampleScenario_IdAndNewKey()
+            {
+                var node1 = new DataNode(new Dictionary<string, object>
+                {
+                    ["Id"] = "1",
+                    ["Ativo"] = "true"
+                });
+                var node2 = new DataNode(new Dictionary<string, object>
+                {
+                    ["Id"] = "2",
+                    ["Data"] = new List<object> { "1", "2", "3" }
+                });
+
+                node1.Merge(node2);
+
+                Assert.Equal("2", node1.AsString("Id"));
+                Assert.Equal("true", node1.AsString("Ativo"));
+                Assert.True(node1.Exists("Data"));
+                Assert.Equal(3, node1.GetSequenceNode("Data").Count);
+            }
+
+            [Fact]
+            public void Merge_NullOther_DoesNotThrow()
+            {
+                var node = new DataNode(new Dictionary<string, object> { ["k"] = "v" });
+                node.Merge(null);
+                Assert.Equal("v", node.AsString("k"));
+            }
+
+            [Fact]
+            public void Merge_OtherHasNoValue_DoesNothing()
+            {
+                var node = new DataNode(new Dictionary<string, object> { ["k"] = "v" });
+                var other = new DataNode(null);
+                node.Merge(other);
+                Assert.Equal("v", node.AsString("k"));
+            }
+
+            [Fact]
+            public void Merge_OtherIsNotMap_DoesNothing()
+            {
+                var node = new DataNode(new Dictionary<string, object> { ["k"] = "v" });
+                var other = new DataNode(new List<object> { "x" });
+                node.Merge(other);
+                Assert.Equal("v", node.AsString("k"));
+            }
+
+            [Fact]
+            public void Merge_OnNonMap_Throws()
+            {
+                var node = new DataNode("scalar");
+                var other = new DataNode(new Dictionary<string, object> { ["k"] = "v" });
+                Assert.Throws<InvalidOperationException>(() => node.Merge(other));
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  18. ToString
+        // ═════════════════════════════════════════════════════════════════════
+        public class ToStringMethod
+        {
+            [Fact]
+            public void ToString_Scalar_ReturnsValue()
+            {
+                Assert.Equal("hello", new DataNode("hello").ToString());
+            }
+
+            [Fact]
+            public void ToString_NullScalar_ReturnsNullLabel()
+            {
+                Assert.Equal("(null)", new DataNode(null).ToString());
+            }
+
+            [Fact]
+            public void ToString_Sequence_ReturnsCountLabel()
+            {
+                var node = new DataNode(new List<object> { "a", "b", "c" });
+                Assert.Equal("[Sequence, 3 items]", node.ToString());
+            }
+
+            [Fact]
+            public void ToString_Map_ReturnsCountLabel()
+            {
+                var node = new DataNode(new Dictionary<string, object>
+                {
+                    ["a"] = 1,
+                    ["b"] = 2
+                });
+                Assert.Equal("[Map, 2 keys]", node.ToString());
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  19. CultureInfo
+        // ═════════════════════════════════════════════════════════════════════
+        public class CultureInfoBehavior
+        {
+            [Fact]
+            public void AsDouble_WithPtBrCulture_ParsesCommaAsDecimalSeparator()
+            {
+                // InvariantCulture usa ponto; pt-BR usa vírgula
+                // O valor "9,5" com InvariantCulture lançaria exceção
+                var culture = new CultureInfo("pt-BR");
+                var node = new DataNode("9,5", culture);
+                Assert.Equal(9.5, node.AsDouble());
+            }
+
+            [Fact]
+            public void GetNode_InheritsCultureFromParent()
+            {
+                var culture = new CultureInfo("pt-BR");
+                var node = new DataNode(new Dictionary<string, object>
+                {
+                    ["value"] = "9,5"
+                }, culture);
+                Assert.Equal(culture, node.GetNode("value").Culture);
+            }
+
+            [Fact]
+            public void AsDecimal_WithPtBrCulture_ParsesCorrectly()
+            {
+                var culture = new CultureInfo("pt-BR");
+                var node = new DataNode("9,5", culture);
+                Assert.Equal(9.5m, node.AsDecimal());
+            }
         }
     }
 }

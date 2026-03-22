@@ -819,4 +819,22 @@
   <data name="UnmapDrive_Description" xml:space="preserve">
     <value>Desconecta uma unidade de rede mapeada do sistema.</value>
   </data>
+  <data name="MergeData_DisplayName" xml:space="preserve">
+    <value>Mesclar Dados</value>
+  </data>
+  <data name="MergeData_Description" xml:space="preserve">
+    <value>Mescla o DataNode de origem com o de destino. Os valores escalares e de sequência da origem sobrescrevem os existentes no destino. Os valores do mapa são mesclados recursivamente.</value>
+  </data>
+  <data name="MergeData_Source_DisplayName" xml:space="preserve">
+    <value>Origem</value>
+  </data>
+  <data name="MergeData_Source_Description" xml:space="preserve">
+    <value>O DataNode a ser mesclado na instância de destino.</value>
+  </data>
+  <data name="MergeData_Destination_DisplayName" xml:space="preserve">
+    <value>Destino</value>
+  </data>
+  <data name="MergeData_Destination_Description" xml:space="preserve">
+    <value>O DataNode a ser atualizado com a instância de origem.</value>
+  </data>
 </root>

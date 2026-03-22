@@ -136,6 +136,7 @@ public class Activity
                 "ReplaceTokens" or
                 "ParseData" or
                 "LoadDataFile" or
+                "MergeData" or
                 "CultureScope" => "ActivityCategories_Programming",
 
                 "IfActivity" or

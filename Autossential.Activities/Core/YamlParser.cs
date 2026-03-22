@@ -83,12 +83,12 @@ namespace Autossential.Activities.Core
         {
             _pos = 0;
             SkipBlanks();
-            return _pos >= _lines.Count ? null : ParseValue(0);
+            return _pos >= _lines.Count ? null : ParseValue();
         }
 
         // ── Value dispatcher ─────────────────────────────────────────────────
 
-        private object ParseValue(int baseIndent)
+        private object ParseValue()
         {
             SkipBlanks();
             if (_pos >= _lines.Count) return null;
@@ -174,7 +174,7 @@ namespace Autossential.Activities.Core
                 SkipBlanks();
                 if (_pos >= _lines.Count) return null;
                 int nextIndent = _lines[_pos].indent;
-                return nextIndent > baseIndent ? ParseValue(nextIndent) : null;
+                return nextIndent > baseIndent ? ParseValue() : null;
             }
 
             return ParseInlineValue(iv, baseIndent + 1, lineNo);
@@ -215,7 +215,7 @@ namespace Autossential.Activities.Core
                 SkipBlanks();
                 if (_pos >= _lines.Count) return null;
                 int ni = _lines[_pos].indent;
-                return ni > baseIndent ? ParseValue(ni) : null;
+                return ni > baseIndent ? ParseValue() : null;
             }
 
             // Inline map entry as list item:  - key: value
@@ -382,7 +382,7 @@ namespace Autossential.Activities.Core
                 SkipBlanks();
                 if (_pos >= _lines.Count) return null;
                 int ni = _lines[_pos].indent;
-                return ni >= childIndent ? ParseValue(ni) : null;
+                return ni >= childIndent ? ParseValue() : null;
             }
 
             // Block scalar indicators
@@ -430,7 +430,7 @@ namespace Autossential.Activities.Core
                 return ParseScalar(iv, lineNo);
             }
             // No inline value → next indented value (uncommon but valid)
-            return ParseValue(childIndent);
+            return ParseValue();
         }
 
         // Resolve a flow list whose items are aliases: [*a, *b]

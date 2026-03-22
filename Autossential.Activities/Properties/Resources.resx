@@ -1053,4 +1053,28 @@
     <value>Removes a mapped network drive from the system.</value>
     <comment>activity description</comment>
   </data>
+  <data name="MergeData_DisplayName" xml:space="preserve">
+    <value>Merge Data</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="MergeData_Description" xml:space="preserve">
+    <value>Merges the source DataNode into the destination one. Scalar and Sequence values from source overwrite existing ones in destination. Map values are merged recursively.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="MergeData_Source_DisplayName" xml:space="preserve">
+    <value>Source</value>
+    <comment>property name</comment>
+  </data>
+  <data name="MergeData_Source_Description" xml:space="preserve">
+    <value>The DataNode to merge into the destination instance.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="MergeData_Destination_DisplayName" xml:space="preserve">
+    <value>Destination</value>
+    <comment>property name</comment>
+  </data>
+  <data name="MergeData_Destination_Description" xml:space="preserve">
+    <value>The DataNode to be updated with source instance.</value>
+    <comment>property description</comment>
+  </data>
 </root>

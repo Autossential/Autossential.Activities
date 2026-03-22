@@ -45,6 +45,7 @@
 		<None Remove="Resources\Icons\Iterate.svg" />
 		<None Remove="Resources\Icons\LoadDataFile.svg" />
 		<None Remove="Resources\Icons\MapDrive.svg" />
+		<None Remove="Resources\Icons\MergeData.svg" />
 		<None Remove="Resources\Icons\Next.svg" />
 		<None Remove="Resources\Icons\ParseData.svg" />
 		<None Remove="Resources\Icons\PromoteHeaders.svg" />
@@ -75,6 +76,7 @@
 		<EmbeddedResource Include="Resources\Icons\Increment.svg" />
 		<EmbeddedResource Include="Resources\Icons\LoadDataFile.svg" />
 		<EmbeddedResource Include="Resources\Icons\MapDrive.svg" />
+		<EmbeddedResource Include="Resources\Icons\MergeData.svg" />
 		<EmbeddedResource Include="Resources\Icons\ParseData.svg" />
 		<EmbeddedResource Include="Resources\Icons\PromoteHeaders.svg" />
 		<EmbeddedResource Include="Resources\Icons\RandomString.svg" />

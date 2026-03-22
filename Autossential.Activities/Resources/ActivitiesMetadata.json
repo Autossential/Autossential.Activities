@@ -539,6 +539,39 @@
       ]
     },
     {
+      "fullName": "Autossential.Activities.MergeData",
+      "shortName": "MergeData",
+      "displayNameKey": "MergeData_DisplayName",
+      "descriptionKey": "MergeData_Description",
+      "iconKey": "MergeData.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.MergeDataViewModel",
+      "categoryKey": "ActivityCategories_Programming",
+      "properties": [
+        {
+          "name": "Source",
+          "displayNameKey": "MergeData_Source_DisplayName",
+          "tooltipKey": "MergeData_Source_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "Destination",
+          "displayNameKey": "MergeData_Destination_DisplayName",
+          "tooltipKey": "MergeData_Destination_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "InputOutput",
+            "displayNameKey": "Categories_InputOutput"
+          }
+        }
+      ]
+    },
+    {
       "fullName": "Autossential.Activities.ParseData",
       "shortName": "ParseData",
       "displayNameKey": "ParseData_DisplayName",

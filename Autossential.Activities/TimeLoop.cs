@@ -38,7 +38,6 @@ namespace Autossential.Activities
             _sw = Stopwatch.StartNew();
 
             CreateExitBookmark(context);
-
             ExecuteInternal(context);
         }
 
@@ -56,9 +55,10 @@ namespace Autossential.Activities
                 Result.Set(context, timeout);
                 return;
             }
-
+            
             IterationIndex.Set(context, _iterationIndex);
             _iterationIndex++;
+
             context.ScheduleAction(Body, OnIterationCompleted, OnIterationFaulted);
         }
 

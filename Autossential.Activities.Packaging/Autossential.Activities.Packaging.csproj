@@ -19,6 +19,7 @@
 		<PackageOutputPath>..\..\Output</PackageOutputPath>
 		<TargetsForTfmSpecificBuildOutput>AddDlls</TargetsForTfmSpecificBuildOutput>
 		<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+		<Description>IMPORTANT: This package is a redesign and not compatible with previous 3.* versions.</Description>
 	</PropertyGroup>
 
 	<Target Name="AddDlls">
@@ -53,6 +54,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="icon.png" Pack="true" PackagePath="\"/>
+		<None Include="icon.png" Pack="true" PackagePath="\" />
 	</ItemGroup>
 </Project>

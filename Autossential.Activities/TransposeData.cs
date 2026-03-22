@@ -17,7 +17,7 @@ namespace Autossential.Activities
             var output = new DataTable();
              
             for (int i = 0; i <= rowsCount; i++)
-                output.Columns.Add("Col" + (i + 1));
+                output.Columns.Add("Col" + (i + 1), typeof(object));
 
             foreach (DataColumn col in input.Columns)
             {

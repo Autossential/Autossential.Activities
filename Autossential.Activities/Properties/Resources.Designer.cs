@@ -1051,6 +1051,60 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Merges the source DataNode into the destination one. Scalar and Sequence values from source overwrite existing ones in destination. Map values are merged recursively..
+        /// </summary>
+        public static string MergeData_Description {
+            get {
+                return ResourceManager.GetString("MergeData_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The DataNode to be updated with source instance..
+        /// </summary>
+        public static string MergeData_Destination_Description {
+            get {
+                return ResourceManager.GetString("MergeData_Destination_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destination.
+        /// </summary>
+        public static string MergeData_Destination_DisplayName {
+            get {
+                return ResourceManager.GetString("MergeData_Destination_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Merge Data.
+        /// </summary>
+        public static string MergeData_DisplayName {
+            get {
+                return ResourceManager.GetString("MergeData_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The DataNode to merge into the destination instance..
+        /// </summary>
+        public static string MergeData_Source_Description {
+            get {
+                return ResourceManager.GetString("MergeData_Source_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source.
+        /// </summary>
+        public static string MergeData_Source_DisplayName {
+            get {
+                return ResourceManager.GetString("MergeData_Source_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The drive letter input is invalid. Valid inputs are &apos;X&apos;, &apos;X:&apos; or &apos;X:\\&apos;, where X can be any letter..
         /// </summary>
         public static string NetworkDrive_ErrorMsg_InvalidDriveLetter {

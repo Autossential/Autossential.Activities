@@ -25,6 +25,9 @@ namespace Autossential.Activities
 
         protected override void Execute(NativeActivityContext context)
         {
+            if (Body is null)
+                return;
+
             var culture = Culture.Get(context) ?? "";
             context.Properties.Add(typeof(CultureScopeHandler).FullName, new CultureScopeHandler(CultureInfo.GetCultureInfo(culture)));
             context.ScheduleAction(Body);

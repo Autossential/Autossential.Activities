@@ -925,7 +925,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The drive letter to be mapped, if not specified, a random one will be chosen. When specifing, the valid inputs are &apos;X&apos;, &apos;X:&apos; or &apos;X:\&apos;, where X can be any letter..
+        ///   Looks up a localized string similar to Specifies the drive letter to be mapped. If not provided, a random available letter will be assigned. The expected format is &lt;letter&gt;&lt;colon&gt;, for example: &quot;X:&quot;, &quot;y:&quot;, &quot;Z:&quot;..
         /// </summary>
         public static string MapDrive_DriveLetter_Description {
             get {
@@ -961,7 +961,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The mapped drive letter if the mapping was successful, it is represented in the format &quot;&lt;letter&gt;:\&quot;..
+        ///   Looks up a localized string similar to The mapped drive letter if the mapping was successful, it is represented in the format &quot;&lt;letter&gt;:&quot;..
         /// </summary>
         public static string MapDrive_MappedDrive_Description {
             get {
@@ -979,7 +979,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The response code of the WNetAddConnection2A..
+        ///   Looks up a localized string similar to Represents the return code of the drive mapping operation. This value indicates whether the operation succeeded or failed, according to the standard Windows error codes..
         /// </summary>
         public static string MapDrive_ResponseCode_Description {
             get {
@@ -997,7 +997,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The equivalent response message of the response code..
+        ///   Looks up a localized string similar to Provides the textual description corresponding to the response code. This message explains the result of the operation in a human‑readable format..
         /// </summary>
         public static string MapDrive_ResponseMessage_Description {
             get {
@@ -1789,7 +1789,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The drive letter of the mapped drive. Valid inputs are &apos;X&apos;, &apos;X:&apos; or &apos;X:\&apos;, where X can be any letter..
+        ///   Looks up a localized string similar to Specifies the drive letter of the mapped drive to be unmapped. The required format is &lt;letter&gt;&lt;colon&gt;, for example: &quot;X:&quot;, &quot;y:&quot;, &quot;Z:&quot;..
         /// </summary>
         public static string UnmapDrive_DriveLetter_Description {
             get {
@@ -1807,7 +1807,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The response code of the WNetCancelConnection2A..
+        ///   Looks up a localized string similar to Represents the return code of the drive mapping operation. This value indicates whether the operation succeeded or failed, according to the standard Windows error codes..
         /// </summary>
         public static string UnmapDrive_ResponseCode_Description {
             get {
@@ -1825,7 +1825,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The equivalent response message of the response code..
+        ///   Looks up a localized string similar to Provides the textual description corresponding to the response code. This message explains the result of the operation in a human‑readable format..
         /// </summary>
         public static string UnmapDrive_ResponseMessage_Description {
             get {

@@ -11,9 +11,8 @@ namespace Autossential.Activities
         protected override bool Execute(CodeActivityContext context)
         {
             var driveLetter = DriveLetter.Get(context) ?? throw new InvalidOperationException(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.UnmapDrive_DriveLetter_DisplayName));
-            ValidateDriveLetterFormat(driveLetter);
 
-            var result = DisconnectDrive(driveLetter);
+            var result = Disconnect(driveLetter);
             ResponseCode.Set(context, result);
 
             SetResponseMessageFromCode(context, result);

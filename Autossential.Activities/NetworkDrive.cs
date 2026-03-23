@@ -1,6 +1,7 @@
 ﻿using Autossential.Activities.Properties;
 using System.Activities;
 using System.ComponentModel;
+using System.Net;
 using System.Runtime.InteropServices;
 
 namespace Autossential.Activities
@@ -10,22 +11,58 @@ namespace Autossential.Activities
         public OutArgument<int> ResponseCode { get; set; }
         public OutArgument<string> ResponseMessage { get; set; }
 
-        [DllImport("mpr.dll")]
-        protected static extern int WNetAddConnection2A(ref NetResource lpNetResource, string lpPassword, string lpUserName, uint dwFlags);
+        [DllImport("mpr.dll", CharSet = CharSet.Unicode)]
+        private static extern int WNetAddConnection2W(
+             ref NetResource lpNetResource,
+             string lpPassword,
+             string lpUserName,
+             uint dwFlags);
 
-        [DllImport("mpr.dll")]
-        protected static extern int WNetCancelConnection2A(string lpName, int dwFlags, bool fForce);
+        [DllImport("mpr.dll", CharSet = CharSet.Unicode)]
+        private static extern int WNetCancelConnection2W(
+            string lpName,
+            int dwFlags,
+            bool fForce);
 
-        protected static int DisconnectDrive(string driveLetter) =>
-            WNetCancelConnection2A(driveLetter, 0, true);
-
-        [StructLayout(LayoutKind.Sequential)]
-        protected struct NetResource
+        protected static int Connect(string driveLetter, string sharedDrivePath, NetworkCredential credential)
         {
-            public uint dwScope;
-            public uint dwType;
-            public uint dwDisplayType;
-            public uint dwUsage;
+            ValidateDriveLetterFormat(driveLetter);
+
+            var resource = new NetResource
+            {
+                dwType = 1,         // disk
+                dwScope = 2,        // global network
+                dwDisplayType = 3,  // share
+                lpLocalName = NormalizeDriveLetter(driveLetter),
+                lpRemoteName = sharedDrivePath
+            };
+
+            string username = null;
+            string password = null;
+
+            if (credential is not null)
+            {
+                username = string.IsNullOrEmpty(credential.Domain) ? credential.UserName : Path.Combine(credential.Domain, credential.UserName);
+                password = credential.Password;
+            }
+
+            return WNetAddConnection2W(ref resource, password, username, 0);
+        }
+
+        protected static int Disconnect(string driveLetter)
+        {
+            ValidateDriveLetterFormat(driveLetter);
+            return WNetCancelConnection2W(NormalizeDriveLetter(driveLetter), 0, true);
+        }
+
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        private struct NetResource
+        {
+            public int dwScope;
+            public int dwType;
+            public int dwDisplayType;
+            public int dwUsage;
             public string lpLocalName;
             public string lpRemoteName;
             public string lpComment;
@@ -34,6 +71,7 @@ namespace Autossential.Activities
 
         protected static bool IsDriveMapped(string driveLetter)
         {
+            ValidateDriveLetterFormat(driveLetter);
             foreach (var drive in Environment.GetLogicalDrives())
             {
                 if (drive[0].ToString().Equals(driveLetter[0].ToString(), StringComparison.OrdinalIgnoreCase))
@@ -49,7 +87,7 @@ namespace Autossential.Activities
             {
                 if (drive.IsReady && drive.DriveType == DriveType.Network)
                 {
-                    DisconnectDrive(drive.Name.TrimEnd('\\'));
+                    Disconnect(drive.Name.TrimEnd('\\'));
                 }
             }
         }
@@ -72,16 +110,16 @@ namespace Autossential.Activities
             return NormalizeDriveLetter(random) ?? throw new Exception(Resources.NetworkDrive_ErrorMsg_NoDriversAvailable);
         }
 
-        protected static void ValidateDriveLetterFormat(string driveLetter)
+        private static void ValidateDriveLetterFormat(string driveLetter)
         {
-            if (driveLetter.Length > 3 ||
-                !ALPHABET.Contains(driveLetter[0]) ||
-                (driveLetter.Length > 1 && driveLetter[1] != ':') ||
-                (driveLetter.Length > 2 && driveLetter[2] != '\\'))
-                throw new ArgumentException(Resources.NetworkDrive_ErrorMsg_InvalidDriveLetter, nameof(driveLetter)); ;
+            if (string.IsNullOrWhiteSpace(driveLetter)
+                || driveLetter.Length != 2
+                || !ALPHABET.Contains(driveLetter[0])
+                || driveLetter[1] != ':')
+                    throw new InvalidOperationException(Resources.NetworkDrive_ErrorMsg_InvalidDriveLetter);
         }
 
-        protected static string NormalizeDriveLetter(string driveLetter) => char.ToUpper(driveLetter[0]) + ":";
+        private static string NormalizeDriveLetter(string driveLetter) => char.ToUpper(driveLetter[0]) + ":";
 
         protected void SetResponseMessageFromCode(CodeActivityContext context, int responseCode)
         {

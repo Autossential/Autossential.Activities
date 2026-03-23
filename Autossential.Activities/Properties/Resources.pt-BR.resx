@@ -448,7 +448,7 @@
     <value>Mapear Unidade</value>
   </data>
   <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>A letra da unidade a ser mapeada; se não especificada, uma aleatória será escolhida. Quando especificada, as entradas válidas são 'X', 'X:' ou 'X:\', onde X pode ser qualquer letra.</value>
+    <value>Define a letra da unidade a ser mapeada. Caso não seja informada, uma letra disponível será escolhida aleatoriamente. O formato esperado é &lt;letra&gt;&lt;dois-pontos&gt;, por exemplo: "X:", "y:", "Z:".</value>
   </data>
   <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>Letra da Unidade</value>
@@ -460,19 +460,19 @@
     <value>Forçar</value>
   </data>
   <data name="MapDrive_MappedDrive_Description" xml:space="preserve">
-    <value>A letra da unidade mapeada se o mapeamento foi bem-sucedido, representada no formato "&lt;letra&gt;:\".</value>
+    <value>A letra da unidade mapeada se o mapeamento foi bem-sucedido, representada no formato "&lt;letra&gt;:".</value>
   </data>
   <data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
     <value>Unidade Mapeada</value>
   </data>
   <data name="MapDrive_ResponseCode_Description" xml:space="preserve">
-    <value>O código de resposta do WNetAddConnection2A.</value>
+    <value>Representa o código de retorno da operação de mapeamento da unidade. Esse valor indica se a operação foi concluída com sucesso ou falhou, conforme os códigos de erro padrão do Windows.</value>
   </data>
   <data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
     <value>Código de Resposta</value>
   </data>
   <data name="MapDrive_ResponseMessage_Description" xml:space="preserve">
-    <value>A mensagem equivalente ao código de resposta.</value>
+    <value>Fornece a descrição textual correspondente ao código de resposta. Essa mensagem explica o resultado da operação em um formato legível para humanos.</value>
   </data>
   <data name="MapDrive_ResponseMessage_DisplayName" xml:space="preserve">
     <value>Mensagem de Resposta</value>
@@ -493,19 +493,19 @@
     <value>Resultado</value>
   </data>
   <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>A letra da unidade mapeada. Entradas válidas são 'X', 'X:' ou 'X:\', onde X pode ser qualquer letra.</value>
+    <value>Define a letra da unidade mapeada que será desfeita. O formato obrigatório é &lt;letra&gt;&lt;dois-pontos&gt;, por exemplo: "X:", "y:", "Z:".</value>
   </data>
   <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>Letra da Unidade</value>
   </data>
   <data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
-    <value>O código de resposta do WNetCancelConnection2A.</value>
+    <value>Representa o código de retorno da operação de mapeamento da unidade. Esse valor indica se a operação foi concluída com sucesso ou falhou, conforme os códigos de erro padrão do Windows.</value>
   </data>
   <data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
     <value>Código de Resposta</value>
   </data>
   <data name="UnmapDrive_ResponseMessage_Description" xml:space="preserve">
-    <value>A mensagem equivalente ao código de resposta.</value>
+    <value>Fornece a descrição textual correspondente ao código de resposta. Essa mensagem explica o resultado da operação em um formato legível para humanos.</value>
   </data>
   <data name="UnmapDrive_ResponseMessage_DisplayName" xml:space="preserve">
     <value>Mensagem de Resposta</value>

@@ -1077,4 +1077,12 @@
     <value>The DataNode to be updated with source instance.</value>
     <comment>property description</comment>
   </data>
+  <data name="Zip_EntryStructure_DisplayName" xml:space="preserve">
+    <value>Entry Structure</value>
+    <comment>property name</comment>
+  </data>
+  <data name="Zip_EntryStructure_Description" xml:space="preserve">
+    <value>Defines how files are stored inside the ZIP archive: keep relative paths, flatten to root, rename duplicates, or preserve full directory structure. Auto mode flattens when possible and falls back to relative paths if duplicate names are detected.</value>
+    <comment>property description</comment>
+  </data>
 </root>

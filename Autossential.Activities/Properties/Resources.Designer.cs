@@ -2131,6 +2131,24 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Defines how files are stored inside the ZIP archive: keep relative paths, flatten to root, rename duplicates, or preserve full directory structure. Auto mode flattens when possible and falls back to relative paths if duplicate names are detected..
+        /// </summary>
+        public static string Zip_EntryStructure_Description {
+            get {
+                return ResourceManager.GetString("Zip_EntryStructure_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entry Structure.
+        /// </summary>
+        public static string Zip_EntryStructure_DisplayName {
+            get {
+                return ResourceManager.GetString("Zip_EntryStructure_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The number of files added to the archive..
         /// </summary>
         public static string Zip_FilesCount_Description {

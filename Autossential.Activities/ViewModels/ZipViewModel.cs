@@ -1,5 +1,4 @@
 ﻿using Autossential.Activities.Base;
-using Autossential.Activities.Extensions;
 using Autossential.Activities.Properties;
 using System.Activities.DesignViewModels;
 using System.Activities.ViewModels;
@@ -11,10 +10,10 @@ namespace Autossential.Activities.ViewModels
     internal class ZipViewModel(IDesignServices services) : BaseViewModel(services)
     {
         public DesignInArgument<string> ZipFilePath { get; set; }
-        public DesignInArgument<IEnumerable<string>> ToCompress { get; set; }
+        public DesignInArgument<IReadOnlyList<string>> ToCompress { get; set; }
         public DesignInArgument<Encoding> TextEncoding { get; set; }
         public DesignProperty<CompressionLevel> CompressionLevel { get; set; }
-        public DesignInArgument<bool> FullEntryNames { get; set; }
+        public DesignProperty<Zip.ZipEntryStructure> EntryStructure { get; set; }
         public DesignOutArgument<FileInfo> CompressedFile { get; set; }
         public DesignOutArgument<int> FilesCount { get; set; }
 
@@ -32,11 +31,6 @@ namespace Autossential.Activities.ViewModels
             ZipFilePath.IsPrincipal = true;
             ZipFilePath.IsRequired = true;
             ZipFilePath.OrderIndex = orderIndex++;
-
-            if (IsWidgetSupported(ViewModelWidgetType.Toggle))
-            {
-                FullEntryNames.AddWidget(ViewModelWidgetType.Toggle);
-            }
 
 #if WINDOWS
             if (IsWidgetSupported(ViewModelWidgetType.ActionButton))

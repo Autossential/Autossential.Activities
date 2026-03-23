@@ -837,4 +837,10 @@
   <data name="MergeData_Destination_Description" xml:space="preserve">
     <value>O DataNode a ser atualizado com a instância de origem.</value>
   </data>
+  <data name="Zip_EntryStructure_DisplayName" xml:space="preserve">
+    <value>Estrutura de Entrada</value>
+  </data>
+  <data name="Zip_EntryStructure_Description" xml:space="preserve">
+    <value>Define como os arquivos são armazenados dentro do arquivo ZIP: manter caminhos relativos, colocar tudo na raiz, renomear duplicados ou preservar a estrutura completa de diretórios. O modo Auto utiliza a raiz quando possível e recua para caminhos relativos se nomes duplicados forem detectados.</value>
+  </data>
 </root>

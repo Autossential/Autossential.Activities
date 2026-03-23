@@ -1340,14 +1340,14 @@
           }
         },
         {
-          "name": "FullEntryNames",
-          "displayNameKey": "Zip_FullEntryNames_DisplayName",
-          "tooltipKey": "Zip_FullEntryNames_Description",
+          "name": "EntryStructure",
+          "displayNameKey": "Zip_EntryStructure_DisplayName",
+          "tooltipKey": "Zip_EntryStructure_Description",
           "isVisible": true,
           "isRequired": false,
           "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
           }
         },
         {

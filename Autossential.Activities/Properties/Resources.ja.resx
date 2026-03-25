@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,971 +118,971 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Categories_Input" xml:space="preserve">
-    <value>Entrada</value>
+    <value>入力</value>
     <comment>category</comment>
   </data>
   <data name="Categories_Output" xml:space="preserve">
-    <value>Saída</value>
+    <value>出力</value>
     <comment>category</comment>
   </data>
   <data name="Categories_Options" xml:space="preserve">
-    <value>Opções</value>
+    <value>オプション</value>
     <comment>category</comment>
   </data>
   <data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
-    <value>Especifica o tempo em segundos para re-verificar o arquivo. Qualquer valor menor que 0,5 será ajustado para 0,5. Certifique-se de manter este valor menor que o Tempo Limite.</value>
+    <value>ファイルの再確認に要する時間を秒単位で指定します。0.5 未満の値は 0.5 に丸められます。この値はタイムアウト値より小さく設定してください。</value>
     <comment>property description</comment>
   </data>
   <data name="WaitFile_PollingIntervalSeconds_DisplayName" xml:space="preserve">
-    <value>Intervalo</value>
+    <value>間隔</value>
     <comment>property name</comment>
   </data>
   <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
-    <value>Especifica o tempo em segundos para aguardar a execução da atividade antes de lançar um erro. O valor padrão é 30s.</value>
+    <value>エラーがスローされる前にアクティビティの実行を待機する時間を秒単位で指定します。デフォルト値は 30 秒です。</value>
     <comment>property description</comment>
   </data>
   <data name="WaitFile_Description" xml:space="preserve">
-    <value>Aguarda até que o arquivo esteja disponível.</value>
+    <value>ファイルが使用可能になるまで待機します。</value>
     <comment>activity description</comment>
   </data>
   <data name="WaitFile_DisplayName" xml:space="preserve">
-    <value>Aguardar Arquivo</value>
+    <value>ファイル待機</value>
     <comment>activity name</comment>
   </data>
   <data name="WaitFile_FilePath_Description" xml:space="preserve">
-    <value>O caminho para o arquivo.</value>
+    <value>ファイルへのパス。</value>
     <comment>property description</comment>
   </data>
   <data name="WaitFile_FilePath_DisplayName" xml:space="preserve">
-    <value>Caminho do Arquivo</value>
+    <value>ファイルパス</value>
     <comment>property name</comment>
   </data>
   <data name="WaitFile_Result_Description" xml:space="preserve">
-    <value>O objeto FileInfo do arquivo encontrado.</value>
+    <value>見つかったファイルの FileInfo オブジェクト。</value>
     <comment>property description</comment>
   </data>
   <data name="WaitFile_Result_DisplayName" xml:space="preserve">
-    <value>Resultado</value>
+    <value>結果</value>
     <comment>property name</comment>
   </data>
   <data name="WaitFile_WaitForExist_Description" xml:space="preserve">
-    <value>Aguarda até que o arquivo exista.</value>
+    <value>ファイルが存在するまで待機します。</value>
     <comment>property description</comment>
   </data>
   <data name="WaitFile_WaitForExist_DisplayName" xml:space="preserve">
-    <value>Aguardar Existência</value>
+    <value>存在を待つ</value>
     <comment>property name</comment>
   </data>
   <data name="Common_TimeoutSeconds_DisplayName" xml:space="preserve">
-    <value>Tempo Limite</value>
+    <value>タイムアウト</value>
     <comment>property name</comment>
   </data>
   <data name="Common_ViewModel_BrowseForFile" xml:space="preserve">
-    <value>Procurar arquivo</value>
+    <value>ファイルを参照</value>
     <comment>view model label</comment>
   </data>
   <data name="Common_ViewModel_BrowseForFolder" xml:space="preserve">
-    <value>Procurar pasta</value>
+    <value>フォルダーを参照</value>
     <comment>view model label</comment>
   </data>
   <data name="Categories_Common" xml:space="preserve">
-    <value>Comum</value>
+    <value>共通</value>
     <comment>category</comment>
   </data>
   <data name="Common_ContinueOnError_DisplayName" xml:space="preserve">
-    <value>Continuar em caso de erro</value>
+    <value>エラーでも続行</value>
     <comment>property name</comment>
   </data>
   <data name="Common_ContinueOnError_Description" xml:space="preserve">
-    <value>Especifica se deve continuar executando as atividades restantes mesmo se a atividade atual falhar. Apenas valores booleanos são permitidos.</value>
+    <value>現在のアクティビティが失敗した場合でも、残りのアクティビティの実行を続行するかどうかを指定します。ブール値のみ許可されます。</value>
     <comment>property description</comment>
   </data>
   <data name="WaitFile_DirectoryPath_Description" xml:space="preserve">
-    <value>Caminho do diretório a ser monitorado.</value>
+    <value>監視対象のディレクトリパス。</value>
     <comment>property description</comment>
   </data>
   <data name="WaitFile_DirectoryPath_DisplayName" xml:space="preserve">
-    <value>Caminho do Diretório</value>
+    <value>ディレクトリパス</value>
     <comment>property name</comment>
   </data>
   <data name="WaitFile_DynamicFile_DisplayName" xml:space="preserve">
-    <value>Nome do arquivo é dinâmico</value>
+    <value>ファイル名は動的</value>
     <comment>property name</comment>
   </data>
   <data name="Common_SearchPattern_Description" xml:space="preserve">
-    <value>A string de busca define padrões de nome de arquivo no caminho. Suporta texto literal e curingas (*, ?, !, |), mas não expressões regulares. Use ! para exclusões (ex: !*.txt) e | para múltiplos padrões (ex: *.png|*.gif|*.jpeg). O padrão padrão é *.* (todos os arquivos).</value>
+    <value>検索文字列はパス内のファイル名パターンを定義します。リテラルテキストおよびワイルドカード（*、?、!、|）をサポートしますが、正規表現は使用できません。除外には ! を（例: !*.txt）、複数パターンには | を使用します（例: *.png|*.gif|*.jpeg）。デフォルトは *.* （すべてのファイル）です。</value>
     <comment>property description</comment>
   </data>
   <data name="Common_SearchPattern_DisplayName" xml:space="preserve">
-    <value>Padrão de Busca</value>
+    <value>検索パターン</value>
     <comment>property name</comment>
   </data>
   <data name="WaitFile_DynamicFile_Description" xml:space="preserve">
-    <value>Quando verdadeiro, o comportamento da atividade muda para monitorar uma pasta específica até encontrar um arquivo que corresponda ao padrão de busca informado.</value>
+    <value>true の場合、アクティビティの動作が変わり、指定した検索パターンに一致するファイルが見つかるまで特定のフォルダーを監視します。</value>
     <comment>property description</comment>
   </data>
   <data name="CleanUpFolder_DeleteEmptyFolders_Description" xml:space="preserve">
-    <value>Determina se as pastas que ficarem vazias após a exclusão dos arquivos também devem ser excluídas.</value>
+    <value>ファイル削除後に残った空フォルダーも削除するかどうかを決定します。</value>
     <comment>property description</comment>
   </data>
   <data name="CleanUpFolder_DeleteEmptyFolders_DisplayName" xml:space="preserve">
-    <value>Excluir Pastas Vazias</value>
+    <value>空フォルダーを削除</value>
     <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_Description" xml:space="preserve">
-    <value>Exclui todos os arquivos e pastas de uma pasta especificada.</value>
+    <value>指定したフォルダーからすべてのファイルとフォルダーを削除します。</value>
     <comment>activity description</comment>
   </data>
   <data name="CleanUpFolder_DisplayName" xml:space="preserve">
-    <value>Limpar Pasta</value>
+    <value>フォルダーのクリーンアップ</value>
     <comment>activity name</comment>
   </data>
   <data name="CleanUpFolder_Folder_Description" xml:space="preserve">
-    <value>O caminho da pasta a ser limpa.</value>
+    <value>クリーンアップ対象のフォルダーパス。</value>
     <comment>property description</comment>
   </data>
   <data name="CleanUpFolder_Folder_DisplayName" xml:space="preserve">
-    <value>Caminho da Pasta</value>
+    <value>フォルダーパス</value>
     <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_LastWriteTime_Description" xml:space="preserve">
-    <value>Exclui apenas os arquivos com data de última modificação até esta data de referência. O padrão é DateTime.Now.</value>
+    <value>この基準日時までの最終書き込み時刻を持つファイルのみを削除します。デフォルトは DateTime.Now です。</value>
     <comment>property description</comment>
   </data>
   <data name="CleanUpFolder_LastWriteTime_DisplayName" xml:space="preserve">
-    <value>Data da Última Modificação</value>
+    <value>最終書き込み時刻</value>
     <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_FilesDeleted_Description" xml:space="preserve">
-    <value>O número de arquivos que foram excluídos.</value>
+    <value>削除されたファイルの数。</value>
     <comment>property description</comment>
   </data>
   <data name="CleanUpFolder_FilesDeleted_DisplayName" xml:space="preserve">
-    <value>Arquivos Excluídos</value>
+    <value>削除済みファイル数</value>
     <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_SearchOption_Description" xml:space="preserve">
-    <value>Especifica se a operação de busca deve incluir apenas o diretório atual ou todos os subdiretórios.</value>
+    <value>検索操作で現在のディレクトリのみを対象にするか、すべてのサブディレクトリを含めるかを指定します。</value>
     <comment>property description</comment>
   </data>
   <data name="CleanUpFolder_SearchOption_DisplayName" xml:space="preserve">
-    <value>Opção de Busca</value>
+    <value>検索オプション</value>
     <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_FoldersDeleted_DisplayName" xml:space="preserve">
-    <value>Pastas Excluídas</value>
+    <value>削除済みフォルダー数</value>
     <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_FoldersDeleted_Description" xml:space="preserve">
-    <value>O número de pastas que foram excluídas.</value>
+    <value>削除されたフォルダーの数。</value>
     <comment>property description</comment>
   </data>
   <data name="Zip_Description" xml:space="preserve">
-    <value>Compacta arquivos e pastas em um arquivo zip.</value>
+    <value>ファイルとフォルダーを ZIP アーカイブに圧縮します。</value>
     <comment>activity description</comment>
   </data>
   <data name="Zip_DisplayName" xml:space="preserve">
-    <value>Compactar (Zip)</value>
+    <value>Zip</value>
     <comment>activity name</comment>
   </data>
   <data name="Zip_ToCompress_Description" xml:space="preserve">
-    <value>Coleção de caminhos de arquivos e diretórios para compactar.</value>
+    <value>圧縮するファイルおよびディレクトリパスのコレクション。</value>
     <comment>property description</comment>
   </data>
   <data name="Zip_ToCompress_DisplayName" xml:space="preserve">
-    <value>Arquivos/Pastas para Compactar</value>
+    <value>圧縮対象</value>
     <comment>property name</comment>
   </data>
   <data name="Zip_TextEncoding_Description" xml:space="preserve">
-    <value>Codificação usada para os nomes das entradas dentro do arquivo zip.</value>
+    <value>ZIP アーカイブ内のエントリ名に使用するエンコード。</value>
     <comment>property description</comment>
   </data>
   <data name="Zip_TextEncoding_DisplayName" xml:space="preserve">
-    <value>Codificação de Texto</value>
+    <value>テキストエンコード</value>
     <comment>property name</comment>
   </data>
   <data name="Zip_CompressionLevel_Description" xml:space="preserve">
-    <value>Nível de compressão usado ao criar o arquivo.</value>
+    <value>アーカイブ作成時に使用する圧縮レベル。</value>
     <comment>property description</comment>
   </data>
   <data name="Zip_CompressionLevel_DisplayName" xml:space="preserve">
-    <value>Nível de Compressão</value>
+    <value>圧縮レベル</value>
     <comment>property name</comment>
   </data>
   <data name="Zip_CompressedFile_Description" xml:space="preserve">
-    <value>Índice ou identificador do arquivo compactado criado (quando aplicável).</value>
+    <value>作成された圧縮ファイルのインデックスまたは識別子（該当する場合）。</value>
     <comment>property description</comment>
   </data>
   <data name="Zip_CompressedFile_DisplayName" xml:space="preserve">
-    <value>Arquivo Compactado</value>
+    <value>圧縮済みファイル</value>
     <comment>property name</comment>
   </data>
   <data name="Zip_FullEntryNames_Description" xml:space="preserve">
-    <value>Usar nomes completos das entradas (caminhos absolutos) em vez de caminhos relativos.</value>
+    <value>相対パスの代わりに完全なエントリ名（絶対パス）を使用します。</value>
     <comment>property description</comment>
   </data>
   <data name="Zip_FullEntryNames_DisplayName" xml:space="preserve">
-    <value>Nomes Completos das Entradas</value>
+    <value>完全エントリ名</value>
     <comment>property name</comment>
   </data>
   <data name="Zip_FilesCount_Description" xml:space="preserve">
-    <value>O número de arquivos adicionados ao arquivo compactado.</value>
+    <value>アーカイブに追加されたファイルの数。</value>
     <comment>property description</comment>
   </data>
   <data name="Zip_FilesCount_DisplayName" xml:space="preserve">
-    <value>Quantidade de Arquivos</value>
+    <value>ファイル数</value>
     <comment>property name</comment>
   </data>
   <data name="Zip_ZipFilePath_Description" xml:space="preserve">
-    <value>Caminho onde o arquivo zip será criado.</value>
+    <value>ZIP アーカイブを作成するパス。</value>
     <comment>property description</comment>
   </data>
   <data name="Zip_ZipFilePath_DisplayName" xml:space="preserve">
-    <value>Caminho do Arquivo Zip</value>
+    <value>ZIP ファイルパス</value>
     <comment>property name</comment>
   </data>
   <data name="Common_ErrorMsg_ValueNotSupplied" xml:space="preserve">
-    <value>O valor para o argumento obrigatório da atividade '{0}' não foi fornecido.</value>
+    <value>必須のアクティビティ引数 '{0}' の値が指定されていません。</value>
     <comment>error message</comment>
   </data>
   <data name="Unzip_Description" xml:space="preserve">
-    <value>Extrai arquivos e pastas de um arquivo zip.</value>
+    <value>ZIP アーカイブからファイルとフォルダーを展開します。</value>
     <comment>activity description</comment>
   </data>
   <data name="Unzip_DisplayName" xml:space="preserve">
-    <value>Descompactar (Unzip)</value>
+    <value>解凍</value>
     <comment>activity name</comment>
   </data>
   <data name="Unzip_ZipFilePath_Description" xml:space="preserve">
-    <value>O caminho do arquivo zip a ser extraído.</value>
+    <value>展開する ZIP アーカイブへのパス。</value>
     <comment>property description</comment>
   </data>
   <data name="Unzip_ZipFilePath_DisplayName" xml:space="preserve">
-    <value>Caminho do Arquivo Zip</value>
+    <value>ZIP ファイルパス</value>
     <comment>property name</comment>
   </data>
   <data name="Unzip_ExtractTo_Description" xml:space="preserve">
-    <value>A pasta onde o conteúdo do arquivo será extraído.</value>
+    <value>アーカイブの内容を展開するフォルダー。</value>
     <comment>property description</comment>
   </data>
   <data name="Unzip_ExtractTo_DisplayName" xml:space="preserve">
-    <value>Extrair Para</value>
+    <value>展開先</value>
     <comment>property name</comment>
   </data>
   <data name="Unzip_Overwrite_Description" xml:space="preserve">
-    <value>Se verdadeiro, arquivos existentes serão sobrescritos durante a extração.</value>
+    <value>true の場合、展開時に既存のファイルを上書きします。</value>
     <comment>property description</comment>
   </data>
   <data name="Unzip_Overwrite_DisplayName" xml:space="preserve">
-    <value>Sobrescrever</value>
+    <value>上書き</value>
     <comment>property name</comment>
   </data>
   <data name="Unzip_ErrorMsg_OutsideDir" xml:space="preserve">
-    <value>A entrada do arquivo tentaria extrair fora do diretório de destino.</value>
+    <value>アーカイブエントリがターゲットディレクトリの外に展開されようとしています。</value>
     <comment>error message</comment>
   </data>
   <data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
-    <value>A entrada de diretório no arquivo contém dados de arquivo, o que é inválido.</value>
+    <value>アーカイブ内のディレクトリエントリにファイルデータが含まれています。これは無効です。</value>
     <comment>error message</comment>
   </data>
   <data name="RandomString_Description" xml:space="preserve">
-    <value>Gera uma string aleatória baseada em um padrão de formato.</value>
+    <value>フォーマットパターンに基づいてランダムな文字列を生成します。</value>
     <comment>activity description</comment>
   </data>
   <data name="RandomString_DisplayName" xml:space="preserve">
-    <value>String Aleatória</value>
+    <value>ランダム文字列</value>
     <comment>activity name</comment>
   </data>
   <data name="RandomString_Format_Description" xml:space="preserve">
-    <value>Padrão que define a string gerada. Placeholders: 'a' minúscula, 'A' maiúscula, '0' dígito, '*' alfanumérico, '?' caracteres personalizados, '\\' escape.</value>
+    <value>生成する文字列を定義するパターン。プレースホルダー: 'a' 小文字、'A' 大文字、'0' 数字、'*' 任意の英数字、'?' カスタム文字、'\\' エスケープ。</value>
     <comment>property description</comment>
   </data>
   <data name="RandomString_Format_DisplayName" xml:space="preserve">
-    <value>Formato</value>
+    <value>フォーマット</value>
     <comment>property name</comment>
   </data>
   <data name="RandomString_Custom_Description" xml:space="preserve">
-    <value>Caracteres adicionais usados quando o placeholder '?' está presente.</value>
+    <value>'?' プレースホルダーが存在する場合に使用される追加文字。</value>
     <comment>property description</comment>
   </data>
   <data name="RandomString_Custom_DisplayName" xml:space="preserve">
-    <value>Caracteres Personalizados</value>
+    <value>カスタム文字</value>
     <comment>property name</comment>
   </data>
   <data name="RandomString_Result_DisplayName" xml:space="preserve">
-    <value>Resultado</value>
+    <value>結果</value>
     <comment>property name</comment>
   </data>
   <data name="Increment_Description" xml:space="preserve">
-    <value>Incrementa uma variável numérica em um valor especificado.</value>
+    <value>数値変数を指定した値だけインクリメントします。</value>
     <comment>activity description</comment>
   </data>
   <data name="Increment_DisplayName" xml:space="preserve">
-    <value>Incrementar</value>
+    <value>インクリメント</value>
     <comment>activity name</comment>
   </data>
   <data name="Increment_Value_Description" xml:space="preserve">
-    <value>Quantidade a ser adicionada à variável. Deve ser maior ou igual a 1.</value>
+    <value>変数に加算する値。1 以上である必要があります。</value>
     <comment>property description</comment>
   </data>
   <data name="Increment_Value_DisplayName" xml:space="preserve">
-    <value>Valor</value>
+    <value>値</value>
     <comment>property name</comment>
   </data>
   <data name="Increment_Variable_Description" xml:space="preserve">
-    <value>Variável a ser incrementada.</value>
+    <value>インクリメント対象の変数。</value>
     <comment>property description</comment>
   </data>
   <data name="Increment_Variable_DisplayName" xml:space="preserve">
-    <value>Variável</value>
+    <value>変数</value>
     <comment>property name</comment>
   </data>
   <data name="Decrement_Description" xml:space="preserve">
-    <value>Decrementa uma variável numérica em um valor especificado.</value>
+    <value>数値変数を指定した値だけデクリメントします。</value>
     <comment>activity description</comment>
   </data>
   <data name="Decrement_DisplayName" xml:space="preserve">
-    <value>Decrementar</value>
+    <value>デクリメント</value>
     <comment>activity name</comment>
   </data>
   <data name="Decrement_Value_Description" xml:space="preserve">
-    <value>Quantidade a ser subtraída da variável. Deve ser maior ou igual a 1.</value>
+    <value>変数から減算する値。1 以上である必要があります。</value>
     <comment>property description</comment>
   </data>
   <data name="Decrement_Value_DisplayName" xml:space="preserve">
-    <value>Valor</value>
+    <value>値</value>
     <comment>property name</comment>
   </data>
   <data name="Decrement_Variable_Description" xml:space="preserve">
-    <value>Variável a ser decrementada.</value>
+    <value>デクリメント対象の変数。</value>
     <comment>property description</comment>
   </data>
   <data name="Decrement_Variable_DisplayName" xml:space="preserve">
-    <value>Variável</value>
+    <value>変数</value>
     <comment>property name</comment>
   </data>
   <data name="RandomString_Result_Description" xml:space="preserve">
-    <value>A string aleatória gerada.</value>
+    <value>生成されたランダム文字列。</value>
     <comment>property description</comment>
   </data>
   <data name="ReplaceTokens_Description" xml:space="preserve">
-    <value>Substitui os tokens de uma string pelos valores de um Dictionary. Tokens são strings escritas em um padrão específico, geralmente entre caracteres especiais. Use a combinação das propriedades 'Pattern' e 'Placeholder' para definir o formato do token.</value>
+    <value>ディクショナリの値を使って文字列内のトークンを置換します。トークンは特定のパターンで記述された文字列で、通常は特殊文字で囲まれています。'Pattern' と 'Placeholder' プロパティを組み合わせてトークン形式を定義してください。</value>
     <comment>activity description</comment>
   </data>
   <data name="ReplaceTokens_DisplayName" xml:space="preserve">
-    <value>Substituir Tokens</value>
+    <value>トークン置換</value>
     <comment>activity name</comment>
   </data>
   <data name="ReplaceTokens_Dictionary_Description" xml:space="preserve">
-    <value>O dicionário onde cada par chave/valor é usado para substituir os tokens.</value>
+    <value>トークンの置換に使用するキーと値のペアを含むディクショナリ。</value>
     <comment>property description</comment>
   </data>
   <data name="ReplaceTokens_Dictionary_DisplayName" xml:space="preserve">
-    <value>Dicionário</value>
+    <value>ディクショナリ</value>
     <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
-    <value>O padrão do texto do token. Pode ter caracteres antes e depois do placeholder.</value>
+    <value>トークンのテキストパターン。プレースホルダーの前後に文字を含めることができます。</value>
     <comment>property description</comment>
   </data>
   <data name="ReplaceTokens_Pattern_DisplayName" xml:space="preserve">
-    <value>Padrão</value>
+    <value>パターン</value>
     <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
-    <value>O caractere usado como placeholder dentro do padrão do token.</value>
+    <value>トークンパターン内のプレースホルダーとして使用する文字。</value>
     <comment>property description</comment>
   </data>
   <data name="ReplaceTokens_Placeholder_DisplayName" xml:space="preserve">
-    <value>Placeholder</value>
+    <value>プレースホルダー</value>
     <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Result_Description" xml:space="preserve">
-    <value>O texto resultante após todos os tokens serem substituídos.</value>
+    <value>すべてのトークンが置換された後の結果テキスト。</value>
     <comment>property description</comment>
   </data>
   <data name="ReplaceTokens_Result_DisplayName" xml:space="preserve">
-    <value>Resultado</value>
+    <value>結果</value>
     <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Content_DisplayName" xml:space="preserve">
-    <value>Conteúdo</value>
+    <value>コンテンツ</value>
     <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Content_Description" xml:space="preserve">
-    <value>O texto de entrada onde os tokens serão substituídos.</value>
+    <value>トークンが置換される入力テキスト。</value>
     <comment>property description</comment>
   </data>
   <data name="Categories_InputOutput" xml:space="preserve">
-    <value>Entrada/Saída</value>
+    <value>入力/出力</value>
     <comment>category</comment>
   </data>
   <data name="ReplaceTokens_CaseSensitive_Description" xml:space="preserve">
-    <value>Determina se a busca pelos tokens diferencia maiúsculas de minúsculas. O Pattern também é afetado.</value>
+    <value>トークンの検索で大文字と小文字を区別するかどうかを決定します。パターンにも影響します。</value>
     <comment>property description</comment>
   </data>
   <data name="ReplaceTokens_CaseSensitive_DisplayName" xml:space="preserve">
-    <value>Diferenciar Maiúsculas de Minúsculas</value>
+    <value>大文字小文字を区別</value>
     <comment>property name</comment>
   </data>
   <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
-    <value>Sucesso</value>
+    <value>成功</value>
     <comment>response message</comment>
   </data>
   <data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>O valor mínimo permitido é 1.</value>
+    <value>許可される最小値は 1 です。</value>
     <comment>error message</comment>
   </data>
   <data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>O valor mínimo permitido é 1.</value>
+    <value>許可される最小値は 1 です。</value>
     <comment>error message</comment>
   </data>
   <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
-    <value>Nenhuma unidade disponível</value>
+    <value>使用可能なドライブがありません</value>
     <comment>error message</comment>
   </data>
   <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
-    <value>A letra da unidade informada é inválida. Entradas válidas são 'X', 'X:' ou 'X:\\', onde X pode ser qualquer letra.</value>
+    <value>ドライブ文字の入力が無効です。有効な入力は 'X'、'X:' または 'X:\\' です。X には任意の文字を使用できます。</value>
     <comment>error message</comment>
   </data>
   <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
-    <value>Credencial</value>
+    <value>資格情報</value>
     <comment>property name</comment>
   </data>
   <data name="MapDrive_Description" xml:space="preserve">
-    <value>Mapeia uma Unidade de Rede no sistema.</value>
+    <value>システムにネットワークドライブをマップします。</value>
     <comment>activity description</comment>
   </data>
   <data name="MapDrive_DisplayName" xml:space="preserve">
-    <value>Mapear Unidade</value>
+    <value>ドライブのマップ</value>
     <comment>activity name</comment>
   </data>
   <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>Especifica a letra da unidade a ser mapeada. Se não fornecida, uma letra disponível aleatória será atribuída. Formato esperado: &lt;letra&gt;&lt;dois-pontos&gt;, por exemplo: "X:", "y:", "Z:".</value>
+    <value>マップするドライブ文字を指定します。指定しない場合、使用可能なランダムな文字が割り当てられます。期待される形式は &lt;文字&gt;&lt;コロン&gt; です（例: "X:"、"y:"、"Z:"）。</value>
     <comment>property description</comment>
   </data>
   <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
-    <value>Letra da Unidade</value>
+    <value>ドライブ文字</value>
     <comment>property name</comment>
   </data>
   <data name="MapDrive_Force_Description" xml:space="preserve">
-    <value>Tenta forçar a conexão se a letra da unidade já estiver em uso.</value>
+    <value>ドライブ文字がすでに使用中の場合、接続を強制的に試みます。</value>
     <comment>property description</comment>
   </data>
   <data name="MapDrive_Force_DisplayName" xml:space="preserve">
-    <value>Forçar</value>
+    <value>強制</value>
     <comment>property name</comment>
   </data>
   <data name="MapDrive_MappedDrive_Description" xml:space="preserve">
-    <value>A letra da unidade mapeada se a operação for bem-sucedida, no formato "&lt;letra&gt;:".</value>
+    <value>マッピングが成功した場合のマップ済みドライブ文字。形式は "&lt;文字&gt;:" で表されます。</value>
     <comment>property description</comment>
   </data>
   <data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
-    <value>Unidade Mapeada</value>
+    <value>マップ済みドライブ</value>
     <comment>property name</comment>
   </data>
   <data name="MapDrive_ResponseCode_Description" xml:space="preserve">
-    <value>Representa o código de retorno da operação de mapeamento. Indica se a operação foi bem-sucedida ou falhou, de acordo com os códigos de erro padrão do Windows.</value>
+    <value>ドライブマッピング操作の戻りコードを表します。この値は、標準の Windows エラーコードに従って操作が成功したか失敗したかを示します。</value>
     <comment>property description</comment>
   </data>
   <data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
-    <value>Código de Resposta</value>
+    <value>応答コード</value>
     <comment>property name</comment>
   </data>
   <data name="MapDrive_ResponseMessage_Description" xml:space="preserve">
-    <value>Fornece a descrição textual correspondente ao código de resposta. Esta mensagem explica o resultado da operação em formato legível por humanos.</value>
+    <value>応答コードに対応するテキスト説明を提供します。このメッセージは人間が読める形式で操作の結果を説明します。</value>
     <comment>property description</comment>
   </data>
   <data name="MapDrive_ResponseMessage_DisplayName" xml:space="preserve">
-    <value>Mensagem de Resposta</value>
+    <value>応答メッセージ</value>
     <comment>property name</comment>
   </data>
   <data name="MapDrive_Result_Description" xml:space="preserve">
-    <value>Retorna true se a unidade foi mapeada com sucesso, false caso contrário.</value>
+    <value>ドライブのマップが成功した場合は true、それ以外は false を返します。</value>
     <comment>property description</comment>
   </data>
   <data name="MapDrive_Result_DisplayName" xml:space="preserve">
-    <value>Resultado</value>
+    <value>結果</value>
     <comment>property name</comment>
   </data>
   <data name="MapDrive_SharedDrivePath_Description" xml:space="preserve">
-    <value>O caminho da unidade compartilhada para conectar.</value>
+    <value>接続する共有ドライブのパス。</value>
     <comment>property description</comment>
   </data>
   <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
-    <value>Caminho da Unidade Compartilhada</value>
+    <value>共有ドライブパス</value>
     <comment>property name</comment>
   </data>
   <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
-    <value>Resultado</value>
+    <value>結果</value>
     <comment>property name</comment>
   </data>
   <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>Especifica a letra da unidade mapeada a ser desmapeada. Formato obrigatório: &lt;letra&gt;&lt;dois-pontos&gt;, ex: "X:", "y:", "Z:".</value>
+    <value>マップ解除するマップ済みドライブのドライブ文字を指定します。必要な形式は &lt;文字&gt;&lt;コロン&gt; です（例: "X:"、"y:"、"Z:"）。</value>
     <comment>property description</comment>
   </data>
   <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
-    <value>Letra da Unidade</value>
+    <value>ドライブ文字</value>
     <comment>property name</comment>
   </data>
   <data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
-    <value>Representa o código de retorno da operação de mapeamento. Indica se a operação foi bem-sucedida ou falhou, de acordo com os códigos de erro padrão do Windows.</value>
+    <value>ドライブマッピング操作の戻りコードを表します。この値は、標準の Windows エラーコードに従って操作が成功したか失敗したかを示します。</value>
     <comment>property description</comment>
   </data>
   <data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
-    <value>Código de Resposta</value>
+    <value>応答コード</value>
     <comment>property name</comment>
   </data>
   <data name="UnmapDrive_ResponseMessage_Description" xml:space="preserve">
-    <value>Fornece a descrição textual correspondente ao código de resposta. Esta mensagem explica o resultado da operação em formato legível por humanos.</value>
+    <value>応答コードに対応するテキスト説明を提供します。このメッセージは人間が読める形式で操作の結果を説明します。</value>
     <comment>property description</comment>
   </data>
   <data name="UnmapDrive_ResponseMessage_DisplayName" xml:space="preserve">
-    <value>Mensagem de Resposta</value>
+    <value>応答メッセージ</value>
     <comment>property name</comment>
   </data>
   <data name="UnmapDrive_Result_Description" xml:space="preserve">
-    <value>Retorna true se a unidade foi desmapeada com sucesso, false caso contrário.</value>
+    <value>ドライブのマップ解除が成功した場合は true、それ以外は false を返します。</value>
     <comment>property description</comment>
   </data>
   <data name="UnmapDrive_DisplayName" xml:space="preserve">
-    <value>Desmapear Unidade</value>
+    <value>ドライブのマップ解除</value>
     <comment>activity name</comment>
   </data>
   <data name="MapDrive_Credential_Placeholder" xml:space="preserve">
-    <value>Se não fornecida, serão usadas as credenciais do usuário atual.</value>
+    <value>指定しない場合、現在のユーザーの資格情報が使用されます。</value>
     <comment>placeholder</comment>
   </data>
   <data name="CultureScope_ErrorMsg_CultureNameNullOrEmpty" xml:space="preserve">
-    <value>O nome da cultura não pode ser nulo ou vazio.</value>
+    <value>カルチャ名を null または空にすることはできません。</value>
     <comment>error message</comment>
   </data>
   <data name="CultureScope_Culture_Description" xml:space="preserve">
-    <value>A cultura desejada, ex.: pt-BR, en-US, es-ES, etc.</value>
+    <value>使用するカルチャ（例: en-US、pt-BR、ja-JP など）。</value>
     <comment>property description</comment>
   </data>
   <data name="CultureScope_Culture_DisplayName" xml:space="preserve">
-    <value>Cultura</value>
+    <value>カルチャ</value>
     <comment>property name</comment>
   </data>
   <data name="CultureScope_Description" xml:space="preserve">
-    <value>Um contêiner que permite executar um conjunto de atividades com uma cultura diferente.</value>
+    <value>異なるカルチャでアクティビティのセットを実行できるコンテナー。</value>
     <comment>activity description</comment>
   </data>
   <data name="CultureScope_DisplayName" xml:space="preserve">
-    <value>Escopo de Cultura</value>
+    <value>カルチャスコープ</value>
     <comment>activity name</comment>
   </data>
   <data name="TerminateProcess_Description" xml:space="preserve">
-    <value>Tenta fechar normalmente todas as instâncias dos aplicativos correspondentes aos processos especificados. Se não for possível, encerra o processo à força para a sessão atual do usuário.</value>
+    <value>指定されたプロセスに対応するすべてのアプリケーションインスタンスを正常に閉じようとします。できない場合は、現在のユーザーセッションのプロセスを強制終了します。</value>
     <comment>activity description</comment>
   </data>
   <data name="TerminateProcess_DisplayName" xml:space="preserve">
-    <value>Encerrar Processo</value>
+    <value>プロセスの終了</value>
     <comment>activity name</comment>
   </data>
   <data name="TerminateProcess_ProcessNames_Description" xml:space="preserve">
-    <value>A lista de nomes dos processos a serem encerrados.</value>
+    <value>終了するプロセス名のリスト。</value>
     <comment>property description</comment>
   </data>
   <data name="TerminateProcess_ProcessNames_DisplayName" xml:space="preserve">
-    <value>Nomes dos Processos</value>
+    <value>プロセス名</value>
     <comment>property name</comment>
   </data>
   <data name="IfActivity_DisplayName" xml:space="preserve">
-    <value>Se</value>
+    <value>If アクティビティ</value>
     <comment>activity name</comment>
   </data>
   <data name="IfActivity_Description" xml:space="preserve">
-    <value>Avalia o resultado de uma atividade que retorna booleano e executa o bloco associado se a condição for atendida.</value>
+    <value>ブール値を返すアクティビティの結果を評価し、条件が満たされた場合に関連するコードブロックを実行します。</value>
     <comment>property description</comment>
   </data>
   <data name="IfActivity_CheckTrue_DisplayName" xml:space="preserve">
-    <value>Verificar Verdadeiro</value>
+    <value>真を確認</value>
     <comment>property name</comment>
   </data>
   <data name="IfActivity_CheckTrue_Description" xml:space="preserve">
-    <value>Avalia se a condição resulta verdadeiro.</value>
+    <value>条件が true になるかどうかを評価します。</value>
     <comment>property description</comment>
   </data>
   <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
-    <value>O campo Condition requer atividades que retornem um valor booleano.</value>
+    <value>条件フィールドには、ブール値を返すアクティビティが必要です。</value>
     <comment>error message</comment>
   </data>
   <data name="Exit_DisplayName" xml:space="preserve">
-    <value>Sair</value>
+    <value>終了</value>
     <comment>activity name</comment>
   </data>
   <data name="Exit_Condition_Description" xml:space="preserve">
-    <value>Condição que determina se a atividade será avaliada. Se vazio, assume True.</value>
+    <value>アクティビティを評価するかどうかを決定する条件。空の場合は True と見なされます。</value>
     <comment>property description</comment>
   </data>
   <data name="Exit_Condition_DisplayName" xml:space="preserve">
-    <value>Condição</value>
+    <value>条件</value>
     <comment>property name</comment>
   </data>
   <data name="Exit_Description" xml:space="preserve">
-    <value>Sai do Container ou Time Loop interrompendo a execução dos filhos após ele.</value>
+    <value>コンテナーまたは時間ループアクティビティから退出し、その後の子実行を中断します。</value>
     <comment>activity description</comment>
   </data>
   <data name="Exit_ErrorMsg_InvalidParent" xml:space="preserve">
-    <value>A atividade Exit deve estar dentro de um Container ou Time Loop.</value>
+    <value>Exit アクティビティはコンテナーまたは時間ループアクティビティの内部に配置する必要があります。</value>
     <comment>error message</comment>
   </data>
   <data name="TimeLoop_DisplayName" xml:space="preserve">
-    <value>Loop por Tempo</value>
+    <value>時間ループ</value>
     <comment>activity name</comment>
   </data>
   <data name="TimeLoop_Description" xml:space="preserve">
-    <value>Repete as atividades do corpo até que o tempo limite expire, com intervalos opcionais e rastreamento de índice. Retorna true se o loop terminou por timeout.</value>
+    <value>タイムアウトが切れるまでボディアクティビティを繰り返します。オプションで反復間隔とインデックス追跡が可能です。ループがタイムアウトにより終了した場合は true を返します。</value>
     <comment>activity description</comment>
   </data>
   <data name="TimeLoop_Timeout_DisplayName" xml:space="preserve">
-    <value>Tempo Limite</value>
+    <value>タイムアウト</value>
     <comment>property name</comment>
   </data>
   <data name="TimeLoop_Timeout_Description" xml:space="preserve">
-    <value>Define por quanto tempo o loop será executado. O tempo limite é verificado após cada iteração e iterações em andamento não são interrompidas.</value>
+    <value>ループの実行時間を定義します。タイムアウトは各反復の後に確認され、進行中の反復は中断されません。</value>
     <comment>property description</comment>
   </data>
   <data name="TimeLoop_IntervalSeconds_DisplayName" xml:space="preserve">
-    <value>Intervalo</value>
+    <value>間隔</value>
     <comment>property name</comment>
   </data>
   <data name="TimeLoop_IntervalSeconds_Description" xml:space="preserve">
-    <value>O intervalo em segundos a aguardar antes da próxima iteração.</value>
+    <value>次のループまでの待機時間（秒単位）。</value>
     <comment>property description</comment>
   </data>
   <data name="TimeLoop_IterationIndex_DisplayName" xml:space="preserve">
-    <value>Índice</value>
+    <value>インデックス</value>
     <comment>property name</comment>
   </data>
   <data name="TimeLoop_IterationIndex_Description" xml:space="preserve">
-    <value>A iteração atual (baseada em zero) que está sendo processada.</value>
+    <value>処理中の現在の反復（ゼロベース）。</value>
     <comment>property description</comment>
   </data>
   <data name="Container_DisplayName" xml:space="preserve">
-    <value>Contêiner</value>
+    <value>コンテナー</value>
     <comment>activity name</comment>
   </data>
   <data name="Container_Description" xml:space="preserve">
-    <value>É um wrapper que, combinado com a atividade Exit, interrompe o fluxo de execução dos filhos saindo do Container antecipadamente.</value>
+    <value>Exit アクティビティと組み合わせると、子の実行フローを中断してコンテナーを事前に終了させるラッパーです。</value>
     <comment>activity description</comment>
   </data>
   <data name="CheckPoint_Data_Description" xml:space="preserve">
-    <value>Uma coleção de pares chave/valor que fornecem informações adicionais definidas pelo usuário sobre a exceção.</value>
+    <value>例外に関するユーザー定義の追加情報を提供するキーと値のペアのコレクション。</value>
     <comment>property description</comment>
   </data>
   <data name="CheckPoint_Data_DisplayName" xml:space="preserve">
-    <value>Dados</value>
+    <value>データ</value>
     <comment>property name</comment>
   </data>
   <data name="CheckPoint_Description" xml:space="preserve">
-    <value>Verifica se uma determinada expressão é verdadeira; caso contrário, lança a exceção especificada.</value>
+    <value>指定した式が true であるかを確認し、そうでない場合は指定した例外をスローします。</value>
     <comment>activity description</comment>
   </data>
   <data name="CheckPoint_DisplayName" xml:space="preserve">
-    <value>Ponto de Verificação</value>
+    <value>チェックポイント</value>
     <comment>activity name</comment>
   </data>
   <data name="CheckPoint_Exception_Description" xml:space="preserve">
-    <value>A exceção a ser lançada se a expressão não for verdadeira.</value>
+    <value>式が true でない場合にスローする例外。</value>
     <comment>property description</comment>
   </data>
   <data name="CheckPoint_Exception_DisplayName" xml:space="preserve">
-    <value>Exceção</value>
+    <value>例外</value>
     <comment>property name</comment>
   </data>
   <data name="CheckPoint_Expression_Description" xml:space="preserve">
-    <value>A expressão a ser avaliada.</value>
+    <value>評価される式。</value>
     <comment>property description</comment>
   </data>
   <data name="CheckPoint_Expression_DisplayName" xml:space="preserve">
-    <value>Expressão</value>
+    <value>式</value>
     <comment>property name</comment>
   </data>
   <data name="PromoteHeaders_AutoRename_Description" xml:space="preserve">
-    <value>Quando verdadeiro, adiciona um sufixo numérico se o nome da coluna já existir na DataTable.</value>
+    <value>true の場合、列名がデータテーブルに既に存在するときに数字のサフィックスを付加します。</value>
     <comment>property description</comment>
   </data>
   <data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
-    <value>Renomear Automaticamente</value>
+    <value>自動リネーム</value>
     <comment>property name</comment>
   </data>
   <data name="PromoteHeaders_Description" xml:space="preserve">
-    <value>Promove a primeira linha de valores para novos cabeçalhos de coluna.</value>
+    <value>最初の行の値を新しい列ヘッダーに昇格させます。</value>
     <comment>activity description</comment>
   </data>
   <data name="PromoteHeaders_DisplayName" xml:space="preserve">
-    <value>Promover Cabeçalhos</value>
+    <value>ヘッダーの昇格</value>
     <comment>activity name</comment>
   </data>
   <data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
-    <value>Não há linhas na DataTable de entrada para promover.</value>
+    <value>昇格する行が入力データテーブルにありません。</value>
     <comment>error message</comment>
   </data>
   <data name="PromoteHeaders_DataTable_Description" xml:space="preserve">
-    <value>A DataTable cuja primeira linha será promovida para cabeçalhos.</value>
+    <value>最初の行をヘッダーに昇格させるデータテーブル。</value>
     <comment>property description</comment>
   </data>
   <data name="PromoteHeaders_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>データテーブル</value>
     <comment>property name</comment>
   </data>
   <data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
-    <value>O formato de data a ser usado na representação em string para tipos DateTime.</value>
+    <value>DateTime 型の文字列表現に使用する日付形式。</value>
     <comment>property description</comment>
   </data>
   <data name="DataTableToText_DateTimeFormat_DisplayName" xml:space="preserve">
-    <value>Formato de Data/Hora</value>
+    <value>日時フォーマット</value>
     <comment>property name</comment>
   </data>
   <data name="DataTableToText_Description" xml:space="preserve">
-    <value>Retorna uma representação em string de uma DataTable no formato de texto especificado (HTML, JSON ou XML).</value>
+    <value>指定したテキスト形式（HTML、JSON、または XML）でデータテーブルの文字列表現を返します。</value>
     <comment>activity description</comment>
   </data>
   <data name="DataTableToText_DisplayName" xml:space="preserve">
-    <value>DataTable para Texto</value>
+    <value>データテーブルをテキストに変換</value>
     <comment>activity name</comment>
   </data>
   <data name="DataTableToText_DataTable_Description" xml:space="preserve">
-    <value>A DataTable.</value>
+    <value>データテーブル。</value>
     <comment>property description</comment>
   </data>
   <data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>データテーブル</value>
     <comment>property name</comment>
   </data>
   <data name="DataTableToText_Result_Description" xml:space="preserve">
-    <value>A representação em string da DataTable.</value>
+    <value>データテーブルの文字列表現。</value>
     <comment>property description</comment>
   </data>
   <data name="DataTableToText_Result_DisplayName" xml:space="preserve">
-    <value>Resultado</value>
+    <value>結果</value>
     <comment>property name</comment>
   </data>
   <data name="DataTableToText_OutputFormat_Description" xml:space="preserve">
-    <value>O formato de texto de saída.</value>
+    <value>出力テキスト形式。</value>
     <comment>property description</comment>
   </data>
   <data name="DataTableToText_OutputFormat_DisplayName" xml:space="preserve">
-    <value>Formato de Saída</value>
+    <value>出力形式</value>
     <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_ColumnNames_Description" xml:space="preserve">
-    <value>Os nomes das colunas a serem avaliadas.</value>
+    <value>評価対象の列名。</value>
     <comment>property description</comment>
   </data>
   <data name="RemoveEmptyRows_ColumnNames_DisplayName" xml:space="preserve">
-    <value>Nomes das Colunas</value>
+    <value>列名</value>
     <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_Description" xml:space="preserve">
-    <value>Remove as linhas vazias de uma DataTable.</value>
+    <value>データテーブルから空の行を削除します。</value>
     <comment>activity description</comment>
   </data>
   <data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
-    <value>Remover Linhas Vazias</value>
+    <value>空行の削除</value>
     <comment>activity name</comment>
   </data>
   <data name="RemoveEmptyRows_DataTable_Description" xml:space="preserve">
-    <value>A DataTable cujas linhas vazias serão removidas.</value>
+    <value>空の行を削除するデータテーブル。</value>
     <comment>property description</comment>
   </data>
   <data name="RemoveEmptyRows_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>データテーブル</value>
     <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_MatchingMode_Description" xml:space="preserve">
-    <value>Determina como uma linha é avaliada para remoção: All — a linha é removida se todas as colunas especificadas estiverem vazias. Any — a linha é removida se qualquer coluna especificada estiver vazia. Se nenhuma coluna for especificada, todas as colunas da DataTable serão consideradas.</value>
+    <value>行を削除する評価方法を決定します。All — 指定したすべての列が空の場合に行を削除します。Any — 指定した列のいずれかが空の場合に行を削除します。列が指定されていない場合は、データテーブルのすべての列が対象となります。</value>
     <comment>property description</comment>
   </data>
   <data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
-    <value>Modo de Correspondência</value>
+    <value>一致モード</value>
     <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_ColumnIndexes_DisplayName" xml:space="preserve">
-    <value>Índices das Colunas</value>
+    <value>列インデックス</value>
     <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_ColumnIndexes_Description" xml:space="preserve">
-    <value>Os índices das colunas a serem avaliadas.</value>
+    <value>評価対象の列インデックス。</value>
     <comment>property description</comment>
   </data>
   <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>データテーブル</value>
     <comment>property name</comment>
   </data>
   <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
-    <value>Os nomes das colunas a serem removidas.</value>
+    <value>削除する列名。</value>
     <comment>property description</comment>
   </data>
   <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">
-    <value>Nomes das Colunas</value>
+    <value>列名</value>
     <comment>property name</comment>
   </data>
   <data name="RemoveDataColumns_Description" xml:space="preserve">
-    <value>Remove as colunas especificadas de uma DataTable.</value>
+    <value>データテーブルから指定した列を削除します。</value>
     <comment>activity description</comment>
   </data>
   <data name="RemoveDataColumns_DisplayName" xml:space="preserve">
-    <value>Remover Colunas</value>
+    <value>データ列の削除</value>
     <comment>activity name</comment>
   </data>
   <data name="RemoveDataColumns_DataTable_Description" xml:space="preserve">
-    <value>A DataTable da qual as colunas serão removidas.</value>
+    <value>列を削除するデータテーブル。</value>
     <comment>property description</comment>
   </data>
   <data name="RemoveDataColumns_ColumnIndexes_DisplayName" xml:space="preserve">
-    <value>Índices das Colunas</value>
+    <value>列インデックス</value>
     <comment>property name</comment>
   </data>
   <data name="RemoveDataColumns_ColumnIndexes_Description" xml:space="preserve">
-    <value>Os índices das colunas a serem removidas.</value>
+    <value>削除する列インデックス。</value>
     <comment>property description</comment>
   </data>
   <data name="TransposeData_Description" xml:space="preserve">
-    <value>Transpõe uma DataTable trocando suas linhas e colunas (linhas viram colunas e colunas viram linhas).</value>
+    <value>データテーブルの行と列を入れ替えて転置します（行が列に、列が行になります）。</value>
     <comment>activity description</comment>
   </data>
   <data name="TransposeData_DisplayName" xml:space="preserve">
-    <value>Transpor Dados</value>
+    <value>データの転置</value>
     <comment>activity name</comment>
   </data>
   <data name="TransposeData_DataTable_Description" xml:space="preserve">
-    <value>A DataTable a ser transposta.</value>
+    <value>転置するデータテーブル。</value>
     <comment>property description</comment>
   </data>
   <data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>データテーブル</value>
     <comment>property name</comment>
   </data>
   <data name="ParseData_DisplayName" xml:space="preserve">
-    <value>Analisar Dados</value>
+    <value>データの解析</value>
     <comment>activity name</comment>
   </data>
   <data name="ParseData_Description" xml:space="preserve">
-    <value>Analisa conteúdo JSON ou YAML em um DataNode para acesso e manipulação simplificados.</value>
+    <value>JSON または YAML 入力を DataNode に解析して、簡単なアクセスと操作を可能にします。</value>
     <comment>activity description</comment>
   </data>
   <data name="ParseData_Content_DisplayName" xml:space="preserve">
-    <value>Conteúdo</value>
+    <value>コンテンツ</value>
     <comment>property name</comment>
   </data>
   <data name="ParseData_Content_Description" xml:space="preserve">
-    <value>O texto JSON ou YAML a ser analisado em um DataNode.</value>
+    <value>DataNode に解析する JSON または YAML テキスト。</value>
     <comment>property description</comment>
   </data>
   <data name="ParseData_Culture_DisplayName" xml:space="preserve">
-    <value>Cultura</value>
+    <value>カルチャ</value>
     <comment>property name</comment>
   </data>
   <data name="ParseData_Culture_Description" xml:space="preserve">
-    <value>Define a cultura aplicada durante conversões de valores (como int, long, double ou decimal) dentro do DataNode.</value>
+    <value>DataNode 内の値変換（int、long、double、decimal など）に適用するカルチャ情報を定義します。</value>
     <comment>property description</comment>
   </data>
   <data name="ParseData_Result_DisplayName" xml:space="preserve">
-    <value>Resultado</value>
+    <value>結果</value>
     <comment>property name</comment>
   </data>
   <data name="ParseData_Result_Description" xml:space="preserve">
-    <value>O DataNode resultante criado a partir do conteúdo analisado.</value>
+    <value>解析された JSON または YAML コンテンツから作成された DataNode。</value>
     <comment>property description</comment>
   </data>
   <data name="LoadDataFile_DisplayName" xml:space="preserve">
-    <value>Carregar Arquivo de Dados</value>
+    <value>データファイルの読み込み</value>
     <comment>activity name</comment>
   </data>
   <data name="LoadDataFile_Description" xml:space="preserve">
-    <value>Analisa um arquivo JSON ou YAML em um DataNode para acesso e manipulação simplificados.</value>
+    <value>JSON または YAML ファイルを DataNode に解析して、簡単なアクセスと操作を可能にします。</value>
     <comment>activity description</comment>
   </data>
   <data name="LoadDataFile_Encoding_Description" xml:space="preserve">
-    <value>Especifica a codificação de texto usada ao ler o arquivo. O padrão é UTF-8.</value>
+    <value>ファイルの読み取り時に使用するテキストエンコードを指定します。デフォルトは UTF-8 です。</value>
     <comment>property description</comment>
   </data>
   <data name="LoadDataFile_Culture_Description" xml:space="preserve">
-    <value>Especifica a cultura usada ao converter valores de nós para tipos numéricos (ex: int, long, double, decimal).</value>
+    <value>ノードの値を数値型（int、long、double、decimal など）に変換する際に使用するカルチャを指定します。</value>
     <comment>property description</comment>
   </data>
   <data name="LoadDataFile_Result_Description" xml:space="preserve">
-    <value>O DataNode gerado a partir do conteúdo do arquivo analisado.</value>
+    <value>解析されたファイルコンテンツから生成された DataNode。</value>
     <comment>property description</comment>
   </data>
   <data name="LoadDataFile_Culture_DisplayName" xml:space="preserve">
-    <value>Cultura</value>
+    <value>カルチャ</value>
     <comment>property name</comment>
   </data>
   <data name="LoadDataFile_Encoding_DisplayName" xml:space="preserve">
-    <value>Codificação</value>
+    <value>エンコード</value>
     <comment>property name</comment>
   </data>
   <data name="LoadDataFile_Result_DisplayName" xml:space="preserve">
-    <value>Resultado</value>
+    <value>結果</value>
     <comment>property name</comment>
   </data>
   <data name="LoadDataFile_FilePath_Description" xml:space="preserve">
-    <value>O caminho do arquivo JSON ou YAML a ser carregado.</value>
+    <value>読み込む JSON または YAML ファイルへのパス。</value>
     <comment>property description</comment>
   </data>
   <data name="LoadDataFile_FilePath_DisplayName" xml:space="preserve">
-    <value>Caminho do Arquivo</value>
+    <value>ファイルパス</value>
     <comment>property name</comment>
   </data>
   <data name="ActivityCategories_Data" xml:space="preserve">
-    <value>Autossential.Dados</value>
+    <value>Autossential.データ</value>
     <comment>category</comment>
   </data>
   <data name="ActivityCategories_Files" xml:space="preserve">
-    <value>Autossential.Arquivos</value>
+    <value>Autossential.ファイル</value>
     <comment>category</comment>
   </data>
   <data name="ActivityCategories_Programming" xml:space="preserve">
-    <value>Autossential.Programação</value>
+    <value>Autossential.プログラミング</value>
     <comment>category</comment>
   </data>
   <data name="ActivityCategories_System" xml:space="preserve">
-    <value>Autossential.Sistema</value>
+    <value>Autossential.システム</value>
     <comment>category</comment>
   </data>
   <data name="ActivityCategories_Workflow" xml:space="preserve">
-    <value>Autossential.Fluxo de trabalho</value>
+    <value>Autossential.ワークフロー</value>
     <comment>category</comment>
   </data>
   <data name="UnmapDrive_Description" xml:space="preserve">
-    <value>Remove uma unidade de rede mapeada do sistema.</value>
+    <value>システムからマップ済みネットワークドライブを削除します。</value>
     <comment>activity description</comment>
   </data>
   <data name="MergeData_DisplayName" xml:space="preserve">
-    <value>Combinar Dados</value>
+    <value>データのマージ</value>
     <comment>activity name</comment>
   </data>
   <data name="MergeData_Description" xml:space="preserve">
-    <value>Combina o DataNode de origem no de destino. Valores escalares e sequências da origem sobrescrevem os existentes no destino. Mapas são mesclados recursivamente.</value>
+    <value>ソース DataNode を宛先にマージします。ソースのスカラーおよびシーケンス値は宛先の既存の値を上書きします。マップ値は再帰的にマージされます。</value>
     <comment>activity description</comment>
   </data>
   <data name="MergeData_Source_DisplayName" xml:space="preserve">
-    <value>Origem</value>
+    <value>ソース</value>
     <comment>property name</comment>
   </data>
   <data name="MergeData_Source_Description" xml:space="preserve">
-    <value>O DataNode a ser mesclado na instância de destino.</value>
+    <value>宛先インスタンスにマージする DataNode。</value>
     <comment>property description</comment>
   </data>
   <data name="MergeData_Destination_DisplayName" xml:space="preserve">
-    <value>Destino</value>
+    <value>宛先</value>
     <comment>property name</comment>
   </data>
   <data name="MergeData_Destination_Description" xml:space="preserve">
-    <value>O DataNode a ser atualizado com a instância de origem.</value>
+    <value>ソースインスタンスで更新される DataNode。</value>
     <comment>property description</comment>
   </data>
   <data name="Zip_EntryStructure_DisplayName" xml:space="preserve">
-    <value>Estrutura das Entradas</value>
+    <value>エントリ構造</value>
     <comment>property name</comment>
   </data>
   <data name="Zip_EntryStructure_Description" xml:space="preserve">
-    <value>Define como os arquivos são armazenados dentro do ZIP: manter caminhos relativos, achatar na raiz, renomear duplicatas ou preservar toda a estrutura de diretórios. O modo Auto achata quando possível e volta para caminhos relativos se detectar nomes duplicados.</value>
+    <value>ZIP アーカイブ内へのファイルの格納方法を定義します。相対パスの保持、ルートへのフラット化、重複のリネーム、または完全なディレクトリ構造の保持。Auto モードはフラット化を優先し、重複する名前が検出された場合は相対パスにフォールバックします。</value>
     <comment>property description</comment>
   </data>
 </root>

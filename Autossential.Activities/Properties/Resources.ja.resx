@@ -282,7 +282,7 @@
     <comment>activity description</comment>
   </data>
   <data name="Zip_DisplayName" xml:space="preserve">
-    <value>Zip</value>
+    <value>圧縮 (Zip)</value>
     <comment>activity name</comment>
   </data>
   <data name="Zip_ToCompress_Description" xml:space="preserve">
@@ -350,7 +350,7 @@
     <comment>activity description</comment>
   </data>
   <data name="Unzip_DisplayName" xml:space="preserve">
-    <value>解凍</value>
+    <value>解凍 (Unzip)</value>
     <comment>activity name</comment>
   </data>
   <data name="Unzip_ZipFilePath_Description" xml:space="preserve">

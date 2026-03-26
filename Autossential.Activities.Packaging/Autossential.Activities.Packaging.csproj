@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net6.0;net6.0-windows</TargetFrameworks>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net6.0;net6.0-windows</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
 	<PropertyGroup>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -29,7 +29,18 @@
 		</ItemGroup>
 		<ItemGroup>
 			<BuildOutputInPackage Include="$(OutputPath)Autossential.Activities.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)de\Autossential.Activities.resources.dll" TargetPath="de\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)es\Autossential.Activities.resources.dll" TargetPath="es\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)es-MX\Autossential.Activities.resources.dll" TargetPath="es-MX\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)fr\Autossential.Activities.resources.dll" TargetPath="fr\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)ja\Autossential.Activities.resources.dll" TargetPath="ja\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)ko\Autossential.Activities.resources.dll" TargetPath="ko\Autossential.Activities.resources.dll" />
 			<BuildOutputInPackage Include="$(OutputPath)pt-BR\Autossential.Activities.resources.dll" TargetPath="pt-BR\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)pt\Autossential.Activities.resources.dll" TargetPath="pt\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)ru\Autossential.Activities.resources.dll" TargetPath="ru\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)tr\Autossential.Activities.resources.dll" TargetPath="tr\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)zh-CN\Autossential.Activities.resources.dll" TargetPath="zh-CN\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)zh-TW\Autossential.Activities.resources.dll" TargetPath="zh-TW\Autossential.Activities.resources.dll" />
 		</ItemGroup>
 	</Target>
 
@@ -38,7 +49,7 @@
 			<BuiltProjectOutputGroupOutput Remove="@(BuiltProjectOutputGroupOutput)" />
 		</ItemGroup>
 	</Target>
-	
+
 	<Target Name="CleanPackageFiles" BeforeTargets="Build">
 		<Message Text="Deleting packages ..." />
 		<ItemGroup>

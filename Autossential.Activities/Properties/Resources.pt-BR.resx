@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Categories_Input" xml:space="preserve">
+ <data name="Categories_Input" xml:space="preserve">
     <value>Entrada</value>
     <comment>category</comment>
   </data>
@@ -394,7 +394,7 @@
     <comment>activity name</comment>
   </data>
   <data name="RandomString_Format_Description" xml:space="preserve">
-    <value>Padrão que define a string gerada. Placeholders: 'a' minúscula, 'A' maiúscula, '0' dígito, '*' alfanumérico, '?' caracteres personalizados, '\\' escape.</value>
+    <value>Padrão que define a string gerada. Marcadores: 'a' minúscula, 'A' maiúscula, '0' dígito, '*' alfanumérico, '?' caracteres personalizados, '\\' escape.</value>
     <comment>property description</comment>
   </data>
   <data name="RandomString_Format_DisplayName" xml:space="preserve">
@@ -402,7 +402,7 @@
     <comment>property name</comment>
   </data>
   <data name="RandomString_Custom_Description" xml:space="preserve">
-    <value>Caracteres adicionais usados quando o placeholder '?' está presente.</value>
+    <value>Caracteres adicionais usados quando o marcador '?' está presente.</value>
     <comment>property description</comment>
   </data>
   <data name="RandomString_Custom_DisplayName" xml:space="preserve">
@@ -482,7 +482,7 @@
     <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
-    <value>O padrão do texto do token. Pode ter caracteres antes e depois do placeholder.</value>
+    <value>O padrão do texto do token. Pode ter caracteres antes e depois do marcador.</value>
     <comment>property description</comment>
   </data>
   <data name="ReplaceTokens_Pattern_DisplayName" xml:space="preserve">
@@ -490,11 +490,11 @@
     <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
-    <value>O caractere usado como placeholder dentro do padrão do token.</value>
+    <value>O caractere usado como marcador dentro do padrão do token.</value>
     <comment>property description</comment>
   </data>
   <data name="ReplaceTokens_Placeholder_DisplayName" xml:space="preserve">
-    <value>Placeholder</value>
+    <value>Marcador</value>
     <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Result_Description" xml:space="preserve">
@@ -722,11 +722,11 @@
     <comment>property name</comment>
   </data>
   <data name="Exit_Description" xml:space="preserve">
-    <value>Sai do Container ou Time Loop interrompendo a execução dos filhos após ele.</value>
+    <value>Sai do Contêiner ou Loop por Tempo interrompendo a execução dos filhos após ele.</value>
     <comment>activity description</comment>
   </data>
   <data name="Exit_ErrorMsg_InvalidParent" xml:space="preserve">
-    <value>A atividade Exit deve estar dentro de um Container ou Time Loop.</value>
+    <value>A atividade Exit deve estar dentro de um Contêiner ou Loop por Tempo.</value>
     <comment>error message</comment>
   </data>
   <data name="TimeLoop_DisplayName" xml:space="preserve">
@@ -766,7 +766,7 @@
     <comment>activity name</comment>
   </data>
   <data name="Container_Description" xml:space="preserve">
-    <value>É um wrapper que, combinado com a atividade Exit, interrompe o fluxo de execução dos filhos saindo do Container antecipadamente.</value>
+    <value>É um invólucro que, combinado com a atividade Sair, interrompe o fluxo de execução dos filhos saindo do Contêiner antecipadamente.</value>
     <comment>activity description</comment>
   </data>
   <data name="CheckPoint_Data_Description" xml:space="preserve">
@@ -802,7 +802,7 @@
     <comment>property name</comment>
   </data>
   <data name="PromoteHeaders_AutoRename_Description" xml:space="preserve">
-    <value>Quando verdadeiro, adiciona um sufixo numérico se o nome da coluna já existir na DataTable.</value>
+    <value>Quando verdadeiro, adiciona um sufixo numérico se o nome da coluna já existir na Tabela de Dados.</value>
     <comment>property description</comment>
   </data>
   <data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
@@ -818,15 +818,15 @@
     <comment>activity name</comment>
   </data>
   <data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
-    <value>Não há linhas na DataTable de entrada para promover.</value>
+    <value>Não há linhas na Tabela de Dados de entrada para promover.</value>
     <comment>error message</comment>
   </data>
   <data name="PromoteHeaders_DataTable_Description" xml:space="preserve">
-    <value>A DataTable cuja primeira linha será promovida para cabeçalhos.</value>
+    <value>A Tabela de Dados cuja primeira linha será promovida para cabeçalhos.</value>
     <comment>property description</comment>
   </data>
   <data name="PromoteHeaders_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>Tabela de Dados</value>
     <comment>property name</comment>
   </data>
   <data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
@@ -838,23 +838,23 @@
     <comment>property name</comment>
   </data>
   <data name="DataTableToText_Description" xml:space="preserve">
-    <value>Retorna uma representação em string de uma DataTable no formato de texto especificado (HTML, JSON ou XML).</value>
+    <value>Retorna uma representação em string de uma Tabela de Dados no formato de texto especificado (HTML, JSON ou XML).</value>
     <comment>activity description</comment>
   </data>
   <data name="DataTableToText_DisplayName" xml:space="preserve">
-    <value>DataTable para Texto</value>
+    <value>Tabela de Dados para Texto</value>
     <comment>activity name</comment>
   </data>
   <data name="DataTableToText_DataTable_Description" xml:space="preserve">
-    <value>A DataTable.</value>
+    <value>A Tabela de Dados.</value>
     <comment>property description</comment>
   </data>
   <data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>Tabela de Dados</value>
     <comment>property name</comment>
   </data>
   <data name="DataTableToText_Result_Description" xml:space="preserve">
-    <value>A representação em string da DataTable.</value>
+    <value>A representação em string da Tabela de Dados.</value>
     <comment>property description</comment>
   </data>
   <data name="DataTableToText_Result_DisplayName" xml:space="preserve">
@@ -878,7 +878,7 @@
     <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_Description" xml:space="preserve">
-    <value>Remove as linhas vazias de uma DataTable.</value>
+    <value>Remove as linhas vazias de uma Tabela de Dados.</value>
     <comment>activity description</comment>
   </data>
   <data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
@@ -886,15 +886,15 @@
     <comment>activity name</comment>
   </data>
   <data name="RemoveEmptyRows_DataTable_Description" xml:space="preserve">
-    <value>A DataTable cujas linhas vazias serão removidas.</value>
+    <value>A Tabela de Dados cujas linhas vazias serão removidas.</value>
     <comment>property description</comment>
   </data>
   <data name="RemoveEmptyRows_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>Tabela de Dados</value>
     <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_MatchingMode_Description" xml:space="preserve">
-    <value>Determina como uma linha é avaliada para remoção: All — a linha é removida se todas as colunas especificadas estiverem vazias. Any — a linha é removida se qualquer coluna especificada estiver vazia. Se nenhuma coluna for especificada, todas as colunas da DataTable serão consideradas.</value>
+    <value>Determina como uma linha é avaliada para remoção: All — a linha é removida se todas as colunas especificadas estiverem vazias. Any — a linha é removida se qualquer coluna especificada estiver vazia. Se nenhuma coluna for especificada, todas as colunas da Tabela de Dados serão consideradas.</value>
     <comment>property description</comment>
   </data>
   <data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
@@ -910,7 +910,7 @@
     <comment>property description</comment>
   </data>
   <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>Tabela de Dados</value>
     <comment>property name</comment>
   </data>
   <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
@@ -922,7 +922,7 @@
     <comment>property name</comment>
   </data>
   <data name="RemoveDataColumns_Description" xml:space="preserve">
-    <value>Remove as colunas especificadas de uma DataTable.</value>
+    <value>Remove as colunas especificadas de uma Tabela de Dados.</value>
     <comment>activity description</comment>
   </data>
   <data name="RemoveDataColumns_DisplayName" xml:space="preserve">
@@ -930,7 +930,7 @@
     <comment>activity name</comment>
   </data>
   <data name="RemoveDataColumns_DataTable_Description" xml:space="preserve">
-    <value>A DataTable da qual as colunas serão removidas.</value>
+    <value>A Tabela de Dados da qual as colunas serão removidas.</value>
     <comment>property description</comment>
   </data>
   <data name="RemoveDataColumns_ColumnIndexes_DisplayName" xml:space="preserve">
@@ -942,7 +942,7 @@
     <comment>property description</comment>
   </data>
   <data name="TransposeData_Description" xml:space="preserve">
-    <value>Transpõe uma DataTable trocando suas linhas e colunas (linhas viram colunas e colunas viram linhas).</value>
+    <value>Transpõe uma Tabela de Dados trocando suas linhas e colunas (linhas viram colunas e colunas viram linhas).</value>
     <comment>activity description</comment>
   </data>
   <data name="TransposeData_DisplayName" xml:space="preserve">
@@ -950,11 +950,11 @@
     <comment>activity name</comment>
   </data>
   <data name="TransposeData_DataTable_Description" xml:space="preserve">
-    <value>A DataTable a ser transposta.</value>
+    <value>A Tabela de Dados a ser transposta.</value>
     <comment>property description</comment>
   </data>
   <data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
+    <value>Tabela de Dados</value>
     <comment>property name</comment>
   </data>
   <data name="ParseData_DisplayName" xml:space="preserve">

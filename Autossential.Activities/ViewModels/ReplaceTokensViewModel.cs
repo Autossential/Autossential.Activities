@@ -12,6 +12,7 @@ namespace Autossential.Activities.ViewModels
         public DesignInArgument<string> Pattern { get; set; }
         public DesignInArgument<char> Placeholder { get; set; }
         public DesignProperty<bool> CaseSensitive { get; set; }
+        public DesignOutArgument<string> Result { get; set; }
 
         protected override void InitializeModel()
         {

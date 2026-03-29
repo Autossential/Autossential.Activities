@@ -1,320 +1,362 @@
-﻿using Moq;
-using System;
-using System.Activities;
+﻿using System.Activities;
 using System.Activities.Expressions;
 using System.Activities.Statements;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Activities.Validation;
 using Xunit;
 
 namespace Autossential.Activities.Tests.Unit
 {
-    /// <summary>
-    /// Unit tests for <see cref="IfActivity"/>.
-    ///
-    /// Strategy:
-    ///   - Direct/unit tests: constructor defaults, property initialization, branching logic
-    ///     via WorkflowInvoker (no mocks needed for these integration-style unit tests).
-    ///   - Isolated tests: OnEvaluateConditionCompleted logic via reflection, and
-    ///     NativeActivityContext interactions via Moq.
-    ///
-    /// Prerequisites (add to your test project):
-    ///   - xunit
-    ///   - xunit.runner.visualstudio
-    ///   - Moq
-    ///   - System.Activities (WF 4 / CoreWF)
-    /// </summary>
     public class IfActivityTests
     {
-        // ──────────────────────────────────────────────────────────────────────
-        // 1. Constructor / Initialization
-        // ──────────────────────────────────────────────────────────────────────
+        // ─── Helpers ────────────────────────────────────────────────────────────
+
+        /// <summary>
+        /// Creates an ActivityFunc&lt;bool&gt; whose Handler always returns the given literal value.
+        /// </summary>
+        private static ActivityFunc<bool> BoolCondition(bool value) =>
+            new ActivityFunc<bool>
+            {
+                Handler = new Literal<bool>(value)
+            };
+
+        /// <summary>
+        /// Creates a CodeActivity that appends a token to a shared list,
+        /// making it easy to assert execution order / branch selection.
+        /// </summary>
+        private static Activity RecordActivity(IList<string> log, string token) =>
+            new ActionActivity(() => log.Add(token));
+
+        // ─── Constructor / Default State ─────────────────────────────────────
 
         [Fact]
-        public void Constructor_ShouldInitializeCondition()
+        public void Constructor_ShouldInitializeConditionAsEmptyActivityFunc()
         {
             var activity = new IfActivity();
 
             Assert.NotNull(activity.Condition);
+            Assert.IsType<ActivityFunc<bool>>(activity.Condition);
+            Assert.Null(activity.Condition.Handler);
         }
 
         [Fact]
-        public void Constructor_ShouldInitializeBody_WithThenSequence()
+        public void Constructor_ShouldInitializeThenAsEmptySequence()
         {
             var activity = new IfActivity();
 
-            Assert.NotNull(activity.Body);
-            Assert.NotNull(activity.Body.Handler);
-            var sequence = Assert.IsType<Sequence>(activity.Body.Handler);
-            Assert.Equal("Then", sequence.DisplayName);
+            Assert.NotNull(activity.Then);
+            Assert.IsType<Sequence>(activity.Then);
+            Assert.Equal(string.Empty, activity.Then.DisplayName);
         }
 
         [Fact]
-        public void Constructor_ShouldInitializeElseBody_WithElseSequence()
+        public void Constructor_ShouldInitializeElseAsEmptySequence()
         {
             var activity = new IfActivity();
 
-            Assert.NotNull(activity.ElseBody);
-            Assert.NotNull(activity.ElseBody.Handler);
-            var sequence = Assert.IsType<Sequence>(activity.ElseBody.Handler);
-            Assert.Equal("Else", sequence.DisplayName);
+            Assert.NotNull(activity.Else);
+            Assert.IsType<Sequence>(activity.Else);
+            Assert.Equal(string.Empty, activity.Else.DisplayName);
         }
 
-        [Fact]
-        public void Constructor_ShouldSetCheckTrue_ToTrueByDefault()
-        {
-            var activity = new IfActivity();
-
-            Assert.True(activity.CheckTrue);
-        }
-
-        // ──────────────────────────────────────────────────────────────────────
-        // 2. Variables collection (lazy init)
-        // ──────────────────────────────────────────────────────────────────────
+        // ─── Validation ──────────────────────────────────────────────────────
 
         [Fact]
-        public void Variables_ShouldReturnEmptyCollection_WhenNotSet()
-        {
-            var activity = new IfActivity();
-
-            Assert.NotNull(activity.Variables);
-            Assert.Empty(activity.Variables);
-        }
-
-        [Fact]
-        public void Variables_ShouldReturnSameInstance_OnSubsequentAccess()
-        {
-            var activity = new IfActivity();
-
-            var first = activity.Variables;
-            var second = activity.Variables;
-
-            Assert.Same(first, second);
-        }
-
-        [Fact]
-        public void Variables_ShouldAllowAddingItems()
-        {
-            var activity = new IfActivity();
-            var variable = new Variable<string>("testVar");
-
-            activity.Variables.Add(variable);
-
-            Assert.Single(activity.Variables);
-            Assert.Contains(variable, activity.Variables);
-        }
-
-        // ──────────────────────────────────────────────────────────────────────
-        // 3. Property mutation
-        // ──────────────────────────────────────────────────────────────────────
-
-        [Fact]
-        public void CheckTrue_CanBeSetToFalse()
-        {
-            var activity = new IfActivity { CheckTrue = false };
-
-            Assert.False(activity.CheckTrue);
-        }
-
-        [Fact]
-        public void Condition_CanBeReplacedWithNewHandler()
-        {
-            var activity = new IfActivity();
-            var newFunc = new ActivityFunc<bool> { Handler = new DummyBoolActivity(true) };
-
-            activity.Condition = newFunc;
-
-            Assert.Same(newFunc, activity.Condition);
-        }
-
-        [Fact]
-        public void Body_CanBeReplacedWithCustomAction()
-        {
-            var activity = new IfActivity();
-            var newAction = new ActivityAction { Handler = new Sequence { DisplayName = "Custom" } };
-
-            activity.Body = newAction;
-
-            Assert.Same(newAction, activity.Body);
-        }
-
-        [Fact]
-        public void ElseBody_CanBeReplacedWithCustomAction()
-        {
-            var activity = new IfActivity();
-            var newAction = new ActivityAction { Handler = new Sequence { DisplayName = "CustomElse" } };
-
-            activity.ElseBody = newAction;
-
-            Assert.Same(newAction, activity.ElseBody);
-        }
-
-        // ──────────────────────────────────────────────────────────────────────
-        // 4. Workflow integration – branching via WorkflowInvoker
-        //
-        //    WorkflowInvoker executes synchronously in-process, making it the
-        //    simplest way to exercise Execute → OnEvaluateConditionCompleted
-        //    without mocking the entire NativeActivityContext.
-        // ──────────────────────────────────────────────────────────────────────
-
-        [Fact]
-        public void Execute_WhenConditionTrue_AndCheckTrue_ShouldRunBody()
-        {
-            var bodyRan = false;
-            var elseRan = false;
-
-            var activity = BuildIfActivity(
-                conditionResult: true,
-                checkTrue: true,
-                bodyAction: () => bodyRan = true,
-                elseAction: () => elseRan = true);
-
-            WorkflowInvoker.Invoke(activity);
-
-            Assert.True(bodyRan, "Body should have run.");
-            Assert.False(elseRan, "ElseBody should not have run.");
-        }
-
-        [Fact]
-        public void Execute_WhenConditionFalse_AndCheckTrue_ShouldRunElseBody()
-        {
-            var bodyRan = false;
-            var elseRan = false;
-
-            var activity = BuildIfActivity(
-                conditionResult: false,
-                checkTrue: true,
-                bodyAction: () => bodyRan = true,
-                elseAction: () => elseRan = true);
-
-            WorkflowInvoker.Invoke(activity);
-
-            Assert.False(bodyRan, "Body should not have run.");
-            Assert.True(elseRan, "ElseBody should have run.");
-        }
-
-        [Fact]
-        public void Execute_WhenConditionFalse_AndCheckFalse_ShouldRunBody()
-        {
-            // CheckTrue = false means "run Body when condition is false"
-            var bodyRan = false;
-            var elseRan = false;
-
-            var activity = BuildIfActivity(
-                conditionResult: false,
-                checkTrue: false,
-                bodyAction: () => bodyRan = true,
-                elseAction: () => elseRan = true);
-
-            WorkflowInvoker.Invoke(activity);
-
-            Assert.True(bodyRan, "Body should have run when condition matches CheckTrue=false.");
-            Assert.False(elseRan, "ElseBody should not have run.");
-        }
-
-        [Fact]
-        public void Execute_WhenConditionTrue_AndCheckFalse_ShouldRunElseBody()
-        {
-            var bodyRan = false;
-            var elseRan = false;
-
-            var activity = BuildIfActivity(
-                conditionResult: true,
-                checkTrue: false,
-                bodyAction: () => bodyRan = true,
-                elseAction: () => elseRan = true);
-
-            WorkflowInvoker.Invoke(activity);
-
-            Assert.False(bodyRan, "Body should not have run.");
-            Assert.True(elseRan, "ElseBody should have run.");
-        }
-
-        [Fact]
-        public void Execute_WhenBodyIsNull_AndConditionMatches_ShouldNotThrow()
+        public void Validation_ShouldFail_WhenConditionHandlerIsNull()
         {
             var activity = new IfActivity
             {
-                CheckTrue = true,
-                Condition = new ActivityFunc<bool> { Handler = new DummyBoolActivity(true) },
-                Body = null   // explicitly null
+                // Condition is set but Handler is null (default from constructor)
+                Condition = new ActivityFunc<bool>()
             };
 
-            // Should complete without throwing NullReferenceException
-            var ex = Record.Exception(() => WorkflowInvoker.Invoke(activity));
+            var results = ActivityValidationServices.Validate(activity);
 
+            Assert.NotEmpty(results.Errors);
+        }
+
+        [Fact]
+        public void Validation_ShouldFail_WhenConditionIsNull()
+        {
+            var activity = new IfActivity
+            {
+                Condition = null
+            };
+
+            var results = ActivityValidationServices.Validate(activity);
+
+            Assert.NotEmpty(results.Errors);
+        }
+
+        [Fact]
+        public void Validation_ShouldSucceed_WhenConditionHandlerReturnsBoolean()
+        {
+            var activity = new IfActivity
+            {
+                Condition = BoolCondition(true)
+            };
+
+            var results = ActivityValidationServices.Validate(activity);
+
+            Assert.Empty(results.Errors);
+        }
+
+        // ─── Integration: condition == true ──────────────────────────────────
+
+        [Fact]
+        public void Execute_ShouldRunThenBranch_WhenConditionIsTrue()
+        {
+            var log = new List<string>();
+
+            var activity = new IfActivity
+            {
+                Condition = BoolCondition(true),
+                Then = RecordActivity(log, "then"),
+                Else = RecordActivity(log, "else")
+            };
+
+            WorkflowInvoker.Invoke(activity);
+
+            Assert.Equal(new[] { "then" }, log);
+        }
+
+        [Fact]
+        public void Execute_ShouldNotRunElseBranch_WhenConditionIsTrue()
+        {
+            var log = new List<string>();
+
+            var activity = new IfActivity
+            {
+                Condition = BoolCondition(true),
+                Then = RecordActivity(log, "then"),
+                Else = RecordActivity(log, "else")
+            };
+
+            WorkflowInvoker.Invoke(activity);
+
+            Assert.DoesNotContain("else", log);
+        }
+
+        // ─── Integration: condition == false ─────────────────────────────────
+
+        [Fact]
+        public void Execute_ShouldRunElseBranch_WhenConditionIsFalse()
+        {
+            var log = new List<string>();
+
+            var activity = new IfActivity
+            {
+                Condition = BoolCondition(false),
+                Then = RecordActivity(log, "then"),
+                Else = RecordActivity(log, "else")
+            };
+
+            WorkflowInvoker.Invoke(activity);
+
+            Assert.Equal(new[] { "else" }, log);
+        }
+
+        [Fact]
+        public void Execute_ShouldNotRunThenBranch_WhenConditionIsFalse()
+        {
+            var log = new List<string>();
+
+            var activity = new IfActivity
+            {
+                Condition = BoolCondition(false),
+                Then = RecordActivity(log, "then"),
+                Else = RecordActivity(log, "else")
+            };
+
+            WorkflowInvoker.Invoke(activity);
+
+            Assert.DoesNotContain("then", log);
+        }
+
+        // ─── Integration: null branches ──────────────────────────────────────
+
+        [Fact]
+        public void Execute_ShouldNotThrow_WhenThenIsNullAndConditionIsTrue()
+        {
+            var activity = new IfActivity
+            {
+                Condition = BoolCondition(true),
+                Then = null,
+                Else = null
+            };
+
+            // Must complete without throwing
+            var ex = Record.Exception(() => WorkflowInvoker.Invoke(activity));
             Assert.Null(ex);
         }
 
         [Fact]
-        public void Execute_WhenElseBodyIsNull_AndConditionDoesNotMatch_ShouldNotThrow()
+        public void Execute_ShouldNotThrow_WhenElseIsNullAndConditionIsFalse()
         {
             var activity = new IfActivity
             {
-                CheckTrue = true,
-                Condition = new ActivityFunc<bool> { Handler = new DummyBoolActivity(false) },
-                ElseBody = null  // explicitly null
+                Condition = BoolCondition(false),
+                Then = null,
+                Else = null
             };
 
             var ex = Record.Exception(() => WorkflowInvoker.Invoke(activity));
-
             Assert.Null(ex);
         }
 
-        // ──────────────────────────────────────────────────────────────────────
-        // Helpers
-        // ──────────────────────────────────────────────────────────────────────
-
-        /// <summary>
-        /// Builds a fully wired <see cref="IfActivity"/> using lightweight
-        /// code-activities for condition, body, and else-body.
-        /// </summary>
-        private static IfActivity BuildIfActivity(
-            bool conditionResult,
-            bool checkTrue,
-            Action bodyAction,
-            Action elseAction)
+        [Fact]
+        public void Execute_ShouldRunElse_WhenThenIsNullAndConditionIsFalse()
         {
-            return new IfActivity
+            var log = new List<string>();
+
+            var activity = new IfActivity
             {
-                CheckTrue = checkTrue,
-                Condition = new ActivityFunc<bool>
+                Condition = BoolCondition(false),
+                Then = null,
+                Else = RecordActivity(log, "else")
+            };
+
+            WorkflowInvoker.Invoke(activity);
+
+            Assert.Equal(new[] { "else" }, log);
+        }
+
+        [Fact]
+        public void Execute_ShouldRunThen_WhenElseIsNullAndConditionIsTrue()
+        {
+            var log = new List<string>();
+
+            var activity = new IfActivity
+            {
+                Condition = BoolCondition(true),
+                Then = RecordActivity(log, "then"),
+                Else = null
+            };
+
+            WorkflowInvoker.Invoke(activity);
+
+            Assert.Equal(new[] { "then" }, log);
+        }
+
+        // ─── Integration: dynamic / runtime condition ─────────────────────────
+
+        [Fact]
+        public void Execute_ShouldEvaluateConditionAtRuntime()
+        {
+            // The condition is backed by a WF variable — value decided at runtime.
+            var flag = new Variable<bool>("flag", true);
+            var log = new List<string>();
+
+            var activity = new Sequence
+            {
+                Variables = { flag },
+                Activities =
                 {
-                    Handler = new DummyBoolActivity(conditionResult)
-                },
-                Body = new ActivityAction
-                {
-                    Handler = new InvokeAction(bodyAction)
-                },
-                ElseBody = new ActivityAction
-                {
-                    Handler = new InvokeAction(elseAction)
+                    new IfActivity
+                    {
+                        Condition = new ActivityFunc<bool>
+                        {
+                            Handler = new VariableValue<bool> { Variable = flag }
+                        },
+                        Then = RecordActivity(log, "runtime-then"),
+                        Else = RecordActivity(log, "runtime-else")
+                    }
                 }
             };
+
+            WorkflowInvoker.Invoke(activity);
+
+            Assert.Equal(new[] { "runtime-then" }, log);
         }
 
+        // ─── Integration: nested IfActivity ──────────────────────────────────
 
-
-        // ──────────────────────────────────────────────────────────────────────────
-        // Test doubles (minimal, self-contained)
-        // ──────────────────────────────────────────────────────────────────────────
-
-        /// <summary>Returns a constant bool value — used as the Condition handler.</summary>
-        internal sealed class DummyBoolActivity(bool value) : CodeActivity<bool>
+        [Fact]
+        public void Execute_ShouldSupportNestedIfActivities()
         {
-            private readonly bool _value = value;
+            var log = new List<string>();
 
-            protected override bool Execute(CodeActivityContext context) => _value;
+            var inner = new IfActivity
+            {
+                Condition = BoolCondition(false),
+                Then = RecordActivity(log, "inner-then"),
+                Else = RecordActivity(log, "inner-else")
+            };
+
+            var outer = new IfActivity
+            {
+                Condition = BoolCondition(true),
+                Then = inner,
+                Else = RecordActivity(log, "outer-else")
+            };
+
+            WorkflowInvoker.Invoke(outer);
+
+            Assert.Equal(new[] { "inner-else" }, log);
         }
 
-        /// <summary>Invokes a delegate — used as Body / ElseBody handlers.</summary>
-        internal sealed class InvokeAction(Action action) : CodeActivity
+        // ─── Integration: Then/Else as Sequence with multiple children ────────
+
+        [Fact]
+        public void Execute_ShouldRunAllActivitiesInThenSequence()
         {
-            private readonly Action _action = action;
+            var log = new List<string>();
 
-            protected override void Execute(CodeActivityContext context) => _action();
+            var activity = new IfActivity
+            {
+                Condition = BoolCondition(true),
+                Then = new Sequence
+                {
+                    Activities =
+                    {
+                        RecordActivity(log, "step-1"),
+                        RecordActivity(log, "step-2"),
+                        RecordActivity(log, "step-3")
+                    }
+                }
+            };
+
+            WorkflowInvoker.Invoke(activity);
+
+            Assert.Equal(new[] { "step-1", "step-2", "step-3" }, log);
         }
+
+        [Fact]
+        public void Execute_ShouldRunAllActivitiesInElseSequence()
+        {
+            var log = new List<string>();
+
+            var activity = new IfActivity
+            {
+                Condition = BoolCondition(false),
+                Else = new Sequence
+                {
+                    Activities =
+                    {
+                        RecordActivity(log, "else-1"),
+                        RecordActivity(log, "else-2")
+                    }
+                }
+            };
+
+            WorkflowInvoker.Invoke(activity);
+
+            Assert.Equal(new[] { "else-1", "else-2" }, log);
+        }
+    }
+
+    // ─── Minimal test double ──────────────────────────────────────────────────
+
+    /// <summary>
+    /// Lightweight <see cref="CodeActivity"/> that executes an arbitrary
+    /// <see cref="Action"/> — used to record side-effects in tests without
+    /// needing a full mock framework.
+    /// </summary>
+    internal sealed class ActionActivity : CodeActivity
+    {
+        private readonly Action _action;
+
+        public ActionActivity(Action action) => _action = action;
+
+        protected override void Execute(CodeActivityContext context) => _action();
     }
 }

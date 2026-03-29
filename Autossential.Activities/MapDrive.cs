@@ -10,7 +10,8 @@ namespace Autossential.Activities
         public InArgument<string> SharedDrivePath { get; set; }
         public InArgument<NetworkCredential> Credential { get; set; }
         public InArgument<bool> Force { get; set; }
-        public InOutArgument<string> DriveLetter { get; set; }
+        public InArgument<string> DriveLetter { get; set; }
+        public OutArgument<string> MappedDrive { get; set; }
 
         protected override bool Execute(CodeActivityContext context)
         {
@@ -36,7 +37,7 @@ namespace Autossential.Activities
             SetResponseMessageFromCode(context, result);
             if (result == 0)
             {
-                DriveLetter.Set(context, driveLetter);
+                MappedDrive.Set(context, driveLetter);
                 return true;
             }
 

@@ -697,14 +697,6 @@
     <value>Évalue le résultat d'une activité retournant un booléen et exécute le bloc de code associé si la condition est remplie.</value>
     <comment>property description</comment>
   </data>
-  <data name="IfActivity_CheckTrue_DisplayName" xml:space="preserve">
-    <value>Vérifier vrai</value>
-    <comment>property name</comment>
-  </data>
-  <data name="IfActivity_CheckTrue_Description" xml:space="preserve">
-    <value>Évalue si la condition est vraie.</value>
-    <comment>property description</comment>
-  </data>
   <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
     <value>Le champ Condition nécessite des activités qui retournent une valeur booléenne.</value>
     <comment>error message</comment>

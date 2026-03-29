@@ -477,8 +477,19 @@
           "isVisible": true,
           "isRequired": false,
           "category": {
-            "name": "InputOutput",
-            "displayNameKey": "Categories_InputOutput"
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "MappedDrive",
+          "displayNameKey": "MapDrive_MappedDrive_DisplayName",
+          "tooltipKey": "MapDrive_MappedDrive_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Output",
+            "displayNameKey": "Categories_Output"
           }
         },
         {

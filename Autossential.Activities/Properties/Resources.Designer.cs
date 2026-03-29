@@ -691,24 +691,6 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Evaluates if the condition results true..
-        /// </summary>
-        public static string IfActivity_CheckTrue_Description {
-            get {
-                return ResourceManager.GetString("IfActivity_CheckTrue_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Check True.
-        /// </summary>
-        public static string IfActivity_CheckTrue_DisplayName {
-            get {
-                return ResourceManager.GetString("IfActivity_CheckTrue_DisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Evaluates the result of a boolean-returning activity and executes the associated code block if the condition is met..
         /// </summary>
         public static string IfActivity_Description {

@@ -697,14 +697,6 @@
     <value>Bewertet das Ergebnis einer booleschen Aktivität und führt den zugehörigen Codeblock aus, wenn die Bedingung erfüllt ist.</value>
     <comment>property description</comment>
   </data>
-  <data name="IfActivity_CheckTrue_DisplayName" xml:space="preserve">
-    <value>Auf True prüfen</value>
-    <comment>property name</comment>
-  </data>
-  <data name="IfActivity_CheckTrue_Description" xml:space="preserve">
-    <value>Bewertet, ob die Bedingung true ergibt.</value>
-    <comment>property description</comment>
-  </data>
   <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
     <value>Das Feld Bedingung erfordert Aktivitäten, die einen booleschen Wert zurückgeben.</value>
     <comment>error message</comment>

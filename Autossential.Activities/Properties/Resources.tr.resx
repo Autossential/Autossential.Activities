@@ -697,14 +697,6 @@
     <value>Boolean döndüren bir etkinliğin sonucunu değerlendirir ve koşul sağlanırsa ilişkili kod bloğunu çalıştırır.</value>
     <comment>property description</comment>
   </data>
-  <data name="IfActivity_CheckTrue_DisplayName" xml:space="preserve">
-    <value>Doğru mu Kontrol Et</value>
-    <comment>property name</comment>
-  </data>
-  <data name="IfActivity_CheckTrue_Description" xml:space="preserve">
-    <value>Koşulun true olup olmadığını değerlendirir.</value>
-    <comment>property description</comment>
-  </data>
   <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
     <value>Condition alanı boolean değer döndüren etkinlikler gerektirir.</value>
     <comment>error message</comment>

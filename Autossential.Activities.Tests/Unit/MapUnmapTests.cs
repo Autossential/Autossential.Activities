@@ -23,7 +23,7 @@ namespace Autossential.Activities.Tests.Unit
 
             var (result, outputs) = WorkflowInvoker.InvokeOutputs(map);
             Assert.True(result);
-            Assert.False(string.IsNullOrEmpty(outputs[nameof(MapDrive.DriveLetter)].ToString()));
+            Assert.False(string.IsNullOrEmpty(outputs[nameof(MapDrive.MappedDrive)].ToString()));
 
             var newDrivers = GetLogicalDrives().Except(drivers).ToArray();
             Assert.Single(newDrivers);
@@ -109,7 +109,7 @@ namespace Autossential.Activities.Tests.Unit
             });
 
             Assert.True(result);
-            Assert.Equal(driveLetter, outputs[nameof(MapDrive.DriveLetter)]);
+            Assert.Equal(driveLetter, outputs[nameof(MapDrive.MappedDrive)]);
 
             Assert.True(WorkflowInvoker.Invoke(new UnmapDrive(), new Dictionary<string, object>
             {
@@ -128,7 +128,7 @@ namespace Autossential.Activities.Tests.Unit
             });
 
             Assert.True(result);
-            Assert.Equal(driveLetter, outputs[nameof(MapDrive.DriveLetter)]);
+            Assert.Equal(driveLetter, outputs[nameof(MapDrive.MappedDrive)]);
 
             (result, _) = WorkflowInvoker.InvokeOutputs(new MapDrive(), new Dictionary<string, object>
             {
@@ -155,7 +155,7 @@ namespace Autossential.Activities.Tests.Unit
             });
 
             Assert.True(result);
-            Assert.Equal(driveLetter, outputs[nameof(MapDrive.DriveLetter)]);
+            Assert.Equal(driveLetter, outputs[nameof(MapDrive.MappedDrive)]);
 
             (result, _) = WorkflowInvoker.InvokeOutputs(new MapDrive(), new Dictionary<string, object>
             {

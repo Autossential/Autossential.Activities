@@ -697,14 +697,6 @@
     <value>Evaluates the result of a boolean-returning activity and executes the associated code block if the condition is met.</value>
     <comment>property description</comment>
   </data>
-  <data name="IfActivity_CheckTrue_DisplayName" xml:space="preserve">
-    <value>Check True</value>
-    <comment>property name</comment>
-  </data>
-  <data name="IfActivity_CheckTrue_Description" xml:space="preserve">
-    <value>Evaluates if the condition results true.</value>
-    <comment>property description</comment>
-  </data>
   <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
     <value>The Condition field requires activities that returns a boolean value.</value>
     <comment>error message</comment>

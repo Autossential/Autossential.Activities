@@ -697,14 +697,6 @@
     <value>ブール値を返すアクティビティの結果を評価し、条件が満たされた場合に関連するコードブロックを実行します。</value>
     <comment>property description</comment>
   </data>
-  <data name="IfActivity_CheckTrue_DisplayName" xml:space="preserve">
-    <value>真を確認</value>
-    <comment>property name</comment>
-  </data>
-  <data name="IfActivity_CheckTrue_Description" xml:space="preserve">
-    <value>条件が true になるかどうかを評価します。</value>
-    <comment>property description</comment>
-  </data>
   <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
     <value>条件フィールドには、ブール値を返すアクティビティが必要です。</value>
     <comment>error message</comment>

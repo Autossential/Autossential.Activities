@@ -11,7 +11,7 @@
 		<VersionBuild>$([System.DateTime]::UtcNow.DayOfYear.ToString("F0"))</VersionBuild>
 		<VersionRevision>$([System.DateTime]::UtcNow.TimeOfDay.TotalMinutes.ToString("F0"))</VersionRevision>
 		<VersionPrefix Condition="'$(Configuration)' == 'Release'">4.0.0</VersionPrefix>
-		<VersionPrefix Condition="'$(Configuration)' == 'Debug'">4.0.$(VersionBuild)-dev.$(VersionRevision)</VersionPrefix>
+		<VersionPrefix Condition="'$(Configuration)' == 'Debug'">4.0.0-preview-$(VersionBuild)$(VersionRevision)</VersionPrefix>
 		<Authors>Alexandre T. Perez</Authors>
 		<Product>Autossential.Activities.Packaging</Product>
 		<PackageId>Autossential.Activities</PackageId>
@@ -19,7 +19,9 @@
 		<PackageOutputPath>..\..\Output</PackageOutputPath>
 		<TargetsForTfmSpecificBuildOutput>AddDlls</TargetsForTfmSpecificBuildOutput>
 		<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
-		<Description>IMPORTANT: This package is a redesign and not compatible with previous 3.* versions.</Description>
+		<Description>
+			IMPORTANT: This package is not compatible with previous 3.x versions or with UiPath Legacy projects. It has been completely redesigned, and several activities from earlier versions have been removed or modified
+		</Description>
 	</PropertyGroup>
 
 	<Target Name="AddDlls">

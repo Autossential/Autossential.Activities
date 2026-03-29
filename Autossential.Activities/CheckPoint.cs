@@ -17,7 +17,13 @@ namespace Autossential.Activities
             if (Expression.Get(context))
                 return;
 
+            var data = Data.Get(context) ?? [];
+
             var ex = Exception.Get(context);
+
+            foreach (var (key, value) in data)
+                ex.Data[key] = value;
+            
             throw ex;
         }
     }

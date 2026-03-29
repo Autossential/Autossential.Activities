@@ -697,14 +697,6 @@
     <value>Оценивает результат действия с возвращаемым логическим значением и выполняет связанный блок кода, если условие выполнено.</value>
     <comment>property description</comment>
   </data>
-  <data name="IfActivity_CheckTrue_DisplayName" xml:space="preserve">
-    <value>Проверить истину</value>
-    <comment>property name</comment>
-  </data>
-  <data name="IfActivity_CheckTrue_Description" xml:space="preserve">
-    <value>Оценивает, возвращает ли условие значение true.</value>
-    <comment>property description</comment>
-  </data>
   <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
     <value>Поле Условие требует действия, возвращающего логическое значение.</value>
     <comment>error message</comment>

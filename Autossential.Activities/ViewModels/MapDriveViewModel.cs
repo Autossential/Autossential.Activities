@@ -12,10 +12,11 @@ namespace Autossential.Activities.ViewModels
         public DesignInArgument<string> SharedDrivePath { get; set; }
         public DesignInArgument<NetworkCredential> Credential { get; set; }
         public DesignInArgument<bool> Force { get; set; }
-        public DesignInOutArgument<string> DriveLetter { get; set; }
+        public DesignInArgument<string> DriveLetter { get; set; }
         public DesignOutArgument<int> ResponseCode { get; set; }
         public DesignOutArgument<string> ResponseMessage { get; set; }
         public DesignOutArgument<bool> Result { get; set; }
+        public DesignOutArgument<string> MappedDrive { get; set; }
 
         protected override void InitializeModel()
         {
@@ -38,6 +39,7 @@ namespace Autossential.Activities.ViewModels
                 Force.OrderIndex = orderIndex++;
             }
 
+            MappedDrive.OrderIndex = orderIndex++;
             ResponseCode.OrderIndex = orderIndex++;
             ResponseMessage.OrderIndex = orderIndex++;
             Result.OrderIndex = orderIndex;

@@ -112,9 +112,7 @@ namespace Autossential.Activities
                             break;
                         }
 
-
                         Thread.Sleep(pollingInterval);
-                        break;
                     }
                     catch (Exception e)
                     {

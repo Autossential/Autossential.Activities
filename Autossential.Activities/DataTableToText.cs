@@ -15,7 +15,7 @@ namespace Autossential.Activities
             XML
         }
 
-        private const string DATE_FORMAT = "yyyy-MM-ddTHH:mm:ss.fffff";
+        private const string DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
         [RequiredArgument]
         public InArgument<DataTable> DataTable { get; set; }

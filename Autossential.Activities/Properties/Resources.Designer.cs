@@ -106,6 +106,60 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The collection to be modified..
+        /// </summary>
+        public static string AddRangeToCollection_Collection_Description {
+            get {
+                return ResourceManager.GetString("AddRangeToCollection_Collection_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Collection.
+        /// </summary>
+        public static string AddRangeToCollection_Collection_DisplayName {
+            get {
+                return ResourceManager.GetString("AddRangeToCollection_Collection_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adds a set of items to the specified collection..
+        /// </summary>
+        public static string AddRangeToCollection_Description {
+            get {
+                return ResourceManager.GetString("AddRangeToCollection_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Range To Collection.
+        /// </summary>
+        public static string AddRangeToCollection_DisplayName {
+            get {
+                return ResourceManager.GetString("AddRangeToCollection_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The items to be added to the collection..
+        /// </summary>
+        public static string AddRangeToCollection_Items_Description {
+            get {
+                return ResourceManager.GetString("AddRangeToCollection_Items_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Items.
+        /// </summary>
+        public static string AddRangeToCollection_Items_DisplayName {
+            get {
+                return ResourceManager.GetString("AddRangeToCollection_Items_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Common.
         /// </summary>
         public static string Categories_Common {

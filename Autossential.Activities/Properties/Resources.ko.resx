@@ -129,6 +129,30 @@
     <value>옵션</value>
     <comment>category</comment>
   </data>
+	<data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
+    <value>수정할 컬렉션입니다.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+    <value>컬렉션</value>
+    <comment>property name</comment>
+  </data>
+	<data name="AddRangeToCollection_Description" xml:space="preserve">
+    <value>지정된 컬렉션에 항목 집합을 추가합니다.</value>
+    <comment>activity description</comment>
+  </data>
+	<data name="AddRangeToCollection_DisplayName" xml:space="preserve">
+    <value>컬렉션에 범위 추가</value>
+    <comment>activity name</comment>
+  </data>
+	<data name="AddRangeToCollection_Items_Description" xml:space="preserve">
+    <value>컬렉션에 추가할 항목입니다.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+    <value>항목</value>
+    <comment>property name</comment>
+  </data>
   <data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
     <value>파일을 다시 확인하는 간격을 초 단위로 지정합니다. 0.5보다 작은 값은 0.5로 조정됩니다. 이 값을 시간 초과 값보다 작게 유지하세요.</value>
     <comment>property description</comment>

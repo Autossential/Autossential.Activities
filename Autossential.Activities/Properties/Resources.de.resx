@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+	<!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,1021 +59,1045 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="Categories_Input" xml:space="preserve">
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="Categories_Input" xml:space="preserve">
     <value>Eingabe</value>
     <comment>category</comment>
   </data>
-  <data name="Categories_Output" xml:space="preserve">
+	<data name="Categories_Output" xml:space="preserve">
     <value>Ausgabe</value>
     <comment>category</comment>
   </data>
-  <data name="Categories_Options" xml:space="preserve">
+	<data name="Categories_Options" xml:space="preserve">
     <value>Optionen</value>
     <comment>category</comment>
   </data>
-  <data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
+	<data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
+    <value>Die zu ändernde Sammlung.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+    <value>Sammlung</value>
+    <comment>property name</comment>
+  </data>
+	<data name="AddRangeToCollection_Description" xml:space="preserve">
+    <value>Fügt eine Reihe von Elementen zur angegebenen Sammlung hinzu.</value>
+    <comment>activity description</comment>
+  </data>
+	<data name="AddRangeToCollection_DisplayName" xml:space="preserve">
+    <value>Bereich zur Sammlung hinzufügen</value>
+    <comment>activity name</comment>
+  </data>
+	<data name="AddRangeToCollection_Items_Description" xml:space="preserve">
+    <value>Die Elemente, die der Sammlung hinzugefügt werden sollen.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+    <value>Elemente</value>
+    <comment>property name</comment>
+  </data>
+	<data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
     <value>Gibt die Zeit in Sekunden für die erneute Überprüfung der Datei an. Jeder Wert unter 0,5 wird auf 0,5 begrenzt. Stellen Sie sicher, dass dieser Wert kleiner als der Timeout-Wert ist.</value>
     <comment>property description</comment>
   </data>
-  <data name="WaitFile_PollingIntervalSeconds_DisplayName" xml:space="preserve">
+	<data name="WaitFile_PollingIntervalSeconds_DisplayName" xml:space="preserve">
     <value>Intervall</value>
     <comment>property name</comment>
   </data>
-  <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
+	<data name="Common_TimeoutSeconds_Description" xml:space="preserve">
     <value>Gibt die Zeit in Sekunden an, die gewartet wird, bevor bei der Ausführung der Aktivität ein Fehler ausgelöst wird. Der Standardwert ist 30 s.</value>
     <comment>property description</comment>
   </data>
-  <data name="WaitFile_Description" xml:space="preserve">
+	<data name="WaitFile_Description" xml:space="preserve">
     <value>Wartet, bis die Datei verfügbar ist.</value>
     <comment>activity description</comment>
   </data>
-  <data name="WaitFile_DisplayName" xml:space="preserve">
+	<data name="WaitFile_DisplayName" xml:space="preserve">
     <value>Auf Datei warten</value>
     <comment>activity name</comment>
   </data>
-  <data name="WaitFile_FilePath_Description" xml:space="preserve">
+	<data name="WaitFile_FilePath_Description" xml:space="preserve">
     <value>Der Pfad zur Datei.</value>
     <comment>property description</comment>
   </data>
-  <data name="WaitFile_FilePath_DisplayName" xml:space="preserve">
+	<data name="WaitFile_FilePath_DisplayName" xml:space="preserve">
     <value>Dateipfad</value>
     <comment>property name</comment>
   </data>
-  <data name="WaitFile_Result_Description" xml:space="preserve">
+	<data name="WaitFile_Result_Description" xml:space="preserve">
     <value>Das FileInfo-Objekt der jeweiligen Datei, wenn gefunden.</value>
     <comment>property description</comment>
   </data>
-  <data name="WaitFile_Result_DisplayName" xml:space="preserve">
+	<data name="WaitFile_Result_DisplayName" xml:space="preserve">
     <value>Ergebnis</value>
     <comment>property name</comment>
   </data>
-  <data name="WaitFile_WaitForExist_Description" xml:space="preserve">
+	<data name="WaitFile_WaitForExist_Description" xml:space="preserve">
     <value>Wartet, bis die Datei existiert.</value>
     <comment>property description</comment>
   </data>
-  <data name="WaitFile_WaitForExist_DisplayName" xml:space="preserve">
+	<data name="WaitFile_WaitForExist_DisplayName" xml:space="preserve">
     <value>Auf Existenz warten</value>
     <comment>property name</comment>
   </data>
-  <data name="Common_TimeoutSeconds_DisplayName" xml:space="preserve">
+	<data name="Common_TimeoutSeconds_DisplayName" xml:space="preserve">
     <value>Timeout</value>
     <comment>property name</comment>
   </data>
-  <data name="Common_ViewModel_BrowseForFile" xml:space="preserve">
+	<data name="Common_ViewModel_BrowseForFile" xml:space="preserve">
     <value>Datei auswählen</value>
     <comment>view model label</comment>
   </data>
-  <data name="Common_ViewModel_BrowseForFolder" xml:space="preserve">
+	<data name="Common_ViewModel_BrowseForFolder" xml:space="preserve">
     <value>Ordner auswählen</value>
     <comment>view model label</comment>
   </data>
-  <data name="Categories_Common" xml:space="preserve">
+	<data name="Categories_Common" xml:space="preserve">
     <value>Allgemein</value>
     <comment>category</comment>
   </data>
-  <data name="Common_ContinueOnError_DisplayName" xml:space="preserve">
+	<data name="Common_ContinueOnError_DisplayName" xml:space="preserve">
     <value>Bei Fehler fortfahren</value>
     <comment>property name</comment>
   </data>
-  <data name="Common_ContinueOnError_Description" xml:space="preserve">
+	<data name="Common_ContinueOnError_Description" xml:space="preserve">
     <value>Gibt an, ob die Ausführung der verbleibenden Aktivitäten fortgesetzt wird, auch wenn die aktuelle Aktivität fehlgeschlagen ist. Es sind nur boolesche Werte erlaubt.</value>
     <comment>property description</comment>
   </data>
-  <data name="WaitFile_DirectoryPath_Description" xml:space="preserve">
+	<data name="WaitFile_DirectoryPath_Description" xml:space="preserve">
     <value>Zu überwachender Verzeichnispfad.</value>
     <comment>property description</comment>
   </data>
-  <data name="WaitFile_DirectoryPath_DisplayName" xml:space="preserve">
+	<data name="WaitFile_DirectoryPath_DisplayName" xml:space="preserve">
     <value>Verzeichnispfad</value>
     <comment>property name</comment>
   </data>
-  <data name="WaitFile_DynamicFile_DisplayName" xml:space="preserve">
+	<data name="WaitFile_DynamicFile_DisplayName" xml:space="preserve">
     <value>Dateiname ist dynamisch</value>
     <comment>property name</comment>
   </data>
-  <data name="Common_SearchPattern_Description" xml:space="preserve">
+	<data name="Common_SearchPattern_Description" xml:space="preserve">
     <value>Der Suchstring definiert Dateinamensmuster im Pfad. Er unterstützt Literaltext und Platzhalter (*, ?, !, |), aber keine regulären Ausdrücke. Verwenden Sie ! für Ausschlüsse (z.B. !*.txt) und | für mehrere Muster (z.B. *.png|*.gif|*.jpeg). Standard ist *.* (alle Dateien).</value>
     <comment>property description</comment>
   </data>
-  <data name="Common_SearchPattern_DisplayName" xml:space="preserve">
+	<data name="Common_SearchPattern_DisplayName" xml:space="preserve">
     <value>Suchmuster</value>
     <comment>property name</comment>
   </data>
-  <data name="WaitFile_DynamicFile_Description" xml:space="preserve">
+	<data name="WaitFile_DynamicFile_Description" xml:space="preserve">
     <value>Wenn true, ändert sich das Verhalten der Aktivität, sodass ein bestimmter Ordner überwacht wird, bis eine Datei gefunden wird, die dem angegebenen Suchmuster entspricht.</value>
     <comment>property description</comment>
   </data>
-  <data name="CleanUpFolder_DeleteEmptyFolders_Description" xml:space="preserve">
+	<data name="CleanUpFolder_DeleteEmptyFolders_Description" xml:space="preserve">
     <value>Bestimmt, ob auch leere Ordner nach dem Löschen von Dateien entfernt werden sollen.</value>
     <comment>property description</comment>
   </data>
-  <data name="CleanUpFolder_DeleteEmptyFolders_DisplayName" xml:space="preserve">
+	<data name="CleanUpFolder_DeleteEmptyFolders_DisplayName" xml:space="preserve">
     <value>Leere Ordner löschen</value>
     <comment>property name</comment>
   </data>
-  <data name="CleanUpFolder_Description" xml:space="preserve">
+	<data name="CleanUpFolder_Description" xml:space="preserve">
     <value>Löscht alle Dateien und Ordner aus einem bestimmten Ordner.</value>
     <comment>activity description</comment>
   </data>
-  <data name="CleanUpFolder_DisplayName" xml:space="preserve">
+	<data name="CleanUpFolder_DisplayName" xml:space="preserve">
     <value>Ordner bereinigen</value>
     <comment>activity name</comment>
   </data>
-  <data name="CleanUpFolder_Folder_Description" xml:space="preserve">
+	<data name="CleanUpFolder_Folder_Description" xml:space="preserve">
     <value>Der zu bereinigende Ordnerpfad.</value>
     <comment>property description</comment>
   </data>
-  <data name="CleanUpFolder_Folder_DisplayName" xml:space="preserve">
+	<data name="CleanUpFolder_Folder_DisplayName" xml:space="preserve">
     <value>Ordnerpfad</value>
     <comment>property name</comment>
   </data>
-  <data name="CleanUpFolder_LastWriteTime_Description" xml:space="preserve">
+	<data name="CleanUpFolder_LastWriteTime_Description" xml:space="preserve">
     <value>Löscht nur die Dateien mit dem letzten Schreibdatum bis zu diesem Referenzdatum. Standard ist DateTime.Now.</value>
     <comment>property description</comment>
   </data>
-  <data name="CleanUpFolder_LastWriteTime_DisplayName" xml:space="preserve">
+	<data name="CleanUpFolder_LastWriteTime_DisplayName" xml:space="preserve">
     <value>Letztes Schreibdatum</value>
     <comment>property name</comment>
   </data>
-  <data name="CleanUpFolder_FilesDeleted_Description" xml:space="preserve">
+	<data name="CleanUpFolder_FilesDeleted_Description" xml:space="preserve">
     <value>Die Anzahl der gelöschten Dateien.</value>
     <comment>property description</comment>
   </data>
-  <data name="CleanUpFolder_FilesDeleted_DisplayName" xml:space="preserve">
+	<data name="CleanUpFolder_FilesDeleted_DisplayName" xml:space="preserve">
     <value>Gelöschte Dateien</value>
     <comment>property name</comment>
   </data>
-  <data name="CleanUpFolder_SearchOption_Description" xml:space="preserve">
+	<data name="CleanUpFolder_SearchOption_Description" xml:space="preserve">
     <value>Gibt an, ob die Suche nur das aktuelle Verzeichnis oder alle Unterverzeichnisse einschließen soll.</value>
     <comment>property description</comment>
   </data>
-  <data name="CleanUpFolder_SearchOption_DisplayName" xml:space="preserve">
+	<data name="CleanUpFolder_SearchOption_DisplayName" xml:space="preserve">
     <value>Suchoption</value>
     <comment>property name</comment>
   </data>
-  <data name="CleanUpFolder_FoldersDeleted_DisplayName" xml:space="preserve">
+	<data name="CleanUpFolder_FoldersDeleted_DisplayName" xml:space="preserve">
     <value>Gelöschte Ordner</value>
     <comment>property name</comment>
   </data>
-  <data name="CleanUpFolder_FoldersDeleted_Description" xml:space="preserve">
+	<data name="CleanUpFolder_FoldersDeleted_Description" xml:space="preserve">
     <value>Die Anzahl der gelöschten Ordner.</value>
     <comment>property description</comment>
   </data>
-  <data name="Zip_Description" xml:space="preserve">
+	<data name="Zip_Description" xml:space="preserve">
     <value>Komprimiert Dateien und Ordner in ein Zip-Archiv.</value>
     <comment>activity description</comment>
   </data>
-  <data name="Zip_DisplayName" xml:space="preserve">
+	<data name="Zip_DisplayName" xml:space="preserve">
     <value>Komprimieren (Zip)</value>
     <comment>activity name</comment>
   </data>
-  <data name="Zip_ToCompress_Description" xml:space="preserve">
+	<data name="Zip_ToCompress_Description" xml:space="preserve">
     <value>Sammlung von Datei- und Verzeichnispfaden, die komprimiert werden sollen.</value>
     <comment>property description</comment>
   </data>
-  <data name="Zip_ToCompress_DisplayName" xml:space="preserve">
+	<data name="Zip_ToCompress_DisplayName" xml:space="preserve">
     <value>Zu komprimieren</value>
     <comment>property name</comment>
   </data>
-  <data name="Zip_TextEncoding_Description" xml:space="preserve">
+	<data name="Zip_TextEncoding_Description" xml:space="preserve">
     <value>Die für Eintragsnamen im Zip-Archiv verwendete Kodierung.</value>
     <comment>property description</comment>
   </data>
-  <data name="Zip_TextEncoding_DisplayName" xml:space="preserve">
+	<data name="Zip_TextEncoding_DisplayName" xml:space="preserve">
     <value>Textkodierung</value>
     <comment>property name</comment>
   </data>
-  <data name="Zip_CompressionLevel_Description" xml:space="preserve">
+	<data name="Zip_CompressionLevel_Description" xml:space="preserve">
     <value>Der beim Erstellen des Archivs verwendete Komprimierungsgrad.</value>
     <comment>property description</comment>
   </data>
-  <data name="Zip_CompressionLevel_DisplayName" xml:space="preserve">
+	<data name="Zip_CompressionLevel_DisplayName" xml:space="preserve">
     <value>Komprimierungsstufe</value>
     <comment>property name</comment>
   </data>
-  <data name="Zip_CompressedFile_Description" xml:space="preserve">
+	<data name="Zip_CompressedFile_Description" xml:space="preserve">
     <value>Index oder Bezeichner der erstellten komprimierten Datei (sofern zutreffend).</value>
     <comment>property description</comment>
   </data>
-  <data name="Zip_CompressedFile_DisplayName" xml:space="preserve">
+	<data name="Zip_CompressedFile_DisplayName" xml:space="preserve">
     <value>Komprimierte Datei</value>
     <comment>property name</comment>
   </data>
-  <data name="Zip_FullEntryNames_Description" xml:space="preserve">
+	<data name="Zip_FullEntryNames_Description" xml:space="preserve">
     <value>Verwenden Sie vollständige Eintragsnamen (absolute Pfade) statt relativer Pfade.</value>
     <comment>property description</comment>
   </data>
-  <data name="Zip_FullEntryNames_DisplayName" xml:space="preserve">
+	<data name="Zip_FullEntryNames_DisplayName" xml:space="preserve">
     <value>Vollständige Eintragsnamen</value>
     <comment>property name</comment>
   </data>
-  <data name="Zip_FilesCount_Description" xml:space="preserve">
+	<data name="Zip_FilesCount_Description" xml:space="preserve">
     <value>Die Anzahl der in das Archiv aufgenommenen Dateien.</value>
     <comment>property description</comment>
   </data>
-  <data name="Zip_FilesCount_DisplayName" xml:space="preserve">
+	<data name="Zip_FilesCount_DisplayName" xml:space="preserve">
     <value>Dateianzahl</value>
     <comment>property name</comment>
   </data>
-  <data name="Zip_ZipFilePath_Description" xml:space="preserve">
+	<data name="Zip_ZipFilePath_Description" xml:space="preserve">
     <value>Pfad, an dem das Zip-Archiv erstellt wird.</value>
     <comment>property description</comment>
   </data>
-  <data name="Zip_ZipFilePath_DisplayName" xml:space="preserve">
+	<data name="Zip_ZipFilePath_DisplayName" xml:space="preserve">
     <value>Pfad der Zip-Datei</value>
     <comment>property name</comment>
   </data>
-  <data name="Common_ErrorMsg_ValueNotSupplied" xml:space="preserve">
+	<data name="Common_ErrorMsg_ValueNotSupplied" xml:space="preserve">
     <value>Für das erforderliche Aktivitätsargument '{0}' wurde kein Wert angegeben.</value>
     <comment>error message</comment>
   </data>
-  <data name="Unzip_Description" xml:space="preserve">
+	<data name="Unzip_Description" xml:space="preserve">
     <value>Extrahiert Dateien und Ordner aus einem Zip-Archiv.</value>
     <comment>activity description</comment>
   </data>
-  <data name="Unzip_DisplayName" xml:space="preserve">
+	<data name="Unzip_DisplayName" xml:space="preserve">
     <value>Entpacken (Unzip)</value>
     <comment>activity name</comment>
   </data>
-  <data name="Unzip_ZipFilePath_Description" xml:space="preserve">
+	<data name="Unzip_ZipFilePath_Description" xml:space="preserve">
     <value>Der Pfad zum Zip-Archiv, das extrahiert werden soll.</value>
     <comment>property description</comment>
   </data>
-  <data name="Unzip_ZipFilePath_DisplayName" xml:space="preserve">
+	<data name="Unzip_ZipFilePath_DisplayName" xml:space="preserve">
     <value>Pfad der Zip-Datei</value>
     <comment>property name</comment>
   </data>
-  <data name="Unzip_ExtractTo_Description" xml:space="preserve">
+	<data name="Unzip_ExtractTo_Description" xml:space="preserve">
     <value>Der Ordner, in den der Inhalt des Archivs extrahiert wird.</value>
     <comment>property description</comment>
   </data>
-  <data name="Unzip_ExtractTo_DisplayName" xml:space="preserve">
+	<data name="Unzip_ExtractTo_DisplayName" xml:space="preserve">
     <value>Extrahieren nach</value>
     <comment>property name</comment>
   </data>
-  <data name="Unzip_Overwrite_Description" xml:space="preserve">
+	<data name="Unzip_Overwrite_Description" xml:space="preserve">
     <value>Wenn true, werden vorhandene Dateien beim Extrahieren überschrieben.</value>
     <comment>property description</comment>
   </data>
-  <data name="Unzip_Overwrite_DisplayName" xml:space="preserve">
+	<data name="Unzip_Overwrite_DisplayName" xml:space="preserve">
     <value>Überschreiben</value>
     <comment>property name</comment>
   </data>
-  <data name="Unzip_ErrorMsg_OutsideDir" xml:space="preserve">
+	<data name="Unzip_ErrorMsg_OutsideDir" xml:space="preserve">
     <value>Der Archiv-Eintrag würde außerhalb des Zielverzeichnisses extrahiert werden.</value>
     <comment>error message</comment>
   </data>
-  <data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
+	<data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
     <value>Ein Verzeichniseintrag im Archiv enthält Dateidaten, was ungültig ist.</value>
     <comment>error message</comment>
   </data>
-  <data name="RandomString_Description" xml:space="preserve">
+	<data name="RandomString_Description" xml:space="preserve">
     <value>Generiert eine zufällige Zeichenkette basierend auf einem Formatmuster.</value>
     <comment>activity description</comment>
   </data>
-  <data name="RandomString_DisplayName" xml:space="preserve">
+	<data name="RandomString_DisplayName" xml:space="preserve">
     <value>Zufällige Zeichenkette</value>
     <comment>activity name</comment>
   </data>
-  <data name="RandomString_Format_Description" xml:space="preserve">
+	<data name="RandomString_Format_Description" xml:space="preserve">
     <value>Muster, das die generierte Zeichenkette definiert. Platzhalter: 'a' Kleinbuchstabe, 'A' Großbuchstabe, '0' Ziffer, '*' alphanumerisch, '?' benutzerdefinierte Zeichen, '\\' Escape.</value>
     <comment>property description</comment>
   </data>
-  <data name="RandomString_Format_DisplayName" xml:space="preserve">
+	<data name="RandomString_Format_DisplayName" xml:space="preserve">
     <value>Format</value>
     <comment>property name</comment>
   </data>
-  <data name="RandomString_Custom_Description" xml:space="preserve">
+	<data name="RandomString_Custom_Description" xml:space="preserve">
     <value>Zusätzliche Zeichen, die verwendet werden, wenn der Platzhalter '?' vorhanden ist.</value>
     <comment>property description</comment>
   </data>
-  <data name="RandomString_Custom_DisplayName" xml:space="preserve">
+	<data name="RandomString_Custom_DisplayName" xml:space="preserve">
     <value>Benutzerdefinierte Zeichen</value>
     <comment>property name</comment>
   </data>
-  <data name="RandomString_Result_DisplayName" xml:space="preserve">
+	<data name="RandomString_Result_DisplayName" xml:space="preserve">
     <value>Ergebnis</value>
     <comment>property name</comment>
   </data>
-  <data name="Increment_Description" xml:space="preserve">
+	<data name="Increment_Description" xml:space="preserve">
     <value>Erhöht eine numerische Variable um einen angegebenen Wert.</value>
     <comment>activity description</comment>
   </data>
-  <data name="Increment_DisplayName" xml:space="preserve">
+	<data name="Increment_DisplayName" xml:space="preserve">
     <value>Inkrementieren</value>
     <comment>activity name</comment>
   </data>
-  <data name="Increment_Value_Description" xml:space="preserve">
+	<data name="Increment_Value_Description" xml:space="preserve">
     <value>Betrag, der zur Variable hinzugefügt wird. Muss größer oder gleich 1 sein.</value>
     <comment>property description</comment>
   </data>
-  <data name="Increment_Value_DisplayName" xml:space="preserve">
+	<data name="Increment_Value_DisplayName" xml:space="preserve">
     <value>Wert</value>
     <comment>property name</comment>
   </data>
-  <data name="Increment_Variable_Description" xml:space="preserve">
+	<data name="Increment_Variable_Description" xml:space="preserve">
     <value>Variable, die inkrementiert werden soll.</value>
     <comment>property description</comment>
   </data>
-  <data name="Increment_Variable_DisplayName" xml:space="preserve">
+	<data name="Increment_Variable_DisplayName" xml:space="preserve">
     <value>Variable</value>
     <comment>property name</comment>
   </data>
-  <data name="Decrement_Description" xml:space="preserve">
+	<data name="Decrement_Description" xml:space="preserve">
     <value>Verringert eine numerische Variable um einen angegebenen Wert.</value>
     <comment>activity description</comment>
   </data>
-  <data name="Decrement_DisplayName" xml:space="preserve">
+	<data name="Decrement_DisplayName" xml:space="preserve">
     <value>Dekrementieren</value>
     <comment>activity name</comment>
   </data>
-  <data name="Decrement_Value_Description" xml:space="preserve">
+	<data name="Decrement_Value_Description" xml:space="preserve">
     <value>Betrag, der von der Variable subtrahiert wird. Muss größer oder gleich 1 sein.</value>
     <comment>property description</comment>
   </data>
-  <data name="Decrement_Value_DisplayName" xml:space="preserve">
+	<data name="Decrement_Value_DisplayName" xml:space="preserve">
     <value>Wert</value>
     <comment>property name</comment>
   </data>
-  <data name="Decrement_Variable_Description" xml:space="preserve">
+	<data name="Decrement_Variable_Description" xml:space="preserve">
     <value>Variable, die dekrementiert werden soll.</value>
     <comment>property description</comment>
   </data>
-  <data name="Decrement_Variable_DisplayName" xml:space="preserve">
+	<data name="Decrement_Variable_DisplayName" xml:space="preserve">
     <value>Variable</value>
     <comment>property name</comment>
   </data>
-  <data name="RandomString_Result_Description" xml:space="preserve">
+	<data name="RandomString_Result_Description" xml:space="preserve">
     <value>Die generierte zufällige Zeichenkette.</value>
     <comment>property description</comment>
   </data>
-  <data name="ReplaceTokens_Description" xml:space="preserve">
+	<data name="ReplaceTokens_Description" xml:space="preserve">
     <value>Ersetzt die Tokens eines Strings durch die Werte eines Wörterbuchs. Tokens sind Zeichenketten, die in einem bestimmten Muster geschrieben sind, normalerweise in Sonderzeichen eingeschlossen. Verwenden Sie die Kombination der Eigenschaften 'Pattern' und 'Placeholder', um Ihr Token-Format zu definieren.</value>
     <comment>activity description</comment>
   </data>
-  <data name="ReplaceTokens_DisplayName" xml:space="preserve">
+	<data name="ReplaceTokens_DisplayName" xml:space="preserve">
     <value>Tokens ersetzen</value>
     <comment>activity name</comment>
   </data>
-  <data name="ReplaceTokens_Dictionary_Description" xml:space="preserve">
+	<data name="ReplaceTokens_Dictionary_Description" xml:space="preserve">
     <value>Das Wörterbuch, in dem jedes Schlüssel/Wert-Paar zur Ersetzung der Tokens verwendet wird.</value>
     <comment>property description</comment>
   </data>
-  <data name="ReplaceTokens_Dictionary_DisplayName" xml:space="preserve">
+	<data name="ReplaceTokens_Dictionary_DisplayName" xml:space="preserve">
     <value>Wörterbuch</value>
     <comment>property name</comment>
   </data>
-  <data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
+	<data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
     <value>Das Textmuster des Tokens. Es kann Zeichen vor und nach dem Platzhalter enthalten.</value>
     <comment>property description</comment>
   </data>
-  <data name="ReplaceTokens_Pattern_DisplayName" xml:space="preserve">
+	<data name="ReplaceTokens_Pattern_DisplayName" xml:space="preserve">
     <value>Muster</value>
     <comment>property name</comment>
   </data>
-  <data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
+	<data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
     <value>Das Zeichen, das als Platzhalter im Token-Muster verwendet wird.</value>
     <comment>property description</comment>
   </data>
-  <data name="ReplaceTokens_Placeholder_DisplayName" xml:space="preserve">
+	<data name="ReplaceTokens_Placeholder_DisplayName" xml:space="preserve">
     <value>Platzhalter</value>
     <comment>property name</comment>
   </data>
-  <data name="ReplaceTokens_Result_Description" xml:space="preserve">
+	<data name="ReplaceTokens_Result_Description" xml:space="preserve">
     <value> Der resultierende Text, nachdem alle Tokens ersetzt wurden.</value>
     <comment>property description</comment>
   </data>
-  <data name="ReplaceTokens_Result_DisplayName" xml:space="preserve">
+	<data name="ReplaceTokens_Result_DisplayName" xml:space="preserve">
     <value>Ergebnis</value>
     <comment>property name</comment>
   </data>
-  <data name="ReplaceTokens_Content_DisplayName" xml:space="preserve">
+	<data name="ReplaceTokens_Content_DisplayName" xml:space="preserve">
     <value>Inhalt</value>
     <comment>property name</comment>
   </data>
-  <data name="ReplaceTokens_Content_Description" xml:space="preserve">
+	<data name="ReplaceTokens_Content_Description" xml:space="preserve">
     <value>Der Eingabetext, in dem Tokens ersetzt werden.</value>
     <comment>property description</comment>
   </data>
-  <data name="Categories_InputOutput" xml:space="preserve">
+	<data name="Categories_InputOutput" xml:space="preserve">
     <value>Eingabe/Ausgabe</value>
     <comment>category</comment>
   </data>
-  <data name="ReplaceTokens_CaseSensitive_Description" xml:space="preserve">
+	<data name="ReplaceTokens_CaseSensitive_Description" xml:space="preserve">
     <value>Legt fest, ob die Suche nach Tokens case-sensitiv ist. Das Muster ist ebenfalls betroffen.</value>
     <comment>property description</comment>
   </data>
-  <data name="ReplaceTokens_CaseSensitive_DisplayName" xml:space="preserve">
+	<data name="ReplaceTokens_CaseSensitive_DisplayName" xml:space="preserve">
     <value>Groß-/Kleinschreibung beachten</value>
     <comment>property name</comment>
   </data>
-  <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
+	<data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
     <value>Erfolg</value>
     <comment>response message</comment>
   </data>
-  <data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+	<data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
     <value>Der minimal erlaubte Wert ist 1.</value>
     <comment>error message</comment>
   </data>
-  <data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
+	<data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
     <value>Der minimal erlaubte Wert ist 1.</value>
     <comment>error message</comment>
   </data>
-  <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
+	<data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
     <value>Keine Treiber verfügbar</value>
     <comment>error message</comment>
   </data>
-  <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
+	<data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
     <value>Der eingegebene Laufwerksbuchstabe ist ungültig. Zulässige Eingaben sind 'X', 'X:' oder 'X:\\', wobei X ein beliebiger Buchstabe sein kann.</value>
     <comment>error message</comment>
   </data>
-  <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
+	<data name="MapDrive_Credential_DisplayName" xml:space="preserve">
     <value>Anmeldeinformationen</value>
     <comment>property name</comment>
   </data>
-  <data name="MapDrive_Description" xml:space="preserve">
+	<data name="MapDrive_Description" xml:space="preserve">
     <value>Ordnet ein Netzlaufwerk im System zu.</value>
     <comment>activity description</comment>
   </data>
-  <data name="MapDrive_DisplayName" xml:space="preserve">
+	<data name="MapDrive_DisplayName" xml:space="preserve">
     <value>Laufwerk zuordnen</value>
     <comment>activity name</comment>
   </data>
-  <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
+	<data name="MapDrive_DriveLetter_Description" xml:space="preserve">
     <value>Gibt den zuzuordnenden Laufwerksbuchstaben an. Wenn nicht angegeben, wird ein zufälliger verfügbarer Buchstabe zugewiesen. Das erwartete Format ist &lt;Buchstabe&gt;&lt;Doppelpunkt&gt;, zum Beispiel: "X:", "y:", "Z:".</value>
     <comment>property description</comment>
   </data>
-  <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
+	<data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>Laufwerksbuchstabe</value>
     <comment>property name</comment>
   </data>
-  <data name="MapDrive_Force_Description" xml:space="preserve">
+	<data name="MapDrive_Force_Description" xml:space="preserve">
     <value>Versucht die Verbindung zu erzwingen, wenn der Laufwerksbuchstabe bereits verwendet wird.</value>
     <comment>property description</comment>
   </data>
-  <data name="MapDrive_Force_DisplayName" xml:space="preserve">
+	<data name="MapDrive_Force_DisplayName" xml:space="preserve">
     <value>Erzwingen</value>
     <comment>property name</comment>
   </data>
-  <data name="MapDrive_MappedDrive_Description" xml:space="preserve">
+	<data name="MapDrive_MappedDrive_Description" xml:space="preserve">
     <value>Der zugeordnete Laufwerksbuchstabe, falls die Zuordnung erfolgreich war, dargestellt im Format "&lt;Buchstabe&gt;:".</value>
     <comment>property description</comment>
   </data>
-  <data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
+	<data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
     <value>Zugeordnetes Laufwerk</value>
     <comment>property name</comment>
   </data>
-  <data name="MapDrive_ResponseCode_Description" xml:space="preserve">
+	<data name="MapDrive_ResponseCode_Description" xml:space="preserve">
     <value>Stellt den Rückgabecode der Laufwerkszuordnungsoperation dar. Dieser Wert zeigt an, ob die Operation gemäß den standardmäßigen Windows-Fehlercodes erfolgreich war oder fehlgeschlagen ist.</value>
     <comment>property description</comment>
   </data>
-  <data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
+	<data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
     <value>Antwortcode</value>
     <comment>property name</comment>
   </data>
-  <data name="MapDrive_ResponseMessage_Description" xml:space="preserve">
+	<data name="MapDrive_ResponseMessage_Description" xml:space="preserve">
     <value>Bietet die textuelle Beschreibung, die dem Antwortcode entspricht. Diese Nachricht erklärt das Ergebnis der Operation in einem für Menschen lesbaren Format.</value>
     <comment>property description</comment>
   </data>
-  <data name="MapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+	<data name="MapDrive_ResponseMessage_DisplayName" xml:space="preserve">
     <value>Antwortnachricht</value>
     <comment>property name</comment>
   </data>
-  <data name="MapDrive_Result_Description" xml:space="preserve">
+	<data name="MapDrive_Result_Description" xml:space="preserve">
     <value>Gibt true zurück, wenn das Laufwerk erfolgreich zugeordnet wurde, andernfalls false.</value>
     <comment>property description</comment>
   </data>
-  <data name="MapDrive_Result_DisplayName" xml:space="preserve">
+	<data name="MapDrive_Result_DisplayName" xml:space="preserve">
     <value>Ergebnis</value>
     <comment>property name</comment>
   </data>
-  <data name="MapDrive_SharedDrivePath_Description" xml:space="preserve">
+	<data name="MapDrive_SharedDrivePath_Description" xml:space="preserve">
     <value>Der gemeinsame Laufwerkspfad, mit dem die Verbindung hergestellt wird.</value>
     <comment>property description</comment>
   </data>
-  <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
+	<data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
     <value>Gemeinsamer Laufwerkspfad</value>
     <comment>property name</comment>
   </data>
-  <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
+	<data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
     <value>Ergebnis</value>
     <comment>property name</comment>
   </data>
-  <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
+	<data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
     <value>Gibt den Laufwerksbuchstaben des zu entfernenden zugeordneten Laufwerks an. Das erforderliche Format ist &lt;Buchstabe&gt;&lt;Doppelpunkt&gt;, zum Beispiel: "X:", "y:", "Z:".</value>
     <comment>property description</comment>
   </data>
-  <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
+	<data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>Laufwerksbuchstabe</value>
     <comment>property name</comment>
   </data>
-  <data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
+	<data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
     <value>Stellt den Rückgabecode der Laufwerkszuordnungsoperation dar. Dieser Wert zeigt an, ob die Operation gemäß den standardmäßigen Windows-Fehlercodes erfolgreich war oder fehlgeschlagen ist.</value>
     <comment>property description</comment>
   </data>
-  <data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
+	<data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
     <value>Antwortcode</value>
     <comment>property name</comment>
   </data>
-  <data name="UnmapDrive_ResponseMessage_Description" xml:space="preserve">
+	<data name="UnmapDrive_ResponseMessage_Description" xml:space="preserve">
     <value>Bietet die textuelle Beschreibung, die dem Antwortcode entspricht. Diese Nachricht erklärt das Ergebnis der Operation in einem für Menschen lesbaren Format.</value>
     <comment>property description</comment>
   </data>
-  <data name="UnmapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+	<data name="UnmapDrive_ResponseMessage_DisplayName" xml:space="preserve">
     <value>Antwortnachricht</value>
     <comment>property name</comment>
   </data>
-  <data name="UnmapDrive_Result_Description" xml:space="preserve">
+	<data name="UnmapDrive_Result_Description" xml:space="preserve">
     <value>Gibt true zurück, wenn das Laufwerk erfolgreich entfernt wurde, andernfalls false.</value>
     <comment>property description</comment>
   </data>
-  <data name="UnmapDrive_DisplayName" xml:space="preserve">
+	<data name="UnmapDrive_DisplayName" xml:space="preserve">
     <value>Laufwerk trennen</value>
     <comment>activity name</comment>
   </data>
-  <data name="MapDrive_Credential_Placeholder" xml:space="preserve">
+	<data name="MapDrive_Credential_Placeholder" xml:space="preserve">
     <value>Wenn nicht angegeben, werden die Anmeldeinformationen des aktuellen Benutzers verwendet.</value>
     <comment>placeholder</comment>
   </data>
-  <data name="CultureScope_ErrorMsg_CultureNameNullOrEmpty" xml:space="preserve">
+	<data name="CultureScope_ErrorMsg_CultureNameNullOrEmpty" xml:space="preserve">
     <value>Der Kulturname darf nicht null oder leer sein.</value>
     <comment>error message</comment>
   </data>
-  <data name="CultureScope_Culture_Description" xml:space="preserve">
+	<data name="CultureScope_Culture_Description" xml:space="preserve">
     <value>Die gewünschte Kultur, z.B.: en-US, pt-BR, jp-JP, usw.</value>
     <comment>property description</comment>
   </data>
-  <data name="CultureScope_Culture_DisplayName" xml:space="preserve">
+	<data name="CultureScope_Culture_DisplayName" xml:space="preserve">
     <value>Kultur</value>
     <comment>property name</comment>
   </data>
-  <data name="CultureScope_Description" xml:space="preserve">
+	<data name="CultureScope_Description" xml:space="preserve">
     <value>Ein Container, der es ermöglicht, eine Reihe von Aktivitäten mit einer anderen Kultur auszuführen.</value>
     <comment>activity description</comment>
   </data>
-  <data name="CultureScope_DisplayName" xml:space="preserve">
+	<data name="CultureScope_DisplayName" xml:space="preserve">
     <value>Kulturbereich</value>
     <comment>activity name</comment>
   </data>
-  <data name="TerminateProcess_Description" xml:space="preserve">
+	<data name="TerminateProcess_Description" xml:space="preserve">
     <value>Versucht alle Instanzen der Anwendungen, die den angegebenen Prozessen entsprechen, ordnungsgemäß zu schließen. Falls dies nicht möglich ist, wird der Prozess für die aktuelle Benutzersitzung beendet.</value>
     <comment>activity description</comment>
   </data>
-  <data name="TerminateProcess_DisplayName" xml:space="preserve">
+	<data name="TerminateProcess_DisplayName" xml:space="preserve">
     <value>Prozess beenden</value>
     <comment>activity name</comment>
   </data>
-  <data name="TerminateProcess_ProcessNames_Description" xml:space="preserve">
+	<data name="TerminateProcess_ProcessNames_Description" xml:space="preserve">
     <value>Die Liste der Namen der zu beendenden Prozesse.</value>
     <comment>property description</comment>
   </data>
-  <data name="TerminateProcess_ProcessNames_DisplayName" xml:space="preserve">
+	<data name="TerminateProcess_ProcessNames_DisplayName" xml:space="preserve">
     <value>Prozessnamen</value>
     <comment>property name</comment>
   </data>
-  <data name="IfActivity_DisplayName" xml:space="preserve">
+	<data name="IfActivity_DisplayName" xml:space="preserve">
     <value>If-Aktivität</value>
     <comment>activity name</comment>
   </data>
-  <data name="IfActivity_Description" xml:space="preserve">
+	<data name="IfActivity_Description" xml:space="preserve">
     <value>Bewertet das Ergebnis einer booleschen Aktivität und führt den zugehörigen Codeblock aus, wenn die Bedingung erfüllt ist.</value>
     <comment>property description</comment>
   </data>
-  <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
+	<data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
     <value>Das Feld Bedingung erfordert Aktivitäten, die einen booleschen Wert zurückgeben.</value>
     <comment>error message</comment>
   </data>
-  <data name="Exit_DisplayName" xml:space="preserve">
+	<data name="Exit_DisplayName" xml:space="preserve">
     <value>Beenden</value>
     <comment>activity name</comment>
   </data>
-  <data name="Exit_Condition_Description" xml:space="preserve">
+	<data name="Exit_Condition_Description" xml:space="preserve">
     <value>Bedingung, die bestimmt, ob die Aktivität ausgewertet wird. Wenn leer, wird True angenommen.</value>
     <comment>property description</comment>
   </data>
-  <data name="Exit_Condition_DisplayName" xml:space="preserve">
+	<data name="Exit_Condition_DisplayName" xml:space="preserve">
     <value>Bedingung</value>
     <comment>property name</comment>
   </data>
-  <data name="Exit_Description" xml:space="preserve">
+	<data name="Exit_Description" xml:space="preserve">
     <value>Beendet die Container- oder Zeitschleifen-Aktivitäten und unterbricht alle nachfolgenden untergeordneten Ausführungen.</value>
     <comment>activity description</comment>
   </data>
-  <data name="Exit_ErrorMsg_InvalidParent" xml:space="preserve">
+	<data name="Exit_ErrorMsg_InvalidParent" xml:space="preserve">
     <value>Die Exit-Aktivität muss innerhalb von Container- oder Zeitschleifen-Aktivitäten platziert werden.</value>
     <comment>error message</comment>
   </data>
-  <data name="TimeLoop_DisplayName" xml:space="preserve">
+	<data name="TimeLoop_DisplayName" xml:space="preserve">
     <value>Zeitschleife</value>
     <comment>activity name</comment>
   </data>
-  <data name="TimeLoop_Description" xml:space="preserve">
+	<data name="TimeLoop_Description" xml:space="preserve">
     <value>Wiederholt die Körper-Aktivitäten, bis der Timeout abläuft, mit optionalen Iterationsintervallen und Indexverfolgung. Gibt true zurück, wenn die Schleife aufgrund eines Timeouts beendet wurde.</value>
     <comment>activity description</comment>
   </data>
-  <data name="TimeLoop_Timeout_DisplayName" xml:space="preserve">
+	<data name="TimeLoop_Timeout_DisplayName" xml:space="preserve">
     <value>Timeout</value>
     <comment>property name</comment>
   </data>
-  <data name="TimeLoop_Timeout_Description" xml:space="preserve">
+	<data name="TimeLoop_Timeout_Description" xml:space="preserve">
     <value>Definiert, wie lange die Schleife ausgeführt wird. Der Timeout wird nach jeder Iteration überprüft, laufende Iterationen werden nicht unterbrochen.</value>
     <comment>property description</comment>
   </data>
-  <data name="TimeLoop_IntervalSeconds_DisplayName" xml:space="preserve">
+	<data name="TimeLoop_IntervalSeconds_DisplayName" xml:space="preserve">
     <value>Intervall</value>
     <comment>property name</comment>
   </data>
-  <data name="TimeLoop_IntervalSeconds_Description" xml:space="preserve">
+	<data name="TimeLoop_IntervalSeconds_Description" xml:space="preserve">
     <value>Das Intervall in Sekunden, das vor der nächsten Schleife gewartet wird.</value>
     <comment>property description</comment>
   </data>
-  <data name="TimeLoop_IterationIndex_DisplayName" xml:space="preserve">
+	<data name="TimeLoop_IterationIndex_DisplayName" xml:space="preserve">
     <value>Index</value>
     <comment>property name</comment>
   </data>
-  <data name="TimeLoop_IterationIndex_Description" xml:space="preserve">
+	<data name="TimeLoop_IterationIndex_Description" xml:space="preserve">
     <value>Die aktuelle (nullbasierte) Iteration, die verarbeitet wird.</value>
     <comment>property description</comment>
   </data>
-  <data name="Container_DisplayName" xml:space="preserve">
+	<data name="Container_DisplayName" xml:space="preserve">
     <value>Container</value>
     <comment>activity name</comment>
   </data>
-  <data name="Container_Description" xml:space="preserve">
+	<data name="Container_Description" xml:space="preserve">
     <value>Ein Wrapper, der in Kombination mit der Exit-Aktivität den Ausführungsfluss der untergeordneten Aktivitäten unterbricht und den Container vorzeitig verlässt.</value>
     <comment>activity description</comment>
   </data>
-  <data name="CheckPoint_Data_Description" xml:space="preserve">
+	<data name="CheckPoint_Data_Description" xml:space="preserve">
     <value>Eine Sammlung von Schlüssel/Wert-Paaren, die zusätzliche benutzerdefinierte Informationen zur Ausnahme liefern.</value>
     <comment>property description</comment>
   </data>
-  <data name="CheckPoint_Data_DisplayName" xml:space="preserve">
+	<data name="CheckPoint_Data_DisplayName" xml:space="preserve">
     <value>Daten</value>
     <comment>property name</comment>
   </data>
-  <data name="CheckPoint_Description" xml:space="preserve">
+	<data name="CheckPoint_Description" xml:space="preserve">
     <value>Prüft, ob ein gegebener Ausdruck wahr ist; falls nicht, wird die angegebene Ausnahme ausgelöst.</value>
     <comment>activity description</comment>
   </data>
-  <data name="CheckPoint_DisplayName" xml:space="preserve">
+	<data name="CheckPoint_DisplayName" xml:space="preserve">
     <value>Prüfpunkt</value>
     <comment>activity name</comment>
   </data>
-  <data name="CheckPoint_Exception_Description" xml:space="preserve">
+	<data name="CheckPoint_Exception_Description" xml:space="preserve">
     <value>Die Ausnahme, die ausgelöst wird, falls der Ausdruck nicht wahr ist.</value>
     <comment>property description</comment>
   </data>
-  <data name="CheckPoint_Exception_DisplayName" xml:space="preserve">
+	<data name="CheckPoint_Exception_DisplayName" xml:space="preserve">
     <value>Ausnahme</value>
     <comment>property name</comment>
   </data>
-  <data name="CheckPoint_Expression_Description" xml:space="preserve">
+	<data name="CheckPoint_Expression_Description" xml:space="preserve">
     <value>Der auszuwertende Ausdruck.</value>
     <comment>property description</comment>
   </data>
-  <data name="CheckPoint_Expression_DisplayName" xml:space="preserve">
+	<data name="CheckPoint_Expression_DisplayName" xml:space="preserve">
     <value>Ausdruck</value>
     <comment>property name</comment>
   </data>
-  <data name="PromoteHeaders_AutoRename_Description" xml:space="preserve">
+	<data name="PromoteHeaders_AutoRename_Description" xml:space="preserve">
     <value>Wenn true, wird eine numerische Endung hinzugefügt, falls der Spaltenname bereits in der Datentabelle vorhanden ist.</value>
     <comment>property description</comment>
   </data>
-  <data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
+	<data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
     <value>Automatisch umbenennen</value>
     <comment>property name</comment>
   </data>
-  <data name="PromoteHeaders_Description" xml:space="preserve">
+	<data name="PromoteHeaders_Description" xml:space="preserve">
     <value>Hebt die erste Zeile der Werte zu neuen Spaltenüberschriften hervor.</value>
     <comment>activity description</comment>
   </data>
-  <data name="PromoteHeaders_DisplayName" xml:space="preserve">
+	<data name="PromoteHeaders_DisplayName" xml:space="preserve">
     <value>Überschriften hervorheben</value>
     <comment>activity name</comment>
   </data>
-  <data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
+	<data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
     <value>Es sind keine Zeilen in der Eingabedatentabelle zum Hervorheben vorhanden.</value>
     <comment>error message</comment>
   </data>
-  <data name="PromoteHeaders_DataTable_Description" xml:space="preserve">
+	<data name="PromoteHeaders_DataTable_Description" xml:space="preserve">
     <value>Die Datentabelle, deren erste Zeile zu Überschriften hervorgehoben wird.</value>
     <comment>property description</comment>
   </data>
-  <data name="PromoteHeaders_DataTable_DisplayName" xml:space="preserve">
+	<data name="PromoteHeaders_DataTable_DisplayName" xml:space="preserve">
     <value>Datentabelle</value>
     <comment>property name</comment>
   </data>
-  <data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
+	<data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
     <value>Das Datumsformat, das in der Zeichenfolgenrepräsentation für DateTime-Typen verwendet wird.</value>
     <comment>property description</comment>
   </data>
-  <data name="DataTableToText_DateTimeFormat_DisplayName" xml:space="preserve">
+	<data name="DataTableToText_DateTimeFormat_DisplayName" xml:space="preserve">
     <value>Datum-Uhrzeit-Format</value>
     <comment>property name</comment>
   </data>
-  <data name="DataTableToText_Description" xml:space="preserve">
+	<data name="DataTableToText_Description" xml:space="preserve">
     <value>Gibt eine Zeichenfolgenrepräsentation einer Datentabelle im angegebenen Textformat zurück (HTML, JSON oder XML).</value>
     <comment>activity description</comment>
   </data>
-  <data name="DataTableToText_DisplayName" xml:space="preserve">
+	<data name="DataTableToText_DisplayName" xml:space="preserve">
     <value>Datentabelle zu Text</value>
     <comment>activity name</comment>
   </data>
-  <data name="DataTableToText_DataTable_Description" xml:space="preserve">
+	<data name="DataTableToText_DataTable_Description" xml:space="preserve">
     <value>Die Datentabelle.</value>
     <comment>property description</comment>
   </data>
-  <data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
+	<data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
     <value>Datentabelle</value>
     <comment>property name</comment>
   </data>
-  <data name="DataTableToText_Result_Description" xml:space="preserve">
+	<data name="DataTableToText_Result_Description" xml:space="preserve">
     <value>Die Zeichenfolgenrepräsentation der Datentabelle.</value>
     <comment>property description</comment>
   </data>
-  <data name="DataTableToText_Result_DisplayName" xml:space="preserve">
+	<data name="DataTableToText_Result_DisplayName" xml:space="preserve">
     <value>Ergebnis</value>
     <comment>property name</comment>
   </data>
-  <data name="DataTableToText_OutputFormat_Description" xml:space="preserve">
+	<data name="DataTableToText_OutputFormat_Description" xml:space="preserve">
     <value>Das Ausgabe-Textformat.</value>
     <comment>property description</comment>
   </data>
-  <data name="DataTableToText_OutputFormat_DisplayName" xml:space="preserve">
+	<data name="DataTableToText_OutputFormat_DisplayName" xml:space="preserve">
     <value>Ausgabeformat</value>
     <comment>property name</comment>
   </data>
-  <data name="RemoveEmptyRows_ColumnNames_Description" xml:space="preserve">
+	<data name="RemoveEmptyRows_ColumnNames_Description" xml:space="preserve">
     <value>Die Spaltennamen, die bewertet werden sollen.</value>
     <comment>property description</comment>
   </data>
-  <data name="RemoveEmptyRows_ColumnNames_DisplayName" xml:space="preserve">
+	<data name="RemoveEmptyRows_ColumnNames_DisplayName" xml:space="preserve">
     <value>Spaltennamen</value>
     <comment>property name</comment>
   </data>
-  <data name="RemoveEmptyRows_Description" xml:space="preserve">
+	<data name="RemoveEmptyRows_Description" xml:space="preserve">
     <value>Entfernt die leeren Zeilen aus einer Datentabelle.</value>
     <comment>activity description</comment>
   </data>
-  <data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
+	<data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
     <value>Leere Zeilen entfernen</value>
     <comment>activity name</comment>
   </data>
-  <data name="RemoveEmptyRows_DataTable_Description" xml:space="preserve">
+	<data name="RemoveEmptyRows_DataTable_Description" xml:space="preserve">
     <value>Die Datentabelle, aus der leere Zeilen entfernt werden.</value>
     <comment>property description</comment>
   </data>
-  <data name="RemoveEmptyRows_DataTable_DisplayName" xml:space="preserve">
+	<data name="RemoveEmptyRows_DataTable_DisplayName" xml:space="preserve">
     <value>Datentabelle</value>
     <comment>property name</comment>
   </data>
-  <data name="RemoveEmptyRows_MatchingMode_Description" xml:space="preserve">
+	<data name="RemoveEmptyRows_MatchingMode_Description" xml:space="preserve">
     <value>Bestimmt, wie eine Zeile auf Entfernung geprüft wird: Alle — die Zeile wird entfernt, wenn alle angegebenen Spalten leer sind. Beliebige — die Zeile wird entfernt, wenn eine der angegebenen Spalten leer ist. Wenn keine Spalten angegeben sind, werden alle Spalten der Datentabelle berücksichtigt.</value>
     <comment>property description</comment>
   </data>
-  <data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
+	<data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
     <value>Übereinstimmungsmodus</value>
     <comment>property name</comment>
   </data>
-  <data name="RemoveEmptyRows_ColumnIndexes_DisplayName" xml:space="preserve">
+	<data name="RemoveEmptyRows_ColumnIndexes_DisplayName" xml:space="preserve">
     <value>Spaltenindizes</value>
     <comment>property name</comment>
   </data>
-  <data name="RemoveEmptyRows_ColumnIndexes_Description" xml:space="preserve">
+	<data name="RemoveEmptyRows_ColumnIndexes_Description" xml:space="preserve">
     <value>Die Spaltenindizes, die bewertet werden sollen.</value>
     <comment>property description</comment>
   </data>
-  <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
+	<data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
     <value>Datentabelle</value>
     <comment>property name</comment>
   </data>
-  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+	<data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
     <value>Die zu entfernenden Spaltennamen.</value>
     <comment>property description</comment>
   </data>
-  <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">
+	<data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">
     <value>Spaltennamen</value>
     <comment>property name</comment>
   </data>
-  <data name="RemoveDataColumns_Description" xml:space="preserve">
+	<data name="RemoveDataColumns_Description" xml:space="preserve">
     <value>Entfernt die angegebenen Spalten aus einer Datentabelle</value>
     <comment>activity description</comment>
   </data>
-  <data name="RemoveDataColumns_DisplayName" xml:space="preserve">
+	<data name="RemoveDataColumns_DisplayName" xml:space="preserve">
     <value>Daten-Spalten entfernen</value>
     <comment>activity name</comment>
   </data>
-  <data name="RemoveDataColumns_DataTable_Description" xml:space="preserve">
+	<data name="RemoveDataColumns_DataTable_Description" xml:space="preserve">
     <value>Die Datentabelle, aus der die Spalten entfernt werden sollen.</value>
     <comment>property description</comment>
   </data>
-  <data name="RemoveDataColumns_ColumnIndexes_DisplayName" xml:space="preserve">
+	<data name="RemoveDataColumns_ColumnIndexes_DisplayName" xml:space="preserve">
     <value>Spaltenindizes</value>
     <comment>property name</comment>
   </data>
-  <data name="RemoveDataColumns_ColumnIndexes_Description" xml:space="preserve">
+	<data name="RemoveDataColumns_ColumnIndexes_Description" xml:space="preserve">
     <value>Die zu entfernenden Spaltenindizes.</value>
     <comment>property description</comment>
   </data>
-  <data name="TransposeData_Description" xml:space="preserve">
+	<data name="TransposeData_Description" xml:space="preserve">
     <value>Transponiert eine Datentabelle, indem ihre Zeilen und Spalten getauscht werden, sodass Zeilen zu Spalten und Spalten zu Zeilen werden.</value>
     <comment>activity description</comment>
   </data>
-  <data name="TransposeData_DisplayName" xml:space="preserve">
+	<data name="TransposeData_DisplayName" xml:space="preserve">
     <value>Daten transponieren</value>
     <comment>activity name</comment>
   </data>
-  <data name="TransposeData_DataTable_Description" xml:space="preserve">
+	<data name="TransposeData_DataTable_Description" xml:space="preserve">
     <value>Die zu transponierende Datentabelle.</value>
     <comment>property description</comment>
   </data>
-  <data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
+	<data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
     <value>Datentabelle</value>
     <comment>property name</comment>
   </data>
-  <data name="ParseData_DisplayName" xml:space="preserve">
+	<data name="ParseData_DisplayName" xml:space="preserve">
     <value>Daten parsen</value>
     <comment>activity name</comment>
   </data>
-  <data name="ParseData_Description" xml:space="preserve">
+	<data name="ParseData_Description" xml:space="preserve">
     <value>Parst JSON- oder YAML-Eingaben in einen DataNode für vereinfachten Zugriff und Manipulation.</value>
     <comment>activity description</comment>
   </data>
-  <data name="ParseData_Content_DisplayName" xml:space="preserve">
+	<data name="ParseData_Content_DisplayName" xml:space="preserve">
     <value>Inhalt</value>
     <comment>property name</comment>
   </data>
-  <data name="ParseData_Content_Description" xml:space="preserve">
+	<data name="ParseData_Content_Description" xml:space="preserve">
     <value>Der JSON- oder YAML-Text, der in einen DataNode geparst werden soll.</value>
     <comment>property description</comment>
   </data>
-  <data name="ParseData_Culture_DisplayName" xml:space="preserve">
+	<data name="ParseData_Culture_DisplayName" xml:space="preserve">
     <value>Kultur</value>
     <comment>property name</comment>
   </data>
-  <data name="ParseData_Culture_Description" xml:space="preserve">
+	<data name="ParseData_Culture_Description" xml:space="preserve">
     <value>Definiert die während der Wertkonvertierung (z.B. int, long, double oder decimal) innerhalb des DataNode angewandten Kulturinformationen.</value>
     <comment>property description</comment>
   </data>
-  <data name="ParseData_Result_DisplayName" xml:space="preserve">
+	<data name="ParseData_Result_DisplayName" xml:space="preserve">
     <value>Ergebnis</value>
     <comment>property name</comment>
   </data>
-  <data name="ParseData_Result_Description" xml:space="preserve">
+	<data name="ParseData_Result_Description" xml:space="preserve">
     <value>Der aus dem geparsten JSON- oder YAML-Inhalt erzeugte DataNode.</value>
     <comment>property description</comment>
   </data>
-  <data name="LoadDataFile_DisplayName" xml:space="preserve">
+	<data name="LoadDataFile_DisplayName" xml:space="preserve">
     <value>Datendatei laden</value>
     <comment>activity name</comment>
   </data>
-  <data name="LoadDataFile_Description" xml:space="preserve">
+	<data name="LoadDataFile_Description" xml:space="preserve">
     <value>Parst eine JSON- oder YAML-Datei in einen DataNode für vereinfachten Zugriff und Manipulation.</value>
     <comment>activity description</comment>
   </data>
-  <data name="LoadDataFile_Encoding_Description" xml:space="preserve">
+	<data name="LoadDataFile_Encoding_Description" xml:space="preserve">
     <value>Gibt die Textcodierung an, die beim Lesen der Datei verwendet wird. Standard ist UTF-8.</value>
     <comment>property description</comment>
   </data>
-  <data name="LoadDataFile_Culture_Description" xml:space="preserve">
+	<data name="LoadDataFile_Culture_Description" xml:space="preserve">
     <value>Gibt die Kultur an, die bei der Umwandlung von Knotwerten in numerische Typen (z.B. int, long, double, decimal) verwendet wird.</value>
     <comment>property description</comment>
   </data>
-  <data name="LoadDataFile_Result_Description" xml:space="preserve">
+	<data name="LoadDataFile_Result_Description" xml:space="preserve">
     <value>Der aus dem geparsten Dateiinhalt generierte DataNode.</value>
     <comment>property description</comment>
   </data>
-  <data name="LoadDataFile_Culture_DisplayName" xml:space="preserve">
+	<data name="LoadDataFile_Culture_DisplayName" xml:space="preserve">
     <value>Kultur</value>
     <comment>property name</comment>
   </data>
-  <data name="LoadDataFile_Encoding_DisplayName" xml:space="preserve">
+	<data name="LoadDataFile_Encoding_DisplayName" xml:space="preserve">
     <value>Codierung</value>
     <comment>property name</comment>
   </data>
-  <data name="LoadDataFile_Result_DisplayName" xml:space="preserve">
+	<data name="LoadDataFile_Result_DisplayName" xml:space="preserve">
     <value>Ergebnis</value>
     <comment>property name</comment>
   </data>
-  <data name="LoadDataFile_FilePath_Description" xml:space="preserve">
+	<data name="LoadDataFile_FilePath_Description" xml:space="preserve">
     <value>Der Pfad zur zu ladenden JSON- oder YAML-Datei.</value>
     <comment>property description</comment>
   </data>
-  <data name="LoadDataFile_FilePath_DisplayName" xml:space="preserve">
+	<data name="LoadDataFile_FilePath_DisplayName" xml:space="preserve">
     <value>Dateipfad</value>
     <comment>property name</comment>
   </data>
-  <data name="ActivityCategories_Data" xml:space="preserve">
+	<data name="ActivityCategories_Data" xml:space="preserve">
     <value>Autossential.Daten</value>
     <comment>category</comment>
   </data>
-  <data name="ActivityCategories_Files" xml:space="preserve">
+	<data name="ActivityCategories_Files" xml:space="preserve">
     <value>Autossential.Dateien</value>
     <comment>category</comment>
   </data>
-  <data name="ActivityCategories_Programming" xml:space="preserve">
+	<data name="ActivityCategories_Programming" xml:space="preserve">
     <value>Autossential.Programmierung</value>
     <comment>category</comment>
   </data>
-  <data name="ActivityCategories_System" xml:space="preserve">
+	<data name="ActivityCategories_System" xml:space="preserve">
     <value>Autossential.System</value>
     <comment>category</comment>
   </data>
-  <data name="ActivityCategories_Workflow" xml:space="preserve">
+	<data name="ActivityCategories_Workflow" xml:space="preserve">
     <value>Autossential.Workflow</value>
     <comment>category</comment>
   </data>
-  <data name="UnmapDrive_Description" xml:space="preserve">
+	<data name="UnmapDrive_Description" xml:space="preserve">
     <value>Entfernt ein gemapptes Netzlaufwerk vom System.</value>
     <comment>activity description</comment>
   </data>
-  <data name="MergeData_DisplayName" xml:space="preserve">
+	<data name="MergeData_DisplayName" xml:space="preserve">
     <value>Daten zusammenführen</value>
     <comment>activity name</comment>
   </data>
-  <data name="MergeData_Description" xml:space="preserve">
+	<data name="MergeData_Description" xml:space="preserve">
     <value>Führt den Quell-DataNode mit dem Ziel-DataNode zusammen. Skalare und Sequenzwerte aus der Quelle überschreiben vorhandene Werte im Ziel. Map-Werte werden rekursiv zusammengeführt.</value>
     <comment>activity description</comment>
   </data>
-  <data name="MergeData_Source_DisplayName" xml:space="preserve">
+	<data name="MergeData_Source_DisplayName" xml:space="preserve">
     <value>Quelle</value>
     <comment>property name</comment>
   </data>
-  <data name="MergeData_Source_Description" xml:space="preserve">
+	<data name="MergeData_Source_Description" xml:space="preserve">
     <value>Der DataNode, der in die Zielinstanz zusammengeführt wird.</value>
     <comment>property description</comment>
   </data>
-  <data name="MergeData_Destination_DisplayName" xml:space="preserve">
+	<data name="MergeData_Destination_DisplayName" xml:space="preserve">
     <value>Ziel</value>
     <comment>property name</comment>
   </data>
-  <data name="MergeData_Destination_Description" xml:space="preserve">
+	<data name="MergeData_Destination_Description" xml:space="preserve">
     <value>Der DataNode, der mit der Quellinstanz aktualisiert wird.</value>
     <comment>property description</comment>
   </data>
-  <data name="Zip_EntryStructure_DisplayName" xml:space="preserve">
+	<data name="Zip_EntryStructure_DisplayName" xml:space="preserve">
     <value>Eintragsstruktur</value>
     <comment>property name</comment>
   </data>
-  <data name="Zip_EntryStructure_Description" xml:space="preserve">
+	<data name="Zip_EntryStructure_Description" xml:space="preserve">
     <value>Definiert, wie Dateien im ZIP-Archiv gespeichert werden: relative Pfade beibehalten, ins Stammverzeichnis abflachen, Duplikate umbenennen oder vollständige Verzeichnisstruktur erhalten. Der Automatikmodus flacht ab, wenn möglich, und weicht bei doppelten Namen auf relative Pfade aus.</value>
     <comment>property description</comment>
   </data>

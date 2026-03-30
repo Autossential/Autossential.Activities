@@ -129,6 +129,30 @@
     <value>Options</value>
     <comment>category</comment>
   </data>
+  <data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
+    <value>The collection to be modified.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+    <value>Collection</value>
+    <comment>property name</comment>
+  </data>
+  <data name="AddRangeToCollection_Description" xml:space="preserve">
+    <value>Adds a set of items to the specified collection.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="AddRangeToCollection_DisplayName" xml:space="preserve">
+    <value>Add Range To Collection</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="AddRangeToCollection_Items_Description" xml:space="preserve">
+    <value>The items to be added to the collection.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+    <value>Items</value>
+    <comment>property name</comment>
+  </data>
   <data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
     <value>Specifies the amount of time in seconds for the file re-check. Any value less than 0.5 will be clamped to 0.5. Make sure to keep this value lesser than Timeout value.</value>
     <comment>property description</comment>

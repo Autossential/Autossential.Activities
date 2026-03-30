@@ -129,6 +129,30 @@
     <value>Опции</value>
     <comment>category</comment>
   </data>
+	<data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
+    <value>Коллекция, которую необходимо изменить.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+    <value>Коллекция</value>
+    <comment>property name</comment>
+  </data>
+	<data name="AddRangeToCollection_Description" xml:space="preserve">
+    <value>Добавляет набор элементов в указанную коллекцию.</value>
+    <comment>activity description</comment>
+  </data>
+	<data name="AddRangeToCollection_DisplayName" xml:space="preserve">
+    <value>Добавить диапазон в коллекцию</value>
+    <comment>activity name</comment>
+  </data>
+	<data name="AddRangeToCollection_Items_Description" xml:space="preserve">
+    <value>Элементы, которые необходимо добавить в коллекцию.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+    <value>Элементы</value>
+    <comment>property name</comment>
+  </data>
   <data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
     <value>Указывает время в секундах для повторной проверки файла. Любое значение меньше 0,5 будет автоматически установлено в 0,5. Убедитесь, что это значение меньше значения Timeout.</value>
     <comment>property description</comment>

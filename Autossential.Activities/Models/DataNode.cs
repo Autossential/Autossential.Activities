@@ -1,6 +1,7 @@
 ﻿using System.Activities.Statements;
 using System.Collections;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Autossential.Activities.Models
 {
@@ -435,5 +436,14 @@ namespace Autossential.Activities.Models
         public bool AsBool(string keyPath) => GetNode(keyPath).AsBool();
         public bool AsBoolOrDefault(bool defaultValue) => TryConvert(RawValue, defaultValue, ParseBool);
         public bool AsBoolOrDefault(string keyPath, bool defaultValue) => GetNode(keyPath).AsBoolOrDefault(defaultValue);
+
+        public Regex AsRegex(RegexOptions options) => new(RawValue.ToString(), options);
+        public Regex AsRegex() => AsRegex(RegexOptions.None);
+        public Regex AsRegex(string keyPath) => GetNode(keyPath).AsRegex();
+        public Regex AsRegex(string keyPath, RegexOptions options) => GetNode(keyPath).AsRegex(options);
+        public Regex AsRegexOrDefault(Regex defaultValue, RegexOptions options) => TryConvert(RawValue, defaultValue, v => new Regex(v.ToString(), options));
+        public Regex AsRegexOrDefault(Regex defaultValue) => AsRegexOrDefault(defaultValue, RegexOptions.None);
+        public Regex AsRegexOrDefault(string keyPath, Regex defaultValue, RegexOptions options) => GetNode(keyPath).AsRegexOrDefault(defaultValue, options);
+        public Regex AsRegexOrDefault(string keyPath, Regex defaultValue) => AsRegexOrDefault(keyPath, defaultValue, RegexOptions.None);
     }
 }

@@ -129,6 +129,30 @@
     <value>Opções</value>
     <comment>category</comment>
   </data>
+	<data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
+    <value>A coleção a ser modificada.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+    <value>Coleção</value>
+    <comment>property name</comment>
+  </data>
+	<data name="AddRangeToCollection_Description" xml:space="preserve">
+    <value>Adiciona um conjunto de itens à coleção especificada.</value>
+    <comment>activity description</comment>
+  </data>
+	<data name="AddRangeToCollection_DisplayName" xml:space="preserve">
+    <value>Adicionar intervalo à coleção</value>
+    <comment>activity name</comment>
+  </data>
+	<data name="AddRangeToCollection_Items_Description" xml:space="preserve">
+    <value>Os itens a serem adicionados à coleção.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+    <value>Itens</value>
+    <comment>property name</comment>
+  </data>
   <data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
     <value>Especifica o tempo em segundos para a nova verificação do ficheiro. Qualquer valor inferior a 0,5 será limitado a 0,5. Certifique-se de manter este valor inferior ao valor de Tempo limite.</value>
     <comment>property description</comment>

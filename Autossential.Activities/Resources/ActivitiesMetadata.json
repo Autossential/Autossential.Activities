@@ -306,9 +306,31 @@
       "categoryKey": "ActivityCategories_Workflow",
       "properties": [
         {
-          "name": "CheckTrue",
-          "displayNameKey": "IfActivity_CheckTrue_DisplayName",
-          "tooltipKey": "IfActivity_CheckTrue_Description",
+          "name": "Condition",
+          "displayNameKey": "IfActivity_Condition_DisplayName",
+          "tooltipKey": "IfActivity_Condition_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
+        },
+        {
+          "name": "Then",
+          "displayNameKey": "IfActivity_Then_DisplayName",
+          "tooltipKey": "IfActivity_Then_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
+          }
+        },
+        {
+          "name": "Else",
+          "displayNameKey": "IfActivity_Else_DisplayName",
+          "tooltipKey": "IfActivity_Else_Description",
           "isVisible": true,
           "isRequired": false,
           "category": {

@@ -129,6 +129,30 @@
     <value>Seçenekler</value>
     <comment>category</comment>
   </data>
+	<data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
+    <value>Değiştirilecek koleksiyon.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+    <value>Koleksiyon</value>
+    <comment>property name</comment>
+  </data>
+	<data name="AddRangeToCollection_Description" xml:space="preserve">
+    <value>Belirtilen koleksiyona bir dizi öğe ekler.</value>
+    <comment>activity description</comment>
+  </data>
+	<data name="AddRangeToCollection_DisplayName" xml:space="preserve">
+    <value>Koleksiyona Aralık Ekle</value>
+    <comment>activity name</comment>
+  </data>
+	<data name="AddRangeToCollection_Items_Description" xml:space="preserve">
+    <value>Koleksiyona eklenecek öğeler.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+    <value>Öğeler</value>
+    <comment>property name</comment>
+  </data>
   <data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
     <value>Dosyanın yeniden kontrol edilmesi için saniye cinsinden süreyi belirtir. 0.5'ten küçük herhangi bir değer 0.5'e yuvarlanır. Bu değeri Zaman Aşımı değerinden küçük tutmaya dikkat edin.</value>
     <comment>property description</comment>

@@ -1987,6 +1987,60 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adds or updates an entry in the Dictionary..
+        /// </summary>
+        public static string UpdateDictionary_Description {
+            get {
+                return ResourceManager.GetString("UpdateDictionary_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Dictionary instance to be updated..
+        /// </summary>
+        public static string UpdateDictionary_Dictionary_Description {
+            get {
+                return ResourceManager.GetString("UpdateDictionary_Dictionary_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dictionary.
+        /// </summary>
+        public static string UpdateDictionary_Dictionary_DisplayName {
+            get {
+                return ResourceManager.GetString("UpdateDictionary_Dictionary_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update Dictionary.
+        /// </summary>
+        public static string UpdateDictionary_DisplayName {
+            get {
+                return ResourceManager.GetString("UpdateDictionary_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The entries to be added or updated to the dictionary.
+        /// </summary>
+        public static string UpdateDictionary_Entries_Description {
+            get {
+                return ResourceManager.GetString("UpdateDictionary_Entries_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entries.
+        /// </summary>
+        public static string UpdateDictionary_Entries_DisplayName {
+            get {
+                return ResourceManager.GetString("UpdateDictionary_Entries_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Waits until the file be available..
         /// </summary>
         public static string WaitFile_Description {

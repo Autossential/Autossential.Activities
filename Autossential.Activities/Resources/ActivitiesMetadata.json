@@ -1,12 +1,12 @@
 {
   "activities": [
     {
-      "fullName": "Autossential.Activities.AddRangeToCollection`1",
+      "fullName": "Autossential.Activities.AddRangeToCollection\u00601",
       "shortName": "AddRangeToCollection",
       "displayNameKey": "AddRangeToCollection_DisplayName",
       "descriptionKey": "AddRangeToCollection_Description",
       "iconKey": "AddRangeToCollection.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.AddRangeToCollectionViewModel`1",
+      "viewModelType": "Autossential.Activities.ViewModels.AddRangeToCollectionViewModel\u00601",
       "defaultFactory": "Autossential.Activities.Factories.AddRangeToCollectionFactory",
       "categoryKey": "ActivityCategories_Data",
       "properties": [
@@ -22,9 +22,9 @@
           }
         },
         {
-          "name": "ItemsToAdd",
-          "displayNameKey": "AddRangeToCollection_ItemsToAdd_DisplayName",
-          "tooltipKey": "AddRangeToCollection_ItemsToAdd_Description",
+          "name": "Items",
+          "displayNameKey": "AddRangeToCollection_Items_DisplayName",
+          "tooltipKey": "AddRangeToCollection_Items_Description",
           "isVisible": true,
           "isRequired": true,
           "category": {
@@ -1236,6 +1236,40 @@
           "tooltipKey": "Unzip_Overwrite_Description",
           "isVisible": true,
           "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        }
+      ]
+    },
+    {
+      "fullName": "Autossential.Activities.UpdateDictionary\u00602",
+      "shortName": "UpdateDictionary",
+      "displayNameKey": "UpdateDictionary_DisplayName",
+      "descriptionKey": "UpdateDictionary_Description",
+      "iconKey": "UpdateDictionary.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.UpdateDictionaryViewModel\u00602",
+      "defaultFactory": "Autossential.Activities.Factories.UpdateDictionaryFactory",
+      "categoryKey": "ActivityCategories_Data",
+      "properties": [
+        {
+          "name": "Dictionary",
+          "displayNameKey": "UpdateDictionary_Dictionary_DisplayName",
+          "tooltipKey": "UpdateDictionary_Dictionary_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "Entries",
+          "displayNameKey": "UpdateDictionary_Entries_DisplayName",
+          "tooltipKey": "UpdateDictionary_Entries_Description",
+          "isVisible": true,
+          "isRequired": true,
           "category": {
             "name": "Input",
             "displayNameKey": "Categories_Input"

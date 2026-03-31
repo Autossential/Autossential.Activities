@@ -129,27 +129,27 @@
     <value>Opções</value>
     <comment>category</comment>
   </data>
-	<data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
+  <data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
     <value>A coleção a ser modificada.</value>
     <comment>property description</comment>
   </data>
-	<data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+  <data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
     <value>Coleção</value>
     <comment>property name</comment>
   </data>
-	<data name="AddRangeToCollection_Description" xml:space="preserve">
+  <data name="AddRangeToCollection_Description" xml:space="preserve">
     <value>Adiciona um conjunto de itens à coleção especificada.</value>
     <comment>activity description</comment>
   </data>
-	<data name="AddRangeToCollection_DisplayName" xml:space="preserve">
+  <data name="AddRangeToCollection_DisplayName" xml:space="preserve">
     <value>Adicionar intervalo à coleção</value>
     <comment>activity name</comment>
   </data>
-	<data name="AddRangeToCollection_Items_Description" xml:space="preserve">
+  <data name="AddRangeToCollection_Items_Description" xml:space="preserve">
     <value>Os itens a serem adicionados à coleção.</value>
     <comment>property description</comment>
   </data>
-	<data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+  <data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
     <value>Itens</value>
     <comment>property name</comment>
   </data>
@@ -1100,5 +1100,29 @@
   <data name="Zip_EntryStructure_Description" xml:space="preserve">
     <value>Define como os ficheiros são armazenados dentro do arquivo ZIP: manter caminhos relativos, achatar para raiz, renomear duplicados ou preservar estrutura completa de diretórios. O modo Auto achata quando possível e recua para caminhos relativos se forem detectados nomes duplicados.</value>
     <comment>property description</comment>
+  </data>
+	<data name="UpdateDictionary_Description" xml:space="preserve">
+    <value>Adiciona ou atualiza uma entrada no Dicionário.</value>
+    <comment>activity description</comment>
+  </data>
+	<data name="UpdateDictionary_DisplayName" xml:space="preserve">
+    <value>Atualizar dicionário</value>
+    <comment>activity name</comment>
+  </data>
+	<data name="UpdateDictionary_Dictionary_Description" xml:space="preserve">
+    <value>A instância do Dicionário a ser atualizada.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="UpdateDictionary_Dictionary_DisplayName" xml:space="preserve">
+    <value>Dicionário</value>
+    <comment>property name</comment>
+  </data>
+	<data name="UpdateDictionary_Entries_Description" xml:space="preserve">
+    <value>As entradas a serem adicionadas ou atualizadas no dicionário.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="UpdateDictionary_Entries_DisplayName" xml:space="preserve">
+    <value>Entradas</value>
+    <comment>property name</comment>
   </data>
 </root>

@@ -1,7 +1,6 @@
 ﻿using Autossential.Activities.Extensions;
 using Designer.BackEnd;
 using System.Activities;
-using System.Reflection;
 
 namespace Autossential.Activities.Factories
 {
@@ -25,17 +24,9 @@ namespace Autossential.Activities.Factories
 
         public Activity Create(CreateActivityContext context)
         {
-            var obj = context.RequiredValues.First();
-            if (obj is Tuple<string, Type> tuple)
-            {
-                var (_, type) = tuple;
-                var result = typeof(AddRangeToCollectionFactory).GetMethod(nameof(CreateActivity), BindingFlags.Static | BindingFlags.NonPublic)
-                    .MakeGenericMethod(type.GetInnerType()).Invoke(this, []);
-                return (Activity)result;
-            }
-            return null;
+            var (_, type) = (Tuple<string, Type>)context.RequiredValues.First();
+            var activity = typeof(AddRangeToCollection<>).MakeGenericType(type.GetInnerType());
+            return (Activity)Activator.CreateInstance(activity);
         }
-
-        private static Activity CreateActivity<T>() => new AddRangeToCollection<T>();
     }
 }

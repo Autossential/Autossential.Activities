@@ -68,7 +68,7 @@ foreach (var t in types)
 
         var browsable = p.GetCustomAttribute<BrowsableAttribute>();
         if (browsable != null && !browsable.Browsable)
-            continue;  
+            continue;
 
         var propPrefix = GetPropertyPrefix(name, p.Name);
 
@@ -120,6 +120,18 @@ public class Activity
     public string DescriptionKey { get; set; }
     public string IconKey { get; set; }
     public string ViewModelType { get; set; }
+    public string? DefaultFactory
+    {
+        get
+        {
+            return ShortName switch
+            {
+                "AddRangeToCollection" => "Autossential.Activities.Factories.AddRangeToCollectionFactory",
+                "UpdateDictionary" => "Autossential.Activities.Factories.UpdateDictionaryFactory",
+                _ => null
+            };
+        }
+    }
     public string CategoryKey
     {
         get
@@ -160,6 +172,7 @@ public class Activity
     }
     public List<Property> Properties { get; set; }
 }
+
 
 public class Category(string name, string displayNameKey)
 {

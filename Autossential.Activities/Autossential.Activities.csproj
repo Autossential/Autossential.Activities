@@ -59,6 +59,7 @@
 		<None Remove="Resources\Icons\TimeLoop.svg" />
 		<None Remove="Resources\Icons\TransposeData.svg" />
 		<None Remove="Resources\Icons\UnmapDrive.svg" />
+		<None Remove="Resources\Icons\UpdateDictionary.svg" />
 		<None Remove="Resources\Icons\WaitFile.svg" />
 		<None Remove="Resources\Icons\WhenDo.svg" />
 	</ItemGroup>
@@ -88,6 +89,7 @@
 		<EmbeddedResource Include="Resources\Icons\TimeLoop.svg" />
 		<EmbeddedResource Include="Resources\Icons\TransposeData.svg" />
 		<EmbeddedResource Include="Resources\Icons\UnmapDrive.svg" />
+		<EmbeddedResource Include="Resources\Icons\UpdateDictionary.svg" />
 		<EmbeddedResource Include="Resources\Icons\Zip.svg" />
 		<EmbeddedResource Include="Resources\Icons\Unzip.svg" />
 		<EmbeddedResource Include="Resources\Icons\WaitFile.svg" />

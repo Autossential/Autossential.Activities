@@ -1,0 +1,31 @@
+﻿using Autossential.Activities.Base;
+using Autossential.Activities.Extensions;
+using System.Activities.DesignViewModels;
+using System.Activities.ViewModels;
+
+namespace Autossential.Activities.ViewModels
+{
+    internal class UpdateDictionaryViewModel<TKey, TValue>(IDesignServices services) : BaseViewModel(services)
+    {
+        public DesignInArgument<Dictionary<TKey, TValue>> Dictionary { get; set; }
+        public DesignInArgument<Dictionary<TKey, TValue>> Entries { get; set; }
+
+        protected override void InitializeModel()
+        {
+            base.InitializeModel();
+            PersistValuesChangedDuringInit();
+
+            var orderIndex = 0;
+            Dictionary.IsPrincipal = true;
+            Dictionary.OrderIndex = orderIndex++;
+            Entries.IsPrincipal = true;
+            Entries.OrderIndex = orderIndex++;
+
+            if (IsWidgetSupported(ViewModelWidgetType.Input, ViewModelWidgetType.Dictionary))
+            {
+                Dictionary.AddWidget(ViewModelWidgetType.Input);
+                Entries.AddWidget(ViewModelWidgetType.Dictionary);
+            }
+        }
+    }
+}

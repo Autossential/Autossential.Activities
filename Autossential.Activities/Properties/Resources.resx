@@ -1101,4 +1101,28 @@
     <value>Defines how files are stored inside the ZIP archive: keep relative paths, flatten to root, rename duplicates, or preserve full directory structure. Auto mode flattens when possible and falls back to relative paths if duplicate names are detected.</value>
     <comment>property description</comment>
   </data>
+  <data name="UpdateDictionary_Description" xml:space="preserve">
+    <value>Adds or updates an entry in the Dictionary.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="UpdateDictionary_DisplayName" xml:space="preserve">
+    <value>Update Dictionary</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="UpdateDictionary_Dictionary_Description" xml:space="preserve">
+    <value>The Dictionary instance to be updated.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="UpdateDictionary_Dictionary_DisplayName" xml:space="preserve">
+    <value>Dictionary</value>
+    <comment>property name</comment>
+  </data>
+  <data name="UpdateDictionary_Entries_Description" xml:space="preserve">
+    <value>The entries to be added or updated to the dictionary</value>
+    <comment>property description</comment>
+  </data>
+  <data name="UpdateDictionary_Entries_DisplayName" xml:space="preserve">
+    <value>Entries</value>
+    <comment>property name</comment>
+  </data>
 </root>

@@ -9,15 +9,16 @@ namespace Autossential.Activities.Base
     {
         private readonly IWorkflowDesignApi _workflowDesignerAPI = services.GetService<IWorkflowDesignApi>();
 
-        public bool IsWidgetSupported(string widgetType)
+        public bool IsWidgetSupported(params string[] widgetTypes)
         {
             if (!_workflowDesignerAPI.HasFeature(DesignFeatureKeys.WidgetSupportInfoService))
                 return false;
 
-            if (_workflowDesignerAPI.WidgetSupportInfoService?.IsWidgetSupported(widgetType) == false)
+            var service = _workflowDesignerAPI.WidgetSupportInfoService;
+            if (service == null)
                 return false;
 
-            return true;
+            return widgetTypes.All(service.IsWidgetSupported);
         }
 
         protected IWorkflowDesignApi GetWorkflowDesignApi() => _workflowDesignerAPI;

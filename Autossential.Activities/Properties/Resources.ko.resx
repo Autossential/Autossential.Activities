@@ -129,27 +129,27 @@
     <value>옵션</value>
     <comment>category</comment>
   </data>
-	<data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
+  <data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
     <value>수정할 컬렉션입니다.</value>
     <comment>property description</comment>
   </data>
-	<data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+  <data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
     <value>컬렉션</value>
     <comment>property name</comment>
   </data>
-	<data name="AddRangeToCollection_Description" xml:space="preserve">
+  <data name="AddRangeToCollection_Description" xml:space="preserve">
     <value>지정된 컬렉션에 항목 집합을 추가합니다.</value>
     <comment>activity description</comment>
   </data>
-	<data name="AddRangeToCollection_DisplayName" xml:space="preserve">
+  <data name="AddRangeToCollection_DisplayName" xml:space="preserve">
     <value>컬렉션에 범위 추가</value>
     <comment>activity name</comment>
   </data>
-	<data name="AddRangeToCollection_Items_Description" xml:space="preserve">
+  <data name="AddRangeToCollection_Items_Description" xml:space="preserve">
     <value>컬렉션에 추가할 항목입니다.</value>
     <comment>property description</comment>
   </data>
-	<data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+  <data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
     <value>항목</value>
     <comment>property name</comment>
   </data>
@@ -1100,5 +1100,29 @@
   <data name="Zip_EntryStructure_Description" xml:space="preserve">
     <value>ZIP 아카이브 내 파일 저장 방식을 정의합니다: 상대 경로 유지, 루트로 평탄화, 중복 이름 변경 또는 전체 디렉터리 구조 유지. 자동 모드는 가능하면 평탄화하고 중복 이름이 감지되면 상대 경로로 되돌립니다.</value>
     <comment>property description</comment>
+  </data>
+	<data name="UpdateDictionary_Description" xml:space="preserve">
+    <value>사전에 항목을 추가하거나 업데이트합니다.</value>
+    <comment>activity description</comment>
+  </data>
+	<data name="UpdateDictionary_DisplayName" xml:space="preserve">
+    <value>사전 업데이트</value>
+    <comment>activity name</comment>
+  </data>
+	<data name="UpdateDictionary_Dictionary_Description" xml:space="preserve">
+    <value>업데이트할 사전 인스턴스입니다.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="UpdateDictionary_Dictionary_DisplayName" xml:space="preserve">
+    <value>사전</value>
+    <comment>property name</comment>
+  </data>
+	<data name="UpdateDictionary_Entries_Description" xml:space="preserve">
+    <value>사전에 추가하거나 업데이트할 항목입니다.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="UpdateDictionary_Entries_DisplayName" xml:space="preserve">
+    <value>항목</value>
+    <comment>property name</comment>
   </data>
 </root>

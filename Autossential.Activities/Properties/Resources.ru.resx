@@ -129,27 +129,27 @@
     <value>Опции</value>
     <comment>category</comment>
   </data>
-	<data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
+  <data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
     <value>Коллекция, которую необходимо изменить.</value>
     <comment>property description</comment>
   </data>
-	<data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+  <data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
     <value>Коллекция</value>
     <comment>property name</comment>
   </data>
-	<data name="AddRangeToCollection_Description" xml:space="preserve">
+  <data name="AddRangeToCollection_Description" xml:space="preserve">
     <value>Добавляет набор элементов в указанную коллекцию.</value>
     <comment>activity description</comment>
   </data>
-	<data name="AddRangeToCollection_DisplayName" xml:space="preserve">
+  <data name="AddRangeToCollection_DisplayName" xml:space="preserve">
     <value>Добавить диапазон в коллекцию</value>
     <comment>activity name</comment>
   </data>
-	<data name="AddRangeToCollection_Items_Description" xml:space="preserve">
+  <data name="AddRangeToCollection_Items_Description" xml:space="preserve">
     <value>Элементы, которые необходимо добавить в коллекцию.</value>
     <comment>property description</comment>
   </data>
-	<data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+  <data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
     <value>Элементы</value>
     <comment>property name</comment>
   </data>
@@ -1100,5 +1100,29 @@
   <data name="Zip_EntryStructure_Description" xml:space="preserve">
     <value>Определяет, как файлы хранятся внутри ZIP-архива: сохранять относительные пути, уплощать в корень, переименовывать дубликаты или сохранять полную структуру директорий. Режим 'Авто' уплощает структуру при возможности и переходит к относительным путям, если обнаружены дубликаты имён.</value>
     <comment>property description</comment>
+  </data>
+	<data name="UpdateDictionary_Description" xml:space="preserve">
+    <value>Добавляет или обновляет запись в словаре.</value>
+    <comment>activity description</comment>
+  </data>
+	<data name="UpdateDictionary_DisplayName" xml:space="preserve">
+    <value>Обновить словарь</value>
+    <comment>activity name</comment>
+  </data>
+	<data name="UpdateDictionary_Dictionary_Description" xml:space="preserve">
+    <value>Экземпляр словаря для обновления.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="UpdateDictionary_Dictionary_DisplayName" xml:space="preserve">
+    <value>Словарь</value>
+    <comment>property name</comment>
+  </data>
+	<data name="UpdateDictionary_Entries_Description" xml:space="preserve">
+    <value>Записи, которые нужно добавить или обновить в словаре.</value>
+    <comment>property description</comment>
+  </data>
+	<data name="UpdateDictionary_Entries_DisplayName" xml:space="preserve">
+    <value>Записи</value>
+    <comment>property name</comment>
   </data>
 </root>

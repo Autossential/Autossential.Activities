@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Net;
 using System.Security;
+using System.Text.RegularExpressions;
 using UiPath.Studio.Activities.Api;
 using Xunit;
 
@@ -25,15 +26,16 @@ namespace Autossential.Activities.Tests.Core
     //    8.  Indexer (get & set)
     //    9.  AsMap / AsSequence
     //    10. AsString / AsStringOrDefault
-    //    11. AsInt / AsIntOrDefault
-    //    12. AsLong / AsLongOrDefault
-    //    13. AsDouble / AsDoubleOrDefault
-    //    14. AsDecimal / AsDecimalOrDefault
-    //    15. AsDateTime / AsDateTimeOrDefault
-    //    16. AsBool / AsBoolOrDefault
-    //    17. Merge
-    //    18. ToString
-    //    19. CultureInfo
+    //    11. AsRegex / AsRegexOrDefault
+    //    12. AsInt / AsIntOrDefault
+    //    13. AsLong / AsLongOrDefault
+    //    14. AsDouble / AsDoubleOrDefault
+    //    15. AsDecimal / AsDecimalOrDefault
+    //    16. AsDateTime / AsDateTimeOrDefault
+    //    17. AsBool / AsBoolOrDefault
+    //    18. Merge
+    //    19. ToString
+    //    20. CultureInfo
     // ─────────────────────────────────────────────────────────────────────────
     public class DataNodeTests
     {
@@ -673,7 +675,72 @@ namespace Autossential.Activities.Tests.Core
         }
 
         // ═════════════════════════════════════════════════════════════════════
-        //  11. AsInt / AsIntOrDefault
+        //  11. AsRegex / AsRegexOrDefault
+        // ═════════════════════════════════════════════════════════════════════
+        public class AsRegexMethods
+        {
+            [Fact]
+            public void AsRegex_ValidPattern_ReturnsRegex()
+            {
+                var node = new DataNode("^abc$");
+                var regex = node.AsRegex();
+                Assert.NotNull(regex);
+                Assert.True(regex.IsMatch("abc"));
+            }
+
+            [Fact]
+            public void AsRegex_NullValue_Throws()
+            {
+                var node = new DataNode(null);
+                Assert.Throws<NullReferenceException>(() => node.AsRegex());
+            }
+
+            [Fact]
+            public void AsRegex_WithKeyPath_ReturnsRegex()
+            {
+                var node = new DataNode(new Dictionary<string, object>
+                {
+                    ["pat"] = "^a+$"
+                });
+                var regex = node.AsRegex("pat");
+                Assert.NotNull(regex);
+                Assert.True(regex.IsMatch("aaaa"));
+            }
+
+            [Fact]
+            public void AsRegex_InvalidPattern_Throws()
+            {
+                // invalid regex should surface as an exception
+                Assert.Throws<RegexParseException>(() => new DataNode("(?").AsRegex());
+            }
+
+            [Fact]
+            public void AsRegexOrDefault_InvalidPattern_ReturnsDefault()
+            {
+                var def = new Regex("x");
+                var result = new DataNode("(?").AsRegexOrDefault(def);
+                Assert.Same(def, result);
+            }
+
+            [Fact]
+            public void AsRegexOrDefault_NullValue_ReturnsDefault()
+            {
+                var def = new Regex("y");
+                var result = new DataNode(null).AsRegexOrDefault(def);
+                Assert.Same(def, result);
+            }
+
+            [Fact]
+            public void AsRegexOrDefault_WithKeyPath_NonExisting_ReturnsDefault()
+            {
+                var def = new Regex("z");
+                var result = SampleMap().AsRegexOrDefault("nonexistent", def);
+                Assert.Same(def, result);
+            }
+        }
+
+        // ═════════════════════════════════════════════════════════════════════
+        //  12. AsInt / AsIntOrDefault
         // ═════════════════════════════════════════════════════════════════════
         public class AsIntMethods
         {
@@ -721,7 +788,7 @@ namespace Autossential.Activities.Tests.Core
         }
 
         // ═════════════════════════════════════════════════════════════════════
-        //  12. AsLong / AsLongOrDefault
+        //  13. AsLong / AsLongOrDefault
         // ═════════════════════════════════════════════════════════════════════
         public class AsLongMethods
         {
@@ -751,7 +818,7 @@ namespace Autossential.Activities.Tests.Core
         }
 
         // ═════════════════════════════════════════════════════════════════════
-        //  13. AsDouble / AsDoubleOrDefault
+        //  14. AsDouble / AsDoubleOrDefault
         // ═════════════════════════════════════════════════════════════════════
         public class AsDoubleMethods
         {
@@ -787,7 +854,7 @@ namespace Autossential.Activities.Tests.Core
         }
 
         // ═════════════════════════════════════════════════════════════════════
-        //  14. AsDecimal / AsDecimalOrDefault
+        //  15. AsDecimal / AsDecimalOrDefault
         // ═════════════════════════════════════════════════════════════════════
         public class AsDecimalMethods
         {
@@ -817,7 +884,7 @@ namespace Autossential.Activities.Tests.Core
         }
 
         // ═════════════════════════════════════════════════════════════════════
-        //  15. AsDateTime / AsDateTimeOrDefault
+        //  16. AsDateTime / AsDateTimeOrDefault
         // ═════════════════════════════════════════════════════════════════════
         public class AsDateTimeMethods
         {
@@ -857,7 +924,7 @@ namespace Autossential.Activities.Tests.Core
         }
 
         // ═════════════════════════════════════════════════════════════════════
-        //  16. AsBool / AsBoolOrDefault
+        //  17. AsBool / AsBoolOrDefault
         // ═════════════════════════════════════════════════════════════════════
         public class AsBoolMethods
         {
@@ -914,7 +981,7 @@ namespace Autossential.Activities.Tests.Core
         }
 
         // ═════════════════════════════════════════════════════════════════════
-        //  17. Merge
+        //  18. Merge
         // ═════════════════════════════════════════════════════════════════════
         public class MergeMethod
         {
@@ -1066,7 +1133,7 @@ namespace Autossential.Activities.Tests.Core
         }
 
         // ═════════════════════════════════════════════════════════════════════
-        //  18. ToString
+        //  19. ToString
         // ═════════════════════════════════════════════════════════════════════
         public class ToStringMethod
         {
@@ -1102,7 +1169,7 @@ namespace Autossential.Activities.Tests.Core
         }
 
         // ═════════════════════════════════════════════════════════════════════
-        //  19. CultureInfo
+        //  20. CultureInfo
         // ═════════════════════════════════════════════════════════════════════
         public class CultureInfoBehavior
         {

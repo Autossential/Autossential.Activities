@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
+  <!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,1046 +59,1070 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="metadata">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" />
-							</xsd:sequence>
-							<xsd:attribute name="name" use="required" type="xsd:string" />
-							<xsd:attribute name="type" type="xsd:string" />
-							<xsd:attribute name="mimetype" type="xsd:string" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="assembly">
-						<xsd:complexType>
-							<xsd:attribute name="alias" type="xsd:string" />
-							<xsd:attribute name="name" type="xsd:string" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>2.0</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<data name="Categories_Input" xml:space="preserve">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Categories_Input" xml:space="preserve">
     <value>輸入</value>
     <comment>category</comment>
   </data>
-	<data name="Categories_Output" xml:space="preserve">
+  <data name="Categories_Output" xml:space="preserve">
     <value>輸出</value>
     <comment>category</comment>
   </data>
-	<data name="Categories_Options" xml:space="preserve">
+  <data name="Categories_Options" xml:space="preserve">
     <value>選項</value>
     <comment>category</comment>
   </data>
-	<data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
+  <data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
     <value>要修改的集合。</value>
     <comment>property description</comment>
   </data>
-	<data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+  <data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
     <value>集合</value>
     <comment>property name</comment>
   </data>
-	<data name="AddRangeToCollection_Description" xml:space="preserve">
+  <data name="AddRangeToCollection_Description" xml:space="preserve">
     <value>將一組項目新增至指定的集合。</value>
     <comment>activity description</comment>
   </data>
-	<data name="AddRangeToCollection_DisplayName" xml:space="preserve">
+  <data name="AddRangeToCollection_DisplayName" xml:space="preserve">
     <value>將範圍新增至集合</value>
     <comment>activity name</comment>
   </data>
-	<data name="AddRangeToCollection_Items_Description" xml:space="preserve">
+  <data name="AddRangeToCollection_Items_Description" xml:space="preserve">
     <value>要新增至集合的項目。</value>
     <comment>property description</comment>
   </data>
-	<data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+  <data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
     <value>項目</value>
     <comment>property name</comment>
   </data>
-	<data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
+  <data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
     <value>指定檔案重新檢查的時間間隔（秒）。小於 0.5 的值將被強制調整為 0.5。請確保此值小於逾時時間。</value>
     <comment>property description</comment>
   </data>
-	<data name="WaitFile_PollingIntervalSeconds_DisplayName" xml:space="preserve">
+  <data name="WaitFile_PollingIntervalSeconds_DisplayName" xml:space="preserve">
     <value>間隔</value>
     <comment>property name</comment>
   </data>
-	<data name="Common_TimeoutSeconds_Description" xml:space="preserve">
+  <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
     <value>指定活動執行前等待的時間（秒）。預設值為 30 秒。</value>
     <comment>property description</comment>
   </data>
-	<data name="WaitFile_Description" xml:space="preserve">
+  <data name="WaitFile_Description" xml:space="preserve">
     <value>等待檔案可用。</value>
     <comment>activity description</comment>
   </data>
-	<data name="WaitFile_DisplayName" xml:space="preserve">
+  <data name="WaitFile_DisplayName" xml:space="preserve">
     <value>等待檔案</value>
     <comment>activity name</comment>
   </data>
-	<data name="WaitFile_FilePath_Description" xml:space="preserve">
+  <data name="WaitFile_FilePath_Description" xml:space="preserve">
     <value>檔案路徑。</value>
     <comment>property description</comment>
   </data>
-	<data name="WaitFile_FilePath_DisplayName" xml:space="preserve">
+  <data name="WaitFile_FilePath_DisplayName" xml:space="preserve">
     <value>檔案路徑</value>
     <comment>property name</comment>
   </data>
-	<data name="WaitFile_Result_Description" xml:space="preserve">
+  <data name="WaitFile_Result_Description" xml:space="preserve">
     <value>找到檔案時對應的 FileInfo 物件。</value>
     <comment>property description</comment>
   </data>
-	<data name="WaitFile_Result_DisplayName" xml:space="preserve">
+  <data name="WaitFile_Result_DisplayName" xml:space="preserve">
     <value>結果</value>
     <comment>property name</comment>
   </data>
-	<data name="WaitFile_WaitForExist_Description" xml:space="preserve">
+  <data name="WaitFile_WaitForExist_Description" xml:space="preserve">
     <value>等待檔案存在。</value>
     <comment>property description</comment>
   </data>
-	<data name="WaitFile_WaitForExist_DisplayName" xml:space="preserve">
+  <data name="WaitFile_WaitForExist_DisplayName" xml:space="preserve">
     <value>等待存在</value>
     <comment>property name</comment>
   </data>
-	<data name="Common_TimeoutSeconds_DisplayName" xml:space="preserve">
+  <data name="Common_TimeoutSeconds_DisplayName" xml:space="preserve">
     <value>逾時</value>
     <comment>property name</comment>
   </data>
-	<data name="Common_ViewModel_BrowseForFile" xml:space="preserve">
+  <data name="Common_ViewModel_BrowseForFile" xml:space="preserve">
     <value>瀏覽檔案</value>
     <comment>view model label</comment>
   </data>
-	<data name="Common_ViewModel_BrowseForFolder" xml:space="preserve">
+  <data name="Common_ViewModel_BrowseForFolder" xml:space="preserve">
     <value>瀏覽資料夾</value>
     <comment>view model label</comment>
   </data>
-	<data name="Categories_Common" xml:space="preserve">
+  <data name="Categories_Common" xml:space="preserve">
     <value>一般</value>
     <comment>category</comment>
   </data>
-	<data name="Common_ContinueOnError_DisplayName" xml:space="preserve">
+  <data name="Common_ContinueOnError_DisplayName" xml:space="preserve">
     <value>發生錯誤時繼續</value>
     <comment>property name</comment>
   </data>
-	<data name="Common_ContinueOnError_Description" xml:space="preserve">
+  <data name="Common_ContinueOnError_Description" xml:space="preserve">
     <value>指定即使目前活動失敗，仍繼續執行後續活動。僅允許布林值。</value>
     <comment>property description</comment>
   </data>
-	<data name="WaitFile_DirectoryPath_Description" xml:space="preserve">
+  <data name="WaitFile_DirectoryPath_Description" xml:space="preserve">
     <value>要監視的目錄路徑。</value>
     <comment>property description</comment>
   </data>
-	<data name="WaitFile_DirectoryPath_DisplayName" xml:space="preserve">
+  <data name="WaitFile_DirectoryPath_DisplayName" xml:space="preserve">
     <value>目錄路徑</value>
     <comment>property name</comment>
   </data>
-	<data name="WaitFile_DynamicFile_DisplayName" xml:space="preserve">
+  <data name="WaitFile_DynamicFile_DisplayName" xml:space="preserve">
     <value>檔案名稱為動態</value>
     <comment>property name</comment>
   </data>
-	<data name="Common_SearchPattern_Description" xml:space="preserve">
+  <data name="Common_SearchPattern_Description" xml:space="preserve">
     <value>搜尋字串定義路徑中的檔案名稱模式。支援文字與萬用字元（*、?、!、|），但不支援規則運算式。使用 ! 表示排除（例如 !*.txt），使用 | 表示多個模式（例如 *.png|*.gif|*.jpeg）。預設值為 *.*（所有檔案）。</value>
     <comment>property description</comment>
   </data>
-	<data name="Common_SearchPattern_DisplayName" xml:space="preserve">
+  <data name="Common_SearchPattern_DisplayName" xml:space="preserve">
     <value>搜尋模式</value>
     <comment>property name</comment>
   </data>
-	<data name="WaitFile_DynamicFile_Description" xml:space="preserve">
+  <data name="WaitFile_DynamicFile_Description" xml:space="preserve">
     <value>為 True 時，活動會監視指定資料夾，直到找到符合搜尋模式的檔案為止。</value>
     <comment>property description</comment>
   </data>
-	<data name="CleanUpFolder_DeleteEmptyFolders_Description" xml:space="preserve">
+  <data name="CleanUpFolder_DeleteEmptyFolders_Description" xml:space="preserve">
     <value>決定檔案刪除後留下的空白資料夾是否也要刪除。</value>
     <comment>property description</comment>
   </data>
-	<data name="CleanUpFolder_DeleteEmptyFolders_DisplayName" xml:space="preserve">
+  <data name="CleanUpFolder_DeleteEmptyFolders_DisplayName" xml:space="preserve">
     <value>刪除空白資料夾</value>
     <comment>property name</comment>
   </data>
-	<data name="CleanUpFolder_Description" xml:space="preserve">
+  <data name="CleanUpFolder_Description" xml:space="preserve">
     <value>刪除指定資料夾中的所有檔案與資料夾。</value>
     <comment>activity description</comment>
   </data>
-	<data name="CleanUpFolder_DisplayName" xml:space="preserve">
+  <data name="CleanUpFolder_DisplayName" xml:space="preserve">
     <value>清理資料夾</value>
     <comment>activity name</comment>
   </data>
-	<data name="CleanUpFolder_Folder_Description" xml:space="preserve">
+  <data name="CleanUpFolder_Folder_Description" xml:space="preserve">
     <value>要清理的資料夾路徑。</value>
     <comment>property description</comment>
   </data>
-	<data name="CleanUpFolder_Folder_DisplayName" xml:space="preserve">
+  <data name="CleanUpFolder_Folder_DisplayName" xml:space="preserve">
     <value>資料夾路徑</value>
     <comment>property name</comment>
   </data>
-	<data name="CleanUpFolder_LastWriteTime_Description" xml:space="preserve">
+  <data name="CleanUpFolder_LastWriteTime_Description" xml:space="preserve">
     <value>僅刪除最後寫入時間早於此參考日期的檔案。預設值為 DateTime.Now。</value>
     <comment>property description</comment>
   </data>
-	<data name="CleanUpFolder_LastWriteTime_DisplayName" xml:space="preserve">
+  <data name="CleanUpFolder_LastWriteTime_DisplayName" xml:space="preserve">
     <value>最後寫入時間</value>
     <comment>property name</comment>
   </data>
-	<data name="CleanUpFolder_FilesDeleted_Description" xml:space="preserve">
+  <data name="CleanUpFolder_FilesDeleted_Description" xml:space="preserve">
     <value>已刪除的檔案數量。</value>
     <comment>property description</comment>
   </data>
-	<data name="CleanUpFolder_FilesDeleted_DisplayName" xml:space="preserve">
+  <data name="CleanUpFolder_FilesDeleted_DisplayName" xml:space="preserve">
     <value>已刪除檔案</value>
     <comment>property name</comment>
   </data>
-	<data name="CleanUpFolder_SearchOption_Description" xml:space="preserve">
+  <data name="CleanUpFolder_SearchOption_Description" xml:space="preserve">
     <value>指定搜尋操作是僅包含目前目錄，還是包含所有子目錄。</value>
     <comment>property description</comment>
   </data>
-	<data name="CleanUpFolder_SearchOption_DisplayName" xml:space="preserve">
+  <data name="CleanUpFolder_SearchOption_DisplayName" xml:space="preserve">
     <value>搜尋選項</value>
     <comment>property name</comment>
   </data>
-	<data name="CleanUpFolder_FoldersDeleted_DisplayName" xml:space="preserve">
+  <data name="CleanUpFolder_FoldersDeleted_DisplayName" xml:space="preserve">
     <value>已刪除資料夾</value>
     <comment>property name</comment>
   </data>
-	<data name="CleanUpFolder_FoldersDeleted_Description" xml:space="preserve">
+  <data name="CleanUpFolder_FoldersDeleted_Description" xml:space="preserve">
     <value>已刪除的資料夾數量。</value>
     <comment>property description</comment>
   </data>
-	<data name="Zip_Description" xml:space="preserve">
+  <data name="Zip_Description" xml:space="preserve">
     <value>將檔案與資料夾壓縮成 zip 壓縮檔。</value>
     <comment>activity description</comment>
   </data>
-	<data name="Zip_DisplayName" xml:space="preserve">
+  <data name="Zip_DisplayName" xml:space="preserve">
     <value>壓縮 (Zip)</value>
     <comment>activity name</comment>
   </data>
-	<data name="Zip_ToCompress_Description" xml:space="preserve">
+  <data name="Zip_ToCompress_Description" xml:space="preserve">
     <value>要壓縮的檔案與目錄路徑集合。</value>
     <comment>property description</comment>
   </data>
-	<data name="Zip_ToCompress_DisplayName" xml:space="preserve">
+  <data name="Zip_ToCompress_DisplayName" xml:space="preserve">
     <value>壓縮對象</value>
     <comment>property name</comment>
   </data>
-	<data name="Zip_TextEncoding_Description" xml:space="preserve">
+  <data name="Zip_TextEncoding_Description" xml:space="preserve">
     <value>zip 壓縮檔中條目名稱使用的編碼。</value>
     <comment>property description</comment>
   </data>
-	<data name="Zip_TextEncoding_DisplayName" xml:space="preserve">
+  <data name="Zip_TextEncoding_DisplayName" xml:space="preserve">
     <value>文字編碼</value>
     <comment>property name</comment>
   </data>
-	<data name="Zip_CompressionLevel_Description" xml:space="preserve">
+  <data name="Zip_CompressionLevel_Description" xml:space="preserve">
     <value>建立壓縮檔時使用的壓縮等級。</value>
     <comment>property description</comment>
   </data>
-	<data name="Zip_CompressionLevel_DisplayName" xml:space="preserve">
+  <data name="Zip_CompressionLevel_DisplayName" xml:space="preserve">
     <value>壓縮等級</value>
     <comment>property name</comment>
   </data>
-	<data name="Zip_CompressedFile_Description" xml:space="preserve">
+  <data name="Zip_CompressedFile_Description" xml:space="preserve">
     <value>建立的壓縮檔案索引或識別碼（適用時）。</value>
     <comment>property description</comment>
   </data>
-	<data name="Zip_CompressedFile_DisplayName" xml:space="preserve">
+  <data name="Zip_CompressedFile_DisplayName" xml:space="preserve">
     <value>壓縮檔案</value>
     <comment>property name</comment>
   </data>
-	<data name="Zip_FullEntryNames_Description" xml:space="preserve">
+  <data name="Zip_FullEntryNames_Description" xml:space="preserve">
     <value>使用完整條目名稱（絕對路徑）而非相對路徑。</value>
     <comment>property description</comment>
   </data>
-	<data name="Zip_FullEntryNames_DisplayName" xml:space="preserve">
+  <data name="Zip_FullEntryNames_DisplayName" xml:space="preserve">
     <value>完整條目名稱</value>
     <comment>property name</comment>
   </data>
-	<data name="Zip_FilesCount_Description" xml:space="preserve">
+  <data name="Zip_FilesCount_Description" xml:space="preserve">
     <value>加入壓縮檔的檔案數量。</value>
     <comment>property description</comment>
   </data>
-	<data name="Zip_FilesCount_DisplayName" xml:space="preserve">
+  <data name="Zip_FilesCount_DisplayName" xml:space="preserve">
     <value>檔案數量</value>
     <comment>property name</comment>
   </data>
-	<data name="Zip_ZipFilePath_Description" xml:space="preserve">
+  <data name="Zip_ZipFilePath_Description" xml:space="preserve">
     <value>zip 壓縮檔的建立路徑。</value>
     <comment>property description</comment>
   </data>
-	<data name="Zip_ZipFilePath_DisplayName" xml:space="preserve">
+  <data name="Zip_ZipFilePath_DisplayName" xml:space="preserve">
     <value>Zip 檔案路徑</value>
     <comment>property name</comment>
   </data>
-	<data name="Common_ErrorMsg_ValueNotSupplied" xml:space="preserve">
+  <data name="Common_ErrorMsg_ValueNotSupplied" xml:space="preserve">
     <value>活動所需參數 '{0}' 的值未提供。</value>
     <comment>error message</comment>
   </data>
-	<data name="Unzip_Description" xml:space="preserve">
+  <data name="Unzip_Description" xml:space="preserve">
     <value>從 zip 壓縮檔中解壓檔案與資料夾。</value>
     <comment>activity description</comment>
   </data>
-	<data name="Unzip_DisplayName" xml:space="preserve">
+  <data name="Unzip_DisplayName" xml:space="preserve">
     <value>解壓 (Unzip)</value>
     <comment>activity name</comment>
   </data>
-	<data name="Unzip_ZipFilePath_Description" xml:space="preserve">
+  <data name="Unzip_ZipFilePath_Description" xml:space="preserve">
     <value>要解壓的 zip 壓縮檔路徑。</value>
     <comment>property description</comment>
   </data>
-	<data name="Unzip_ZipFilePath_DisplayName" xml:space="preserve">
+  <data name="Unzip_ZipFilePath_DisplayName" xml:space="preserve">
     <value>Zip 檔案路徑</value>
     <comment>property name</comment>
   </data>
-	<data name="Unzip_ExtractTo_Description" xml:space="preserve">
+  <data name="Unzip_ExtractTo_Description" xml:space="preserve">
     <value>壓縮檔內容要解壓到的資料夾。</value>
     <comment>property description</comment>
   </data>
-	<data name="Unzip_ExtractTo_DisplayName" xml:space="preserve">
+  <data name="Unzip_ExtractTo_DisplayName" xml:space="preserve">
     <value>解壓至</value>
     <comment>property name</comment>
   </data>
-	<data name="Unzip_Overwrite_Description" xml:space="preserve">
+  <data name="Unzip_Overwrite_Description" xml:space="preserve">
     <value>如果為 True，解壓時將覆蓋已存在的檔案。</value>
     <comment>property description</comment>
   </data>
-	<data name="Unzip_Overwrite_DisplayName" xml:space="preserve">
+  <data name="Unzip_Overwrite_DisplayName" xml:space="preserve">
     <value>覆蓋</value>
     <comment>property name</comment>
   </data>
-	<data name="Unzip_ErrorMsg_OutsideDir" xml:space="preserve">
+  <data name="Unzip_ErrorMsg_OutsideDir" xml:space="preserve">
     <value>壓縮檔條目將解壓到目標目錄之外。</value>
     <comment>error message</comment>
   </data>
-	<data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
+  <data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
     <value>壓縮檔中的目錄條目包含檔案資料，這是無效的。</value>
     <comment>error message</comment>
   </data>
-	<data name="RandomString_Description" xml:space="preserve">
+  <data name="RandomString_Description" xml:space="preserve">
     <value>根據格式模式產生隨機字串。</value>
     <comment>activity description</comment>
   </data>
-	<data name="RandomString_DisplayName" xml:space="preserve">
+  <data name="RandomString_DisplayName" xml:space="preserve">
     <value>隨機字串</value>
     <comment>activity name</comment>
   </data>
-	<data name="RandomString_Format_Description" xml:space="preserve">
+  <data name="RandomString_Format_Description" xml:space="preserve">
     <value>定義產生字串的模式。佔位符：'a' 小寫字母，'A' 大寫字母，'0' 數字，'*' 字母數字，'?' 自訂字元，'\\' 跳脫。</value>
     <comment>property description</comment>
   </data>
-	<data name="RandomString_Format_DisplayName" xml:space="preserve">
+  <data name="RandomString_Format_DisplayName" xml:space="preserve">
     <value>格式</value>
     <comment>property name</comment>
   </data>
-	<data name="RandomString_Custom_Description" xml:space="preserve">
+  <data name="RandomString_Custom_Description" xml:space="preserve">
     <value>'?' 佔位符存在時使用的額外字元。</value>
     <comment>property description</comment>
   </data>
-	<data name="RandomString_Custom_DisplayName" xml:space="preserve">
+  <data name="RandomString_Custom_DisplayName" xml:space="preserve">
     <value>自訂字元</value>
     <comment>property name</comment>
   </data>
-	<data name="RandomString_Result_DisplayName" xml:space="preserve">
+  <data name="RandomString_Result_DisplayName" xml:space="preserve">
     <value>結果</value>
     <comment>property name</comment>
   </data>
-	<data name="Increment_Description" xml:space="preserve">
+  <data name="Increment_Description" xml:space="preserve">
     <value>將數值變數增加指定值。</value>
     <comment>activity description</comment>
   </data>
-	<data name="Increment_DisplayName" xml:space="preserve">
+  <data name="Increment_DisplayName" xml:space="preserve">
     <value>遞增</value>
     <comment>activity name</comment>
   </data>
-	<data name="Increment_Value_Description" xml:space="preserve">
+  <data name="Increment_Value_Description" xml:space="preserve">
     <value>要加到變數的值。必須大於或等於 1。</value>
     <comment>property description</comment>
   </data>
-	<data name="Increment_Value_DisplayName" xml:space="preserve">
+  <data name="Increment_Value_DisplayName" xml:space="preserve">
     <value>值</value>
     <comment>property name</comment>
   </data>
-	<data name="Increment_Variable_Description" xml:space="preserve">
+  <data name="Increment_Variable_Description" xml:space="preserve">
     <value>要遞增的變數。</value>
     <comment>property description</comment>
   </data>
-	<data name="Increment_Variable_DisplayName" xml:space="preserve">
+  <data name="Increment_Variable_DisplayName" xml:space="preserve">
     <value>變數</value>
     <comment>property name</comment>
   </data>
-	<data name="Decrement_Description" xml:space="preserve">
+  <data name="Decrement_Description" xml:space="preserve">
     <value>將數值變數減少指定值。</value>
     <comment>activity description</comment>
   </data>
-	<data name="Decrement_DisplayName" xml:space="preserve">
+  <data name="Decrement_DisplayName" xml:space="preserve">
     <value>遞減</value>
     <comment>activity name</comment>
   </data>
-	<data name="Decrement_Value_Description" xml:space="preserve">
+  <data name="Decrement_Value_Description" xml:space="preserve">
     <value>要從變數中減去的值。必須大於或等於 1。</value>
     <comment>property description</comment>
   </data>
-	<data name="Decrement_Value_DisplayName" xml:space="preserve">
+  <data name="Decrement_Value_DisplayName" xml:space="preserve">
     <value>值</value>
     <comment>property name</comment>
   </data>
-	<data name="Decrement_Variable_Description" xml:space="preserve">
+  <data name="Decrement_Variable_Description" xml:space="preserve">
     <value>要遞減的變數。</value>
     <comment>property description</comment>
   </data>
-	<data name="Decrement_Variable_DisplayName" xml:space="preserve">
+  <data name="Decrement_Variable_DisplayName" xml:space="preserve">
     <value>變數</value>
     <comment>property name</comment>
   </data>
-	<data name="RandomString_Result_Description" xml:space="preserve">
+  <data name="RandomString_Result_Description" xml:space="preserve">
     <value>產生的隨機字串。</value>
     <comment>property description</comment>
   </data>
-	<data name="ReplaceTokens_Description" xml:space="preserve">
+  <data name="ReplaceTokens_Description" xml:space="preserve">
     <value>使用 Dictionary 中的值替換字串中的權杖。權杖通常以特殊字元包圍。請使用 'Pattern' 與 'Placeholder' 屬性定義權杖格式。</value>
     <comment>activity description</comment>
   </data>
-	<data name="ReplaceTokens_DisplayName" xml:space="preserve">
+  <data name="ReplaceTokens_DisplayName" xml:space="preserve">
     <value>替換權杖</value>
     <comment>activity name</comment>
   </data>
-	<data name="ReplaceTokens_Dictionary_Description" xml:space="preserve">
+  <data name="ReplaceTokens_Dictionary_Description" xml:space="preserve">
     <value>用來替換權杖的鍵/值對字典。</value>
     <comment>property description</comment>
   </data>
-	<data name="ReplaceTokens_Dictionary_DisplayName" xml:space="preserve">
+  <data name="ReplaceTokens_Dictionary_DisplayName" xml:space="preserve">
     <value>字典</value>
     <comment>property name</comment>
   </data>
-	<data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
+  <data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
     <value>權杖文字模式。佔位符前後可以有字元。</value>
     <comment>property description</comment>
   </data>
-	<data name="ReplaceTokens_Pattern_DisplayName" xml:space="preserve">
+  <data name="ReplaceTokens_Pattern_DisplayName" xml:space="preserve">
     <value>模式</value>
     <comment>property name</comment>
   </data>
-	<data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
+  <data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
     <value>權杖模式中用作佔位符的字元。</value>
     <comment>property description</comment>
   </data>
-	<data name="ReplaceTokens_Placeholder_DisplayName" xml:space="preserve">
+  <data name="ReplaceTokens_Placeholder_DisplayName" xml:space="preserve">
     <value>佔位符</value>
     <comment>property name</comment>
   </data>
-	<data name="ReplaceTokens_Result_Description" xml:space="preserve">
+  <data name="ReplaceTokens_Result_Description" xml:space="preserve">
     <value>所有權杖替換後的結果文字。</value>
     <comment>property description</comment>
   </data>
-	<data name="ReplaceTokens_Result_DisplayName" xml:space="preserve">
+  <data name="ReplaceTokens_Result_DisplayName" xml:space="preserve">
     <value>結果</value>
     <comment>property name</comment>
   </data>
-	<data name="ReplaceTokens_Content_DisplayName" xml:space="preserve">
+  <data name="ReplaceTokens_Content_DisplayName" xml:space="preserve">
     <value>內容</value>
     <comment>property name</comment>
   </data>
-	<data name="ReplaceTokens_Content_Description" xml:space="preserve">
+  <data name="ReplaceTokens_Content_Description" xml:space="preserve">
     <value>要替換權杖的輸入文字。</value>
     <comment>property description</comment>
   </data>
-	<data name="Categories_InputOutput" xml:space="preserve">
+  <data name="Categories_InputOutput" xml:space="preserve">
     <value>輸入/輸出</value>
     <comment>category</comment>
   </data>
-	<data name="ReplaceTokens_CaseSensitive_Description" xml:space="preserve">
+  <data name="ReplaceTokens_CaseSensitive_Description" xml:space="preserve">
     <value>決定搜尋權杖時是否區分大小寫。模式也會受影響。</value>
     <comment>property description</comment>
   </data>
-	<data name="ReplaceTokens_CaseSensitive_DisplayName" xml:space="preserve">
+  <data name="ReplaceTokens_CaseSensitive_DisplayName" xml:space="preserve">
     <value>區分大小寫</value>
     <comment>property name</comment>
   </data>
-	<data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
+  <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
     <value>成功</value>
     <comment>response message</comment>
   </data>
-	<data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+  <data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
     <value>允許的最小值為 1。</value>
     <comment>error message</comment>
   </data>
-	<data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
+  <data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
     <value>允許的最小值為 1。</value>
     <comment>error message</comment>
   </data>
-	<data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
+  <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
     <value>沒有可用的磁碟機</value>
     <comment>error message</comment>
   </data>
-	<data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
+  <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
     <value>輸入的磁碟機代號無效。有效格式為 'X'、'X:' 或 'X:\\'，其中 X 可以是任意英文字母。</value>
     <comment>error message</comment>
   </data>
-	<data name="MapDrive_Credential_DisplayName" xml:space="preserve">
+  <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
     <value>憑證</value>
     <comment>property name</comment>
   </data>
-	<data name="MapDrive_Description" xml:space="preserve">
+  <data name="MapDrive_Description" xml:space="preserve">
     <value>將網路磁碟機對應到系統。</value>
     <comment>activity description</comment>
   </data>
-	<data name="MapDrive_DisplayName" xml:space="preserve">
+  <data name="MapDrive_DisplayName" xml:space="preserve">
     <value>對應磁碟機</value>
     <comment>activity name</comment>
   </data>
-	<data name="MapDrive_DriveLetter_Description" xml:space="preserve">
+  <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
     <value>指定要對應的磁碟機代號。若未提供，系統將自動分配一個可用的代號。格式範例：「X:」、「y:」、「Z:」。</value>
     <comment>property description</comment>
   </data>
-	<data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
+  <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>磁碟機代號</value>
     <comment>property name</comment>
   </data>
-	<data name="MapDrive_Force_Description" xml:space="preserve">
+  <data name="MapDrive_Force_Description" xml:space="preserve">
     <value>如果磁碟機代號已被占用，嘗試強制連接。</value>
     <comment>property description</comment>
   </data>
-	<data name="MapDrive_Force_DisplayName" xml:space="preserve">
+  <data name="MapDrive_Force_DisplayName" xml:space="preserve">
     <value>強制</value>
     <comment>property name</comment>
   </data>
-	<data name="MapDrive_MappedDrive_Description" xml:space="preserve">
+  <data name="MapDrive_MappedDrive_Description" xml:space="preserve">
     <value>對應成功時返回的磁碟機代號，格式為「&lt;代號&gt;:」。</value>
     <comment>property description</comment>
   </data>
-	<data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
+  <data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
     <value>已對應磁碟機</value>
     <comment>property name</comment>
   </data>
-	<data name="MapDrive_ResponseCode_Description" xml:space="preserve">
+  <data name="MapDrive_ResponseCode_Description" xml:space="preserve">
     <value>表示磁碟機對應作業的返回碼。依據 Windows 標準錯誤碼判斷成功或失敗。</value>
     <comment>property description</comment>
   </data>
-	<data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
+  <data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
     <value>回應碼</value>
     <comment>property name</comment>
   </data>
-	<data name="MapDrive_ResponseMessage_Description" xml:space="preserve">
+  <data name="MapDrive_ResponseMessage_Description" xml:space="preserve">
     <value>提供回應碼對應的文字說明，以人類可讀的方式解釋作業結果。</value>
     <comment>property description</comment>
   </data>
-	<data name="MapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+  <data name="MapDrive_ResponseMessage_DisplayName" xml:space="preserve">
     <value>回應訊息</value>
     <comment>property name</comment>
   </data>
-	<data name="MapDrive_Result_Description" xml:space="preserve">
+  <data name="MapDrive_Result_Description" xml:space="preserve">
     <value>磁碟機對應成功返回 true，否則返回 false。</value>
     <comment>property description</comment>
   </data>
-	<data name="MapDrive_Result_DisplayName" xml:space="preserve">
+  <data name="MapDrive_Result_DisplayName" xml:space="preserve">
     <value>結果</value>
     <comment>property name</comment>
   </data>
-	<data name="MapDrive_SharedDrivePath_Description" xml:space="preserve">
+  <data name="MapDrive_SharedDrivePath_Description" xml:space="preserve">
     <value>要連接的共用磁碟機路徑。</value>
     <comment>property description</comment>
   </data>
-	<data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
+  <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
     <value>共用磁碟機路徑</value>
     <comment>property name</comment>
   </data>
-	<data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
+  <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
     <value>結果</value>
     <comment>property name</comment>
   </data>
-	<data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
+  <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
     <value>要取消對應的磁碟機代號。格式範例：「X:」、「y:」、「Z:」。</value>
     <comment>property description</comment>
   </data>
-	<data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
+  <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>磁碟機代號</value>
     <comment>property name</comment>
   </data>
-	<data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
+  <data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
     <value>表示磁碟機對應作業的返回碼。依據 Windows 標準錯誤碼判斷成功或失敗。</value>
     <comment>property description</comment>
   </data>
-	<data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
+  <data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
     <value>回應碼</value>
     <comment>property name</comment>
   </data>
-	<data name="UnmapDrive_ResponseMessage_Description" xml:space="preserve">
+  <data name="UnmapDrive_ResponseMessage_Description" xml:space="preserve">
     <value>提供回應碼對應的文字說明，以人類可讀的方式解釋作業結果。</value>
     <comment>property description</comment>
   </data>
-	<data name="UnmapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+  <data name="UnmapDrive_ResponseMessage_DisplayName" xml:space="preserve">
     <value>回應訊息</value>
     <comment>property name</comment>
   </data>
-	<data name="UnmapDrive_Result_Description" xml:space="preserve">
+  <data name="UnmapDrive_Result_Description" xml:space="preserve">
     <value>磁碟機取消對應成功返回 true，否則返回 false。</value>
     <comment>property description</comment>
   </data>
-	<data name="UnmapDrive_DisplayName" xml:space="preserve">
+  <data name="UnmapDrive_DisplayName" xml:space="preserve">
     <value>取消對應磁碟機</value>
     <comment>activity name</comment>
   </data>
-	<data name="MapDrive_Credential_Placeholder" xml:space="preserve">
+  <data name="MapDrive_Credential_Placeholder" xml:space="preserve">
     <value>若未提供，將使用目前使用者憑證。</value>
     <comment>placeholder</comment>
   </data>
-	<data name="CultureScope_ErrorMsg_CultureNameNullOrEmpty" xml:space="preserve">
+  <data name="CultureScope_ErrorMsg_CultureNameNullOrEmpty" xml:space="preserve">
     <value>文化名稱不可為空。</value>
     <comment>error message</comment>
   </data>
-	<data name="CultureScope_Culture_Description" xml:space="preserve">
+  <data name="CultureScope_Culture_Description" xml:space="preserve">
     <value>所需的地區設定，例如：zh-TW、en-US、ja-JP 等。</value>
     <comment>property description</comment>
   </data>
-	<data name="CultureScope_Culture_DisplayName" xml:space="preserve">
+  <data name="CultureScope_Culture_DisplayName" xml:space="preserve">
     <value>地區設定</value>
     <comment>property name</comment>
   </data>
-	<data name="CultureScope_Description" xml:space="preserve">
+  <data name="CultureScope_Description" xml:space="preserve">
     <value>一個容器，允許您以不同的地區設定執行一組活動。</value>
     <comment>activity description</comment>
   </data>
-	<data name="CultureScope_DisplayName" xml:space="preserve">
+  <data name="CultureScope_DisplayName" xml:space="preserve">
     <value>地區設定範圍</value>
     <comment>activity name</comment>
   </data>
-	<data name="TerminateProcess_Description" xml:space="preserve">
+  <data name="TerminateProcess_Description" xml:space="preserve">
     <value>嘗試正常關閉指定程序對應的所有應用程式執行個體。若無法正常關閉，則強制終止目前使用者工作階段中的程序。</value>
     <comment>activity description</comment>
   </data>
-	<data name="TerminateProcess_DisplayName" xml:space="preserve">
+  <data name="TerminateProcess_DisplayName" xml:space="preserve">
     <value>終止程序</value>
     <comment>activity name</comment>
   </data>
-	<data name="TerminateProcess_ProcessNames_Description" xml:space="preserve">
+  <data name="TerminateProcess_ProcessNames_Description" xml:space="preserve">
     <value>要終止的程序名稱清單。</value>
     <comment>property description</comment>
   </data>
-	<data name="TerminateProcess_ProcessNames_DisplayName" xml:space="preserve">
+  <data name="TerminateProcess_ProcessNames_DisplayName" xml:space="preserve">
     <value>程序名稱</value>
     <comment>property name</comment>
   </data>
-	<data name="IfActivity_DisplayName" xml:space="preserve">
+  <data name="IfActivity_DisplayName" xml:space="preserve">
     <value>如果</value>
     <comment>activity name</comment>
   </data>
-	<data name="IfActivity_Description" xml:space="preserve">
+  <data name="IfActivity_Description" xml:space="preserve">
     <value>評估傳回布林值的活動結果，若條件成立則執行關聯的程式碼區塊。</value>
     <comment>property description</comment>
   </data>
-	<data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
+  <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
     <value>Condition 欄位需要傳回布林值的活動。</value>
     <comment>error message</comment>
   </data>
-	<data name="Exit_DisplayName" xml:space="preserve">
+  <data name="Exit_DisplayName" xml:space="preserve">
     <value>退出</value>
     <comment>activity name</comment>
   </data>
-	<data name="Exit_Condition_Description" xml:space="preserve">
+  <data name="Exit_Condition_Description" xml:space="preserve">
     <value>決定是否評估活動的條件。若為空，則視為 True。</value>
     <comment>property description</comment>
   </data>
-	<data name="Exit_Condition_DisplayName" xml:space="preserve">
+  <data name="Exit_Condition_DisplayName" xml:space="preserve">
     <value>條件</value>
     <comment>property name</comment>
   </data>
-	<data name="Exit_Description" xml:space="preserve">
+  <data name="Exit_Description" xml:space="preserve">
     <value>從 Container 或 Time Loop 中退出，並中斷之後的子活動執行。</value>
     <comment>activity description</comment>
   </data>
-	<data name="Exit_ErrorMsg_InvalidParent" xml:space="preserve">
+  <data name="Exit_ErrorMsg_InvalidParent" xml:space="preserve">
     <value>Exit 活動必須位於 Container 或 Time Loop 內部。</value>
     <comment>error message</comment>
   </data>
-	<data name="TimeLoop_DisplayName" xml:space="preserve">
+  <data name="TimeLoop_DisplayName" xml:space="preserve">
     <value>時間迴圈</value>
     <comment>activity name</comment>
   </data>
-	<data name="TimeLoop_Description" xml:space="preserve">
+  <data name="TimeLoop_Description" xml:space="preserve">
     <value>重複執行主體活動直到逾時為止，支援間隔與索引追蹤。逾時結束時返回 true。</value>
     <comment>activity description</comment>
   </data>
-	<data name="TimeLoop_Timeout_DisplayName" xml:space="preserve">
+  <data name="TimeLoop_Timeout_DisplayName" xml:space="preserve">
     <value>逾時</value>
     <comment>property name</comment>
   </data>
-	<data name="TimeLoop_Timeout_Description" xml:space="preserve">
+  <data name="TimeLoop_Timeout_Description" xml:space="preserve">
     <value>定義迴圈執行的時間長度。逾時會在每次迭代後檢查，正在進行的迭代不會被中斷。</value>
     <comment>property description</comment>
   </data>
-	<data name="TimeLoop_IntervalSeconds_DisplayName" xml:space="preserve">
+  <data name="TimeLoop_IntervalSeconds_DisplayName" xml:space="preserve">
     <value>間隔</value>
     <comment>property name</comment>
   </data>
-	<data name="TimeLoop_IntervalSeconds_Description" xml:space="preserve">
+  <data name="TimeLoop_IntervalSeconds_Description" xml:space="preserve">
     <value>下一次迴圈前等待的秒數。</value>
     <comment>property description</comment>
   </data>
-	<data name="TimeLoop_IterationIndex_DisplayName" xml:space="preserve">
+  <data name="TimeLoop_IterationIndex_DisplayName" xml:space="preserve">
     <value>索引</value>
     <comment>property name</comment>
   </data>
-	<data name="TimeLoop_IterationIndex_Description" xml:space="preserve">
+  <data name="TimeLoop_IterationIndex_Description" xml:space="preserve">
     <value>目前正在處理的迭代序號（從 0 開始）。</value>
     <comment>property description</comment>
   </data>
-	<data name="Container_DisplayName" xml:space="preserve">
+  <data name="Container_DisplayName" xml:space="preserve">
     <value>容器</value>
     <comment>activity name</comment>
   </data>
-	<data name="Container_Description" xml:space="preserve">
+  <data name="Container_Description" xml:space="preserve">
     <value>與 Exit 活動搭配使用時，可中斷子活動執行流程並提前退出容器。</value>
     <comment>activity description</comment>
   </data>
-	<data name="CheckPoint_Data_Description" xml:space="preserve">
+  <data name="CheckPoint_Data_Description" xml:space="preserve">
     <value>提供關於例外狀況的額外使用者自訂資訊的鍵/值對集合。</value>
     <comment>property description</comment>
   </data>
-	<data name="CheckPoint_Data_DisplayName" xml:space="preserve">
+  <data name="CheckPoint_Data_DisplayName" xml:space="preserve">
     <value>資料</value>
     <comment>property name</comment>
   </data>
-	<data name="CheckPoint_Description" xml:space="preserve">
+  <data name="CheckPoint_Description" xml:space="preserve">
     <value>檢查給定運算式是否為真，若不為真則擲回指定的例外狀況。</value>
     <comment>activity description</comment>
   </data>
-	<data name="CheckPoint_DisplayName" xml:space="preserve">
+  <data name="CheckPoint_DisplayName" xml:space="preserve">
     <value>檢查點</value>
     <comment>activity name</comment>
   </data>
-	<data name="CheckPoint_Exception_Description" xml:space="preserve">
+  <data name="CheckPoint_Exception_Description" xml:space="preserve">
     <value>運算式不為真時要擲回的例外狀況。</value>
     <comment>property description</comment>
   </data>
-	<data name="CheckPoint_Exception_DisplayName" xml:space="preserve">
+  <data name="CheckPoint_Exception_DisplayName" xml:space="preserve">
     <value>例外狀況</value>
     <comment>property name</comment>
   </data>
-	<data name="CheckPoint_Expression_Description" xml:space="preserve">
+  <data name="CheckPoint_Expression_Description" xml:space="preserve">
     <value>要評估的運算式。</value>
     <comment>property description</comment>
   </data>
-	<data name="CheckPoint_Expression_DisplayName" xml:space="preserve">
+  <data name="CheckPoint_Expression_DisplayName" xml:space="preserve">
     <value>運算式</value>
     <comment>property name</comment>
   </data>
-	<data name="PromoteHeaders_AutoRename_Description" xml:space="preserve">
+  <data name="PromoteHeaders_AutoRename_Description" xml:space="preserve">
     <value>為 True 時，若欄位名稱已存在，則自動加入數字後綴。</value>
     <comment>property description</comment>
   </data>
-	<data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
+  <data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
     <value>自動重新命名</value>
     <comment>property name</comment>
   </data>
-	<data name="PromoteHeaders_Description" xml:space="preserve">
+  <data name="PromoteHeaders_Description" xml:space="preserve">
     <value>將第一列的值提升為新的欄位標題。</value>
     <comment>activity description</comment>
   </data>
-	<data name="PromoteHeaders_DisplayName" xml:space="preserve">
+  <data name="PromoteHeaders_DisplayName" xml:space="preserve">
     <value>提升標題</value>
     <comment>activity name</comment>
   </data>
-	<data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
+  <data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
     <value>輸入 DataTable 中沒有可提升的列。</value>
     <comment>error message</comment>
   </data>
-	<data name="PromoteHeaders_DataTable_Description" xml:space="preserve">
+  <data name="PromoteHeaders_DataTable_Description" xml:space="preserve">
     <value>要將第一列提升為標題的 DataTable。</value>
     <comment>property description</comment>
   </data>
-	<data name="PromoteHeaders_DataTable_DisplayName" xml:space="preserve">
+  <data name="PromoteHeaders_DataTable_DisplayName" xml:space="preserve">
     <value>DataTable</value>
     <comment>property name</comment>
   </data>
-	<data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
+  <data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
     <value>DateTime 類型轉換為字串時使用的日期格式。</value>
     <comment>property description</comment>
   </data>
-	<data name="DataTableToText_DateTimeFormat_DisplayName" xml:space="preserve">
+  <data name="DataTableToText_DateTimeFormat_DisplayName" xml:space="preserve">
     <value>日期時間格式</value>
     <comment>property name</comment>
   </data>
-	<data name="DataTableToText_Description" xml:space="preserve">
+  <data name="DataTableToText_Description" xml:space="preserve">
     <value>將 DataTable 轉換為指定文字格式（HTML、JSON 或 XML）的字串表示。</value>
     <comment>activity description</comment>
   </data>
-	<data name="DataTableToText_DisplayName" xml:space="preserve">
+  <data name="DataTableToText_DisplayName" xml:space="preserve">
     <value>DataTable 轉文字</value>
     <comment>activity name</comment>
   </data>
-	<data name="DataTableToText_DataTable_Description" xml:space="preserve">
+  <data name="DataTableToText_DataTable_Description" xml:space="preserve">
     <value>DataTable 物件。</value>
     <comment>property description</comment>
   </data>
-	<data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
+  <data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
     <value>DataTable</value>
     <comment>property name</comment>
   </data>
-	<data name="DataTableToText_Result_Description" xml:space="preserve">
+  <data name="DataTableToText_Result_Description" xml:space="preserve">
     <value>DataTable 的字串表示。</value>
     <comment>property description</comment>
   </data>
-	<data name="DataTableToText_Result_DisplayName" xml:space="preserve">
+  <data name="DataTableToText_Result_DisplayName" xml:space="preserve">
     <value>結果</value>
     <comment>property name</comment>
   </data>
-	<data name="DataTableToText_OutputFormat_Description" xml:space="preserve">
+  <data name="DataTableToText_OutputFormat_Description" xml:space="preserve">
     <value>輸出文字格式。</value>
     <comment>property description</comment>
   </data>
-	<data name="DataTableToText_OutputFormat_DisplayName" xml:space="preserve">
+  <data name="DataTableToText_OutputFormat_DisplayName" xml:space="preserve">
     <value>輸出格式</value>
     <comment>property name</comment>
   </data>
-	<data name="RemoveEmptyRows_ColumnNames_Description" xml:space="preserve">
+  <data name="RemoveEmptyRows_ColumnNames_Description" xml:space="preserve">
     <value>要評估的欄位名稱。</value>
     <comment>property description</comment>
   </data>
-	<data name="RemoveEmptyRows_ColumnNames_DisplayName" xml:space="preserve">
+  <data name="RemoveEmptyRows_ColumnNames_DisplayName" xml:space="preserve">
     <value>欄位名稱</value>
     <comment>property name</comment>
   </data>
-	<data name="RemoveEmptyRows_Description" xml:space="preserve">
+  <data name="RemoveEmptyRows_Description" xml:space="preserve">
     <value>從 DataTable 中移除空白列。</value>
     <comment>activity description</comment>
   </data>
-	<data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
+  <data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
     <value>移除空白列</value>
     <comment>activity name</comment>
   </data>
-	<data name="RemoveEmptyRows_DataTable_Description" xml:space="preserve">
+  <data name="RemoveEmptyRows_DataTable_Description" xml:space="preserve">
     <value>要移除空白列的 DataTable。</value>
     <comment>property description</comment>
   </data>
-	<data name="RemoveEmptyRows_DataTable_DisplayName" xml:space="preserve">
+  <data name="RemoveEmptyRows_DataTable_DisplayName" xml:space="preserve">
     <value>DataTable</value>
     <comment>property name</comment>
   </data>
-	<data name="RemoveEmptyRows_MatchingMode_Description" xml:space="preserve">
+  <data name="RemoveEmptyRows_MatchingMode_Description" xml:space="preserve">
     <value>決定如何評估要移除的列：All — 所有指定欄位均為空時移除；Any — 任一指定欄位為空時移除。若未指定欄位，則檢查所有欄位。</value>
     <comment>property description</comment>
   </data>
-	<data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
+  <data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
     <value>比對模式</value>
     <comment>property name</comment>
   </data>
-	<data name="RemoveEmptyRows_ColumnIndexes_DisplayName" xml:space="preserve">
+  <data name="RemoveEmptyRows_ColumnIndexes_DisplayName" xml:space="preserve">
     <value>欄位索引</value>
     <comment>property name</comment>
   </data>
-	<data name="RemoveEmptyRows_ColumnIndexes_Description" xml:space="preserve">
+  <data name="RemoveEmptyRows_ColumnIndexes_Description" xml:space="preserve">
     <value>要評估的欄位索引。</value>
     <comment>property description</comment>
   </data>
-	<data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
+  <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
     <value>DataTable</value>
     <comment>property name</comment>
   </data>
-	<data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
     <value>要移除的欄位名稱。</value>
     <comment>property description</comment>
   </data>
-	<data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">
+  <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">
     <value>欄位名稱</value>
     <comment>property name</comment>
   </data>
-	<data name="RemoveDataColumns_Description" xml:space="preserve">
+  <data name="RemoveDataColumns_Description" xml:space="preserve">
     <value>從 DataTable 中移除指定的欄位。</value>
     <comment>activity description</comment>
   </data>
-	<data name="RemoveDataColumns_DisplayName" xml:space="preserve">
+  <data name="RemoveDataColumns_DisplayName" xml:space="preserve">
     <value>移除欄位</value>
     <comment>activity name</comment>
   </data>
-	<data name="RemoveDataColumns_DataTable_Description" xml:space="preserve">
+  <data name="RemoveDataColumns_DataTable_Description" xml:space="preserve">
     <value>要移除欄位的 DataTable。</value>
     <comment>property description</comment>
   </data>
-	<data name="RemoveDataColumns_ColumnIndexes_DisplayName" xml:space="preserve">
+  <data name="RemoveDataColumns_ColumnIndexes_DisplayName" xml:space="preserve">
     <value>欄位索引</value>
     <comment>property name</comment>
   </data>
-	<data name="RemoveDataColumns_ColumnIndexes_Description" xml:space="preserve">
+  <data name="RemoveDataColumns_ColumnIndexes_Description" xml:space="preserve">
     <value>要移除的欄位索引。</value>
     <comment>property description</comment>
   </data>
-	<data name="TransposeData_Description" xml:space="preserve">
+  <data name="TransposeData_Description" xml:space="preserve">
     <value>轉置 DataTable，將行與列互換（行變成列，列變成行）。</value>
     <comment>activity description</comment>
   </data>
-	<data name="TransposeData_DisplayName" xml:space="preserve">
+  <data name="TransposeData_DisplayName" xml:space="preserve">
     <value>轉置資料</value>
     <comment>activity name</comment>
   </data>
-	<data name="TransposeData_DataTable_Description" xml:space="preserve">
+  <data name="TransposeData_DataTable_Description" xml:space="preserve">
     <value>要轉置的 DataTable。</value>
     <comment>property description</comment>
   </data>
-	<data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
+  <data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
     <value>DataTable</value>
     <comment>property name</comment>
   </data>
-	<data name="ParseData_DisplayName" xml:space="preserve">
+  <data name="ParseData_DisplayName" xml:space="preserve">
     <value>剖析資料</value>
     <comment>activity name</comment>
   </data>
-	<data name="ParseData_Description" xml:space="preserve">
+  <data name="ParseData_Description" xml:space="preserve">
     <value>將 JSON 或 YAML 輸入剖析為 DataNode，以便簡化存取與操作。</value>
     <comment>activity description</comment>
   </data>
-	<data name="ParseData_Content_DisplayName" xml:space="preserve">
+  <data name="ParseData_Content_DisplayName" xml:space="preserve">
     <value>內容</value>
     <comment>property name</comment>
   </data>
-	<data name="ParseData_Content_Description" xml:space="preserve">
+  <data name="ParseData_Content_Description" xml:space="preserve">
     <value>要剖析為 DataNode 的 JSON 或 YAML 文字。</value>
     <comment>property description</comment>
   </data>
-	<data name="ParseData_Culture_DisplayName" xml:space="preserve">
+  <data name="ParseData_Culture_DisplayName" xml:space="preserve">
     <value>地區設定</value>
     <comment>property name</comment>
   </data>
-	<data name="ParseData_Culture_Description" xml:space="preserve">
+  <data name="ParseData_Culture_Description" xml:space="preserve">
     <value>在 DataNode 中進行值轉換（int、long、double、decimal 等）時使用的地區設定。</value>
     <comment>property description</comment>
   </data>
-	<data name="ParseData_Result_DisplayName" xml:space="preserve">
+  <data name="ParseData_Result_DisplayName" xml:space="preserve">
     <value>結果</value>
     <comment>property name</comment>
   </data>
-	<data name="ParseData_Result_Description" xml:space="preserve">
+  <data name="ParseData_Result_Description" xml:space="preserve">
     <value>從剖析內容建立的 DataNode。</value>
     <comment>property description</comment>
   </data>
-	<data name="LoadDataFile_DisplayName" xml:space="preserve">
+  <data name="LoadDataFile_DisplayName" xml:space="preserve">
     <value>載入資料檔案</value>
     <comment>activity name</comment>
   </data>
-	<data name="LoadDataFile_Description" xml:space="preserve">
+  <data name="LoadDataFile_Description" xml:space="preserve">
     <value>將 JSON 或 YAML 檔案剖析為 DataNode。</value>
     <comment>activity description</comment>
   </data>
-	<data name="LoadDataFile_Encoding_Description" xml:space="preserve">
+  <data name="LoadDataFile_Encoding_Description" xml:space="preserve">
     <value>讀取檔案時使用的文字編碼。預設為 UTF-8。</value>
     <comment>property description</comment>
   </data>
-	<data name="LoadDataFile_Culture_Description" xml:space="preserve">
+  <data name="LoadDataFile_Culture_Description" xml:space="preserve">
     <value>將節點值轉換為數值類型時使用的地區設定。</value>
     <comment>property description</comment>
   </data>
-	<data name="LoadDataFile_Result_Description" xml:space="preserve">
+  <data name="LoadDataFile_Result_Description" xml:space="preserve">
     <value>從檔案內容剖析產生的 DataNode。</value>
     <comment>property description</comment>
   </data>
-	<data name="LoadDataFile_Culture_DisplayName" xml:space="preserve">
+  <data name="LoadDataFile_Culture_DisplayName" xml:space="preserve">
     <value>地區設定</value>
     <comment>property name</comment>
   </data>
-	<data name="LoadDataFile_Encoding_DisplayName" xml:space="preserve">
+  <data name="LoadDataFile_Encoding_DisplayName" xml:space="preserve">
     <value>編碼</value>
     <comment>property name</comment>
   </data>
-	<data name="LoadDataFile_Result_DisplayName" xml:space="preserve">
+  <data name="LoadDataFile_Result_DisplayName" xml:space="preserve">
     <value>結果</value>
     <comment>property name</comment>
   </data>
-	<data name="LoadDataFile_FilePath_Description" xml:space="preserve">
+  <data name="LoadDataFile_FilePath_Description" xml:space="preserve">
     <value>要載入的 JSON 或 YAML 檔案路徑。</value>
     <comment>property description</comment>
   </data>
-	<data name="LoadDataFile_FilePath_DisplayName" xml:space="preserve">
+  <data name="LoadDataFile_FilePath_DisplayName" xml:space="preserve">
     <value>檔案路徑</value>
     <comment>property name</comment>
   </data>
-	<data name="ActivityCategories_Data" xml:space="preserve">
+  <data name="ActivityCategories_Data" xml:space="preserve">
     <value>Autossential.資料</value>
     <comment>category</comment>
   </data>
-	<data name="ActivityCategories_Files" xml:space="preserve">
+  <data name="ActivityCategories_Files" xml:space="preserve">
     <value>Autossential.檔案</value>
     <comment>category</comment>
   </data>
-	<data name="ActivityCategories_Programming" xml:space="preserve">
+  <data name="ActivityCategories_Programming" xml:space="preserve">
     <value>Autossential.程式設計</value>
     <comment>category</comment>
   </data>
-	<data name="ActivityCategories_System" xml:space="preserve">
+  <data name="ActivityCategories_System" xml:space="preserve">
     <value>Autossential.系統</value>
     <comment>category</comment>
   </data>
-	<data name="ActivityCategories_Workflow" xml:space="preserve">
+  <data name="ActivityCategories_Workflow" xml:space="preserve">
     <value>Autossential.工作流程</value>
     <comment>category</comment>
   </data>
-	<data name="UnmapDrive_Description" xml:space="preserve">
+  <data name="UnmapDrive_Description" xml:space="preserve">
     <value>從系統中移除已對應的網路磁碟機。</value>
     <comment>activity description</comment>
   </data>
-	<data name="MergeData_DisplayName" xml:space="preserve">
+  <data name="MergeData_DisplayName" xml:space="preserve">
     <value>合併資料</value>
     <comment>activity name</comment>
   </data>
-	<data name="MergeData_Description" xml:space="preserve">
+  <data name="MergeData_Description" xml:space="preserve">
     <value>將來源 DataNode 合併到目標 DataNode 中。來源中的純量與序列值會覆蓋目標中的對應值，映射值則遞迴合併。</value>
     <comment>activity description</comment>
   </data>
-	<data name="MergeData_Source_DisplayName" xml:space="preserve">
+  <data name="MergeData_Source_DisplayName" xml:space="preserve">
     <value>來源</value>
     <comment>property name</comment>
   </data>
-	<data name="MergeData_Source_Description" xml:space="preserve">
+  <data name="MergeData_Source_Description" xml:space="preserve">
     <value>要合併到目標實例的 DataNode。</value>
     <comment>property description</comment>
   </data>
-	<data name="MergeData_Destination_DisplayName" xml:space="preserve">
+  <data name="MergeData_Destination_DisplayName" xml:space="preserve">
     <value>目標</value>
     <comment>property name</comment>
   </data>
-	<data name="MergeData_Destination_Description" xml:space="preserve">
+  <data name="MergeData_Destination_Description" xml:space="preserve">
     <value>要用來源實例更新的 DataNode。</value>
     <comment>property description</comment>
   </data>
-	<data name="Zip_EntryStructure_DisplayName" xml:space="preserve">
+  <data name="Zip_EntryStructure_DisplayName" xml:space="preserve">
     <value>項目結構</value>
     <comment>property name</comment>
   </data>
-	<data name="Zip_EntryStructure_Description" xml:space="preserve">
+  <data name="Zip_EntryStructure_Description" xml:space="preserve">
     <value>定義檔案在 ZIP 壓縮檔中的儲存方式：保留相對路徑、平鋪至根目錄、重新命名重複項目或保留完整目錄結構。自動模式會在可能的情況下平鋪，偵測到重複名稱時回退至相對路徑。</value>
     <comment>property description</comment>
+  </data>
+	<data name="UpdateDictionary_Description" xml:space="preserve">
+    <value>在字典中新增或更新項目。</value>
+    <comment>activity description</comment>
+  </data>
+	<data name="UpdateDictionary_DisplayName" xml:space="preserve">
+    <value>更新字典</value>
+    <comment>activity name</comment>
+  </data>
+	<data name="UpdateDictionary_Dictionary_Description" xml:space="preserve">
+    <value>要更新的字典執行個體。</value>
+    <comment>property description</comment>
+  </data>
+	<data name="UpdateDictionary_Dictionary_DisplayName" xml:space="preserve">
+    <value>字典</value>
+    <comment>property name</comment>
+  </data>
+	<data name="UpdateDictionary_Entries_Description" xml:space="preserve">
+    <value>要新增至字典或在字典中更新的項目。</value>
+    <comment>property description</comment>
+  </data>
+	<data name="UpdateDictionary_Entries_DisplayName" xml:space="preserve">
+    <value>項目</value>
+    <comment>property name</comment>
   </data>
 </root>

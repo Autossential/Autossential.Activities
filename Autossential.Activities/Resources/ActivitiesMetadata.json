@@ -1,6 +1,40 @@
 {
   "activities": [
     {
+      "fullName": "Autossential.Activities.AddRangeToCollection`1",
+      "shortName": "AddRangeToCollection",
+      "displayNameKey": "AddRangeToCollection_DisplayName",
+      "descriptionKey": "AddRangeToCollection_Description",
+      "iconKey": "AddRangeToCollection.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.AddRangeToCollectionViewModel`1",
+      "defaultFactory": "Autossential.Activities.Factories.AddRangeToCollectionFactory",
+      "categoryKey": "ActivityCategories_Data",
+      "properties": [
+        {
+          "name": "Collection",
+          "displayNameKey": "AddRangeToCollection_Collection_DisplayName",
+          "tooltipKey": "AddRangeToCollection_Collection_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        },
+        {
+          "name": "ItemsToAdd",
+          "displayNameKey": "AddRangeToCollection_ItemsToAdd_DisplayName",
+          "tooltipKey": "AddRangeToCollection_ItemsToAdd_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
+        }
+      ]
+    },
+    {
       "fullName": "Autossential.Activities.CheckPoint",
       "shortName": "CheckPoint",
       "displayNameKey": "CheckPoint_DisplayName",

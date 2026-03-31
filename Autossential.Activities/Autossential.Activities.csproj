@@ -20,7 +20,6 @@
 
 	<ItemGroup>
 		<Compile Remove="Resources\Gen.cs" />
-		<Compile Remove="ViewModels\AddRangeToCollectionViewModel.cs" />
 		<Compile Remove="WaitDynamicFile.cs" />
 	</ItemGroup>
 
@@ -97,6 +96,7 @@
 	<ItemGroup>
 		<PackageReference Include="System.Activities.ViewModels" Version="1.20260216.2" />
 		<PackageReference Include="UiPath.Activities.Api" Version="24.10.1" PrivateAssets="All" />
+		<PackageReference Include="System.Activities.Metadata" Version="6.0.0-20240517.13" PrivateAssets="All" />
 		<PackageReference Include="UiPath.Workflow" Version="6.0.0-20240401-07" PrivateAssets="All" />
 	</ItemGroup>
 

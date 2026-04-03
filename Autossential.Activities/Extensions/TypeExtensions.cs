@@ -31,27 +31,3 @@
         }
     }
 }
-
-
-//public static bool IsAssignableToGenericType(this Type genericType, Type givenType)
-//{
-//    foreach (Type type in givenType.GetInterfaces())
-//    {
-//        if (type.IsGenericType && type.GetGenericTypeDefinition() == genericType)
-//            return true;
-//    }
-//    if (givenType.IsGenericType && givenType.GetGenericTypeDefinition() == genericType)
-//        return true;
-//    Type baseType = givenType.BaseType;
-//    return !(baseType == (Type)null) && baseType.IsAssignableToGenericType(genericType);
-//}
-
-//public static Type GetInnerType(this Type baseType)
-//{
-//    Type innerType = typeof(object);
-//    if (baseType.IsGenericType)
-//        innerType = ((IEnumerable<Type>)baseType.GenericTypeArguments).First<Type>();
-//    else if (baseType.IsArray)
-//        innerType = baseType.GetElementType();
-//    return innerType;
-//}

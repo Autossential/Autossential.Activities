@@ -3,7 +3,7 @@ using System.Activities;
 using System.Activities.Statements;
 using Xunit;
 
-namespace Autossential.Activities.Tests.Unit
+namespace Autossential.Activities.Tests.Activities
 {
     public class TimeLoopTests
     {

@@ -6,7 +6,7 @@ using System.Text;
 using Autossential.Activities.Models;
 using Xunit;
 
-namespace Autossential.Activities.Tests.Unit
+namespace Autossential.Activities.Tests.Activities
 {
     public class LoadDataFileTests
     {

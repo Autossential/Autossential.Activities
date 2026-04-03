@@ -3,7 +3,7 @@ using System.Activities;
 using System.Collections.Generic;
 using Xunit;
 
-namespace Autossential.Activities.Tests.Unit
+namespace Autossential.Activities.Tests.Activities
 {
     public class ReplaceTokensTests
     {

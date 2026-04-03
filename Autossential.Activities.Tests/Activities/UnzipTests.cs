@@ -3,7 +3,7 @@ using System.IO.Compression;
 using System.Text;
 using Xunit;
 
-namespace Autossential.Activities.Tests.Unit
+namespace Autossential.Activities.Tests.Activities
 {
     public class UnzipTests
     {

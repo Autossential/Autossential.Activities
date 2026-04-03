@@ -1,7 +1,7 @@
 using System.Activities;
 using Xunit;
 
-namespace Autossential.Activities.Tests.Unit
+namespace Autossential.Activities.Tests.Activities
 {
     public class WaitFileTests
     {

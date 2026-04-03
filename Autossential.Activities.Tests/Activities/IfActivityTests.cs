@@ -4,7 +4,7 @@ using System.Activities.Statements;
 using System.Activities.Validation;
 using Xunit;
 
-namespace Autossential.Activities.Tests.Unit
+namespace Autossential.Activities.Tests.Activities
 {
     public class IfActivityTests
     {

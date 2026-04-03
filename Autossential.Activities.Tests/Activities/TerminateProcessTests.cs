@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Xunit;
 
-namespace Autossential.Activities.Tests.Unit
+namespace Autossential.Activities.Tests.Activities
 {
     public class TerminateProcessTests
     {

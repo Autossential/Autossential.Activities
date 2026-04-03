@@ -1,6 +1,8 @@
-﻿using System.Activities.Statements;
+﻿using Microsoft.CodeAnalysis.VisualBasic.Syntax;
+using System.Activities.Statements;
 using System.Collections;
 using System.Globalization;
+using System.Security.AccessControl;
 using System.Text.RegularExpressions;
 
 namespace Autossential.Activities.Models
@@ -22,7 +24,7 @@ namespace Autossential.Activities.Models
     //    "servers[0].ports[1]"          — chained indexes
     //    "metrics['error.rate'].value"  — quoted key (for keys that contain dots)
     // ─────────────────────────────────────────────────────────────────────────
-    public sealed class DataNode
+    public sealed partial class DataNode
     {
         /// <summary>
         /// Gets the type of the node represented by this instance.
@@ -30,6 +32,7 @@ namespace Autossential.Activities.Models
         public NodeType Type { get; private set; }
 
         private object _value;
+
         /// <summary>
         /// Returns the raw internal value without any conversion.
         /// </summary>
@@ -86,7 +89,6 @@ namespace Autossential.Activities.Models
         /// culture. It is equivalent to calling the main constructor with default parameters.</remarks>
         public DataNode() : this(new Dictionary<string, object>(), CultureInfo.InvariantCulture)
         {
-
         }
 
         /// <summary>
@@ -95,7 +97,6 @@ namespace Autossential.Activities.Models
         /// <param name="culture">The culture to associate with the DataNode. If null, the default culture is used.</param>
         /// <returns>A DataNode instance that contains no data and is associated with the specified culture.</returns>
         public static DataNode Empty(CultureInfo culture = null) => new(new Dictionary<string, object>(), culture);
-
 
         private object Normalize(object value)
         {
@@ -107,7 +108,7 @@ namespace Autossential.Activities.Models
             // Map: any IDictionary -> Dictionary<string, object>
             if (value is IDictionary dict)
             {
-                var map = new Dictionary<string, object>(StringComparer.Ordinal);
+                var map = new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
                 foreach (DictionaryEntry entry in dict)
                     map[entry.Key.ToString()!] = NormalizeChild(entry.Value);
 
@@ -172,8 +173,6 @@ namespace Autossential.Activities.Models
             }
             catch { return false; }
         }
-
-
 
         /// <summary>
         /// Gets an enumerable collection containing the keys of the map node.
@@ -253,13 +252,6 @@ namespace Autossential.Activities.Models
 
             foreach (var seg in segments)
                 yield return seg;
-        }
-
-        private static T TryConvert<T>(object value, T defaultValue, Func<object, T> converter)
-        {
-            if (value is null) return defaultValue;
-            try { return converter(value); }
-            catch { return defaultValue; }
         }
 
         private static bool ParseBool(object value)
@@ -367,13 +359,6 @@ namespace Autossential.Activities.Models
             return (Dictionary<string, object>)RawValue;
         }
 
-        /// <summary>Returns the internal sequence. Throws if Type is not Sequence.</summary>
-        public List<object> AsSequence()
-        {
-            EnsureType(NodeType.Sequence);
-            return (List<object>)RawValue;
-        }
-
         /// <summary>
         /// Navigates to the node at <paramref name="keyPath"/> and returns a DataNode.
         /// Returns an empty Scalar DataNode (null value) if the path does not exist.
@@ -391,59 +376,62 @@ namespace Autossential.Activities.Models
             return new DataNode(current, Culture);
         }
 
-        /// <summary>
-        /// Navigate to <paramref name="keyPath"/> and return all children as a list of DataNodes.
-        /// Returns an empty list if the path does not exist or is not a Sequence.
-        /// </summary>
-        public List<DataNode> GetSequenceNode(string keyPath)
+        private T TryConvert<T>(Func<T> converter, T defaultValue)
         {
-            DataNode node = GetNode(keyPath);
-            if (node.Type != NodeType.Sequence) return [];
-            return [.. node.AsSequence().Select(item => new DataNode(item, Culture))];
+            if (RawValue is null)
+                return defaultValue;
+
+            try { return converter(); }
+            catch { return defaultValue; }
         }
 
         public string AsString() => RawValue?.ToString();
-        public string AsString(string keyPath) => GetNode(keyPath).AsString();
-        public string AsStringOrDefault(string defaultValue) => RawValue is not null ? RawValue.ToString()! : defaultValue;
-        public string AsStringOrDefault(string keyPath, string defaultValue) => GetNode(keyPath).AsStringOrDefault(defaultValue);
-
+        public string AsStringOrDefault(string defaultValue) => RawValue is null ? defaultValue : AsString();
         public int AsInt() => Convert.ToInt32(RawValue, Culture);
-        public int AsInt(string keyPath) => GetNode(keyPath).AsInt();
-        public int AsIntOrDefault(int defaultValue) => TryConvert(RawValue, defaultValue, v => Convert.ToInt32(v, Culture));
-        public int AsIntOrDefault(string keyPath, int defaultValue) => GetNode(keyPath).AsIntOrDefault(defaultValue);
-
+        public int AsIntOrDefault(int defaultValue) => TryConvert(AsInt, defaultValue);
         public long AsLong() => Convert.ToInt64(RawValue, Culture);
-        public long AsLong(string keyPath) => GetNode(keyPath).AsLong();
-        public long AsLongOrDefault(long defaultValue) => TryConvert(RawValue, defaultValue, v => Convert.ToInt64(v, Culture));
-        public long AsLongOrDefault(string keyPath, long defaultValue) => GetNode(keyPath).AsLongOrDefault(defaultValue);
-
+        public long AsLongOrDefault(long defaultValue) => TryConvert(AsLong, defaultValue);
+        public float AsFloat() => Convert.ToSingle(RawValue, Culture);
+        public float AsFloatOrDefault(float defaultValue) => TryConvert(AsFloat, defaultValue);
         public double AsDouble() => Convert.ToDouble(RawValue, Culture);
-        public double AsDouble(string keyPath) => GetNode(keyPath).AsDouble();
-        public double AsDoubleOrDefault(double defaultValue) => TryConvert(RawValue, defaultValue, v => Convert.ToDouble(v, Culture));
-        public double AsDoubleOrDefault(string keyPath, double defaultValue) => GetNode(keyPath).AsDoubleOrDefault(defaultValue);
-
+        public double AsDoubleOrDefault(double defaultValue) => TryConvert(AsDouble, defaultValue);
         public decimal AsDecimal() => Convert.ToDecimal(RawValue, Culture);
-        public decimal AsDecimal(string keyPath) => GetNode(keyPath).AsDecimal();
-        public decimal AsDecimalOrDefault(decimal defaultValue) => TryConvert(RawValue, defaultValue, v => Convert.ToDecimal(v, Culture));
-        public decimal AsDecimalOrDefault(string keyPath, decimal defaultValue) => GetNode(keyPath).AsDecimalOrDefault(defaultValue);
-
-        public DateTime AsDateTime() => Convert.ToDateTime(RawValue, Culture);
-        public DateTime AsDateTime(string keyPath) => GetNode(keyPath).AsDateTime();
-        public DateTime AsDateTimeOrDefault(DateTime defaultValue) => TryConvert(RawValue, defaultValue, v => Convert.ToDateTime(v, Culture));
-        public DateTime AsDateTimeOrDefault(string keyPath, DateTime defaultValue) => GetNode(keyPath).AsDateTimeOrDefault(defaultValue);
-
+        public decimal AsDecimalOrDefault(decimal defaultValue) => TryConvert(AsDecimal, defaultValue);
         public bool AsBool() => ParseBool(RawValue);
-        public bool AsBool(string keyPath) => GetNode(keyPath).AsBool();
-        public bool AsBoolOrDefault(bool defaultValue) => TryConvert(RawValue, defaultValue, ParseBool);
-        public bool AsBoolOrDefault(string keyPath, bool defaultValue) => GetNode(keyPath).AsBoolOrDefault(defaultValue);
-
+        public bool AsBoolOrDefault(bool defaultValue) => TryConvert(AsBool, defaultValue);
+        public DateTime AsDateTime() => Convert.ToDateTime(RawValue, Culture);
+        public DateTime AsDateTimeOrDefault(DateTime defaultValue) => TryConvert(AsDateTime, defaultValue);
         public Regex AsRegex(RegexOptions options) => new(RawValue.ToString(), options);
+        public Regex AsRegexOrDefault(Regex defaultValue, RegexOptions options) => TryConvert(() => AsRegex(options), defaultValue);
         public Regex AsRegex() => AsRegex(RegexOptions.None);
-        public Regex AsRegex(string keyPath) => GetNode(keyPath).AsRegex();
-        public Regex AsRegex(string keyPath, RegexOptions options) => GetNode(keyPath).AsRegex(options);
-        public Regex AsRegexOrDefault(Regex defaultValue, RegexOptions options) => TryConvert(RawValue, defaultValue, v => new Regex(v.ToString(), options));
-        public Regex AsRegexOrDefault(Regex defaultValue) => AsRegexOrDefault(defaultValue, RegexOptions.None);
-        public Regex AsRegexOrDefault(string keyPath, Regex defaultValue, RegexOptions options) => GetNode(keyPath).AsRegexOrDefault(defaultValue, options);
-        public Regex AsRegexOrDefault(string keyPath, Regex defaultValue) => AsRegexOrDefault(keyPath, defaultValue, RegexOptions.None);
+        public Regex AsRegexOrDefault(Regex defaultValue) => TryConvert(() => AsRegex(), defaultValue);
+        private IEnumerable<T> EnumerableAsType<T>(IEnumerable enumerable)
+        {
+            foreach (var item in enumerable)
+            {
+                if (item is T expected)
+                    yield return expected;
+
+                else if (typeof(T) == typeof(DataNode))
+                    yield return (T)(object)new DataNode(item, Culture);
+
+                else if (item is IConvertible)
+                    yield return (T)Convert.ChangeType(item, typeof(T));
+
+                else
+                    throw new InvalidOperationException($"Unexpected type: {item?.GetType() ?? null} can't be converted to {typeof(T)}");
+            }
+        }
+
+        public List<T> AsSequence<T>()
+        {
+            EnsureType(NodeType.Sequence);
+            if (RawValue is IEnumerable value)
+                return [.. EnumerableAsType<T>(value)];
+
+            return (List<T>)RawValue;
+        }
+        public List<T> AsSequenceOrDefault<T>(List<T> defaultValue)
+            => TryConvert(() => AsSequence<T>(), defaultValue);
     }
 }

@@ -119,1010 +119,797 @@
   </resheader>
   <data name="Categories_Input" xml:space="preserve">
     <value>Giriş</value>
-    <comment>category</comment>
   </data>
   <data name="Categories_Output" xml:space="preserve">
     <value>Çıkış</value>
-    <comment>category</comment>
   </data>
   <data name="Categories_Options" xml:space="preserve">
     <value>Seçenekler</value>
-    <comment>category</comment>
   </data>
   <data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
     <value>Değiştirilecek koleksiyon.</value>
-    <comment>property description</comment>
   </data>
   <data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
     <value>Koleksiyon</value>
-    <comment>property name</comment>
   </data>
   <data name="AddRangeToCollection_Description" xml:space="preserve">
     <value>Belirtilen koleksiyona bir dizi öğe ekler.</value>
-    <comment>activity description</comment>
   </data>
   <data name="AddRangeToCollection_DisplayName" xml:space="preserve">
     <value>Koleksiyona Aralık Ekle</value>
-    <comment>activity name</comment>
   </data>
   <data name="AddRangeToCollection_Items_Description" xml:space="preserve">
     <value>Koleksiyona eklenecek öğeler.</value>
-    <comment>property description</comment>
   </data>
   <data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
     <value>Öğeler</value>
-    <comment>property name</comment>
   </data>
   <data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
-    <value>Dosyanın yeniden kontrol edilmesi için saniye cinsinden süreyi belirtir. 0.5'ten küçük herhangi bir değer 0.5'e yuvarlanır. Bu değeri Zaman Aşımı değerinden küçük tutmaya dikkat edin.</value>
-    <comment>property description</comment>
+    <value>Dosyayı tekrar kontrol etmek için zaman aralığını (saniye cinsinden) belirtir. 0,5'ten küçük değerler 0,5 olarak ayarlanacaktır. Bu değerin zaman aşımı süresinden küçük olduğundan emin olun.</value>
   </data>
   <data name="WaitFile_PollingIntervalSeconds_DisplayName" xml:space="preserve">
     <value>Aralık</value>
-    <comment>property name</comment>
   </data>
   <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
-    <value>Etkinliğin çalışması için beklenecek süreyi saniye cinsinden belirtir. Varsayılan değer 30s'dir.</value>
-    <comment>property description</comment>
+    <value>Hata oluşmadan önce beklenecek süreyi (saniye cinsinden) belirtir. Varsayılan 30 saniyedir.</value>
   </data>
   <data name="WaitFile_Description" xml:space="preserve">
-    <value>Dosya kullanılabilir olana kadar bekler.</value>
-    <comment>activity description</comment>
+    <value>Bir dosya hazır olana kadar bekler.</value>
   </data>
   <data name="WaitFile_DisplayName" xml:space="preserve">
-    <value>Dosya Bekle</value>
-    <comment>activity name</comment>
+    <value>Dosyayı Bekle</value>
   </data>
   <data name="WaitFile_FilePath_Description" xml:space="preserve">
-    <value>Dosyanın yolu.</value>
-    <comment>property description</comment>
+    <value>Dosya yolu.</value>
   </data>
   <data name="WaitFile_FilePath_DisplayName" xml:space="preserve">
     <value>Dosya Yolu</value>
-    <comment>property name</comment>
   </data>
   <data name="WaitFile_Result_Description" xml:space="preserve">
-    <value>Bulunduğunda ilgili dosyanın FileInfo nesnesi.</value>
-    <comment>property description</comment>
+    <value>Dosya bulunursa FileInfo nesnesi.</value>
   </data>
   <data name="WaitFile_Result_DisplayName" xml:space="preserve">
     <value>Sonuç</value>
-    <comment>property name</comment>
   </data>
   <data name="WaitFile_WaitForExist_Description" xml:space="preserve">
     <value>Dosya var olana kadar bekler.</value>
-    <comment>property description</comment>
   </data>
   <data name="WaitFile_WaitForExist_DisplayName" xml:space="preserve">
-    <value>Var Olmasını Bekle</value>
-    <comment>property name</comment>
+    <value>Varlığı Bekle</value>
   </data>
   <data name="Common_TimeoutSeconds_DisplayName" xml:space="preserve">
     <value>Zaman Aşımı</value>
-    <comment>property name</comment>
   </data>
   <data name="Common_ViewModel_BrowseForFile" xml:space="preserve">
-    <value>Dosya için gözat</value>
-    <comment>view model label</comment>
+    <value>Dosyaya Göz At</value>
   </data>
   <data name="Common_ViewModel_BrowseForFolder" xml:space="preserve">
-    <value>Klasör için gözat</value>
-    <comment>view model label</comment>
+    <value>Klasöre Göz At</value>
   </data>
   <data name="Categories_Common" xml:space="preserve">
     <value>Ortak</value>
-    <comment>category</comment>
   </data>
   <data name="Common_ContinueOnError_DisplayName" xml:space="preserve">
-    <value>Hata durumunda devam et</value>
-    <comment>property name</comment>
+    <value>Hatada Devam Et</value>
   </data>
   <data name="Common_ContinueOnError_Description" xml:space="preserve">
-    <value>Mevcut etkinlik başarısız olsa bile kalan etkinliklerin yürütülmeye devam edilmesini belirtir. Yalnızca boolean değerlere izin verilir.</value>
-    <comment>property description</comment>
+    <value>Mevcut etkinlik başarısız olsa bile kalan etkinliklerin yürütülmesine devam edilip edilmeyeceğini belirtir. Sadece Boole değerlerini kabul eder.</value>
   </data>
   <data name="WaitFile_DirectoryPath_Description" xml:space="preserve">
     <value>İzlenecek dizin yolu.</value>
-    <comment>property description</comment>
   </data>
   <data name="WaitFile_DirectoryPath_DisplayName" xml:space="preserve">
     <value>Dizin Yolu</value>
-    <comment>property name</comment>
   </data>
   <data name="WaitFile_DynamicFile_DisplayName" xml:space="preserve">
-    <value>Dosya adı dinamiktir</value>
-    <comment>property name</comment>
+    <value>Dinamik Dosya Adı</value>
   </data>
   <data name="Common_SearchPattern_Description" xml:space="preserve">
-    <value>Arama dizesi, yoldaki dosya adı desenlerini tanımlar. Metin ve joker karakterleri (*, ?, !, |) destekler, ancak düzenli ifadeleri desteklemez. Dışlamak için ! kullanın (örn. !*.txt), birden fazla desen için | kullanın (örn. *.png|*.gif|*.jpeg). Varsayılan *.* (tüm dosyalar).</value>
-    <comment>property description</comment>
+    <value>Dosya adı modelini tanımlar. Joker karakterleri destekler (*, ?, !, |). Hariç tutmak için ! kullanın (örn: !*.txt) ve birden fazla model için | kullanın. Varsayılan: *.*</value>
   </data>
   <data name="Common_SearchPattern_DisplayName" xml:space="preserve">
     <value>Arama Deseni</value>
-    <comment>property name</comment>
   </data>
   <data name="WaitFile_DynamicFile_Description" xml:space="preserve">
-    <value>True olduğunda, etkinlik davranışı, belirtilen arama desenine uyan bir dosya bulana kadar belirli bir klasörü izlemeye geçer.</value>
-    <comment>property description</comment>
+    <value>Etkinleştirilirse, arama desenine uygun bir dosya bulunana kadar belirli bir klasörü izler.</value>
   </data>
   <data name="CleanUpFolder_DeleteEmptyFolders_Description" xml:space="preserve">
-    <value>Dosya silme işleminden sonra boş kalan klasörlerin de silinip silinmeyeceğini belirler.</value>
-    <comment>property description</comment>
+    <value>Dosyalar silindikten sonra boş klasörlerin de silinip silinmeyeceğini belirler.</value>
   </data>
   <data name="CleanUpFolder_DeleteEmptyFolders_DisplayName" xml:space="preserve">
     <value>Boş Klasörleri Sil</value>
-    <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_Description" xml:space="preserve">
-    <value>Belirtilen klasördeki tüm dosyaları ve klasörleri siler.</value>
-    <comment>activity description</comment>
+    <value>Belirtilen dizindeki tüm dosya ve klasörleri siler.</value>
   </data>
   <data name="CleanUpFolder_DisplayName" xml:space="preserve">
     <value>Klasörü Temizle</value>
-    <comment>activity name</comment>
   </data>
   <data name="CleanUpFolder_Folder_Description" xml:space="preserve">
-    <value>Temizlenecek klasör yolu.</value>
-    <comment>property description</comment>
+    <value>Temizlenecek klasörün yolu.</value>
   </data>
   <data name="CleanUpFolder_Folder_DisplayName" xml:space="preserve">
     <value>Klasör Yolu</value>
-    <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_LastWriteTime_Description" xml:space="preserve">
-    <value>Yalnızca son yazma tarihi bu referans tarihe kadar olan dosyaları siler. Varsayılan DateTime.Now'dur.</value>
-    <comment>property description</comment>
+    <value>Yalnızca son yazılma zamanı bu tarihten önce olan dosyaları siler. Varsayılan: DateTime.Now.</value>
   </data>
   <data name="CleanUpFolder_LastWriteTime_DisplayName" xml:space="preserve">
     <value>Son Yazma Zamanı</value>
-    <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_FilesDeleted_Description" xml:space="preserve">
     <value>Silinen dosya sayısı.</value>
-    <comment>property description</comment>
   </data>
   <data name="CleanUpFolder_FilesDeleted_DisplayName" xml:space="preserve">
     <value>Silinen Dosyalar</value>
-    <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_SearchOption_Description" xml:space="preserve">
-    <value>Arama işleminin yalnızca geçerli dizini mi yoksa tüm alt dizinleri de mi içereceğini belirtir.</value>
-    <comment>property description</comment>
+    <value>İşlemin yalnızca hedef dizini mi yoksa tüm alt dizinleri mi içereceğini belirtir.</value>
   </data>
   <data name="CleanUpFolder_SearchOption_DisplayName" xml:space="preserve">
     <value>Arama Seçeneği</value>
-    <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_FoldersDeleted_DisplayName" xml:space="preserve">
     <value>Silinen Klasörler</value>
-    <comment>property name</comment>
   </data>
   <data name="CleanUpFolder_FoldersDeleted_Description" xml:space="preserve">
     <value>Silinen klasör sayısı.</value>
-    <comment>property description</comment>
   </data>
   <data name="Zip_Description" xml:space="preserve">
-    <value>Dosyaları ve klasörleri bir zip arşivine sıkıştırır.</value>
-    <comment>activity description</comment>
+    <value>Dosyaları veya klasörleri bir zip dosyasında sıkıştırır.</value>
   </data>
   <data name="Zip_DisplayName" xml:space="preserve">
     <value>Sıkıştır (Zip)</value>
-    <comment>activity name</comment>
   </data>
   <data name="Zip_ToCompress_Description" xml:space="preserve">
-    <value>Sıkıştırılacak dosya ve dizin yollarının koleksiyonu.</value>
-    <comment>property description</comment>
+    <value>Sıkıştırılacak dosya ve dizin yolları koleksiyonu.</value>
   </data>
   <data name="Zip_ToCompress_DisplayName" xml:space="preserve">
-    <value>Sıkıştırılacaklar</value>
-    <comment>property name</comment>
+    <value>Sıkıştırılacak Öğeler</value>
   </data>
   <data name="Zip_TextEncoding_Description" xml:space="preserve">
-    <value>Zip arşivi içindeki giriş adları için kullanılan kodlama.</value>
-    <comment>property description</comment>
+    <value>Zip dosyasındaki giriş adları için kullanılan kodlama.</value>
   </data>
   <data name="Zip_TextEncoding_DisplayName" xml:space="preserve">
     <value>Metin Kodlaması</value>
-    <comment>property name</comment>
   </data>
   <data name="Zip_CompressionLevel_Description" xml:space="preserve">
-    <value>Arşiv oluşturulurken kullanılan sıkıştırma seviyesi.</value>
-    <comment>property description</comment>
+    <value>Arşiv oluşturulurken kullanılan sıkıştırma düzeyi.</value>
   </data>
   <data name="Zip_CompressionLevel_DisplayName" xml:space="preserve">
-    <value>Sıkıştırma Seviyesi</value>
-    <comment>property name</comment>
+    <value>Sıkıştırma Düzeyi</value>
   </data>
   <data name="Zip_CompressedFile_Description" xml:space="preserve">
-    <value>Oluşturulan sıkıştırılmış dosyanın indeksi veya tanımlayıcısı (uygulanabilir olduğunda).</value>
-    <comment>property description</comment>
+    <value>Elde edilen sıkıştırılmış dosyanın tanımlayıcısı.</value>
   </data>
   <data name="Zip_CompressedFile_DisplayName" xml:space="preserve">
     <value>Sıkıştırılmış Dosya</value>
-    <comment>property name</comment>
   </data>
   <data name="Zip_FullEntryNames_Description" xml:space="preserve">
-    <value>Göreli yollar yerine tam giriş adlarını (mutlak yollar) kullan.</value>
-    <comment>property description</comment>
+    <value>Göreceli yollar yerine tam giriş adını (mutlak yol) kullanın.</value>
   </data>
   <data name="Zip_FullEntryNames_DisplayName" xml:space="preserve">
     <value>Tam Giriş Adları</value>
-    <comment>property name</comment>
   </data>
   <data name="Zip_FilesCount_Description" xml:space="preserve">
     <value>Arşive eklenen dosya sayısı.</value>
-    <comment>property description</comment>
   </data>
   <data name="Zip_FilesCount_DisplayName" xml:space="preserve">
     <value>Dosya Sayısı</value>
-    <comment>property name</comment>
   </data>
   <data name="Zip_ZipFilePath_Description" xml:space="preserve">
-    <value>Zip arşivinin oluşturulacağı yol.</value>
-    <comment>property description</comment>
+    <value>Zip dosyasının oluşturulacağı yol.</value>
   </data>
   <data name="Zip_ZipFilePath_DisplayName" xml:space="preserve">
     <value>Zip Dosya Yolu</value>
-    <comment>property name</comment>
   </data>
   <data name="Common_ErrorMsg_ValueNotSupplied" xml:space="preserve">
-    <value>Gerekli etkinlik bağımsız değişkeni '{0}' için değer sağlanmadı.</value>
-    <comment>error message</comment>
+    <value>'{0}' zorunlu bağımsız değişkeni için değer sağlanmadı.</value>
   </data>
   <data name="Unzip_Description" xml:space="preserve">
-    <value>Bir zip arşivinden dosyaları ve klasörleri çıkarır.</value>
-    <comment>activity description</comment>
+    <value>Dosyaları ve klasörleri bir zip dosyasından çıkarır.</value>
   </data>
   <data name="Unzip_DisplayName" xml:space="preserve">
-    <value>Sıkıştırmayı Aç (Unzip)</value>
-    <comment>activity name</comment>
+    <value>Aç (Unzip)</value>
   </data>
   <data name="Unzip_ZipFilePath_Description" xml:space="preserve">
-    <value>Çıkarılacak zip arşivinin yolu.</value>
-    <comment>property description</comment>
+    <value>Çıkarılacak zip dosyasının yolu.</value>
   </data>
   <data name="Unzip_ZipFilePath_DisplayName" xml:space="preserve">
     <value>Zip Dosya Yolu</value>
-    <comment>property name</comment>
   </data>
   <data name="Unzip_ExtractTo_Description" xml:space="preserve">
-    <value>Arşiv içeriğinin çıkarılacağı klasör.</value>
-    <comment>property description</comment>
+    <value>İçeriğin çıkarılacağı klasör.</value>
   </data>
   <data name="Unzip_ExtractTo_DisplayName" xml:space="preserve">
-    <value>Şuraya Çıkar</value>
-    <comment>property name</comment>
+    <value>Buraya Çıkar</value>
   </data>
   <data name="Unzip_Overwrite_Description" xml:space="preserve">
-    <value>True ise, çıkarma sırasında mevcut dosyalar üzerine yazılır.</value>
-    <comment>property description</comment>
+    <value>Etkinleştirilirse, çıkarma sırasında mevcut dosyaların üzerine yazar.</value>
   </data>
   <data name="Unzip_Overwrite_DisplayName" xml:space="preserve">
     <value>Üzerine Yaz</value>
-    <comment>property name</comment>
   </data>
   <data name="Unzip_ErrorMsg_OutsideDir" xml:space="preserve">
-    <value>Arşiv girişi hedef dizin dışında çıkarılmaya çalışacak.</value>
-    <comment>error message</comment>
+    <value>Arşiv girişi, hedef dizinin dışına çıkarılmaya çalışılıyor.</value>
   </data>
   <data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
-    <value>Arşivdeki dizin girişi dosya verisi içeriyor, bu geçersizdir.</value>
-    <comment>error message</comment>
+    <value>Arşivdeki dizin adı geçersiz olan dosya verilerini içeriyor.</value>
   </data>
   <data name="RandomString_Description" xml:space="preserve">
-    <value>Biçim desenine göre rastgele bir dize üretir.</value>
-    <comment>activity description</comment>
+    <value>Bir biçim desenine dayalı rastgele bir dize oluşturur.</value>
   </data>
   <data name="RandomString_DisplayName" xml:space="preserve">
     <value>Rastgele Dize</value>
-    <comment>activity name</comment>
   </data>
   <data name="RandomString_Format_Description" xml:space="preserve">
-    <value>Üretilen dizeyi tanımlayan desen. Yer tutucular: 'a' küçük harf, 'A' büyük harf, '0' rakam, '*' alfanümerik, '?' özel karakterler, '\\' escape.</value>
-    <comment>property description</comment>
+    <value>Dizeyi tanımlayan desen. 'a' küçük harf, 'A' büyük harf, '0' sayı, '*' herhangi bir alfanümerik, '?' özel karakter, '\\' kaçış.</value>
   </data>
   <data name="RandomString_Format_DisplayName" xml:space="preserve">
     <value>Biçim</value>
-    <comment>property name</comment>
   </data>
   <data name="RandomString_Custom_Description" xml:space="preserve">
-    <value>'?' yer tutucusu kullanıldığında eklenen özel karakterler.</value>
-    <comment>property description</comment>
+    <value>'?' yer tutucusu için kullanılacak ek karakterler.</value>
   </data>
   <data name="RandomString_Custom_DisplayName" xml:space="preserve">
     <value>Özel Karakterler</value>
-    <comment>property name</comment>
   </data>
   <data name="RandomString_Result_DisplayName" xml:space="preserve">
     <value>Sonuç</value>
-    <comment>property name</comment>
   </data>
   <data name="Increment_Description" xml:space="preserve">
-    <value>Belirtilen değer kadar sayısal bir değişkeni artırır.</value>
-    <comment>activity description</comment>
+    <value>Sayısal bir değişkeni belirtilen bir değer kadar artırır.</value>
   </data>
   <data name="Increment_DisplayName" xml:space="preserve">
     <value>Artır</value>
-    <comment>activity name</comment>
   </data>
   <data name="Increment_Value_Description" xml:space="preserve">
-    <value>Değişkene eklenecek miktar. 1 veya daha büyük olmalıdır.</value>
-    <comment>property description</comment>
+    <value>Eklenecek değer. 1'den büyük olmalıdır.</value>
   </data>
   <data name="Increment_Value_DisplayName" xml:space="preserve">
     <value>Değer</value>
-    <comment>property name</comment>
   </data>
   <data name="Increment_Variable_Description" xml:space="preserve">
     <value>Artırılacak değişken.</value>
-    <comment>property description</comment>
   </data>
   <data name="Increment_Variable_DisplayName" xml:space="preserve">
     <value>Değişken</value>
-    <comment>property name</comment>
   </data>
   <data name="Decrement_Description" xml:space="preserve">
-    <value>Belirtilen değer kadar sayısal bir değişkeni azaltır.</value>
-    <comment>activity description</comment>
+    <value>Sayısal bir değişkeni belirtilen bir değer kadar azaltır.</value>
   </data>
   <data name="Decrement_DisplayName" xml:space="preserve">
     <value>Azalt</value>
-    <comment>activity name</comment>
   </data>
   <data name="Decrement_Value_Description" xml:space="preserve">
-    <value>Değişkenden çıkarılacak miktar. 1 veya daha büyük olmalıdır.</value>
-    <comment>property description</comment>
+    <value>Çıkarılacak değer. 1'den büyük olmalıdır.</value>
   </data>
   <data name="Decrement_Value_DisplayName" xml:space="preserve">
     <value>Değer</value>
-    <comment>property name</comment>
   </data>
   <data name="Decrement_Variable_Description" xml:space="preserve">
     <value>Azaltılacak değişken.</value>
-    <comment>property description</comment>
   </data>
   <data name="Decrement_Variable_DisplayName" xml:space="preserve">
     <value>Değişken</value>
-    <comment>property name</comment>
   </data>
   <data name="RandomString_Result_Description" xml:space="preserve">
-    <value>Üretilen rastgele dize.</value>
-    <comment>property description</comment>
+    <value>Oluşturulan rastgele dize.</value>
   </data>
   <data name="ReplaceTokens_Description" xml:space="preserve">
-    <value>Bir dizenin içindeki token'ları bir Dictionary'nin değerleriyle değiştirir. Token'lar genellikle özel karakterler arasında yazılır. Token biçimini tanımlamak için 'Pattern' ve 'Placeholder' özelliklerini kullanın.</value>
-    <comment>activity description</comment>
+    <value>Bir dizedeki belirteçleri bir sözlükteki değerlerle değiştirir. Biçimi tanımlamak için 'Desen' ve 'Yer Tutucu' kullanır.</value>
   </data>
   <data name="ReplaceTokens_DisplayName" xml:space="preserve">
-    <value>Token'ları Değiştir</value>
-    <comment>activity name</comment>
+    <value>Belirteçleri Değiştir</value>
   </data>
   <data name="ReplaceTokens_Dictionary_Description" xml:space="preserve">
-    <value>Her anahtar/değer çifti token'ları değiştirmek için kullanılan sözlük.</value>
-    <comment>property description</comment>
+    <value>Değiştirme değerlerini içeren sözlük.</value>
   </data>
   <data name="ReplaceTokens_Dictionary_DisplayName" xml:space="preserve">
     <value>Sözlük</value>
-    <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
-    <value>Token metin deseni. Yer tutucunun önünde ve arkasında karakterler olabilir.</value>
-    <comment>property description</comment>
+    <value>Belirteç için metin deseni.</value>
   </data>
   <data name="ReplaceTokens_Pattern_DisplayName" xml:space="preserve">
     <value>Desen</value>
-    <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
-    <value>Token desenindeki yer tutucu olarak kullanılan karakter.</value>
-    <comment>property description</comment>
+    <value>Desen içinde yer tutucu olarak kullanılan karakter.</value>
   </data>
   <data name="ReplaceTokens_Placeholder_DisplayName" xml:space="preserve">
     <value>Yer Tutucu</value>
-    <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Result_Description" xml:space="preserve">
-    <value>Tüm token'lar değiştirildikten sonraki sonuç metin.</value>
-    <comment>property description</comment>
+    <value>Değişikliklerin yapıldığı sonuç metni.</value>
   </data>
   <data name="ReplaceTokens_Result_DisplayName" xml:space="preserve">
     <value>Sonuç</value>
-    <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Content_DisplayName" xml:space="preserve">
     <value>İçerik</value>
-    <comment>property name</comment>
   </data>
   <data name="ReplaceTokens_Content_Description" xml:space="preserve">
-    <value>Token'ların değiştirileceği giriş metni.</value>
-    <comment>property description</comment>
+    <value>Belirteçleri içeren giriş metni.</value>
   </data>
   <data name="Categories_InputOutput" xml:space="preserve">
     <value>Giriş/Çıkış</value>
-    <comment>category</comment>
   </data>
   <data name="ReplaceTokens_CaseSensitive_Description" xml:space="preserve">
-    <value>Token arama işleminin büyük/küçük harfe duyarlı olup olmadığını belirler. Desen de bundan etkilenir.</value>
-    <comment>property description</comment>
+    <value>Belirteç aramasının büyük/küçük harfe duyarlı olup olmayacağını belirler.</value>
   </data>
   <data name="ReplaceTokens_CaseSensitive_DisplayName" xml:space="preserve">
     <value>Büyük/Küçük Harf Duyarlı</value>
-    <comment>property name</comment>
   </data>
   <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
     <value>Başarılı</value>
-    <comment>response message</comment>
   </data>
   <data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
     <value>İzin verilen minimum değer 1'dir.</value>
-    <comment>error message</comment>
   </data>
   <data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
     <value>İzin verilen minimum değer 1'dir.</value>
-    <comment>error message</comment>
   </data>
   <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
-    <value>Kullanılabilir sürücü yok</value>
-    <comment>error message</comment>
+    <value>Kullanılabilir sürücü yok.</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
-    <value>Girilen sürücü harfi geçersiz. Geçerli girişler 'X', 'X:' veya 'X:\\' şeklindedir; X herhangi bir harf olabilir.</value>
-    <comment>error message</comment>
+    <value>Geçersiz sürücü harfi (örn: 'X', 'X:', 'X:\').</value>
   </data>
   <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
-    <value>Kimlik Bilgisi</value>
-    <comment>property name</comment>
+    <value>Kimlik Bilgileri</value>
   </data>
   <data name="MapDrive_Description" xml:space="preserve">
-    <value>Sisteme bir Ağ Sürücüsü bağlar.</value>
-    <comment>activity description</comment>
+    <value>Sistemde bir ağ sürücüsünü eşler.</value>
   </data>
   <data name="MapDrive_DisplayName" xml:space="preserve">
-    <value>Sürücü Eşle</value>
-    <comment>activity name</comment>
+    <value>Sürücüyü Eşle</value>
   </data>
   <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>Eşlenecek sürücü harfini belirtir. Sağlanmazsa rastgele kullanılabilir bir harf atanır. Beklenen biçim: &lt;harf&gt;&lt;iki nokta&gt;, örneğin: "X:", "y:", "Z:".</value>
-    <comment>property description</comment>
+    <value>Eşlenecek sürücü harfi (örn: "X:"). Boşsa, rastgele bir harf seçilecektir.</value>
   </data>
   <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>Sürücü Harfi</value>
-    <comment>property name</comment>
   </data>
   <data name="MapDrive_Force_Description" xml:space="preserve">
-    <value>Sürücü harfi zaten kullanımda ise bağlantıyı zorlamaya çalışır.</value>
-    <comment>property description</comment>
+    <value>Harf zaten kullanımda olsa bile bağlantıyı zorla.</value>
   </data>
   <data name="MapDrive_Force_DisplayName" xml:space="preserve">
-    <value>Zorla</value>
-    <comment>property name</comment>
+    <value>Bağlantıyı Zorla</value>
   </data>
   <data name="MapDrive_MappedDrive_Description" xml:space="preserve">
-    <value>İşlem başarılı olursa eşlenen sürücü harfi, "&lt;harf&gt;:" biçiminde.</value>
-    <comment>property description</comment>
+    <value>Başarı durumunda eşlenen sürücü harfi.</value>
   </data>
   <data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
     <value>Eşlenen Sürücü</value>
-    <comment>property name</comment>
   </data>
   <data name="MapDrive_ResponseCode_Description" xml:space="preserve">
-    <value>Sürücü eşleme işleminin dönüş kodunu temsil eder. İşlemin başarılı olup olmadığını Windows standart hata kodlarına göre gösterir.</value>
-    <comment>property description</comment>
+    <value>Standart Windows dönüş kodu.</value>
   </data>
   <data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
     <value>Yanıt Kodu</value>
-    <comment>property name</comment>
   </data>
   <data name="MapDrive_ResponseMessage_Description" xml:space="preserve">
-    <value>Yanıt koduna karşılık gelen metinsel açıklamayı sağlar. İşlemin sonucunu insan tarafından okunabilir biçimde açıklar.</value>
-    <comment>property description</comment>
+    <value>İşlem sonucunun metinsel açıklaması.</value>
   </data>
   <data name="MapDrive_ResponseMessage_DisplayName" xml:space="preserve">
     <value>Yanıt Mesajı</value>
-    <comment>property name</comment>
   </data>
   <data name="MapDrive_Result_Description" xml:space="preserve">
-    <value>Sürücü başarıyla eşlendiyse true, aksi takdirde false döndürür.</value>
-    <comment>property description</comment>
+    <value>Eşleme başarılıysa True.</value>
   </data>
   <data name="MapDrive_Result_DisplayName" xml:space="preserve">
     <value>Sonuç</value>
-    <comment>property name</comment>
   </data>
   <data name="MapDrive_SharedDrivePath_Description" xml:space="preserve">
-    <value>Bağlanılacak paylaşılan sürücü yolu.</value>
-    <comment>property description</comment>
+    <value>Paylaşılan klasörün ağ yolu.</value>
   </data>
   <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
-    <value>Paylaşılan Sürücü Yolu</value>
-    <comment>property name</comment>
+    <value>Ağ Yolu</value>
   </data>
   <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
     <value>Sonuç</value>
-    <comment>property name</comment>
   </data>
   <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>Desmape edilecek eşlenmiş sürücünün harfini belirtir. Zorunlu biçim: &lt;harf&gt;&lt;iki nokta&gt;, örneğin: "X:", "y:", "Z:".</value>
-    <comment>property description</comment>
+    <value>Bağlantısı kesilecek sürücü harfi (örn: "X:").</value>
   </data>
   <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>Sürücü Harfi</value>
-    <comment>property name</comment>
   </data>
   <data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
-    <value>Sürücü eşleme işleminin dönüş kodunu temsil eder. İşlemin başarılı olup olmadığını Windows standart hata kodlarına göre gösterir.</value>
-    <comment>property description</comment>
+    <value>İşlemin dönüş kodu.</value>
   </data>
   <data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
     <value>Yanıt Kodu</value>
-    <comment>property name</comment>
   </data>
   <data name="UnmapDrive_ResponseMessage_Description" xml:space="preserve">
-    <value>Yanıt koduna karşılık gelen metinsel açıklamayı sağlar. İşlemin sonucunu insan tarafından okunabilir biçimde açıklar.</value>
-    <comment>property description</comment>
+    <value>Sonuç açıklaması.</value>
   </data>
   <data name="UnmapDrive_ResponseMessage_DisplayName" xml:space="preserve">
     <value>Yanıt Mesajı</value>
-    <comment>property name</comment>
   </data>
   <data name="UnmapDrive_Result_Description" xml:space="preserve">
-    <value>Sürücü başarıyla desmape edildiyse true, aksi takdirde false döndürür.</value>
-    <comment>property description</comment>
+    <value>Sürücü bağlantısı başarıyla kesildiyse True.</value>
   </data>
   <data name="UnmapDrive_DisplayName" xml:space="preserve">
-    <value>Sürücüyü Kaldır</value>
-    <comment>activity name</comment>
+    <value>Sürücü Bağlantısını Kes</value>
   </data>
   <data name="MapDrive_Credential_Placeholder" xml:space="preserve">
-    <value>Sağlanmazsa mevcut kullanıcı kimlik bilgileri kullanılır.</value>
-    <comment>placeholder</comment>
+    <value>Boşsa, mevcut kullanıcının kimlik bilgileri kullanılacaktır.</value>
   </data>
   <data name="CultureScope_ErrorMsg_CultureNameNullOrEmpty" xml:space="preserve">
-    <value>Kültür adı null veya boş olamaz.</value>
-    <comment>error message</comment>
+    <value>Kültür adı boş veya null olamaz.</value>
   </data>
   <data name="CultureScope_Culture_Description" xml:space="preserve">
-    <value>İstenen kültür, örn.: tr-TR, en-US, de-DE vb.</value>
-    <comment>property description</comment>
+    <value>İstenen kültür (örn: tr-TR, en-US).</value>
   </data>
   <data name="CultureScope_Culture_DisplayName" xml:space="preserve">
     <value>Kültür</value>
-    <comment>property name</comment>
   </data>
   <data name="CultureScope_Description" xml:space="preserve">
-    <value>Farklı bir kültür ile bir dizi etkinliği çalıştırmanıza olanak tanıyan bir kapsayıcı.</value>
-    <comment>activity description</comment>
+    <value>Etkinlikleri farklı bir kültür ortamı altında yürütmek için bir kapsayıcı.</value>
   </data>
   <data name="CultureScope_DisplayName" xml:space="preserve">
-    <value>Kültür Kapsamı</value>
-    <comment>activity name</comment>
+    <value>Kültür Kapsamı (CultureScope)</value>
   </data>
   <data name="TerminateProcess_Description" xml:space="preserve">
-    <value>Belirtilen süreçlere karşılık gelen uygulamaların tüm örneklerini nazikçe kapatmayı dener. Mümkün değilse, mevcut kullanıcı oturumu için süreci sonlandırır.</value>
-    <comment>activity description</comment>
+    <value>Belirtilen işlemleri düzgünce kapatmaya çalışır veya gerekirse zorla sonlandırır.</value>
   </data>
   <data name="TerminateProcess_DisplayName" xml:space="preserve">
-    <value>Süreci Sonlandır</value>
-    <comment>activity name</comment>
+    <value>İşlemi Sonlandır</value>
   </data>
   <data name="TerminateProcess_ProcessNames_Description" xml:space="preserve">
-    <value>Sonlandırılacak süreçlerin adlarının listesi.</value>
-    <comment>property description</comment>
+    <value>Sonlandırılacak işlem adlarının listesi.</value>
   </data>
   <data name="TerminateProcess_ProcessNames_DisplayName" xml:space="preserve">
-    <value>Süreç Adları</value>
-    <comment>property name</comment>
+    <value>İşlem Adları</value>
   </data>
   <data name="IfActivity_DisplayName" xml:space="preserve">
-    <value>Eğer</value>
-    <comment>activity name</comment>
+    <value>If Etkinliği</value>
   </data>
   <data name="IfActivity_Description" xml:space="preserve">
-    <value>Boolean döndüren bir etkinliğin sonucunu değerlendirir ve koşul sağlanırsa ilişkili kod bloğunu çalıştırır.</value>
-    <comment>property description</comment>
+    <value>Boole değeri döndüren bir etkinliği değerlendirir ve ilgili bloğu yürütür.</value>
   </data>
   <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
-    <value>Condition alanı boolean değer döndüren etkinlikler gerektirir.</value>
-    <comment>error message</comment>
+    <value>Koşul alanı, Boole döndüren bir etkinlik gerektirir.</value>
   </data>
   <data name="Exit_DisplayName" xml:space="preserve">
-    <value>Çık</value>
-    <comment>activity name</comment>
+    <value>Çıkış (Exit)</value>
   </data>
   <data name="Exit_Condition_Description" xml:space="preserve">
-    <value>Etkinliğin değerlendirilip değerlendirilmeyeceğini belirleyen koşul. Boşsa True olarak kabul edilir.</value>
-    <comment>property description</comment>
+    <value>Etkinliğin değerlendirilip değerlendirilmeyeceğini belirleyen koşul. Varsayılan: True.</value>
   </data>
   <data name="Exit_Condition_DisplayName" xml:space="preserve">
     <value>Koşul</value>
-    <comment>property name</comment>
   </data>
   <data name="Exit_Description" xml:space="preserve">
-    <value>Container veya Time Loop'tan çıkar ve ondan sonraki çocuk yürütmelerini keser.</value>
-    <comment>activity description</comment>
+    <value>Bir kapsayıcıdan veya döngüden çıkar ve yürütmeyi durdurur.</value>
   </data>
   <data name="Exit_ErrorMsg_InvalidParent" xml:space="preserve">
-    <value>Exit etkinliği bir Container veya Time Loop içinde olmalıdır.</value>
-    <comment>error message</comment>
+    <value>Exit etkinliği bir Container veya TimeLoop içine yerleştirilmelidir.</value>
   </data>
   <data name="TimeLoop_DisplayName" xml:space="preserve">
-    <value>Zaman Döngüsü</value>
-    <comment>activity name</comment>
+    <value>Zaman Döngüsü (TimeLoop)</value>
   </data>
   <data name="TimeLoop_Description" xml:space="preserve">
-    <value>Gövde etkinliklerini zaman aşımı bitene kadar tekrarlar, isteğe bağlı aralık ve indeks takibi ile. Döngü zaman aşımı nedeniyle bittiyse true döndürür.</value>
-    <comment>activity description</comment>
+    <value>Süre dolana kadar etkinlikleri tekrarlar. Döngü zaman aşımı nedeniyle durduysa True döndürür.</value>
   </data>
   <data name="TimeLoop_Timeout_DisplayName" xml:space="preserve">
     <value>Zaman Aşımı</value>
-    <comment>property name</comment>
   </data>
   <data name="TimeLoop_Timeout_Description" xml:space="preserve">
-    <value>Döngünün ne kadar süre çalışacağını tanımlar. Zaman aşımı her yinelemeden sonra kontrol edilir, devam eden yinelemeler kesilmez.</value>
-    <comment>property description</comment>
+    <value>Döngü için toplam yürütme süresi.</value>
   </data>
   <data name="TimeLoop_IntervalSeconds_DisplayName" xml:space="preserve">
     <value>Aralık</value>
-    <comment>property name</comment>
   </data>
   <data name="TimeLoop_IntervalSeconds_Description" xml:space="preserve">
-    <value>Sonraki döngüden önce beklenecek saniye cinsinden aralık.</value>
-    <comment>property description</comment>
+    <value>Her yineleme arasındaki bekleme süresi (saniye cinsinden).</value>
   </data>
   <data name="TimeLoop_IterationIndex_DisplayName" xml:space="preserve">
-    <value>İndeks</value>
-    <comment>property name</comment>
+    <value>Dizin</value>
   </data>
   <data name="TimeLoop_IterationIndex_Description" xml:space="preserve">
-    <value>İşlenmekte olan mevcut yineleme (sıfır tabanlı).</value>
-    <comment>property description</comment>
+    <value>Geçerli yinelemenin dizini (0'dan başlar).</value>
   </data>
   <data name="Container_DisplayName" xml:space="preserve">
     <value>Kapsayıcı</value>
-    <comment>activity name</comment>
   </data>
   <data name="Container_Description" xml:space="preserve">
-    <value>Exit Etkinliği ile birlikte kullanıldığında çocuk yürütme akışını keserek Container'dan erken çıkmayı sağlayan bir sarmalayıcıdır.</value>
-    <comment>activity description</comment>
+    <value>İkincil akışları kesmek için Exit etkinliği ile kullanılan bir sarmalayıcı.</value>
   </data>
   <data name="CheckPoint_Data_Description" xml:space="preserve">
-    <value>Özel kullanıcı tanımlı istisna bilgileri sağlayan anahtar/değer çiftleri koleksiyonu.</value>
-    <comment>property description</comment>
+    <value>Özel durum işleme için anahtar/değer çiftleri koleksiyonu.</value>
   </data>
   <data name="CheckPoint_Data_DisplayName" xml:space="preserve">
     <value>Veri</value>
-    <comment>property name</comment>
   </data>
   <data name="CheckPoint_Description" xml:space="preserve">
-    <value>Verilen ifadenin true olup olmadığını kontrol eder; değilse belirtilen istisnayı fırlatır.</value>
-    <comment>activity description</comment>
+    <value>Bir ifadenin doğru olup olmadığını kontrol eder ve yanlışsa bir özel durum fırlatır.</value>
   </data>
   <data name="CheckPoint_DisplayName" xml:space="preserve">
-    <value>Kontrol Noktası</value>
-    <comment>activity name</comment>
+    <value>Kontrol Noktası (CheckPoint)</value>
   </data>
   <data name="CheckPoint_Exception_Description" xml:space="preserve">
-    <value>İfade true değilse fırlatılacak istisna.</value>
-    <comment>property description</comment>
+    <value>Fırlatılacak özel durum.</value>
   </data>
   <data name="CheckPoint_Exception_DisplayName" xml:space="preserve">
-    <value>İstisna</value>
-    <comment>property name</comment>
+    <value>Özel Durum</value>
   </data>
   <data name="CheckPoint_Expression_Description" xml:space="preserve">
     <value>Değerlendirilecek ifade.</value>
-    <comment>property description</comment>
   </data>
   <data name="CheckPoint_Expression_DisplayName" xml:space="preserve">
     <value>İfade</value>
-    <comment>property name</comment>
   </data>
   <data name="PromoteHeaders_AutoRename_Description" xml:space="preserve">
-    <value>True olduğunda, sütun adı DataTable'da zaten varsa sayısal bir sonek ekler.</value>
-    <comment>property description</comment>
+    <value>True ise, sütun adı zaten mevcutsa sayısal bir sonek ekler.</value>
   </data>
   <data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
     <value>Otomatik Yeniden Adlandır</value>
-    <comment>property name</comment>
   </data>
   <data name="PromoteHeaders_Description" xml:space="preserve">
-    <value>İlk değer sırasını yeni sütun başlıklarına yükseltir.</value>
-    <comment>activity description</comment>
+    <value>İlk satırdaki değerleri sütun başlıklarına yükseltir.</value>
   </data>
   <data name="PromoteHeaders_DisplayName" xml:space="preserve">
     <value>Başlıkları Yükselt</value>
-    <comment>activity name</comment>
   </data>
   <data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
-    <value>Giriş DataTable'ında yükseltilecek satır yok.</value>
-    <comment>error message</comment>
+    <value>Yükseltilecek satır yok.</value>
   </data>
   <data name="PromoteHeaders_DataTable_Description" xml:space="preserve">
-    <value>İlk sırası başlıklara yükseltilecek DataTable.</value>
-    <comment>property description</comment>
+    <value>İşlenecek veri tablosu.</value>
   </data>
   <data name="PromoteHeaders_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
-    <comment>property name</comment>
+    <value>Veri Tablosu (DataTable)</value>
   </data>
   <data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
-    <value>DateTime türleri için dize temsilinde kullanılacak tarih biçimi.</value>
-    <comment>property description</comment>
+    <value>DateTime sütunları için kullanılacak tarih biçimi.</value>
   </data>
   <data name="DataTableToText_DateTimeFormat_DisplayName" xml:space="preserve">
-    <value>Tarih Saat Biçimi</value>
-    <comment>property name</comment>
+    <value>Tarih/Saat Biçimi</value>
   </data>
   <data name="DataTableToText_Description" xml:space="preserve">
-    <value>Bir DataTable'ın belirtilen metin biçiminde (HTML, JSON veya XML) dize temsilini döndürür.</value>
-    <comment>activity description</comment>
+    <value>Veri tablosunun HTML, JSON veya XML formatlarında bir dize temsilini döndürür.</value>
   </data>
   <data name="DataTableToText_DisplayName" xml:space="preserve">
-    <value>DataTable'dan Metne</value>
-    <comment>activity name</comment>
+    <value>Veri Tablosunu Metne Dönüştür</value>
   </data>
   <data name="DataTableToText_DataTable_Description" xml:space="preserve">
-    <value>DataTable.</value>
-    <comment>property description</comment>
+    <value>Veri tablosu.</value>
   </data>
   <data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
-    <comment>property name</comment>
+    <value>Veri Tablosu (DataTable)</value>
   </data>
   <data name="DataTableToText_Result_Description" xml:space="preserve">
-    <value>DataTable'ın dize temsili.</value>
-    <comment>property description</comment>
+    <value>Sonuç dizesi.</value>
   </data>
   <data name="DataTableToText_Result_DisplayName" xml:space="preserve">
     <value>Sonuç</value>
-    <comment>property name</comment>
   </data>
   <data name="DataTableToText_OutputFormat_Description" xml:space="preserve">
-    <value>Çıkış metin biçimi.</value>
-    <comment>property description</comment>
+    <value>İstenen çıkış biçimi.</value>
   </data>
   <data name="DataTableToText_OutputFormat_DisplayName" xml:space="preserve">
     <value>Çıkış Biçimi</value>
-    <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_ColumnNames_Description" xml:space="preserve">
     <value>Değerlendirilecek sütun adları.</value>
-    <comment>property description</comment>
   </data>
   <data name="RemoveEmptyRows_ColumnNames_DisplayName" xml:space="preserve">
     <value>Sütun Adları</value>
-    <comment>property name</comment>
-  </data>
-  <data name="RemoveEmptyRows_Description" xml:space="preserve">
-    <value>Bir DataTable'dan boş satırları kaldırır.</value>
-    <comment>activity description</comment>
-  </data>
-  <data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
-    <value>Boş Satırları Kaldır</value>
-    <comment>activity name</comment>
-  </data>
-  <data name="RemoveEmptyRows_DataTable_Description" xml:space="preserve">
-    <value>Boş satırları kaldırılacak DataTable.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="RemoveEmptyRows_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
-    <comment>property name</comment>
-  </data>
-  <data name="RemoveEmptyRows_MatchingMode_Description" xml:space="preserve">
-    <value>Bir satırın kaldırılma değerlendirmesini belirler: All — belirtilen tüm sütunlar boşsa satır kaldırılır. Any — belirtilen sütunlardan herhangi biri boşsa satır kaldırılır. Hiç sütun belirtilmezse DataTable'daki tüm sütunlar dikkate alınır.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
-    <value>Eşleşme Modu</value>
-    <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_ColumnIndexes_DisplayName" xml:space="preserve">
     <value>Sütun İndeksleri</value>
-    <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_ColumnIndexes_Description" xml:space="preserve">
     <value>Değerlendirilecek sütun indeksleri.</value>
-    <comment>property description</comment>
+  </data>
+  <data name="RemoveEmptyRows_Description" xml:space="preserve">
+    <value>Bir veri tablosundaki boş satırları kaldırır.</value>
+  </data>
+  <data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
+    <value>Boş Satırları Kaldır</value>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_Description" xml:space="preserve">
+    <value>Temizlenecek veri tablosu.</value>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_DisplayName" xml:space="preserve">
+    <value>Veri Tablosu (DataTable)</value>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_Description" xml:space="preserve">
+    <value>All: tüm sütunlar boşsa kaldırır. Any: en az bir sütun boşsa kaldırır.</value>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
+    <value>Eşleşme Modu</value>
   </data>
   <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
-    <comment>property name</comment>
+    <value>Veri Tablosu (DataTable)</value>
   </data>
   <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
     <value>Kaldırılacak sütun adları.</value>
-    <comment>property description</comment>
   </data>
   <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">
     <value>Sütun Adları</value>
-    <comment>property name</comment>
   </data>
   <data name="RemoveDataColumns_Description" xml:space="preserve">
-    <value>Belirtilen sütunları bir DataTable'dan kaldırır.</value>
-    <comment>activity description</comment>
+    <value>Belirtilen sütunları bir veri tablosundan kaldırır.</value>
   </data>
   <data name="RemoveDataColumns_DisplayName" xml:space="preserve">
-    <value>Sütunları Kaldır</value>
-    <comment>activity name</comment>
+    <value>Veri Sütunlarını Kaldır</value>
   </data>
   <data name="RemoveDataColumns_DataTable_Description" xml:space="preserve">
-    <value>Sütunların kaldırılacağı DataTable.</value>
-    <comment>property description</comment>
+    <value>Kaynak veri tablosu.</value>
   </data>
   <data name="RemoveDataColumns_ColumnIndexes_DisplayName" xml:space="preserve">
     <value>Sütun İndeksleri</value>
-    <comment>property name</comment>
   </data>
   <data name="RemoveDataColumns_ColumnIndexes_Description" xml:space="preserve">
     <value>Kaldırılacak sütun indeksleri.</value>
-    <comment>property description</comment>
   </data>
   <data name="TransposeData_Description" xml:space="preserve">
-    <value>Bir DataTable'ı satır ve sütunlarını değiştirerek (satırlar sütun, sütunlar satır olur) transpoze eder.</value>
-    <comment>activity description</comment>
+    <value>Bir veri tablosunu transpoze eder (satırlar sütun olur ve tersi).</value>
   </data>
   <data name="TransposeData_DisplayName" xml:space="preserve">
-    <value>Veri Transpoze Et</value>
-    <comment>activity name</comment>
+    <value>Verileri Transpoze Et</value>
   </data>
   <data name="TransposeData_DataTable_Description" xml:space="preserve">
-    <value>Transpoze edilecek DataTable.</value>
-    <comment>property description</comment>
+    <value>Transpoze edilecek veri tablosu.</value>
   </data>
   <data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
-    <value>DataTable</value>
-    <comment>property name</comment>
+    <value>Veri Tablosu (DataTable)</value>
   </data>
   <data name="ParseData_DisplayName" xml:space="preserve">
-    <value>Veri Ayrıştır</value>
-    <comment>activity name</comment>
+    <value>Veriyi Ayrıştır (Parse)</value>
   </data>
   <data name="ParseData_Description" xml:space="preserve">
-    <value>JSON veya YAML girdisini basitleştirilmiş erişim ve manipülasyon için DataNode'a ayrıştırır.</value>
-    <comment>activity description</comment>
+    <value>Basitleştirilmiş yönetim için JSON veya YAML'yi bir DataNode'a ayrıştırır.</value>
   </data>
   <data name="ParseData_Content_DisplayName" xml:space="preserve">
     <value>İçerik</value>
-    <comment>property name</comment>
   </data>
   <data name="ParseData_Content_Description" xml:space="preserve">
-    <value>DataNode'a ayrıştırılacak JSON veya YAML metni.</value>
-    <comment>property description</comment>
+    <value>Ayrıştırılacak JSON veya YAML metni.</value>
   </data>
   <data name="ParseData_Culture_DisplayName" xml:space="preserve">
     <value>Kültür</value>
-    <comment>property name</comment>
   </data>
   <data name="ParseData_Culture_Description" xml:space="preserve">
-    <value>DataNode içindeki değer dönüşümlerinde (int, long, double, decimal vb.) uygulanacak kültür bilgisi.</value>
-    <comment>property description</comment>
+    <value>Sayısal dönüşümlerde uygulanan kültür.</value>
   </data>
   <data name="ParseData_Result_DisplayName" xml:space="preserve">
     <value>Sonuç</value>
-    <comment>property name</comment>
   </data>
   <data name="ParseData_Result_Description" xml:space="preserve">
-    <value>Ayrıştırılan içerikten oluşturulan DataNode.</value>
-    <comment>property description</comment>
+    <value>Oluşturulan DataNode.</value>
   </data>
   <data name="LoadDataFile_DisplayName" xml:space="preserve">
     <value>Veri Dosyasını Yükle</value>
-    <comment>activity name</comment>
   </data>
   <data name="LoadDataFile_Description" xml:space="preserve">
-    <value>Bir JSON veya YAML dosyasını DataNode'a ayrıştırır.</value>
-    <comment>activity description</comment>
+    <value>Bir JSON veya YAML dosyasını okur ve bir DataNode'a dönüştürür.</value>
   </data>
   <data name="LoadDataFile_Encoding_Description" xml:space="preserve">
-    <value>Dosyayı okurken kullanılacak metin kodlaması. Varsayılan UTF-8'dir.</value>
-    <comment>property description</comment>
+    <value>Metin kodlaması (Varsayılan: UTF-8).</value>
   </data>
   <data name="LoadDataFile_Culture_Description" xml:space="preserve">
-    <value>Düğüm değerlerini sayısal türlere dönüştürürken kullanılacak kültür.</value>
-    <comment>property description</comment>
+    <value>Sayısal biçimlerin dönüşümü için kullanılan kültür.</value>
   </data>
   <data name="LoadDataFile_Result_Description" xml:space="preserve">
-    <value>Dosyadan ayrıştırılan içerikten oluşturulan DataNode.</value>
-    <comment>property description</comment>
+    <value>Oluşturulan DataNode.</value>
   </data>
   <data name="LoadDataFile_Culture_DisplayName" xml:space="preserve">
     <value>Kültür</value>
-    <comment>property name</comment>
   </data>
   <data name="LoadDataFile_Encoding_DisplayName" xml:space="preserve">
     <value>Kodlama</value>
-    <comment>property name</comment>
   </data>
   <data name="LoadDataFile_Result_DisplayName" xml:space="preserve">
     <value>Sonuç</value>
-    <comment>property name</comment>
   </data>
   <data name="LoadDataFile_FilePath_Description" xml:space="preserve">
-    <value>Yüklenecek JSON veya YAML dosyasının yolu.</value>
-    <comment>property description</comment>
+    <value>JSON/YAML dosya yolu.</value>
   </data>
   <data name="LoadDataFile_FilePath_DisplayName" xml:space="preserve">
     <value>Dosya Yolu</value>
-    <comment>property name</comment>
   </data>
   <data name="ActivityCategories_Data" xml:space="preserve">
-    <value>Autossential.Veriler</value>
-    <comment>category</comment>
+    <value>Autossential.Veri</value>
   </data>
   <data name="ActivityCategories_Files" xml:space="preserve">
     <value>Autossential.Dosyalar</value>
-    <comment>category</comment>
   </data>
   <data name="ActivityCategories_Programming" xml:space="preserve">
     <value>Autossential.Programlama</value>
-    <comment>category</comment>
   </data>
   <data name="ActivityCategories_System" xml:space="preserve">
     <value>Autossential.Sistem</value>
-    <comment>category</comment>
   </data>
   <data name="ActivityCategories_Workflow" xml:space="preserve">
     <value>Autossential.İş Akışı</value>
-    <comment>category</comment>
   </data>
   <data name="UnmapDrive_Description" xml:space="preserve">
-    <value>Sistemden eşlenmiş bir ağ sürücüsünü kaldırır.</value>
-    <comment>activity description</comment>
+    <value>Eşlenen bir ağ sürücüsünü kaldırır.</value>
   </data>
   <data name="MergeData_DisplayName" xml:space="preserve">
     <value>Verileri Birleştir</value>
-    <comment>activity name</comment>
   </data>
   <data name="MergeData_Description" xml:space="preserve">
-    <value>Kaynak DataNode'u hedefe birleştirir. Kaynaktaki skaler ve dizi değerleri hedeftekileri ezer. Map değerleri özyinelemeli olarak birleştirilir.</value>
-    <comment>activity description</comment>
+    <value>Bir kaynak DataNode'u hedef olanla birleştirir.</value>
   </data>
   <data name="MergeData_Source_DisplayName" xml:space="preserve">
     <value>Kaynak</value>
-    <comment>property name</comment>
   </data>
   <data name="MergeData_Source_Description" xml:space="preserve">
-    <value>Hedef örneğe birleştirilecek DataNode.</value>
-    <comment>property description</comment>
+    <value>Birleştirme için kaynak DataNode.</value>
   </data>
   <data name="MergeData_Destination_DisplayName" xml:space="preserve">
     <value>Hedef</value>
-    <comment>property name</comment>
   </data>
   <data name="MergeData_Destination_Description" xml:space="preserve">
-    <value>Kaynak örnekle güncellenecek DataNode.</value>
-    <comment>property description</comment>
+    <value>Birleştirme için hedef DataNode.</value>
   </data>
   <data name="Zip_EntryStructure_DisplayName" xml:space="preserve">
     <value>Giriş Yapısı</value>
-    <comment>property name</comment>
   </data>
   <data name="Zip_EntryStructure_Description" xml:space="preserve">
-    <value>Dosyaların ZIP arşivi içinde nasıl saklanacağını tanımlar: göreli yolları koru, köke düzleştir, yinelenenleri yeniden adlandır veya tam dizin yapısını koru. Otomatik mod mümkün olduğunda düzleştirir ve yinelenen ad algılarsa göreli yollara döner.</value>
-    <comment>property description</comment>
+    <value>Dosyaların ZIP içinde nasıl saklanacağını tanımlar (göreceli yol, düz, vb.).</value>
   </data>
-	<data name="UpdateDictionary_Description" xml:space="preserve">
-    <value>Sözlüğe bir giriş ekler veya günceller.</value>
-    <comment>activity description</comment>
+  <data name="UpdateDictionary_Description" xml:space="preserve">
+    <value>Bir sözlüğe girişler ekler veya günceller.</value>
   </data>
-	<data name="UpdateDictionary_DisplayName" xml:space="preserve">
+  <data name="UpdateDictionary_DisplayName" xml:space="preserve">
     <value>Sözlüğü Güncelle</value>
-    <comment>activity name</comment>
   </data>
-	<data name="UpdateDictionary_Dictionary_Description" xml:space="preserve">
-    <value>Güncellenecek Sözlük örneği.</value>
-    <comment>property description</comment>
+  <data name="UpdateDictionary_Dictionary_Description" xml:space="preserve">
+    <value>Değiştirilecek sözlük örneği.</value>
   </data>
-	<data name="UpdateDictionary_Dictionary_DisplayName" xml:space="preserve">
+  <data name="UpdateDictionary_Dictionary_DisplayName" xml:space="preserve">
     <value>Sözlük</value>
-    <comment>property name</comment>
   </data>
-	<data name="UpdateDictionary_Entries_Description" xml:space="preserve">
-    <value>Sözlüğe eklenecek veya güncellenecek girişler.</value>
-    <comment>property description</comment>
+  <data name="UpdateDictionary_Entries_Description" xml:space="preserve">
+    <value>Eklenecek veya değiştirilecek girişler.</value>
   </data>
-	<data name="UpdateDictionary_Entries_DisplayName" xml:space="preserve">
+  <data name="UpdateDictionary_Entries_DisplayName" xml:space="preserve">
     <value>Girişler</value>
-    <comment>property name</comment>
+  </data>
+  <data name="IfActivity_Condition_DisplayName" xml:space="preserve">
+    <value>Koşul</value>
+  </data>
+  <data name="IfActivity_Condition_Description" xml:space="preserve">
+    <value>Boole döndüren etkinlik.</value>
+  </data>
+  <data name="IfActivity_Then_Description" xml:space="preserve">
+    <value>Koşul doğruysa yürütülecek etkinlik.</value>
+  </data>
+  <data name="IfActivity_Else_Description" xml:space="preserve">
+    <value>Koşul yanlışsa yürütülecek etkinlik.</value>
+  </data>
+  <data name="IfActivity_Then_DisplayName" xml:space="preserve">
+    <value>Doğruysa (Then)</value>
+  </data>
+  <data name="IfActivity_Else_DisplayName" xml:space="preserve">
+    <value>Değilse (Else)</value>
+  </data>
+  <data name="RandomString_ViewModel_Instructions" xml:space="preserve">
+    <value>@"Aşağıdaki yer tutucular kullanılabilir:
+- a : küçük harfler
+- A : büyük harfler
+- 0 : sayılar
+- ? : özel özelliklerdeki karakterler
+- * : yukarıdaki tüm karakterler
+
+Bir karakterden kaçmak için ters eğik çizgi '\' kullanın.
+
+Diğer tüm karakterler sabit metin olarak kabul edilir."</value>
+  </data>
+  <data name="RandomString_ViewModel_ShowInstructions" xml:space="preserve">
+    <value>Talimatları Göster</value>
+  </data>
+  <data name="RandomString_ViewModel_HideInstructions" xml:space="preserve">
+    <value>Talimatları Gizle</value>
+  </data>
+  <data name="RandomString_ViewModel_Generate" xml:space="preserve">
+    <value>Oluştur</value>
   </data>
 </root>

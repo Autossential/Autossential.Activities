@@ -223,7 +223,7 @@
           "displayNameKey": "DataTableToText_OutputFormat_DisplayName",
           "tooltipKey": "DataTableToText_OutputFormat_Description",
           "isVisible": true,
-          "isRequired": false,
+          "isRequired": true,
           "category": {
             "name": "Options",
             "displayNameKey": "Categories_Options"

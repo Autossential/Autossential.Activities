@@ -203,11 +203,11 @@
   </data>
   <data name="Common_ViewModel_BrowseForFile" xml:space="preserve">
     <value>Browse for file</value>
-    <comment>view model label</comment>
+    <comment>view model</comment>
   </data>
   <data name="Common_ViewModel_BrowseForFolder" xml:space="preserve">
     <value>Browse for folder</value>
-    <comment>view model label</comment>
+    <comment>view model</comment>
   </data>
   <data name="Categories_Common" xml:space="preserve">
     <value>Common</value>
@@ -886,12 +886,20 @@
     <comment>property name</comment>
   </data>
   <data name="RemoveEmptyRows_ColumnNames_Description" xml:space="preserve">
-    <value>The column names to be evaluated.</value>
+    <value>Column names to evaluate. Can be combined with Column Indexes. If not specified, all columns are considered.</value>
     <comment>property description</comment>
   </data>
   <data name="RemoveEmptyRows_ColumnNames_DisplayName" xml:space="preserve">
     <value>Column Names</value>
     <comment>property name</comment>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_DisplayName" xml:space="preserve">
+    <value>Column Indexes</value>
+    <comment>property name</comment>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_Description" xml:space="preserve">
+    <value>Column indexes to evaluate. Can be combined with Column Names. If not specified, all columns are considered.</value>
+    <comment>property description</comment>
   </data>
   <data name="RemoveEmptyRows_Description" xml:space="preserve">
     <value>Removes the empty rows from a Data Table.</value>
@@ -916,14 +924,6 @@
   <data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
     <value>Matching Mode</value>
     <comment>property name</comment>
-  </data>
-  <data name="RemoveEmptyRows_ColumnIndexes_DisplayName" xml:space="preserve">
-    <value>Column Indexes</value>
-    <comment>property name</comment>
-  </data>
-  <data name="RemoveEmptyRows_ColumnIndexes_Description" xml:space="preserve">
-    <value>The column indexes to be evaluated.</value>
-    <comment>property description</comment>
   </data>
   <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
     <value>Data Table</value>
@@ -958,7 +958,7 @@
     <comment>property description</comment>
   </data>
   <data name="TransposeData_Description" xml:space="preserve">
-    <value>Transposes a DataTable by swapping its rows and columns so that rows become columns and columns become rows.</value>
+    <value>Transposes a DataTable by turning rows into columns and columns into rows. New column names are automatically generated (Col1, Col2, …) to avoid duplicates.</value>
     <comment>activity description</comment>
   </data>
   <data name="TransposeData_DisplayName" xml:space="preserve">
@@ -1124,5 +1124,54 @@
   <data name="UpdateDictionary_Entries_DisplayName" xml:space="preserve">
     <value>Entries</value>
     <comment>property name</comment>
+  </data>
+  <data name="IfActivity_Condition_DisplayName" xml:space="preserve">
+    <value>Condition</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IfActivity_Condition_Description" xml:space="preserve">
+    <value>A boolean-returning activity to be evaluated.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IfActivity_Then_Description" xml:space="preserve">
+    <value>Executes a set of child activities in a single, defined order.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IfActivity_Else_Description" xml:space="preserve">
+    <value>Executes a set of child activities in a single, defined order.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IfActivity_Then_DisplayName" xml:space="preserve">
+    <value>Then</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IfActivity_Else_DisplayName" xml:space="preserve">
+    <value>Else</value>
+    <comment>property description</comment>
+  </data>
+  <data name="RandomString_ViewModel_Instructions" xml:space="preserve">
+    <value>@"You can use the following placeholders:
+- a: for lowercase letters
+- A: for uppercase letters
+- 0: for digits
+- ?: for characters from Custom property
+- *: for any of the placeholders above
+
+To escape a character, use the backslash '\'.
+
+Any other character will be treated as a literal"</value>
+    <comment>view model</comment>
+  </data>
+  <data name="RandomString_ViewModel_ShowInstructions" xml:space="preserve">
+    <value>Show instructions</value>
+    <comment>view model</comment>
+  </data>
+  <data name="RandomString_ViewModel_HideInstructions" xml:space="preserve">
+    <value>Hide instructions</value>
+    <comment>view model</comment>
+  </data>
+  <data name="RandomString_ViewModel_Generate" xml:space="preserve">
+    <value>Generate</value>
+    <comment>view model</comment>
   </data>
 </root>

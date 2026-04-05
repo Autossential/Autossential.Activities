@@ -19,6 +19,9 @@ namespace Autossential.Activities.ViewModels
             int orderIndex = 0;
             DataTable.IsPrincipal = true;
             DataTable.OrderIndex = orderIndex++;
+
+            OutputFormat.IsPrincipal = true;
+            OutputFormat.OrderIndex = orderIndex++;
         }
     }
 }

@@ -745,6 +745,24 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A boolean-returning activity to be evaluated..
+        /// </summary>
+        public static string IfActivity_Condition_Description {
+            get {
+                return ResourceManager.GetString("IfActivity_Condition_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Condition.
+        /// </summary>
+        public static string IfActivity_Condition_DisplayName {
+            get {
+                return ResourceManager.GetString("IfActivity_Condition_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Evaluates the result of a boolean-returning activity and executes the associated code block if the condition is met..
         /// </summary>
         public static string IfActivity_Description {
@@ -763,11 +781,47 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Executes a set of child activities in a single, defined order..
+        /// </summary>
+        public static string IfActivity_Else_Description {
+            get {
+                return ResourceManager.GetString("IfActivity_Else_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Else.
+        /// </summary>
+        public static string IfActivity_Else_DisplayName {
+            get {
+                return ResourceManager.GetString("IfActivity_Else_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Condition field requires activities that returns a boolean value..
         /// </summary>
         public static string IfActivity_ErrorMsg_ConditionReturnsBoolean {
             get {
                 return ResourceManager.GetString("IfActivity_ErrorMsg_ConditionReturnsBoolean", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Executes a set of child activities in a single, defined order..
+        /// </summary>
+        public static string IfActivity_Then_Description {
+            get {
+                return ResourceManager.GetString("IfActivity_Then_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Then.
+        /// </summary>
+        public static string IfActivity_Then_DisplayName {
+            get {
+                return ResourceManager.GetString("IfActivity_Then_DisplayName", resourceCulture);
             }
         }
         
@@ -1375,6 +1429,51 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generate.
+        /// </summary>
+        public static string RandomString_ViewModel_Generate {
+            get {
+                return ResourceManager.GetString("RandomString_ViewModel_Generate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide instructions.
+        /// </summary>
+        public static string RandomString_ViewModel_HideInstructions {
+            get {
+                return ResourceManager.GetString("RandomString_ViewModel_HideInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @&quot;You can use the following placeholders:
+        ///- a: for lowercase letters
+        ///- A: for uppercase letters
+        ///- 0: for digits
+        ///- ?: for characters from Custom property
+        ///- *: for any of the placeholders above
+        ///
+        ///To escape a character, use the backslash &apos;\&apos;.
+        ///
+        ///Any other character will be treated as a literal&quot;.
+        /// </summary>
+        public static string RandomString_ViewModel_Instructions {
+            get {
+                return ResourceManager.GetString("RandomString_ViewModel_Instructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show instructions.
+        /// </summary>
+        public static string RandomString_ViewModel_ShowInstructions {
+            get {
+                return ResourceManager.GetString("RandomString_ViewModel_ShowInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The column indexes to be removed..
         /// </summary>
         public static string RemoveDataColumns_ColumnIndexes_Description {
@@ -1447,7 +1546,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The column indexes to be evaluated..
+        ///   Looks up a localized string similar to Column indexes to evaluate. Can be combined with Column Names. If not specified, all columns are considered..
         /// </summary>
         public static string RemoveEmptyRows_ColumnIndexes_Description {
             get {
@@ -1465,7 +1564,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The column names to be evaluated..
+        ///   Looks up a localized string similar to Column names to evaluate. Can be combined with Column Indexes. If not specified, all columns are considered..
         /// </summary>
         public static string RemoveEmptyRows_ColumnNames_Description {
             get {
@@ -1789,7 +1888,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transposes a DataTable by swapping its rows and columns so that rows become columns and columns become rows..
+        ///   Looks up a localized string similar to Transposes a DataTable by turning rows into columns and columns into rows. New column names are automatically generated (Col1, Col2, …) to avoid duplicates..
         /// </summary>
         public static string TransposeData_Description {
             get {

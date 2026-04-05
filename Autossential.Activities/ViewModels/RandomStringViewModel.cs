@@ -1,4 +1,5 @@
 ﻿using Autossential.Activities.Base;
+using Autossential.Activities.Properties;
 using System.Activities.DesignViewModels;
 using System.Activities.ViewModels;
 
@@ -31,24 +32,13 @@ namespace Autossential.Activities.ViewModels
 
             Instruction.IsPrincipal = true;
             Instruction.IsVisible = false;
-            Instruction.DisplayName = "Instructions";
             Instruction.Widget = new TextBlockWidget
             {
                 Level = TextBlockWidgetLevel.Info,
                 Multiline = true
             };
             Instruction.OrderIndex = orderIndex++;
-            Instruction.Value =
-@"You can use the following placeholders:
-- a: for lowercase letters
-- A: for uppercase letters
-- 0: for digits
-- ?: for characters from Custom property
-- *: for any of the placeholders above
-
-To escape a character, use the backslash '\'.
-
-Any other character will be treated as a literal";
+            Instruction.Value = Resources.RandomString_ViewModel_Instructions;
 
             Custom.IsPrincipal = true;
             Custom.OrderIndex = orderIndex++;
@@ -57,19 +47,19 @@ Any other character will be treated as a literal";
             {
                 Format.AddMenuAction(new MenuAction
                 {
-                    DisplayName = "Show instructions",
+                    DisplayName = Resources.RandomString_ViewModel_ShowInstructions,
                     IsVisible = true,
                     IsMain = true,
                     Handler = menu => Task.Run(() =>
                     {
                         Instruction.IsVisible = !Instruction.IsVisible;
-                        menu.DisplayName = Instruction.IsVisible ? "Hide instructions" : "Show instructions";
+                        menu.DisplayName = Instruction.IsVisible ? Resources.RandomString_ViewModel_HideInstructions : Resources.RandomString_ViewModel_ShowInstructions;
                     })
                 });
 
                 Custom.AddMenuAction(new MenuAction
                 {
-                    DisplayName = "Generate",
+                    DisplayName = Resources.RandomString_ViewModel_Generate,
                     IsVisible = true,
                     IsMain = true,
                     Handler = _ => Task.Run(() =>

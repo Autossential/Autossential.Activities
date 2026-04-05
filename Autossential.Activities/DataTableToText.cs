@@ -19,6 +19,7 @@ namespace Autossential.Activities
 
         [RequiredArgument]
         public InArgument<DataTable> DataTable { get; set; }
+        [RequiredArgument]
         public OutputTextFormat OutputFormat { get; set; } = OutputTextFormat.HTML;
         public InArgument<string> DateTimeFormat { get; set; } = DATE_FORMAT;
 

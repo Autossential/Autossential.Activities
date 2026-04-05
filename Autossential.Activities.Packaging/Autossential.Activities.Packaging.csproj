@@ -40,7 +40,7 @@
 			<BuildOutputInPackage Include="$(OutputPath)fr\Autossential.Activities.resources.dll" TargetPath="fr\Autossential.Activities.resources.dll" />
 			<BuildOutputInPackage Include="$(OutputPath)ja\Autossential.Activities.resources.dll" TargetPath="ja\Autossential.Activities.resources.dll" />
 			<BuildOutputInPackage Include="$(OutputPath)ko\Autossential.Activities.resources.dll" TargetPath="ko\Autossential.Activities.resources.dll" />
-			<!--<BuildOutputInPackage Include="$(OutputPath)pt-BR\Autossential.Activities.resources.dll" TargetPath="pt-BR\Autossential.Activities.resources.dll" />-->
+			<BuildOutputInPackage Include="$(OutputPath)pt-BR\Autossential.Activities.resources.dll" TargetPath="pt-BR\Autossential.Activities.resources.dll" />
 			<BuildOutputInPackage Include="$(OutputPath)pt\Autossential.Activities.resources.dll" TargetPath="pt\Autossential.Activities.resources.dll" />
 			<BuildOutputInPackage Include="$(OutputPath)ru\Autossential.Activities.resources.dll" TargetPath="ru\Autossential.Activities.resources.dll" />
 			<BuildOutputInPackage Include="$(OutputPath)tr\Autossential.Activities.resources.dll" TargetPath="tr\Autossential.Activities.resources.dll" />

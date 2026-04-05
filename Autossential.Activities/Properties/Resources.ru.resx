@@ -357,42 +357,6 @@
   <data name="RandomString_Result_DisplayName" xml:space="preserve">
     <value>Результат</value>
   </data>
-  <data name="Increment_Description" xml:space="preserve">
-    <value>Увеличивает числовую переменную на указанное значение.</value>
-  </data>
-  <data name="Increment_DisplayName" xml:space="preserve">
-    <value>Инкремент</value>
-  </data>
-  <data name="Increment_Value_Description" xml:space="preserve">
-    <value>Значение для добавления. Должно быть больше 1.</value>
-  </data>
-  <data name="Increment_Value_DisplayName" xml:space="preserve">
-    <value>Значение</value>
-  </data>
-  <data name="Increment_Variable_Description" xml:space="preserve">
-    <value>Переменная для увеличения.</value>
-  </data>
-  <data name="Increment_Variable_DisplayName" xml:space="preserve">
-    <value>Переменная</value>
-  </data>
-  <data name="Decrement_Description" xml:space="preserve">
-    <value>Уменьшает числовую переменную на указанное значение.</value>
-  </data>
-  <data name="Decrement_DisplayName" xml:space="preserve">
-    <value>Декремент</value>
-  </data>
-  <data name="Decrement_Value_Description" xml:space="preserve">
-    <value>Значение для вычитания. Должно быть больше 1.</value>
-  </data>
-  <data name="Decrement_Value_DisplayName" xml:space="preserve">
-    <value>Значение</value>
-  </data>
-  <data name="Decrement_Variable_Description" xml:space="preserve">
-    <value>Переменная для уменьшения.</value>
-  </data>
-  <data name="Decrement_Variable_DisplayName" xml:space="preserve">
-    <value>Переменная</value>
-  </data>
   <data name="RandomString_Result_Description" xml:space="preserve">
     <value>Сгенерированная случайная строка.</value>
   </data>
@@ -443,12 +407,6 @@
   </data>
   <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
     <value>Успешно</value>
-  </data>
-  <data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>Минимально допустимое значение - 1.</value>
-  </data>
-  <data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>Минимально допустимое значение - 1.</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
     <value>Нет доступных дисков.</value>
@@ -912,4 +870,52 @@
   <data name="RandomString_ViewModel_Generate" xml:space="preserve">
     <value>Сгенерировать</value>
   </data>
+	<data name="IncrementDecrement_Description" xml:space="preserve">
+  <value>Регулирует целочисленную переменную, увеличивая или уменьшая ее на заданное значение.</value>
+  <comment>activity description</comment>
+</data>
+	<data name="IncrementDecrement_DisplayName" xml:space="preserve">
+  <value>Инкремент/Декремент</value>
+  <comment>activity name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
+  <value>Операция</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
+  <value>Переменная</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
+  <value>Значение</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_Description" xml:space="preserve">
+  <value>Переменная, которую необходимо настроить.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Value_Description" xml:space="preserve">
+  <value>Значение для сложения или вычитания из переменной. Должно быть больше или равно 1.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Description" xml:space="preserve">
+  <value>Операция, которую необходимо выполнить.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
+  <value>Инкремент</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
+  <value>Декремент</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+  <value>Значение должно быть больше или равно 1</value>
+  <comment>error message</comment>
+</data>
+	<data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
+  <value>{0} {1} на {2}</value>
+  <comment>view model</comment>
+</data>
 </root>

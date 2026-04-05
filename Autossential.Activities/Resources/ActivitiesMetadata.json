@@ -276,39 +276,6 @@
       ]
     },
     {
-      "fullName": "Autossential.Activities.Decrement",
-      "shortName": "Decrement",
-      "displayNameKey": "Decrement_DisplayName",
-      "descriptionKey": "Decrement_Description",
-      "iconKey": "Decrement.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.DecrementViewModel",
-      "categoryKey": "ActivityCategories_Programming",
-      "properties": [
-        {
-          "name": "Value",
-          "displayNameKey": "Decrement_Value_DisplayName",
-          "tooltipKey": "Decrement_Value_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Variable",
-          "displayNameKey": "Decrement_Variable_DisplayName",
-          "tooltipKey": "Decrement_Variable_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "InputOutput",
-            "displayNameKey": "Categories_InputOutput"
-          }
-        }
-      ]
-    },
-    {
       "fullName": "Autossential.Activities.Exit",
       "shortName": "Exit",
       "displayNameKey": "Exit_DisplayName",
@@ -375,18 +342,29 @@
       ]
     },
     {
-      "fullName": "Autossential.Activities.Increment",
-      "shortName": "Increment",
-      "displayNameKey": "Increment_DisplayName",
-      "descriptionKey": "Increment_Description",
-      "iconKey": "Increment.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.IncrementViewModel",
+      "fullName": "Autossential.Activities.IncrementDecrement",
+      "shortName": "IncrementDecrement",
+      "displayNameKey": "IncrementDecrement_DisplayName",
+      "descriptionKey": "IncrementDecrement_Description",
+      "iconKey": "IncrementDecrement.svg",
+      "viewModelType": "Autossential.Activities.ViewModels.IncrementDecrementViewModel",
       "categoryKey": "ActivityCategories_Programming",
       "properties": [
         {
+          "name": "Variable",
+          "displayNameKey": "IncrementDecrement_Variable_DisplayName",
+          "tooltipKey": "IncrementDecrement_Variable_Description",
+          "isVisible": true,
+          "isRequired": true,
+          "category": {
+            "name": "InputOutput",
+            "displayNameKey": "Categories_InputOutput"
+          }
+        },
+        {
           "name": "Value",
-          "displayNameKey": "Increment_Value_DisplayName",
-          "tooltipKey": "Increment_Value_Description",
+          "displayNameKey": "IncrementDecrement_Value_DisplayName",
+          "tooltipKey": "IncrementDecrement_Value_Description",
           "isVisible": true,
           "isRequired": true,
           "category": {
@@ -395,14 +373,14 @@
           }
         },
         {
-          "name": "Variable",
-          "displayNameKey": "Increment_Variable_DisplayName",
-          "tooltipKey": "Increment_Variable_Description",
+          "name": "Operation",
+          "displayNameKey": "IncrementDecrement_Operation_DisplayName",
+          "tooltipKey": "IncrementDecrement_Operation_Description",
           "isVisible": true,
           "isRequired": true,
           "category": {
-            "name": "InputOutput",
-            "displayNameKey": "Categories_InputOutput"
+            "name": "Options",
+            "displayNameKey": "Categories_Options"
           }
         }
       ]

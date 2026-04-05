@@ -357,42 +357,6 @@
   <data name="RandomString_Result_DisplayName" xml:space="preserve">
     <value>Résultat</value>
   </data>
-  <data name="Increment_Description" xml:space="preserve">
-    <value>Incrémente une variable numérique d'une valeur spécifiée.</value>
-  </data>
-  <data name="Increment_DisplayName" xml:space="preserve">
-    <value>Incrémenter</value>
-  </data>
-  <data name="Increment_Value_Description" xml:space="preserve">
-    <value>Quantité à ajouter. Doit être supérieure ou égale à 1.</value>
-  </data>
-  <data name="Increment_Value_DisplayName" xml:space="preserve">
-    <value>Valeur</value>
-  </data>
-  <data name="Increment_Variable_Description" xml:space="preserve">
-    <value>Variable à incrémenter.</value>
-  </data>
-  <data name="Increment_Variable_DisplayName" xml:space="preserve">
-    <value>Variable</value>
-  </data>
-  <data name="Decrement_Description" xml:space="preserve">
-    <value>Décrémente une variable numérique d'une valeur spécifiée.</value>
-  </data>
-  <data name="Decrement_DisplayName" xml:space="preserve">
-    <value>Décrémenter</value>
-  </data>
-  <data name="Decrement_Value_Description" xml:space="preserve">
-    <value>Quantité à soustraire. Doit être supérieure ou égale à 1.</value>
-  </data>
-  <data name="Decrement_Value_DisplayName" xml:space="preserve">
-    <value>Valeur</value>
-  </data>
-  <data name="Decrement_Variable_Description" xml:space="preserve">
-    <value>Variable à décrémenter.</value>
-  </data>
-  <data name="Decrement_Variable_DisplayName" xml:space="preserve">
-    <value>Variable</value>
-  </data>
   <data name="RandomString_Result_Description" xml:space="preserve">
     <value>La chaîne aléatoire générée.</value>
   </data>
@@ -443,12 +407,6 @@
   </data>
   <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
     <value>Succès</value>
-  </data>
-  <data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>La valeur minimale autorisée est 1.</value>
-  </data>
-  <data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>La valeur minimale autorisée est 1.</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
     <value>Aucun lecteur disponible</value>
@@ -912,4 +870,52 @@ Tout autre caractère sera traité comme un littéral."</value>
   <data name="RandomString_ViewModel_Generate" xml:space="preserve">
     <value>Générer</value>
   </data>
+	<data name="IncrementDecrement_Description" xml:space="preserve">
+  <value>Ajuste une variable entière en l'incrémentant ou en la décrémentant avec une valeur spécifiée.</value>
+  <comment>activity description</comment>
+</data>
+	<data name="IncrementDecrement_DisplayName" xml:space="preserve">
+  <value>Incrémenter/Décrémenter</value>
+  <comment>activity name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
+  <value>Opération</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
+  <value>Variable</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
+  <value>Valeur</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_Description" xml:space="preserve">
+  <value>La variable à ajuster.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Value_Description" xml:space="preserve">
+  <value>Valeur à ajouter ou à soustraire à la variable. Doit être égale ou supérieure à 1.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Description" xml:space="preserve">
+  <value>Opération à effectuer.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
+  <value>Incrémenter</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
+  <value>Décrémenter</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+  <value>La valeur doit être supérieure ou égale à 1</value>
+  <comment>error message</comment>
+</data>
+	<data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
+  <value>{0} {1} de {2}</value>
+  <comment>view model</comment>
+</data>
 </root>

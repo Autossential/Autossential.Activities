@@ -144,8 +144,7 @@ public class Activity
                 "Unzip" => "ActivityCategories_Files",
 
                 "RandomString" or
-                "Increment" or
-                "Decrement" or
+                "IncrementDecrement" or
                 "ReplaceTokens" or
                 "ParseData" or
                 "LoadDataFile" or

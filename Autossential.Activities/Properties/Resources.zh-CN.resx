@@ -357,42 +357,6 @@
   <data name="RandomString_Result_DisplayName" xml:space="preserve">
     <value>结果</value>
   </data>
-  <data name="Increment_Description" xml:space="preserve">
-    <value>将数值变量增加指定的值。</value>
-  </data>
-  <data name="Increment_DisplayName" xml:space="preserve">
-    <value>递增</value>
-  </data>
-  <data name="Increment_Value_Description" xml:space="preserve">
-    <value>要增加的值。必须大于或等于 1。</value>
-  </data>
-  <data name="Increment_Value_DisplayName" xml:space="preserve">
-    <value>值</value>
-  </data>
-  <data name="Increment_Variable_Description" xml:space="preserve">
-    <value>要递增的变量。</value>
-  </data>
-  <data name="Increment_Variable_DisplayName" xml:space="preserve">
-    <value>变量</value>
-  </data>
-  <data name="Decrement_Description" xml:space="preserve">
-    <value>将数值变量减少指定的值。</value>
-  </data>
-  <data name="Decrement_DisplayName" xml:space="preserve">
-    <value>递减</value>
-  </data>
-  <data name="Decrement_Value_Description" xml:space="preserve">
-    <value>要减少的值。必须大于或等于 1。</value>
-  </data>
-  <data name="Decrement_Value_DisplayName" xml:space="preserve">
-    <value>值</value>
-  </data>
-  <data name="Decrement_Variable_Description" xml:space="preserve">
-    <value>要递减的变量。</value>
-  </data>
-  <data name="Decrement_Variable_DisplayName" xml:space="preserve">
-    <value>变量</value>
-  </data>
   <data name="RandomString_Result_Description" xml:space="preserve">
     <value>生成的随机字符串。</value>
   </data>
@@ -443,12 +407,6 @@
   </data>
   <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
     <value>成功</value>
-  </data>
-  <data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>允许的最小值为 1。</value>
-  </data>
-  <data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>允许的最小值为 1。</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
     <value>无可用驱动器。</value>
@@ -912,4 +870,52 @@
   <data name="RandomString_ViewModel_Generate" xml:space="preserve">
     <value>生成</value>
   </data>
+	<data name="IncrementDecrement_Description" xml:space="preserve">
+  <value>通过使用指定值递增或递减来调整整数变量。</value>
+  <comment>activity description</comment>
+</data>
+	<data name="IncrementDecrement_DisplayName" xml:space="preserve">
+  <value>递增/递减</value>
+  <comment>activity name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
+  <value>操作</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
+  <value>变量</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
+  <value>值</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_Description" xml:space="preserve">
+  <value>要调整的变量。</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Value_Description" xml:space="preserve">
+  <value>要向变量添加或减去的值。必须大于或等于 1。</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Description" xml:space="preserve">
+  <value>要执行的操作。</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
+  <value>递增</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
+  <value>递减</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+  <value>该值必须大于或等于 1</value>
+  <comment>error message</comment>
+</data>
+	<data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
+  <value>将 {1} {0} {2}</value>
+  <comment>view model</comment>
+</data>
 </root>

@@ -357,42 +357,6 @@
   <data name="RandomString_Result_DisplayName" xml:space="preserve">
     <value>結果</value>
   </data>
-  <data name="Increment_Description" xml:space="preserve">
-    <value>数値変数を指定した値だけインクリメントします。</value>
-  </data>
-  <data name="Increment_DisplayName" xml:space="preserve">
-    <value>インクリメント</value>
-  </data>
-  <data name="Increment_Value_Description" xml:space="preserve">
-    <value>加算する量。1以上である必要があります。</value>
-  </data>
-  <data name="Increment_Value_DisplayName" xml:space="preserve">
-    <value>値</value>
-  </data>
-  <data name="Increment_Variable_Description" xml:space="preserve">
-    <value>インクリメントする変数。</value>
-  </data>
-  <data name="Increment_Variable_DisplayName" xml:space="preserve">
-    <value>変数</value>
-  </data>
-  <data name="Decrement_Description" xml:space="preserve">
-    <value>数値変数を指定した値だけデクリメントします。</value>
-  </data>
-  <data name="Decrement_DisplayName" xml:space="preserve">
-    <value>デクリメント</value>
-  </data>
-  <data name="Decrement_Value_Description" xml:space="preserve">
-    <value>減算する量。1以上である必要があります。</value>
-  </data>
-  <data name="Decrement_Value_DisplayName" xml:space="preserve">
-    <value>値</value>
-  </data>
-  <data name="Decrement_Variable_Description" xml:space="preserve">
-    <value>デクリメントする変数。</value>
-  </data>
-  <data name="Decrement_Variable_DisplayName" xml:space="preserve">
-    <value>変数</value>
-  </data>
   <data name="RandomString_Result_Description" xml:space="preserve">
     <value>生成されたランダムな文字列。</value>
   </data>
@@ -443,12 +407,6 @@
   </data>
   <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
     <value>成功</value>
-  </data>
-  <data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>許容される最小値は1です。</value>
-  </data>
-  <data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>許容される最小値は1です。</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
     <value>利用可能なドライブがありません</value>
@@ -912,4 +870,52 @@
   <data name="RandomString_ViewModel_Generate" xml:space="preserve">
     <value>生成</value>
   </data>
+	<data name="IncrementDecrement_Description" xml:space="preserve">
+  <value>指定された値を使用して、整数変数を加算または減算して調整します。</value>
+  <comment>activity description</comment>
+</data>
+	<data name="IncrementDecrement_DisplayName" xml:space="preserve">
+  <value>インクリメント/デクリメント</value>
+  <comment>activity name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
+  <value>演算</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
+  <value>変数</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
+  <value>値</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_Description" xml:space="preserve">
+  <value>調整する変数。</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Value_Description" xml:space="preserve">
+  <value>変数に加算または減算する値。1以上である必要があります。</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Description" xml:space="preserve">
+  <value>実行する演算。</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
+  <value>インクリメント</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
+  <value>デクリメント</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+  <value>値は1以上である必要があります</value>
+  <comment>error message</comment>
+</data>
+	<data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
+  <value>{1} を {2} {0}</value>
+  <comment>view model</comment>
+</data>
 </root>

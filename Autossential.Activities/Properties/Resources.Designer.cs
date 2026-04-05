@@ -637,69 +637,6 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Decrements a numeric variable by a specified value..
-        /// </summary>
-        public static string Decrement_Description {
-            get {
-                return ResourceManager.GetString("Decrement_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Decrement.
-        /// </summary>
-        public static string Decrement_DisplayName {
-            get {
-                return ResourceManager.GetString("Decrement_DisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Minimum allowed value is 1..
-        /// </summary>
-        public static string Decrement_ErrorMsg_MinValueAllowed {
-            get {
-                return ResourceManager.GetString("Decrement_ErrorMsg_MinValueAllowed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Amount to subtract from the variable. Must be greater than or equal to 1..
-        /// </summary>
-        public static string Decrement_Value_Description {
-            get {
-                return ResourceManager.GetString("Decrement_Value_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Value.
-        /// </summary>
-        public static string Decrement_Value_DisplayName {
-            get {
-                return ResourceManager.GetString("Decrement_Value_DisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Variable to be decremented..
-        /// </summary>
-        public static string Decrement_Variable_Description {
-            get {
-                return ResourceManager.GetString("Decrement_Variable_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Variable.
-        /// </summary>
-        public static string Decrement_Variable_DisplayName {
-            get {
-                return ResourceManager.GetString("Decrement_Variable_DisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Condition which determines if the activity will be evaluated. If empty it assumes True..
         /// </summary>
         public static string Exit_Condition_Description {
@@ -826,65 +763,110 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Increments a numeric variable by a specified value..
+        ///   Looks up a localized string similar to Adjusts an integer variable by incrementing or decrementing it with a specified value..
         /// </summary>
-        public static string Increment_Description {
+        public static string IncrementDecrement_Description {
             get {
-                return ResourceManager.GetString("Increment_Description", resourceCulture);
+                return ResourceManager.GetString("IncrementDecrement_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Increment/Decrement.
+        /// </summary>
+        public static string IncrementDecrement_DisplayName {
+            get {
+                return ResourceManager.GetString("IncrementDecrement_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The vaue must be greater or equal to 1.
+        /// </summary>
+        public static string IncrementDecrement_ErrorMsg_MinValueAllowed {
+            get {
+                return ResourceManager.GetString("IncrementDecrement_ErrorMsg_MinValueAllowed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decrement.
+        /// </summary>
+        public static string IncrementDecrement_Operation_Decrement {
+            get {
+                return ResourceManager.GetString("IncrementDecrement_Operation_Decrement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operation to be performed..
+        /// </summary>
+        public static string IncrementDecrement_Operation_Description {
+            get {
+                return ResourceManager.GetString("IncrementDecrement_Operation_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operation.
+        /// </summary>
+        public static string IncrementDecrement_Operation_DisplayName {
+            get {
+                return ResourceManager.GetString("IncrementDecrement_Operation_DisplayName", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Increment.
         /// </summary>
-        public static string Increment_DisplayName {
+        public static string IncrementDecrement_Operation_Increment {
             get {
-                return ResourceManager.GetString("Increment_DisplayName", resourceCulture);
+                return ResourceManager.GetString("IncrementDecrement_Operation_Increment", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Minimum allowed value is 1..
+        ///   Looks up a localized string similar to Value to add or subtract to variable. Must be equal or greater than 1..
         /// </summary>
-        public static string Increment_ErrorMsg_MinValueAllowed {
+        public static string IncrementDecrement_Value_Description {
             get {
-                return ResourceManager.GetString("Increment_ErrorMsg_MinValueAllowed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Amount to add to the variable. Must be greater than or equal to 1..
-        /// </summary>
-        public static string Increment_Value_Description {
-            get {
-                return ResourceManager.GetString("Increment_Value_Description", resourceCulture);
+                return ResourceManager.GetString("IncrementDecrement_Value_Description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Value.
         /// </summary>
-        public static string Increment_Value_DisplayName {
+        public static string IncrementDecrement_Value_DisplayName {
             get {
-                return ResourceManager.GetString("Increment_Value_DisplayName", resourceCulture);
+                return ResourceManager.GetString("IncrementDecrement_Value_DisplayName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Variable to be incremented..
+        ///   Looks up a localized string similar to The variable to be adjusted..
         /// </summary>
-        public static string Increment_Variable_Description {
+        public static string IncrementDecrement_Variable_Description {
             get {
-                return ResourceManager.GetString("Increment_Variable_Description", resourceCulture);
+                return ResourceManager.GetString("IncrementDecrement_Variable_Description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Variable.
         /// </summary>
-        public static string Increment_Variable_DisplayName {
+        public static string IncrementDecrement_Variable_DisplayName {
             get {
-                return ResourceManager.GetString("Increment_Variable_DisplayName", resourceCulture);
+                return ResourceManager.GetString("IncrementDecrement_Variable_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} {1} by {2}.
+        /// </summary>
+        public static string IncrementDecrement_ViewModel_DynamicDisplayName {
+            get {
+                return ResourceManager.GetString("IncrementDecrement_ViewModel_DynamicDisplayName", resourceCulture);
             }
         }
         

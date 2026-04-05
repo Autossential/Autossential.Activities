@@ -357,42 +357,6 @@
   <data name="RandomString_Result_DisplayName" xml:space="preserve">
     <value>결과</value>
   </data>
-  <data name="Increment_Description" xml:space="preserve">
-    <value>숫자 변수를 지정된 값만큼 증가시킵니다.</value>
-  </data>
-  <data name="Increment_DisplayName" xml:space="preserve">
-    <value>증가(Increment)</value>
-  </data>
-  <data name="Increment_Value_Description" xml:space="preserve">
-    <value>더할 양입니다. 1보다 커야 합니다.</value>
-  </data>
-  <data name="Increment_Value_DisplayName" xml:space="preserve">
-    <value>값</value>
-  </data>
-  <data name="Increment_Variable_Description" xml:space="preserve">
-    <value>증가시킬 변수입니다.</value>
-  </data>
-  <data name="Increment_Variable_DisplayName" xml:space="preserve">
-    <value>변수</value>
-  </data>
-  <data name="Decrement_Description" xml:space="preserve">
-    <value>숫자 변수를 지정된 값만큼 감소시킵니다.</value>
-  </data>
-  <data name="Decrement_DisplayName" xml:space="preserve">
-    <value>감소(Decrement)</value>
-  </data>
-  <data name="Decrement_Value_Description" xml:space="preserve">
-    <value>뺄 양입니다. 1보다 커야 합니다.</value>
-  </data>
-  <data name="Decrement_Value_DisplayName" xml:space="preserve">
-    <value>값</value>
-  </data>
-  <data name="Decrement_Variable_Description" xml:space="preserve">
-    <value>감소시킬 변수입니다.</value>
-  </data>
-  <data name="Decrement_Variable_DisplayName" xml:space="preserve">
-    <value>변수</value>
-  </data>
   <data name="RandomString_Result_Description" xml:space="preserve">
     <value>생성된 임의의 문자열입니다.</value>
   </data>
@@ -443,12 +407,6 @@
   </data>
   <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
     <value>성공</value>
-  </data>
-  <data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>허용되는 최소값은 1입니다.</value>
-  </data>
-  <data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>허용되는 최소값은 1입니다.</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
     <value>사용 가능한 드라이브가 없습니다.</value>
@@ -912,4 +870,52 @@
   <data name="RandomString_ViewModel_Generate" xml:space="preserve">
     <value>생성</value>
   </data>
+	<data name="IncrementDecrement_Description" xml:space="preserve">
+  <value>지정된 값으로 정수 변수를 증가시키거나 감소시켜 조정합니다.</value>
+  <comment>activity description</comment>
+</data>
+	<data name="IncrementDecrement_DisplayName" xml:space="preserve">
+  <value>증가/감소</value>
+  <comment>activity name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
+  <value>연산</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
+  <value>변수</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
+  <value>값</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_Description" xml:space="preserve">
+  <value>조정할 변수입니다.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Value_Description" xml:space="preserve">
+  <value>변수에 더하거나 뺄 값입니다. 1보다 크거나 같아야 합니다.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Description" xml:space="preserve">
+  <value>수행할 연산입니다.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
+  <value>증가</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
+  <value>감소</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+  <value>값은 1보다 크거나 같아야 합니다</value>
+  <comment>error message</comment>
+</data>
+	<data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
+  <value>{1}을(를) {2}만큼 {0}</value>
+  <comment>view model</comment>
+</data>
 </root>

@@ -3,7 +3,7 @@
 
 #:package UiPath.Workflow@6.0.0-20240401-07
 #:package UiPath.Activities.Api@24.10.1
-#:package System.Activities.ViewModels@1.20251127.3
+#:package System.Activities.ViewModels@1.20260216.2
 #:project D:\Development\Autossential-4\Autossential.Activities\Autossential.Activities.csproj
 
 using System.Collections;

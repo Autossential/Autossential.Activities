@@ -357,42 +357,6 @@
   <data name="RandomString_Result_DisplayName" xml:space="preserve">
     <value>Sonuç</value>
   </data>
-  <data name="Increment_Description" xml:space="preserve">
-    <value>Sayısal bir değişkeni belirtilen bir değer kadar artırır.</value>
-  </data>
-  <data name="Increment_DisplayName" xml:space="preserve">
-    <value>Artır</value>
-  </data>
-  <data name="Increment_Value_Description" xml:space="preserve">
-    <value>Eklenecek değer. 1'den büyük olmalıdır.</value>
-  </data>
-  <data name="Increment_Value_DisplayName" xml:space="preserve">
-    <value>Değer</value>
-  </data>
-  <data name="Increment_Variable_Description" xml:space="preserve">
-    <value>Artırılacak değişken.</value>
-  </data>
-  <data name="Increment_Variable_DisplayName" xml:space="preserve">
-    <value>Değişken</value>
-  </data>
-  <data name="Decrement_Description" xml:space="preserve">
-    <value>Sayısal bir değişkeni belirtilen bir değer kadar azaltır.</value>
-  </data>
-  <data name="Decrement_DisplayName" xml:space="preserve">
-    <value>Azalt</value>
-  </data>
-  <data name="Decrement_Value_Description" xml:space="preserve">
-    <value>Çıkarılacak değer. 1'den büyük olmalıdır.</value>
-  </data>
-  <data name="Decrement_Value_DisplayName" xml:space="preserve">
-    <value>Değer</value>
-  </data>
-  <data name="Decrement_Variable_Description" xml:space="preserve">
-    <value>Azaltılacak değişken.</value>
-  </data>
-  <data name="Decrement_Variable_DisplayName" xml:space="preserve">
-    <value>Değişken</value>
-  </data>
   <data name="RandomString_Result_Description" xml:space="preserve">
     <value>Oluşturulan rastgele dize.</value>
   </data>
@@ -443,12 +407,6 @@
   </data>
   <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
     <value>Başarılı</value>
-  </data>
-  <data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>İzin verilen minimum değer 1'dir.</value>
-  </data>
-  <data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>İzin verilen minimum değer 1'dir.</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
     <value>Kullanılabilir sürücü yok.</value>
@@ -912,4 +870,52 @@ Diğer tüm karakterler sabit metin olarak kabul edilir."</value>
   <data name="RandomString_ViewModel_Generate" xml:space="preserve">
     <value>Oluştur</value>
   </data>
+	<data name="IncrementDecrement_Description" xml:space="preserve">
+  <value>Bir tam sayı değişkenini belirtilen bir değerle artırarak veya azaltarak ayarlar.</value>
+  <comment>activity description</comment>
+</data>
+	<data name="IncrementDecrement_DisplayName" xml:space="preserve">
+  <value>Artır/Azalt</value>
+  <comment>activity name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
+  <value>İşlem</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
+  <value>Değişken</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
+  <value>Değer</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_Description" xml:space="preserve">
+  <value>Ayarlanacak değişken.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Value_Description" xml:space="preserve">
+  <value>Değişkene eklenecek veya çıkarılacak değer. 1'e eşit veya daha büyük olmalıdır.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Description" xml:space="preserve">
+  <value>Gerçekleştirilecek işlem.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
+  <value>Artır</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
+  <value>Azalt</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+  <value>Değer 1'den büyük veya eşit olmalıdır</value>
+  <comment>error message</comment>
+</data>
+	<data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
+  <value>{1} değerini {2} kadar {0}</value>
+  <comment>view model</comment>
+</data>
 </root>

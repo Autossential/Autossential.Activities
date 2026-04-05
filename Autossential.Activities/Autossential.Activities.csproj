@@ -41,6 +41,7 @@
 		<None Remove="Resources\Icons\FillDataColumn.svg" />
 		<None Remove="Resources\Icons\IfActivity.svg" />
 		<None Remove="Resources\Icons\Increment.svg" />
+		<None Remove="Resources\Icons\IncrementDecrement.svg" />
 		<None Remove="Resources\Icons\IsTrue.svg" />
 		<None Remove="Resources\Icons\Iterate.svg" />
 		<None Remove="Resources\Icons\LoadDataFile.svg" />
@@ -76,6 +77,7 @@
 		<EmbeddedResource Include="Resources\Icons\Exit.svg" />
 		<EmbeddedResource Include="Resources\Icons\IfActivity.svg" />
 		<EmbeddedResource Include="Resources\Icons\Increment.svg" />
+		<EmbeddedResource Include="Resources\Icons\IncrementDecrement.svg" />
 		<EmbeddedResource Include="Resources\Icons\LoadDataFile.svg" />
 		<EmbeddedResource Include="Resources\Icons\MapDrive.svg" />
 		<EmbeddedResource Include="Resources\Icons\MergeData.svg" />

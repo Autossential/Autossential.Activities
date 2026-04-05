@@ -437,54 +437,6 @@
     <value>Result</value>
     <comment>property name</comment>
   </data>
-  <data name="Increment_Description" xml:space="preserve">
-    <value>Increments a numeric variable by a specified value.</value>
-    <comment>activity description</comment>
-  </data>
-  <data name="Increment_DisplayName" xml:space="preserve">
-    <value>Increment</value>
-    <comment>activity name</comment>
-  </data>
-  <data name="Increment_Value_Description" xml:space="preserve">
-    <value>Amount to add to the variable. Must be greater than or equal to 1.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="Increment_Value_DisplayName" xml:space="preserve">
-    <value>Value</value>
-    <comment>property name</comment>
-  </data>
-  <data name="Increment_Variable_Description" xml:space="preserve">
-    <value>Variable to be incremented.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="Increment_Variable_DisplayName" xml:space="preserve">
-    <value>Variable</value>
-    <comment>property name</comment>
-  </data>
-  <data name="Decrement_Description" xml:space="preserve">
-    <value>Decrements a numeric variable by a specified value.</value>
-    <comment>activity description</comment>
-  </data>
-  <data name="Decrement_DisplayName" xml:space="preserve">
-    <value>Decrement</value>
-    <comment>activity name</comment>
-  </data>
-  <data name="Decrement_Value_Description" xml:space="preserve">
-    <value>Amount to subtract from the variable. Must be greater than or equal to 1.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="Decrement_Value_DisplayName" xml:space="preserve">
-    <value>Value</value>
-    <comment>property name</comment>
-  </data>
-  <data name="Decrement_Variable_Description" xml:space="preserve">
-    <value>Variable to be decremented.</value>
-    <comment>property description</comment>
-  </data>
-  <data name="Decrement_Variable_DisplayName" xml:space="preserve">
-    <value>Variable</value>
-    <comment>property name</comment>
-  </data>
   <data name="RandomString_Result_Description" xml:space="preserve">
     <value>The generated random string.</value>
     <comment>property description</comment>
@@ -552,14 +504,6 @@
   <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
     <value>Success</value>
     <comment>response message</comment>
-  </data>
-  <data name="Decrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>Minimum allowed value is 1.</value>
-    <comment>error message</comment>
-  </data>
-  <data name="Increment_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>Minimum allowed value is 1.</value>
-    <comment>error message</comment>
   </data>
   <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
     <value>No drivers available</value>
@@ -1172,6 +1116,54 @@ Any other character will be treated as a literal"</value>
   </data>
   <data name="RandomString_ViewModel_Generate" xml:space="preserve">
     <value>Generate</value>
+    <comment>view model</comment>
+  </data>
+  <data name="IncrementDecrement_Description" xml:space="preserve">
+    <value>Adjusts an integer variable by incrementing or decrementing it with a specified value.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="IncrementDecrement_DisplayName" xml:space="preserve">
+    <value>Increment/Decrement</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
+    <value>Operation</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
+    <value>Variable</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
+    <value>Value</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IncrementDecrement_Variable_Description" xml:space="preserve">
+    <value>The variable to be adjusted.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IncrementDecrement_Value_Description" xml:space="preserve">
+    <value>Value to add or subtract to variable. Must be equal or greater than 1.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_Description" xml:space="preserve">
+    <value>Operation to be performed.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
+    <value>Increment</value>
+    <comment>field name</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
+    <value>Decrement</value>
+    <comment>field name</comment>
+  </data>
+  <data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+    <value>The vaue must be greater or equal to 1</value>
+    <comment>error message</comment>
+  </data>
+  <data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
+    <value>{0} {1} by {2}</value>
     <comment>view model</comment>
   </data>
 </root>

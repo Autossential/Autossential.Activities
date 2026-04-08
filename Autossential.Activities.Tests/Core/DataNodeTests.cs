@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
 using Autossential.Activities.Models;
+using UiPath.Studio.Activities.Api;
 using Xunit;
 
 namespace Autossential.Activities.Tests.Core
@@ -101,14 +102,14 @@ namespace Autossential.Activities.Tests.Core
         public void ContainsPath_Contains_ReturnsTrue()
         {
             var node = new DataNode(new Dictionary<string, object> { ["a"] = 1 });
-            Assert.True(node.ContainsPath("a"));
+            Assert.True(node.HasNode("a"));
         }
 
         [Fact]
         public void ContainsPath_Missing_ReturnsFalse()
         {
             var node = new DataNode(new Dictionary<string, object> { ["a"] = 1 });
-            Assert.False(node.ContainsPath("z"));
+            Assert.False(node.HasNode("z"));
         }
 
         [Fact]
@@ -218,13 +219,34 @@ namespace Autossential.Activities.Tests.Core
             Assert.Equal(42, node["a.b"].AsInt());
         }
 
+        [Fact]
+        public void Assign_NewKey_CaseSensitive()
+        {
+            var node = new DataNode();
+            node["A.B.C"] = new DataNode(100);
+            Assert.False(node.HasNode("a.B.c"));
+            Assert.True(node.HasNode("A.B.C"));
+        }
+
+        [Fact]
+        public void Assign_RawValue_DictionaryConvertedToCaseSensitive()
+        {
+            var node = new DataNode();
+            node["A"] = new DataNode(new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase)
+            {
+                { "B", 100 }
+            });
+            Assert.False(node.HasNode("a.b"));
+            Assert.True(node.HasNode("A.B"));
+        }
+
         // ─── Keys ────────────────────────────────────────────────────────────────
 
         [Fact]
         public void Keys_MapNode_ReturnsAllKeys()
         {
             var node = new DataNode(new Dictionary<string, object> { ["x"] = 1, ["y"] = 2 });
-            Assert.Equal(new[] { "x", "y" }, node.Keys.OrderBy(k => k));
+            Assert.Equal(["x", "y"], node.Keys.OrderBy(k => k));
         }
 
         [Fact]

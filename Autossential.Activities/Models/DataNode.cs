@@ -1,8 +1,5 @@
-﻿using Microsoft.CodeAnalysis.VisualBasic.Syntax;
-using System.Activities.Statements;
-using System.Collections;
+﻿using System.Collections;
 using System.Globalization;
-using System.Security.AccessControl;
 using System.Text.RegularExpressions;
 
 namespace Autossential.Activities.Models
@@ -108,7 +105,7 @@ namespace Autossential.Activities.Models
             // Map: any IDictionary -> Dictionary<string, object>
             if (value is IDictionary dict)
             {
-                var map = new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
+                var map = new Dictionary<string, object>(StringComparer.Ordinal);
                 foreach (DictionaryEntry entry in dict)
                     map[entry.Key.ToString()!] = NormalizeChild(entry.Value);
 
@@ -147,9 +144,15 @@ namespace Autossential.Activities.Models
         }
 
         /// <summary>
-        /// Returns whether the given key path exists
+        /// Determines whether a node exists at the specified key path within the current data structure.
         /// </summary>
-        public bool ContainsPath(string keyPath)
+        /// <remarks>This method returns false if the path is invalid, the node does not exist, or an
+        /// error occurs during traversal. The key path can reference nested dictionary keys or list indices as
+        /// supported by the underlying data structure.</remarks>
+        /// <param name="keyPath">The path to the node to check for existence. The path should use the appropriate format for addressing
+        /// nested elements or indices.</param>
+        /// <returns>true if a node exists at the specified key path; otherwise, false.</returns>
+        public bool HasNode(string keyPath)
         {
             try
             {
@@ -339,7 +342,7 @@ namespace Autossential.Activities.Models
                     {
                         var map = (Dictionary<string, object>)current;
                         if (!map.ContainsKey(seg.Key))
-                            map[seg.Key] = new Dictionary<string, object>();
+                            map[seg.Key] = new Dictionary<string, object>(StringComparer.Ordinal);
                         current = map[seg.Key];
                     }
                 }

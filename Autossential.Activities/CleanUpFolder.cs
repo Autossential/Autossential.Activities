@@ -15,12 +15,14 @@ namespace Autossential.Activities
         public InArgument<DateTime?> LastWriteTime { get; set; }
         public InArgument<bool> DeleteEmptyFolders { get; set; } = true;
         public SearchOption SearchOption { get; set; } = SearchOption.AllDirectories;
+        public InArgument<bool> ContinueOnError { get; set; }
         protected override Task<Action<AsyncCodeActivityContext>> RunAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
             var folder = Folder.Get(context) ?? throw new InvalidOperationException(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.CleanUpFolder_DisplayName));
             var searchPatterns = new HashSet<string>((SearchPattern.Get(context) ?? "*.*").Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries));
             var lastWriteTime = LastWriteTime.Get(context) ?? DateTime.Now;
             var deleteEmptyFolders = DeleteEmptyFolders.Get(context);
+            var continueOnError = ContinueOnError.Get(context);
 
             return Task.Run<Action<AsyncCodeActivityContext>>(() =>
             {
@@ -72,7 +74,7 @@ namespace Autossential.Activities
                     FoldersDeleted.Set(ctx, foldersDeleted);
                 };
 
-            }, token);
+            }, token).ContinueOnError(continueOnError);
         }
     }
 }

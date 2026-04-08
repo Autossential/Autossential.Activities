@@ -33,11 +33,8 @@ namespace Autossential.Activities.ViewModels
 
             DriveLetter.OrderIndex = orderIndex++;
 
-            if (IsWidgetSupported(ViewModelWidgetType.Toggle))
-            {
-                Force.AddWidget(ViewModelWidgetType.Toggle);
-                Force.OrderIndex = orderIndex++;
-            }
+            AddWidget(Force, ViewModelWidgetType.Toggle);
+            Force.OrderIndex = orderIndex++;
 
             MappedDrive.OrderIndex = orderIndex++;
             ResponseCode.OrderIndex = orderIndex++;

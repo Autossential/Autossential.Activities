@@ -98,17 +98,17 @@ namespace Autossential.Activities.Tests.Core
         }
 
         [Fact]
-        public void Exists_ExistingKey_ReturnsTrue()
+        public void ContainsPath_Contains_ReturnsTrue()
         {
             var node = new DataNode(new Dictionary<string, object> { ["a"] = 1 });
-            Assert.True(node.Exists("a"));
+            Assert.True(node.ContainsPath("a"));
         }
 
         [Fact]
-        public void Exists_MissingKey_ReturnsFalse()
+        public void ContainsPath_Missing_ReturnsFalse()
         {
             var node = new DataNode(new Dictionary<string, object> { ["a"] = 1 });
-            Assert.False(node.Exists("z"));
+            Assert.False(node.ContainsPath("z"));
         }
 
         [Fact]

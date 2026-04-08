@@ -17,8 +17,7 @@ namespace Autossential.Activities.ViewModels
             PersistValuesChangedDuringInit();
 
             DataTable.IsPrincipal = true;
-            if (IsWidgetSupported(ViewModelWidgetType.Toggle))
-                AutoRename.AddWidget(ViewModelWidgetType.Toggle);
+            AddWidget(AutoRename, ViewModelWidgetType.Toggle);
         }
     }
 }

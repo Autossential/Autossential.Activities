@@ -27,11 +27,8 @@ namespace Autossential.Activities.ViewModels
             Dictionary.IsPrincipal = true;
             Dictionary.OrderIndex = orderIndex++;
 
-            if (IsWidgetSupported(ViewModelWidgetType.Toggle))
-            {
-                CaseSensitive.AddWidget(ViewModelWidgetType.Toggle);
-                CaseSensitive.OrderIndex = orderIndex++;
-            }
+            AddWidget(CaseSensitive, ViewModelWidgetType.Toggle);
+            CaseSensitive.OrderIndex = orderIndex++;
         }
     }
 }

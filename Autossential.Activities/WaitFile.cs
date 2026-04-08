@@ -38,9 +38,13 @@ namespace Autossential.Activities
             var continueOnError = ContinueOnError.Get(context);
 
             if (DynamicFile)
-                return WaitForDynamicFile(context, token).WithTimeout(TimeSpan.FromSeconds(timeoutSeconds), continueOnError, token);
+                return WaitForDynamicFile(context, token)
+                    .WithTimeout(TimeSpan.FromSeconds(timeoutSeconds), token)
+                    .ContinueOnError(continueOnError);
 
-            return WaitForFile(context, token).WithTimeout(TimeSpan.FromSeconds(timeoutSeconds), continueOnError, token);
+            return WaitForFile(context, token)
+                .WithTimeout(TimeSpan.FromSeconds(timeoutSeconds), token)
+                .ContinueOnError(continueOnError);
         }
 
         private Task<Action<AsyncCodeActivityContext>> WaitForFile(AsyncCodeActivityContext context, CancellationToken token)

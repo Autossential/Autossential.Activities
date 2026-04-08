@@ -149,7 +149,7 @@ namespace Autossential.Activities.Models
         /// <summary>
         /// Returns whether the given key path exists
         /// </summary>
-        public bool Exists(string keyPath)
+        public bool ContainsPath(string keyPath)
         {
             try
             {

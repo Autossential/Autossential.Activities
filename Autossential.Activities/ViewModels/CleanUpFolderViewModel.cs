@@ -16,6 +16,7 @@ namespace Autossential.Activities.ViewModels
         public DesignProperty<SearchOption> SearchOption { get; set; }
         public DesignOutArgument<int> FilesDeleted { get; set; }
         public DesignOutArgument<int> FoldersDeleted { get; set; }
+        public DesignInArgument<bool> ContinueOnError { get; set; }
 
         protected override void InitializeModel()
         {
@@ -27,10 +28,8 @@ namespace Autossential.Activities.ViewModels
             SearchPattern.IsPrincipal = true;
             SearchPattern.Placeholder = "*.*";
 
-            if (IsWidgetSupported(ViewModelWidgetType.Toggle))
-            {
-                DeleteEmptyFolders.AddWidget(ViewModelWidgetType.Toggle);
-            }
+            AddWidget(DeleteEmptyFolders, ViewModelWidgetType.Toggle);
+            AddWidget(ContinueOnError, ViewModelWidgetType.NullableBoolean);
 
 #if WINDOWS
             Folder.AddMenuAction(new MenuAction()

@@ -1,24 +1,30 @@
-﻿using System.Activities.DesignViewModels;
+﻿using Autossential.Activities.Extensions;
+using System.Activities;
+using System.Activities.DesignViewModels;
 using System.Globalization;
 using UiPath.Studio.Activities.Api;
 using UiPath.Studio.Activities.Api.ProjectProperties;
+using UiPath.Studio.Activities.Api.Widgets;
 
 namespace Autossential.Activities.Base
 {
-    public abstract class BaseViewModel(IDesignServices services) : DesignPropertiesViewModel(services)
+    public abstract class BaseViewModel : DesignPropertiesViewModel
     {
-        private readonly IWorkflowDesignApi _workflowDesignerAPI = services.GetService<IWorkflowDesignApi>();
+        private readonly IWorkflowDesignApi _workflowDesignerAPI;
+        private readonly IWidgetSupportInfoService _widgetSupportInfoService;
 
-        public bool IsWidgetSupported(params string[] widgetTypes)
+        protected BaseViewModel(IDesignServices services) : base(services)
         {
+            _workflowDesignerAPI = services.GetService<IWorkflowDesignApi>();
             if (!_workflowDesignerAPI.HasFeature(DesignFeatureKeys.WidgetSupportInfoService))
-                return false;
+                return;
 
-            var service = _workflowDesignerAPI.WidgetSupportInfoService;
-            if (service == null)
-                return false;
+            _widgetSupportInfoService = _workflowDesignerAPI.WidgetSupportInfoService;
+        }
 
-            return widgetTypes.All(service.IsWidgetSupported);
+        public bool IsWidgetSupported(string widgetType)
+        {
+            return _widgetSupportInfoService is not null && _widgetSupportInfoService.IsWidgetSupported(widgetType);
         }
 
         protected IWorkflowDesignApi GetWorkflowDesignApi() => _workflowDesignerAPI;
@@ -34,5 +40,17 @@ namespace Autossential.Activities.Base
                 .WithId(s => s)
                 .WithLabel(s => s)
                 .WithData([.. System.Text.Encoding.GetEncodings().OrderBy(p => p.DisplayName).Select(p => p.DisplayName)]).Build();
+
+        /// <summary>
+        /// Adds a widget of the specified type to the given design property if the widget type is supported.
+        /// </summary>
+        /// <typeparam name="T">The type of the value held by the design property.</typeparam>
+        /// <param name="property">The design property to which the widget will be added.</param>
+        /// <param name="widgetType">The type of widget to add. Must be a supported widget type.</param>
+        protected void AddWidget<T>(DesignProperty<T> property, string widgetType)
+        {
+            if (IsWidgetSupported(widgetType))
+                property.AddWidget(widgetType);
+        }
     }
 }

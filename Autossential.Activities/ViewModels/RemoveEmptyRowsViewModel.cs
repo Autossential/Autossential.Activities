@@ -3,6 +3,7 @@ using Autossential.Activities.Extensions;
 using System.Activities.DesignViewModels;
 using System.Activities.ViewModels;
 using System.Data;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Autossential.Activities.ViewModels
 {
@@ -20,8 +21,7 @@ namespace Autossential.Activities.ViewModels
 
             DataTable.IsPrincipal = true;
 
-            if (IsWidgetSupported(ViewModelWidgetType.RadioGroup))
-                MatchingMode.AddWidget(ViewModelWidgetType.RadioGroup);
+            AddWidget(MatchingMode, ViewModelWidgetType.RadioGroup);
         }
     }
 }

@@ -21,11 +21,8 @@ namespace Autossential.Activities.ViewModels
             Entries.IsPrincipal = true;
             Entries.OrderIndex = orderIndex++;
 
-            if (IsWidgetSupported(ViewModelWidgetType.Input, ViewModelWidgetType.Dictionary))
-            {
-                Dictionary.AddWidget(ViewModelWidgetType.Input);
-                Entries.AddWidget(ViewModelWidgetType.Dictionary);
-            }
+            AddWidget(Dictionary, ViewModelWidgetType.Input);
+            AddWidget(Entries, ViewModelWidgetType.Dictionary);
         }
     }
 }

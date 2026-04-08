@@ -19,8 +19,7 @@ namespace Autossential.Activities.ViewModels
             Culture.IsPrincipal = true;
             Culture.DataSource = _cultureDataSource;
 
-            if (IsWidgetSupported(ViewModelWidgetType.AutoCompleteForExpression))
-                Culture.AddWidget(ViewModelWidgetType.AutoCompleteForExpression);
+            AddWidget(Culture, ViewModelWidgetType.AutoCompleteForExpression);
         }
     }
 }

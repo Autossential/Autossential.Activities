@@ -163,6 +163,17 @@
             "name": "Options",
             "displayNameKey": "Categories_Options"
           }
+        },
+        {
+          "name": "ContinueOnError",
+          "displayNameKey": "Common_ContinueOnError_DisplayName",
+          "tooltipKey": "Common_ContinueOnError_Description",
+          "isVisible": true,
+          "isRequired": false,
+          "category": {
+            "name": "Input",
+            "displayNameKey": "Categories_Input"
+          }
         }
       ]
     },

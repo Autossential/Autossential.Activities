@@ -1,0 +1,921 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Categories_Input" xml:space="preserve">
+    <value>Entrada</value>
+  </data>
+  <data name="Categories_Output" xml:space="preserve">
+    <value>Salida</value>
+  </data>
+  <data name="Categories_Options" xml:space="preserve">
+    <value>Opciones</value>
+  </data>
+  <data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
+    <value>La colección que se va a modificar.</value>
+  </data>
+  <data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+    <value>Colección</value>
+  </data>
+  <data name="AddRangeToCollection_Description" xml:space="preserve">
+    <value>Agrega un conjunto de elementos a la colección especificada.</value>
+  </data>
+  <data name="AddRangeToCollection_DisplayName" xml:space="preserve">
+    <value>Agregar rango a la colección</value>
+  </data>
+  <data name="AddRangeToCollection_Items_Description" xml:space="preserve">
+    <value>Los elementos que se agregarán a la colección.</value>
+  </data>
+  <data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+    <value>Elementos</value>
+  </data>
+  <data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
+    <value>Especifica la cantidad de tiempo en segundos para la nueva comprobación del archivo. Cualquier valor inferior a 0.5 se ajustará a 0.5. Asegúrese de que este valor sea inferior al valor de Tiempo de espera.</value>
+  </data>
+  <data name="WaitFile_PollingIntervalSeconds_DisplayName" xml:space="preserve">
+    <value>Intervalo</value>
+  </data>
+  <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
+    <value>Especifica la cantidad de tiempo en segundos que se debe esperar a que se ejecute la actividad antes de que se produzca un error. El valor predeterminado es 30s.</value>
+  </data>
+  <data name="WaitFile_Description" xml:space="preserve">
+    <value>Espera hasta que el archivo esté disponible.</value>
+  </data>
+  <data name="WaitFile_DisplayName" xml:space="preserve">
+    <value>Esperar archivo</value>
+  </data>
+  <data name="WaitFile_FilePath_Description" xml:space="preserve">
+    <value>La ruta del archivo.</value>
+  </data>
+  <data name="WaitFile_FilePath_DisplayName" xml:space="preserve">
+    <value>Ruta del archivo</value>
+  </data>
+  <data name="WaitFile_Result_Description" xml:space="preserve">
+    <value>El objeto FileInfo del archivo respectivo cuando se encuentra.</value>
+  </data>
+  <data name="WaitFile_Result_DisplayName" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="WaitFile_WaitForExist_Description" xml:space="preserve">
+    <value>Espera hasta que el archivo exista.</value>
+  </data>
+  <data name="WaitFile_WaitForExist_DisplayName" xml:space="preserve">
+    <value>Esperar a que exista</value>
+  </data>
+  <data name="Common_TimeoutSeconds_DisplayName" xml:space="preserve">
+    <value>Tiempo de espera</value>
+  </data>
+  <data name="Common_ViewModel_BrowseForFile" xml:space="preserve">
+    <value>Buscar archivo</value>
+  </data>
+  <data name="Common_ViewModel_BrowseForFolder" xml:space="preserve">
+    <value>Buscar carpeta</value>
+  </data>
+  <data name="Categories_Common" xml:space="preserve">
+    <value>Común</value>
+  </data>
+  <data name="Common_ContinueOnError_DisplayName" xml:space="preserve">
+    <value>Continuar tras error</value>
+  </data>
+  <data name="Common_ContinueOnError_Description" xml:space="preserve">
+    <value>Especifica que se continúe ejecutando las actividades restantes incluso si la actividad actual falla. Solo se permiten valores booleanos.</value>
+  </data>
+  <data name="WaitFile_DirectoryPath_Description" xml:space="preserve">
+    <value>Ruta del directorio que se va a supervisar.</value>
+  </data>
+  <data name="WaitFile_DirectoryPath_DisplayName" xml:space="preserve">
+    <value>Ruta del directorio</value>
+  </data>
+  <data name="WaitFile_DynamicFile_DisplayName" xml:space="preserve">
+    <value>El nombre del archivo es dinámico</value>
+  </data>
+  <data name="Common_SearchPattern_Description" xml:space="preserve">
+    <value>La cadena de búsqueda define patrones de nombres de archivos en la ruta. Admite texto literal y comodines (*, ?, !, |), pero no expresiones regulares. Use ! para exclusiones (ej., !*.txt) y | para múltiples patrones (ej., *.png|*.gif|*.jpeg). El valor predeterminado es *.* (todos los archivos).</value>
+  </data>
+  <data name="Common_SearchPattern_DisplayName" xml:space="preserve">
+    <value>Patrón de búsqueda</value>
+  </data>
+  <data name="WaitFile_DynamicFile_Description" xml:space="preserve">
+    <value>Cuando es verdadero, el comportamiento de la actividad cambia para supervisar una carpeta específica hasta encontrar un archivo que corresponda al patrón de búsqueda informado.</value>
+  </data>
+  <data name="CleanUpFolder_DeleteEmptyFolders_Description" xml:space="preserve">
+    <value>Determina si las carpetas que queden vacías después de la eliminación de archivos también deben eliminarse.</value>
+  </data>
+  <data name="CleanUpFolder_DeleteEmptyFolders_DisplayName" xml:space="preserve">
+    <value>Eliminar carpetas vacías</value>
+  </data>
+  <data name="CleanUpFolder_Description" xml:space="preserve">
+    <value>Elimina todos los archivos y carpetas de una carpeta específica.</value>
+  </data>
+  <data name="CleanUpFolder_DisplayName" xml:space="preserve">
+    <value>Limpiar carpeta</value>
+  </data>
+  <data name="CleanUpFolder_Folder_Description" xml:space="preserve">
+    <value>La ruta de la carpeta que se va a limpiar.</value>
+  </data>
+  <data name="CleanUpFolder_Folder_DisplayName" xml:space="preserve">
+    <value>Ruta de la carpeta</value>
+  </data>
+  <data name="CleanUpFolder_LastWriteTime_Description" xml:space="preserve">
+    <value>Elimina solo los archivos con fecha de última escritura hasta esta fecha de referencia. El valor predeterminado es DateTime.Now.</value>
+  </data>
+  <data name="CleanUpFolder_LastWriteTime_DisplayName" xml:space="preserve">
+    <value>Fecha de última escritura</value>
+  </data>
+  <data name="CleanUpFolder_FilesDeleted_Description" xml:space="preserve">
+    <value>El número de archivos que fueron eliminados.</value>
+  </data>
+  <data name="CleanUpFolder_FilesDeleted_DisplayName" xml:space="preserve">
+    <value>Archivos eliminados</value>
+  </data>
+  <data name="CleanUpFolder_SearchOption_Description" xml:space="preserve">
+    <value>Especifica si la operación de búsqueda debe incluir solo el directorio actual o todos los subdirectorios.</value>
+  </data>
+  <data name="CleanUpFolder_SearchOption_DisplayName" xml:space="preserve">
+    <value>Opción de búsqueda</value>
+  </data>
+  <data name="CleanUpFolder_FoldersDeleted_DisplayName" xml:space="preserve">
+    <value>Carpetas eliminadas</value>
+  </data>
+  <data name="CleanUpFolder_FoldersDeleted_Description" xml:space="preserve">
+    <value>El número de carpetas que fueron eliminadas.</value>
+  </data>
+  <data name="Zip_Description" xml:space="preserve">
+    <value>Comprime archivos y carpetas en un archivo zip.</value>
+  </data>
+  <data name="Zip_DisplayName" xml:space="preserve">
+    <value>Comprimir (Zip)</value>
+  </data>
+  <data name="Zip_ToCompress_Description" xml:space="preserve">
+    <value>Colección de rutas de archivos y directorios para comprimir.</value>
+  </data>
+  <data name="Zip_ToCompress_DisplayName" xml:space="preserve">
+    <value>Para comprimir</value>
+  </data>
+  <data name="Zip_TextEncoding_Description" xml:space="preserve">
+    <value>Codificación utilizada para los nombres de las entradas dentro del archivo zip.</value>
+  </data>
+  <data name="Zip_TextEncoding_DisplayName" xml:space="preserve">
+    <value>Codificación de texto</value>
+  </data>
+  <data name="Zip_CompressionLevel_Description" xml:space="preserve">
+    <value>Nivel de compresión utilizado al crear el archivo.</value>
+  </data>
+  <data name="Zip_CompressionLevel_DisplayName" xml:space="preserve">
+    <value>Nivel de compresión</value>
+  </data>
+  <data name="Zip_CompressedFile_Description" xml:space="preserve">
+    <value>Índice o identificador del archivo comprimido creado (cuando corresponda).</value>
+  </data>
+  <data name="Zip_CompressedFile_DisplayName" xml:space="preserve">
+    <value>Archivo comprimido</value>
+  </data>
+  <data name="Zip_FullEntryNames_Description" xml:space="preserve">
+    <value>Utilizar nombres de entrada completos (rutas absolutas) en lugar de rutas relativas.</value>
+  </data>
+  <data name="Zip_FullEntryNames_DisplayName" xml:space="preserve">
+    <value>Nombres de entrada completos</value>
+  </data>
+  <data name="Zip_FilesCount_Description" xml:space="preserve">
+    <value>El número de archivos añadidos al archivo.</value>
+  </data>
+  <data name="Zip_FilesCount_DisplayName" xml:space="preserve">
+    <value>Recuento de archivos</value>
+  </data>
+  <data name="Zip_ZipFilePath_Description" xml:space="preserve">
+    <value>Ruta donde se creará el archivo zip.</value>
+  </data>
+  <data name="Zip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>Ruta del archivo Zip</value>
+  </data>
+  <data name="Common_ErrorMsg_ValueNotSupplied" xml:space="preserve">
+    <value>No se proporcionó el valor para un argumento de actividad requerido '{0}'.</value>
+  </data>
+  <data name="Unzip_Description" xml:space="preserve">
+    <value>Extrae archivos y carpetas de un archivo zip.</value>
+  </data>
+  <data name="Unzip_DisplayName" xml:space="preserve">
+    <value>Descomprimir (Unzip)</value>
+  </data>
+  <data name="Unzip_ZipFilePath_Description" xml:space="preserve">
+    <value>La ruta del archivo zip que se va a extraer.</value>
+  </data>
+  <data name="Unzip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>Ruta del archivo Zip</value>
+  </data>
+  <data name="Unzip_ExtractTo_Description" xml:space="preserve">
+    <value>La carpeta donde se extraerá el contenido del archivo.</value>
+  </data>
+  <data name="Unzip_ExtractTo_DisplayName" xml:space="preserve">
+    <value>Extraer en</value>
+  </data>
+  <data name="Unzip_Overwrite_Description" xml:space="preserve">
+    <value>Si es verdadero, los archivos existentes se sobrescribirán durante la extracción.</value>
+  </data>
+  <data name="Unzip_Overwrite_DisplayName" xml:space="preserve">
+    <value>Sobrescribir</value>
+  </data>
+  <data name="Unzip_ErrorMsg_OutsideDir" xml:space="preserve">
+    <value>La entrada del archivo se extraería fuera del directorio de destino.</value>
+  </data>
+  <data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
+    <value>La entrada del directorio en el archivo contiene datos de archivo, lo cual no es válido.</value>
+  </data>
+  <data name="RandomString_Description" xml:space="preserve">
+    <value>Genera una cadena aleatoria basada en un patrón de formato.</value>
+  </data>
+  <data name="RandomString_DisplayName" xml:space="preserve">
+    <value>Cadena aleatoria</value>
+  </data>
+  <data name="RandomString_Format_Description" xml:space="preserve">
+    <value>Patrón que define la cadena generada. Marcadores: 'a' minúscula, 'A' mayúscula, '0' dígito, '*' cualquier alfanumérico, '?' caracteres personalizados, '\\' escape.</value>
+  </data>
+  <data name="RandomString_Format_DisplayName" xml:space="preserve">
+    <value>Formato</value>
+  </data>
+  <data name="RandomString_Custom_Description" xml:space="preserve">
+    <value>Caracteres adicionales utilizados cuando el marcador '?' está presente.</value>
+  </data>
+  <data name="RandomString_Custom_DisplayName" xml:space="preserve">
+    <value>Caracteres personalizados</value>
+  </data>
+  <data name="RandomString_Result_DisplayName" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="RandomString_Result_Description" xml:space="preserve">
+    <value>La cadena aleatoria generada.</value>
+  </data>
+  <data name="ReplaceTokens_Description" xml:space="preserve">
+    <value>Reemplaza los tokens de una cadena por los valores de un Diccionario. Los tokens son cadenas escritas en un patrón específico, generalmente encerradas en caracteres especiales. Use la combinación de las propiedades 'Patrón' y 'Marcador de posición' para definir el formato de su token.</value>
+  </data>
+  <data name="ReplaceTokens_DisplayName" xml:space="preserve">
+    <value>Reemplazar tokens</value>
+  </data>
+  <data name="ReplaceTokens_Dictionary_Description" xml:space="preserve">
+    <value>El diccionario donde cada par clave/valor se utiliza para reemplazar los tokens.</value>
+  </data>
+  <data name="ReplaceTokens_Dictionary_DisplayName" xml:space="preserve">
+    <value>Diccionario</value>
+  </data>
+  <data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
+    <value>El patrón de texto del token. Puede tener caracteres antes y después del marcador de posición.</value>
+  </data>
+  <data name="ReplaceTokens_Pattern_DisplayName" xml:space="preserve">
+    <value>Patrón</value>
+  </data>
+  <data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
+    <value>El carácter utilizado como marcador de posición dentro del patrón del token.</value>
+  </data>
+  <data name="ReplaceTokens_Placeholder_DisplayName" xml:space="preserve">
+    <value>Marcador de posición</value>
+  </data>
+  <data name="ReplaceTokens_Result_Description" xml:space="preserve">
+    <value>El texto resultante después de que todos los tokens hayan sido reemplazados.</value>
+  </data>
+  <data name="ReplaceTokens_Result_DisplayName" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="ReplaceTokens_Content_DisplayName" xml:space="preserve">
+    <value>Contenido</value>
+  </data>
+  <data name="ReplaceTokens_Content_Description" xml:space="preserve">
+    <value>El texto de entrada donde se reemplazarán los tokens.</value>
+  </data>
+  <data name="Categories_InputOutput" xml:space="preserve">
+    <value>Entrada/Salida</value>
+  </data>
+  <data name="ReplaceTokens_CaseSensitive_Description" xml:space="preserve">
+    <value>Determina si la búsqueda de tokens distingue entre mayúsculas y minúsculas. El Patrón también se ve afectado.</value>
+  </data>
+  <data name="ReplaceTokens_CaseSensitive_DisplayName" xml:space="preserve">
+    <value>Distinguir mayúsculas y minúsculas</value>
+  </data>
+  <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
+    <value>Éxito</value>
+  </data>
+  <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
+    <value>No hay controladores disponibles</value>
+  </data>
+  <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
+    <value>La letra de unidad ingresada no es válida. Las entradas válidas son 'X', 'X:' o 'X:\\', donde X puede ser cualquier letra.</value>
+  </data>
+  <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
+    <value>Credencial</value>
+  </data>
+  <data name="MapDrive_Description" xml:space="preserve">
+    <value>Asigna una unidad de red al sistema.</value>
+  </data>
+  <data name="MapDrive_DisplayName" xml:space="preserve">
+    <value>Asignar unidad</value>
+  </data>
+  <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
+    <value>Especifica la letra de unidad que se va a asignar. Si no se proporciona, se asignará una letra disponible aleatoria. El formato esperado es &lt;letra&gt;&lt;dos puntos&gt;, por ejemplo: "X:", "y:", "Z:".</value>
+  </data>
+  <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
+    <value>Letra de unidad</value>
+  </data>
+  <data name="MapDrive_Force_Description" xml:space="preserve">
+    <value>Intenta forzar la conexión si la letra de unidad ya está en uso.</value>
+  </data>
+  <data name="MapDrive_Force_DisplayName" xml:space="preserve">
+    <value>Forzar</value>
+  </data>
+  <data name="MapDrive_MappedDrive_Description" xml:space="preserve">
+    <value>La letra de unidad asignada si la asignación fue exitosa, se representa en el formato "&lt;letra&gt;:".</value>
+  </data>
+  <data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
+    <value>Unidad asignada</value>
+  </data>
+  <data name="MapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>Representa el código de retorno de la operación de asignación de unidad. Este valor indica si la operación tuvo éxito o falló, de acuerdo con los códigos de error estándar de Windows.</value>
+  </data>
+  <data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>Código de respuesta</value>
+  </data>
+  <data name="MapDrive_ResponseMessage_Description" xml:space="preserve">
+    <value>Proporciona la descripción textual correspondiente al código de respuesta. Este mensaje explica el resultado de la operación en un formato legible para humanos.</value>
+  </data>
+  <data name="MapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+    <value>Mensaje de respuesta</value>
+  </data>
+  <data name="MapDrive_Result_Description" xml:space="preserve">
+    <value>Devuelve verdadero si la unidad se asignó correctamente, falso en caso contrario.</value>
+  </data>
+  <data name="MapDrive_Result_DisplayName" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="MapDrive_SharedDrivePath_Description" xml:space="preserve">
+    <value>La ruta de la unidad compartida con la que conectarse.</value>
+  </data>
+  <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
+    <value>Ruta de unidad compartida</value>
+  </data>
+  <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
+    <value>Especifica la letra de unidad de la unidad asignada que se va a desasignar. El formato requerido es &lt;letra&gt;&lt;dos puntos&gt;, por ejemplo: "X:", "y:", "Z:".</value>
+  </data>
+  <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
+    <value>Letra de unidad</value>
+  </data>
+  <data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>Representa el código de retorno de la operación de asignación de unidad. Este valor indica si la operación tuvo éxito o falló, de acuerdo con los códigos de error estándar de Windows.</value>
+  </data>
+  <data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>Código de respuesta</value>
+  </data>
+  <data name="UnmapDrive_ResponseMessage_Description" xml:space="preserve">
+    <value>Proporciona la descripción textual correspondiente al código de respuesta. Este mensaje explica el resultado de la operación en un formato legible para humanos.</value>
+  </data>
+  <data name="UnmapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+    <value>Mensaje de respuesta</value>
+  </data>
+  <data name="UnmapDrive_Result_Description" xml:space="preserve">
+    <value>Devuelve verdadero si la unidad se desasignó correctamente, falso en caso contrario.</value>
+  </data>
+  <data name="UnmapDrive_DisplayName" xml:space="preserve">
+    <value>Desasignar unidad</value>
+  </data>
+  <data name="MapDrive_Credential_Placeholder" xml:space="preserve">
+    <value>Si no se proporcionan, se utilizarán las credenciales del usuario actual.</value>
+  </data>
+  <data name="CultureScope_ErrorMsg_CultureNameNullOrEmpty" xml:space="preserve">
+    <value>El nombre de la cultura no puede ser nulo ni estar vacío.</value>
+  </data>
+  <data name="CultureScope_Culture_Description" xml:space="preserve">
+    <value>La cultura deseada, ej.: en-US, pt-BR, jp-JP, etc.</value>
+  </data>
+  <data name="CultureScope_Culture_DisplayName" xml:space="preserve">
+    <value>Cultura</value>
+  </data>
+  <data name="CultureScope_Description" xml:space="preserve">
+    <value>Un contenedor que le permite ejecutar un conjunto de actividades sobre una cultura diferente.</value>
+  </data>
+  <data name="CultureScope_DisplayName" xml:space="preserve">
+    <value>Ámbito de cultura</value>
+  </data>
+  <data name="TerminateProcess_Description" xml:space="preserve">
+    <value>Intenta cerrar correctamente todas las instancias de las aplicaciones correspondientes a los procesos especificados. Si no es posible, elimina el proceso para la sesión de usuario actual.</value>
+  </data>
+  <data name="TerminateProcess_DisplayName" xml:space="preserve">
+    <value>Terminar proceso</value>
+  </data>
+  <data name="TerminateProcess_ProcessNames_Description" xml:space="preserve">
+    <value>La lista de nombres de los procesos que se van a terminar.</value>
+  </data>
+  <data name="TerminateProcess_ProcessNames_DisplayName" xml:space="preserve">
+    <value>Nombres de procesos</value>
+  </data>
+  <data name="IfActivity_DisplayName" xml:space="preserve">
+    <value>Actividad If</value>
+  </data>
+  <data name="IfActivity_Description" xml:space="preserve">
+    <value>Evalúa el resultado de una actividad que devuelve un booleano y ejecuta el bloque de código asociado si se cumple la condición.</value>
+  </data>
+  <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
+    <value>El campo Condición requiere actividades que devuelvan un valor booleano.</value>
+  </data>
+  <data name="Exit_DisplayName" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="Exit_Condition_Description" xml:space="preserve">
+    <value>Condición que determina si se evaluará la actividad. Si está vacía, se asume Verdadero.</value>
+  </data>
+  <data name="Exit_Condition_DisplayName" xml:space="preserve">
+    <value>Condición</value>
+  </data>
+  <data name="Exit_Description" xml:space="preserve">
+    <value>Sale del Contenedor o de las actividades de Bucle de tiempo interrumpiendo cualquier ejecución secundaria posterior.</value>
+  </data>
+  <data name="Exit_ErrorMsg_InvalidParent" xml:space="preserve">
+    <value>La actividad Salir debe colocarse dentro de un Contenedor o de actividades de Bucle de tiempo.</value>
+  </data>
+  <data name="TimeLoop_DisplayName" xml:space="preserve">
+    <value>Bucle de tiempo</value>
+  </data>
+  <data name="TimeLoop_Description" xml:space="preserve">
+    <value>Repite las actividades del cuerpo hasta que expire el tiempo de espera, con intervalos de iteración y seguimiento de índices opcionales. Devuelve verdadero si el bucle terminó debido al tiempo de espera.</value>
+  </data>
+  <data name="TimeLoop_Timeout_DisplayName" xml:space="preserve">
+    <value>Tiempo de espera</value>
+  </data>
+  <data name="TimeLoop_Timeout_Description" xml:space="preserve">
+    <value>Define cuánto tiempo se ejecuta el bucle. El tiempo de espera se comprueba después de cada iteración, y las iteraciones en curso no se interrumpen.</value>
+  </data>
+  <data name="TimeLoop_IntervalSeconds_DisplayName" xml:space="preserve">
+    <value>Intervalo</value>
+  </data>
+  <data name="TimeLoop_IntervalSeconds_Description" xml:space="preserve">
+    <value>El intervalo en segundos que se debe esperar antes del siguiente bucle.</value>
+  </data>
+  <data name="TimeLoop_IterationIndex_DisplayName" xml:space="preserve">
+    <value>Índice</value>
+  </data>
+  <data name="TimeLoop_IterationIndex_Description" xml:space="preserve">
+    <value>La iteración actual (basada en cero) que se está procesando.</value>
+  </data>
+  <data name="Container_DisplayName" xml:space="preserve">
+    <value>Contenedor</value>
+  </data>
+  <data name="Container_Description" xml:space="preserve">
+    <value>Es un envoltorio que, cuando se combina con la actividad Salir, interrumpe el flujo de ejecución secundario saliendo del Contenedor de antemano.</value>
+  </data>
+  <data name="CheckPoint_Data_Description" xml:space="preserve">
+    <value>Una colección de pares clave/valor que proporcionan información adicional definida por el usuario sobre la excepción.</value>
+  </data>
+  <data name="CheckPoint_Data_DisplayName" xml:space="preserve">
+    <value>Datos</value>
+  </data>
+  <data name="CheckPoint_Description" xml:space="preserve">
+    <value>Comprueba si una expresión dada es verdadera; si no lo es, lanza la excepción especificada.</value>
+  </data>
+  <data name="CheckPoint_DisplayName" xml:space="preserve">
+    <value>Punto de control</value>
+  </data>
+  <data name="CheckPoint_Exception_Description" xml:space="preserve">
+    <value>La excepción que se lanzará si la expresión no es verdadera.</value>
+  </data>
+  <data name="CheckPoint_Exception_DisplayName" xml:space="preserve">
+    <value>Excepción</value>
+  </data>
+  <data name="CheckPoint_Expression_Description" xml:space="preserve">
+    <value>La expresión que se va a evaluar.</value>
+  </data>
+  <data name="CheckPoint_Expression_DisplayName" xml:space="preserve">
+    <value>Expresión</value>
+  </data>
+  <data name="PromoteHeaders_AutoRename_Description" xml:space="preserve">
+    <value>Cuando es verdadero, añade un sufijo numérico si el nombre de la columna ya está presente en la Tabla de datos.</value>
+  </data>
+  <data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
+    <value>Renombrar automáticamente</value>
+  </data>
+  <data name="PromoteHeaders_Description" xml:space="preserve">
+    <value>Promueve la primera fila de valores a nuevos encabezados de columna.</value>
+  </data>
+  <data name="PromoteHeaders_DisplayName" xml:space="preserve">
+    <value>Promocionar encabezados</value>
+  </data>
+  <data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
+    <value>No hay filas en la tabla de datos de entrada para promocionar.</value>
+  </data>
+  <data name="PromoteHeaders_DataTable_Description" xml:space="preserve">
+    <value>La tabla de datos cuya primera fila se promocionará a encabezados.</value>
+  </data>
+  <data name="PromoteHeaders_DataTable_DisplayName" xml:space="preserve">
+    <value>Tabla de datos</value>
+  </data>
+  <data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
+    <value>El formato de fecha que se utilizará en la representación de cadena para los tipos DateTime.</value>
+  </data>
+  <data name="DataTableToText_DateTimeFormat_DisplayName" xml:space="preserve">
+    <value>Formato de fecha y hora</value>
+  </data>
+  <data name="DataTableToText_Description" xml:space="preserve">
+    <value>Devuelve una representación de cadena de una tabla de datos en el formato de texto especificado (HTML, JSON o XML).</value>
+  </data>
+  <data name="DataTableToText_DisplayName" xml:space="preserve">
+    <value>Tabla de datos a texto</value>
+  </data>
+  <data name="DataTableToText_DataTable_Description" xml:space="preserve">
+    <value>La tabla de datos (DataTable).</value>
+  </data>
+  <data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
+    <value>Tabla de datos</value>
+  </data>
+  <data name="DataTableToText_Result_Description" xml:space="preserve">
+    <value>La representación de cadena de la Tabla de datos.</value>
+  </data>
+  <data name="DataTableToText_Result_DisplayName" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="DataTableToText_OutputFormat_Description" xml:space="preserve">
+    <value>El formato de texto de salida.</value>
+  </data>
+  <data name="DataTableToText_OutputFormat_DisplayName" xml:space="preserve">
+    <value>Formato de salida</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnNames_Description" xml:space="preserve">
+    <value>Nombres de columna a evaluar. Se pueden combinar con Índices de columna. Si no se especifican, se consideran todas las columnas.</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnNames_DisplayName" xml:space="preserve">
+    <value>Nombres de columna</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_DisplayName" xml:space="preserve">
+    <value>Índices de columna</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_Description" xml:space="preserve">
+    <value>Índices de columna a evaluar. Se pueden combinar con Nombres de columna. Si no se especifican, se consideran todas las columnas.</value>
+  </data>
+  <data name="RemoveEmptyRows_Description" xml:space="preserve">
+    <value>Elimina las filas vacías de una Tabla de datos.</value>
+  </data>
+  <data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
+    <value>Eliminar filas vacías</value>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_Description" xml:space="preserve">
+    <value>La Tabla de datos de la cual se eliminarán las filas vacías.</value>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_DisplayName" xml:space="preserve">
+    <value>Tabla de datos</value>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_Description" xml:space="preserve">
+    <value>Determina cómo se evalúa una fila para su eliminación: All — la fila se elimina si todas las columnas especificadas están vacías. Any — la fila se elimina si cualquiera de las columnas especificadas está vacía. Si no se especifican columnas, se consideran todas las columnas de la Tabla de datos.</value>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
+    <value>Modo de coincidencia</value>
+  </data>
+  <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
+    <value>Tabla de datos</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+    <value>Los nombres de las columnas que se van a eliminar.</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">
+    <value>Nombres de columna</value>
+  </data>
+  <data name="RemoveDataColumns_Description" xml:space="preserve">
+    <value>Elimina las columnas especificadas de una Tabla de datos</value>
+  </data>
+  <data name="RemoveDataColumns_DisplayName" xml:space="preserve">
+    <value>Eliminar columnas de datos</value>
+  </data>
+  <data name="RemoveDataColumns_DataTable_Description" xml:space="preserve">
+    <value>La Tabla de datos de la cual se eliminarán las columnas.</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnIndexes_DisplayName" xml:space="preserve">
+    <value>Índices de columna</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnIndexes_Description" xml:space="preserve">
+    <value>Los índices de las columnas que se van a eliminar.</value>
+  </data>
+  <data name="TransposeData_Description" xml:space="preserve">
+    <value>Transpone una tabla de datos convirtiendo filas en columnas y columnas en filas. Los nuevos nombres de columna se generan automáticamente (Col1, Col2, ...) para evitar duplicados.</value>
+  </data>
+  <data name="TransposeData_DisplayName" xml:space="preserve">
+    <value>Transponer datos</value>
+  </data>
+  <data name="TransposeData_DataTable_Description" xml:space="preserve">
+    <value>La tabla de datos que se va a transponer.</value>
+  </data>
+  <data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
+    <value>Tabla de datos</value>
+  </data>
+  <data name="ParseData_DisplayName" xml:space="preserve">
+    <value>Analizar datos</value>
+  </data>
+  <data name="ParseData_Description" xml:space="preserve">
+    <value>Analiza la entrada JSON o YAML en un DataNode para simplificar el acceso y la manipulación.</value>
+  </data>
+  <data name="ParseData_Content_DisplayName" xml:space="preserve">
+    <value>Contenido</value>
+  </data>
+  <data name="ParseData_Content_Description" xml:space="preserve">
+    <value>El texto JSON o YAML que se va a analizar en un DataNode.</value>
+  </data>
+  <data name="ParseData_Culture_DisplayName" xml:space="preserve">
+    <value>Cultura</value>
+  </data>
+  <data name="ParseData_Culture_Description" xml:space="preserve">
+    <value>Define la información de cultura aplicada durante las conversiones de valores (como int, long, double o decimal) dentro del DataNode.</value>
+  </data>
+  <data name="ParseData_Result_DisplayName" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="ParseData_Result_Description" xml:space="preserve">
+    <value>El DataNode resultante creado a partir del contenido JSON o YAML analizado.</value>
+  </data>
+  <data name="LoadDataFile_DisplayName" xml:space="preserve">
+    <value>Cargar archivo de datos</value>
+  </data>
+  <data name="LoadDataFile_Description" xml:space="preserve">
+    <value>Analiza un archivo JSON o YAML en un DataNode para simplificar el acceso y la manipulación.</value>
+  </data>
+  <data name="LoadDataFile_Encoding_Description" xml:space="preserve">
+    <value>Especifica la codificación de texto utilizada al leer el archivo. El valor predeterminado es UTF-8.</value>
+  </data>
+  <data name="LoadDataFile_Culture_Description" xml:space="preserve">
+    <value>Especifica la cultura utilizada al convertir los valores de los nodos a tipos numéricos (ej., int, long, double, decimal).</value>
+  </data>
+  <data name="LoadDataFile_Result_Description" xml:space="preserve">
+    <value>El DataNode generado a partir del contenido del archivo analizado.</value>
+  </data>
+  <data name="LoadDataFile_Culture_DisplayName" xml:space="preserve">
+    <value>Cultura</value>
+  </data>
+  <data name="LoadDataFile_Encoding_DisplayName" xml:space="preserve">
+    <value>Codificación</value>
+  </data>
+  <data name="LoadDataFile_Result_DisplayName" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="LoadDataFile_FilePath_Description" xml:space="preserve">
+    <value>La ruta al archivo JSON o YAML que se va a cargar.</value>
+  </data>
+  <data name="LoadDataFile_FilePath_DisplayName" xml:space="preserve">
+    <value>Ruta del archivo</value>
+  </data>
+  <data name="ActivityCategories_Data" xml:space="preserve">
+    <value>Autossential.Datos</value>
+  </data>
+  <data name="ActivityCategories_Files" xml:space="preserve">
+    <value>Autossential.Archivos</value>
+  </data>
+  <data name="ActivityCategories_Programming" xml:space="preserve">
+    <value>Autossential.Programación</value>
+  </data>
+  <data name="ActivityCategories_System" xml:space="preserve">
+    <value>Autossential.Sistema</value>
+  </data>
+  <data name="ActivityCategories_Workflow" xml:space="preserve">
+    <value>Autossential.Flujo de trabajo</value>
+  </data>
+  <data name="UnmapDrive_Description" xml:space="preserve">
+    <value>Elimina una unidad de red asignada del sistema.</value>
+  </data>
+  <data name="MergeData_DisplayName" xml:space="preserve">
+    <value>Fusionar datos</value>
+  </data>
+  <data name="MergeData_Description" xml:space="preserve">
+    <value>Fusiona el DataNode de origen en el de destino. Los valores escalares y de secuencia del origen sobrescriben a los existentes en el destino. Los valores de mapa se fusionan de forma recursiva.</value>
+  </data>
+  <data name="MergeData_Source_DisplayName" xml:space="preserve">
+    <value>Origen</value>
+  </data>
+  <data name="MergeData_Source_Description" xml:space="preserve">
+    <value>El DataNode que se va a fusionar en la instancia de destino.</value>
+  </data>
+  <data name="MergeData_Destination_DisplayName" xml:space="preserve">
+    <value>Destino</value>
+  </data>
+  <data name="MergeData_Destination_Description" xml:space="preserve">
+    <value>El DataNode que se actualizará con la instancia de origen.</value>
+  </data>
+  <data name="Zip_EntryStructure_DisplayName" xml:space="preserve">
+    <value>Estructura de entrada</value>
+  </data>
+  <data name="Zip_EntryStructure_Description" xml:space="preserve">
+    <value>Define cómo se almacenan los archivos dentro del archivo ZIP: mantener rutas relativas, aplanar a la raíz, renombrar duplicados o preservar la estructura completa del directorio. El modo automático aplana cuando es posible y vuelve a las rutas relativas si se detectan nombres duplicados.</value>
+  </data>
+  <data name="UpdateDictionary_Description" xml:space="preserve">
+    <value>Añade o actualiza una entrada en el Diccionario.</value>
+  </data>
+  <data name="UpdateDictionary_DisplayName" xml:space="preserve">
+    <value>Actualizar diccionario</value>
+  </data>
+  <data name="UpdateDictionary_Dictionary_Description" xml:space="preserve">
+    <value>La instancia del Diccionario que se va a actualizar.</value>
+  </data>
+  <data name="UpdateDictionary_Dictionary_DisplayName" xml:space="preserve">
+    <value>Diccionario</value>
+  </data>
+  <data name="UpdateDictionary_Entries_Description" xml:space="preserve">
+    <value>Las entradas que se añadirán o actualizarán en el diccionario</value>
+  </data>
+  <data name="UpdateDictionary_Entries_DisplayName" xml:space="preserve">
+    <value>Entradas</value>
+  </data>
+  <data name="IfActivity_Condition_DisplayName" xml:space="preserve">
+    <value>Condición</value>
+  </data>
+  <data name="IfActivity_Condition_Description" xml:space="preserve">
+    <value>Una actividad que devuelve un booleano para ser evaluada.</value>
+  </data>
+  <data name="IfActivity_Then_Description" xml:space="preserve">
+    <value>Ejecuta un conjunto de actividades secundarias en un orden único y definido.</value>
+  </data>
+  <data name="IfActivity_Else_Description" xml:space="preserve">
+    <value>Ejecuta un conjunto de actividades secundarias en un orden único y definido.</value>
+  </data>
+  <data name="IfActivity_Then_DisplayName" xml:space="preserve">
+    <value>Then</value>
+  </data>
+  <data name="IfActivity_Else_DisplayName" xml:space="preserve">
+    <value>Else</value>
+  </data>
+  <data name="RandomString_ViewModel_Instructions" xml:space="preserve">
+    <value>@"Puede utilizar los siguientes marcadores de posición:
+- a: para letras minúsculas
+- A: para letras mayúsculas
+- 0: para dígitos
+- ?: para caracteres de la propiedad Personalizada
+- *: para cualquiera de los marcadores anteriores
+
+Para escapar un carácter, utilice la barra invertida '\'.
+
+Cualquier otro carácter será tratado como un literal"</value>
+  </data>
+  <data name="RandomString_ViewModel_ShowInstructions" xml:space="preserve">
+    <value>Mostrar instrucciones</value>
+  </data>
+  <data name="RandomString_ViewModel_HideInstructions" xml:space="preserve">
+    <value>Ocultar instrucciones</value>
+  </data>
+  <data name="RandomString_ViewModel_Generate" xml:space="preserve">
+    <value>Generar</value>
+  </data>
+	<data name="IncrementDecrement_Description" xml:space="preserve">
+  <value>Ajusta una variable de tipo entero incrementándola o disminuyéndola con un valor específico.</value>
+  <comment>activity description</comment>
+</data>
+	<data name="IncrementDecrement_DisplayName" xml:space="preserve">
+  <value>Incrementar/Disminuir</value>
+  <comment>activity name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
+  <value>Operación</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
+  <value>Variable</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
+  <value>Valor</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_Description" xml:space="preserve">
+  <value>La variable que se ajustará.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Value_Description" xml:space="preserve">
+  <value>Valor para sumar o restar a la variable. Debe ser igual o mayor a 1.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Description" xml:space="preserve">
+  <value>Operación a realizar.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
+  <value>Incrementar</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
+  <value>Disminuir</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+  <value>El valor debe ser mayor o igual a 1</value>
+  <comment>error message</comment>
+</data>
+	<data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
+  <value>{0} {1} por {2}</value>
+  <comment>view model</comment>
+</data>
+</root>

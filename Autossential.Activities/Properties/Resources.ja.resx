@@ -1,0 +1,921 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Categories_Input" xml:space="preserve">
+    <value>入力</value>
+  </data>
+  <data name="Categories_Output" xml:space="preserve">
+    <value>出力</value>
+  </data>
+  <data name="Categories_Options" xml:space="preserve">
+    <value>オプション</value>
+  </data>
+  <data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
+    <value>変更するコレクション。</value>
+  </data>
+  <data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+    <value>コレクション</value>
+  </data>
+  <data name="AddRangeToCollection_Description" xml:space="preserve">
+    <value>指定したコレクションに要素のセットを追加します。</value>
+  </data>
+  <data name="AddRangeToCollection_DisplayName" xml:space="preserve">
+    <value>コレクションに範囲を追加</value>
+  </data>
+  <data name="AddRangeToCollection_Items_Description" xml:space="preserve">
+    <value>コレクションに追加する要素。</value>
+  </data>
+  <data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+    <value>アイテム</value>
+  </data>
+  <data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
+    <value>ファイルを再確認する時間間隔（秒）を指定します。0.5未満の値は0.5に調整されます。この値がタイムアウトより小さいことを確認してください。</value>
+  </data>
+  <data name="WaitFile_PollingIntervalSeconds_DisplayName" xml:space="preserve">
+    <value>間隔</value>
+  </data>
+  <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
+    <value>エラーがスローされるまでの待機時間（秒）を指定します。デフォルトは30秒です。</value>
+  </data>
+  <data name="WaitFile_Description" xml:space="preserve">
+    <value>ファイルが利用可能になるまで待機します。</value>
+  </data>
+  <data name="WaitFile_DisplayName" xml:space="preserve">
+    <value>ファイルを待機</value>
+  </data>
+  <data name="WaitFile_FilePath_Description" xml:space="preserve">
+    <value>ファイルのパス。</value>
+  </data>
+  <data name="WaitFile_FilePath_DisplayName" xml:space="preserve">
+    <value>ファイルパス</value>
+  </data>
+  <data name="WaitFile_Result_Description" xml:space="preserve">
+    <value>ファイルが見つかった場合のFileInfoオブジェクト。</value>
+  </data>
+  <data name="WaitFile_Result_DisplayName" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="WaitFile_WaitForExist_Description" xml:space="preserve">
+    <value>ファイルが存在するまで待機します。</value>
+  </data>
+  <data name="WaitFile_WaitForExist_DisplayName" xml:space="preserve">
+    <value>存在を待機</value>
+  </data>
+  <data name="Common_TimeoutSeconds_DisplayName" xml:space="preserve">
+    <value>タイムアウト</value>
+  </data>
+  <data name="Common_ViewModel_BrowseForFile" xml:space="preserve">
+    <value>ファイルをブラウズ</value>
+  </data>
+  <data name="Common_ViewModel_BrowseForFolder" xml:space="preserve">
+    <value>フォルダをブラウズ</value>
+  </data>
+  <data name="Categories_Common" xml:space="preserve">
+    <value>共通</value>
+  </data>
+  <data name="Common_ContinueOnError_DisplayName" xml:space="preserve">
+    <value>エラー発生時も継続</value>
+  </data>
+  <data name="Common_ContinueOnError_Description" xml:space="preserve">
+    <value>現在のアクティビティが失敗しても、残りのアクティビティの実行を継続するかどうかを指定します。Boolean値のみを受け入れます。</value>
+  </data>
+  <data name="WaitFile_DirectoryPath_Description" xml:space="preserve">
+    <value>監視するディレクトリのパス。</value>
+  </data>
+  <data name="WaitFile_DirectoryPath_DisplayName" xml:space="preserve">
+    <value>ディレクトリパス</value>
+  </data>
+  <data name="WaitFile_DynamicFile_DisplayName" xml:space="preserve">
+    <value>ファイル名が動的</value>
+  </data>
+  <data name="Common_SearchPattern_Description" xml:space="preserve">
+    <value>パス内のファイル名パターンを定義します。ワイルドカード (*, ?, !, |) をサポートします。除外には ! を使用し (例: !*.txt)、複数のパターンには | を使用します。デフォルト: *.*</value>
+  </data>
+  <data name="Common_SearchPattern_DisplayName" xml:space="preserve">
+    <value>検索パターン</value>
+  </data>
+  <data name="WaitFile_DynamicFile_Description" xml:space="preserve">
+    <value>有効な場合、アクティビティは検索パターンに一致するファイルが見つかるまで特定のフォルダを監視します。</value>
+  </data>
+  <data name="CleanUpFolder_DeleteEmptyFolders_Description" xml:space="preserve">
+    <value>ファイルの削除後に空になったフォルダも削除するかどうかを決定します。</value>
+  </data>
+  <data name="CleanUpFolder_DeleteEmptyFolders_DisplayName" xml:space="preserve">
+    <value>空のフォルダを削除</value>
+  </data>
+  <data name="CleanUpFolder_Description" xml:space="preserve">
+    <value>指定したディレクトリからすべてのファイルとフォルダを削除します。</value>
+  </data>
+  <data name="CleanUpFolder_DisplayName" xml:space="preserve">
+    <value>フォルダをクリーンアップ</value>
+  </data>
+  <data name="CleanUpFolder_Folder_Description" xml:space="preserve">
+    <value>クリーンアップするフォルダのパス。</value>
+  </data>
+  <data name="CleanUpFolder_Folder_DisplayName" xml:space="preserve">
+    <value>フォルダパス</value>
+  </data>
+  <data name="CleanUpFolder_LastWriteTime_Description" xml:space="preserve">
+    <value>最終書き込み日時がこの日付より前のファイルのみを削除します。デフォルト: DateTime.Now。</value>
+  </data>
+  <data name="CleanUpFolder_LastWriteTime_DisplayName" xml:space="preserve">
+    <value>最終更新日</value>
+  </data>
+  <data name="CleanUpFolder_FilesDeleted_Description" xml:space="preserve">
+    <value>削除されたファイルの数。</value>
+  </data>
+  <data name="CleanUpFolder_FilesDeleted_DisplayName" xml:space="preserve">
+    <value>削除されたファイル</value>
+  </data>
+  <data name="CleanUpFolder_SearchOption_Description" xml:space="preserve">
+    <value>操作に対象ディレクトリのみを含めるか、すべてのサブディレクトリを含めるかを指定します。</value>
+  </data>
+  <data name="CleanUpFolder_SearchOption_DisplayName" xml:space="preserve">
+    <value>検索オプション</value>
+  </data>
+  <data name="CleanUpFolder_FoldersDeleted_DisplayName" xml:space="preserve">
+    <value>削除されたフォルダ</value>
+  </data>
+  <data name="CleanUpFolder_FoldersDeleted_Description" xml:space="preserve">
+    <value>削除されたフォルダの数。</value>
+  </data>
+  <data name="Zip_Description" xml:space="preserve">
+    <value>ファイルやフォルダをzipアーカイブに圧縮します。</value>
+  </data>
+  <data name="Zip_DisplayName" xml:space="preserve">
+    <value>圧縮 (Zip)</value>
+  </data>
+  <data name="Zip_ToCompress_Description" xml:space="preserve">
+    <value>圧縮するファイルおよびディレクトリのパスのコレクション。</value>
+  </data>
+  <data name="Zip_ToCompress_DisplayName" xml:space="preserve">
+    <value>圧縮対象</value>
+  </data>
+  <data name="Zip_TextEncoding_Description" xml:space="preserve">
+    <value>zipファイル内のエントリ名に使用されるエンコーディング。</value>
+  </data>
+  <data name="Zip_TextEncoding_DisplayName" xml:space="preserve">
+    <value>テキストエンコーディング</value>
+  </data>
+  <data name="Zip_CompressionLevel_Description" xml:space="preserve">
+    <value>アーカイブ作成時に使用される圧縮レベル。</value>
+  </data>
+  <data name="Zip_CompressionLevel_DisplayName" xml:space="preserve">
+    <value>圧縮レベル</value>
+  </data>
+  <data name="Zip_CompressedFile_Description" xml:space="preserve">
+    <value>作成された圧縮ファイルの識別子。</value>
+  </data>
+  <data name="Zip_CompressedFile_DisplayName" xml:space="preserve">
+    <value>圧縮ファイル</value>
+  </data>
+  <data name="Zip_FullEntryNames_Description" xml:space="preserve">
+    <value>相対パスの代わりにフルエントリ名（絶対パス）を使用します。</value>
+  </data>
+  <data name="Zip_FullEntryNames_DisplayName" xml:space="preserve">
+    <value>フルエントリ名</value>
+  </data>
+  <data name="Zip_FilesCount_Description" xml:space="preserve">
+    <value>アーカイブに追加されたファイルの数。</value>
+  </data>
+  <data name="Zip_FilesCount_DisplayName" xml:space="preserve">
+    <value>ファイル数</value>
+  </data>
+  <data name="Zip_ZipFilePath_Description" xml:space="preserve">
+    <value>zipファイルが作成されるパス。</value>
+  </data>
+  <data name="Zip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>Zipファイルパス</value>
+  </data>
+  <data name="Common_ErrorMsg_ValueNotSupplied" xml:space="preserve">
+    <value>必須引数 '{0}' の値が指定されていません。</value>
+  </data>
+  <data name="Unzip_Description" xml:space="preserve">
+    <value>zipアーカイブからファイルやフォルダを展開します。</value>
+  </data>
+  <data name="Unzip_DisplayName" xml:space="preserve">
+    <value>展開 (Unzip)</value>
+  </data>
+  <data name="Unzip_ZipFilePath_Description" xml:space="preserve">
+    <value>展開するzipファイルのパス。</value>
+  </data>
+  <data name="Unzip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>Zipファイルパス</value>
+  </data>
+  <data name="Unzip_ExtractTo_Description" xml:space="preserve">
+    <value>コンテンツを展開するフォルダ。</value>
+  </data>
+  <data name="Unzip_ExtractTo_DisplayName" xml:space="preserve">
+    <value>展開先</value>
+  </data>
+  <data name="Unzip_Overwrite_Description" xml:space="preserve">
+    <value>有効な場合、展開時に既存のファイルが上書きされます。</value>
+  </data>
+  <data name="Unzip_Overwrite_DisplayName" xml:space="preserve">
+    <value>上書き</value>
+  </data>
+  <data name="Unzip_ErrorMsg_OutsideDir" xml:space="preserve">
+    <value>アーカイブエントリがターゲットディレクトリ外に展開されようとしています。</value>
+  </data>
+  <data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
+    <value>アーカイブ内のディレクトリ名にファイルデータが含まれています。これは無効です。</value>
+  </data>
+  <data name="RandomString_Description" xml:space="preserve">
+    <value>書式パターンに基づいてランダムな文字列を生成します。</value>
+  </data>
+  <data name="RandomString_DisplayName" xml:space="preserve">
+    <value>ランダムな文字列</value>
+  </data>
+  <data name="RandomString_Format_Description" xml:space="preserve">
+    <value>文字列を定義するパターン。'a' 小文字、'A' 大文字、'0' 数字、'*' すべての英数字、'?' カスタム文字、'\\' エスケープ。</value>
+  </data>
+  <data name="RandomString_Format_DisplayName" xml:space="preserve">
+    <value>フォーマット</value>
+  </data>
+  <data name="RandomString_Custom_Description" xml:space="preserve">
+    <value>プレースホルダー '?' に使用される追加文字。</value>
+  </data>
+  <data name="RandomString_Custom_DisplayName" xml:space="preserve">
+    <value>カスタム文字</value>
+  </data>
+  <data name="RandomString_Result_DisplayName" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="RandomString_Result_Description" xml:space="preserve">
+    <value>生成されたランダムな文字列。</value>
+  </data>
+  <data name="ReplaceTokens_Description" xml:space="preserve">
+    <value>文字列内のトークンを辞書の値で置換します。「パターン」と「プレースホルダー」を使用して書式を定義します。</value>
+  </data>
+  <data name="ReplaceTokens_DisplayName" xml:space="preserve">
+    <value>トークンを置換</value>
+  </data>
+  <data name="ReplaceTokens_Dictionary_Description" xml:space="preserve">
+    <value>置換に使用される辞書。</value>
+  </data>
+  <data name="ReplaceTokens_Dictionary_DisplayName" xml:space="preserve">
+    <value>辞書</value>
+  </data>
+  <data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
+    <value>トークンのテキストパターン。</value>
+  </data>
+  <data name="ReplaceTokens_Pattern_DisplayName" xml:space="preserve">
+    <value>パターン</value>
+  </data>
+  <data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
+    <value>パターン内でプレースホルダーとして使用される文字。</value>
+  </data>
+  <data name="ReplaceTokens_Placeholder_DisplayName" xml:space="preserve">
+    <value>プレースホルダー</value>
+  </data>
+  <data name="ReplaceTokens_Result_Description" xml:space="preserve">
+    <value>置換後の結果テキスト。</value>
+  </data>
+  <data name="ReplaceTokens_Result_DisplayName" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="ReplaceTokens_Content_DisplayName" xml:space="preserve">
+    <value>コンテンツ</value>
+  </data>
+  <data name="ReplaceTokens_Content_Description" xml:space="preserve">
+    <value>トークンを含む入力テキスト。</value>
+  </data>
+  <data name="Categories_InputOutput" xml:space="preserve">
+    <value>入力/出力</value>
+  </data>
+  <data name="ReplaceTokens_CaseSensitive_Description" xml:space="preserve">
+    <value>トークン検索で大文字と小文字を区別するかどうかを決定します。</value>
+  </data>
+  <data name="ReplaceTokens_CaseSensitive_DisplayName" xml:space="preserve">
+    <value>大文字・小文字を区別</value>
+  </data>
+  <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
+    <value>利用可能なドライブがありません</value>
+  </data>
+  <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
+    <value>ドライブ文字が無効です (例: 'X'、'X:'、'X:\')。</value>
+  </data>
+  <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
+    <value>資格情報</value>
+  </data>
+  <data name="MapDrive_Description" xml:space="preserve">
+    <value>ネットワークドライブをシステムに割り当てます。</value>
+  </data>
+  <data name="MapDrive_DisplayName" xml:space="preserve">
+    <value>ドライブを割り当て</value>
+  </data>
+  <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
+    <value>割り当てるドライブ文字 (例: "X:")。空の場合、ランダムな文字が選択されます。</value>
+  </data>
+  <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
+    <value>ドライブ文字</value>
+  </data>
+  <data name="MapDrive_Force_Description" xml:space="preserve">
+    <value>文字が既に使用されている場合でも強制的に接続します。</value>
+  </data>
+  <data name="MapDrive_Force_DisplayName" xml:space="preserve">
+    <value>強制</value>
+  </data>
+  <data name="MapDrive_MappedDrive_Description" xml:space="preserve">
+    <value>成功した場合に割り当てられたドライブ文字。</value>
+  </data>
+  <data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
+    <value>割り当て済みドライブ</value>
+  </data>
+  <data name="MapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>標準のWindowsリターンコード。</value>
+  </data>
+  <data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>レスポンスコード</value>
+  </data>
+  <data name="MapDrive_ResponseMessage_Description" xml:space="preserve">
+    <value>操作結果のテキスト説明。</value>
+  </data>
+  <data name="MapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+    <value>レスポンスメッセージ</value>
+  </data>
+  <data name="MapDrive_Result_Description" xml:space="preserve">
+    <value>割り当てが成功した場合はTrue。</value>
+  </data>
+  <data name="MapDrive_Result_DisplayName" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="MapDrive_SharedDrivePath_Description" xml:space="preserve">
+    <value>共有フォルダのネットワークパス。</value>
+  </data>
+  <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
+    <value>ネットワーク共有パス</value>
+  </data>
+  <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
+    <value>切断するドライブの文字 (例: "X:")。</value>
+  </data>
+  <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
+    <value>ドライブ文字</value>
+  </data>
+  <data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>操作のリターンコード。</value>
+  </data>
+  <data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>レスポンスコード</value>
+  </data>
+  <data name="UnmapDrive_ResponseMessage_Description" xml:space="preserve">
+    <value>結果の説明。</value>
+  </data>
+  <data name="UnmapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+    <value>レスポンスメッセージ</value>
+  </data>
+  <data name="UnmapDrive_Result_Description" xml:space="preserve">
+    <value>ドライブが正常に切断された場合はTrue。</value>
+  </data>
+  <data name="UnmapDrive_DisplayName" xml:space="preserve">
+    <value>ドライブを切断</value>
+  </data>
+  <data name="MapDrive_Credential_Placeholder" xml:space="preserve">
+    <value>空の場合、現在のユーザーの資格情報が使用されます。</value>
+  </data>
+  <data name="CultureScope_ErrorMsg_CultureNameNullOrEmpty" xml:space="preserve">
+    <value>カルチャ名を null または空にすることはできません。</value>
+  </data>
+  <data name="CultureScope_Culture_Description" xml:space="preserve">
+    <value>希望するカルチャ (例: ja-JP, en-US)。</value>
+  </data>
+  <data name="CultureScope_Culture_DisplayName" xml:space="preserve">
+    <value>カルチャ</value>
+  </data>
+  <data name="CultureScope_Description" xml:space="preserve">
+    <value>異なるカルチャの下でアクティビティを実行するためのコンテナ。</value>
+  </data>
+  <data name="CultureScope_DisplayName" xml:space="preserve">
+    <value>カルチャスコープ</value>
+  </data>
+  <data name="TerminateProcess_Description" xml:space="preserve">
+    <value>指定したプロセスを正常に終了しようとします。不可能な場合はプロセスを強制終了します。</value>
+  </data>
+  <data name="TerminateProcess_DisplayName" xml:space="preserve">
+    <value>プロセスを終了</value>
+  </data>
+  <data name="TerminateProcess_ProcessNames_Description" xml:space="preserve">
+    <value>終了するプロセス名のリスト。</value>
+  </data>
+  <data name="TerminateProcess_ProcessNames_DisplayName" xml:space="preserve">
+    <value>プロセス名</value>
+  </data>
+  <data name="IfActivity_DisplayName" xml:space="preserve">
+    <value>If アクティビティ</value>
+  </data>
+  <data name="IfActivity_Description" xml:space="preserve">
+    <value>Booleanを返すアクティビティを評価し、対応するブロックを実行します。</value>
+  </data>
+  <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
+    <value>条件フィールドには、Booleanを返すアクティビティが必要です。</value>
+  </data>
+  <data name="Exit_DisplayName" xml:space="preserve">
+    <value>終了 (Exit)</value>
+  </data>
+  <data name="Exit_Condition_Description" xml:space="preserve">
+    <value>アクティビティを評価するかどうかを決定する条件。デフォルト: True。</value>
+  </data>
+  <data name="Exit_Condition_DisplayName" xml:space="preserve">
+    <value>条件</value>
+  </data>
+  <data name="Exit_Description" xml:space="preserve">
+    <value>コンテナまたはループから抜け出し、実行を中断します。</value>
+  </data>
+  <data name="Exit_ErrorMsg_InvalidParent" xml:space="preserve">
+    <value>終了アクティビティは、コンテナまたはタイムループ内に配置する必要があります。</value>
+  </data>
+  <data name="TimeLoop_DisplayName" xml:space="preserve">
+    <value>タイムループ</value>
+  </data>
+  <data name="TimeLoop_Description" xml:space="preserve">
+    <value>タイムアウトまでアクティビティを繰り返します。タイムアウトによりループが停止した場合はTrueを返します。</value>
+  </data>
+  <data name="TimeLoop_Timeout_DisplayName" xml:space="preserve">
+    <value>タイムアウト</value>
+  </data>
+  <data name="TimeLoop_Timeout_Description" xml:space="preserve">
+    <value>ループの総実行時間。</value>
+  </data>
+  <data name="TimeLoop_IntervalSeconds_DisplayName" xml:space="preserve">
+    <value>間隔</value>
+  </data>
+  <data name="TimeLoop_IntervalSeconds_Description" xml:space="preserve">
+    <value>各反復間の待機時間（秒）。</value>
+  </data>
+  <data name="TimeLoop_IterationIndex_DisplayName" xml:space="preserve">
+    <value>インデックス</value>
+  </data>
+  <data name="TimeLoop_IterationIndex_Description" xml:space="preserve">
+    <value>現在の反復インデックス（0から開始）。</value>
+  </data>
+  <data name="Container_DisplayName" xml:space="preserve">
+    <value>コンテナ</value>
+  </data>
+  <data name="Container_Description" xml:space="preserve">
+    <value>終了アクティビティと組み合わせて、セカンダリフローを中断するラッパー。</value>
+  </data>
+  <data name="CheckPoint_Data_Description" xml:space="preserve">
+    <value>例外用のキー/値ペアのコレクション。</value>
+  </data>
+  <data name="CheckPoint_Data_DisplayName" xml:space="preserve">
+    <value>データ</value>
+  </data>
+  <data name="CheckPoint_Description" xml:space="preserve">
+    <value>式が真かどうかを確認し、偽の場合は例外をスローします。</value>
+  </data>
+  <data name="CheckPoint_DisplayName" xml:space="preserve">
+    <value>チェックポイント</value>
+  </data>
+  <data name="CheckPoint_Exception_Description" xml:space="preserve">
+    <value>スローする例外。</value>
+  </data>
+  <data name="CheckPoint_Exception_DisplayName" xml:space="preserve">
+    <value>例外</value>
+  </data>
+  <data name="CheckPoint_Expression_Description" xml:space="preserve">
+    <value>評価する式。</value>
+  </data>
+  <data name="CheckPoint_Expression_DisplayName" xml:space="preserve">
+    <value>式</value>
+  </data>
+  <data name="PromoteHeaders_AutoRename_Description" xml:space="preserve">
+    <value>Trueの場合、列名が既に存在すれば数値のサフィックスを追加します。</value>
+  </data>
+  <data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
+    <value>自動リネーム</value>
+  </data>
+  <data name="PromoteHeaders_Description" xml:space="preserve">
+    <value>最初の行の値を列ヘッダーとして昇格させます。</value>
+  </data>
+  <data name="PromoteHeaders_DisplayName" xml:space="preserve">
+    <value>ヘッダーを昇格</value>
+  </data>
+  <data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
+    <value>昇格させる行がありません。</value>
+  </data>
+  <data name="PromoteHeaders_DataTable_Description" xml:space="preserve">
+    <value>処理するデータテーブル。</value>
+  </data>
+  <data name="PromoteHeaders_DataTable_DisplayName" xml:space="preserve">
+    <value>データテーブル</value>
+  </data>
+  <data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
+    <value>DateTime列に使用する日付書式。</value>
+  </data>
+  <data name="DataTableToText_DateTimeFormat_DisplayName" xml:space="preserve">
+    <value>日付/時刻書式</value>
+  </data>
+  <data name="DataTableToText_Description" xml:space="preserve">
+    <value>データテーブルをHTML、JSON、またはXML形式で表す文字列を返します。</value>
+  </data>
+  <data name="DataTableToText_DisplayName" xml:space="preserve">
+    <value>データテーブルをテキストに変換</value>
+  </data>
+  <data name="DataTableToText_DataTable_Description" xml:space="preserve">
+    <value>データテーブル。</value>
+  </data>
+  <data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
+    <value>データテーブル</value>
+  </data>
+  <data name="DataTableToText_Result_Description" xml:space="preserve">
+    <value>結果の文字列。</value>
+  </data>
+  <data name="DataTableToText_Result_DisplayName" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="DataTableToText_OutputFormat_Description" xml:space="preserve">
+    <value>希望する出力形式。</value>
+  </data>
+  <data name="DataTableToText_OutputFormat_DisplayName" xml:space="preserve">
+    <value>出力形式</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnNames_Description" xml:space="preserve">
+    <value>評価する列の名前。</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnNames_DisplayName" xml:space="preserve">
+    <value>列名</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_DisplayName" xml:space="preserve">
+    <value>列インデックス</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_Description" xml:space="preserve">
+    <value>評価する列のインデックス。</value>
+  </data>
+  <data name="RemoveEmptyRows_Description" xml:space="preserve">
+    <value>データテーブルから空の行を削除します。</value>
+  </data>
+  <data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
+    <value>空の行を削除</value>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_Description" xml:space="preserve">
+    <value>クリーンアップするデータテーブル。</value>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_DisplayName" xml:space="preserve">
+    <value>データテーブル</value>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_Description" xml:space="preserve">
+    <value>All: すべての列が空の場合に削除。Any: 少なくとも1つの列が空の場合に削除。</value>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
+    <value>一致モード</value>
+  </data>
+  <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
+    <value>データテーブル</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+    <value>削除する列の名前。</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">
+    <value>列名</value>
+  </data>
+  <data name="RemoveDataColumns_Description" xml:space="preserve">
+    <value>データテーブルから指定した列を削除します。</value>
+  </data>
+  <data name="RemoveDataColumns_DisplayName" xml:space="preserve">
+    <value>データ列を削除</value>
+  </data>
+  <data name="RemoveDataColumns_DataTable_Description" xml:space="preserve">
+    <value>ソースのデータテーブル。</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnIndexes_DisplayName" xml:space="preserve">
+    <value>列インデックス</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnIndexes_Description" xml:space="preserve">
+    <value>削除する列のインデックス。</value>
+  </data>
+  <data name="TransposeData_Description" xml:space="preserve">
+    <value>データテーブルを転置します（行が列になり、列が行になります）。</value>
+  </data>
+  <data name="TransposeData_DisplayName" xml:space="preserve">
+    <value>データを転置</value>
+  </data>
+  <data name="TransposeData_DataTable_Description" xml:space="preserve">
+    <value>転置するデータテーブル。</value>
+  </data>
+  <data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
+    <value>データテーブル</value>
+  </data>
+  <data name="ParseData_DisplayName" xml:space="preserve">
+    <value>データを解析 (Parse)</value>
+  </data>
+  <data name="ParseData_Description" xml:space="preserve">
+    <value>JSONまたはYAMLをDataNodeに解析して簡単に操作できるようにします。</value>
+  </data>
+  <data name="ParseData_Content_DisplayName" xml:space="preserve">
+    <value>コンテンツ</value>
+  </data>
+  <data name="ParseData_Content_Description" xml:space="preserve">
+    <value>解析するJSONまたはYAMLテキスト。</value>
+  </data>
+  <data name="ParseData_Culture_DisplayName" xml:space="preserve">
+    <value>カルチャ</value>
+  </data>
+  <data name="ParseData_Culture_Description" xml:space="preserve">
+    <value>数値の変換に適用されるカルチャ。</value>
+  </data>
+  <data name="ParseData_Result_DisplayName" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="ParseData_Result_Description" xml:space="preserve">
+    <value>生成されたDataNode。</value>
+  </data>
+  <data name="LoadDataFile_DisplayName" xml:space="preserve">
+    <value>データファイルを読み込み</value>
+  </data>
+  <data name="LoadDataFile_Description" xml:space="preserve">
+    <value>JSONまたはYAMLファイルを読み取り、DataNodeに変換します。</value>
+  </data>
+  <data name="LoadDataFile_Encoding_Description" xml:space="preserve">
+    <value>テキストのエンコーディング (デフォルト: UTF-8)。</value>
+  </data>
+  <data name="LoadDataFile_Culture_Description" xml:space="preserve">
+    <value>数値型の変換に使用するカルチャ。</value>
+  </data>
+  <data name="LoadDataFile_Result_Description" xml:space="preserve">
+    <value>生成されたDataNode。</value>
+  </data>
+  <data name="LoadDataFile_Culture_DisplayName" xml:space="preserve">
+    <value>カルチャ</value>
+  </data>
+  <data name="LoadDataFile_Encoding_DisplayName" xml:space="preserve">
+    <value>エンコーディング</value>
+  </data>
+  <data name="LoadDataFile_Result_DisplayName" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="LoadDataFile_FilePath_Description" xml:space="preserve">
+    <value>JSON/YAMLファイルのパス。</value>
+  </data>
+  <data name="LoadDataFile_FilePath_DisplayName" xml:space="preserve">
+    <value>ファイルパス</value>
+  </data>
+  <data name="ActivityCategories_Data" xml:space="preserve">
+    <value>Autossential.データ</value>
+  </data>
+  <data name="ActivityCategories_Files" xml:space="preserve">
+    <value>Autossential.ファイル</value>
+  </data>
+  <data name="ActivityCategories_Programming" xml:space="preserve">
+    <value>Autossential.プログラミング</value>
+  </data>
+  <data name="ActivityCategories_System" xml:space="preserve">
+    <value>Autossential.システム</value>
+  </data>
+  <data name="ActivityCategories_Workflow" xml:space="preserve">
+    <value>Autossential.ワークフロー</value>
+  </data>
+  <data name="UnmapDrive_Description" xml:space="preserve">
+    <value>割り当てられたネットワークドライブを削除します。</value>
+  </data>
+  <data name="MergeData_DisplayName" xml:space="preserve">
+    <value>データをマージ</value>
+  </data>
+  <data name="MergeData_Description" xml:space="preserve">
+    <value>ソースのDataNodeをターゲットにマージします。</value>
+  </data>
+  <data name="MergeData_Source_DisplayName" xml:space="preserve">
+    <value>ソース</value>
+  </data>
+  <data name="MergeData_Source_Description" xml:space="preserve">
+    <value>マージするDataNode。</value>
+  </data>
+  <data name="MergeData_Destination_DisplayName" xml:space="preserve">
+    <value>ターゲット</value>
+  </data>
+  <data name="MergeData_Destination_Description" xml:space="preserve">
+    <value>マージ先のDataNode。</value>
+  </data>
+  <data name="Zip_EntryStructure_DisplayName" xml:space="preserve">
+    <value>エントリ構造</value>
+  </data>
+  <data name="Zip_EntryStructure_Description" xml:space="preserve">
+    <value>ファイルがZIP内にどのように保存されるかを定義します（相対パス、フラットなど）。</value>
+  </data>
+  <data name="UpdateDictionary_Description" xml:space="preserve">
+    <value>辞書内のエントリを追加または更新します。</value>
+  </data>
+  <data name="UpdateDictionary_DisplayName" xml:space="preserve">
+    <value>辞書を更新</value>
+  </data>
+  <data name="UpdateDictionary_Dictionary_Description" xml:space="preserve">
+    <value>変更する辞書のインスタンス。</value>
+  </data>
+  <data name="UpdateDictionary_Dictionary_DisplayName" xml:space="preserve">
+    <value>辞書</value>
+  </data>
+  <data name="UpdateDictionary_Entries_Description" xml:space="preserve">
+    <value>追加または変更するエントリ。</value>
+  </data>
+  <data name="UpdateDictionary_Entries_DisplayName" xml:space="preserve">
+    <value>エントリ</value>
+  </data>
+  <data name="IfActivity_Condition_DisplayName" xml:space="preserve">
+    <value>条件</value>
+  </data>
+  <data name="IfActivity_Condition_Description" xml:space="preserve">
+    <value>Booleanを返すアクティビティ。</value>
+  </data>
+  <data name="IfActivity_Then_Description" xml:space="preserve">
+    <value>条件が真の場合にアクティビティを実行します。</value>
+  </data>
+  <data name="IfActivity_Else_Description" xml:space="preserve">
+    <value>条件が偽の場合にアクティビティを実行します。</value>
+  </data>
+  <data name="IfActivity_Then_DisplayName" xml:space="preserve">
+    <value>真 (Then)</value>
+  </data>
+  <data name="IfActivity_Else_DisplayName" xml:space="preserve">
+    <value>偽 (Else)</value>
+  </data>
+  <data name="RandomString_ViewModel_Instructions" xml:space="preserve">
+    <value>@"次のプレースホルダーを使用できます：
+- a : 英小文字
+- A : 英大文字
+- 0 : 数字
+- ? : カスタムプロパティの文字
+- * : 上記のいずれか
+
+文字をエスケープするには、バックスラッシュ '\' を使用します。
+
+その他の文字はリテラルとして扱われます。"</value>
+  </data>
+  <data name="RandomString_ViewModel_ShowInstructions" xml:space="preserve">
+    <value>説明を表示</value>
+  </data>
+  <data name="RandomString_ViewModel_HideInstructions" xml:space="preserve">
+    <value>説明を隠す</value>
+  </data>
+  <data name="RandomString_ViewModel_Generate" xml:space="preserve">
+    <value>生成</value>
+  </data>
+	<data name="IncrementDecrement_Description" xml:space="preserve">
+  <value>指定された値を使用して、整数変数を加算または減算して調整します。</value>
+  <comment>activity description</comment>
+</data>
+	<data name="IncrementDecrement_DisplayName" xml:space="preserve">
+  <value>インクリメント/デクリメント</value>
+  <comment>activity name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
+  <value>演算</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
+  <value>変数</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
+  <value>値</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_Description" xml:space="preserve">
+  <value>調整する変数。</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Value_Description" xml:space="preserve">
+  <value>変数に加算または減算する値。1以上である必要があります。</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Description" xml:space="preserve">
+  <value>実行する演算。</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
+  <value>インクリメント</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
+  <value>デクリメント</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+  <value>値は1以上である必要があります</value>
+  <comment>error message</comment>
+</data>
+	<data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
+  <value>{1} を {2} {0}</value>
+  <comment>view model</comment>
+</data>
+</root>

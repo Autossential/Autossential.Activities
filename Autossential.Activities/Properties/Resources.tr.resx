@@ -1,0 +1,921 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Categories_Input" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
+  <data name="Categories_Output" xml:space="preserve">
+    <value>Çıkış</value>
+  </data>
+  <data name="Categories_Options" xml:space="preserve">
+    <value>Seçenekler</value>
+  </data>
+  <data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
+    <value>Değiştirilecek koleksiyon.</value>
+  </data>
+  <data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+    <value>Koleksiyon</value>
+  </data>
+  <data name="AddRangeToCollection_Description" xml:space="preserve">
+    <value>Belirtilen koleksiyona bir dizi öğe ekler.</value>
+  </data>
+  <data name="AddRangeToCollection_DisplayName" xml:space="preserve">
+    <value>Koleksiyona Aralık Ekle</value>
+  </data>
+  <data name="AddRangeToCollection_Items_Description" xml:space="preserve">
+    <value>Koleksiyona eklenecek öğeler.</value>
+  </data>
+  <data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+    <value>Öğeler</value>
+  </data>
+  <data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
+    <value>Dosyayı tekrar kontrol etmek için zaman aralığını (saniye cinsinden) belirtir. 0,5'ten küçük değerler 0,5 olarak ayarlanacaktır. Bu değerin zaman aşımı süresinden küçük olduğundan emin olun.</value>
+  </data>
+  <data name="WaitFile_PollingIntervalSeconds_DisplayName" xml:space="preserve">
+    <value>Aralık</value>
+  </data>
+  <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
+    <value>Hata oluşmadan önce beklenecek süreyi (saniye cinsinden) belirtir. Varsayılan 30 saniyedir.</value>
+  </data>
+  <data name="WaitFile_Description" xml:space="preserve">
+    <value>Bir dosya hazır olana kadar bekler.</value>
+  </data>
+  <data name="WaitFile_DisplayName" xml:space="preserve">
+    <value>Dosyayı Bekle</value>
+  </data>
+  <data name="WaitFile_FilePath_Description" xml:space="preserve">
+    <value>Dosya yolu.</value>
+  </data>
+  <data name="WaitFile_FilePath_DisplayName" xml:space="preserve">
+    <value>Dosya Yolu</value>
+  </data>
+  <data name="WaitFile_Result_Description" xml:space="preserve">
+    <value>Dosya bulunursa FileInfo nesnesi.</value>
+  </data>
+  <data name="WaitFile_Result_DisplayName" xml:space="preserve">
+    <value>Sonuç</value>
+  </data>
+  <data name="WaitFile_WaitForExist_Description" xml:space="preserve">
+    <value>Dosya var olana kadar bekler.</value>
+  </data>
+  <data name="WaitFile_WaitForExist_DisplayName" xml:space="preserve">
+    <value>Varlığı Bekle</value>
+  </data>
+  <data name="Common_TimeoutSeconds_DisplayName" xml:space="preserve">
+    <value>Zaman Aşımı</value>
+  </data>
+  <data name="Common_ViewModel_BrowseForFile" xml:space="preserve">
+    <value>Dosyaya Göz At</value>
+  </data>
+  <data name="Common_ViewModel_BrowseForFolder" xml:space="preserve">
+    <value>Klasöre Göz At</value>
+  </data>
+  <data name="Categories_Common" xml:space="preserve">
+    <value>Ortak</value>
+  </data>
+  <data name="Common_ContinueOnError_DisplayName" xml:space="preserve">
+    <value>Hatada Devam Et</value>
+  </data>
+  <data name="Common_ContinueOnError_Description" xml:space="preserve">
+    <value>Mevcut etkinlik başarısız olsa bile kalan etkinliklerin yürütülmesine devam edilip edilmeyeceğini belirtir. Sadece Boole değerlerini kabul eder.</value>
+  </data>
+  <data name="WaitFile_DirectoryPath_Description" xml:space="preserve">
+    <value>İzlenecek dizin yolu.</value>
+  </data>
+  <data name="WaitFile_DirectoryPath_DisplayName" xml:space="preserve">
+    <value>Dizin Yolu</value>
+  </data>
+  <data name="WaitFile_DynamicFile_DisplayName" xml:space="preserve">
+    <value>Dinamik Dosya Adı</value>
+  </data>
+  <data name="Common_SearchPattern_Description" xml:space="preserve">
+    <value>Dosya adı modelini tanımlar. Joker karakterleri destekler (*, ?, !, |). Hariç tutmak için ! kullanın (örn: !*.txt) ve birden fazla model için | kullanın. Varsayılan: *.*</value>
+  </data>
+  <data name="Common_SearchPattern_DisplayName" xml:space="preserve">
+    <value>Arama Deseni</value>
+  </data>
+  <data name="WaitFile_DynamicFile_Description" xml:space="preserve">
+    <value>Etkinleştirilirse, arama desenine uygun bir dosya bulunana kadar belirli bir klasörü izler.</value>
+  </data>
+  <data name="CleanUpFolder_DeleteEmptyFolders_Description" xml:space="preserve">
+    <value>Dosyalar silindikten sonra boş klasörlerin de silinip silinmeyeceğini belirler.</value>
+  </data>
+  <data name="CleanUpFolder_DeleteEmptyFolders_DisplayName" xml:space="preserve">
+    <value>Boş Klasörleri Sil</value>
+  </data>
+  <data name="CleanUpFolder_Description" xml:space="preserve">
+    <value>Belirtilen dizindeki tüm dosya ve klasörleri siler.</value>
+  </data>
+  <data name="CleanUpFolder_DisplayName" xml:space="preserve">
+    <value>Klasörü Temizle</value>
+  </data>
+  <data name="CleanUpFolder_Folder_Description" xml:space="preserve">
+    <value>Temizlenecek klasörün yolu.</value>
+  </data>
+  <data name="CleanUpFolder_Folder_DisplayName" xml:space="preserve">
+    <value>Klasör Yolu</value>
+  </data>
+  <data name="CleanUpFolder_LastWriteTime_Description" xml:space="preserve">
+    <value>Yalnızca son yazılma zamanı bu tarihten önce olan dosyaları siler. Varsayılan: DateTime.Now.</value>
+  </data>
+  <data name="CleanUpFolder_LastWriteTime_DisplayName" xml:space="preserve">
+    <value>Son Yazma Zamanı</value>
+  </data>
+  <data name="CleanUpFolder_FilesDeleted_Description" xml:space="preserve">
+    <value>Silinen dosya sayısı.</value>
+  </data>
+  <data name="CleanUpFolder_FilesDeleted_DisplayName" xml:space="preserve">
+    <value>Silinen Dosyalar</value>
+  </data>
+  <data name="CleanUpFolder_SearchOption_Description" xml:space="preserve">
+    <value>İşlemin yalnızca hedef dizini mi yoksa tüm alt dizinleri mi içereceğini belirtir.</value>
+  </data>
+  <data name="CleanUpFolder_SearchOption_DisplayName" xml:space="preserve">
+    <value>Arama Seçeneği</value>
+  </data>
+  <data name="CleanUpFolder_FoldersDeleted_DisplayName" xml:space="preserve">
+    <value>Silinen Klasörler</value>
+  </data>
+  <data name="CleanUpFolder_FoldersDeleted_Description" xml:space="preserve">
+    <value>Silinen klasör sayısı.</value>
+  </data>
+  <data name="Zip_Description" xml:space="preserve">
+    <value>Dosyaları veya klasörleri bir zip dosyasında sıkıştırır.</value>
+  </data>
+  <data name="Zip_DisplayName" xml:space="preserve">
+    <value>Sıkıştır (Zip)</value>
+  </data>
+  <data name="Zip_ToCompress_Description" xml:space="preserve">
+    <value>Sıkıştırılacak dosya ve dizin yolları koleksiyonu.</value>
+  </data>
+  <data name="Zip_ToCompress_DisplayName" xml:space="preserve">
+    <value>Sıkıştırılacak Öğeler</value>
+  </data>
+  <data name="Zip_TextEncoding_Description" xml:space="preserve">
+    <value>Zip dosyasındaki giriş adları için kullanılan kodlama.</value>
+  </data>
+  <data name="Zip_TextEncoding_DisplayName" xml:space="preserve">
+    <value>Metin Kodlaması</value>
+  </data>
+  <data name="Zip_CompressionLevel_Description" xml:space="preserve">
+    <value>Arşiv oluşturulurken kullanılan sıkıştırma düzeyi.</value>
+  </data>
+  <data name="Zip_CompressionLevel_DisplayName" xml:space="preserve">
+    <value>Sıkıştırma Düzeyi</value>
+  </data>
+  <data name="Zip_CompressedFile_Description" xml:space="preserve">
+    <value>Elde edilen sıkıştırılmış dosyanın tanımlayıcısı.</value>
+  </data>
+  <data name="Zip_CompressedFile_DisplayName" xml:space="preserve">
+    <value>Sıkıştırılmış Dosya</value>
+  </data>
+  <data name="Zip_FullEntryNames_Description" xml:space="preserve">
+    <value>Göreceli yollar yerine tam giriş adını (mutlak yol) kullanın.</value>
+  </data>
+  <data name="Zip_FullEntryNames_DisplayName" xml:space="preserve">
+    <value>Tam Giriş Adları</value>
+  </data>
+  <data name="Zip_FilesCount_Description" xml:space="preserve">
+    <value>Arşive eklenen dosya sayısı.</value>
+  </data>
+  <data name="Zip_FilesCount_DisplayName" xml:space="preserve">
+    <value>Dosya Sayısı</value>
+  </data>
+  <data name="Zip_ZipFilePath_Description" xml:space="preserve">
+    <value>Zip dosyasının oluşturulacağı yol.</value>
+  </data>
+  <data name="Zip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>Zip Dosya Yolu</value>
+  </data>
+  <data name="Common_ErrorMsg_ValueNotSupplied" xml:space="preserve">
+    <value>'{0}' zorunlu bağımsız değişkeni için değer sağlanmadı.</value>
+  </data>
+  <data name="Unzip_Description" xml:space="preserve">
+    <value>Dosyaları ve klasörleri bir zip dosyasından çıkarır.</value>
+  </data>
+  <data name="Unzip_DisplayName" xml:space="preserve">
+    <value>Aç (Unzip)</value>
+  </data>
+  <data name="Unzip_ZipFilePath_Description" xml:space="preserve">
+    <value>Çıkarılacak zip dosyasının yolu.</value>
+  </data>
+  <data name="Unzip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>Zip Dosya Yolu</value>
+  </data>
+  <data name="Unzip_ExtractTo_Description" xml:space="preserve">
+    <value>İçeriğin çıkarılacağı klasör.</value>
+  </data>
+  <data name="Unzip_ExtractTo_DisplayName" xml:space="preserve">
+    <value>Buraya Çıkar</value>
+  </data>
+  <data name="Unzip_Overwrite_Description" xml:space="preserve">
+    <value>Etkinleştirilirse, çıkarma sırasında mevcut dosyaların üzerine yazar.</value>
+  </data>
+  <data name="Unzip_Overwrite_DisplayName" xml:space="preserve">
+    <value>Üzerine Yaz</value>
+  </data>
+  <data name="Unzip_ErrorMsg_OutsideDir" xml:space="preserve">
+    <value>Arşiv girişi, hedef dizinin dışına çıkarılmaya çalışılıyor.</value>
+  </data>
+  <data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
+    <value>Arşivdeki dizin adı geçersiz olan dosya verilerini içeriyor.</value>
+  </data>
+  <data name="RandomString_Description" xml:space="preserve">
+    <value>Bir biçim desenine dayalı rastgele bir dize oluşturur.</value>
+  </data>
+  <data name="RandomString_DisplayName" xml:space="preserve">
+    <value>Rastgele Dize</value>
+  </data>
+  <data name="RandomString_Format_Description" xml:space="preserve">
+    <value>Dizeyi tanımlayan desen. 'a' küçük harf, 'A' büyük harf, '0' sayı, '*' herhangi bir alfanümerik, '?' özel karakter, '\\' kaçış.</value>
+  </data>
+  <data name="RandomString_Format_DisplayName" xml:space="preserve">
+    <value>Biçim</value>
+  </data>
+  <data name="RandomString_Custom_Description" xml:space="preserve">
+    <value>'?' yer tutucusu için kullanılacak ek karakterler.</value>
+  </data>
+  <data name="RandomString_Custom_DisplayName" xml:space="preserve">
+    <value>Özel Karakterler</value>
+  </data>
+  <data name="RandomString_Result_DisplayName" xml:space="preserve">
+    <value>Sonuç</value>
+  </data>
+  <data name="RandomString_Result_Description" xml:space="preserve">
+    <value>Oluşturulan rastgele dize.</value>
+  </data>
+  <data name="ReplaceTokens_Description" xml:space="preserve">
+    <value>Bir dizedeki belirteçleri bir sözlükteki değerlerle değiştirir. Biçimi tanımlamak için 'Desen' ve 'Yer Tutucu' kullanır.</value>
+  </data>
+  <data name="ReplaceTokens_DisplayName" xml:space="preserve">
+    <value>Belirteçleri Değiştir</value>
+  </data>
+  <data name="ReplaceTokens_Dictionary_Description" xml:space="preserve">
+    <value>Değiştirme değerlerini içeren sözlük.</value>
+  </data>
+  <data name="ReplaceTokens_Dictionary_DisplayName" xml:space="preserve">
+    <value>Sözlük</value>
+  </data>
+  <data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
+    <value>Belirteç için metin deseni.</value>
+  </data>
+  <data name="ReplaceTokens_Pattern_DisplayName" xml:space="preserve">
+    <value>Desen</value>
+  </data>
+  <data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
+    <value>Desen içinde yer tutucu olarak kullanılan karakter.</value>
+  </data>
+  <data name="ReplaceTokens_Placeholder_DisplayName" xml:space="preserve">
+    <value>Yer Tutucu</value>
+  </data>
+  <data name="ReplaceTokens_Result_Description" xml:space="preserve">
+    <value>Değişikliklerin yapıldığı sonuç metni.</value>
+  </data>
+  <data name="ReplaceTokens_Result_DisplayName" xml:space="preserve">
+    <value>Sonuç</value>
+  </data>
+  <data name="ReplaceTokens_Content_DisplayName" xml:space="preserve">
+    <value>İçerik</value>
+  </data>
+  <data name="ReplaceTokens_Content_Description" xml:space="preserve">
+    <value>Belirteçleri içeren giriş metni.</value>
+  </data>
+  <data name="Categories_InputOutput" xml:space="preserve">
+    <value>Giriş/Çıkış</value>
+  </data>
+  <data name="ReplaceTokens_CaseSensitive_Description" xml:space="preserve">
+    <value>Belirteç aramasının büyük/küçük harfe duyarlı olup olmayacağını belirler.</value>
+  </data>
+  <data name="ReplaceTokens_CaseSensitive_DisplayName" xml:space="preserve">
+    <value>Büyük/Küçük Harf Duyarlı</value>
+  </data>
+  <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
+    <value>Başarılı</value>
+  </data>
+  <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
+    <value>Kullanılabilir sürücü yok.</value>
+  </data>
+  <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
+    <value>Geçersiz sürücü harfi (örn: 'X', 'X:', 'X:\').</value>
+  </data>
+  <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
+    <value>Kimlik Bilgileri</value>
+  </data>
+  <data name="MapDrive_Description" xml:space="preserve">
+    <value>Sistemde bir ağ sürücüsünü eşler.</value>
+  </data>
+  <data name="MapDrive_DisplayName" xml:space="preserve">
+    <value>Sürücüyü Eşle</value>
+  </data>
+  <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
+    <value>Eşlenecek sürücü harfi (örn: "X:"). Boşsa, rastgele bir harf seçilecektir.</value>
+  </data>
+  <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
+    <value>Sürücü Harfi</value>
+  </data>
+  <data name="MapDrive_Force_Description" xml:space="preserve">
+    <value>Harf zaten kullanımda olsa bile bağlantıyı zorla.</value>
+  </data>
+  <data name="MapDrive_Force_DisplayName" xml:space="preserve">
+    <value>Bağlantıyı Zorla</value>
+  </data>
+  <data name="MapDrive_MappedDrive_Description" xml:space="preserve">
+    <value>Başarı durumunda eşlenen sürücü harfi.</value>
+  </data>
+  <data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
+    <value>Eşlenen Sürücü</value>
+  </data>
+  <data name="MapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>Standart Windows dönüş kodu.</value>
+  </data>
+  <data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>Yanıt Kodu</value>
+  </data>
+  <data name="MapDrive_ResponseMessage_Description" xml:space="preserve">
+    <value>İşlem sonucunun metinsel açıklaması.</value>
+  </data>
+  <data name="MapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+    <value>Yanıt Mesajı</value>
+  </data>
+  <data name="MapDrive_Result_Description" xml:space="preserve">
+    <value>Eşleme başarılıysa True.</value>
+  </data>
+  <data name="MapDrive_Result_DisplayName" xml:space="preserve">
+    <value>Sonuç</value>
+  </data>
+  <data name="MapDrive_SharedDrivePath_Description" xml:space="preserve">
+    <value>Paylaşılan klasörün ağ yolu.</value>
+  </data>
+  <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
+    <value>Ağ Yolu</value>
+  </data>
+  <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
+    <value>Sonuç</value>
+  </data>
+  <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
+    <value>Bağlantısı kesilecek sürücü harfi (örn: "X:").</value>
+  </data>
+  <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
+    <value>Sürücü Harfi</value>
+  </data>
+  <data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>İşlemin dönüş kodu.</value>
+  </data>
+  <data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>Yanıt Kodu</value>
+  </data>
+  <data name="UnmapDrive_ResponseMessage_Description" xml:space="preserve">
+    <value>Sonuç açıklaması.</value>
+  </data>
+  <data name="UnmapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+    <value>Yanıt Mesajı</value>
+  </data>
+  <data name="UnmapDrive_Result_Description" xml:space="preserve">
+    <value>Sürücü bağlantısı başarıyla kesildiyse True.</value>
+  </data>
+  <data name="UnmapDrive_DisplayName" xml:space="preserve">
+    <value>Sürücü Bağlantısını Kes</value>
+  </data>
+  <data name="MapDrive_Credential_Placeholder" xml:space="preserve">
+    <value>Boşsa, mevcut kullanıcının kimlik bilgileri kullanılacaktır.</value>
+  </data>
+  <data name="CultureScope_ErrorMsg_CultureNameNullOrEmpty" xml:space="preserve">
+    <value>Kültür adı boş veya null olamaz.</value>
+  </data>
+  <data name="CultureScope_Culture_Description" xml:space="preserve">
+    <value>İstenen kültür (örn: tr-TR, en-US).</value>
+  </data>
+  <data name="CultureScope_Culture_DisplayName" xml:space="preserve">
+    <value>Kültür</value>
+  </data>
+  <data name="CultureScope_Description" xml:space="preserve">
+    <value>Etkinlikleri farklı bir kültür ortamı altında yürütmek için bir kapsayıcı.</value>
+  </data>
+  <data name="CultureScope_DisplayName" xml:space="preserve">
+    <value>Kültür Kapsamı (CultureScope)</value>
+  </data>
+  <data name="TerminateProcess_Description" xml:space="preserve">
+    <value>Belirtilen işlemleri düzgünce kapatmaya çalışır veya gerekirse zorla sonlandırır.</value>
+  </data>
+  <data name="TerminateProcess_DisplayName" xml:space="preserve">
+    <value>İşlemi Sonlandır</value>
+  </data>
+  <data name="TerminateProcess_ProcessNames_Description" xml:space="preserve">
+    <value>Sonlandırılacak işlem adlarının listesi.</value>
+  </data>
+  <data name="TerminateProcess_ProcessNames_DisplayName" xml:space="preserve">
+    <value>İşlem Adları</value>
+  </data>
+  <data name="IfActivity_DisplayName" xml:space="preserve">
+    <value>If Etkinliği</value>
+  </data>
+  <data name="IfActivity_Description" xml:space="preserve">
+    <value>Boole değeri döndüren bir etkinliği değerlendirir ve ilgili bloğu yürütür.</value>
+  </data>
+  <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
+    <value>Koşul alanı, Boole döndüren bir etkinlik gerektirir.</value>
+  </data>
+  <data name="Exit_DisplayName" xml:space="preserve">
+    <value>Çıkış (Exit)</value>
+  </data>
+  <data name="Exit_Condition_Description" xml:space="preserve">
+    <value>Etkinliğin değerlendirilip değerlendirilmeyeceğini belirleyen koşul. Varsayılan: True.</value>
+  </data>
+  <data name="Exit_Condition_DisplayName" xml:space="preserve">
+    <value>Koşul</value>
+  </data>
+  <data name="Exit_Description" xml:space="preserve">
+    <value>Bir kapsayıcıdan veya döngüden çıkar ve yürütmeyi durdurur.</value>
+  </data>
+  <data name="Exit_ErrorMsg_InvalidParent" xml:space="preserve">
+    <value>Exit etkinliği bir Container veya TimeLoop içine yerleştirilmelidir.</value>
+  </data>
+  <data name="TimeLoop_DisplayName" xml:space="preserve">
+    <value>Zaman Döngüsü (TimeLoop)</value>
+  </data>
+  <data name="TimeLoop_Description" xml:space="preserve">
+    <value>Süre dolana kadar etkinlikleri tekrarlar. Döngü zaman aşımı nedeniyle durduysa True döndürür.</value>
+  </data>
+  <data name="TimeLoop_Timeout_DisplayName" xml:space="preserve">
+    <value>Zaman Aşımı</value>
+  </data>
+  <data name="TimeLoop_Timeout_Description" xml:space="preserve">
+    <value>Döngü için toplam yürütme süresi.</value>
+  </data>
+  <data name="TimeLoop_IntervalSeconds_DisplayName" xml:space="preserve">
+    <value>Aralık</value>
+  </data>
+  <data name="TimeLoop_IntervalSeconds_Description" xml:space="preserve">
+    <value>Her yineleme arasındaki bekleme süresi (saniye cinsinden).</value>
+  </data>
+  <data name="TimeLoop_IterationIndex_DisplayName" xml:space="preserve">
+    <value>Dizin</value>
+  </data>
+  <data name="TimeLoop_IterationIndex_Description" xml:space="preserve">
+    <value>Geçerli yinelemenin dizini (0'dan başlar).</value>
+  </data>
+  <data name="Container_DisplayName" xml:space="preserve">
+    <value>Kapsayıcı</value>
+  </data>
+  <data name="Container_Description" xml:space="preserve">
+    <value>İkincil akışları kesmek için Exit etkinliği ile kullanılan bir sarmalayıcı.</value>
+  </data>
+  <data name="CheckPoint_Data_Description" xml:space="preserve">
+    <value>Özel durum işleme için anahtar/değer çiftleri koleksiyonu.</value>
+  </data>
+  <data name="CheckPoint_Data_DisplayName" xml:space="preserve">
+    <value>Veri</value>
+  </data>
+  <data name="CheckPoint_Description" xml:space="preserve">
+    <value>Bir ifadenin doğru olup olmadığını kontrol eder ve yanlışsa bir özel durum fırlatır.</value>
+  </data>
+  <data name="CheckPoint_DisplayName" xml:space="preserve">
+    <value>Kontrol Noktası (CheckPoint)</value>
+  </data>
+  <data name="CheckPoint_Exception_Description" xml:space="preserve">
+    <value>Fırlatılacak özel durum.</value>
+  </data>
+  <data name="CheckPoint_Exception_DisplayName" xml:space="preserve">
+    <value>Özel Durum</value>
+  </data>
+  <data name="CheckPoint_Expression_Description" xml:space="preserve">
+    <value>Değerlendirilecek ifade.</value>
+  </data>
+  <data name="CheckPoint_Expression_DisplayName" xml:space="preserve">
+    <value>İfade</value>
+  </data>
+  <data name="PromoteHeaders_AutoRename_Description" xml:space="preserve">
+    <value>True ise, sütun adı zaten mevcutsa sayısal bir sonek ekler.</value>
+  </data>
+  <data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
+    <value>Otomatik Yeniden Adlandır</value>
+  </data>
+  <data name="PromoteHeaders_Description" xml:space="preserve">
+    <value>İlk satırdaki değerleri sütun başlıklarına yükseltir.</value>
+  </data>
+  <data name="PromoteHeaders_DisplayName" xml:space="preserve">
+    <value>Başlıkları Yükselt</value>
+  </data>
+  <data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
+    <value>Yükseltilecek satır yok.</value>
+  </data>
+  <data name="PromoteHeaders_DataTable_Description" xml:space="preserve">
+    <value>İşlenecek veri tablosu.</value>
+  </data>
+  <data name="PromoteHeaders_DataTable_DisplayName" xml:space="preserve">
+    <value>Veri Tablosu (DataTable)</value>
+  </data>
+  <data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
+    <value>DateTime sütunları için kullanılacak tarih biçimi.</value>
+  </data>
+  <data name="DataTableToText_DateTimeFormat_DisplayName" xml:space="preserve">
+    <value>Tarih/Saat Biçimi</value>
+  </data>
+  <data name="DataTableToText_Description" xml:space="preserve">
+    <value>Veri tablosunun HTML, JSON veya XML formatlarında bir dize temsilini döndürür.</value>
+  </data>
+  <data name="DataTableToText_DisplayName" xml:space="preserve">
+    <value>Veri Tablosunu Metne Dönüştür</value>
+  </data>
+  <data name="DataTableToText_DataTable_Description" xml:space="preserve">
+    <value>Veri tablosu.</value>
+  </data>
+  <data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
+    <value>Veri Tablosu (DataTable)</value>
+  </data>
+  <data name="DataTableToText_Result_Description" xml:space="preserve">
+    <value>Sonuç dizesi.</value>
+  </data>
+  <data name="DataTableToText_Result_DisplayName" xml:space="preserve">
+    <value>Sonuç</value>
+  </data>
+  <data name="DataTableToText_OutputFormat_Description" xml:space="preserve">
+    <value>İstenen çıkış biçimi.</value>
+  </data>
+  <data name="DataTableToText_OutputFormat_DisplayName" xml:space="preserve">
+    <value>Çıkış Biçimi</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnNames_Description" xml:space="preserve">
+    <value>Değerlendirilecek sütun adları.</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnNames_DisplayName" xml:space="preserve">
+    <value>Sütun Adları</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_DisplayName" xml:space="preserve">
+    <value>Sütun İndeksleri</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_Description" xml:space="preserve">
+    <value>Değerlendirilecek sütun indeksleri.</value>
+  </data>
+  <data name="RemoveEmptyRows_Description" xml:space="preserve">
+    <value>Bir veri tablosundaki boş satırları kaldırır.</value>
+  </data>
+  <data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
+    <value>Boş Satırları Kaldır</value>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_Description" xml:space="preserve">
+    <value>Temizlenecek veri tablosu.</value>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_DisplayName" xml:space="preserve">
+    <value>Veri Tablosu (DataTable)</value>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_Description" xml:space="preserve">
+    <value>All: tüm sütunlar boşsa kaldırır. Any: en az bir sütun boşsa kaldırır.</value>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
+    <value>Eşleşme Modu</value>
+  </data>
+  <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
+    <value>Veri Tablosu (DataTable)</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+    <value>Kaldırılacak sütun adları.</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">
+    <value>Sütun Adları</value>
+  </data>
+  <data name="RemoveDataColumns_Description" xml:space="preserve">
+    <value>Belirtilen sütunları bir veri tablosundan kaldırır.</value>
+  </data>
+  <data name="RemoveDataColumns_DisplayName" xml:space="preserve">
+    <value>Veri Sütunlarını Kaldır</value>
+  </data>
+  <data name="RemoveDataColumns_DataTable_Description" xml:space="preserve">
+    <value>Kaynak veri tablosu.</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnIndexes_DisplayName" xml:space="preserve">
+    <value>Sütun İndeksleri</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnIndexes_Description" xml:space="preserve">
+    <value>Kaldırılacak sütun indeksleri.</value>
+  </data>
+  <data name="TransposeData_Description" xml:space="preserve">
+    <value>Bir veri tablosunu transpoze eder (satırlar sütun olur ve tersi).</value>
+  </data>
+  <data name="TransposeData_DisplayName" xml:space="preserve">
+    <value>Verileri Transpoze Et</value>
+  </data>
+  <data name="TransposeData_DataTable_Description" xml:space="preserve">
+    <value>Transpoze edilecek veri tablosu.</value>
+  </data>
+  <data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
+    <value>Veri Tablosu (DataTable)</value>
+  </data>
+  <data name="ParseData_DisplayName" xml:space="preserve">
+    <value>Veriyi Ayrıştır (Parse)</value>
+  </data>
+  <data name="ParseData_Description" xml:space="preserve">
+    <value>Basitleştirilmiş yönetim için JSON veya YAML'yi bir DataNode'a ayrıştırır.</value>
+  </data>
+  <data name="ParseData_Content_DisplayName" xml:space="preserve">
+    <value>İçerik</value>
+  </data>
+  <data name="ParseData_Content_Description" xml:space="preserve">
+    <value>Ayrıştırılacak JSON veya YAML metni.</value>
+  </data>
+  <data name="ParseData_Culture_DisplayName" xml:space="preserve">
+    <value>Kültür</value>
+  </data>
+  <data name="ParseData_Culture_Description" xml:space="preserve">
+    <value>Sayısal dönüşümlerde uygulanan kültür.</value>
+  </data>
+  <data name="ParseData_Result_DisplayName" xml:space="preserve">
+    <value>Sonuç</value>
+  </data>
+  <data name="ParseData_Result_Description" xml:space="preserve">
+    <value>Oluşturulan DataNode.</value>
+  </data>
+  <data name="LoadDataFile_DisplayName" xml:space="preserve">
+    <value>Veri Dosyasını Yükle</value>
+  </data>
+  <data name="LoadDataFile_Description" xml:space="preserve">
+    <value>Bir JSON veya YAML dosyasını okur ve bir DataNode'a dönüştürür.</value>
+  </data>
+  <data name="LoadDataFile_Encoding_Description" xml:space="preserve">
+    <value>Metin kodlaması (Varsayılan: UTF-8).</value>
+  </data>
+  <data name="LoadDataFile_Culture_Description" xml:space="preserve">
+    <value>Sayısal biçimlerin dönüşümü için kullanılan kültür.</value>
+  </data>
+  <data name="LoadDataFile_Result_Description" xml:space="preserve">
+    <value>Oluşturulan DataNode.</value>
+  </data>
+  <data name="LoadDataFile_Culture_DisplayName" xml:space="preserve">
+    <value>Kültür</value>
+  </data>
+  <data name="LoadDataFile_Encoding_DisplayName" xml:space="preserve">
+    <value>Kodlama</value>
+  </data>
+  <data name="LoadDataFile_Result_DisplayName" xml:space="preserve">
+    <value>Sonuç</value>
+  </data>
+  <data name="LoadDataFile_FilePath_Description" xml:space="preserve">
+    <value>JSON/YAML dosya yolu.</value>
+  </data>
+  <data name="LoadDataFile_FilePath_DisplayName" xml:space="preserve">
+    <value>Dosya Yolu</value>
+  </data>
+  <data name="ActivityCategories_Data" xml:space="preserve">
+    <value>Autossential.Veri</value>
+  </data>
+  <data name="ActivityCategories_Files" xml:space="preserve">
+    <value>Autossential.Dosyalar</value>
+  </data>
+  <data name="ActivityCategories_Programming" xml:space="preserve">
+    <value>Autossential.Programlama</value>
+  </data>
+  <data name="ActivityCategories_System" xml:space="preserve">
+    <value>Autossential.Sistem</value>
+  </data>
+  <data name="ActivityCategories_Workflow" xml:space="preserve">
+    <value>Autossential.İş Akışı</value>
+  </data>
+  <data name="UnmapDrive_Description" xml:space="preserve">
+    <value>Eşlenen bir ağ sürücüsünü kaldırır.</value>
+  </data>
+  <data name="MergeData_DisplayName" xml:space="preserve">
+    <value>Verileri Birleştir</value>
+  </data>
+  <data name="MergeData_Description" xml:space="preserve">
+    <value>Bir kaynak DataNode'u hedef olanla birleştirir.</value>
+  </data>
+  <data name="MergeData_Source_DisplayName" xml:space="preserve">
+    <value>Kaynak</value>
+  </data>
+  <data name="MergeData_Source_Description" xml:space="preserve">
+    <value>Birleştirme için kaynak DataNode.</value>
+  </data>
+  <data name="MergeData_Destination_DisplayName" xml:space="preserve">
+    <value>Hedef</value>
+  </data>
+  <data name="MergeData_Destination_Description" xml:space="preserve">
+    <value>Birleştirme için hedef DataNode.</value>
+  </data>
+  <data name="Zip_EntryStructure_DisplayName" xml:space="preserve">
+    <value>Giriş Yapısı</value>
+  </data>
+  <data name="Zip_EntryStructure_Description" xml:space="preserve">
+    <value>Dosyaların ZIP içinde nasıl saklanacağını tanımlar (göreceli yol, düz, vb.).</value>
+  </data>
+  <data name="UpdateDictionary_Description" xml:space="preserve">
+    <value>Bir sözlüğe girişler ekler veya günceller.</value>
+  </data>
+  <data name="UpdateDictionary_DisplayName" xml:space="preserve">
+    <value>Sözlüğü Güncelle</value>
+  </data>
+  <data name="UpdateDictionary_Dictionary_Description" xml:space="preserve">
+    <value>Değiştirilecek sözlük örneği.</value>
+  </data>
+  <data name="UpdateDictionary_Dictionary_DisplayName" xml:space="preserve">
+    <value>Sözlük</value>
+  </data>
+  <data name="UpdateDictionary_Entries_Description" xml:space="preserve">
+    <value>Eklenecek veya değiştirilecek girişler.</value>
+  </data>
+  <data name="UpdateDictionary_Entries_DisplayName" xml:space="preserve">
+    <value>Girişler</value>
+  </data>
+  <data name="IfActivity_Condition_DisplayName" xml:space="preserve">
+    <value>Koşul</value>
+  </data>
+  <data name="IfActivity_Condition_Description" xml:space="preserve">
+    <value>Boole döndüren etkinlik.</value>
+  </data>
+  <data name="IfActivity_Then_Description" xml:space="preserve">
+    <value>Koşul doğruysa yürütülecek etkinlik.</value>
+  </data>
+  <data name="IfActivity_Else_Description" xml:space="preserve">
+    <value>Koşul yanlışsa yürütülecek etkinlik.</value>
+  </data>
+  <data name="IfActivity_Then_DisplayName" xml:space="preserve">
+    <value>Doğruysa (Then)</value>
+  </data>
+  <data name="IfActivity_Else_DisplayName" xml:space="preserve">
+    <value>Değilse (Else)</value>
+  </data>
+  <data name="RandomString_ViewModel_Instructions" xml:space="preserve">
+    <value>@"Aşağıdaki yer tutucular kullanılabilir:
+- a : küçük harfler
+- A : büyük harfler
+- 0 : sayılar
+- ? : özel özelliklerdeki karakterler
+- * : yukarıdaki tüm karakterler
+
+Bir karakterden kaçmak için ters eğik çizgi '\' kullanın.
+
+Diğer tüm karakterler sabit metin olarak kabul edilir."</value>
+  </data>
+  <data name="RandomString_ViewModel_ShowInstructions" xml:space="preserve">
+    <value>Talimatları Göster</value>
+  </data>
+  <data name="RandomString_ViewModel_HideInstructions" xml:space="preserve">
+    <value>Talimatları Gizle</value>
+  </data>
+  <data name="RandomString_ViewModel_Generate" xml:space="preserve">
+    <value>Oluştur</value>
+  </data>
+	<data name="IncrementDecrement_Description" xml:space="preserve">
+  <value>Bir tam sayı değişkenini belirtilen bir değerle artırarak veya azaltarak ayarlar.</value>
+  <comment>activity description</comment>
+</data>
+	<data name="IncrementDecrement_DisplayName" xml:space="preserve">
+  <value>Artır/Azalt</value>
+  <comment>activity name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
+  <value>İşlem</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
+  <value>Değişken</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
+  <value>Değer</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_Description" xml:space="preserve">
+  <value>Ayarlanacak değişken.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Value_Description" xml:space="preserve">
+  <value>Değişkene eklenecek veya çıkarılacak değer. 1'e eşit veya daha büyük olmalıdır.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Description" xml:space="preserve">
+  <value>Gerçekleştirilecek işlem.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
+  <value>Artır</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
+  <value>Azalt</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+  <value>Değer 1'den büyük veya eşit olmalıdır</value>
+  <comment>error message</comment>
+</data>
+	<data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
+  <value>{1} değerini {2} kadar {0}</value>
+  <comment>view model</comment>
+</data>
+</root>

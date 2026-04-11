@@ -1,0 +1,76 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0;net6.0-windows</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<VersionBuild>$([System.DateTime]::UtcNow.DayOfYear.ToString("F0"))</VersionBuild>
+		<VersionRevision>$([System.DateTime]::UtcNow.TimeOfDay.TotalMinutes.ToString("F0"))</VersionRevision>
+		<VersionPrefix Condition="'$(Configuration)' == 'Release'">4.0.0</VersionPrefix>
+		<VersionPrefix Condition="'$(Configuration)' == 'Debug'">4.0.0-preview-$(VersionBuild)$(VersionRevision)</VersionPrefix>
+		<Authors>Alexandre T. Perez</Authors>
+		<Product>Autossential.Activities.Packaging</Product>
+		<PackageId>Autossential.Activities</PackageId>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageOutputPath>..\..\Output</PackageOutputPath>
+		<TargetsForTfmSpecificBuildOutput>AddDlls</TargetsForTfmSpecificBuildOutput>
+		<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Copyright>© $([System.DateTime]::UtcNow.Year.ToString()) Alexandre Toledo Perez</Copyright>
+		<Description>
+			IMPORTANT: This package is not compatible with previous 3.x versions or with UiPath Legacy projects. It has been completely redesigned, and several activities from earlier versions have been removed or modified
+		</Description>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<Target Name="AddDlls">
+		<!-- PDBs for debug-->
+		<ItemGroup Condition="'$(Configuration)' == 'Debug'">
+			<BuildOutputInPackage Include="$(OutputPath)Autossential.Activities.pdb" />
+		</ItemGroup>
+		<ItemGroup>
+			<BuildOutputInPackage Include="$(OutputPath)Autossential.Activities.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)de\Autossential.Activities.resources.dll" TargetPath="de\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)es\Autossential.Activities.resources.dll" TargetPath="es\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)es-MX\Autossential.Activities.resources.dll" TargetPath="es-MX\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)fr\Autossential.Activities.resources.dll" TargetPath="fr\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)ja\Autossential.Activities.resources.dll" TargetPath="ja\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)ko\Autossential.Activities.resources.dll" TargetPath="ko\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)pt-BR\Autossential.Activities.resources.dll" TargetPath="pt-BR\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)pt\Autossential.Activities.resources.dll" TargetPath="pt\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)ru\Autossential.Activities.resources.dll" TargetPath="ru\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)tr\Autossential.Activities.resources.dll" TargetPath="tr\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)zh-CN\Autossential.Activities.resources.dll" TargetPath="zh-CN\Autossential.Activities.resources.dll" />
+			<BuildOutputInPackage Include="$(OutputPath)zh-TW\Autossential.Activities.resources.dll" TargetPath="zh-TW\Autossential.Activities.resources.dll" />
+		</ItemGroup>
+	</Target>
+
+	<Target Name="RemoveMetaDll" AfterTargets="BuiltProjectOutputGroup">
+		<ItemGroup>
+			<BuiltProjectOutputGroupOutput Remove="@(BuiltProjectOutputGroupOutput)" />
+		</ItemGroup>
+	</Target>
+
+	<Target Name="CleanPackageFiles" BeforeTargets="Build">
+		<Message Text="Deleting packages ..." />
+		<ItemGroup>
+			<PackageFilesToDelete Include="$(PackageOutputPath)\$(PackageId)*.nupkg" />
+		</ItemGroup>
+		<Delete Files="@(PackageFilesToDelete)" ContinueOnError="WarnAndContinue" />
+	</Target>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Autossential.Activities\Autossential.Activities.csproj">
+			<PrivateAssets>All</PrivateAssets>
+		</ProjectReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="icon.png" Pack="true" PackagePath="\" />
+		<None Include="README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+</Project>

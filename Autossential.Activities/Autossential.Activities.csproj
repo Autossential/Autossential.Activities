@@ -1,0 +1,122 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFrameworks>net6.0;net6.0-windows</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<LangVersion>14.0</LangVersion>
+		<PackageId>Autossential</PackageId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net6.0-windows'">
+		<UseWindowsForms>true</UseWindowsForms>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Resources\Tools\**" />
+		<EmbeddedResource Remove="Resources\Tools\**" />
+		<None Remove="Resources\Tools\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="Resources\Gen.cs" />
+		<Compile Remove="WaitDynamicFile.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Resources\ActivitiesMetadata.json" />
+		<None Remove="Resources\Icons\AddRangeToCollection.svg" />
+		<None Remove="Resources\Icons\AddToDictionary.svg" />
+		<None Remove="Resources\Icons\Aggregate.svg" />
+		<None Remove="Resources\Icons\CheckPoint.svg" />
+		<None Remove="Resources\Icons\Container.svg" />
+		<None Remove="Resources\Icons\CultureScope.svg" />
+		<None Remove="Resources\Icons\DataRowToDictionary.svg" />
+		<None Remove="Resources\Icons\DataTableEncryption.svg" />
+		<None Remove="Resources\Icons\DataTableToText.svg" />
+		<None Remove="Resources\Icons\Decrement.svg" />
+		<None Remove="Resources\Icons\DictionaryToDataTable.svg" />
+		<None Remove="Resources\Icons\Exit.svg" />
+		<None Remove="Resources\Icons\ExtractDataColumnValues.svg" />
+		<None Remove="Resources\Icons\FillDataColumn.svg" />
+		<None Remove="Resources\Icons\IfActivity.svg" />
+		<None Remove="Resources\Icons\Increment.svg" />
+		<None Remove="Resources\Icons\IncrementDecrement.svg" />
+		<None Remove="Resources\Icons\IsTrue.svg" />
+		<None Remove="Resources\Icons\Iterate.svg" />
+		<None Remove="Resources\Icons\LoadDataFile.svg" />
+		<None Remove="Resources\Icons\MapDrive.svg" />
+		<None Remove="Resources\Icons\MergeData.svg" />
+		<None Remove="Resources\Icons\Next.svg" />
+		<None Remove="Resources\Icons\ParseData.svg" />
+		<None Remove="Resources\Icons\PromoteHeaders.svg" />
+		<None Remove="Resources\Icons\RandomString.svg" />
+		<None Remove="Resources\Icons\RemoveDataColumns.svg" />
+		<None Remove="Resources\Icons\RemoveDuplicateRows.svg" />
+		<None Remove="Resources\Icons\RemoveEmptyRows.svg" />
+		<None Remove="Resources\Icons\RemoveFromDictionary.svg" />
+		<None Remove="Resources\Icons\ReplaceTokens.svg" />
+		<None Remove="Resources\Icons\TerminateProcess.svg" />
+		<None Remove="Resources\Icons\TimeLoop.svg" />
+		<None Remove="Resources\Icons\TransposeData.svg" />
+		<None Remove="Resources\Icons\UnmapDrive.svg" />
+		<None Remove="Resources\Icons\UpdateDictionary.svg" />
+		<None Remove="Resources\Icons\WaitFile.svg" />
+		<None Remove="Resources\Icons\WhenDo.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\ActivitiesMetadata.json" />
+		<EmbeddedResource Include="Resources\Icons\AddRangeToCollection.svg" />
+		<EmbeddedResource Include="Resources\Icons\CheckPoint.svg" />
+		<EmbeddedResource Include="Resources\Icons\CleanUpFolder.svg" />
+		<EmbeddedResource Include="Resources\Icons\Container.svg" />
+		<EmbeddedResource Include="Resources\Icons\CultureScope.svg" />
+		<EmbeddedResource Include="Resources\Icons\DataTableToText.svg" />
+		<EmbeddedResource Include="Resources\Icons\Decrement.svg" />
+		<EmbeddedResource Include="Resources\Icons\Exit.svg" />
+		<EmbeddedResource Include="Resources\Icons\IfActivity.svg" />
+		<EmbeddedResource Include="Resources\Icons\Increment.svg" />
+		<EmbeddedResource Include="Resources\Icons\IncrementDecrement.svg" />
+		<EmbeddedResource Include="Resources\Icons\LoadDataFile.svg" />
+		<EmbeddedResource Include="Resources\Icons\MapDrive.svg" />
+		<EmbeddedResource Include="Resources\Icons\MergeData.svg" />
+		<EmbeddedResource Include="Resources\Icons\ParseData.svg" />
+		<EmbeddedResource Include="Resources\Icons\PromoteHeaders.svg" />
+		<EmbeddedResource Include="Resources\Icons\RandomString.svg" />
+		<EmbeddedResource Include="Resources\Icons\RemoveDataColumns.svg" />
+		<EmbeddedResource Include="Resources\Icons\RemoveEmptyRows.svg" />
+		<EmbeddedResource Include="Resources\Icons\ReplaceTokens.svg" />
+		<EmbeddedResource Include="Resources\Icons\TerminateProcess.svg" />
+		<EmbeddedResource Include="Resources\Icons\TimeLoop.svg" />
+		<EmbeddedResource Include="Resources\Icons\TransposeData.svg" />
+		<EmbeddedResource Include="Resources\Icons\UnmapDrive.svg" />
+		<EmbeddedResource Include="Resources\Icons\UpdateDictionary.svg" />
+		<EmbeddedResource Include="Resources\Icons\Zip.svg" />
+		<EmbeddedResource Include="Resources\Icons\Unzip.svg" />
+		<EmbeddedResource Include="Resources\Icons\WaitFile.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Activities.ViewModels" Version="1.20260216.2" />
+		<PackageReference Include="UiPath.Activities.Api" Version="24.10.1" PrivateAssets="All" />
+		<PackageReference Include="System.Activities.Metadata" Version="6.0.0-20240517.13" PrivateAssets="All" />
+		<PackageReference Include="UiPath.Workflow" Version="6.0.0-20240401-07" PrivateAssets="All" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,921 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Categories_Input" xml:space="preserve">
+    <value>입력</value>
+  </data>
+  <data name="Categories_Output" xml:space="preserve">
+    <value>출력</value>
+  </data>
+  <data name="Categories_Options" xml:space="preserve">
+    <value>옵션</value>
+  </data>
+  <data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
+    <value>수정할 컬렉션입니다.</value>
+  </data>
+  <data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+    <value>컬렉션</value>
+  </data>
+  <data name="AddRangeToCollection_Description" xml:space="preserve">
+    <value>지정된 컬렉션에 요소 집합을 추가합니다.</value>
+  </data>
+  <data name="AddRangeToCollection_DisplayName" xml:space="preserve">
+    <value>컬렉션에 범위 추가</value>
+  </data>
+  <data name="AddRangeToCollection_Items_Description" xml:space="preserve">
+    <value>컬렉션에 추가할 요소들입니다.</value>
+  </data>
+  <data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+    <value>항목</value>
+  </data>
+  <data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
+    <value>파일을 다시 확인하는 시간 간격(초)을 지정합니다. 0.5보다 작은 값은 0.5로 조정됩니다. 이 값이 제한 시간보다 작은지 확인하십시오.</value>
+  </data>
+  <data name="WaitFile_PollingIntervalSeconds_DisplayName" xml:space="preserve">
+    <value>간격</value>
+  </data>
+  <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
+    <value>오류가 발생하기 전까지 대기할 시간(초)을 지정합니다. 기본값은 30초입니다.</value>
+  </data>
+  <data name="WaitFile_Description" xml:space="preserve">
+    <value>파일을 사용할 수 있을 때까지 대기합니다.</value>
+  </data>
+  <data name="WaitFile_DisplayName" xml:space="preserve">
+    <value>파일 대기</value>
+  </data>
+  <data name="WaitFile_FilePath_Description" xml:space="preserve">
+    <value>파일 경로입니다.</value>
+  </data>
+  <data name="WaitFile_FilePath_DisplayName" xml:space="preserve">
+    <value>파일 경로</value>
+  </data>
+  <data name="WaitFile_Result_Description" xml:space="preserve">
+    <value>파일을 찾은 경우의 FileInfo 객체입니다.</value>
+  </data>
+  <data name="WaitFile_Result_DisplayName" xml:space="preserve">
+    <value>결과</value>
+  </data>
+  <data name="WaitFile_WaitForExist_Description" xml:space="preserve">
+    <value>파일이 존재할 때까지 대기합니다.</value>
+  </data>
+  <data name="WaitFile_WaitForExist_DisplayName" xml:space="preserve">
+    <value>존재 여부 대기</value>
+  </data>
+  <data name="Common_TimeoutSeconds_DisplayName" xml:space="preserve">
+    <value>시간 초과</value>
+  </data>
+  <data name="Common_ViewModel_BrowseForFile" xml:space="preserve">
+    <value>파일 찾아보기</value>
+  </data>
+  <data name="Common_ViewModel_BrowseForFolder" xml:space="preserve">
+    <value>폴더 찾아보기</value>
+  </data>
+  <data name="Categories_Common" xml:space="preserve">
+    <value>공통</value>
+  </data>
+  <data name="Common_ContinueOnError_DisplayName" xml:space="preserve">
+    <value>오류 발생 시 계속</value>
+  </data>
+  <data name="Common_ContinueOnError_Description" xml:space="preserve">
+    <value>현재 액티비티가 실패하더라도 나머지 액티비티의 실행을 계속할지 여부를 지정합니다. Boolean 값만 허용됩니다.</value>
+  </data>
+  <data name="WaitFile_DirectoryPath_Description" xml:space="preserve">
+    <value>모니터링할 디렉토리 경로입니다.</value>
+  </data>
+  <data name="WaitFile_DirectoryPath_DisplayName" xml:space="preserve">
+    <value>디렉토리 경로</value>
+  </data>
+  <data name="WaitFile_DynamicFile_DisplayName" xml:space="preserve">
+    <value>동적 파일명</value>
+  </data>
+  <data name="Common_SearchPattern_Description" xml:space="preserve">
+    <value>경로의 파일 이름 패턴을 정의합니다. 와일드카드(*, ?, !, |)를 지원합니다. 제외하려면 !를 사용하고(예: !*.txt), 여러 패턴에는 |를 사용합니다. 기본값: *.*</value>
+  </data>
+  <data name="Common_SearchPattern_DisplayName" xml:space="preserve">
+    <value>검색 패턴</value>
+  </data>
+  <data name="WaitFile_DynamicFile_Description" xml:space="preserve">
+    <value>활성화되면 검색 패턴과 일치하는 파일이 발견될 때까지 특정 폴더를 모니터링합니다.</value>
+  </data>
+  <data name="CleanUpFolder_DeleteEmptyFolders_Description" xml:space="preserve">
+    <value>파일 삭제 후 빈 폴더도 삭제할지 여부를 결정합니다.</value>
+  </data>
+  <data name="CleanUpFolder_DeleteEmptyFolders_DisplayName" xml:space="preserve">
+    <value>빈 폴더 삭제</value>
+  </data>
+  <data name="CleanUpFolder_Description" xml:space="preserve">
+    <value>지정된 디렉토리에서 모든 파일과 폴더를 삭제합니다.</value>
+  </data>
+  <data name="CleanUpFolder_DisplayName" xml:space="preserve">
+    <value>폴더 정리</value>
+  </data>
+  <data name="CleanUpFolder_Folder_Description" xml:space="preserve">
+    <value>정리할 폴더의 경로입니다.</value>
+  </data>
+  <data name="CleanUpFolder_Folder_DisplayName" xml:space="preserve">
+    <value>폴더 경로</value>
+  </data>
+  <data name="CleanUpFolder_LastWriteTime_Description" xml:space="preserve">
+    <value>최종 수정 시간이 이 날짜 이전인 파일만 삭제합니다. 기본값: DateTime.Now.</value>
+  </data>
+  <data name="CleanUpFolder_LastWriteTime_DisplayName" xml:space="preserve">
+    <value>최종 수정일</value>
+  </data>
+  <data name="CleanUpFolder_FilesDeleted_Description" xml:space="preserve">
+    <value>삭제된 파일 수입니다.</value>
+  </data>
+  <data name="CleanUpFolder_FilesDeleted_DisplayName" xml:space="preserve">
+    <value>삭제된 파일</value>
+  </data>
+  <data name="CleanUpFolder_SearchOption_Description" xml:space="preserve">
+    <value>작업에 대상 디렉토리만 포함할지 아니면 모든 하위 디렉토리를 포함할지 지정합니다.</value>
+  </data>
+  <data name="CleanUpFolder_SearchOption_DisplayName" xml:space="preserve">
+    <value>검색 옵션</value>
+  </data>
+  <data name="CleanUpFolder_FoldersDeleted_DisplayName" xml:space="preserve">
+    <value>삭제된 폴더</value>
+  </data>
+  <data name="CleanUpFolder_FoldersDeleted_Description" xml:space="preserve">
+    <value>삭제된 폴더 수입니다.</value>
+  </data>
+  <data name="Zip_Description" xml:space="preserve">
+    <value>파일이나 폴더를 zip 아카이브로 압축합니다.</value>
+  </data>
+  <data name="Zip_DisplayName" xml:space="preserve">
+    <value>압축 (Zip)</value>
+  </data>
+  <data name="Zip_ToCompress_Description" xml:space="preserve">
+    <value>압축할 파일 및 디렉토리 경로의 컬렉션입니다.</value>
+  </data>
+  <data name="Zip_ToCompress_DisplayName" xml:space="preserve">
+    <value>압축 대상</value>
+  </data>
+  <data name="Zip_TextEncoding_Description" xml:space="preserve">
+    <value>zip 파일 내 항목 이름에 사용되는 인코딩입니다.</value>
+  </data>
+  <data name="Zip_TextEncoding_DisplayName" xml:space="preserve">
+    <value>텍스트 인코딩</value>
+  </data>
+  <data name="Zip_CompressionLevel_Description" xml:space="preserve">
+    <value>아카이브 생성 시 사용되는 압축 수준입니다.</value>
+  </data>
+  <data name="Zip_CompressionLevel_DisplayName" xml:space="preserve">
+    <value>압축 수준</value>
+  </data>
+  <data name="Zip_CompressedFile_Description" xml:space="preserve">
+    <value>생성된 압축 파일의 식별자입니다.</value>
+  </data>
+  <data name="Zip_CompressedFile_DisplayName" xml:space="preserve">
+    <value>압축 파일</value>
+  </data>
+  <data name="Zip_FullEntryNames_Description" xml:space="preserve">
+    <value>상대 경로 대신 전체 항목 이름(절대 경로)을 사용합니다.</value>
+  </data>
+  <data name="Zip_FullEntryNames_DisplayName" xml:space="preserve">
+    <value>전체 항목 이름</value>
+  </data>
+  <data name="Zip_FilesCount_Description" xml:space="preserve">
+    <value>아카이브에 추가된 파일 수입니다.</value>
+  </data>
+  <data name="Zip_FilesCount_DisplayName" xml:space="preserve">
+    <value>파일 수</value>
+  </data>
+  <data name="Zip_ZipFilePath_Description" xml:space="preserve">
+    <value>zip 파일이 생성될 경로입니다.</value>
+  </data>
+  <data name="Zip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>Zip 파일 경로</value>
+  </data>
+  <data name="Common_ErrorMsg_ValueNotSupplied" xml:space="preserve">
+    <value>필수 인수 '{0}'의 값이 제공되지 않았습니다.</value>
+  </data>
+  <data name="Unzip_Description" xml:space="preserve">
+    <value>zip 아카이브에서 파일 및 폴더를 추출합니다.</value>
+  </data>
+  <data name="Unzip_DisplayName" xml:space="preserve">
+    <value>압축 해제 (Unzip)</value>
+  </data>
+  <data name="Unzip_ZipFilePath_Description" xml:space="preserve">
+    <value>추출할 zip 파일의 경로입니다.</value>
+  </data>
+  <data name="Unzip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>Zip 파일 경로</value>
+  </data>
+  <data name="Unzip_ExtractTo_Description" xml:space="preserve">
+    <value>내용을 추출할 폴더입니다.</value>
+  </data>
+  <data name="Unzip_ExtractTo_DisplayName" xml:space="preserve">
+    <value>추출 대상</value>
+  </data>
+  <data name="Unzip_Overwrite_Description" xml:space="preserve">
+    <value>활성화되면 추출 시 기존 파일을 덮어씁니다.</value>
+  </data>
+  <data name="Unzip_Overwrite_DisplayName" xml:space="preserve">
+    <value>덮어쓰기</value>
+  </data>
+  <data name="Unzip_ErrorMsg_OutsideDir" xml:space="preserve">
+    <value>아카이브 항목이 대상 디렉토리 외부로 추출되려고 합니다.</value>
+  </data>
+  <data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
+    <value>아카이브의 디렉토리 이름에 파일 데이터가 포함되어 있습니다. 이는 유효하지 않습니다.</value>
+  </data>
+  <data name="RandomString_Description" xml:space="preserve">
+    <value>형식 패턴에 따라 임의의 문자열을 생성합니다.</value>
+  </data>
+  <data name="RandomString_DisplayName" xml:space="preserve">
+    <value>임의 문자열</value>
+  </data>
+  <data name="RandomString_Format_Description" xml:space="preserve">
+    <value>문자열을 정의하는 패턴입니다. 'a' 소문자, 'A' 대문자, '0' 숫자, '*' 모든 영숫자, '?' 사용자 정의 문자, '\\' 이스케이프.</value>
+  </data>
+  <data name="RandomString_Format_DisplayName" xml:space="preserve">
+    <value>형식</value>
+  </data>
+  <data name="RandomString_Custom_Description" xml:space="preserve">
+    <value>자리 표시자 '?'에 사용될 추가 문자들입니다.</value>
+  </data>
+  <data name="RandomString_Custom_DisplayName" xml:space="preserve">
+    <value>사용자 정의 문자</value>
+  </data>
+  <data name="RandomString_Result_DisplayName" xml:space="preserve">
+    <value>결과</value>
+  </data>
+  <data name="RandomString_Result_Description" xml:space="preserve">
+    <value>생성된 임의의 문자열입니다.</value>
+  </data>
+  <data name="ReplaceTokens_Description" xml:space="preserve">
+    <value>문자열 내의 토큰을 사전의 값으로 대체합니다. '패턴'과 '자리 표시자'를 사용하여 형식을 정의합니다.</value>
+  </data>
+  <data name="ReplaceTokens_DisplayName" xml:space="preserve">
+    <value>토큰 대체</value>
+  </data>
+  <data name="ReplaceTokens_Dictionary_Description" xml:space="preserve">
+    <value>대체에 사용될 사전입니다.</value>
+  </data>
+  <data name="ReplaceTokens_Dictionary_DisplayName" xml:space="preserve">
+    <value>사전</value>
+  </data>
+  <data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
+    <value>토큰의 텍스트 패턴입니다.</value>
+  </data>
+  <data name="ReplaceTokens_Pattern_DisplayName" xml:space="preserve">
+    <value>패턴</value>
+  </data>
+  <data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
+    <value>패턴 내에서 자리 표시자로 사용될 문자입니다.</value>
+  </data>
+  <data name="ReplaceTokens_Placeholder_DisplayName" xml:space="preserve">
+    <value>자리 표시자</value>
+  </data>
+  <data name="ReplaceTokens_Result_Description" xml:space="preserve">
+    <value>대체된 결과 텍스트입니다.</value>
+  </data>
+  <data name="ReplaceTokens_Result_DisplayName" xml:space="preserve">
+    <value>결과</value>
+  </data>
+  <data name="ReplaceTokens_Content_DisplayName" xml:space="preserve">
+    <value>내용</value>
+  </data>
+  <data name="ReplaceTokens_Content_Description" xml:space="preserve">
+    <value>토큰이 포함된 입력 텍스트입니다.</value>
+  </data>
+  <data name="Categories_InputOutput" xml:space="preserve">
+    <value>입력/출력</value>
+  </data>
+  <data name="ReplaceTokens_CaseSensitive_Description" xml:space="preserve">
+    <value>토큰 검색 시 대소문자를 구분할지 여부를 결정합니다.</value>
+  </data>
+  <data name="ReplaceTokens_CaseSensitive_DisplayName" xml:space="preserve">
+    <value>대소문자 구분</value>
+  </data>
+  <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
+    <value>성공</value>
+  </data>
+  <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
+    <value>사용 가능한 드라이브가 없습니다.</value>
+  </data>
+  <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
+    <value>드라이브 문자가 유효하지 않습니다 (예: 'X', 'X:', 'X:\').</value>
+  </data>
+  <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
+    <value>자격 증명</value>
+  </data>
+  <data name="MapDrive_Description" xml:space="preserve">
+    <value>네트워크 드라이브를 시스템에 할당합니다.</value>
+  </data>
+  <data name="MapDrive_DisplayName" xml:space="preserve">
+    <value>드라이브 연결</value>
+  </data>
+  <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
+    <value>할당할 드라이브 문자 (예: "X:"). 비어 있으면 임의의 문자가 선택됩니다.</value>
+  </data>
+  <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
+    <value>드라이브 문자</value>
+  </data>
+  <data name="MapDrive_Force_Description" xml:space="preserve">
+    <value>문자가 이미 사용 중이더라도 강제로 연결합니다.</value>
+  </data>
+  <data name="MapDrive_Force_DisplayName" xml:space="preserve">
+    <value>강제 연결</value>
+  </data>
+  <data name="MapDrive_MappedDrive_Description" xml:space="preserve">
+    <value>성공 시 할당된 드라이브 문자입니다.</value>
+  </data>
+  <data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
+    <value>연결된 드라이브</value>
+  </data>
+  <data name="MapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>표준 Windows 반환 코드입니다.</value>
+  </data>
+  <data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>응답 코드</value>
+  </data>
+  <data name="MapDrive_ResponseMessage_Description" xml:space="preserve">
+    <value>작업 결과에 대한 텍스트 설명입니다.</value>
+  </data>
+  <data name="MapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+    <value>응답 메시지</value>
+  </data>
+  <data name="MapDrive_Result_Description" xml:space="preserve">
+    <value>연결에 성공하면 True입니다.</value>
+  </data>
+  <data name="MapDrive_Result_DisplayName" xml:space="preserve">
+    <value>결과</value>
+  </data>
+  <data name="MapDrive_SharedDrivePath_Description" xml:space="preserve">
+    <value>공유 폴더의 네트워크 경로입니다.</value>
+  </data>
+  <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
+    <value>네트워크 공유 경로</value>
+  </data>
+  <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
+    <value>결과</value>
+  </data>
+  <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
+    <value>연결을 끊을 드라이브 문자 (예: "X:").</value>
+  </data>
+  <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
+    <value>드라이브 문자</value>
+  </data>
+  <data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>작업의 반환 코드입니다.</value>
+  </data>
+  <data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>응답 코드</value>
+  </data>
+  <data name="UnmapDrive_ResponseMessage_Description" xml:space="preserve">
+    <value>결과 설명입니다.</value>
+  </data>
+  <data name="UnmapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+    <value>응답 메시지</value>
+  </data>
+  <data name="UnmapDrive_Result_Description" xml:space="preserve">
+    <value>드라이브 연결이 성공적으로 끊어지면 True입니다.</value>
+  </data>
+  <data name="UnmapDrive_DisplayName" xml:space="preserve">
+    <value>드라이브 연결 끊기</value>
+  </data>
+  <data name="MapDrive_Credential_Placeholder" xml:space="preserve">
+    <value>비어 있으면 현재 사용자의 자격 증명이 사용됩니다.</value>
+  </data>
+  <data name="CultureScope_ErrorMsg_CultureNameNullOrEmpty" xml:space="preserve">
+    <value>문화권 이름은 null이거나 비어 있을 수 없습니다.</value>
+  </data>
+  <data name="CultureScope_Culture_Description" xml:space="preserve">
+    <value>원하는 문화권 (예: ko-KR, en-US).</value>
+  </data>
+  <data name="CultureScope_Culture_DisplayName" xml:space="preserve">
+    <value>문화권</value>
+  </data>
+  <data name="CultureScope_Description" xml:space="preserve">
+    <value>다른 문화권 환경에서 액티비티를 실행하기 위한 컨테이너입니다.</value>
+  </data>
+  <data name="CultureScope_DisplayName" xml:space="preserve">
+    <value>문화권 범위 (CultureScope)</value>
+  </data>
+  <data name="TerminateProcess_Description" xml:space="preserve">
+    <value>지정된 프로세스를 정상적으로 종료하려고 시도하며, 불가능한 경우 강제 종료합니다.</value>
+  </data>
+  <data name="TerminateProcess_DisplayName" xml:space="preserve">
+    <value>프로세스 종료</value>
+  </data>
+  <data name="TerminateProcess_ProcessNames_Description" xml:space="preserve">
+    <value>종료할 프로세스 이름 목록입니다.</value>
+  </data>
+  <data name="TerminateProcess_ProcessNames_DisplayName" xml:space="preserve">
+    <value>프로세스 이름</value>
+  </data>
+  <data name="IfActivity_DisplayName" xml:space="preserve">
+    <value>If 액티비티</value>
+  </data>
+  <data name="IfActivity_Description" xml:space="preserve">
+    <value>Boolean을 반환하는 액티비티를 평가하고 해당 블록을 실행합니다.</value>
+  </data>
+  <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
+    <value>조건 필드에는 Boolean을 반환하는 액티비티가 필요합니다.</value>
+  </data>
+  <data name="Exit_DisplayName" xml:space="preserve">
+    <value>종료 (Exit)</value>
+  </data>
+  <data name="Exit_Condition_Description" xml:space="preserve">
+    <value>액티비티 평가 여부를 결정하는 조건입니다. 기본값: True.</value>
+  </data>
+  <data name="Exit_Condition_DisplayName" xml:space="preserve">
+    <value>조건</value>
+  </data>
+  <data name="Exit_Description" xml:space="preserve">
+    <value>컨테이너나 루프를 빠져나와 실행을 중단합니다.</value>
+  </data>
+  <data name="Exit_ErrorMsg_InvalidParent" xml:space="preserve">
+    <value>Exit 액티비티는 컨테이너나 TimeLoop 내에 배치되어야 합니다.</value>
+  </data>
+  <data name="TimeLoop_DisplayName" xml:space="preserve">
+    <value>타임 루프 (TimeLoop)</value>
+  </data>
+  <data name="TimeLoop_Description" xml:space="preserve">
+    <value>시간이 초과될 때까지 액티비티를 반복합니다. 시간 초과로 인해 루프가 중지되면 True를 반환합니다.</value>
+  </data>
+  <data name="TimeLoop_Timeout_DisplayName" xml:space="preserve">
+    <value>시간 초과</value>
+  </data>
+  <data name="TimeLoop_Timeout_Description" xml:space="preserve">
+    <value>루프의 총 실행 시간입니다.</value>
+  </data>
+  <data name="TimeLoop_IntervalSeconds_DisplayName" xml:space="preserve">
+    <value>간격</value>
+  </data>
+  <data name="TimeLoop_IntervalSeconds_Description" xml:space="preserve">
+    <value>각 반복 사이의 대기 시간(초)입니다.</value>
+  </data>
+  <data name="TimeLoop_IterationIndex_DisplayName" xml:space="preserve">
+    <value>인덱스</value>
+  </data>
+  <data name="TimeLoop_IterationIndex_Description" xml:space="preserve">
+    <value>현재 반복 인덱스 (0부터 시작).</value>
+  </data>
+  <data name="Container_DisplayName" xml:space="preserve">
+    <value>컨테이너</value>
+  </data>
+  <data name="Container_Description" xml:space="preserve">
+    <value>Exit 액티비티와 함께 사용하여 보조 흐름을 중단하는 래퍼입니다.</value>
+  </data>
+  <data name="CheckPoint_Data_Description" xml:space="preserve">
+    <value>예외 처리를 위한 키/값 쌍의 컬렉션입니다.</value>
+  </data>
+  <data name="CheckPoint_Data_DisplayName" xml:space="preserve">
+    <value>데이터</value>
+  </data>
+  <data name="CheckPoint_Description" xml:space="preserve">
+    <value>식이 참인지 확인하고 거짓인 경우 예외를 발생시킵니다.</value>
+  </data>
+  <data name="CheckPoint_DisplayName" xml:space="preserve">
+    <value>체크포인트</value>
+  </data>
+  <data name="CheckPoint_Exception_Description" xml:space="preserve">
+    <value>발생시킬 예외입니다.</value>
+  </data>
+  <data name="CheckPoint_Exception_DisplayName" xml:space="preserve">
+    <value>예외</value>
+  </data>
+  <data name="CheckPoint_Expression_Description" xml:space="preserve">
+    <value>평가할 식입니다.</value>
+  </data>
+  <data name="CheckPoint_Expression_DisplayName" xml:space="preserve">
+    <value>식</value>
+  </data>
+  <data name="PromoteHeaders_AutoRename_Description" xml:space="preserve">
+    <value>True인 경우, 열 이름이 이미 존재하면 숫자 접미사를 추가합니다.</value>
+  </data>
+  <data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
+    <value>자동 이름 변경</value>
+  </data>
+  <data name="PromoteHeaders_Description" xml:space="preserve">
+    <value>첫 번째 행의 값을 열 헤더로 승격시킵니다.</value>
+  </data>
+  <data name="PromoteHeaders_DisplayName" xml:space="preserve">
+    <value>헤더 승격</value>
+  </data>
+  <data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
+    <value>승격할 행이 없습니다.</value>
+  </data>
+  <data name="PromoteHeaders_DataTable_Description" xml:space="preserve">
+    <value>처리할 데이터 테이블입니다.</value>
+  </data>
+  <data name="PromoteHeaders_DataTable_DisplayName" xml:space="preserve">
+    <value>데이터 테이블</value>
+  </data>
+  <data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
+    <value>DateTime 열에 사용할 날짜 형식입니다.</value>
+  </data>
+  <data name="DataTableToText_DateTimeFormat_DisplayName" xml:space="preserve">
+    <value>날짜/시간 형식</value>
+  </data>
+  <data name="DataTableToText_Description" xml:space="preserve">
+    <value>데이터 테이블을 HTML, JSON 또는 XML 형식의 문자열로 반환합니다.</value>
+  </data>
+  <data name="DataTableToText_DisplayName" xml:space="preserve">
+    <value>데이터 테이블을 텍스트로</value>
+  </data>
+  <data name="DataTableToText_DataTable_Description" xml:space="preserve">
+    <value>데이터 테이블입니다.</value>
+  </data>
+  <data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
+    <value>데이터 테이블</value>
+  </data>
+  <data name="DataTableToText_Result_Description" xml:space="preserve">
+    <value>결과 문자열입니다.</value>
+  </data>
+  <data name="DataTableToText_Result_DisplayName" xml:space="preserve">
+    <value>결과</value>
+  </data>
+  <data name="DataTableToText_OutputFormat_Description" xml:space="preserve">
+    <value>원하는 출력 형식입니다.</value>
+  </data>
+  <data name="DataTableToText_OutputFormat_DisplayName" xml:space="preserve">
+    <value>출력 형식</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnNames_Description" xml:space="preserve">
+    <value>평가할 열의 이름들입니다.</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnNames_DisplayName" xml:space="preserve">
+    <value>열 이름</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_DisplayName" xml:space="preserve">
+    <value>열 인덱스</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_Description" xml:space="preserve">
+    <value>평가할 열의 인덱스들입니다.</value>
+  </data>
+  <data name="RemoveEmptyRows_Description" xml:space="preserve">
+    <value>데이터 테이블에서 빈 행을 제거합니다.</value>
+  </data>
+  <data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
+    <value>빈 행 제거</value>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_Description" xml:space="preserve">
+    <value>정리할 데이터 테이블입니다.</value>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_DisplayName" xml:space="preserve">
+    <value>데이터 테이블</value>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_Description" xml:space="preserve">
+    <value>All: 모든 열이 비어 있을 때 제거. Any: 하나 이상의 열이 비어 있을 때 제거.</value>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
+    <value>일치 모드</value>
+  </data>
+  <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
+    <value>데이터 테이블</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+    <value>제거할 열의 이름들입니다.</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">
+    <value>열 이름</value>
+  </data>
+  <data name="RemoveDataColumns_Description" xml:space="preserve">
+    <value>데이터 테이블에서 지정된 열을 제거합니다.</value>
+  </data>
+  <data name="RemoveDataColumns_DisplayName" xml:space="preserve">
+    <value>데이터 열 제거</value>
+  </data>
+  <data name="RemoveDataColumns_DataTable_Description" xml:space="preserve">
+    <value>소스 데이터 테이블입니다.</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnIndexes_DisplayName" xml:space="preserve">
+    <value>열 인덱스</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnIndexes_Description" xml:space="preserve">
+    <value>제거할 열의 인덱스들입니다.</value>
+  </data>
+  <data name="TransposeData_Description" xml:space="preserve">
+    <value>데이터 테이블을 전치합니다 (행이 열이 되고 열이 행이 됨).</value>
+  </data>
+  <data name="TransposeData_DisplayName" xml:space="preserve">
+    <value>데이터 전치</value>
+  </data>
+  <data name="TransposeData_DataTable_Description" xml:space="preserve">
+    <value>전치할 데이터 테이블입니다.</value>
+  </data>
+  <data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
+    <value>데이터 테이블</value>
+  </data>
+  <data name="ParseData_DisplayName" xml:space="preserve">
+    <value>데이터 파싱 (Parse)</value>
+  </data>
+  <data name="ParseData_Description" xml:space="preserve">
+    <value>JSON 또는 YAML을 DataNode로 파싱하여 쉽게 조작할 수 있게 합니다.</value>
+  </data>
+  <data name="ParseData_Content_DisplayName" xml:space="preserve">
+    <value>내용</value>
+  </data>
+  <data name="ParseData_Content_Description" xml:space="preserve">
+    <value>파싱할 JSON 또는 YAML 텍스트입니다.</value>
+  </data>
+  <data name="ParseData_Culture_DisplayName" xml:space="preserve">
+    <value>문화권</value>
+  </data>
+  <data name="ParseData_Culture_Description" xml:space="preserve">
+    <value>숫자 변환에 적용될 문화권입니다.</value>
+  </data>
+  <data name="ParseData_Result_DisplayName" xml:space="preserve">
+    <value>결과</value>
+  </data>
+  <data name="ParseData_Result_Description" xml:space="preserve">
+    <value>생성된 DataNode입니다.</value>
+  </data>
+  <data name="LoadDataFile_DisplayName" xml:space="preserve">
+    <value>데이터 파일 로드</value>
+  </data>
+  <data name="LoadDataFile_Description" xml:space="preserve">
+    <value>JSON 또는 YAML 파일을 읽어 DataNode로 변환합니다.</value>
+  </data>
+  <data name="LoadDataFile_Encoding_Description" xml:space="preserve">
+    <value>텍스트 인코딩 (기본값: UTF-8).</value>
+  </data>
+  <data name="LoadDataFile_Culture_Description" xml:space="preserve">
+    <value>숫자 형식 변환에 사용될 문화권입니다.</value>
+  </data>
+  <data name="LoadDataFile_Result_Description" xml:space="preserve">
+    <value>생성된 DataNode입니다.</value>
+  </data>
+  <data name="LoadDataFile_Culture_DisplayName" xml:space="preserve">
+    <value>문화권</value>
+  </data>
+  <data name="LoadDataFile_Encoding_DisplayName" xml:space="preserve">
+    <value>인코딩</value>
+  </data>
+  <data name="LoadDataFile_Result_DisplayName" xml:space="preserve">
+    <value>결과</value>
+  </data>
+  <data name="LoadDataFile_FilePath_Description" xml:space="preserve">
+    <value>JSON/YAML 파일 경로입니다.</value>
+  </data>
+  <data name="LoadDataFile_FilePath_DisplayName" xml:space="preserve">
+    <value>파일 경로</value>
+  </data>
+  <data name="ActivityCategories_Data" xml:space="preserve">
+    <value>Autossential.데이터</value>
+  </data>
+  <data name="ActivityCategories_Files" xml:space="preserve">
+    <value>Autossential.파일</value>
+  </data>
+  <data name="ActivityCategories_Programming" xml:space="preserve">
+    <value>Autossential.프로그래밍</value>
+  </data>
+  <data name="ActivityCategories_System" xml:space="preserve">
+    <value>Autossential.시스템</value>
+  </data>
+  <data name="ActivityCategories_Workflow" xml:space="preserve">
+    <value>Autossential.워크フロー</value>
+  </data>
+  <data name="UnmapDrive_Description" xml:space="preserve">
+    <value>할당된 네트워크 드라이브를 제거합니다.</value>
+  </data>
+  <data name="MergeData_DisplayName" xml:space="preserve">
+    <value>데이터 병합</value>
+  </data>
+  <data name="MergeData_Description" xml:space="preserve">
+    <value>소스 DataNode를 대상에 병합합니다.</value>
+  </data>
+  <data name="MergeData_Source_DisplayName" xml:space="preserve">
+    <value>소스</value>
+  </data>
+  <data name="MergeData_Source_Description" xml:space="preserve">
+    <value>병합할 소스 DataNode입니다.</value>
+  </data>
+  <data name="MergeData_Destination_DisplayName" xml:space="preserve">
+    <value>대상</value>
+  </data>
+  <data name="MergeData_Destination_Description" xml:space="preserve">
+    <value>병합될 대상 DataNode입니다.</value>
+  </data>
+  <data name="Zip_EntryStructure_DisplayName" xml:space="preserve">
+    <value>항목 구조</value>
+  </data>
+  <data name="Zip_EntryStructure_Description" xml:space="preserve">
+    <value>파일이 ZIP 내에 저장되는 방식(상대 경로, 플랫 등)을 정의합니다.</value>
+  </data>
+  <data name="UpdateDictionary_Description" xml:space="preserve">
+    <value>사전에 항목을 추가하거나 업데이트합니다.</value>
+  </data>
+  <data name="UpdateDictionary_DisplayName" xml:space="preserve">
+    <value>사전 업데이트</value>
+  </data>
+  <data name="UpdateDictionary_Dictionary_Description" xml:space="preserve">
+    <value>수정할 사전 인스턴스입니다.</value>
+  </data>
+  <data name="UpdateDictionary_Dictionary_DisplayName" xml:space="preserve">
+    <value>사전</value>
+  </data>
+  <data name="UpdateDictionary_Entries_Description" xml:space="preserve">
+    <value>추가하거나 수정할 항목들입니다.</value>
+  </data>
+  <data name="UpdateDictionary_Entries_DisplayName" xml:space="preserve">
+    <value>항목</value>
+  </data>
+  <data name="IfActivity_Condition_DisplayName" xml:space="preserve">
+    <value>조건</value>
+  </data>
+  <data name="IfActivity_Condition_Description" xml:space="preserve">
+    <value>Boolean을 반환하는 액티비티입니다.</value>
+  </data>
+  <data name="IfActivity_Then_Description" xml:space="preserve">
+    <value>조건이 참인 경우 액티비티를 실행합니다.</value>
+  </data>
+  <data name="IfActivity_Else_Description" xml:space="preserve">
+    <value>조건이 거짓인 경우 액티비티를 실행합니다.</value>
+  </data>
+  <data name="IfActivity_Then_DisplayName" xml:space="preserve">
+    <value>참 (Then)</value>
+  </data>
+  <data name="IfActivity_Else_DisplayName" xml:space="preserve">
+    <value>거짓 (Else)</value>
+  </data>
+  <data name="RandomString_ViewModel_Instructions" xml:space="preserve">
+    <value>@"다음 자리 표시자를 사용할 수 있습니다:
+- a : 소문자
+- A : 대문자
+- 0 : 숫자
+- ? : 사용자 정의 속성의 문자
+- * : 위의 모든 문자
+
+문자를 이스케이프하려면 백슬래시 '\'를 사용하십시오.
+
+그 외의 다른 문자는 리터럴로 처리됩니다."</value>
+  </data>
+  <data name="RandomString_ViewModel_ShowInstructions" xml:space="preserve">
+    <value>지침 표시</value>
+  </data>
+  <data name="RandomString_ViewModel_HideInstructions" xml:space="preserve">
+    <value>지침 숨기기</value>
+  </data>
+  <data name="RandomString_ViewModel_Generate" xml:space="preserve">
+    <value>생성</value>
+  </data>
+	<data name="IncrementDecrement_Description" xml:space="preserve">
+  <value>지정된 값으로 정수 변수를 증가시키거나 감소시켜 조정합니다.</value>
+  <comment>activity description</comment>
+</data>
+	<data name="IncrementDecrement_DisplayName" xml:space="preserve">
+  <value>증가/감소</value>
+  <comment>activity name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
+  <value>연산</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
+  <value>변수</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
+  <value>값</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_Description" xml:space="preserve">
+  <value>조정할 변수입니다.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Value_Description" xml:space="preserve">
+  <value>변수에 더하거나 뺄 값입니다. 1보다 크거나 같아야 합니다.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Description" xml:space="preserve">
+  <value>수행할 연산입니다.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
+  <value>증가</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
+  <value>감소</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+  <value>값은 1보다 크거나 같아야 합니다</value>
+  <comment>error message</comment>
+</data>
+	<data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
+  <value>{1}을(를) {2}만큼 {0}</value>
+  <comment>view model</comment>
+</data>
+</root>

@@ -1,0 +1,921 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Categories_Input" xml:space="preserve">
+    <value>Ввод</value>
+  </data>
+  <data name="Categories_Output" xml:space="preserve">
+    <value>Вывод</value>
+  </data>
+  <data name="Categories_Options" xml:space="preserve">
+    <value>Варианты</value>
+  </data>
+  <data name="AddRangeToCollection_Collection_Description" xml:space="preserve">
+    <value>Коллекция, которую нужно изменить.</value>
+  </data>
+  <data name="AddRangeToCollection_Collection_DisplayName" xml:space="preserve">
+    <value>Коллекция</value>
+  </data>
+  <data name="AddRangeToCollection_Description" xml:space="preserve">
+    <value>Добавляет набор элементов в указанную коллекцию.</value>
+  </data>
+  <data name="AddRangeToCollection_DisplayName" xml:space="preserve">
+    <value>Добавить диапазон в коллекцию</value>
+  </data>
+  <data name="AddRangeToCollection_Items_Description" xml:space="preserve">
+    <value>Элементы для добавления в коллекцию.</value>
+  </data>
+  <data name="AddRangeToCollection_Items_DisplayName" xml:space="preserve">
+    <value>Элементы</value>
+  </data>
+  <data name="WaitFile_PollingIntervalSeconds_Description" xml:space="preserve">
+    <value>Указывает интервал времени (в секундах) для повторной проверки файла. Значения меньше 0,5 будут скорректированы до 0,5. Убедитесь, что это значение меньше времени ожидания.</value>
+  </data>
+  <data name="WaitFile_PollingIntervalSeconds_DisplayName" xml:space="preserve">
+    <value>Интервал</value>
+  </data>
+  <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
+    <value>Указывает время ожидания (в секундах) перед возникновением ошибки. По умолчанию 30 секунд.</value>
+  </data>
+  <data name="WaitFile_Description" xml:space="preserve">
+    <value>Ожидает появления файла.</value>
+  </data>
+  <data name="WaitFile_DisplayName" xml:space="preserve">
+    <value>Ожидать файл</value>
+  </data>
+  <data name="WaitFile_FilePath_Description" xml:space="preserve">
+    <value>Путь к файлу.</value>
+  </data>
+  <data name="WaitFile_FilePath_DisplayName" xml:space="preserve">
+    <value>Путь к файлу</value>
+  </data>
+  <data name="WaitFile_Result_Description" xml:space="preserve">
+    <value>Объект FileInfo, если файл найден.</value>
+  </data>
+  <data name="WaitFile_Result_DisplayName" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="WaitFile_WaitForExist_Description" xml:space="preserve">
+    <value>Ожидать до тех пор, пока файл не будет существовать.</value>
+  </data>
+  <data name="WaitFile_WaitForExist_DisplayName" xml:space="preserve">
+    <value>Ожидать существования</value>
+  </data>
+  <data name="Common_TimeoutSeconds_DisplayName" xml:space="preserve">
+    <value>Тайм-аут</value>
+  </data>
+  <data name="Common_ViewModel_BrowseForFile" xml:space="preserve">
+    <value>Обзор файла</value>
+  </data>
+  <data name="Common_ViewModel_BrowseForFolder" xml:space="preserve">
+    <value>Обзор папки</value>
+  </data>
+  <data name="Categories_Common" xml:space="preserve">
+    <value>Общие</value>
+  </data>
+  <data name="Common_ContinueOnError_DisplayName" xml:space="preserve">
+    <value>Продолжить при ошибке</value>
+  </data>
+  <data name="Common_ContinueOnError_Description" xml:space="preserve">
+    <value>Указывает, следует ли продолжать выполнение оставшихся действий, даже если текущее действие завершится сбоем. Допускаются только логические значения.</value>
+  </data>
+  <data name="WaitFile_DirectoryPath_Description" xml:space="preserve">
+    <value>Путь к каталогу для мониторинга.</value>
+  </data>
+  <data name="WaitFile_DirectoryPath_DisplayName" xml:space="preserve">
+    <value>Путь к каталогу</value>
+  </data>
+  <data name="WaitFile_DynamicFile_DisplayName" xml:space="preserve">
+    <value>Динамическое имя файла</value>
+  </data>
+  <data name="Common_SearchPattern_Description" xml:space="preserve">
+    <value>Определяет шаблон имени файла. Поддерживает подстановочные знаки (*, ?, !, |). Используйте ! для исключения (например, !*.txt) и | для нескольких шаблонов. По умолчанию: *.*</value>
+  </data>
+  <data name="Common_SearchPattern_DisplayName" xml:space="preserve">
+    <value>Шаблон поиска</value>
+  </data>
+  <data name="WaitFile_DynamicFile_Description" xml:space="preserve">
+    <value>Если включено, отслеживает определенную папку до тех пор, пока не будет найден файл, соответствующий шаблону поиска.</value>
+  </data>
+  <data name="CleanUpFolder_DeleteEmptyFolders_Description" xml:space="preserve">
+    <value>Определяет, следует ли также удалять пустые папки после удаления файлов.</value>
+  </data>
+  <data name="CleanUpFolder_DeleteEmptyFolders_DisplayName" xml:space="preserve">
+    <value>Удалять пустые папки</value>
+  </data>
+  <data name="CleanUpFolder_Description" xml:space="preserve">
+    <value>Удаляет все файлы и папки из указанного каталога.</value>
+  </data>
+  <data name="CleanUpFolder_DisplayName" xml:space="preserve">
+    <value>Очистить папку</value>
+  </data>
+  <data name="CleanUpFolder_Folder_Description" xml:space="preserve">
+    <value>Путь к папке для очистки.</value>
+  </data>
+  <data name="CleanUpFolder_Folder_DisplayName" xml:space="preserve">
+    <value>Путь к папке</value>
+  </data>
+  <data name="CleanUpFolder_LastWriteTime_Description" xml:space="preserve">
+    <value>Удалять только те файлы, время последней записи которых предшествует этой дате. По умолчанию: DateTime.Now.</value>
+  </data>
+  <data name="CleanUpFolder_LastWriteTime_DisplayName" xml:space="preserve">
+    <value>Время последней записи</value>
+  </data>
+  <data name="CleanUpFolder_FilesDeleted_Description" xml:space="preserve">
+    <value>Количество удаленных файлов.</value>
+  </data>
+  <data name="CleanUpFolder_FilesDeleted_DisplayName" xml:space="preserve">
+    <value>Удалено файлов</value>
+  </data>
+  <data name="CleanUpFolder_SearchOption_Description" xml:space="preserve">
+    <value>Указывает, должна ли операция включать только целевой каталог или все подкаталоги.</value>
+  </data>
+  <data name="CleanUpFolder_SearchOption_DisplayName" xml:space="preserve">
+    <value>Параметр поиска</value>
+  </data>
+  <data name="CleanUpFolder_FoldersDeleted_DisplayName" xml:space="preserve">
+    <value>Удалено папок</value>
+  </data>
+  <data name="CleanUpFolder_FoldersDeleted_Description" xml:space="preserve">
+    <value>Количество удаленных папок.</value>
+  </data>
+  <data name="Zip_Description" xml:space="preserve">
+    <value>Сжимает файлы или папки в zip-архив.</value>
+  </data>
+  <data name="Zip_DisplayName" xml:space="preserve">
+    <value>Сжать (Zip)</value>
+  </data>
+  <data name="Zip_ToCompress_Description" xml:space="preserve">
+    <value>Коллекция путей к файлам и каталогам для сжатия.</value>
+  </data>
+  <data name="Zip_ToCompress_DisplayName" xml:space="preserve">
+    <value>Объекты для сжатия</value>
+  </data>
+  <data name="Zip_TextEncoding_Description" xml:space="preserve">
+    <value>Кодировка, используемая для имен записей в zip-файле.</value>
+  </data>
+  <data name="Zip_TextEncoding_DisplayName" xml:space="preserve">
+    <value>Кодировка текста</value>
+  </data>
+  <data name="Zip_CompressionLevel_Description" xml:space="preserve">
+    <value>Уровень сжатия, используемый при создании архива.</value>
+  </data>
+  <data name="Zip_CompressionLevel_DisplayName" xml:space="preserve">
+    <value>Уровень сжатия</value>
+  </data>
+  <data name="Zip_CompressedFile_Description" xml:space="preserve">
+    <value>Идентификатор полученного сжатого файла.</value>
+  </data>
+  <data name="Zip_CompressedFile_DisplayName" xml:space="preserve">
+    <value>Сжатый файл</value>
+  </data>
+  <data name="Zip_FullEntryNames_Description" xml:space="preserve">
+    <value>Использовать полные имена записей (абсолютный путь) вместо относительных путей.</value>
+  </data>
+  <data name="Zip_FullEntryNames_DisplayName" xml:space="preserve">
+    <value>Полные имена записей</value>
+  </data>
+  <data name="Zip_FilesCount_Description" xml:space="preserve">
+    <value>Количество файлов, добавленных в архив.</value>
+  </data>
+  <data name="Zip_FilesCount_DisplayName" xml:space="preserve">
+    <value>Количество файлов</value>
+  </data>
+  <data name="Zip_ZipFilePath_Description" xml:space="preserve">
+    <value>Путь, по которому будет создан zip-файл.</value>
+  </data>
+  <data name="Zip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>Путь к Zip-файлу</value>
+  </data>
+  <data name="Common_ErrorMsg_ValueNotSupplied" xml:space="preserve">
+    <value>Значение обязательного аргумента '{0}' не предоставлено.</value>
+  </data>
+  <data name="Unzip_Description" xml:space="preserve">
+    <value>Извлекает файлы и папки из zip-архива.</value>
+  </data>
+  <data name="Unzip_DisplayName" xml:space="preserve">
+    <value>Извлечь (Unzip)</value>
+  </data>
+  <data name="Unzip_ZipFilePath_Description" xml:space="preserve">
+    <value>Путь к zip-файлу для извлечения.</value>
+  </data>
+  <data name="Unzip_ZipFilePath_DisplayName" xml:space="preserve">
+    <value>Путь к Zip-файлу</value>
+  </data>
+  <data name="Unzip_ExtractTo_Description" xml:space="preserve">
+    <value>Папка, в которую будет извлечено содержимое.</value>
+  </data>
+  <data name="Unzip_ExtractTo_DisplayName" xml:space="preserve">
+    <value>Извлечь в</value>
+  </data>
+  <data name="Unzip_Overwrite_Description" xml:space="preserve">
+    <value>Если включено, перезаписывает существующие файлы при извлечении.</value>
+  </data>
+  <data name="Unzip_Overwrite_DisplayName" xml:space="preserve">
+    <value>Перезаписать</value>
+  </data>
+  <data name="Unzip_ErrorMsg_OutsideDir" xml:space="preserve">
+    <value>Запись архива пытается извлечься за пределы целевого каталога.</value>
+  </data>
+  <data name="Unzip_ErrorMsg_DirNameWithData" xml:space="preserve">
+    <value>Имя каталога в архиве содержит данные файла, что недопустимо.</value>
+  </data>
+  <data name="RandomString_Description" xml:space="preserve">
+    <value>Генерирует случайную строку на основе шаблона формата.</value>
+  </data>
+  <data name="RandomString_DisplayName" xml:space="preserve">
+    <value>Случайная строка</value>
+  </data>
+  <data name="RandomString_Format_Description" xml:space="preserve">
+    <value>Шаблон строки. 'a' - строчные, 'A' - прописные, '0' - цифры, '*' - любые, '?' - пользовательские, '\\' - экранирование.</value>
+  </data>
+  <data name="RandomString_Format_DisplayName" xml:space="preserve">
+    <value>Формат</value>
+  </data>
+  <data name="RandomString_Custom_Description" xml:space="preserve">
+    <value>Дополнительные символы для использования вместо знака '?'.</value>
+  </data>
+  <data name="RandomString_Custom_DisplayName" xml:space="preserve">
+    <value>Пользовательские символы</value>
+  </data>
+  <data name="RandomString_Result_DisplayName" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="RandomString_Result_Description" xml:space="preserve">
+    <value>Сгенерированная случайная строка.</value>
+  </data>
+  <data name="ReplaceTokens_Description" xml:space="preserve">
+    <value>Заменяет токены в строке значениями из словаря. Использует 'Шаблон' и 'Заполнитель'.</value>
+  </data>
+  <data name="ReplaceTokens_DisplayName" xml:space="preserve">
+    <value>Заменить токены</value>
+  </data>
+  <data name="ReplaceTokens_Dictionary_Description" xml:space="preserve">
+    <value>Словарь, содержащий значения для замены.</value>
+  </data>
+  <data name="ReplaceTokens_Dictionary_DisplayName" xml:space="preserve">
+    <value>Словарь</value>
+  </data>
+  <data name="ReplaceTokens_Pattern_Description" xml:space="preserve">
+    <value>Текстовый шаблон для токена.</value>
+  </data>
+  <data name="ReplaceTokens_Pattern_DisplayName" xml:space="preserve">
+    <value>Шаблон</value>
+  </data>
+  <data name="ReplaceTokens_Placeholder_Description" xml:space="preserve">
+    <value>Символ, используемый в качестве заполнителя внутри шаблона.</value>
+  </data>
+  <data name="ReplaceTokens_Placeholder_DisplayName" xml:space="preserve">
+    <value>Заполнитель</value>
+  </data>
+  <data name="ReplaceTokens_Result_Description" xml:space="preserve">
+    <value>Результирующий текст с заменами.</value>
+  </data>
+  <data name="ReplaceTokens_Result_DisplayName" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="ReplaceTokens_Content_DisplayName" xml:space="preserve">
+    <value>Содержимое</value>
+  </data>
+  <data name="ReplaceTokens_Content_Description" xml:space="preserve">
+    <value>Входной текст, содержащий токены.</value>
+  </data>
+  <data name="Categories_InputOutput" xml:space="preserve">
+    <value>Ввод/Вывод</value>
+  </data>
+  <data name="ReplaceTokens_CaseSensitive_Description" xml:space="preserve">
+    <value>Определяет, следует ли учитывать регистр при поиске токенов.</value>
+  </data>
+  <data name="ReplaceTokens_CaseSensitive_DisplayName" xml:space="preserve">
+    <value>Учитывать регистр</value>
+  </data>
+  <data name="NetworkDrive_ResponseMsg_Success" xml:space="preserve">
+    <value>Успешно</value>
+  </data>
+  <data name="NetworkDrive_ErrorMsg_NoDriversAvailable" xml:space="preserve">
+    <value>Нет доступных дисков.</value>
+  </data>
+  <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
+    <value>Недопустимая буква диска (например, 'X', 'X:', 'X:\').</value>
+  </data>
+  <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
+    <value>Учетные данные</value>
+  </data>
+  <data name="MapDrive_Description" xml:space="preserve">
+    <value>Подключает сетевой диск в системе.</value>
+  </data>
+  <data name="MapDrive_DisplayName" xml:space="preserve">
+    <value>Подключить диск</value>
+  </data>
+  <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
+    <value>Буква диска для назначения (например, "X:"). Если пусто, будет выбрана случайная буква.</value>
+  </data>
+  <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
+    <value>Буква диска</value>
+  </data>
+  <data name="MapDrive_Force_Description" xml:space="preserve">
+    <value>Принудительно подключить диск, даже если буква уже используется.</value>
+  </data>
+  <data name="MapDrive_Force_DisplayName" xml:space="preserve">
+    <value>Принудительно</value>
+  </data>
+  <data name="MapDrive_MappedDrive_Description" xml:space="preserve">
+    <value>Буква подключенного диска в случае успеха.</value>
+  </data>
+  <data name="MapDrive_MappedDrive_DisplayName" xml:space="preserve">
+    <value>Подключенный диск</value>
+  </data>
+  <data name="MapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>Стандартный код возврата Windows.</value>
+  </data>
+  <data name="MapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>Код ответа</value>
+  </data>
+  <data name="MapDrive_ResponseMessage_Description" xml:space="preserve">
+    <value>Текстовое описание результата операции.</value>
+  </data>
+  <data name="MapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+    <value>Сообщение ответа</value>
+  </data>
+  <data name="MapDrive_Result_Description" xml:space="preserve">
+    <value>True, если подключение прошло успешно.</value>
+  </data>
+  <data name="MapDrive_Result_DisplayName" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="MapDrive_SharedDrivePath_Description" xml:space="preserve">
+    <value>Сетевой путь к общей папке.</value>
+  </data>
+  <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
+    <value>Путь к сетевому ресурсу</value>
+  </data>
+  <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
+    <value>Буква диска для отключения (например, "X:").</value>
+  </data>
+  <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
+    <value>Буква диска</value>
+  </data>
+  <data name="UnmapDrive_ResponseCode_Description" xml:space="preserve">
+    <value>Код возврата операции.</value>
+  </data>
+  <data name="UnmapDrive_ResponseCode_DisplayName" xml:space="preserve">
+    <value>Код ответа</value>
+  </data>
+  <data name="UnmapDrive_ResponseMessage_Description" xml:space="preserve">
+    <value>Описание результата.</value>
+  </data>
+  <data name="UnmapDrive_ResponseMessage_DisplayName" xml:space="preserve">
+    <value>Сообщение ответа</value>
+  </data>
+  <data name="UnmapDrive_Result_Description" xml:space="preserve">
+    <value>True, если диск был успешно отключен.</value>
+  </data>
+  <data name="UnmapDrive_DisplayName" xml:space="preserve">
+    <value>Отключить диск</value>
+  </data>
+  <data name="MapDrive_Credential_Placeholder" xml:space="preserve">
+    <value>Если пусто, будут использоваться учетные данные текущего пользователя.</value>
+  </data>
+  <data name="CultureScope_ErrorMsg_CultureNameNullOrEmpty" xml:space="preserve">
+    <value>Название культуры не может быть пустым или null.</value>
+  </data>
+  <data name="CultureScope_Culture_Description" xml:space="preserve">
+    <value>Желаемая культура (например, ru-RU, en-US).</value>
+  </data>
+  <data name="CultureScope_Culture_DisplayName" xml:space="preserve">
+    <value>Культура</value>
+  </data>
+  <data name="CultureScope_Description" xml:space="preserve">
+    <value>Контейнер для выполнения действий в другой культурной среде.</value>
+  </data>
+  <data name="CultureScope_DisplayName" xml:space="preserve">
+    <value>Область культуры (CultureScope)</value>
+  </data>
+  <data name="TerminateProcess_Description" xml:space="preserve">
+    <value>Пытается корректно закрыть указанные процессы или завершает их принудительно.</value>
+  </data>
+  <data name="TerminateProcess_DisplayName" xml:space="preserve">
+    <value>Завершить процесс</value>
+  </data>
+  <data name="TerminateProcess_ProcessNames_Description" xml:space="preserve">
+    <value>Список имен процессов для завершения.</value>
+  </data>
+  <data name="TerminateProcess_ProcessNames_DisplayName" xml:space="preserve">
+    <value>Имена процессов</value>
+  </data>
+  <data name="IfActivity_DisplayName" xml:space="preserve">
+    <value>Действие If</value>
+  </data>
+  <data name="IfActivity_Description" xml:space="preserve">
+    <value>Вычисляет действие, возвращающее логическое значение, и выполняет соответствующий блок.</value>
+  </data>
+  <data name="IfActivity_ErrorMsg_ConditionReturnsBoolean" xml:space="preserve">
+    <value>Поле условия требует действия, возвращающего логическое значение (Boolean).</value>
+  </data>
+  <data name="Exit_DisplayName" xml:space="preserve">
+    <value>Выход (Exit)</value>
+  </data>
+  <data name="Exit_Condition_Description" xml:space="preserve">
+    <value>Условие, определяющее, следует ли выполнять действие. По умолчанию: True.</value>
+  </data>
+  <data name="Exit_Condition_DisplayName" xml:space="preserve">
+    <value>Условие</value>
+  </data>
+  <data name="Exit_Description" xml:space="preserve">
+    <value>Выходит из контейнера или цикла и прекращает выполнение.</value>
+  </data>
+  <data name="Exit_ErrorMsg_InvalidParent" xml:space="preserve">
+    <value>Действие Exit должно быть помещено внутрь Container или TimeLoop.</value>
+  </data>
+  <data name="TimeLoop_DisplayName" xml:space="preserve">
+    <value>Временной цикл (TimeLoop)</value>
+  </data>
+  <data name="TimeLoop_Description" xml:space="preserve">
+    <value>Повторяет действия до истечения времени. Возвращает True, если цикл остановился из-за тайм-аута.</value>
+  </data>
+  <data name="TimeLoop_Timeout_DisplayName" xml:space="preserve">
+    <value>Тайм-аут</value>
+  </data>
+  <data name="TimeLoop_Timeout_Description" xml:space="preserve">
+    <value>Общее время выполнения цикла.</value>
+  </data>
+  <data name="TimeLoop_IntervalSeconds_DisplayName" xml:space="preserve">
+    <value>Интервал</value>
+  </data>
+  <data name="TimeLoop_IntervalSeconds_Description" xml:space="preserve">
+    <value>Время ожидания между итерациями (в секундах).</value>
+  </data>
+  <data name="TimeLoop_IterationIndex_DisplayName" xml:space="preserve">
+    <value>Индекс</value>
+  </data>
+  <data name="TimeLoop_IterationIndex_Description" xml:space="preserve">
+    <value>Индекс текущей итерации (начиная с 0).</value>
+  </data>
+  <data name="Container_DisplayName" xml:space="preserve">
+    <value>Контейнер</value>
+  </data>
+  <data name="Container_Description" xml:space="preserve">
+    <value>Оболочка, используемая с действием Exit для прерывания второстепенных потоков.</value>
+  </data>
+  <data name="CheckPoint_Data_Description" xml:space="preserve">
+    <value>Коллекция пар "ключ-значение" для обработки исключений.</value>
+  </data>
+  <data name="CheckPoint_Data_DisplayName" xml:space="preserve">
+    <value>Данные</value>
+  </data>
+  <data name="CheckPoint_Description" xml:space="preserve">
+    <value>Проверяет истинность выражения и генерирует исключение, если оно ложно.</value>
+  </data>
+  <data name="CheckPoint_DisplayName" xml:space="preserve">
+    <value>Контрольная точка (CheckPoint)</value>
+  </data>
+  <data name="CheckPoint_Exception_Description" xml:space="preserve">
+    <value>Исключение, которое необходимо сгенерировать.</value>
+  </data>
+  <data name="CheckPoint_Exception_DisplayName" xml:space="preserve">
+    <value>Исключение</value>
+  </data>
+  <data name="CheckPoint_Expression_Description" xml:space="preserve">
+    <value>Выражение для оценки.</value>
+  </data>
+  <data name="CheckPoint_Expression_DisplayName" xml:space="preserve">
+    <value>Выражение</value>
+  </data>
+  <data name="PromoteHeaders_AutoRename_Description" xml:space="preserve">
+    <value>Если True, добавляет числовой суффикс, если имя столбца уже существует.</value>
+  </data>
+  <data name="PromoteHeaders_AutoRename_DisplayName" xml:space="preserve">
+    <value>Автоматическое переименование</value>
+  </data>
+  <data name="PromoteHeaders_Description" xml:space="preserve">
+    <value>Делает значения первой строки заголовками столбцов.</value>
+  </data>
+  <data name="PromoteHeaders_DisplayName" xml:space="preserve">
+    <value>Повысить заголовки</value>
+  </data>
+  <data name="PromoteHeaders_ErrorMsg_NoData" xml:space="preserve">
+    <value>Нет строк для повышения.</value>
+  </data>
+  <data name="PromoteHeaders_DataTable_Description" xml:space="preserve">
+    <value>Таблица данных для обработки.</value>
+  </data>
+  <data name="PromoteHeaders_DataTable_DisplayName" xml:space="preserve">
+    <value>Таблица данных</value>
+  </data>
+  <data name="DataTableToText_DateTimeFormat_Description" xml:space="preserve">
+    <value>Формат даты для столбцов DateTime.</value>
+  </data>
+  <data name="DataTableToText_DateTimeFormat_DisplayName" xml:space="preserve">
+    <value>Формат даты и времени</value>
+  </data>
+  <data name="DataTableToText_Description" xml:space="preserve">
+    <value>Возвращает строковое представление таблицы данных в форматах HTML, JSON или XML.</value>
+  </data>
+  <data name="DataTableToText_DisplayName" xml:space="preserve">
+    <value>Таблица данных в текст</value>
+  </data>
+  <data name="DataTableToText_DataTable_Description" xml:space="preserve">
+    <value>Таблица данных.</value>
+  </data>
+  <data name="DataTableToText_DataTable_DisplayName" xml:space="preserve">
+    <value>Таблица данных</value>
+  </data>
+  <data name="DataTableToText_Result_Description" xml:space="preserve">
+    <value>Результирующая строка.</value>
+  </data>
+  <data name="DataTableToText_Result_DisplayName" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="DataTableToText_OutputFormat_Description" xml:space="preserve">
+    <value>Желаемый формат вывода.</value>
+  </data>
+  <data name="DataTableToText_OutputFormat_DisplayName" xml:space="preserve">
+    <value>Формат вывода</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnNames_Description" xml:space="preserve">
+    <value>Имена столбцов для оценки.</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnNames_DisplayName" xml:space="preserve">
+    <value>Имена столбцов</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_DisplayName" xml:space="preserve">
+    <value>Индексы столбцов</value>
+  </data>
+  <data name="RemoveEmptyRows_ColumnIndexes_Description" xml:space="preserve">
+    <value>Индексы столбцов для оценки.</value>
+  </data>
+  <data name="RemoveEmptyRows_Description" xml:space="preserve">
+    <value>Удаляет пустые строки из таблицы данных.</value>
+  </data>
+  <data name="RemoveEmptyRows_DisplayName" xml:space="preserve">
+    <value>Удалить пустые строки</value>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_Description" xml:space="preserve">
+    <value>Таблица данных для очистки.</value>
+  </data>
+  <data name="RemoveEmptyRows_DataTable_DisplayName" xml:space="preserve">
+    <value>Таблица данных</value>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_Description" xml:space="preserve">
+    <value>All: удалять, если все столбцы пусты. Any: удалять, если хотя бы один столбец пуст.</value>
+  </data>
+  <data name="RemoveEmptyRows_MatchingMode_DisplayName" xml:space="preserve">
+    <value>Режим соответствия</value>
+  </data>
+  <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
+    <value>Таблица данных</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+    <value>Имена столбцов для удаления.</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">
+    <value>Имена столбцов</value>
+  </data>
+  <data name="RemoveDataColumns_Description" xml:space="preserve">
+    <value>Удаляет указанные столбцы из таблицы данных.</value>
+  </data>
+  <data name="RemoveDataColumns_DisplayName" xml:space="preserve">
+    <value>Удалить столбцы данных</value>
+  </data>
+  <data name="RemoveDataColumns_DataTable_Description" xml:space="preserve">
+    <value>Исходная таблица данных.</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnIndexes_DisplayName" xml:space="preserve">
+    <value>Индексы столбцов</value>
+  </data>
+  <data name="RemoveDataColumns_ColumnIndexes_Description" xml:space="preserve">
+    <value>Индексы столбцов для удаления.</value>
+  </data>
+  <data name="TransposeData_Description" xml:space="preserve">
+    <value>Транспонирует таблицу данных (строки становятся столбцами и наоборот).</value>
+  </data>
+  <data name="TransposeData_DisplayName" xml:space="preserve">
+    <value>Транспонировать данные</value>
+  </data>
+  <data name="TransposeData_DataTable_Description" xml:space="preserve">
+    <value>Таблица данных для транспонирования.</value>
+  </data>
+  <data name="TransposeData_DataTable_DisplayName" xml:space="preserve">
+    <value>Таблица данных</value>
+  </data>
+  <data name="ParseData_DisplayName" xml:space="preserve">
+    <value>Парсинг данных (Parse)</value>
+  </data>
+  <data name="ParseData_Description" xml:space="preserve">
+    <value>Анализирует JSON или YAML в DataNode для упрощенного управления.</value>
+  </data>
+  <data name="ParseData_Content_DisplayName" xml:space="preserve">
+    <value>Содержимое</value>
+  </data>
+  <data name="ParseData_Content_Description" xml:space="preserve">
+    <value>Текст JSON или YAML для парсинга.</value>
+  </data>
+  <data name="ParseData_Culture_DisplayName" xml:space="preserve">
+    <value>Культура</value>
+  </data>
+  <data name="ParseData_Culture_Description" xml:space="preserve">
+    <value>Культура, применяемая при числовых преобразованиях.</value>
+  </data>
+  <data name="ParseData_Result_DisplayName" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="ParseData_Result_Description" xml:space="preserve">
+    <value>Сгенерированный DataNode.</value>
+  </data>
+  <data name="LoadDataFile_DisplayName" xml:space="preserve">
+    <value>Загрузить файл данных</value>
+  </data>
+  <data name="LoadDataFile_Description" xml:space="preserve">
+    <value>Читает файл JSON или YAML и преобразует его в DataNode.</value>
+  </data>
+  <data name="LoadDataFile_Encoding_Description" xml:space="preserve">
+    <value>Кодировка текста (по умолчанию: UTF-8).</value>
+  </data>
+  <data name="LoadDataFile_Culture_Description" xml:space="preserve">
+    <value>Культура, используемая для преобразования числовых форматов.</value>
+  </data>
+  <data name="LoadDataFile_Result_Description" xml:space="preserve">
+    <value>Сгенерированный DataNode.</value>
+  </data>
+  <data name="LoadDataFile_Culture_DisplayName" xml:space="preserve">
+    <value>Культура</value>
+  </data>
+  <data name="LoadDataFile_Encoding_DisplayName" xml:space="preserve">
+    <value>Кодировка</value>
+  </data>
+  <data name="LoadDataFile_Result_DisplayName" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="LoadDataFile_FilePath_Description" xml:space="preserve">
+    <value>Путь к файлу JSON/YAML.</value>
+  </data>
+  <data name="LoadDataFile_FilePath_DisplayName" xml:space="preserve">
+    <value>Путь к файлу</value>
+  </data>
+  <data name="ActivityCategories_Data" xml:space="preserve">
+    <value>Autossential.Данные</value>
+  </data>
+  <data name="ActivityCategories_Files" xml:space="preserve">
+    <value>Autossential.Файлы</value>
+  </data>
+  <data name="ActivityCategories_Programming" xml:space="preserve">
+    <value>Autossential.Программирование</value>
+  </data>
+  <data name="ActivityCategories_System" xml:space="preserve">
+    <value>Autossential.Система</value>
+  </data>
+  <data name="ActivityCategories_Workflow" xml:space="preserve">
+    <value>Autossential.Рабочий процесс</value>
+  </data>
+  <data name="UnmapDrive_Description" xml:space="preserve">
+    <value>Удаляет подключенный сетевой диск.</value>
+  </data>
+  <data name="MergeData_DisplayName" xml:space="preserve">
+    <value>Объединить данные</value>
+  </data>
+  <data name="MergeData_Description" xml:space="preserve">
+    <value>Объединяет исходный DataNode с целевым.</value>
+  </data>
+  <data name="MergeData_Source_DisplayName" xml:space="preserve">
+    <value>Источник</value>
+  </data>
+  <data name="MergeData_Source_Description" xml:space="preserve">
+    <value>Исходный DataNode для объединения.</value>
+  </data>
+  <data name="MergeData_Destination_DisplayName" xml:space="preserve">
+    <value>Назначение</value>
+  </data>
+  <data name="MergeData_Destination_Description" xml:space="preserve">
+    <value>Целевой DataNode для объединения.</value>
+  </data>
+  <data name="Zip_EntryStructure_DisplayName" xml:space="preserve">
+    <value>Структура записи</value>
+  </data>
+  <data name="Zip_EntryStructure_Description" xml:space="preserve">
+    <value>Определяет способ хранения файлов в ZIP (относительный путь, плоский и т. д.).</value>
+  </data>
+  <data name="UpdateDictionary_Description" xml:space="preserve">
+    <value>Добавляет или обновляет записи в словаре.</value>
+  </data>
+  <data name="UpdateDictionary_DisplayName" xml:space="preserve">
+    <value>Обновить словарь</value>
+  </data>
+  <data name="UpdateDictionary_Dictionary_Description" xml:space="preserve">
+    <value>Экземпляр словаря для изменения.</value>
+  </data>
+  <data name="UpdateDictionary_Dictionary_DisplayName" xml:space="preserve">
+    <value>Словарь</value>
+  </data>
+  <data name="UpdateDictionary_Entries_Description" xml:space="preserve">
+    <value>Записи, которые нужно добавить или изменить.</value>
+  </data>
+  <data name="UpdateDictionary_Entries_DisplayName" xml:space="preserve">
+    <value>Записи</value>
+  </data>
+  <data name="IfActivity_Condition_DisplayName" xml:space="preserve">
+    <value>Условие</value>
+  </data>
+  <data name="IfActivity_Condition_Description" xml:space="preserve">
+    <value>Действие, возвращающее логическое значение.</value>
+  </data>
+  <data name="IfActivity_Then_Description" xml:space="preserve">
+    <value>Действие, выполняемое, если условие истинно.</value>
+  </data>
+  <data name="IfActivity_Else_Description" xml:space="preserve">
+    <value>Действие, выполняемое, если условие ложно.</value>
+  </data>
+  <data name="IfActivity_Then_DisplayName" xml:space="preserve">
+    <value>Тогда (Then)</value>
+  </data>
+  <data name="IfActivity_Else_DisplayName" xml:space="preserve">
+    <value>Иначе (Else)</value>
+  </data>
+  <data name="RandomString_ViewModel_Instructions" xml:space="preserve">
+    <value>@"Доступны следующие заполнители:
+- a : строчные буквы
+- A : прописные буквы
+- 0 : цифры
+- ? : символы из пользовательских свойств
+- * : все вышеперечисленные символы
+
+Используйте обратную косую черту '\' для экранирования символа.
+
+Любые другие символы рассматриваются как литералы."</value>
+  </data>
+  <data name="RandomString_ViewModel_ShowInstructions" xml:space="preserve">
+    <value>Показать инструкции</value>
+  </data>
+  <data name="RandomString_ViewModel_HideInstructions" xml:space="preserve">
+    <value>Скрыть инструкции</value>
+  </data>
+  <data name="RandomString_ViewModel_Generate" xml:space="preserve">
+    <value>Сгенерировать</value>
+  </data>
+	<data name="IncrementDecrement_Description" xml:space="preserve">
+  <value>Регулирует целочисленную переменную, увеличивая или уменьшая ее на заданное значение.</value>
+  <comment>activity description</comment>
+</data>
+	<data name="IncrementDecrement_DisplayName" xml:space="preserve">
+  <value>Инкремент/Декремент</value>
+  <comment>activity name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
+  <value>Операция</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
+  <value>Переменная</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
+  <value>Значение</value>
+  <comment>property name</comment>
+</data>
+	<data name="IncrementDecrement_Variable_Description" xml:space="preserve">
+  <value>Переменная, которую необходимо настроить.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Value_Description" xml:space="preserve">
+  <value>Значение для сложения или вычитания из переменной. Должно быть больше или равно 1.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Description" xml:space="preserve">
+  <value>Операция, которую необходимо выполнить.</value>
+  <comment>property description</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
+  <value>Инкремент</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
+  <value>Декремент</value>
+  <comment>field name</comment>
+</data>
+	<data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
+  <value>Значение должно быть больше или равно 1</value>
+  <comment>error message</comment>
+</data>
+	<data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
+  <value>{0} {1} на {2}</value>
+  <comment>view model</comment>
+</data>
+</root>

@@ -4,12 +4,10 @@ name: .NET
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
       
 jobs:
   pack-push:
-    if: github.head_ref == 'develop' || github.head_ref == 'develop-4x'
     env:
       project: ./source/Autossential.Activities.Design/Autossential.Activities.Design.csproj
       

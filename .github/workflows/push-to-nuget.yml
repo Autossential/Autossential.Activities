@@ -1,21 +1,22 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
 name: .NET
 
 on:
-  push:
-    branches: [ "main" ]
-    
+  pull_request:
+    branches:
+      - main
+      
 jobs:
   pack-push:
+    if: github.head_ref == 'develop' || github.head_ref == 'develop-4x'
     env:
       project: ./source/Autossential.Activities.Design/Autossential.Activities.Design.csproj
       
     runs-on: windows-latest
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:

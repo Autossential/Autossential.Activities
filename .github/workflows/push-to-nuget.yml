@@ -7,34 +7,42 @@ on:
     branches: ["main"]
       
 jobs:
-  pack-push:
-    if: contains(github.event.head_commit.message, 'develop')
-  
-    env:
-      project: ./Autossential.Activities.Packaging/Autossential.Activities.Packaging.csproj
-      
-    runs-on: windows-latest
-    
+  debug:
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v5
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 6.0.x
-        
-    - name: Adding nuget package sources (MyGet-Official)
-      run: dotnet nuget add source https://pkgs.dev.azure.com/uipath/Public.Feeds/_packaging/UiPath-Official/nuget/v3/index.json --name UiPath-Official
+      - name: Mostrar head_ref
+        run: echo "github.head_ref = ${{ github.head_ref }}"
+      - name: Mostrar ref
+        run: echo "github.ref = ${{ github.ref }}"
+
+  # pack-push:
+    # if: contains(github.event.head_commit.message, 'develop')
+  
+    # env:
+      # project: ./Autossential.Activities.Packaging/Autossential.Activities.Packaging.csproj
       
-    - name: Adding nuget package sources (UiPath-Internal)
-      run: dotnet nuget add source https://uipath.pkgs.visualstudio.com/Public.Feeds/_packaging/UiPath-Internal/nuget/v3/index.json --name UiPath-Internal
-     
-    - name: Restore
-      run: dotnet restore ${{env.project}}
+    # runs-on: windows-latest
     
-    - name: Pack
-      run: dotnet pack ${{env.project}} -c Release -o Package
+    # steps:
+    # - uses: actions/checkout@v5
+    # - name: Setup .NET
+      # uses: actions/setup-dotnet@v4
+      # with:
+        # dotnet-version: 6.0.x
+        
+    # - name: Adding nuget package sources (MyGet-Official)
+      # run: dotnet nuget add source https://pkgs.dev.azure.com/uipath/Public.Feeds/_packaging/UiPath-Official/nuget/v3/index.json --name UiPath-Official
       
-    - name: Push to NuGet
-      run: |
-        cd Package
-        dotnet nuget push *.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json --skip-duplicate
+    # - name: Adding nuget package sources (UiPath-Internal)
+      # run: dotnet nuget add source https://uipath.pkgs.visualstudio.com/Public.Feeds/_packaging/UiPath-Internal/nuget/v3/index.json --name UiPath-Internal
+     
+    # - name: Restore
+      # run: dotnet restore ${{env.project}}
+    
+    # - name: Pack
+      # run: dotnet pack ${{env.project}} -c Release -o Package
+      
+    # - name: Push to NuGet
+      # run: |
+        # cd Package
+        # dotnet nuget push *.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json --skip-duplicate

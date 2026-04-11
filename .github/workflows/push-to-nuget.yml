@@ -11,7 +11,7 @@ jobs:
     if: contains(github.event.head_commit.message, 'develop')
   
     env:
-      project: ./source/Autossential.Activities.Design/Autossential.Activities.Design.csproj
+      project: ./Autossential.Activities.Packaging/Autossential.Activities.Packaging.csproj
       
     runs-on: windows-latest
     

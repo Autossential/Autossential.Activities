@@ -24,7 +24,7 @@ namespace Autossential.Activities.Tests.Activities
                 ["Placeholder"] = '0'
             };
 
-            var result = (string)WorkflowInvoker.Invoke(new ReplaceTokens(), inputs);
+            var result = WorkflowInvoker.Invoke(new ReplaceTokens(), inputs);
 
             Assert.Equal("Hello Alice, you are 30 years old", result);
         }
@@ -46,7 +46,7 @@ namespace Autossential.Activities.Tests.Activities
                 ["Placeholder"] = '0'
             };
 
-            var result = (string)WorkflowInvoker.Invoke(new ReplaceTokens(), inputs);
+            var result = WorkflowInvoker.Invoke(new ReplaceTokens(), inputs);
 
             Assert.Equal("User: Bob, Role: Admin", result);
         }
@@ -67,7 +67,7 @@ namespace Autossential.Activities.Tests.Activities
                 ["Placeholder"] = '0'
             };
 
-            var result = (string)WorkflowInvoker.Invoke(new ReplaceTokens(), inputs);
+            var result = WorkflowInvoker.Invoke(new ReplaceTokens(), inputs);
 
             // Only {{Name}} should be replaced
             Assert.Contains("{{name}}", result);
@@ -93,6 +93,29 @@ namespace Autossential.Activities.Tests.Activities
             var result = WorkflowInvoker.Invoke(new ReplaceTokens(), inputs);
 
             Assert.Null(result);
+        }
+
+        [Theory]
+        [InlineData("%0", '0')]
+        [InlineData("@*", '@')]
+        [InlineData("__~", '~')]
+        public void Invoke_UnusualPatterns_ShouldWork(string pattern, char placeholder)
+        {
+            var dictionary = new Dictionary<string, object>
+            {
+                ["Name"] = "Alice"
+            };
+
+            var inputs = new Dictionary<string, object>
+            {
+                ["Content"] = string.Format("Hi, my name is {0}", pattern.Replace(placeholder.ToString(), "Name")),
+                ["Dictionary"] = dictionary,
+                ["Pattern"] = pattern,
+                ["Placeholder"] = placeholder
+            };
+
+            var result = WorkflowInvoker.Invoke(new ReplaceTokens(), inputs);
+            Assert.Contains("Alice", result);
         }
     }
 }

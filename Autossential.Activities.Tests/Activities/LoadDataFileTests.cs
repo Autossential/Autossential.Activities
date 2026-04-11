@@ -27,7 +27,7 @@ namespace Autossential.Activities.Tests.Activities
                     ["FilePath"] = filePath
                 };
 
-                var result = (DataNode)WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
+                var result = WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
 
                 Assert.NotNull(result);
                 Assert.Equal("Alice", result["name"].AsString());
@@ -55,7 +55,7 @@ namespace Autossential.Activities.Tests.Activities
                     ["FilePath"] = filePath
                 };
 
-                var result = (DataNode)WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
+                var result = WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
 
                 Assert.NotNull(result);
             }
@@ -94,7 +94,7 @@ namespace Autossential.Activities.Tests.Activities
                     ["Encoding"] = "utf-8"
                 };
 
-                var result = (DataNode)WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
+                var result = WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
 
                 Assert.NotNull(result);
             }
@@ -122,7 +122,7 @@ namespace Autossential.Activities.Tests.Activities
                     ["Culture"] = new CultureInfo("pt-BR")
                 };
 
-                var result = (DataNode)WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
+                var result = WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
 
                 Assert.NotNull(result);
             }

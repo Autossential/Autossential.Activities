@@ -8,7 +8,7 @@ namespace Autossential.Activities.Tests.Activities
     {
         // ─── Helper ──────────────────────────────────────────────────────────────
 
-        private static void Invoke<TKey, TValue>(Dictionary<TKey, TValue> dictionary, Dictionary<TKey, TValue> entries)
+        private static void Invoke<TKey, TValue>(Dictionary<TKey, TValue>? dictionary, Dictionary<TKey, TValue>? entries)
         {
             WorkflowInvoker.Invoke(new UpdateDictionary<TKey, TValue>(), new Dictionary<string, object>
             {
@@ -65,7 +65,7 @@ namespace Autossential.Activities.Tests.Activities
         public void Invoke_EmptyEntries_LeaveDictionaryUnchanged()
         {
             var dict = new Dictionary<string, int> { ["a"] = 1 };
-            Invoke(dict, new Dictionary<string, int>());
+            Invoke(dict, []);
 
             Assert.Single(dict);
         }

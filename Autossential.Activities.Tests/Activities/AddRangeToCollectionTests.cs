@@ -17,7 +17,6 @@ namespace Autossential.Activities.Tests.Activities
         }
 
         // ─── Happy path ───────────────────────────────────────────────────────────
-
         [Fact]
         public void Invoke_StringItems_AddsAllToCollection()
         {

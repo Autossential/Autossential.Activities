@@ -1,5 +1,6 @@
 using System.Activities;
 using Xunit;
+using Xunit.Sdk;
 
 namespace Autossential.Activities.Tests.Activities
 {
@@ -14,6 +15,22 @@ namespace Autossential.Activities.Tests.Activities
             {
                 ["Expression"] = true,
                 ["Exception"] = exception
+            };
+
+            WorkflowInvoker.Invoke(new CheckPoint(), inputs);
+        }
+
+        [Fact]
+        public void Invoke_WithOptionalData_DoesNotThrow()
+        {
+            var exception = new InvalidOperationException("Test");
+            var data = new Dictionary<string, string> { ["key"] = "value" };
+
+            var inputs = new Dictionary<string, object>
+            {
+                ["Expression"] = true,
+                ["Exception"] = exception,
+                ["Data"] = data
             };
 
             WorkflowInvoker.Invoke(new CheckPoint(), inputs);
@@ -49,21 +66,6 @@ namespace Autossential.Activities.Tests.Activities
             Assert.Equal("Argument error", thrown.Message);
         }
 
-        [Fact]
-        public void Invoke_WithOptionalData_DoesNotThrow()
-        {
-            var exception = new InvalidOperationException("Test");
-            var data = new Dictionary<string, string> { ["key"] = "value" };
-
-            var inputs = new Dictionary<string, object>
-            {
-                ["Expression"] = true,
-                ["Exception"] = exception,
-                ["Data"] = data
-            };
-
-            WorkflowInvoker.Invoke(new CheckPoint(), inputs);
-        }
 
         [Fact]
         public void Invoke_WithNullException_ThrowsNullReferenceException()

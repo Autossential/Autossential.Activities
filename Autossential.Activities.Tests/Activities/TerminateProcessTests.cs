@@ -54,5 +54,21 @@ namespace Autossential.Activities.Tests.Activities
 
             Assert.Throws<NullReferenceException>(() => WorkflowInvoker.Invoke(new TerminateProcess(), inputs));
         }
+
+        [Fact]
+        public void Invoke_IntegrationTesting_ClosesAllProcesses()
+        {
+            Process.Start("notepad");
+            Process.Start("calc");
+            Thread.Sleep(1000); // waits for load
+            Assert.True(Process.GetProcessesByName("notepad").Length > 0);
+            Assert.True(Process.GetProcessesByName("CalculatorApp").Length > 0);
+            WorkflowInvoker.Invoke(new TerminateProcess(), new Dictionary<string, object>
+            {
+                ["ProcessNames"] = new[] { "notepad", "CalculatorApp" }
+            });
+            Assert.True(Process.GetProcessesByName("notepad").Length == 0);
+            Assert.True(Process.GetProcessesByName("CalculatorApp").Length == 0);
+        }
     }
 }

@@ -18,6 +18,10 @@ namespace Autossential.Activities.Tests.Activities
             return dt;
         }
 
+        private const string ExpectedHTML = "<table><thead><tr><th>Name</th><th>Age</th></tr></thead><tbody><tr><td>Alice</td><td>30</td></tr><tr><td>Bob</td><td>25</td></tr></tbody></table>";
+        private const string ExpectedJSON = "[{\"Name\":\"Alice\",\"Age\":\"30\"},{\"Name\":\"Bob\",\"Age\":\"25\"}]";
+        private const string ExpectedXML = "<DataTable><Row><Name>Alice</Name><Age>30</Age></Row><Row><Name>Bob</Name><Age>25</Age></Row></DataTable>";
+
         [Fact]
         public void Invoke_WithHTMLFormatDefault_ReturnsHTMLTable()
         {
@@ -29,14 +33,8 @@ namespace Autossential.Activities.Tests.Activities
                 ["DataTable"] = dt
             };
 
-            var result = (string)WorkflowInvoker.Invoke(activity, inputs);
-
-            Assert.NotNull(result);
-            Assert.Contains("<table>", result);
-            Assert.Contains("<tr>", result);
-            Assert.Contains("<td>", result);
-            Assert.Contains("Alice", result);
-            Assert.Contains("Bob", result);
+            var result = WorkflowInvoker.Invoke(activity, inputs);
+            Assert.Equal(ExpectedHTML, result);
         }
 
         [Fact]
@@ -50,12 +48,8 @@ namespace Autossential.Activities.Tests.Activities
                 ["DataTable"] = dt
             };
 
-            var result = (string)WorkflowInvoker.Invoke(activity, inputs);
-
-            Assert.NotNull(result);
-            Assert.Contains("[", result);
-            Assert.Contains("]", result);
-            Assert.Contains("Alice", result);
+            var result = WorkflowInvoker.Invoke(activity, inputs);
+            Assert.Equal(ExpectedJSON, result);
         }
 
         [Fact]
@@ -69,12 +63,8 @@ namespace Autossential.Activities.Tests.Activities
                 ["DataTable"] = dt
             };
 
-            var result = (string)WorkflowInvoker.Invoke(activity, inputs);
-
-            Assert.NotNull(result);
-            Assert.Contains("<", result);
-            Assert.Contains(">", result);
-            Assert.Contains("Alice", result);
+            var result = WorkflowInvoker.Invoke(activity, inputs);
+            Assert.Equal(ExpectedXML, result);
         }
 
         [Fact]
@@ -89,8 +79,7 @@ namespace Autossential.Activities.Tests.Activities
                 ["DataTable"] = dt
             };
 
-            var result = (string)WorkflowInvoker.Invoke(activity, inputs);
-
+            var result = WorkflowInvoker.Invoke(activity, inputs);
             Assert.Equal(string.Empty, result);
         }
 
@@ -104,6 +93,33 @@ namespace Autossential.Activities.Tests.Activities
             };
 
             Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(activity, inputs));
+        }
+
+        [Theory]
+        [InlineData("dd-MMM-yyyy", typeof(DateTime))]
+        [InlineData("dddd MMM yyyy", typeof(DateTime))]
+        [InlineData("dd-MMM-yyyy", typeof(object))]
+        [InlineData("dddd MMM yyyy", typeof(object))]
+        public void Invoke_WithDateFormating_FormatAccordingly(string dateFormat, Type colType)
+        {
+            var date = DateTime.Now;
+            var dt = new DataTable();
+            dt.Columns.Add("Date", colType);
+            var row = dt.NewRow();
+            row["Date"] = date;
+            dt.Rows.Add(row);
+
+            var inputs = new Dictionary<string, object>
+            {
+                ["DataTable"] = dt
+            };
+
+            var result = WorkflowInvoker.Invoke(new DataTableToText
+            {
+                DateTimeFormat = dateFormat
+            }, inputs);
+
+            Assert.Contains(date.ToString(dateFormat), result);
         }
     }
 }

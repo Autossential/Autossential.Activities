@@ -1,4 +1,5 @@
-﻿using System.Activities;
+﻿using Autossential.Activities.Tests.Helpers;
+using System.Activities;
 using System.Activities.Expressions;
 using System.Activities.Statements;
 using System.Activities.Validation;
@@ -14,19 +15,14 @@ namespace Autossential.Activities.Tests.Activities
         /// Creates an ActivityFunc&lt;bool&gt; whose Handler always returns the given literal value.
         /// </summary>
         private static ActivityFunc<bool> BoolCondition(bool value) =>
-            new ActivityFunc<bool>
-            {
-                Handler = new Literal<bool>(value)
-            };
+            new() { Handler = new Literal<bool>(value) };
 
         /// <summary>
         /// Creates a CodeActivity that appends a token to a shared list,
         /// making it easy to assert execution order / branch selection.
         /// </summary>
         private static Activity RecordActivity(IList<string> log, string token) =>
-            new ActionActivity(() => log.Add(token));
-
-        // ─── Constructor / Default State ─────────────────────────────────────
+            new ActionInvoker(() => log.Add(token));
 
         [Fact]
         public void Constructor_ShouldInitializeConditionAsEmptyActivityFunc()
@@ -57,8 +53,6 @@ namespace Autossential.Activities.Tests.Activities
             Assert.IsType<Sequence>(activity.Else);
             Assert.Equal(string.Empty, activity.Else.DisplayName);
         }
-
-        // ─── Validation ──────────────────────────────────────────────────────
 
         [Fact]
         public void Validation_ShouldFail_WhenConditionHandlerIsNull()
@@ -342,21 +336,5 @@ namespace Autossential.Activities.Tests.Activities
 
             Assert.Equal(new[] { "else-1", "else-2" }, log);
         }
-    }
-
-    // ─── Minimal test double ──────────────────────────────────────────────────
-
-    /// <summary>
-    /// Lightweight <see cref="CodeActivity"/> that executes an arbitrary
-    /// <see cref="Action"/> — used to record side-effects in tests without
-    /// needing a full mock framework.
-    /// </summary>
-    internal sealed class ActionActivity : CodeActivity
-    {
-        private readonly Action _action;
-
-        public ActionActivity(Action action) => _action = action;
-
-        protected override void Execute(CodeActivityContext context) => _action();
     }
 }

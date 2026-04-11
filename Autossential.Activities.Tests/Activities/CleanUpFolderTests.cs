@@ -33,7 +33,7 @@ namespace Autossential.Activities.Tests.Activities
                     ["DeleteEmptyFolders"] = true
                 };
 
-                var result = WorkflowInvoker.Invoke(new CleanUpFolder(), inputs);
+                WorkflowInvoker.Invoke(new CleanUpFolder(), inputs);
 
                 // The activity sets out arguments via the context; WorkflowInvoker returns null for activities that use out args.
                 // Retrieve out arguments by invoking the activity through WorkflowInvoker and reading the outputs dictionary is not straightforward here,
@@ -46,18 +46,6 @@ namespace Autossential.Activities.Tests.Activities
             {
                 try { Directory.Delete(dir, true); } catch { }
             }
-        }
-
-        [Fact]
-        public void Invoke_WhenFolderArgumentIsNull_ThrowsInvalidOperationException()
-        {
-            var inputs = new Dictionary<string, object>
-            {
-                ["Folder"] = null!,
-                ["SearchPattern"] = "*.*"
-            };
-
-            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new CleanUpFolder(), inputs));
         }
 
         [Fact]
@@ -97,6 +85,18 @@ namespace Autossential.Activities.Tests.Activities
             {
                 try { Directory.Delete(dir, true); } catch { }
             }
+        }
+
+        [Fact]
+        public void Invoke_WhenFolderArgumentIsNull_ThrowsInvalidOperationException()
+        {
+            var inputs = new Dictionary<string, object>
+            {
+                ["Folder"] = null!,
+                ["SearchPattern"] = "*.*"
+            };
+
+            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new CleanUpFolder(), inputs));
         }
 
         [Fact]

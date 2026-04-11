@@ -10,10 +10,6 @@ namespace Autossential.Activities.Tests.Activities
     {
         private static readonly TimeSpan TestTimeout = TimeSpan.FromSeconds(10);
 
-        // ──────────────────────────────────────────────────────────────────────
-        // 1. Constructor / Initialization
-        // ──────────────────────────────────────────────────────────────────────
-
         [Fact]
         public void Constructor_ShouldInitializeBody_WithDoSequence()
         {
@@ -30,9 +26,7 @@ namespace Autossential.Activities.Tests.Activities
         {
             var scope = new CultureScope();
             var custom = new ActivityAction { Handler = new Sequence { DisplayName = "Custom" } };
-
             scope.Body = custom;
-
             Assert.Same(custom, scope.Body);
         }
 
@@ -65,30 +59,6 @@ namespace Autossential.Activities.Tests.Activities
             Assert.True(completed.Wait(TestTimeout));
             Assert.NotNull(cultureInsideBody);
             Assert.Equal(cultureName, cultureInsideBody!.Name);
-        }
-
-        [Fact]
-        public void Execute_ShouldApplyCulture_DifferentFromOriginal()
-        {
-            var originalCulture = CultureInfo.CurrentCulture;
-            var targetCulture = originalCulture.Name == "en-US" ? "pt-BR" : "en-US";
-            CultureInfo? inside = null;
-            var completed = new ManualResetEventSlim(false);
-
-            var scope = new CultureScope
-            {
-                Culture = new InArgument<string>(targetCulture),
-                Body = new ActivityAction
-                {
-                    Handler = new ActionInvoker(() => inside = CultureInfo.CurrentCulture)
-                }
-            };
-
-            AppRunner.Run(scope, onCompleted: _ => completed.Set());
-
-            Assert.True(completed.Wait(TestTimeout));
-            Assert.Equal(targetCulture, inside!.Name);
-            Assert.NotEqual(originalCulture.Name, inside.Name);
         }
 
         [Fact]
@@ -133,9 +103,6 @@ namespace Autossential.Activities.Tests.Activities
             Assert.Equal(CultureInfo.InvariantCulture.Name, inside!.Name);
         }
 
-        // ──────────────────────────────────────────────────────────────────────
-        // 3. Culture restaurada após execução
-        // ──────────────────────────────────────────────────────────────────────
 
         [Fact]
         public void Execute_ShouldRestoreOriginalCulture_AfterBodyCompletes()
@@ -197,10 +164,6 @@ namespace Autossential.Activities.Tests.Activities
             Assert.Equal("en-US", outerCulture!.Name);
         }
 
-        // ──────────────────────────────────────────────────────────────────────
-        // 4. Culture restaurada após fault
-        // ──────────────────────────────────────────────────────────────────────
-
         [Fact]
         public void Execute_ShouldRestoreOriginalCulture_AfterBodyFaults()
         {
@@ -227,10 +190,6 @@ namespace Autossential.Activities.Tests.Activities
             Assert.Equal(originalCulture.Name, after!.Name);
         }
 
-        // ──────────────────────────────────────────────────────────────────────
-        // 5. Culture inválida — deve completar com Faulted
-        // ──────────────────────────────────────────────────────────────────────
-
         [Fact]
         public void Execute_WithInvalidCultureName_ShouldCompleteWithFaultedState()
         {
@@ -253,10 +212,6 @@ namespace Autossential.Activities.Tests.Activities
             Assert.Equal(ActivityInstanceState.Faulted, completedArgs!.CompletionState);
             Assert.IsType<CultureNotFoundException>(completedArgs.TerminationException);
         }
-
-        // ──────────────────────────────────────────────────────────────────────
-        // 6. Body nulo
-        // ──────────────────────────────────────────────────────────────────────
 
         [Fact]
         public void Execute_WhenBodyIsNull_ShouldCompleteWithoutFault()

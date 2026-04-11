@@ -9,8 +9,7 @@ on:
 jobs:
   pack-push:
     env:
-      project: ./Autossential.Activities/Autossential.Activities.csproj
-      packaging: ./Autossential.Activities.Packaging/Autossential.Activities.Packaging.csproj
+      project: ./Autossential.Activities.Packaging/Autossential.Activities.Packaging.csproj
       
     runs-on: windows-latest
     
@@ -29,12 +28,12 @@ jobs:
      
     - name: Restore
       run: dotnet restore ${{env.project}}
-      
+
     - name: Build
       run: dotnet build ${{env.project}} -c Release
-      
+   
     - name: Pack
-      run: dotnet pack ${{env.packaging}} -c Release -o Package
+      run: dotnet pack ${{env.project}} -c Release -o Package --no-build
       
     - name: Push to NuGet
       run: |

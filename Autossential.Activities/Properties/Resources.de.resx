@@ -870,52 +870,48 @@ Jedes andere Zeichen wird als Literal behandelt"</value>
   <data name="RandomString_ViewModel_Generate" xml:space="preserve">
     <value>Generieren</value>
   </data>
-	<data name="IncrementDecrement_Description" xml:space="preserve">
-  <value>Passt eine Ganzzahlvariable an, indem sie um einen bestimmten Wert erhöht oder verringert wird.</value>
-  <comment>activity description</comment>
-</data>
-	<data name="IncrementDecrement_DisplayName" xml:space="preserve">
-  <value>Inkrementieren/Dekrementieren</value>
-  <comment>activity name</comment>
-</data>
-	<data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
-  <value>Operation</value>
-  <comment>property name</comment>
-</data>
-	<data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
-  <value>Variable</value>
-  <comment>property name</comment>
-</data>
-	<data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
-  <value>Wert</value>
-  <comment>property name</comment>
-</data>
-	<data name="IncrementDecrement_Variable_Description" xml:space="preserve">
-  <value>Die anzupassende Variable.</value>
-  <comment>property description</comment>
-</data>
-	<data name="IncrementDecrement_Value_Description" xml:space="preserve">
-  <value>Wert, der zur Variablen addiert oder davon subtrahiert werden soll. Muss gleich oder größer als 1 sein.</value>
-  <comment>property description</comment>
-</data>
-	<data name="IncrementDecrement_Operation_Description" xml:space="preserve">
-  <value>Auszuführende Operation.</value>
-  <comment>property description</comment>
-</data>
-	<data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
-  <value>Inkrementieren</value>
-  <comment>field name</comment>
-</data>
-	<data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
-  <value>Dekrementieren</value>
-  <comment>field name</comment>
-</data>
-	<data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
-  <value>Der Wert muss größer oder gleich 1 sein</value>
-  <comment>error message</comment>
-</data>
-	<data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
-  <value>{0} {1} um {2}</value>
-  <comment>view model</comment>
-</data>
+  <data name="IncrementDecrement_Description" xml:space="preserve">
+    <value>Passt eine Ganzzahlvariable an, indem sie um einen bestimmten Wert erhöht oder verringert wird.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="IncrementDecrement_DisplayName" xml:space="preserve">
+    <value>Inkrementieren/Dekrementieren</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
+    <value>Operation</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
+    <value>Variable</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
+    <value>Wert</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IncrementDecrement_Variable_Description" xml:space="preserve">
+    <value>Die anzupassende Variable.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IncrementDecrement_Value_Description" xml:space="preserve">
+    <value>Wert, der zur Variablen addiert oder davon subtrahiert werden soll.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_Description" xml:space="preserve">
+    <value>Auszuführende Operation.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
+    <value>Inkrementieren</value>
+    <comment>field name</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
+    <value>Dekrementieren</value>
+    <comment>field name</comment>
+  </data>
+  <data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
+    <value>{0} {1} um {2}</value>
+    <comment>view model</comment>
+  </data>
 </root>

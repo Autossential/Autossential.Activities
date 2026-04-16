@@ -870,52 +870,48 @@ Quaisquer outros caracteres são tratados como literais."</value>
   <data name="RandomString_ViewModel_Generate" xml:space="preserve">
     <value>Gerar</value>
   </data>
-	<data name="IncrementDecrement_Description" xml:space="preserve">
-  <value>Ajusta uma variável inteira incrementando ou decrementando-a com um valor especificado.</value>
-  <comment>activity description</comment>
-</data>
-	<data name="IncrementDecrement_DisplayName" xml:space="preserve">
-  <value>Incrementar/Decrementar</value>
-  <comment>activity name</comment>
-</data>
-	<data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
-  <value>Operação</value>
-  <comment>property name</comment>
-</data>
-	<data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
-  <value>Variável</value>
-  <comment>property name</comment>
-</data>
-	<data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
-  <value>Valor</value>
-  <comment>property name</comment>
-</data>
-	<data name="IncrementDecrement_Variable_Description" xml:space="preserve">
-  <value>A variável a ser ajustada.</value>
-  <comment>property description</comment>
-</data>
-	<data name="IncrementDecrement_Value_Description" xml:space="preserve">
-  <value>Valor para somar ou subtrair da variável. Deve ser igual ou maior que 1.</value>
-  <comment>property description</comment>
-</data>
-	<data name="IncrementDecrement_Operation_Description" xml:space="preserve">
-  <value>Operação a ser realizada.</value>
-  <comment>property description</comment>
-</data>
-	<data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
-  <value>Incrementar</value>
-  <comment>field name</comment>
-</data>
-	<data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
-  <value>Decrementar</value>
-  <comment>field name</comment>
-</data>
-	<data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
-  <value>O valor deve ser maior ou igual a 1</value>
-  <comment>error message</comment>
-</data>
-	<data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
-  <value>{0} {1} por {2}</value>
-  <comment>view model</comment>
-</data>
+  <data name="IncrementDecrement_Description" xml:space="preserve">
+    <value>Ajusta uma variável inteira incrementando ou decrementando-a com um valor especificado.</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="IncrementDecrement_DisplayName" xml:space="preserve">
+    <value>Incrementar/Decrementar</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
+    <value>Operação</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
+    <value>Variável</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
+    <value>Valor</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IncrementDecrement_Variable_Description" xml:space="preserve">
+    <value>A variável a ser ajustada.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IncrementDecrement_Value_Description" xml:space="preserve">
+    <value>Valor para somar ou subtrair da variável.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_Description" xml:space="preserve">
+    <value>Operação a ser realizada.</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
+    <value>Incrementar</value>
+    <comment>field name</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
+    <value>Decrementar</value>
+    <comment>field name</comment>
+  </data>
+  <data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
+    <value>{0} {1} por {2}</value>
+    <comment>view model</comment>
+  </data>
 </root>

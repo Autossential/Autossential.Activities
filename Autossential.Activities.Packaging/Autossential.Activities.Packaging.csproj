@@ -10,8 +10,8 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<VersionBuild>$([System.DateTime]::UtcNow.DayOfYear.ToString("F0"))</VersionBuild>
 		<VersionRevision>$([System.DateTime]::UtcNow.TimeOfDay.TotalMinutes.ToString("F0"))</VersionRevision>
-		<VersionPrefix Condition="'$(Configuration)' == 'Release'">4.0.0</VersionPrefix>
-		<VersionPrefix Condition="'$(Configuration)' == 'Debug'">4.0.0-preview-$(VersionBuild)$(VersionRevision)</VersionPrefix>
+		<VersionPrefix Condition="'$(Configuration)' == 'Release'">4.0.1</VersionPrefix>
+		<VersionPrefix Condition="'$(Configuration)' == 'Debug'">4.0.1-preview-$(VersionBuild)$(VersionRevision)</VersionPrefix>
 		<Authors>Alexandre T. Perez</Authors>
 		<Product>Autossential.Activities.Packaging</Product>
 		<PackageId>Autossential.Activities</PackageId>

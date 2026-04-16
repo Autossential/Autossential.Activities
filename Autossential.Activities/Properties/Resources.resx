@@ -1158,10 +1158,6 @@ Any other character will be treated as a literal"</value>
     <value>Decrement</value>
     <comment>field name</comment>
   </data>
-  <data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
-    <value>The vaue must be greater or equal to 1</value>
-    <comment>error message</comment>
-  </data>
   <data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
     <value>{0} {1} by {2}</value>
     <comment>view model</comment>

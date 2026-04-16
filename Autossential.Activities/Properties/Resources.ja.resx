@@ -870,52 +870,48 @@
   <data name="RandomString_ViewModel_Generate" xml:space="preserve">
     <value>生成</value>
   </data>
-	<data name="IncrementDecrement_Description" xml:space="preserve">
-  <value>指定された値を使用して、整数変数を加算または減算して調整します。</value>
-  <comment>activity description</comment>
-</data>
-	<data name="IncrementDecrement_DisplayName" xml:space="preserve">
-  <value>インクリメント/デクリメント</value>
-  <comment>activity name</comment>
-</data>
-	<data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
-  <value>演算</value>
-  <comment>property name</comment>
-</data>
-	<data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
-  <value>変数</value>
-  <comment>property name</comment>
-</data>
-	<data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
-  <value>値</value>
-  <comment>property name</comment>
-</data>
-	<data name="IncrementDecrement_Variable_Description" xml:space="preserve">
-  <value>調整する変数。</value>
-  <comment>property description</comment>
-</data>
-	<data name="IncrementDecrement_Value_Description" xml:space="preserve">
-  <value>変数に加算または減算する値。1以上である必要があります。</value>
-  <comment>property description</comment>
-</data>
-	<data name="IncrementDecrement_Operation_Description" xml:space="preserve">
-  <value>実行する演算。</value>
-  <comment>property description</comment>
-</data>
-	<data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
-  <value>インクリメント</value>
-  <comment>field name</comment>
-</data>
-	<data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
-  <value>デクリメント</value>
-  <comment>field name</comment>
-</data>
-	<data name="IncrementDecrement_ErrorMsg_MinValueAllowed" xml:space="preserve">
-  <value>値は1以上である必要があります</value>
-  <comment>error message</comment>
-</data>
-	<data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
-  <value>{1} を {2} {0}</value>
-  <comment>view model</comment>
-</data>
+  <data name="IncrementDecrement_Description" xml:space="preserve">
+    <value>指定された値を使用して、整数変数を加算または減算して調整します。</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="IncrementDecrement_DisplayName" xml:space="preserve">
+    <value>インクリメント/デクリメント</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_DisplayName" xml:space="preserve">
+    <value>演算</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IncrementDecrement_Variable_DisplayName" xml:space="preserve">
+    <value>変数</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IncrementDecrement_Value_DisplayName" xml:space="preserve">
+    <value>値</value>
+    <comment>property name</comment>
+  </data>
+  <data name="IncrementDecrement_Variable_Description" xml:space="preserve">
+    <value>調整する変数。</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IncrementDecrement_Value_Description" xml:space="preserve">
+    <value>変数に加算または減算する値。</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_Description" xml:space="preserve">
+    <value>実行する演算。</value>
+    <comment>property description</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_Increment" xml:space="preserve">
+    <value>インクリメント</value>
+    <comment>field name</comment>
+  </data>
+  <data name="IncrementDecrement_Operation_Decrement" xml:space="preserve">
+    <value>デクリメント</value>
+    <comment>field name</comment>
+  </data>
+  <data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
+    <value>{1} を {2} {0}</value>
+    <comment>view model</comment>
+  </data>
 </root>

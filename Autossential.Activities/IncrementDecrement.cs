@@ -1,5 +1,4 @@
 ﻿using Autossential.Activities.Attributes;
-using Autossential.Activities.Properties;
 using System.Activities;
 
 namespace Autossential.Activities
@@ -25,9 +24,6 @@ namespace Autossential.Activities
         protected override void Execute(CodeActivityContext context)
         {
             var value = Value.Get(context);
-            if (value < 1)
-                throw new InvalidOperationException(Resources.IncrementDecrement_ErrorMsg_MinValueAllowed);
-
             var variable = Variable.Get(context);
             Variable.Set(context, (Operation == ArithmeticOperation.Increment)
                 ? variable + value

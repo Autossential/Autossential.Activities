@@ -781,15 +781,6 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The vaue must be greater or equal to 1.
-        /// </summary>
-        public static string IncrementDecrement_ErrorMsg_MinValueAllowed {
-            get {
-                return ResourceManager.GetString("IncrementDecrement_ErrorMsg_MinValueAllowed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Decrement.
         /// </summary>
         public static string IncrementDecrement_Operation_Decrement {

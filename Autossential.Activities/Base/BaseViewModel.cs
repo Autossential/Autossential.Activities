@@ -1,5 +1,4 @@
 ﻿using Autossential.Activities.Extensions;
-using System.Activities;
 using System.Activities.DesignViewModels;
 using System.Globalization;
 using UiPath.Studio.Activities.Api;

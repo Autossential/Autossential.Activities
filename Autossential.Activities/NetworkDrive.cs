@@ -116,7 +116,7 @@ namespace Autossential.Activities
                 || driveLetter.Length != 2
                 || !ALPHABET.Contains(driveLetter[0])
                 || driveLetter[1] != ':')
-                    throw new InvalidOperationException(Resources.NetworkDrive_ErrorMsg_InvalidDriveLetter);
+                throw new InvalidOperationException(Resources.NetworkDrive_ErrorMsg_InvalidDriveLetter);
         }
 
         private static string NormalizeDriveLetter(string driveLetter) => char.ToUpper(driveLetter[0]) + ":";

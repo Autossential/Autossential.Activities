@@ -1,6 +1,5 @@
 ﻿
 using Autossential.Activities.Base;
-using Autossential.Activities.Properties;
 using System.Activities.DesignViewModels;
 
 namespace Autossential.Activities.ViewModels

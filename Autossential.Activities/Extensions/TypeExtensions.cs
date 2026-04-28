@@ -22,7 +22,7 @@
             {
                 if (type.IsGenericType)
                     return type.GenericTypeArguments[0];
-                
+
                 if (type.IsArray)
                     return type.GetElementType();
 

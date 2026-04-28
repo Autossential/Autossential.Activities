@@ -1,6 +1,5 @@
 ﻿using Autossential.Activities.Base;
 using Autossential.Activities.Extensions;
-using Autossential.Activities.Properties;
 using System.Activities.DesignViewModels;
 using System.Activities.ViewModels;
 
@@ -32,39 +31,8 @@ namespace Autossential.Activities.ViewModels
             AddWidget(ContinueOnError, ViewModelWidgetType.NullableBoolean);
 
 #if WINDOWS
-            Folder.AddMenuAction(new MenuAction()
-            {
-                DisplayName = Resources.Common_ViewModel_BrowseForFolder,
-                IsVisible = true,
-                IsMain = true,
-                Handler = _ =>
-                {
-                    // cria uma TaskCompletionSource para controlar o resultado
-                    var tcs = new TaskCompletionSource<bool>();
-                    var thread = new Thread(() =>
-                    {
-                        try
-                        {
-                            using (var dialog = new FolderBrowserDialog())
-                            {
-                                dialog.ShowNewFolderButton = true;
-                                if (dialog.ShowDialog() == DialogResult.OK)
-                                {
-                                    Folder.Value = dialog.SelectedPath;
-                                }
-                            }
-                            tcs.SetResult(true);
-                        }
-                        catch (Exception ex)
-                        {
-                            tcs.SetException(ex);
-                        }
-                    });
-                    thread.SetApartmentState(ApartmentState.STA);
-                    thread.Start();
-                    return tcs.Task;
-                }
-            });
+            if (IsWidgetSupported(ViewModelWidgetType.ActionButton))
+                Folder.AddFolderDialogMenuAction();
 #endif
         }
     }

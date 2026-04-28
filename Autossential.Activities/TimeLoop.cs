@@ -55,7 +55,7 @@ namespace Autossential.Activities
                 Result.Set(context, timeout);
                 return;
             }
-            
+
             IterationIndex.Set(context, _iterationIndex);
             _iterationIndex++;
 

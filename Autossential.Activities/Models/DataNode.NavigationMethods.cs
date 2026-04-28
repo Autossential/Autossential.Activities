@@ -24,7 +24,7 @@ namespace Autossential.Activities.Models
         public Regex AsRegex(string keyPath, RegexOptions options) => GetNode(keyPath).AsRegex(options);
         public Regex AsRegexOrDefault(string keyPath, Regex defaultValue, RegexOptions options) => TryConvert(() => AsRegex(keyPath, options), defaultValue);
         public Regex AsRegexOrDefault(string keyPath, Regex defaultValue) => AsRegexOrDefault(keyPath, defaultValue, RegexOptions.None);
-        public List<T> AsSequence<T>(string keyPath) => GetNode(keyPath).AsSequence<T>();
-        public List<T> AsSequenceOrDefault<T>(string keyPath, List<T> defaultValue) => TryConvert(() => AsSequence<T>(keyPath), defaultValue);
+        public IList<T> AsSequence<T>(string keyPath) => GetNode(keyPath).AsSequence<T>();
+        public IList<T> AsSequenceOrDefault<T>(string keyPath, IList<T> defaultValue) => TryConvert(() => AsSequence<T>(keyPath), defaultValue);
     }
 }

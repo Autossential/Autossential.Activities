@@ -23,7 +23,7 @@ namespace Autossential.Activities
 
             foreach (var (key, value) in data)
                 ex.Data[key] = value;
-            
+
             throw ex;
         }
     }

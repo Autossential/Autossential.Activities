@@ -1,5 +1,5 @@
 ﻿using Autossential.Activities.Base;
-using Autossential.Activities.Properties;
+using Autossential.Activities.Extensions;
 using System.Activities.DesignViewModels;
 using System.Activities.ViewModels;
 
@@ -39,62 +39,11 @@ namespace Autossential.Activities.ViewModels
 #if WINDOWS
             if (IsWidgetSupported(ViewModelWidgetType.ActionButton))
             {
-                ZipFilePath.AddMenuAction(new MenuAction()
-                {
-                    DisplayName = Resources.Common_ViewModel_BrowseForFile,
-                    IsVisible = true,
-                    IsMain = true,
-                    Handler = _ => Task.Run(() =>
-                    {
-                        var ofd = new Microsoft.Win32.OpenFileDialog
-                        {
-                            Filter = "All files (*.*)|*.*",
-                            Multiselect = false,
-                            CheckFileExists = false
-                        };
-
-                        if (ofd.ShowDialog() == true)
-                        {
-                            ZipFilePath.Value = ofd.FileName;
-                        }
-                    })
-                });
+                ZipFilePath.AddFileDialogMenuAction(false, "All files (*.*)|*.*");
+                ExtractTo.AddFolderDialogMenuAction();
             }
-
-            ExtractTo.AddMenuAction(new MenuAction()
-            {
-                DisplayName = Resources.Common_ViewModel_BrowseForFolder,
-                IsVisible = true,
-                IsMain = true,
-                Handler = _ =>
-                {
-                    // cria uma TaskCompletionSource para controlar o resultado
-                    var tcs = new TaskCompletionSource<bool>();
-                    var thread = new Thread(() =>
-                    {
-                        try
-                        {
-                            using (var dialog = new FolderBrowserDialog())
-                            {
-                                dialog.ShowNewFolderButton = true;
-                                if (dialog.ShowDialog() == DialogResult.OK)
-                                {
-                                    ExtractTo.Value = dialog.SelectedPath;
-                                }
-                            }
-                            tcs.SetResult(true);
-                        }
-                        catch (Exception ex)
-                        {
-                            tcs.SetException(ex);
-                        }
-                    });
-                    thread.SetApartmentState(ApartmentState.STA);
-                    thread.Start();
-                    return tcs.Task;
-                }
-            });
 #endif
+
         }
     }
 }

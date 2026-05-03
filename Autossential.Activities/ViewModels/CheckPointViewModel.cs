@@ -1,5 +1,4 @@
 ﻿using Autossential.Activities.Base;
-using System.Activities;
 using System.Activities.DesignViewModels;
 
 namespace Autossential.Activities.ViewModels

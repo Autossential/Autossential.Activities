@@ -33,7 +33,7 @@ namespace Autossential.Activities
         public OutArgument<FileInfo> CompressedFile { get; set; }
         public OutArgument<int> FilesCount { get; set; }
 
-        override protected void CacheMetadata(CodeActivityMetadata metadata)
+        protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
             base.CacheMetadata(metadata);
             if (ToCompress == null)

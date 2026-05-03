@@ -73,27 +73,34 @@ namespace Autossential.Activities.Models
         /// <param name="value">The value to be stored in the data node. Can be of any type supported by the node.</param>
         /// <param name="culture">The culture information to use for formatting and parsing operations. If null, the invariant culture is
         /// used.</param>
-        public DataNode(object value, CultureInfo culture = null)
+        public DataNode(object value, CultureInfo culture)
         {
             RawValue = Normalize(value);
             Culture = culture ?? CultureInfo.InvariantCulture;
         }
 
         /// <summary>
-        /// Initializes a new instance of the DataNode class with default values.
+        /// Initializes a new instance of the DataNode class with an empty data dictionary.
         /// </summary>
-        /// <remarks>This constructor creates a DataNode using an empty dictionary and the invariant
-        /// culture. It is equivalent to calling the main constructor with default parameters.</remarks>
-        public DataNode() : this(new Dictionary<string, object>(), CultureInfo.InvariantCulture)
+        public DataNode() : this(new Dictionary<string, object>())
         {
         }
 
         /// <summary>
-        /// Creates an empty DataNode instance with the specified culture information.
+        /// Creates a new empty DataNode instance for the specified culture.
         /// </summary>
-        /// <param name="culture">The culture to associate with the DataNode. If null, the default culture is used.</param>
-        /// <returns>A DataNode instance that contains no data and is associated with the specified culture.</returns>
-        public static DataNode Empty(CultureInfo culture = null) => new(new Dictionary<string, object>(), culture);
+        /// <param name="culture">The culture to associate with the empty DataNode. Cannot be null.</param>
+        /// <returns>A DataNode instance containing no data, associated with the specified culture.</returns>
+        public static DataNode Empty(CultureInfo culture)
+            => new(new Dictionary<string, object>(), culture);
+
+        /// <summary>
+        /// Initializes a new instance of the DataNode class with the specified value using the invariant culture.
+        /// </summary>
+        /// <remarks>This constructor uses CultureInfo.InvariantCulture for culture-specific operations.
+        /// To specify a different culture, use the constructor that accepts a CultureInfo parameter.</remarks>
+        /// <param name="value">The value to be stored in the data node. Can be any object, including null.</param>
+        public DataNode(object value) : this(value, CultureInfo.InvariantCulture) { }
 
         private object Normalize(object value)
         {
@@ -262,11 +269,11 @@ namespace Autossential.Activities.Models
             if (value is bool b)
                 return b;
 
-            return value.ToString()!.ToLowerInvariant() switch
+            return value.ToString().ToLowerInvariant() switch
             {
                 "true" or "1" => true,
                 "false" or "0" => false,
-                _ => throw new FormatException($"Cannot convert '{value}' to bool.")
+                _ => Convert.ToBoolean(value),
             };
         }
 
@@ -426,7 +433,7 @@ namespace Autossential.Activities.Models
             }
         }
 
-        public List<T> AsSequence<T>()
+        public IList<T> AsSequence<T>()
         {
             EnsureType(NodeType.Sequence);
             if (RawValue is IEnumerable value)
@@ -434,7 +441,7 @@ namespace Autossential.Activities.Models
 
             return (List<T>)RawValue;
         }
-        public List<T> AsSequenceOrDefault<T>(List<T> defaultValue)
+        public IList<T> AsSequenceOrDefault<T>(List<T> defaultValue)
             => TryConvert(() => AsSequence<T>(), defaultValue);
     }
 }

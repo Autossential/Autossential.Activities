@@ -1,7 +1,6 @@
 ﻿using Autossential.Activities.Base;
 using Autossential.Activities.Extensions;
 using Autossential.Activities.Models;
-using Autossential.Activities.Properties;
 using System.Activities.DesignViewModels;
 using System.Activities.ViewModels;
 using System.Globalization;
@@ -32,30 +31,8 @@ namespace Autossential.Activities.ViewModels
 
             FilePath.IsPrincipal = true;
 #if WINDOWS
-
             if (IsWidgetSupported(ViewModelWidgetType.ActionButton))
-            {
-                FilePath.AddMenuAction(new MenuAction
-                {
-                    DisplayName = Resources.Common_ViewModel_BrowseForFile,
-                    IsVisible = true,
-                    IsMain = true,
-                    Handler = _ => Task.Run(() =>
-                    {
-                        var ofd = new Microsoft.Win32.OpenFileDialog
-                        {
-                            Filter = "Data files (*.json;*.yaml;*.yml;*.txt)|*.json;*.yaml;*.yml;*.txt|All files (*.*)|*.*",
-                            Multiselect = false,
-                            CheckFileExists = true
-                        };
-
-                        if (ofd.ShowDialog() == true)
-                        {
-                            FilePath.Value = ofd.FileName;
-                        }
-                    })
-                });
-            }
+                FilePath.AddFileDialogMenuAction(true, "Data files (*.json;*.yaml;*.yml;*.txt)|*.json;*.yaml;*.yml;*.txt|All files (*.*)|*.*");
 #endif
 
             Encoding.DataSource = _encodingDataSource;

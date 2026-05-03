@@ -1,5 +1,5 @@
 ﻿using Autossential.Activities.Base;
-using Autossential.Activities.Properties;
+using Autossential.Activities.Extensions;
 using System.Activities.DesignViewModels;
 using System.Activities.ViewModels;
 using System.IO.Compression;
@@ -35,29 +35,9 @@ namespace Autossential.Activities.ViewModels
 #if WINDOWS
             if (IsWidgetSupported(ViewModelWidgetType.ActionButton))
             {
-                ZipFilePath.AddMenuAction(new MenuAction()
-                {
-                    DisplayName = Resources.Common_ViewModel_BrowseForFile,
-                    IsVisible = true,
-                    IsMain = true,
-                    Handler = _ => Task.Run(() =>
-                    {
-                        var ofd = new Microsoft.Win32.OpenFileDialog
-                        {
-                            Filter = "All files (*.*)|*.*",
-                            Multiselect = false,
-                            CheckFileExists = false
-                        };
-
-                        if (ofd.ShowDialog() == true)
-                        {
-                            ZipFilePath.Value = ofd.FileName;
-                        }
-                    })
-                });
+                ZipFilePath.AddFileDialogMenuAction(false, "All files (*.*)|*.*");
             }
 #endif
-
         }
     }
 }

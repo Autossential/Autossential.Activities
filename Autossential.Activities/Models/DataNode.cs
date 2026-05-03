@@ -269,11 +269,11 @@ namespace Autossential.Activities.Models
             if (value is bool b)
                 return b;
 
-            return value.ToString()!.ToLowerInvariant() switch
+            return value.ToString().ToLowerInvariant() switch
             {
                 "true" or "1" => true,
                 "false" or "0" => false,
-                _ => throw new FormatException($"Cannot convert '{value}' to bool.")
+                _ => Convert.ToBoolean(value),
             };
         }
 

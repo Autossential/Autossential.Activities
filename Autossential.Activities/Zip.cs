@@ -25,7 +25,9 @@ namespace Autossential.Activities
             Mirror
         }
 
+        [RequiredArgument]
         public InArgument<string> ZipFilePath { get; set; }
+        [RequiredArgument]
         public InArgument<IReadOnlyList<string>> ToCompress { get; set; }
         public InArgument<Encoding> TextEncoding { get; set; }
         public CompressionLevel CompressionLevel { get; set; } = CompressionLevel.Optimal;

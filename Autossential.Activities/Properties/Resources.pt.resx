@@ -684,7 +684,7 @@
   <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
     <value>Tabela de Dados (DataTable)</value>
   </data>
-  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+  <data name="RemoveDataColumns_ColumnNames_Description" xml:space="preserve">
     <value>Os nomes das colunas a remover.</value>
   </data>
   <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">

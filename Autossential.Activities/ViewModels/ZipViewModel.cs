@@ -25,11 +25,9 @@ namespace Autossential.Activities.ViewModels
             var orderIndex = 0;
 
             ToCompress.IsPrincipal = true;
-            ToCompress.IsRequired = true;
             ToCompress.OrderIndex = orderIndex++;
 
             ZipFilePath.IsPrincipal = true;
-            ZipFilePath.IsRequired = true;
             ZipFilePath.OrderIndex = orderIndex++;
 
 #if WINDOWS

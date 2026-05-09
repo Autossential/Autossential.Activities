@@ -684,7 +684,7 @@
   <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
     <value>数据表 (DataTable)</value>
   </data>
-  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+  <data name="RemoveDataColumns_ColumnNames_Description" xml:space="preserve">
     <value>要删除的列名称。</value>
   </data>
   <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">

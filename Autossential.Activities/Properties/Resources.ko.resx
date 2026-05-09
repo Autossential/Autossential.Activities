@@ -684,7 +684,7 @@
   <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
     <value>데이터 테이블</value>
   </data>
-  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+  <data name="RemoveDataColumns_ColumnNames_Description" xml:space="preserve">
     <value>제거할 열의 이름들입니다.</value>
   </data>
   <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">

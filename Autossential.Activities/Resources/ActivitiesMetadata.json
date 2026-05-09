@@ -1390,7 +1390,7 @@
           "displayNameKey": "Zip_ZipFilePath_DisplayName",
           "tooltipKey": "Zip_ZipFilePath_Description",
           "isVisible": true,
-          "isRequired": false,
+          "isRequired": true,
           "category": {
             "name": "Input",
             "displayNameKey": "Categories_Input"
@@ -1401,7 +1401,7 @@
           "displayNameKey": "Zip_ToCompress_DisplayName",
           "tooltipKey": "Zip_ToCompress_Description",
           "isVisible": true,
-          "isRequired": false,
+          "isRequired": true,
           "category": {
             "name": "Input",
             "displayNameKey": "Categories_Input"

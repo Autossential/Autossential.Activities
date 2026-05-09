@@ -1465,20 +1465,20 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The column names to be removed..
+        /// </summary>
+        public static string RemoveDataColumns_ColumnNames_Description {
+            get {
+                return ResourceManager.GetString("RemoveDataColumns_ColumnNames_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Column Names.
         /// </summary>
         public static string RemoveDataColumns_ColumnNames_DisplayName {
             get {
                 return ResourceManager.GetString("RemoveDataColumns_ColumnNames_DisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The column names to be removed..
-        /// </summary>
-        public static string RemoveDataColumns_ColumnsNames_Description {
-            get {
-                return ResourceManager.GetString("RemoveDataColumns_ColumnsNames_Description", resourceCulture);
             }
         }
         

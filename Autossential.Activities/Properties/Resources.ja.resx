@@ -412,7 +412,7 @@
     <value>利用可能なドライブがありません</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
-    <value>ドライブ文字が無効です (例: 'X'、'X:'、'X:\')。</value>
+    <value>ドライブ文字の入力が無効です。正しい形式は&lt;文字&gt;&lt;コロン&gt;です。例: "X:", "y:", "Z:"。</value>
   </data>
   <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
     <value>資格情報</value>
@@ -424,7 +424,7 @@
     <value>ドライブを割り当て</value>
   </data>
   <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>割り当てるドライブ文字 (例: "X:")。空の場合、ランダムな文字が選択されます。</value>
+    <value>マッピングするドライブ文字を指定します。指定しない場合は、利用可能なドライブ文字がランダムに割り当てられます。指定形式は &lt;文字&gt;&lt;コロン&gt; です。例: "X:", "y:", "Z:"。</value>
   </data>
   <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>ドライブ文字</value>
@@ -469,7 +469,7 @@
     <value>結果</value>
   </data>
   <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>切断するドライブの文字 (例: "X:")。</value>
+    <value>マップされたドライブのドライブ文字を指定します。指定する形式は&lt;文字&gt;&lt;コロン&gt;です。例: "X:", "y:", "Z:"。</value>
   </data>
   <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>ドライブ文字</value>

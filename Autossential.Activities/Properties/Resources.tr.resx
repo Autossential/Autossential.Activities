@@ -412,7 +412,7 @@
     <value>Kullanılabilir sürücü yok.</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
-    <value>Geçersiz sürücü harfi (örn: 'X', 'X:', 'X:\').</value>
+    <value>Sürücü harfi girişi geçersiz. Beklenen format &lt;harf&gt;&lt;iki nokta üst üste&gt; şeklindedir, örneğin: "X:", "y:", "Z:".</value>
   </data>
   <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
     <value>Kimlik Bilgileri</value>
@@ -424,7 +424,7 @@
     <value>Sürücüyü Eşle</value>
   </data>
   <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>Eşlenecek sürücü harfi (örn: "X:"). Boşsa, rastgele bir harf seçilecektir.</value>
+    <value>Eşleştirilecek sürücü harfini belirtir. Belirtilmezse, rastgele kullanılabilir bir harf atanacaktır. Beklenen format &lt;harf&gt;&lt;iki nokta üst üste&gt; şeklindedir, örneğin: "X:", "y:", "Z:".</value>
   </data>
   <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>Sürücü Harfi</value>
@@ -469,7 +469,7 @@
     <value>Sonuç</value>
   </data>
   <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>Bağlantısı kesilecek sürücü harfi (örn: "X:").</value>
+    <value>Eşlemesi kaldırılacak eşlenmiş sürücünün sürücü harfini belirtir. Gerekli format &lt;harf&gt;&lt;iki nokta üst üste&gt; şeklindedir, örneğin: "X:", "y:", "Z:".</value>
   </data>
   <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>Sürücü Harfi</value>

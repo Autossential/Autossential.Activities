@@ -1168,7 +1168,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The drive letter input is invalid. Valid inputs are &apos;X&apos;, &apos;X:&apos; or &apos;X:\\&apos;, where X can be any letter..
+        ///   Looks up a localized string similar to The drive letter input is invalid. The expected format is &lt;letter&gt;&lt;colon&gt;, for example: &quot;X:&quot;, &quot;y:&quot;, &quot;Z:&quot;..
         /// </summary>
         public static string NetworkDrive_ErrorMsg_InvalidDriveLetter {
             get {

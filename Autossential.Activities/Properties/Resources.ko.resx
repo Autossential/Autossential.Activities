@@ -412,7 +412,7 @@
     <value>사용 가능한 드라이브가 없습니다.</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
-    <value>드라이브 문자가 유효하지 않습니다 (예: 'X', 'X:', 'X:\').</value>
+    <value>드라이브 문자를 잘못 입력했습니다. 올바른 형식은 &lt;문자&gt;&lt;콜론&gt;입니다. 예: "X:", "y:", "Z:".</value>
   </data>
   <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
     <value>자격 증명</value>
@@ -424,7 +424,7 @@
     <value>드라이브 연결</value>
   </data>
   <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>할당할 드라이브 문자 (예: "X:"). 비어 있으면 임의의 문자가 선택됩니다.</value>
+    <value>매핑할 드라이브 문자를 지정합니다. 지정하지 않으면 사용 가능한 문자 중 하나가 임의로 할당됩니다. 형식은 &lt;문자&gt;&lt;콜론&gt;이며, 예: "X:", "y:", "Z:"입니다.</value>
   </data>
   <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>드라이브 문자</value>
@@ -469,7 +469,7 @@
     <value>결과</value>
   </data>
   <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>연결을 끊을 드라이브 문자 (예: "X:").</value>
+    <value>매핑 해제할 매핑된 드라이브의 드라이브 문자를 지정합니다. 필수 형식은 &lt;문자&gt;&lt;콜론&gt;이며, 예: "X:", "y:", "Z:"입니다.</value>
   </data>
   <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>드라이브 문자</value>

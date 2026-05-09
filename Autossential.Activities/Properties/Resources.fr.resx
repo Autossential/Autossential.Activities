@@ -412,7 +412,7 @@
     <value>Aucun lecteur disponible</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
-    <value>La lettre de lecteur n'est pas valide (ex: 'X', 'X:' ou 'X:\').</value>
+    <value>La lettre de lecteur saisie est invalide. Le format attendu est &lt;lettre&gt;&lt;deux-points&gt;, par exemple : « X: », « y: », « Z: ».</value>
   </data>
   <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
     <value>Identifiant</value>
@@ -424,7 +424,7 @@
     <value>Mapper le lecteur</value>
   </data>
   <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>Lettre du lecteur à mapper (ex: "X:"). Si vide, une lettre sera choisie aléatoirement.</value>
+    <value>Spécifie la lettre de lecteur à mapper. Si aucune lettre n'est fournie, une lettre disponible aléatoire sera attribuée. Le format attendu est &lt;lettre&gt;&lt;deux-points&gt;, par exemple : « X: », « y: », « Z: ».</value>
   </data>
   <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>Lettre du lecteur</value>
@@ -469,7 +469,7 @@
     <value>Résultat</value>
   </data>
   <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>La lettre du lecteur à déconnecter (ex: "X:").</value>
+    <value>Spécifie la lettre du lecteur réseau à déconnecter. Le format requis est &lt;lettre&gt;&lt;deux-points&gt;, par exemple : « X: », « y: », « Z: ».</value>
   </data>
   <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>Lettre du lecteur</value>

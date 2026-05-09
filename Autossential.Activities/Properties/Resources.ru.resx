@@ -412,7 +412,7 @@
     <value>Нет доступных дисков.</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
-    <value>Недопустимая буква диска (например, 'X', 'X:', 'X:\').</value>
+    <value>Введенная буква диска недопустима. Ожидаемый формат: &lt;буква&gt;&lt;двоеточие&gt;, например: "X:", "y:", "Z:".</value>
   </data>
   <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
     <value>Учетные данные</value>
@@ -424,7 +424,7 @@
     <value>Подключить диск</value>
   </data>
   <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>Буква диска для назначения (например, "X:"). Если пусто, будет выбрана случайная буква.</value>
+    <value>Указывает букву диска, который необходимо сопоставить. Если не указана, будет назначена случайная доступная буква. Ожидаемый формат: &lt;буква&gt;&lt;двоеточие&gt;, например: "X:", "y:", "Z:".</value>
   </data>
   <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>Буква диска</value>
@@ -469,7 +469,7 @@
     <value>Результат</value>
   </data>
   <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>Буква диска для отключения (например, "X:").</value>
+    <value>Указывает букву диска, который необходимо отключить от сети. Требуемый формат: &lt;буква&gt;&lt;двоеточие&gt;, например: "X:", "y:", "Z:".</value>
   </data>
   <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>Буква диска</value>

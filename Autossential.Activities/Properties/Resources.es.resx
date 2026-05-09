@@ -412,7 +412,7 @@
     <value>No hay controladores disponibles</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
-    <value>La letra de unidad ingresada no es válida. Las entradas válidas son 'X', 'X:' o 'X:\\', donde X puede ser cualquier letra.</value>
+    <value>La letra de unidad ingresada no es válida. El formato esperado es &lt;letra&gt;&lt;dos puntos&gt;, por ejemplo: "X:", "y:", "Z:".</value>
   </data>
   <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
     <value>Credencial</value>

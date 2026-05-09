@@ -412,7 +412,7 @@
     <value>Nenhum drive disponível.</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
-    <value>Letra de drive inválida (ex: 'X', 'X:', 'X:\').</value>
+    <value>A letra da unidade informada é inválida. O formato esperado é &lt;letra&gt;&lt;dois pontos&gt;, por exemplo: "X:", "y:", "Z:".</value>
   </data>
   <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
     <value>Credenciais</value>
@@ -424,7 +424,7 @@
     <value>Mapear Unidade</value>
   </data>
   <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>A letra da unidade a ser mapeada (ex: "X:"). Se vazio, uma letra aleatória será escolhida.</value>
+    <value>Especifica a letra da unidade a mapear. Se não for fornecida, será atribuída uma letra aleatória disponível. O formato esperado é &lt;letra&gt;&lt;dois pontos&gt;, por exemplo: "X:", "y:", "Z:".</value>
   </data>
   <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>Letra da Unidade</value>
@@ -469,7 +469,7 @@
     <value>Resultado</value>
   </data>
   <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>A letra da unidade a ser desconectada (ex: "X:").</value>
+    <value>Especifica a letra da unidade mapeada que será desmapeada. O formato exigido é &lt;letra&gt;&lt;dois pontos&gt;, por exemplo: "X:", "y:", "Z:".</value>
   </data>
   <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>Letra da Unidade</value>

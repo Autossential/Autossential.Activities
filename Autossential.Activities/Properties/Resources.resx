@@ -510,7 +510,7 @@
     <comment>error message</comment>
   </data>
   <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
-    <value>The drive letter input is invalid. Valid inputs are 'X', 'X:' or 'X:\\', where X can be any letter.</value>
+    <value>The drive letter input is invalid. The expected format is &lt;letter&gt;&lt;colon&gt;, for example: "X:", "y:", "Z:".</value>
     <comment>error message</comment>
   </data>
   <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
@@ -873,7 +873,7 @@
     <value>Data Table</value>
     <comment>property name</comment>
   </data>
-  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+  <data name="RemoveDataColumns_ColumnNames_Description" xml:space="preserve">
     <value>The column names to be removed.</value>
     <comment>property description</comment>
   </data>

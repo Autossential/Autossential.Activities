@@ -412,7 +412,7 @@
     <value>无可用驱动器。</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
-    <value>无效的驱动器盘符 (例如: 'X', 'X:', 'X:\')。</value>
+    <value>输入的驱动器盘符无效。正确的格式为&lt;字母&gt;&lt;冒号&gt;，例如：“X:”、“y:”、“Z:”。</value>
   </data>
   <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
     <value>凭据</value>
@@ -424,7 +424,7 @@
     <value>映射驱动器</value>
   </data>
   <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>要映射的驱动器盘符 (如: "X:")。如果为空，将随机选择一个盘符。</value>
+    <value>指定要映射的驱动器号。如果未提供，则会分配一个随机的可用字母。格式为&lt;字母&gt;&lt;冒号&gt;，例如：“X:”、“y:”、“Z:”。</value>
   </data>
   <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>驱动器盘符</value>
@@ -469,7 +469,7 @@
     <value>结果</value>
   </data>
   <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>要断开连接的驱动器盘符 (如: "X:")。</value>
+    <value>指定要取消映射的已映射驱动器的驱动器号。格式要求为&lt;字母&gt;&lt;冒号&gt;，例如：“X:”、“y:”、“Z:”。</value>
   </data>
   <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>驱动器盘符</value>
@@ -684,7 +684,7 @@
   <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
     <value>数据表 (DataTable)</value>
   </data>
-  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+  <data name="RemoveDataColumns_ColumnNames_Description" xml:space="preserve">
     <value>要删除的列名称。</value>
   </data>
   <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">

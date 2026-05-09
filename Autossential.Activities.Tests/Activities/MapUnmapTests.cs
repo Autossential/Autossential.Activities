@@ -67,7 +67,7 @@ namespace Autossential.Activities.Tests.Activities
             // MapDrive should validate provided drive letter format and throw when invalid
             Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new MapDrive(), new Dictionary<string, object>
             {
-                { nameof(MapDrive.DriveLetter), "1" },
+                { nameof(MapDrive.DriveLetter), "A" },
                 { nameof(MapDrive.SharedDrivePath), NetworkPath }
             }));
         }

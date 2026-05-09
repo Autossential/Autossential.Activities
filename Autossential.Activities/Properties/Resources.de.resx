@@ -412,7 +412,7 @@
     <value>Keine Treiber verfügbar</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
-    <value>Der eingegebene Laufwerksbuchstabe ist ungültig. Gültige Eingaben sind 'X', 'X:' oder 'X:\\', wobei X ein beliebiger Buchstabe sein kann.</value>
+    <value>Der eingegebene Laufwerksbuchstabe ist ungültig. Das erwartete Format ist &lt;Buchstabe&gt;&lt;Doppelpunkt&gt;, zum Beispiel: "X:", "y:", "Z:".</value>
   </data>
   <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
     <value>Anmeldedaten</value>
@@ -684,7 +684,7 @@
   <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
     <value>Datentabelle</value>
   </data>
-  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+  <data name="RemoveDataColumns_ColumnNames_Description" xml:space="preserve">
     <value>Die zu entfernenden Spaltennamen.</value>
   </data>
   <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">

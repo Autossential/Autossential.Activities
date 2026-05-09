@@ -412,7 +412,7 @@
     <value>無可用磁碟機。</value>
   </data>
   <data name="NetworkDrive_ErrorMsg_InvalidDriveLetter" xml:space="preserve">
-    <value>無效的磁碟機代號 (例如: 'X', 'X:', 'X:\')。</value>
+    <value>輸入的磁碟機代號無效。正確的格式為&lt;字母&gt;&lt;冒號&gt;，例如：「X:」、「y:」、「Z:」。</value>
   </data>
   <data name="MapDrive_Credential_DisplayName" xml:space="preserve">
     <value>認證</value>
@@ -424,7 +424,7 @@
     <value>連線磁碟機</value>
   </data>
   <data name="MapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>要連線的磁碟機代號 (如: "X:")。如果為空，將隨機選擇一個代號。</value>
+    <value>指定要對應的磁碟機號。如果未提供，則會指派一個隨機的可用字母。格式為&lt;字母&gt;&lt;冒號&gt;，例如：「X:」、「y:」、「Z:」。</value>
   </data>
   <data name="MapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>磁碟機代號</value>
@@ -469,7 +469,7 @@
     <value>結果</value>
   </data>
   <data name="UnmapDrive_DriveLetter_Description" xml:space="preserve">
-    <value>要中斷連線的磁碟機代號 (如: "X:")。</value>
+    <value>指定要取消已對應的已對應磁碟機的磁碟機號。格式要求為&lt;字母&gt;&lt;冒號&gt;，例如：「X:」、「y:」、「Z:」。</value>
   </data>
   <data name="UnmapDrive_DriveLetter_DisplayName" xml:space="preserve">
     <value>磁碟機代號</value>
@@ -684,7 +684,7 @@
   <data name="RemoveDataColumns_DataTable_DisplayName" xml:space="preserve">
     <value>資料表 (DataTable)</value>
   </data>
-  <data name="RemoveDataColumns_ColumnsNames_Description" xml:space="preserve">
+  <data name="RemoveDataColumns_ColumnNames_Description" xml:space="preserve">
     <value>要刪除的資料行名稱。</value>
   </data>
   <data name="RemoveDataColumns_ColumnNames_DisplayName" xml:space="preserve">

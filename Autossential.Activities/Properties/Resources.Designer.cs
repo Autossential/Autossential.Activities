@@ -448,7 +448,7 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specifies the amount of time in seconds to wait for the activity to run before an error is thrown. The default value is 30s..
+        ///   Looks up a localized string similar to Specifies the amount of time in seconds to wait for the activity to complete before an error is thrown. The default value is 30 seconds. Any value less than or equal to zero will be reset to 30..
         /// </summary>
         public static string Common_TimeoutSeconds_Description {
             get {

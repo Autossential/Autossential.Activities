@@ -151,7 +151,7 @@
     <value>간격</value>
   </data>
   <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
-    <value>오류가 발생하기 전까지 대기할 시간(초)을 지정합니다. 기본값은 30초입니다.</value>
+    <value>활동이 완료될 때까지 기다리는 시간을 초 단위로 지정합니다. 오류가 발생하기 전에 적용됩니다. 기본값은 30초입니다. 0 이하의 값은 모두 30으로 재설정됩니다.</value>
   </data>
   <data name="WaitFile_Description" xml:space="preserve">
     <value>파일을 사용할 수 있을 때까지 대기합니다.</value>

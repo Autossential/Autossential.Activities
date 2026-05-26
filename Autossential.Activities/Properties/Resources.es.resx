@@ -151,7 +151,7 @@
     <value>Intervalo</value>
   </data>
   <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
-    <value>Especifica la cantidad de tiempo en segundos que se debe esperar a que se ejecute la actividad antes de que se produzca un error. El valor predeterminado es 30s.</value>
+    <value>Especifica la cantidad de tiempo en segundos para esperar a que la actividad se complete antes de que se lance un error. El valor predeterminado es 30 segundos. Cualquier valor menor o igual a cero se restablecerá a 30.</value>
   </data>
   <data name="WaitFile_Description" xml:space="preserve">
     <value>Espera hasta que el archivo esté disponible.</value>

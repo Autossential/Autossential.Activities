@@ -151,7 +151,7 @@
     <value>Intervalle</value>
   </data>
   <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
-    <value>Spécifie le temps en secondes à attendre avant qu'une erreur ne soit générée. La valeur par défaut est 30s.</value>
+    <value>Spécifie la durée en secondes à attendre pour que l'activité se termine avant qu'une erreur ne soit levée. La valeur par défaut est 30 secondes. Toute valeur inférieure ou égale à zéro sera réinitialisée à 30.</value>
   </data>
   <data name="WaitFile_Description" xml:space="preserve">
     <value>Attend que le fichier soit disponible.</value>

@@ -151,7 +151,7 @@
     <value>Intervall</value>
   </data>
   <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
-    <value>Gibt die Zeitspanne in Sekunden an, die auf die Ausführung der Aktivität gewartet werden soll, bevor ein Fehler ausgelöst wird. Der Standardwert beträgt 30s.</value>
+    <value>Gibt die Wartezeit in Sekunden an, bevor ein Fehler ausgelöst wird, wenn die Aktivität nicht abgeschlossen wurde. Der Standardwert beträgt 30 Sekunden. Jeder Wert kleiner oder gleich null wird auf 30 zurückgesetzt.</value>
   </data>
   <data name="WaitFile_Description" xml:space="preserve">
     <value>Wartet, bis die Datei verfügbar ist.</value>

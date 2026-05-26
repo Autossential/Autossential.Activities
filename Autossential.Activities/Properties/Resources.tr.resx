@@ -151,7 +151,7 @@
     <value>Aralık</value>
   </data>
   <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
-    <value>Hata oluşmadan önce beklenecek süreyi (saniye cinsinden) belirtir. Varsayılan 30 saniyedir.</value>
+    <value>Etkinliğin tamamlanması için beklenecek süreyi saniye cinsinden belirtir. Bir hata fırlatılmadan önce uygulanır. Varsayılan değer 30 saniyedir. Sıfır veya daha küçük herhangi bir değer 30 olarak sıfırlanacaktır.</value>
   </data>
   <data name="WaitFile_Description" xml:space="preserve">
     <value>Bir dosya hazır olana kadar bekler.</value>

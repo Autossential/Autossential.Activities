@@ -151,7 +151,7 @@
     <value>时间间隔</value>
   </data>
   <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
-    <value>在抛出错误之前等待的时间（秒）。默认为 30 秒。</value>
+    <value>指定活动完成前等待的时间（以秒为单位），超时后将抛出错误。默认值为 30 秒。任何小于或等于零的值都将重置为 30。</value>
   </data>
   <data name="WaitFile_Description" xml:space="preserve">
     <value>等待文件就绪。</value>

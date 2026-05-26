@@ -162,7 +162,7 @@
     <comment>property name</comment>
   </data>
   <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
-    <value>Specifies the amount of time in seconds to wait for the activity to run before an error is thrown. The default value is 30s.</value>
+    <value>Specifies the amount of time in seconds to wait for the activity to complete before an error is thrown. The default value is 30 seconds. Any value less than or equal to zero will be reset to 30.</value>
     <comment>property description</comment>
   </data>
   <data name="WaitFile_Description" xml:space="preserve">

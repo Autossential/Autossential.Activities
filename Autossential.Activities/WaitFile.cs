@@ -8,7 +8,7 @@ namespace Autossential.Activities
     public sealed class WaitFile : AsyncActivity
     {
         public InArgument<bool> ContinueOnError { get; set; }
-        public InArgument<double> TimeoutSeconds { get; set; }
+        public InArgument<double> TimeoutSeconds { get; set; } = 30;
         public InArgument<string> FilePath { get; set; }
         public InArgument<double> PollingIntervalSeconds { get; set; } = 0.5;
         public InArgument<bool> WaitForExist { get; set; } = true;
@@ -35,7 +35,8 @@ namespace Autossential.Activities
         protected override Task<Action<AsyncCodeActivityContext>> RunAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
             var timeoutSeconds = TimeoutSeconds.Get(context);
-            if (timeoutSeconds <= 0) timeoutSeconds = 30;
+            if (timeoutSeconds <= 0) 
+                timeoutSeconds = 30;
 
             var continueOnError = ContinueOnError.Get(context);
 
@@ -91,7 +92,7 @@ namespace Autossential.Activities
         {
             var dirPath = DirectoryPath.Get(context) ?? throw new InvalidOperationException(ResourcesFn.Common_ErrorMsg_ValueNotSuppliedFormat(Resources.WaitFile_DirectoryPath_DisplayName));
             var searchPattern = SearchPattern.Get(context) ?? "*.*";
-            var pollingInterval = TimeSpan.FromSeconds(Math.Max(PollingIntervalSeconds.Get(context), 0.1)); // Minimum 0.1 seconds
+            var pollingInterval = TimeSpan.FromSeconds(Math.Max(PollingIntervalSeconds.Get(context), 0.5)); // Minimum 0.1 seconds
             string filePath = null;
 
             if (!WaitForExist.Get(context) && !Directory.EnumerateFiles(dirPath, "*", SearchOption.TopDirectoryOnly).Any(path => Path.GetFileName(path).IsMatch(searchPattern)))

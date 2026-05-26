@@ -151,7 +151,7 @@
     <value>Интервал</value>
   </data>
   <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
-    <value>Указывает время ожидания (в секундах) перед возникновением ошибки. По умолчанию 30 секунд.</value>
+    <value>Указывает время ожидания в секундах до завершения активности, прежде чем будет выброшена ошибка. Значение по умолчанию — 30 секунд. Любое значение меньше или равное нулю будет сброшено на 30.</value>
   </data>
   <data name="WaitFile_Description" xml:space="preserve">
     <value>Ожидает появления файла.</value>

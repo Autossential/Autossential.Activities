@@ -151,7 +151,7 @@
     <value>間隔</value>
   </data>
   <data name="Common_TimeoutSeconds_Description" xml:space="preserve">
-    <value>エラーがスローされるまでの待機時間（秒）を指定します。デフォルトは30秒です。</value>
+    <value>アクティビティが完了するまで待機する時間を秒単位で指定します。エラーがスローされる前に適用されます。既定値は30秒です。0以下の値はすべて30にリセットされます。</value>
   </data>
   <data name="WaitFile_Description" xml:space="preserve">
     <value>ファイルが利用可能になるまで待機します。</value>

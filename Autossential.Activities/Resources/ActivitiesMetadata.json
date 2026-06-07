@@ -1,1468 +1,1466 @@
 {
   "activities": [
     {
-      "fullName": "Autossential.Activities.AddRangeToCollection\u00601",
-      "shortName": "AddRangeToCollection",
-      "displayNameKey": "AddRangeToCollection_DisplayName",
+      "categoryKey": "ActivityCategories_Data",
       "descriptionKey": "AddRangeToCollection_Description",
+      "displayNameKey": "AddRangeToCollection_DisplayName",
+      "fullName": "Autossential.Activities.AddRangeToCollection\u00601",
       "iconKey": "AddRangeToCollection.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.AddRangeToCollectionViewModel\u00601",
-      "defaultFactory": "Autossential.Activities.Factories.AddRangeToCollectionFactory",
-      "categoryKey": "ActivityCategories_Data",
       "properties": [
         {
-          "name": "Collection",
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
           "displayNameKey": "AddRangeToCollection_Collection_DisplayName",
-          "tooltipKey": "AddRangeToCollection_Collection_Description",
-          "isVisible": true,
           "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+          "isVisible": true,
+          "name": "Collection",
+          "tooltipKey": "AddRangeToCollection_Collection_Description"
         },
         {
-          "name": "Items",
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
           "displayNameKey": "AddRangeToCollection_Items_DisplayName",
-          "tooltipKey": "AddRangeToCollection_Items_Description",
-          "isVisible": true,
           "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+          "isVisible": true,
+          "name": "Items",
+          "tooltipKey": "AddRangeToCollection_Items_Description"
         }
-      ]
+      ],
+      "shortName": "AddRangeToCollection",
+      "viewModelType": "Autossential.Activities.ViewModels.AddRangeToCollectionViewModel\u00601"
     },
     {
-      "fullName": "Autossential.Activities.CheckPoint",
-      "shortName": "CheckPoint",
-      "displayNameKey": "CheckPoint_DisplayName",
+      "categoryKey": "ActivityCategories_Workflow",
       "descriptionKey": "CheckPoint_Description",
+      "displayNameKey": "CheckPoint_DisplayName",
+      "fullName": "Autossential.Activities.CheckPoint",
       "iconKey": "CheckPoint.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.CheckPointViewModel",
-      "categoryKey": "ActivityCategories_Workflow",
       "properties": [
         {
-          "name": "Expression",
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
           "displayNameKey": "CheckPoint_Expression_DisplayName",
-          "tooltipKey": "CheckPoint_Expression_Description",
-          "isVisible": true,
           "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+          "isVisible": true,
+          "name": "Expression",
+          "tooltipKey": "CheckPoint_Expression_Description"
         },
         {
-          "name": "Exception",
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
           "displayNameKey": "CheckPoint_Exception_DisplayName",
-          "tooltipKey": "CheckPoint_Exception_Description",
-          "isVisible": true,
           "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+          "isVisible": true,
+          "name": "Exception",
+          "tooltipKey": "CheckPoint_Exception_Description"
         },
         {
-          "name": "Data",
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
           "displayNameKey": "CheckPoint_Data_DisplayName",
-          "tooltipKey": "CheckPoint_Data_Description",
-          "isVisible": true,
           "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+          "isVisible": true,
+          "name": "Data",
+          "tooltipKey": "CheckPoint_Data_Description"
         }
-      ]
+      ],
+      "shortName": "CheckPoint",
+      "viewModelType": "Autossential.Activities.ViewModels.CheckPointViewModel"
     },
     {
-      "fullName": "Autossential.Activities.CleanUpFolder",
-      "shortName": "CleanUpFolder",
-      "displayNameKey": "CleanUpFolder_DisplayName",
+      "categoryKey": "ActivityCategories_Files",
       "descriptionKey": "CleanUpFolder_Description",
+      "displayNameKey": "CleanUpFolder_DisplayName",
+      "fullName": "Autossential.Activities.CleanUpFolder",
       "iconKey": "CleanUpFolder.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.CleanUpFolderViewModel",
-      "categoryKey": "ActivityCategories_Files",
       "properties": [
         {
-          "name": "Folder",
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
           "displayNameKey": "CleanUpFolder_Folder_DisplayName",
-          "tooltipKey": "CleanUpFolder_Folder_Description",
-          "isVisible": true,
           "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "SearchPattern",
-          "displayNameKey": "Common_SearchPattern_DisplayName",
-          "tooltipKey": "Common_SearchPattern_Description",
           "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+          "name": "Folder",
+          "tooltipKey": "CleanUpFolder_Folder_Description"
         },
         {
-          "name": "FilesDeleted",
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "Common_SearchPattern_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "SearchPattern",
+          "tooltipKey": "Common_SearchPattern_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
           "displayNameKey": "CleanUpFolder_FilesDeleted_DisplayName",
-          "tooltipKey": "CleanUpFolder_FilesDeleted_Description",
-          "isVisible": true,
           "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
+          "isVisible": true,
+          "name": "FilesDeleted",
+          "tooltipKey": "CleanUpFolder_FilesDeleted_Description"
         },
         {
-          "name": "FoldersDeleted",
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
           "displayNameKey": "CleanUpFolder_FoldersDeleted_DisplayName",
-          "tooltipKey": "CleanUpFolder_FoldersDeleted_Description",
-          "isVisible": true,
           "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
+          "isVisible": true,
+          "name": "FoldersDeleted",
+          "tooltipKey": "CleanUpFolder_FoldersDeleted_Description"
         },
         {
-          "name": "LastWriteTime",
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
           "displayNameKey": "CleanUpFolder_LastWriteTime_DisplayName",
-          "tooltipKey": "CleanUpFolder_LastWriteTime_Description",
-          "isVisible": true,
           "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+          "isVisible": true,
+          "name": "LastWriteTime",
+          "tooltipKey": "CleanUpFolder_LastWriteTime_Description"
         },
         {
-          "name": "DeleteEmptyFolders",
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
           "displayNameKey": "CleanUpFolder_DeleteEmptyFolders_DisplayName",
-          "tooltipKey": "CleanUpFolder_DeleteEmptyFolders_Description",
-          "isVisible": true,
           "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+          "isVisible": true,
+          "name": "DeleteEmptyFolders",
+          "tooltipKey": "CleanUpFolder_DeleteEmptyFolders_Description"
         },
         {
-          "name": "SearchOption",
+          "category": {
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
           "displayNameKey": "CleanUpFolder_SearchOption_DisplayName",
-          "tooltipKey": "CleanUpFolder_SearchOption_Description",
-          "isVisible": true,
           "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
+          "isVisible": true,
+          "name": "SearchOption",
+          "tooltipKey": "CleanUpFolder_SearchOption_Description"
         },
         {
-          "name": "ContinueOnError",
-          "displayNameKey": "Common_ContinueOnError_DisplayName",
-          "tooltipKey": "Common_ContinueOnError_Description",
-          "isVisible": true,
-          "isRequired": false,
           "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "Common_ContinueOnError_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ContinueOnError",
+          "tooltipKey": "Common_ContinueOnError_Description"
         }
-      ]
+      ],
+      "shortName": "CleanUpFolder",
+      "viewModelType": "Autossential.Activities.ViewModels.CleanUpFolderViewModel"
     },
     {
-      "fullName": "Autossential.Activities.Container",
-      "shortName": "Container",
-      "displayNameKey": "Container_DisplayName",
+      "categoryKey": "ActivityCategories_Workflow",
       "descriptionKey": "Container_Description",
+      "displayNameKey": "Container_DisplayName",
+      "fullName": "Autossential.Activities.Container",
       "iconKey": "Container.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.ContainerViewModel",
-      "categoryKey": "ActivityCategories_Workflow",
-      "properties": []
+      "properties": [],
+      "shortName": "Container",
+      "viewModelType": "Autossential.Activities.ViewModels.ContainerViewModel"
     },
     {
-      "fullName": "Autossential.Activities.CultureScope",
-      "shortName": "CultureScope",
-      "displayNameKey": "CultureScope_DisplayName",
+      "categoryKey": "ActivityCategories_Programming",
       "descriptionKey": "CultureScope_Description",
+      "displayNameKey": "CultureScope_DisplayName",
+      "fullName": "Autossential.Activities.CultureScope",
       "iconKey": "CultureScope.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.CultureScopeViewModel",
-      "categoryKey": "ActivityCategories_Programming",
       "properties": [
         {
-          "name": "Culture",
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
           "displayNameKey": "CultureScope_Culture_DisplayName",
-          "tooltipKey": "CultureScope_Culture_Description",
-          "isVisible": true,
           "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+          "isVisible": true,
+          "name": "Culture",
+          "tooltipKey": "CultureScope_Culture_Description"
         }
-      ]
+      ],
+      "shortName": "CultureScope",
+      "viewModelType": "Autossential.Activities.ViewModels.CultureScopeViewModel"
     },
     {
-      "fullName": "Autossential.Activities.DataTableToText",
-      "shortName": "DataTableToText",
-      "displayNameKey": "DataTableToText_DisplayName",
+      "categoryKey": "ActivityCategories_Data",
       "descriptionKey": "DataTableToText_Description",
+      "displayNameKey": "DataTableToText_DisplayName",
+      "fullName": "Autossential.Activities.DataTableToText",
       "iconKey": "DataTableToText.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.DataTableToTextViewModel",
-      "categoryKey": "ActivityCategories_Data",
       "properties": [
         {
-          "name": "DataTable",
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
           "displayNameKey": "DataTableToText_DataTable_DisplayName",
-          "tooltipKey": "DataTableToText_DataTable_Description",
-          "isVisible": true,
           "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+          "isVisible": true,
+          "name": "DataTable",
+          "tooltipKey": "DataTableToText_DataTable_Description"
         },
         {
-          "name": "OutputFormat",
+          "category": {
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
           "displayNameKey": "DataTableToText_OutputFormat_DisplayName",
-          "tooltipKey": "DataTableToText_OutputFormat_Description",
-          "isVisible": true,
           "isRequired": true,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
+          "isVisible": true,
+          "name": "OutputFormat",
+          "tooltipKey": "DataTableToText_OutputFormat_Description"
         },
         {
-          "name": "DateTimeFormat",
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
           "displayNameKey": "DataTableToText_DateTimeFormat_DisplayName",
-          "tooltipKey": "DataTableToText_DateTimeFormat_Description",
-          "isVisible": true,
           "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+          "isVisible": true,
+          "name": "DateTimeFormat",
+          "tooltipKey": "DataTableToText_DateTimeFormat_Description"
         },
         {
-          "name": "Result",
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
           "displayNameKey": "DataTableToText_Result_DisplayName",
-          "tooltipKey": "DataTableToText_Result_Description",
-          "isVisible": true,
           "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "DataTableToText_Result_Description"
         },
         {
-          "name": "ResultType",
+          "category": {
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
           "displayNameKey": "DataTableToText_ResultType_DisplayName",
-          "tooltipKey": "DataTableToText_ResultType_Description",
-          "isVisible": true,
           "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
+          "isVisible": true,
+          "name": "ResultType",
+          "tooltipKey": "DataTableToText_ResultType_Description"
         },
         {
-          "name": "Result",
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
           "displayNameKey": "DataTableToText_Result_DisplayName",
-          "tooltipKey": "DataTableToText_Result_Description",
-          "isVisible": true,
           "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "DataTableToText_Result_Description"
         }
-      ]
+      ],
+      "shortName": "DataTableToText",
+      "viewModelType": "Autossential.Activities.ViewModels.DataTableToTextViewModel"
     },
     {
-      "fullName": "Autossential.Activities.Exit",
-      "shortName": "Exit",
-      "displayNameKey": "Exit_DisplayName",
+      "categoryKey": "ActivityCategories_Workflow",
       "descriptionKey": "Exit_Description",
+      "displayNameKey": "Exit_DisplayName",
+      "fullName": "Autossential.Activities.Exit",
       "iconKey": "Exit.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.ExitViewModel",
-      "categoryKey": "ActivityCategories_Workflow",
       "properties": [
         {
-          "name": "Condition",
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
           "displayNameKey": "Exit_Condition_DisplayName",
-          "tooltipKey": "Exit_Condition_Description",
-          "isVisible": true,
           "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        }
-      ]
-    },
-    {
-      "fullName": "Autossential.Activities.IfActivity",
-      "shortName": "IfActivity",
-      "displayNameKey": "IfActivity_DisplayName",
-      "descriptionKey": "IfActivity_Description",
-      "iconKey": "IfActivity.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.IfActivityViewModel",
-      "categoryKey": "ActivityCategories_Workflow",
-      "properties": [
-        {
+          "isVisible": true,
           "name": "Condition",
-          "displayNameKey": "IfActivity_Condition_DisplayName",
-          "tooltipKey": "IfActivity_Condition_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Then",
-          "displayNameKey": "IfActivity_Then_DisplayName",
-          "tooltipKey": "IfActivity_Then_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Else",
-          "displayNameKey": "IfActivity_Else_DisplayName",
-          "tooltipKey": "IfActivity_Else_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
+          "tooltipKey": "Exit_Condition_Description"
         }
-      ]
+      ],
+      "shortName": "Exit",
+      "viewModelType": "Autossential.Activities.ViewModels.ExitViewModel"
     },
     {
-      "fullName": "Autossential.Activities.IncrementDecrement",
-      "shortName": "IncrementDecrement",
-      "displayNameKey": "IncrementDecrement_DisplayName",
-      "descriptionKey": "IncrementDecrement_Description",
-      "iconKey": "IncrementDecrement.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.IncrementDecrementViewModel",
-      "categoryKey": "ActivityCategories_Programming",
-      "properties": [
-        {
-          "name": "Variable",
-          "displayNameKey": "IncrementDecrement_Variable_DisplayName",
-          "tooltipKey": "IncrementDecrement_Variable_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "InputOutput",
-            "displayNameKey": "Categories_InputOutput"
-          }
-        },
-        {
-          "name": "Value",
-          "displayNameKey": "IncrementDecrement_Value_DisplayName",
-          "tooltipKey": "IncrementDecrement_Value_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Operation",
-          "displayNameKey": "IncrementDecrement_Operation_DisplayName",
-          "tooltipKey": "IncrementDecrement_Operation_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        }
-      ]
-    },
-    {
-      "fullName": "Autossential.Activities.LoadDataFile",
-      "shortName": "LoadDataFile",
-      "displayNameKey": "LoadDataFile_DisplayName",
-      "descriptionKey": "LoadDataFile_Description",
-      "iconKey": "LoadDataFile.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.LoadDataFileViewModel",
-      "categoryKey": "ActivityCategories_Programming",
-      "properties": [
-        {
-          "name": "FilePath",
-          "displayNameKey": "LoadDataFile_FilePath_DisplayName",
-          "tooltipKey": "LoadDataFile_FilePath_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Encoding",
-          "displayNameKey": "LoadDataFile_Encoding_DisplayName",
-          "tooltipKey": "LoadDataFile_Encoding_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Culture",
-          "displayNameKey": "LoadDataFile_Culture_DisplayName",
-          "tooltipKey": "LoadDataFile_Culture_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "LoadDataFile_Result_DisplayName",
-          "tooltipKey": "LoadDataFile_Result_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        },
-        {
-          "name": "ResultType",
-          "displayNameKey": "LoadDataFile_ResultType_DisplayName",
-          "tooltipKey": "LoadDataFile_ResultType_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "LoadDataFile_Result_DisplayName",
-          "tooltipKey": "LoadDataFile_Result_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        }
-      ]
-    },
-    {
-      "fullName": "Autossential.Activities.MapDrive",
-      "shortName": "MapDrive",
-      "displayNameKey": "MapDrive_DisplayName",
-      "descriptionKey": "MapDrive_Description",
-      "iconKey": "MapDrive.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.MapDriveViewModel",
-      "categoryKey": "ActivityCategories_System",
-      "properties": [
-        {
-          "name": "SharedDrivePath",
-          "displayNameKey": "MapDrive_SharedDrivePath_DisplayName",
-          "tooltipKey": "MapDrive_SharedDrivePath_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Credential",
-          "displayNameKey": "MapDrive_Credential_DisplayName",
-          "tooltipKey": "MapDrive_Credential_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Force",
-          "displayNameKey": "MapDrive_Force_DisplayName",
-          "tooltipKey": "MapDrive_Force_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "DriveLetter",
-          "displayNameKey": "MapDrive_DriveLetter_DisplayName",
-          "tooltipKey": "MapDrive_DriveLetter_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "MappedDrive",
-          "displayNameKey": "MapDrive_MappedDrive_DisplayName",
-          "tooltipKey": "MapDrive_MappedDrive_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        },
-        {
-          "name": "ResponseCode",
-          "displayNameKey": "MapDrive_ResponseCode_DisplayName",
-          "tooltipKey": "MapDrive_ResponseCode_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        },
-        {
-          "name": "ResponseMessage",
-          "displayNameKey": "MapDrive_ResponseMessage_DisplayName",
-          "tooltipKey": "MapDrive_ResponseMessage_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "MapDrive_Result_DisplayName",
-          "tooltipKey": "MapDrive_Result_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        },
-        {
-          "name": "ResultType",
-          "displayNameKey": "MapDrive_ResultType_DisplayName",
-          "tooltipKey": "MapDrive_ResultType_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "MapDrive_Result_DisplayName",
-          "tooltipKey": "MapDrive_Result_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        }
-      ]
-    },
-    {
-      "fullName": "Autossential.Activities.MergeData",
-      "shortName": "MergeData",
-      "displayNameKey": "MergeData_DisplayName",
-      "descriptionKey": "MergeData_Description",
-      "iconKey": "MergeData.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.MergeDataViewModel",
-      "categoryKey": "ActivityCategories_Programming",
-      "properties": [
-        {
-          "name": "Source",
-          "displayNameKey": "MergeData_Source_DisplayName",
-          "tooltipKey": "MergeData_Source_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Destination",
-          "displayNameKey": "MergeData_Destination_DisplayName",
-          "tooltipKey": "MergeData_Destination_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "InputOutput",
-            "displayNameKey": "Categories_InputOutput"
-          }
-        }
-      ]
-    },
-    {
-      "fullName": "Autossential.Activities.ParseData",
-      "shortName": "ParseData",
-      "displayNameKey": "ParseData_DisplayName",
-      "descriptionKey": "ParseData_Description",
-      "iconKey": "ParseData.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.ParseDataViewModel",
-      "categoryKey": "ActivityCategories_Programming",
-      "properties": [
-        {
-          "name": "Content",
-          "displayNameKey": "ParseData_Content_DisplayName",
-          "tooltipKey": "ParseData_Content_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Culture",
-          "displayNameKey": "ParseData_Culture_DisplayName",
-          "tooltipKey": "ParseData_Culture_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "ParseData_Result_DisplayName",
-          "tooltipKey": "ParseData_Result_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        },
-        {
-          "name": "ResultType",
-          "displayNameKey": "ParseData_ResultType_DisplayName",
-          "tooltipKey": "ParseData_ResultType_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "ParseData_Result_DisplayName",
-          "tooltipKey": "ParseData_Result_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        }
-      ]
-    },
-    {
-      "fullName": "Autossential.Activities.PromoteHeaders",
-      "shortName": "PromoteHeaders",
-      "displayNameKey": "PromoteHeaders_DisplayName",
-      "descriptionKey": "PromoteHeaders_Description",
-      "iconKey": "PromoteHeaders.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.PromoteHeadersViewModel",
-      "categoryKey": "ActivityCategories_Data",
-      "properties": [
-        {
-          "name": "DataTable",
-          "displayNameKey": "PromoteHeaders_DataTable_DisplayName",
-          "tooltipKey": "PromoteHeaders_DataTable_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "InputOutput",
-            "displayNameKey": "Categories_InputOutput"
-          }
-        },
-        {
-          "name": "AutoRename",
-          "displayNameKey": "PromoteHeaders_AutoRename_DisplayName",
-          "tooltipKey": "PromoteHeaders_AutoRename_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        }
-      ]
-    },
-    {
-      "fullName": "Autossential.Activities.RandomString",
-      "shortName": "RandomString",
-      "displayNameKey": "RandomString_DisplayName",
-      "descriptionKey": "RandomString_Description",
-      "iconKey": "RandomString.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.RandomStringViewModel",
-      "categoryKey": "ActivityCategories_Programming",
-      "properties": [
-        {
-          "name": "Format",
-          "displayNameKey": "RandomString_Format_DisplayName",
-          "tooltipKey": "RandomString_Format_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Custom",
-          "displayNameKey": "RandomString_Custom_DisplayName",
-          "tooltipKey": "RandomString_Custom_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "RandomString_Result_DisplayName",
-          "tooltipKey": "RandomString_Result_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        },
-        {
-          "name": "ResultType",
-          "displayNameKey": "RandomString_ResultType_DisplayName",
-          "tooltipKey": "RandomString_ResultType_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "RandomString_Result_DisplayName",
-          "tooltipKey": "RandomString_Result_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        }
-      ]
-    },
-    {
-      "fullName": "Autossential.Activities.RemoveDataColumns",
-      "shortName": "RemoveDataColumns",
-      "displayNameKey": "RemoveDataColumns_DisplayName",
-      "descriptionKey": "RemoveDataColumns_Description",
-      "iconKey": "RemoveDataColumns.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.RemoveDataColumnsViewModel",
-      "categoryKey": "ActivityCategories_Data",
-      "properties": [
-        {
-          "name": "DataTable",
-          "displayNameKey": "RemoveDataColumns_DataTable_DisplayName",
-          "tooltipKey": "RemoveDataColumns_DataTable_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "InputOutput",
-            "displayNameKey": "Categories_InputOutput"
-          }
-        },
-        {
-          "name": "ColumnNames",
-          "displayNameKey": "RemoveDataColumns_ColumnNames_DisplayName",
-          "tooltipKey": "RemoveDataColumns_ColumnNames_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "ColumnIndexes",
-          "displayNameKey": "RemoveDataColumns_ColumnIndexes_DisplayName",
-          "tooltipKey": "RemoveDataColumns_ColumnIndexes_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        }
-      ]
-    },
-    {
-      "fullName": "Autossential.Activities.RemoveEmptyRows",
-      "shortName": "RemoveEmptyRows",
-      "displayNameKey": "RemoveEmptyRows_DisplayName",
-      "descriptionKey": "RemoveEmptyRows_Description",
-      "iconKey": "RemoveEmptyRows.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.RemoveEmptyRowsViewModel",
-      "categoryKey": "ActivityCategories_Data",
-      "properties": [
-        {
-          "name": "DataTable",
-          "displayNameKey": "RemoveEmptyRows_DataTable_DisplayName",
-          "tooltipKey": "RemoveEmptyRows_DataTable_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "InputOutput",
-            "displayNameKey": "Categories_InputOutput"
-          }
-        },
-        {
-          "name": "ColumnNames",
-          "displayNameKey": "RemoveEmptyRows_ColumnNames_DisplayName",
-          "tooltipKey": "RemoveEmptyRows_ColumnNames_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "ColumnIndexes",
-          "displayNameKey": "RemoveEmptyRows_ColumnIndexes_DisplayName",
-          "tooltipKey": "RemoveEmptyRows_ColumnIndexes_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "MatchingMode",
-          "displayNameKey": "RemoveEmptyRows_MatchingMode_DisplayName",
-          "tooltipKey": "RemoveEmptyRows_MatchingMode_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        }
-      ]
-    },
-    {
-      "fullName": "Autossential.Activities.ReplaceTokens",
-      "shortName": "ReplaceTokens",
-      "displayNameKey": "ReplaceTokens_DisplayName",
-      "descriptionKey": "ReplaceTokens_Description",
-      "iconKey": "ReplaceTokens.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.ReplaceTokensViewModel",
-      "categoryKey": "ActivityCategories_Programming",
-      "properties": [
-        {
-          "name": "Content",
-          "displayNameKey": "ReplaceTokens_Content_DisplayName",
-          "tooltipKey": "ReplaceTokens_Content_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Dictionary",
-          "displayNameKey": "ReplaceTokens_Dictionary_DisplayName",
-          "tooltipKey": "ReplaceTokens_Dictionary_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Pattern",
-          "displayNameKey": "ReplaceTokens_Pattern_DisplayName",
-          "tooltipKey": "ReplaceTokens_Pattern_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Placeholder",
-          "displayNameKey": "ReplaceTokens_Placeholder_DisplayName",
-          "tooltipKey": "ReplaceTokens_Placeholder_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "CaseSensitive",
-          "displayNameKey": "ReplaceTokens_CaseSensitive_DisplayName",
-          "tooltipKey": "ReplaceTokens_CaseSensitive_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "ReplaceTokens_Result_DisplayName",
-          "tooltipKey": "ReplaceTokens_Result_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        },
-        {
-          "name": "ResultType",
-          "displayNameKey": "ReplaceTokens_ResultType_DisplayName",
-          "tooltipKey": "ReplaceTokens_ResultType_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "ReplaceTokens_Result_DisplayName",
-          "tooltipKey": "ReplaceTokens_Result_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        }
-      ]
-    },
-    {
-      "fullName": "Autossential.Activities.TerminateProcess",
-      "shortName": "TerminateProcess",
-      "displayNameKey": "TerminateProcess_DisplayName",
-      "descriptionKey": "TerminateProcess_Description",
-      "iconKey": "TerminateProcess.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.TerminateProcessViewModel",
-      "categoryKey": "ActivityCategories_System",
-      "properties": [
-        {
-          "name": "ProcessNames",
-          "displayNameKey": "TerminateProcess_ProcessNames_DisplayName",
-          "tooltipKey": "TerminateProcess_ProcessNames_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        }
-      ]
-    },
-    {
-      "fullName": "Autossential.Activities.TimeLoop",
-      "shortName": "TimeLoop",
-      "displayNameKey": "TimeLoop_DisplayName",
-      "descriptionKey": "TimeLoop_Description",
-      "iconKey": "TimeLoop.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.TimeLoopViewModel",
       "categoryKey": "ActivityCategories_Workflow",
+      "descriptionKey": "IfActivity_Description",
+      "displayNameKey": "IfActivity_DisplayName",
+      "fullName": "Autossential.Activities.IfActivity",
+      "iconKey": "IfActivity.svg",
       "properties": [
         {
-          "name": "Timeout",
-          "displayNameKey": "TimeLoop_Timeout_DisplayName",
-          "tooltipKey": "TimeLoop_Timeout_Description",
-          "isVisible": true,
-          "isRequired": true,
           "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "IfActivity_Condition_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Condition",
+          "tooltipKey": "IfActivity_Condition_Description"
         },
         {
-          "name": "IntervalSeconds",
-          "displayNameKey": "TimeLoop_IntervalSeconds_DisplayName",
-          "tooltipKey": "TimeLoop_IntervalSeconds_Description",
-          "isVisible": true,
-          "isRequired": false,
           "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "IfActivity_Then_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Then",
+          "tooltipKey": "IfActivity_Then_Description"
         },
         {
-          "name": "IterationIndex",
-          "displayNameKey": "TimeLoop_IterationIndex_DisplayName",
-          "tooltipKey": "TimeLoop_IterationIndex_Description",
-          "isVisible": true,
-          "isRequired": false,
           "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "TimeLoop_Result_DisplayName",
-          "tooltipKey": "TimeLoop_Result_Description",
-          "isVisible": true,
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "IfActivity_Else_DisplayName",
           "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        },
-        {
-          "name": "ResultType",
-          "displayNameKey": "TimeLoop_ResultType_DisplayName",
-          "tooltipKey": "TimeLoop_ResultType_Description",
           "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "TimeLoop_Result_DisplayName",
-          "tooltipKey": "TimeLoop_Result_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
+          "name": "Else",
+          "tooltipKey": "IfActivity_Else_Description"
         }
-      ]
+      ],
+      "shortName": "IfActivity",
+      "viewModelType": "Autossential.Activities.ViewModels.IfActivityViewModel"
     },
     {
-      "fullName": "Autossential.Activities.TransposeData",
-      "shortName": "TransposeData",
-      "displayNameKey": "TransposeData_DisplayName",
-      "descriptionKey": "TransposeData_Description",
-      "iconKey": "TransposeData.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.TransposeDataViewModel",
-      "categoryKey": "ActivityCategories_Data",
+      "categoryKey": "ActivityCategories_Programming",
+      "descriptionKey": "IncrementDecrement_Description",
+      "displayNameKey": "IncrementDecrement_DisplayName",
+      "fullName": "Autossential.Activities.IncrementDecrement",
+      "iconKey": "IncrementDecrement.svg",
       "properties": [
         {
-          "name": "DataTable",
-          "displayNameKey": "TransposeData_DataTable_DisplayName",
-          "tooltipKey": "TransposeData_DataTable_Description",
-          "isVisible": true,
-          "isRequired": true,
           "category": {
-            "name": "InputOutput",
-            "displayNameKey": "Categories_InputOutput"
-          }
+            "displayNameKey": "Categories_InputOutput",
+            "name": "InputOutput"
+          },
+          "displayNameKey": "IncrementDecrement_Variable_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "Variable",
+          "tooltipKey": "IncrementDecrement_Variable_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "IncrementDecrement_Value_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "Value",
+          "tooltipKey": "IncrementDecrement_Value_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "IncrementDecrement_Operation_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "Operation",
+          "tooltipKey": "IncrementDecrement_Operation_Description"
         }
-      ]
+      ],
+      "shortName": "IncrementDecrement",
+      "viewModelType": "Autossential.Activities.ViewModels.IncrementDecrementViewModel"
     },
     {
-      "fullName": "Autossential.Activities.UnmapDrive",
-      "shortName": "UnmapDrive",
-      "displayNameKey": "UnmapDrive_DisplayName",
-      "descriptionKey": "UnmapDrive_Description",
-      "iconKey": "UnmapDrive.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.UnmapDriveViewModel",
-      "categoryKey": "ActivityCategories_System",
+      "categoryKey": "ActivityCategories_Programming",
+      "descriptionKey": "LoadDataFile_Description",
+      "displayNameKey": "LoadDataFile_DisplayName",
+      "fullName": "Autossential.Activities.LoadDataFile",
+      "iconKey": "LoadDataFile.svg",
       "properties": [
         {
-          "name": "DriveLetter",
-          "displayNameKey": "UnmapDrive_DriveLetter_DisplayName",
-          "tooltipKey": "UnmapDrive_DriveLetter_Description",
-          "isVisible": true,
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "LoadDataFile_FilePath_DisplayName",
           "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "ResponseCode",
-          "displayNameKey": "UnmapDrive_ResponseCode_DisplayName",
-          "tooltipKey": "UnmapDrive_ResponseCode_Description",
           "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        },
-        {
-          "name": "ResponseMessage",
-          "displayNameKey": "UnmapDrive_ResponseMessage_DisplayName",
-          "tooltipKey": "UnmapDrive_ResponseMessage_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "UnmapDrive_Result_DisplayName",
-          "tooltipKey": "UnmapDrive_Result_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        },
-        {
-          "name": "ResultType",
-          "displayNameKey": "UnmapDrive_ResultType_DisplayName",
-          "tooltipKey": "UnmapDrive_ResultType_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
-          "name": "Result",
-          "displayNameKey": "UnmapDrive_Result_DisplayName",
-          "tooltipKey": "UnmapDrive_Result_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
-        }
-      ]
-    },
-    {
-      "fullName": "Autossential.Activities.Unzip",
-      "shortName": "Unzip",
-      "displayNameKey": "Unzip_DisplayName",
-      "descriptionKey": "Unzip_Description",
-      "iconKey": "Unzip.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.UnzipViewModel",
-      "categoryKey": "ActivityCategories_Files",
-      "properties": [
-        {
-          "name": "ZipFilePath",
-          "displayNameKey": "Unzip_ZipFilePath_DisplayName",
-          "tooltipKey": "Unzip_ZipFilePath_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "ExtractTo",
-          "displayNameKey": "Unzip_ExtractTo_DisplayName",
-          "tooltipKey": "Unzip_ExtractTo_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Overwrite",
-          "displayNameKey": "Unzip_Overwrite_DisplayName",
-          "tooltipKey": "Unzip_Overwrite_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        }
-      ]
-    },
-    {
-      "fullName": "Autossential.Activities.UpdateDictionary\u00602",
-      "shortName": "UpdateDictionary",
-      "displayNameKey": "UpdateDictionary_DisplayName",
-      "descriptionKey": "UpdateDictionary_Description",
-      "iconKey": "UpdateDictionary.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.UpdateDictionaryViewModel\u00602",
-      "defaultFactory": "Autossential.Activities.Factories.UpdateDictionaryFactory",
-      "categoryKey": "ActivityCategories_Data",
-      "properties": [
-        {
-          "name": "Dictionary",
-          "displayNameKey": "UpdateDictionary_Dictionary_DisplayName",
-          "tooltipKey": "UpdateDictionary_Dictionary_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "Entries",
-          "displayNameKey": "UpdateDictionary_Entries_DisplayName",
-          "tooltipKey": "UpdateDictionary_Entries_Description",
-          "isVisible": true,
-          "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        }
-      ]
-    },
-    {
-      "fullName": "Autossential.Activities.WaitFile",
-      "shortName": "WaitFile",
-      "displayNameKey": "WaitFile_DisplayName",
-      "descriptionKey": "WaitFile_Description",
-      "iconKey": "WaitFile.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.WaitFileViewModel",
-      "categoryKey": "ActivityCategories_Files",
-      "properties": [
-        {
-          "name": "ContinueOnError",
-          "displayNameKey": "Common_ContinueOnError_DisplayName",
-          "tooltipKey": "Common_ContinueOnError_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "TimeoutSeconds",
-          "displayNameKey": "Common_TimeoutSeconds_DisplayName",
-          "tooltipKey": "Common_TimeoutSeconds_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
           "name": "FilePath",
-          "displayNameKey": "WaitFile_FilePath_DisplayName",
-          "tooltipKey": "WaitFile_FilePath_Description",
-          "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+          "tooltipKey": "LoadDataFile_FilePath_Description"
         },
         {
-          "name": "PollingIntervalSeconds",
-          "displayNameKey": "WaitFile_PollingIntervalSeconds_DisplayName",
-          "tooltipKey": "WaitFile_PollingIntervalSeconds_Description",
-          "isVisible": true,
-          "isRequired": false,
           "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "LoadDataFile_Encoding_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Encoding",
+          "tooltipKey": "LoadDataFile_Encoding_Description"
         },
         {
-          "name": "WaitForExist",
-          "displayNameKey": "WaitFile_WaitForExist_DisplayName",
-          "tooltipKey": "WaitFile_WaitForExist_Description",
-          "isVisible": true,
-          "isRequired": false,
           "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "LoadDataFile_Culture_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Culture",
+          "tooltipKey": "LoadDataFile_Culture_Description"
         },
         {
-          "name": "DirectoryPath",
-          "displayNameKey": "WaitFile_DirectoryPath_DisplayName",
-          "tooltipKey": "WaitFile_DirectoryPath_Description",
-          "isVisible": true,
-          "isRequired": false,
           "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "SearchPattern",
-          "displayNameKey": "Common_SearchPattern_DisplayName",
-          "tooltipKey": "Common_SearchPattern_Description",
-          "isVisible": true,
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "LoadDataFile_Result_DisplayName",
           "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "DynamicFile",
-          "displayNameKey": "WaitFile_DynamicFile_DisplayName",
-          "tooltipKey": "WaitFile_DynamicFile_Description",
           "isVisible": true,
-          "isRequired": false,
-          "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
-        },
-        {
           "name": "Result",
-          "displayNameKey": "WaitFile_Result_DisplayName",
-          "tooltipKey": "WaitFile_Result_Description",
-          "isVisible": true,
-          "isRequired": false,
+          "tooltipKey": "LoadDataFile_Result_Description"
+        },
+        {
           "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "LoadDataFile_ResultType_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ResultType",
+          "tooltipKey": "LoadDataFile_ResultType_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "LoadDataFile_Result_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "LoadDataFile_Result_Description"
         }
-      ]
+      ],
+      "shortName": "LoadDataFile",
+      "viewModelType": "Autossential.Activities.ViewModels.LoadDataFileViewModel"
     },
     {
-      "fullName": "Autossential.Activities.Zip",
-      "shortName": "Zip",
-      "displayNameKey": "Zip_DisplayName",
-      "descriptionKey": "Zip_Description",
-      "iconKey": "Zip.svg",
-      "viewModelType": "Autossential.Activities.ViewModels.ZipViewModel",
-      "categoryKey": "ActivityCategories_Files",
+      "categoryKey": "ActivityCategories_System",
+      "descriptionKey": "MapDrive_Description",
+      "displayNameKey": "MapDrive_DisplayName",
+      "fullName": "Autossential.Activities.MapDrive",
+      "iconKey": "MapDrive.svg",
       "properties": [
         {
-          "name": "ZipFilePath",
-          "displayNameKey": "Zip_ZipFilePath_DisplayName",
-          "tooltipKey": "Zip_ZipFilePath_Description",
-          "isVisible": true,
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "MapDrive_SharedDrivePath_DisplayName",
           "isRequired": true,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+          "isVisible": true,
+          "name": "SharedDrivePath",
+          "tooltipKey": "MapDrive_SharedDrivePath_Description"
         },
         {
-          "name": "ToCompress",
-          "displayNameKey": "Zip_ToCompress_DisplayName",
-          "tooltipKey": "Zip_ToCompress_Description",
-          "isVisible": true,
-          "isRequired": true,
           "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
-        },
-        {
-          "name": "TextEncoding",
-          "displayNameKey": "Zip_TextEncoding_DisplayName",
-          "tooltipKey": "Zip_TextEncoding_Description",
-          "isVisible": true,
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "MapDrive_Credential_DisplayName",
           "isRequired": false,
-          "category": {
-            "name": "Input",
-            "displayNameKey": "Categories_Input"
-          }
+          "isVisible": true,
+          "name": "Credential",
+          "tooltipKey": "MapDrive_Credential_Description"
         },
         {
-          "name": "CompressionLevel",
-          "displayNameKey": "Zip_CompressionLevel_DisplayName",
-          "tooltipKey": "Zip_CompressionLevel_Description",
-          "isVisible": true,
-          "isRequired": false,
           "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "MapDrive_Force_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Force",
+          "tooltipKey": "MapDrive_Force_Description"
         },
         {
-          "name": "EntryStructure",
-          "displayNameKey": "Zip_EntryStructure_DisplayName",
-          "tooltipKey": "Zip_EntryStructure_Description",
-          "isVisible": true,
-          "isRequired": false,
           "category": {
-            "name": "Options",
-            "displayNameKey": "Categories_Options"
-          }
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "MapDrive_DriveLetter_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "DriveLetter",
+          "tooltipKey": "MapDrive_DriveLetter_Description"
         },
         {
-          "name": "CompressedFile",
-          "displayNameKey": "Zip_CompressedFile_DisplayName",
-          "tooltipKey": "Zip_CompressedFile_Description",
-          "isVisible": true,
-          "isRequired": false,
           "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "MapDrive_MappedDrive_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "MappedDrive",
+          "tooltipKey": "MapDrive_MappedDrive_Description"
         },
         {
-          "name": "FilesCount",
-          "displayNameKey": "Zip_FilesCount_DisplayName",
-          "tooltipKey": "Zip_FilesCount_Description",
-          "isVisible": true,
-          "isRequired": false,
           "category": {
-            "name": "Output",
-            "displayNameKey": "Categories_Output"
-          }
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "MapDrive_ResponseCode_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ResponseCode",
+          "tooltipKey": "MapDrive_ResponseCode_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "MapDrive_ResponseMessage_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ResponseMessage",
+          "tooltipKey": "MapDrive_ResponseMessage_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "MapDrive_Result_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "MapDrive_Result_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "MapDrive_ResultType_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ResultType",
+          "tooltipKey": "MapDrive_ResultType_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "MapDrive_Result_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "MapDrive_Result_Description"
         }
-      ]
+      ],
+      "shortName": "MapDrive",
+      "viewModelType": "Autossential.Activities.ViewModels.MapDriveViewModel"
+    },
+    {
+      "categoryKey": "ActivityCategories_Programming",
+      "descriptionKey": "MergeData_Description",
+      "displayNameKey": "MergeData_DisplayName",
+      "fullName": "Autossential.Activities.MergeData",
+      "iconKey": "MergeData.svg",
+      "properties": [
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "MergeData_Source_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "Source",
+          "tooltipKey": "MergeData_Source_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_InputOutput",
+            "name": "InputOutput"
+          },
+          "displayNameKey": "MergeData_Destination_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "Destination",
+          "tooltipKey": "MergeData_Destination_Description"
+        }
+      ],
+      "shortName": "MergeData",
+      "viewModelType": "Autossential.Activities.ViewModels.MergeDataViewModel"
+    },
+    {
+      "categoryKey": "ActivityCategories_Programming",
+      "descriptionKey": "ParseData_Description",
+      "displayNameKey": "ParseData_DisplayName",
+      "fullName": "Autossential.Activities.ParseData",
+      "iconKey": "ParseData.svg",
+      "properties": [
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "ParseData_Content_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "Content",
+          "tooltipKey": "ParseData_Content_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "ParseData_Culture_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Culture",
+          "tooltipKey": "ParseData_Culture_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "ParseData_Result_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "ParseData_Result_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "ParseData_ResultType_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ResultType",
+          "tooltipKey": "ParseData_ResultType_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "ParseData_Result_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "ParseData_Result_Description"
+        }
+      ],
+      "shortName": "ParseData",
+      "viewModelType": "Autossential.Activities.ViewModels.ParseDataViewModel"
+    },
+    {
+      "categoryKey": "ActivityCategories_Data",
+      "descriptionKey": "PromoteHeaders_Description",
+      "displayNameKey": "PromoteHeaders_DisplayName",
+      "fullName": "Autossential.Activities.PromoteHeaders",
+      "iconKey": "PromoteHeaders.svg",
+      "properties": [
+        {
+          "category": {
+            "displayNameKey": "Categories_InputOutput",
+            "name": "InputOutput"
+          },
+          "displayNameKey": "PromoteHeaders_DataTable_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "DataTable",
+          "tooltipKey": "PromoteHeaders_DataTable_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "PromoteHeaders_AutoRename_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "AutoRename",
+          "tooltipKey": "PromoteHeaders_AutoRename_Description"
+        }
+      ],
+      "shortName": "PromoteHeaders",
+      "viewModelType": "Autossential.Activities.ViewModels.PromoteHeadersViewModel"
+    },
+    {
+      "categoryKey": "ActivityCategories_Programming",
+      "descriptionKey": "RandomString_Description",
+      "displayNameKey": "RandomString_DisplayName",
+      "fullName": "Autossential.Activities.RandomString",
+      "iconKey": "RandomString.svg",
+      "properties": [
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "RandomString_Format_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "Format",
+          "tooltipKey": "RandomString_Format_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "RandomString_Custom_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Custom",
+          "tooltipKey": "RandomString_Custom_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "RandomString_Result_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "RandomString_Result_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "RandomString_ResultType_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ResultType",
+          "tooltipKey": "RandomString_ResultType_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "RandomString_Result_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "RandomString_Result_Description"
+        }
+      ],
+      "shortName": "RandomString",
+      "viewModelType": "Autossential.Activities.ViewModels.RandomStringViewModel"
+    },
+    {
+      "categoryKey": "ActivityCategories_Data",
+      "descriptionKey": "RemoveDataColumns_Description",
+      "displayNameKey": "RemoveDataColumns_DisplayName",
+      "fullName": "Autossential.Activities.RemoveDataColumns",
+      "iconKey": "RemoveDataColumns.svg",
+      "properties": [
+        {
+          "category": {
+            "displayNameKey": "Categories_InputOutput",
+            "name": "InputOutput"
+          },
+          "displayNameKey": "RemoveDataColumns_DataTable_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "DataTable",
+          "tooltipKey": "RemoveDataColumns_DataTable_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "RemoveDataColumns_ColumnNames_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ColumnNames",
+          "tooltipKey": "RemoveDataColumns_ColumnNames_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "RemoveDataColumns_ColumnIndexes_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ColumnIndexes",
+          "tooltipKey": "RemoveDataColumns_ColumnIndexes_Description"
+        }
+      ],
+      "shortName": "RemoveDataColumns",
+      "viewModelType": "Autossential.Activities.ViewModels.RemoveDataColumnsViewModel"
+    },
+    {
+      "categoryKey": "ActivityCategories_Data",
+      "descriptionKey": "RemoveEmptyRows_Description",
+      "displayNameKey": "RemoveEmptyRows_DisplayName",
+      "fullName": "Autossential.Activities.RemoveEmptyRows",
+      "iconKey": "RemoveEmptyRows.svg",
+      "properties": [
+        {
+          "category": {
+            "displayNameKey": "Categories_InputOutput",
+            "name": "InputOutput"
+          },
+          "displayNameKey": "RemoveEmptyRows_DataTable_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "DataTable",
+          "tooltipKey": "RemoveEmptyRows_DataTable_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "RemoveEmptyRows_ColumnNames_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ColumnNames",
+          "tooltipKey": "RemoveEmptyRows_ColumnNames_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "RemoveEmptyRows_ColumnIndexes_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ColumnIndexes",
+          "tooltipKey": "RemoveEmptyRows_ColumnIndexes_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "RemoveEmptyRows_MatchingMode_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "MatchingMode",
+          "tooltipKey": "RemoveEmptyRows_MatchingMode_Description"
+        }
+      ],
+      "shortName": "RemoveEmptyRows",
+      "viewModelType": "Autossential.Activities.ViewModels.RemoveEmptyRowsViewModel"
+    },
+    {
+      "categoryKey": "ActivityCategories_Programming",
+      "descriptionKey": "ReplaceTokens_Description",
+      "displayNameKey": "ReplaceTokens_DisplayName",
+      "fullName": "Autossential.Activities.ReplaceTokens",
+      "iconKey": "ReplaceTokens.svg",
+      "properties": [
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "ReplaceTokens_Content_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "Content",
+          "tooltipKey": "ReplaceTokens_Content_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "ReplaceTokens_Dictionary_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "Dictionary",
+          "tooltipKey": "ReplaceTokens_Dictionary_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "ReplaceTokens_Pattern_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "Pattern",
+          "tooltipKey": "ReplaceTokens_Pattern_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "ReplaceTokens_Placeholder_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "Placeholder",
+          "tooltipKey": "ReplaceTokens_Placeholder_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "ReplaceTokens_CaseSensitive_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "CaseSensitive",
+          "tooltipKey": "ReplaceTokens_CaseSensitive_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "ReplaceTokens_Result_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "ReplaceTokens_Result_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "ReplaceTokens_ResultType_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ResultType",
+          "tooltipKey": "ReplaceTokens_ResultType_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "ReplaceTokens_Result_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "ReplaceTokens_Result_Description"
+        }
+      ],
+      "shortName": "ReplaceTokens",
+      "viewModelType": "Autossential.Activities.ViewModels.ReplaceTokensViewModel"
+    },
+    {
+      "categoryKey": "ActivityCategories_System",
+      "descriptionKey": "TerminateProcess_Description",
+      "displayNameKey": "TerminateProcess_DisplayName",
+      "fullName": "Autossential.Activities.TerminateProcess",
+      "iconKey": "TerminateProcess.svg",
+      "properties": [
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "TerminateProcess_ProcessNames_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "ProcessNames",
+          "tooltipKey": "TerminateProcess_ProcessNames_Description"
+        }
+      ],
+      "shortName": "TerminateProcess",
+      "viewModelType": "Autossential.Activities.ViewModels.TerminateProcessViewModel"
+    },
+    {
+      "categoryKey": "ActivityCategories_Workflow",
+      "descriptionKey": "TimeLoop_Description",
+      "displayNameKey": "TimeLoop_DisplayName",
+      "fullName": "Autossential.Activities.TimeLoop",
+      "iconKey": "TimeLoop.svg",
+      "properties": [
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "TimeLoop_Timeout_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "Timeout",
+          "tooltipKey": "TimeLoop_Timeout_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "TimeLoop_IntervalSeconds_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "IntervalSeconds",
+          "tooltipKey": "TimeLoop_IntervalSeconds_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "TimeLoop_IterationIndex_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "IterationIndex",
+          "tooltipKey": "TimeLoop_IterationIndex_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "TimeLoop_Result_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "TimeLoop_Result_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "TimeLoop_ResultType_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ResultType",
+          "tooltipKey": "TimeLoop_ResultType_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "TimeLoop_Result_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "TimeLoop_Result_Description"
+        }
+      ],
+      "shortName": "TimeLoop",
+      "viewModelType": "Autossential.Activities.ViewModels.TimeLoopViewModel"
+    },
+    {
+      "categoryKey": "ActivityCategories_Data",
+      "descriptionKey": "TransposeData_Description",
+      "displayNameKey": "TransposeData_DisplayName",
+      "fullName": "Autossential.Activities.TransposeData",
+      "iconKey": "TransposeData.svg",
+      "properties": [
+        {
+          "category": {
+            "displayNameKey": "Categories_InputOutput",
+            "name": "InputOutput"
+          },
+          "displayNameKey": "TransposeData_DataTable_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "DataTable",
+          "tooltipKey": "TransposeData_DataTable_Description"
+        }
+      ],
+      "shortName": "TransposeData",
+      "viewModelType": "Autossential.Activities.ViewModels.TransposeDataViewModel"
+    },
+    {
+      "categoryKey": "ActivityCategories_System",
+      "descriptionKey": "UnmapDrive_Description",
+      "displayNameKey": "UnmapDrive_DisplayName",
+      "fullName": "Autossential.Activities.UnmapDrive",
+      "iconKey": "UnmapDrive.svg",
+      "properties": [
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "UnmapDrive_DriveLetter_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "DriveLetter",
+          "tooltipKey": "UnmapDrive_DriveLetter_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "UnmapDrive_ResponseCode_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ResponseCode",
+          "tooltipKey": "UnmapDrive_ResponseCode_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "UnmapDrive_ResponseMessage_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ResponseMessage",
+          "tooltipKey": "UnmapDrive_ResponseMessage_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "UnmapDrive_Result_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "UnmapDrive_Result_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "UnmapDrive_ResultType_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ResultType",
+          "tooltipKey": "UnmapDrive_ResultType_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "UnmapDrive_Result_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "UnmapDrive_Result_Description"
+        }
+      ],
+      "shortName": "UnmapDrive",
+      "viewModelType": "Autossential.Activities.ViewModels.UnmapDriveViewModel"
+    },
+    {
+      "categoryKey": "ActivityCategories_Files",
+      "descriptionKey": "Unzip_Description",
+      "displayNameKey": "Unzip_DisplayName",
+      "fullName": "Autossential.Activities.Unzip",
+      "iconKey": "Unzip.svg",
+      "properties": [
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "Unzip_ZipFilePath_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "ZipFilePath",
+          "tooltipKey": "Unzip_ZipFilePath_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "Unzip_ExtractTo_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "ExtractTo",
+          "tooltipKey": "Unzip_ExtractTo_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "Unzip_Overwrite_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Overwrite",
+          "tooltipKey": "Unzip_Overwrite_Description"
+        }
+      ],
+      "shortName": "Unzip",
+      "viewModelType": "Autossential.Activities.ViewModels.UnzipViewModel"
+    },
+    {
+      "categoryKey": "ActivityCategories_Data",
+      "descriptionKey": "UpdateDictionary_Description",
+      "displayNameKey": "UpdateDictionary_DisplayName",
+      "fullName": "Autossential.Activities.UpdateDictionary\u00602",
+      "iconKey": "UpdateDictionary.svg",
+      "properties": [
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "UpdateDictionary_Dictionary_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "Dictionary",
+          "tooltipKey": "UpdateDictionary_Dictionary_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "UpdateDictionary_Entries_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "Entries",
+          "tooltipKey": "UpdateDictionary_Entries_Description"
+        }
+      ],
+      "shortName": "UpdateDictionary",
+      "viewModelType": "Autossential.Activities.ViewModels.UpdateDictionaryViewModel\u00602"
+    },
+    {
+      "categoryKey": "ActivityCategories_Files",
+      "descriptionKey": "WaitFile_Description",
+      "displayNameKey": "WaitFile_DisplayName",
+      "fullName": "Autossential.Activities.WaitFile",
+      "iconKey": "WaitFile.svg",
+      "properties": [
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "Common_ContinueOnError_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "ContinueOnError",
+          "tooltipKey": "Common_ContinueOnError_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "Common_TimeoutSeconds_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "TimeoutSeconds",
+          "tooltipKey": "Common_TimeoutSeconds_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "WaitFile_FilePath_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "FilePath",
+          "tooltipKey": "WaitFile_FilePath_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "WaitFile_PollingIntervalSeconds_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "PollingIntervalSeconds",
+          "tooltipKey": "WaitFile_PollingIntervalSeconds_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "WaitFile_WaitForExist_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "WaitForExist",
+          "tooltipKey": "WaitFile_WaitForExist_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "WaitFile_DirectoryPath_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "DirectoryPath",
+          "tooltipKey": "WaitFile_DirectoryPath_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "Common_SearchPattern_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "SearchPattern",
+          "tooltipKey": "Common_SearchPattern_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "WaitFile_DynamicFile_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "DynamicFile",
+          "tooltipKey": "WaitFile_DynamicFile_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "WaitFile_Result_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "Result",
+          "tooltipKey": "WaitFile_Result_Description"
+        }
+      ],
+      "shortName": "WaitFile",
+      "viewModelType": "Autossential.Activities.ViewModels.WaitFileViewModel"
+    },
+    {
+      "categoryKey": "ActivityCategories_Files",
+      "descriptionKey": "Zip_Description",
+      "displayNameKey": "Zip_DisplayName",
+      "fullName": "Autossential.Activities.Zip",
+      "iconKey": "Zip.svg",
+      "properties": [
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "Zip_ZipFilePath_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "ZipFilePath",
+          "tooltipKey": "Zip_ZipFilePath_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "Zip_ToCompress_DisplayName",
+          "isRequired": true,
+          "isVisible": true,
+          "name": "ToCompress",
+          "tooltipKey": "Zip_ToCompress_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Input",
+            "name": "Input"
+          },
+          "displayNameKey": "Zip_TextEncoding_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "TextEncoding",
+          "tooltipKey": "Zip_TextEncoding_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "Zip_CompressionLevel_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "CompressionLevel",
+          "tooltipKey": "Zip_CompressionLevel_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Options",
+            "name": "Options"
+          },
+          "displayNameKey": "Zip_EntryStructure_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "EntryStructure",
+          "tooltipKey": "Zip_EntryStructure_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "Zip_CompressedFile_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "CompressedFile",
+          "tooltipKey": "Zip_CompressedFile_Description"
+        },
+        {
+          "category": {
+            "displayNameKey": "Categories_Output",
+            "name": "Output"
+          },
+          "displayNameKey": "Zip_FilesCount_DisplayName",
+          "isRequired": false,
+          "isVisible": true,
+          "name": "FilesCount",
+          "tooltipKey": "Zip_FilesCount_Description"
+        }
+      ],
+      "shortName": "Zip",
+      "viewModelType": "Autossential.Activities.ViewModels.ZipViewModel"
     }
   ],
   "resourceManagerName": "Autossential.Activities.Properties.Resources"

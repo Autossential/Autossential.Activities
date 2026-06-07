@@ -46,7 +46,9 @@ namespace Autossential.Activities.Extensions
                                     dialog.ShowNewFolderButton = true;
                                     if (dialog.ShowDialog() == DialogResult.OK)
                                     {
-                                        property.Value = Path.GetRelativePath(Directory.GetCurrentDirectory(), dialog.SelectedPath);
+                                        var currentDir = Directory.GetCurrentDirectory();
+                                        var relativePath = Path.GetRelativePath(currentDir, dialog.SelectedPath);
+                                        property.Value = relativePath.StartsWith("..") ? dialog.SelectedPath : relativePath;
                                     }
                                 }
                                 tcs.SetResult(true);
@@ -83,7 +85,9 @@ namespace Autossential.Activities.Extensions
 
                         if (ofd.ShowDialog() == true)
                         {
-                            property.Value = Path.GetRelativePath(Directory.GetCurrentDirectory(), ofd.FileName);
+                            var currentDir = Directory.GetCurrentDirectory();
+                            var relativePath = Path.GetRelativePath(currentDir, ofd.FileName);
+                            property.Value = relativePath.StartsWith("..") ? ofd.FileName : relativePath;
                         }
                     })
                 });

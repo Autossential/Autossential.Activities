@@ -1,14 +1,14 @@
 using System;
 using System.Activities;
 using System.Collections.Generic;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
     public class ReplaceTokensTests
     {
-        [Fact]
-        public void Invoke_WithSimpleTokens_ReplacesTokensInContent()
+        [Test]
+        public async Task WithSimpleTokens_ReplacesTokensInContent()
         {
             var dictionary = new Dictionary<string, object>
             {
@@ -26,11 +26,11 @@ namespace Autossential.Activities.Tests.Activities
 
             var result = WorkflowInvoker.Invoke(new ReplaceTokens(), inputs);
 
-            Assert.Equal("Hello Alice, you are 30 years old", result);
+            await Assert.That(result).IsEqualTo("Hello Alice, you are 30 years old");
         }
 
-        [Fact]
-        public void Invoke_WithCustomPattern_ReplacesWithCustomPattern()
+        [Test]
+        public async Task WithCustomPattern_ReplacesWithCustomPattern()
         {
             var dictionary = new Dictionary<string, object>
             {
@@ -48,11 +48,11 @@ namespace Autossential.Activities.Tests.Activities
 
             var result = WorkflowInvoker.Invoke(new ReplaceTokens(), inputs);
 
-            Assert.Equal("User: Bob, Role: Admin", result);
+            await Assert.That(result).IsEqualTo("User: Bob, Role: Admin");
         }
 
-        [Fact]
-        public void Invoke_WithCaseSensitiveTrue_MatchesExactCase()
+        [Test]
+        public async Task WithCaseSensitiveTrue_MatchesExactCase()
         {
             var dictionary = new Dictionary<string, object>
             {
@@ -70,12 +70,12 @@ namespace Autossential.Activities.Tests.Activities
             var result = WorkflowInvoker.Invoke(new ReplaceTokens(), inputs);
 
             // Only {{Name}} should be replaced
-            Assert.Contains("{{name}}", result);
-            Assert.Contains("Charlie", result);
+            await Assert.That(result).Contains("{{name}}");
+            await Assert.That(result).Contains("Charlie");
         }
 
-        [Fact]
-        public void Invoke_WithNullContent_ReturnsNull()
+        [Test]
+        public async Task WithNullContent_ReturnsNull()
         {
             var dictionary = new Dictionary<string, object>
             {
@@ -92,14 +92,14 @@ namespace Autossential.Activities.Tests.Activities
 
             var result = WorkflowInvoker.Invoke(new ReplaceTokens(), inputs);
 
-            Assert.Null(result);
+            await Assert.That(result).IsNull();
         }
 
-        [Theory]
-        [InlineData("%0", '0')]
-        [InlineData("@*", '@')]
-        [InlineData("__~", '~')]
-        public void Invoke_UnusualPatterns_ShouldWork(string pattern, char placeholder)
+        [Test]
+        [Arguments("%0", '0')]
+        [Arguments("@*", '@')]
+        [Arguments("__~", '~')]
+        public async Task UnusualPatterns_ShouldWork(string pattern, char placeholder)
         {
             var dictionary = new Dictionary<string, object>
             {
@@ -115,7 +115,7 @@ namespace Autossential.Activities.Tests.Activities
             };
 
             var result = WorkflowInvoker.Invoke(new ReplaceTokens(), inputs);
-            Assert.Contains("Alice", result);
+            await Assert.That(result).Contains("Alice");
         }
     }
 }

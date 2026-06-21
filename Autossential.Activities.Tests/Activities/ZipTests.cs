@@ -1,14 +1,14 @@
 using System.Activities;
 using System.IO.Compression;
 using System.Text;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
     public class ZipTests
     {
-        [Fact]
-        public void Invoke_CompressDirectory_CreatesZipWithAllFiles()
+        [Test]
+        public async Task CompressDirectory_CreatesZipWithAllFiles()
         {
             var dir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
             Directory.CreateDirectory(dir);
@@ -35,11 +35,11 @@ namespace Autossential.Activities.Tests.Activities
 
                 WorkflowInvoker.Invoke(new Zip(), inputs);
 
-                Assert.True(File.Exists(zipPath));
+                await Assert.That(File.Exists(zipPath)).IsTrue();
 
                 using var archive = ZipFile.OpenRead(zipPath);
                 var filesCount = archive.Entries.Count(e => !e.FullName.EndsWith("/"));
-                Assert.Equal(3, filesCount);
+                await Assert.That(filesCount).IsEqualTo(3);
             }
             finally
             {
@@ -48,8 +48,8 @@ namespace Autossential.Activities.Tests.Activities
             }
         }
 
-        [Fact]
-        public void Invoke_CompressSingleFile_DoesNotIncludeZipFileItself()
+        [Test]
+        public async Task CompressSingleFile_DoesNotIncludeZipFileItself()
         {
             var dir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
             Directory.CreateDirectory(dir);
@@ -69,14 +69,14 @@ namespace Autossential.Activities.Tests.Activities
 
                 WorkflowInvoker.Invoke(new Zip(), inputs);
 
-                Assert.True(File.Exists(zipPath));
+                await Assert.That(File.Exists(zipPath)).IsTrue();
 
                 using var archive = ZipFile.OpenRead(zipPath);
                 var files = archive.Entries.Where(e => !e.FullName.EndsWith("/")).Select(e => e.Name).ToArray();
 
-                Assert.Single(files);
-                Assert.Contains("file.txt", files);
-                Assert.DoesNotContain(Path.GetFileName(zipPath), files);
+                await Assert.That(files.Length).IsEqualTo(1);
+                await Assert.That(files).Contains("file.txt");
+                await Assert.That(files).DoesNotContain(Path.GetFileName(zipPath));
             }
             finally
             {

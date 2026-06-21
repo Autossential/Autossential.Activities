@@ -2,7 +2,7 @@ using System;
 using System.Activities;
 using System.Collections.Generic;
 using System.Data;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
@@ -22,8 +22,8 @@ namespace Autossential.Activities.Tests.Activities
         private const string ExpectedJSON = "[{\"Name\":\"Alice\",\"Age\":\"30\"},{\"Name\":\"Bob\",\"Age\":\"25\"}]";
         private const string ExpectedXML = "<DataTable><Row><Name>Alice</Name><Age>30</Age></Row><Row><Name>Bob</Name><Age>25</Age></Row></DataTable>";
 
-        [Fact]
-        public void Invoke_WithHTMLFormatDefault_ReturnsHTMLTable()
+        [Test]
+        public async Task WithHTMLFormatDefault_ReturnsHTMLTable()
         {
             var dt = CreateSampleDataTable();
 
@@ -34,11 +34,11 @@ namespace Autossential.Activities.Tests.Activities
             };
 
             var result = WorkflowInvoker.Invoke(activity, inputs);
-            Assert.Equal(ExpectedHTML, result);
+            await Assert.That(result).IsEqualTo(ExpectedHTML);
         }
 
-        [Fact]
-        public void Invoke_WithJSONFormatSet_ReturnsJSONText()
+        [Test]
+        public async Task WithJSONFormatSet_ReturnsJSONText()
         {
             var dt = CreateSampleDataTable();
 
@@ -49,11 +49,11 @@ namespace Autossential.Activities.Tests.Activities
             };
 
             var result = WorkflowInvoker.Invoke(activity, inputs);
-            Assert.Equal(ExpectedJSON, result);
+            await Assert.That(result).IsEqualTo(ExpectedJSON);
         }
 
-        [Fact]
-        public void Invoke_WithXMLFormatSet_ReturnsXMLText()
+        [Test]
+        public async Task WithXMLFormatSet_ReturnsXMLText()
         {
             var dt = CreateSampleDataTable();
 
@@ -64,11 +64,11 @@ namespace Autossential.Activities.Tests.Activities
             };
 
             var result = WorkflowInvoker.Invoke(activity, inputs);
-            Assert.Equal(ExpectedXML, result);
+            await Assert.That(result).IsEqualTo(ExpectedXML);
         }
 
-        [Fact]
-        public void Invoke_WithEmptyDataTable_ReturnsEmptyString()
+        [Test]
+        public async Task WithEmptyDataTable_ReturnsEmptyString()
         {
             var dt = new DataTable();
             dt.Columns.Add("Name");
@@ -80,11 +80,11 @@ namespace Autossential.Activities.Tests.Activities
             };
 
             var result = WorkflowInvoker.Invoke(activity, inputs);
-            Assert.Equal(string.Empty, result);
+            await Assert.That(result).IsEqualTo(string.Empty);
         }
 
-        [Fact]
-        public void Invoke_WithNullDataTable_ThrowsInvalidOperationException()
+        [Test]
+        public async Task WithNullDataTable_ThrowsInvalidOperationException()
         {
             var activity = new DataTableToText { OutputFormat = DataTableToText.OutputTextFormat.HTML };
             var inputs = new Dictionary<string, object>
@@ -92,15 +92,16 @@ namespace Autossential.Activities.Tests.Activities
                 ["DataTable"] = null!
             };
 
-            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(activity, inputs));
+            await Assert.That(() => WorkflowInvoker.Invoke(activity, inputs))
+                .Throws<InvalidOperationException>();
         }
 
-        [Theory]
-        [InlineData("dd-MMM-yyyy", typeof(DateTime))]
-        [InlineData("dddd MMM yyyy", typeof(DateTime))]
-        [InlineData("dd-MMM-yyyy", typeof(object))]
-        [InlineData("dddd MMM yyyy", typeof(object))]
-        public void Invoke_WithDateFormating_FormatAccordingly(string dateFormat, Type colType)
+        [Test]
+        [Arguments("dd-MMM-yyyy", typeof(DateTime))]
+        [Arguments("dddd MMM yyyy", typeof(DateTime))]
+        [Arguments("dd-MMM-yyyy", typeof(object))]
+        [Arguments("dddd MMM yyyy", typeof(object))]
+        public async Task WithDateFormating_FormatAccordingly(string dateFormat, Type colType)
         {
             var date = DateTime.Now;
             var dt = new DataTable();
@@ -119,7 +120,7 @@ namespace Autossential.Activities.Tests.Activities
                 DateTimeFormat = dateFormat
             }, inputs);
 
-            Assert.Contains(date.ToString(dateFormat), result);
+            await Assert.That(result).Contains(date.ToString(dateFormat));
         }
     }
 }

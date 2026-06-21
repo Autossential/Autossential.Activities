@@ -3,14 +3,14 @@ using System.Activities;
 using System.Collections.Generic;
 using System.Globalization;
 using Autossential.Activities.Models;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
     public class ParseDataTests
     {
-        [Fact]
-        public void Invoke_WithJsonContent_ParsesAsJson()
+        [Test]
+        public async Task WithJsonContent_ParsesAsJson()
         {
             var jsonContent = "{\"name\": \"Alice\", \"age\": 30}";
 
@@ -21,13 +21,13 @@ namespace Autossential.Activities.Tests.Activities
 
             var result = (DataNode)WorkflowInvoker.Invoke(new ParseData(), inputs);
 
-            Assert.NotNull(result);
-            Assert.Equal("Alice", result["name"].AsString());
-            Assert.Equal("30", result["age"].AsString());
+            await Assert.That(result).IsNotNull();
+            await Assert.That(result["name"].AsString()).IsEqualTo("Alice");
+            await Assert.That(result["age"].AsString()).IsEqualTo("30");
         }
 
-        [Fact]
-        public void Invoke_WithJsonArray_ParsesAsJsonArray()
+        [Test]
+        public async Task WithJsonArray_ParsesAsJsonArray()
         {
             var jsonContent = "[\"item1\", \"item2\", \"item3\"]";
 
@@ -38,11 +38,11 @@ namespace Autossential.Activities.Tests.Activities
 
             var result = (DataNode)WorkflowInvoker.Invoke(new ParseData(), inputs);
 
-            Assert.NotNull(result);
+            await Assert.That(result).IsNotNull();
         }
 
-        [Fact]
-        public void Invoke_WithYamlContent_ParsesAsYaml()
+        [Test]
+        public async Task WithYamlContent_ParsesAsYaml()
         {
             var yamlContent = "name: Bob\nage: 25";
 
@@ -53,11 +53,11 @@ namespace Autossential.Activities.Tests.Activities
 
             var result = (DataNode)WorkflowInvoker.Invoke(new ParseData(), inputs);
 
-            Assert.NotNull(result);
+            await Assert.That(result).IsNotNull();
         }
 
-        [Fact]
-        public void Invoke_WithEmptyContent_ReturnsNull()
+        [Test]
+        public async Task WithEmptyContent_ReturnsNull()
         {
             var inputs = new Dictionary<string, object>
             {
@@ -66,11 +66,11 @@ namespace Autossential.Activities.Tests.Activities
 
             var result = WorkflowInvoker.Invoke(new ParseData(), inputs);
 
-            Assert.Null(result);
+            await Assert.That(result).IsNull();
         }
 
-        [Fact]
-        public void Invoke_WithNullContent_ReturnsNull()
+        [Test]
+        public async Task WithNullContent_ReturnsNull()
         {
             var inputs = new Dictionary<string, object>
             {
@@ -79,11 +79,11 @@ namespace Autossential.Activities.Tests.Activities
 
             var result = WorkflowInvoker.Invoke(new ParseData(), inputs);
 
-            Assert.Null(result);
+            await Assert.That(result).IsNull();
         }
 
-        [Fact]
-        public void Invoke_WithCustomCulture_UsesCultureForParsing()
+        [Test]
+        public async Task WithCustomCulture_UsesCultureForParsing()
         {
             var jsonContent = "{\"value\": \"123,45\"}";
             var culture = new CultureInfo("pt-BR");
@@ -96,7 +96,7 @@ namespace Autossential.Activities.Tests.Activities
 
             var result = (DataNode)WorkflowInvoker.Invoke(new ParseData(), inputs);
 
-            Assert.NotNull(result);
+            await Assert.That(result).IsNotNull();
         }
     }
 }

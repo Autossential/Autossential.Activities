@@ -1,17 +1,16 @@
 using System.Activities;
 using System.IO.Compression;
 using System.Text;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
-    public class UnzipTests
+    public class UnzipTests:BaseTests
     {
-        [Fact]
-        public void Invoke_Unzip_CreatesFilesAndDirectories()
+        [Test]
+        public async Task Unzip_CreatesFilesAndDirectories()
         {
-            var dir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
-            Directory.CreateDirectory(dir);
+            var dir = NewDir();
             var zipPath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".zip");
 
             try
@@ -41,23 +40,21 @@ namespace Autossential.Activities.Tests.Activities
                 var extractedA = Path.Combine(extractTo, "a.txt");
                 var extractedC = Path.Combine(extractTo, "sub", "c.txt");
 
-                Assert.True(File.Exists(extractedA));
-                Assert.True(File.Exists(extractedC));
-                Assert.Equal("a-content", File.ReadAllText(extractedA));
-                Assert.Equal("c-content", File.ReadAllText(extractedC));
+                await Assert.That(File.Exists(extractedA)).IsTrue();
+                await Assert.That(File.Exists(extractedC)).IsTrue();
+                await Assert.That(File.ReadAllText(extractedA)).IsEqualTo("a-content");
+                await Assert.That(File.ReadAllText(extractedC)).IsEqualTo("c-content");
             }
             finally
             {
                 try { File.Delete(zipPath); } catch { }
-                try { Directory.Delete(dir, true); } catch { }
             }
         }
 
-        [Fact]
-        public void Invoke_Unzip_OverwriteFalse_ThrowsWhenFileExists()
+        [Test]
+        public async Task Unzip_OverwriteFalse_ThrowsWhenFileExists()
         {
-            var dir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
-            Directory.CreateDirectory(dir);
+            var dir = NewDir();
             var zipPath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".zip");
 
             try
@@ -81,15 +78,15 @@ namespace Autossential.Activities.Tests.Activities
                     ["Overwrite"] = false
                 };
 
-                Assert.Throws<System.IO.IOException>(() => WorkflowInvoker.Invoke(new Unzip(), inputs));
+                await Assert.That(() => WorkflowInvoker.Invoke(new Unzip(), inputs))
+                    .Throws<System.IO.IOException>();
 
                 // ensure original content still present
-                Assert.Equal("old-content", File.ReadAllText(existing));
+                await Assert.That(File.ReadAllText(existing)).IsEqualTo("old-content");
             }
             finally
             {
                 try { File.Delete(zipPath); } catch { }
-                try { Directory.Delete(dir, true); } catch { }
             }
         }
     }

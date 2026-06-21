@@ -2,14 +2,14 @@ using System;
 using System.Activities;
 using System.Collections.Generic;
 using System.Data;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
     public class RemoveEmptyRowsTests
     {
-        [Fact]
-        public void Invoke_WithEmptyRows_RemovesEmptyRows()
+        [Test]
+        public async Task WithEmptyRows_RemovesEmptyRows()
         {
             var dt = new DataTable();
             dt.Columns.Add("Name");
@@ -26,13 +26,13 @@ namespace Autossential.Activities.Tests.Activities
             WorkflowInvoker.Invoke(new RemoveEmptyRows(), inputs);
 
             var result = (DataTable)inputs["DataTable"];
-            Assert.Equal(2, result.Rows.Count);
-            Assert.Equal("Alice", result.Rows[0][0]);
-            Assert.Equal("Bob", result.Rows[1][0]);
+            await Assert.That(result.Rows.Count).IsEqualTo(2);
+            await Assert.That(result.Rows[0][0]).IsEqualTo("Alice");
+            await Assert.That(result.Rows[1][0]).IsEqualTo("Bob");
         }
 
-        [Fact]
-        public void Invoke_WithColumnNames_OnlyChecksSpecifiedColumns()
+        [Test]
+        public async Task WithColumnNames_OnlyChecksSpecifiedColumns()
         {
             var dt = new DataTable();
             dt.Columns.Add("Name");
@@ -50,13 +50,13 @@ namespace Autossential.Activities.Tests.Activities
             WorkflowInvoker.Invoke(new RemoveEmptyRows(), inputs);
 
             var result = (DataTable)inputs["DataTable"];
-            Assert.Equal(2, result.Rows.Count);
-            Assert.Equal("Alice", result.Rows[0][0]);
-            Assert.Equal("Bob", result.Rows[1][0]);
+            await Assert.That(result.Rows.Count).IsEqualTo(2);
+            await Assert.That(result.Rows[0][0]).IsEqualTo("Alice");
+            await Assert.That(result.Rows[1][0]).IsEqualTo("Bob");
         }
 
-        [Fact]
-        public void Invoke_WithColumnIndexes_OnlyChecksSpecifiedIndexes()
+        [Test]
+        public async Task WithColumnIndexes_OnlyChecksSpecifiedIndexes()
         {
             var dt = new DataTable();
             dt.Columns.Add("Name");
@@ -74,22 +74,23 @@ namespace Autossential.Activities.Tests.Activities
             WorkflowInvoker.Invoke(new RemoveEmptyRows(), inputs);
 
             var result = (DataTable)inputs["DataTable"];
-            Assert.Equal(2, result.Rows.Count);
+            await Assert.That(result.Rows.Count).IsEqualTo(2);
         }
 
-        [Fact]
-        public void Invoke_WithNullDataTable_ThrowsInvalidOperationException()
+        [Test]
+        public async Task WithNullDataTable_ThrowsInvalidOperationException()
         {
             var inputs = new Dictionary<string, object>
             {
                 ["DataTable"] = null!
             };
 
-            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new RemoveEmptyRows(), inputs));
+            await Assert.That(() => WorkflowInvoker.Invoke(new RemoveEmptyRows(), inputs))
+                .Throws<InvalidOperationException>();
         }
 
-        [Fact]
-        public void Invoke_WithNoEmptyRows_DoesNotRemoveAnyRows()
+        [Test]
+        public async Task WithNoEmptyRows_DoesNotRemoveAnyRows()
         {
             var dt = new DataTable();
             dt.Columns.Add("Name");
@@ -105,7 +106,7 @@ namespace Autossential.Activities.Tests.Activities
             WorkflowInvoker.Invoke(new RemoveEmptyRows(), inputs);
 
             var result = (DataTable)inputs["DataTable"];
-            Assert.Equal(2, result.Rows.Count);
+            await Assert.That(result.Rows.Count).IsEqualTo(2);
         }
     }
 }

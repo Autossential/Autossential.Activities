@@ -1,18 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net6.0;net6.0-windows</TargetFrameworks>
+		<TargetFrameworks>net6.0;net6.0-windows;net8.0;net8.0-windows</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<Platforms>AnyCPU;x64</Platforms>
 	</PropertyGroup>
 
 	<PropertyGroup>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<VersionBuild>$([System.DateTime]::UtcNow.DayOfYear.ToString("F0"))</VersionBuild>
 		<VersionRevision>$([System.DateTime]::UtcNow.TimeOfDay.TotalMinutes.ToString("F0"))</VersionRevision>
-		<VersionNumber>4.0.5</VersionNumber>
-		<VersionPrefix Condition="'$(Configuration)' == 'Release'">$(VersionNumber)</VersionPrefix>
-		<VersionPrefix Condition="'$(Configuration)' == 'Debug'">$(VersionNumber)-preview-$(VersionBuild)$(VersionRevision)</VersionPrefix>
+		<VersionPrefix>4.0.6</VersionPrefix>
+		<VersionSuffix Condition="'$(Configuration)' == 'Debug'">$(VersionBuild)-preview.$(VersionRevision)</VersionSuffix>
 		<Authors>Alexandre T. Perez</Authors>
 		<Product>Autossential.Activities.Packaging</Product>
 		<PackageId>Autossential.Activities</PackageId>

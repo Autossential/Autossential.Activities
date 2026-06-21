@@ -2,7 +2,6 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 using Autossential.Activities.Models;
 using UiPath.Studio.Activities.Api;
-using Xunit;
 
 namespace Autossential.Activities.Tests.Core
 {
@@ -10,158 +9,158 @@ namespace Autossential.Activities.Tests.Core
     {
         // ─── Construction & NodeType ─────────────────────────────────────────────
 
-        [Theory]
-        [InlineData(null)]
-        [InlineData("hello")]
-        [InlineData(42)]
-        [InlineData(true)]
-        [InlineData(3.14)]
-        public void Constructor_ScalarValues_YieldScalarType(object value)
+        [Test]
+        [Arguments(null)]
+        [Arguments("hello")]
+        [Arguments(42)]
+        [Arguments(true)]
+        [Arguments(3.14)]
+        public async Task Constructor_ScalarValues_YieldScalarType(object? value)
         {
             var node = new DataNode(value);
-            Assert.Equal(NodeType.Scalar, node.Type);
+            await Assert.That(node.Type).IsEqualTo(NodeType.Scalar);
         }
 
-        [Fact]
-        public void Constructor_Dictionary_YieldsMapType()
+        [Test]
+        public async Task Constructor_Dictionary_YieldsMapType()
         {
             var node = new DataNode(new Dictionary<string, object> { ["k"] = 1 });
-            Assert.Equal(NodeType.Map, node.Type);
+            await Assert.That(node.Type).IsEqualTo(NodeType.Map);
         }
 
-        [Fact]
-        public void Constructor_List_YieldsSequenceType()
+        [Test]
+        public async Task Constructor_List_YieldsSequenceType()
         {
             var node = new DataNode(new List<object> { 1, 2 });
-            Assert.Equal(NodeType.Sequence, node.Type);
+            await Assert.That(node.Type).IsEqualTo(NodeType.Sequence);
         }
 
-        [Fact]
-        public void Constructor_DataNodeValue_UnwrapsRawValue()
+        [Test]
+        public async Task Constructor_DataNodeValue_UnwrapsRawValue()
         {
             var inner = new DataNode("unwrapped");
             var node = new DataNode(inner);
-            Assert.Equal("unwrapped", node.RawValue);
+            await Assert.That(node.RawValue).IsEqualTo("unwrapped");
         }
 
-        [Fact]
-        public void DefaultConstructor_CreatesEmptyMap()
+        [Test]
+        public async Task DefaultConstructor_CreatesEmptyMap()
         {
             var node = new DataNode();
-            Assert.Equal(NodeType.Map, node.Type);
-            Assert.Empty(node.Keys);
+            await Assert.That(node.Type).IsEqualTo(NodeType.Map);
+            await Assert.That(node.Keys).IsEmpty();
         }
 
-        [Fact]
-        public void Empty_CreatesEmptyMapWithCulture()
+        [Test]
+        public async Task Empty_CreatesEmptyMapWithCulture()
         {
             var culture = CultureInfo.GetCultureInfo("pt-BR");
             var node = DataNode.Empty(culture);
-            Assert.Equal(NodeType.Map, node.Type);
-            Assert.Equal(culture, node.Culture);
+            await Assert.That(node.Type).IsEqualTo(NodeType.Map);
+            await Assert.That(node.Culture).IsEqualTo(culture);
         }
 
-        [Fact]
-        public void Constructor_NullCulture_FallsBackToInvariant()
+        [Test]
+        public async Task Constructor_NullCulture_FallsBackToInvariant()
         {
             var node = new DataNode("x", null);
-            Assert.Equal(CultureInfo.InvariantCulture, node.Culture);
+            await Assert.That(node.Culture).IsEqualTo(CultureInfo.InvariantCulture);
         }
 
         // ─── Normalize: IDictionary / IEnumerable ────────────────────────────────
 
-        [Fact]
-        public void Normalize_Hashtable_ConvertsToDictionaryStringObject()
+        [Test]
+        public async Task Normalize_Hashtable_ConvertsToDictionaryStringObject()
         {
             var ht = new System.Collections.Hashtable { ["key"] = 99 };
             var node = new DataNode(ht);
-            Assert.Equal(NodeType.Map, node.Type);
-            Assert.Equal(99, node["key"].AsInt());
+            await Assert.That(node.Type).IsEqualTo(NodeType.Map);
+            await Assert.That(node["key"].AsInt()).IsEqualTo(99);
         }
 
-        [Fact]
-        public void Normalize_Array_ConvertsToSequence()
+        [Test]
+        public async Task Normalize_Array_ConvertsToSequence()
         {
             var node = new DataNode(new[] { "a", "b", "c" });
-            Assert.Equal(NodeType.Sequence, node.Type);
-            Assert.Equal(3, node.AsSequence<string>().Count);
+            await Assert.That(node.Type).IsEqualTo(NodeType.Sequence);
+            await Assert.That(node.AsSequence<string>().Count).IsEqualTo(3);
         }
 
         // ─── HasValue / Exists ───────────────────────────────────────────────────
 
-        [Theory]
-        [InlineData("value", true)]
-        [InlineData(null, false)]
-        public void HasValue_ReflectsNullness(object value, bool expected)
+        [Test]
+        [Arguments("value", true)]
+        [Arguments(null, false)]
+        public async Task HasValue_ReflectsNullness(object value, bool expected)
         {
             var node = new DataNode(value);
-            Assert.Equal(expected, node.HasValue());
+            await Assert.That(node.HasValue()).IsEqualTo(expected);
         }
 
-        [Fact]
-        public void ContainsPath_Contains_ReturnsTrue()
+        [Test]
+        public async Task ContainsPath_Contains_ReturnsTrue()
         {
             var node = new DataNode(new Dictionary<string, object> { ["a"] = 1 });
-            Assert.True(node.HasNode("a"));
+            await Assert.That(node.HasNode("a")).IsTrue();
         }
 
-        [Fact]
-        public void ContainsPath_Missing_ReturnsFalse()
+        [Test]
+        public async Task ContainsPath_Missing_ReturnsFalse()
         {
             var node = new DataNode(new Dictionary<string, object> { ["a"] = 1 });
-            Assert.False(node.HasNode("z"));
+            await Assert.That(node.HasNode("z")).IsFalse();
         }
 
-        [Fact]
-        public void HasValue_KeyPath_FalseForNullEntry()
+        [Test]
+        public async Task HasValue_KeyPath_FalseForNullEntry()
         {
             var node = new DataNode(new Dictionary<string, object> { ["x"] = null });
-            Assert.False(node.HasValue("x"));
+            await Assert.That(node.HasValue("x")).IsFalse();
         }
 
         // ─── Path Navigation ─────────────────────────────────────────────────────
 
-        [Fact]
-        public void GetNode_DotSeparatedPath_ReturnsCorrectNode()
+        [Test]
+        public async Task GetNode_DotSeparatedPath_ReturnsCorrectNode()
         {
             var node = new DataNode(new Dictionary<string, object>
             {
                 ["a"] = new Dictionary<string, object> { ["b"] = "deep" }
             });
-            Assert.Equal("deep", node.GetNode("a.b").AsString());
+            await Assert.That(node.GetNode("a.b").AsString()).IsEqualTo("deep");
         }
 
-        [Fact]
-        public void GetNode_IndexPath_ReturnsCorrectElement()
+        [Test]
+        public async Task GetNode_IndexPath_ReturnsCorrectElement()
         {
             var node = new DataNode(new Dictionary<string, object>
             {
                 ["items"] = new List<object> { "x", "y", "z" }
             });
-            Assert.Equal("y", node.GetNode("items[1]").AsString());
+            await Assert.That(node.GetNode("items[1]").AsString()).IsEqualTo("y");
         }
 
-        [Fact]
-        public void GetNode_QuotedKey_NavigatesDottedKey()
+        [Test]
+        public async Task GetNode_QuotedKey_NavigatesDottedKey()
         {
             var node = new DataNode(new Dictionary<string, object>
             {
                 ["error.rate"] = 0.5
             });
-            Assert.Equal(0.5, node.GetNode("['error.rate']").AsDouble());
+            await Assert.That(node.GetNode("['error.rate']").AsDouble()).IsEqualTo(0.5);
         }
 
-        [Fact]
-        public void GetNode_MissingPath_ReturnsNullScalar()
+        [Test]
+        public async Task GetNode_MissingPath_ReturnsNullScalar()
         {
             var node = new DataNode(new Dictionary<string, object> { ["a"] = 1 });
             var result = node.GetNode("missing");
-            Assert.Equal(NodeType.Scalar, result.Type);
+            await Assert.That(result.Type).IsEqualTo(NodeType.Scalar);
             Assert.Null(result.RawValue);
         }
 
-        [Fact]
-        public void GetNode_OutOfBoundsIndex_ReturnsNullScalar()
+        [Test]
+        public async Task GetNode_OutOfBoundsIndex_ReturnsNullScalar()
         {
             var node = new DataNode(new Dictionary<string, object>
             {
@@ -171,11 +170,11 @@ namespace Autossential.Activities.Tests.Core
             Assert.Null(result.RawValue);
         }
 
-        [Theory]
-        [InlineData("server.host")]
-        [InlineData("SERVER.Host")]
-        [InlineData("server.Security.ROLES.admin")]
-        public void GetNode_InsensitiveCase_ReturnsValue(string keyPath)
+        [Test]
+        [Arguments("server.host")]
+        [Arguments("SERVER.Host")]
+        [Arguments("server.Security.ROLES.admin")]
+        public async Task GetNode_InsensitiveCase_ReturnsValue(string keyPath)
         {
             var node = new DataNode(new Dictionary<string, object>
             {
@@ -203,215 +202,215 @@ namespace Autossential.Activities.Tests.Core
             Assert.NotNull(result);
         }
 
-        [Fact]
-        public void Indexer_Set_WritesValueIntoMap()
+        [Test]
+        public async Task Indexer_Set_WritesValueIntoMap()
         {
             var node = new DataNode();
             node["greeting"] = new DataNode("hello");
-            Assert.Equal("hello", node["greeting"].AsString());
+            await Assert.That(node["greeting"].AsString()).IsEqualTo("hello");
         }
 
-        [Fact]
-        public void Indexer_Set_CreatesIntermediateMaps()
+        [Test]
+        public async Task Indexer_Set_CreatesIntermediateMaps()
         {
             var node = new DataNode();
             node["a.b"] = new DataNode(42);
-            Assert.Equal(42, node["a.b"].AsInt());
+            await Assert.That(node["a.b"].AsInt()).IsEqualTo(42);
         }
 
-        [Fact]
-        public void Assign_NewKey_CaseSensitive()
+        [Test]
+        public async Task Assign_NewKey_CaseSensitive()
         {
             var node = new DataNode();
             node["A.B.C"] = new DataNode(100);
-            Assert.False(node.HasNode("a.B.c"));
-            Assert.True(node.HasNode("A.B.C"));
+            await Assert.That(node.HasNode("a.B.c")).IsFalse();
+            await Assert.That(node.HasNode("A.B.C")).IsTrue();
         }
 
-        [Fact]
-        public void Assign_RawValue_DictionaryConvertedToCaseSensitive()
+        [Test]
+        public async Task Assign_RawValue_DictionaryConvertedToCaseSensitive()
         {
             var node = new DataNode();
             node["A"] = new DataNode(new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase)
             {
                 { "B", 100 }
             });
-            Assert.False(node.HasNode("a.b"));
-            Assert.True(node.HasNode("A.B"));
+            await Assert.That(node.HasNode("a.b")).IsFalse();
+            await Assert.That(node.HasNode("A.B")).IsTrue();
         }
 
         // ─── Keys ────────────────────────────────────────────────────────────────
 
-        [Fact]
-        public void Keys_MapNode_ReturnsAllKeys()
+        [Test]
+        public async Task Keys_MapNode_ReturnsAllKeys()
         {
             var node = new DataNode(new Dictionary<string, object> { ["x"] = 1, ["y"] = 2 });
-            Assert.Equal(["x", "y"], node.Keys.OrderBy(k => k));
+            await Assert.That(node.Keys.OrderBy(x => x)).IsEquivalentTo(["x", "y"]);
         }
 
-        [Fact]
-        public void Keys_NonMapNode_ReturnsEmpty()
+        [Test]
+        public async Task Keys_NonMapNode_ReturnsEmpty()
         {
             var node = new DataNode("scalar");
-            Assert.Empty(node.Keys);
+            await Assert.That(node.Keys).IsEmpty();
         }
 
         // ─── Scalar Conversions ──────────────────────────────────────────────────
 
-        [Theory]
-        [InlineData("42", 42)]
-        [InlineData(42, 42)]
-        [InlineData(42.3, 42)]
-        [InlineData(42.9, 43)]
-        public void AsInt_VariousInputs_Converts(object value, int expected)
+        [Test]
+        [Arguments("42", 42)]
+        [Arguments(42, 42)]
+        [Arguments(42.3, 42)]
+        [Arguments(42.9, 43)]
+        public async Task AsInt_VariousInputs_Converts(object value, int expected)
         {
-            Assert.Equal(expected, new DataNode(value).AsInt());
+            await Assert.That(new DataNode(value).AsInt()).IsEqualTo(expected);
         }
 
-        [Theory]
-        [InlineData("3.14")]
-        [InlineData("not-a-number")]
-        public void AsInt_InvalidInput_ThrowsOrReturnsDefault(string value)
+        [Test]
+        [Arguments("3.14")]
+        [Arguments("not-a-number")]
+        public async Task AsInt_InvalidInput_ThrowsOrReturnsDefault(string value)
         {
             var node = new DataNode(value);
             Assert.Throws<FormatException>(() => node.AsInt());
-            Assert.Equal(-1, node.AsIntOrDefault(-1));
+            await Assert.That(node.AsIntOrDefault(-1)).IsEqualTo(-1);
         }
 
-        [Theory]
-        [InlineData("true", true)]
-        [InlineData("1", true)]
-        [InlineData("false", false)]
-        [InlineData("0", false)]
-        [InlineData(true, true)]
-        public void AsBool_StringAndBoolInputs_Converts(object value, bool expected)
+        [Test]
+        [Arguments("true", true)]
+        [Arguments("1", true)]
+        [Arguments("false", false)]
+        [Arguments("0", false)]
+        [Arguments(true, true)]
+        public async Task AsBool_StringAndBoolInputs_Converts(object value, bool expected)
         {
-            Assert.Equal(expected, new DataNode(value).AsBool());
+            await Assert.That(new DataNode(value).AsBool()).IsEqualTo(expected);
         }
 
-        [Fact]
-        public void AsBool_InvalidString_Throws()
+        [Test]
+        public async Task AsBool_InvalidString_Throws()
         {
             Assert.Throws<FormatException>(() => new DataNode("yes").AsBool());
         }
 
-        [Theory]
-        [InlineData("1.5", 1.5f)]
-        [InlineData(1.5f, 1.5f)]
-        public void AsFloat_Converts(object value, float expected)
+        [Test]
+        [Arguments("1.5", 1.5f)]
+        [Arguments(1.5f, 1.5f)]
+        public async Task AsFloat_Converts(object value, float expected)
         {
-            Assert.Equal(expected, new DataNode(value).AsFloat(), precision: 5);
+            await Assert.That(new DataNode(value).AsFloat()).IsEqualTo(expected);
         }
 
-        [Theory]
-        [InlineData("1.5", 1.5)]
-        [InlineData(1.5, 1.5)]
-        public void AsDouble_Converts(object value, double expected)
+        [Test]
+        [Arguments("1.5", 1.5)]
+        [Arguments(1.5, 1.5)]
+        public async Task AsDouble_Converts(object value, double expected)
         {
-            Assert.Equal(expected, new DataNode(value).AsDouble(), precision: 10);
+            await Assert.That(new DataNode(value).AsDouble()).IsEqualTo(expected);
         }
 
-        [Theory]
-        [InlineData("3.14")]
-        [InlineData("0")]
-        public void AsDecimal_ValidString_Converts(string value)
+        [Test]
+        [Arguments("3.14")]
+        [Arguments("0")]
+        public async Task AsDecimal_ValidString_Converts(string value)
         {
             var expected = decimal.Parse(value, CultureInfo.InvariantCulture);
-            Assert.Equal(expected, new DataNode(value).AsDecimal());
+            await Assert.That(new DataNode(value).AsDecimal()).IsEqualTo(expected);
         }
 
-        [Fact]
-        public void AsString_NullValue_ReturnsNull()
+        [Test]
+        public async Task AsString_NullValue_ReturnsNull()
         {
             Assert.Null(new DataNode(null).AsString());
         }
 
-        [Fact]
-        public void AsStringOrDefault_NullValue_ReturnsDefault()
+        [Test]
+        public async Task AsStringOrDefault_NullValue_ReturnsDefault()
         {
-            Assert.Equal("default", new DataNode(null).AsStringOrDefault("default"));
+            await Assert.That(new DataNode(null).AsStringOrDefault("default")).IsEqualTo("default");
         }
 
-        [Fact]
-        public void AsDateTime_ValidString_Converts()
+        [Test]
+        public async Task AsDateTime_ValidString_Converts()
         {
             var dt = new DateTime(2024, 6, 1);
             var node = new DataNode(dt.ToString(CultureInfo.InvariantCulture));
-            Assert.Equal(dt.Date, node.AsDateTime().Date);
+            await Assert.That(node.AsDateTime().Date).IsEqualTo(dt.Date);
         }
 
-        [Fact]
-        public void AsDateTimeOrDefault_Invalid_ReturnsDefault()
+        [Test]
+        public async Task AsDateTimeOrDefault_Invalid_ReturnsDefault()
         {
             var fallback = new DateTime(2000, 1, 1);
-            Assert.Equal(fallback, new DataNode("not-a-date").AsDateTimeOrDefault(fallback));
+            await Assert.That(new DataNode("not-a-date").AsDateTimeOrDefault(fallback)).IsEqualTo(fallback);
         }
 
-        [Fact]
-        public void AsRegex_ValidPattern_ReturnsRegex()
+        [Test]
+        public async Task AsRegex_ValidPattern_ReturnsRegex()
         {
             var node = new DataNode(@"\d+");
             var regex = node.AsRegex();
-            Assert.Matches(regex, "123");
+            await Assert.That(regex.IsMatch("123")).IsTrue();
         }
 
-        [Fact]
-        public void AsRegex_WithOptions_AppliesOptions()
+        [Test]
+        public async Task AsRegex_WithOptions_AppliesOptions()
         {
             var node = new DataNode("hello");
             var regex = node.AsRegex(RegexOptions.IgnoreCase);
-            Assert.Matches(regex, "HELLO");
+            await Assert.That(regex.IsMatch("HELLO")).IsTrue();
         }
 
-        [Fact]
-        public void AsRegexOrDefault_NullValue_ReturnsDefault()
+        [Test]
+        public async Task AsRegexOrDefault_NullValue_ReturnsDefault()
         {
             var fallback = new Regex("fallback");
             var result = new DataNode(null).AsRegexOrDefault(fallback);
-            Assert.Same(fallback, result);
+            await Assert.That(result).IsSameReferenceAs(fallback);
         }
 
         // ─── OrDefault shortcuts (null node) ────────────────────────────────────
 
-        [Fact]
-        public void OrDefault_NullNode_ReturnsDefault()
+        [Test]
+        public async Task OrDefault_NullNode_ReturnsDefault()
         {
             var node = new DataNode(null);
-            Assert.Equal(99, node.AsIntOrDefault(99));
-            Assert.Equal(99L, node.AsLongOrDefault(99));
-            Assert.Equal(9.9f, node.AsFloatOrDefault(9.9f));
-            Assert.Equal(9.9, node.AsDoubleOrDefault(9.9));
-            Assert.Equal(9.9m, node.AsDecimalOrDefault(9.9m));
-            Assert.True(node.AsBoolOrDefault(true));
+            await Assert.That(node.AsIntOrDefault(99)).IsEqualTo(99);
+            await Assert.That(node.AsLongOrDefault(99)).IsEqualTo(99L);
+            await Assert.That(node.AsFloatOrDefault(9.9f)).IsEqualTo(9.9f);
+            await Assert.That(node.AsDoubleOrDefault(9.9)).IsEqualTo(9.9);
+            await Assert.That(node.AsDecimalOrDefault(9.9m)).IsEqualTo(9.9m);
+            await Assert.That(node.AsBoolOrDefault(true)).IsTrue();
         }
 
         // ─── AsSequence ──────────────────────────────────────────────────────────
 
-        [Fact]
-        public void AsSequence_IntList_ConvertsElements()
+        [Test]
+        public async Task AsSequence_IntList_ConvertsElements()
         {
             var node = new DataNode(new List<object> { 1, 2, 3 });
             var result = node.AsSequence<int>();
-            Assert.Equal(new[] { 1, 2, 3 }, result);
+            await Assert.That(result).IsEquivalentTo([1, 2, 3]);
         }
 
-        [Fact]
-        public void AsSequence_NonSequenceNode_Throws()
+        [Test]
+        public async Task AsSequence_NonSequenceNode_Throws()
         {
             var node = new DataNode("scalar");
             Assert.Throws<InvalidOperationException>(() => node.AsSequence<string>());
         }
 
-        [Fact]
-        public void AsSequenceOrDefault_NonSequenceNode_ReturnsDefault()
+        [Test]
+        public async Task AsSequenceOrDefault_NonSequenceNode_ReturnsDefault()
         {
             var fallback = new List<string> { "default" };
             var result = new DataNode("scalar").AsSequenceOrDefault(fallback);
-            Assert.Same(fallback, result);
+            await Assert.That(result).IsSameReferenceAs(fallback);
         }
 
-        [Fact]
-        public void AsSequence_DataNode_ConvertsElements()
+        [Test]
+        public async Task AsSequence_DataNode_ConvertsElements()
         {
             var node = new DataNode(new Dictionary<string, object>
             {
@@ -419,47 +418,47 @@ namespace Autossential.Activities.Tests.Core
             });
 
             var result = node.AsSequence<DataNode>("NotesArray");
-            Assert.Equal(3, result.Count);
+            await Assert.That(result.Count).IsEqualTo(3);
         }
 
         // ─── AsMap ───────────────────────────────────────────────────────────────
 
-        [Fact]
-        public void AsMap_MapNode_ReturnsDictionary()
+        [Test]
+        public async Task AsMap_MapNode_ReturnsDictionary()
         {
             var node = new DataNode(new Dictionary<string, object> { ["k"] = "v" });
             var map = node.AsMap();
-            Assert.Equal("v", map["k"]);
+            await Assert.That(map["k"]).IsEqualTo("v");
         }
 
-        [Fact]
-        public void AsMap_NonMapNode_Throws()
+        [Test]
+        public async Task AsMap_NonMapNode_Throws()
         {
             Assert.Throws<InvalidOperationException>(() => new DataNode("x").AsMap());
         }
 
         // ─── Merge ───────────────────────────────────────────────────────────────
 
-        [Fact]
-        public void Merge_NewKey_AddsToTarget()
+        [Test]
+        public async Task Merge_NewKey_AddsToTarget()
         {
             var target = new DataNode(new Dictionary<string, object> { ["a"] = 1 });
             var source = new DataNode(new Dictionary<string, object> { ["b"] = 2 });
             target.Merge(source);
-            Assert.Equal(2, target["b"].AsInt());
+            await Assert.That(target["b"].AsInt()).IsEqualTo(2);
         }
 
-        [Fact]
-        public void Merge_OverlappingScalar_SourceOverwrites()
+        [Test]
+        public async Task Merge_OverlappingScalar_SourceOverwrites()
         {
             var target = new DataNode(new Dictionary<string, object> { ["x"] = "old" });
             var source = new DataNode(new Dictionary<string, object> { ["x"] = "new" });
             target.Merge(source);
-            Assert.Equal("new", target["x"].AsString());
+            await Assert.That(target["x"].AsString()).IsEqualTo("new");
         }
 
-        [Fact]
-        public void Merge_NestedMap_MergesRecursively()
+        [Test]
+        public async Task Merge_NestedMap_MergesRecursively()
         {
             var target = new DataNode(new Dictionary<string, object>
             {
@@ -470,20 +469,20 @@ namespace Autossential.Activities.Tests.Core
                 ["outer"] = new Dictionary<string, object> { ["b"] = 2 }
             });
             target.Merge(source);
-            Assert.Equal(1, target["outer.a"].AsInt());
-            Assert.Equal(2, target["outer.b"].AsInt());
+            await Assert.That(target["outer.a"].AsInt()).IsEqualTo(1);
+            await Assert.That(target["outer.b"].AsInt()).IsEqualTo(2);
         }
 
-        [Fact]
-        public void Merge_NullSource_LeavesTargetUnchanged()
+        [Test]
+        public async Task Merge_NullSource_LeavesTargetUnchanged()
         {
             var target = new DataNode(new Dictionary<string, object> { ["a"] = 1 });
             target.Merge(null);
-            Assert.Equal(1, target["a"].AsInt());
+            await Assert.That(target["a"].AsInt()).IsEqualTo(1);
         }
 
-        [Fact]
-        public void Merge_NonMapTarget_Throws()
+        [Test]
+        public async Task Merge_NonMapTarget_Throws()
         {
             var node = new DataNode("scalar");
             Assert.Throws<InvalidOperationException>(() =>
@@ -492,69 +491,69 @@ namespace Autossential.Activities.Tests.Core
 
         // ─── ToString ────────────────────────────────────────────────────────────
 
-        [Theory]
-        [InlineData("hello", "hello")]
-        [InlineData(null, "(null)")]
-        public void ToString_Scalar_ReturnsExpected(object value, string expected)
+        [Test]
+        [Arguments("hello", "hello")]
+        [Arguments(null, "(null)")]
+        public async Task ToString_Scalar_ReturnsExpected(object value, string expected)
         {
-            Assert.Equal(expected, new DataNode(value).ToString());
+            await Assert.That(new DataNode(value).ToString()).IsEqualTo(expected);
         }
 
-        [Fact]
-        public void ToString_Sequence_ReturnsItemCount()
+        [Test]
+        public async Task ToString_Sequence_ReturnsItemCount()
         {
             var node = new DataNode(new List<object> { 1, 2 });
-            Assert.Equal("[Sequence, 2 items]", node.ToString());
+            await Assert.That(node.ToString()).IsEqualTo("[Sequence, 2 items]");
         }
 
-        [Fact]
-        public void ToString_Map_ReturnsKeyCount()
+        [Test]
+        public async Task ToString_Map_ReturnsKeyCount()
         {
             var node = new DataNode(new Dictionary<string, object> { ["a"] = 1, ["b"] = 2 });
-            Assert.Equal("[Map, 2 keys]", node.ToString());
+            await Assert.That(node.ToString()).IsEqualTo("[Map, 2 keys]");
         }
 
         // ─── Navigation Methods (partial class) ──────────────────────────────────
 
-        [Fact]
-        public void NavigationMethods_AsInt_ReturnsValueAtPath()
+        [Test]
+        public async Task NavigationMethods_AsInt_ReturnsValueAtPath()
         {
             var node = new DataNode(new Dictionary<string, object>
             {
                 ["count"] = 7
             });
-            Assert.Equal(7, node.AsInt("count"));
-            Assert.Equal(0, node.AsIntOrDefault("missing", 0));
+            await Assert.That(node.AsInt("count")).IsEqualTo(7);
+            await Assert.That(node.AsIntOrDefault("missing", 0)).IsEqualTo(0);
         }
 
-        [Fact]
-        public void NavigationMethods_AsSequence_ReturnsListAtPath()
+        [Test]
+        public async Task NavigationMethods_AsSequence_ReturnsListAtPath()
         {
             var node = new DataNode(new Dictionary<string, object>
             {
                 ["tags"] = new List<object> { "a", "b" }
             });
-            Assert.Equal(new[] { "a", "b" }, node.AsSequence<string>("tags"));
+            await Assert.That(node.AsSequence<string>("tags")).IsEquivalentTo(["a", "b"]);
         }
 
-        [Fact]
-        public void NavigationMethods_AsRegex_ReturnsRegexAtPath()
+        [Test]
+        public async Task NavigationMethods_AsRegex_ReturnsRegexAtPath()
         {
             var node = new DataNode(new Dictionary<string, object>
             {
                 ["pattern"] = @"\w+"
             });
             var regex = node.AsRegex("pattern");
-            Assert.Matches(regex, "word");
+            await Assert.That(regex.IsMatch("word")).IsTrue();
         }
 
-        [Fact]
-        public void NavigationMethods_AsRegexOrDefault_MissingPath_ReturnsDefault()
+        [Test]
+        public async Task NavigationMethods_AsRegexOrDefault_MissingPath_ReturnsDefault()
         {
             var fallback = new Regex("fallback");
             var node = new DataNode(new Dictionary<string, object>());
             var result = node.AsRegexOrDefault("missing", fallback);
-            Assert.Same(fallback, result);
+            await Assert.That(result).IsSameReferenceAs(fallback);
         }
     }
 }

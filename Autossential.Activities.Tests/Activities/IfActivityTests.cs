@@ -3,14 +3,12 @@ using System.Activities;
 using System.Activities.Expressions;
 using System.Activities.Statements;
 using System.Activities.Validation;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
     public class IfActivityTests
     {
-        // ─── Helpers ────────────────────────────────────────────────────────────
-
         /// <summary>
         /// Creates an ActivityFunc&lt;bool&gt; whose Handler always returns the given literal value.
         /// </summary>
@@ -24,38 +22,38 @@ namespace Autossential.Activities.Tests.Activities
         private static Activity RecordActivity(IList<string> log, string token) =>
             new ActionInvoker(() => log.Add(token));
 
-        [Fact]
-        public void Constructor_ShouldInitializeConditionAsEmptyActivityFunc()
+        [Test]
+        public async Task ShouldInitializeConditionAsEmptyActivityFunc()
         {
             var activity = new IfActivity();
 
-            Assert.NotNull(activity.Condition);
-            Assert.IsType<ActivityFunc<bool>>(activity.Condition);
-            Assert.Null(activity.Condition.Handler);
+            await Assert.That(activity.Condition).IsNotNull();
+            await Assert.That(activity.Condition).IsTypeOf<ActivityFunc<bool>>();
+            await Assert.That(activity.Condition.Handler).IsNull();
         }
 
-        [Fact]
-        public void Constructor_ShouldInitializeThenAsEmptySequence()
+        [Test]
+        public async Task ShouldInitializeThenAsEmptySequence()
         {
             var activity = new IfActivity();
 
-            Assert.NotNull(activity.Then);
-            Assert.IsType<Sequence>(activity.Then);
-            Assert.Equal(string.Empty, activity.Then.DisplayName);
+            await Assert.That(activity.Then).IsNotNull();
+            await Assert.That(activity.Then).IsTypeOf<Sequence>();
+            await Assert.That(activity.Then.DisplayName).IsEqualTo(string.Empty);
         }
 
-        [Fact]
-        public void Constructor_ShouldInitializeElseAsEmptySequence()
+        [Test]
+        public async Task ShouldInitializeElseAsEmptySequence()
         {
             var activity = new IfActivity();
 
-            Assert.NotNull(activity.Else);
-            Assert.IsType<Sequence>(activity.Else);
-            Assert.Equal(string.Empty, activity.Else.DisplayName);
+            await Assert.That(activity.Else).IsNotNull();
+            await Assert.That(activity.Else).IsTypeOf<Sequence>();
+            await Assert.That(activity.Else.DisplayName).IsEqualTo(string.Empty);
         }
 
-        [Fact]
-        public void Validation_ShouldFail_WhenConditionHandlerIsNull()
+        [Test]
+        public async Task Validation_ShouldFail_WhenConditionHandlerIsNull()
         {
             var activity = new IfActivity
             {
@@ -65,11 +63,11 @@ namespace Autossential.Activities.Tests.Activities
 
             var results = ActivityValidationServices.Validate(activity);
 
-            Assert.NotEmpty(results.Errors);
+            await Assert.That(results.Errors).IsNotEmpty();
         }
 
-        [Fact]
-        public void Validation_ShouldFail_WhenConditionIsNull()
+        [Test]
+        public async Task Validation_ShouldFail_WhenConditionIsNull()
         {
             var activity = new IfActivity
             {
@@ -78,11 +76,11 @@ namespace Autossential.Activities.Tests.Activities
 
             var results = ActivityValidationServices.Validate(activity);
 
-            Assert.NotEmpty(results.Errors);
+            await Assert.That(results.Errors).IsNotEmpty();
         }
 
-        [Fact]
-        public void Validation_ShouldSucceed_WhenConditionHandlerReturnsBoolean()
+        [Test]
+        public async Task Validation_ShouldSucceed_WhenConditionHandlerReturnsBoolean()
         {
             var activity = new IfActivity
             {
@@ -91,13 +89,13 @@ namespace Autossential.Activities.Tests.Activities
 
             var results = ActivityValidationServices.Validate(activity);
 
-            Assert.Empty(results.Errors);
+            await Assert.That(results.Errors).IsEmpty();
         }
 
         // ─── Integration: condition == true ──────────────────────────────────
 
-        [Fact]
-        public void Execute_ShouldRunThenBranch_WhenConditionIsTrue()
+        [Test]
+        public async Task ShouldRunThenBranch_WhenConditionIsTrue()
         {
             var log = new List<string>();
 
@@ -110,11 +108,11 @@ namespace Autossential.Activities.Tests.Activities
 
             WorkflowInvoker.Invoke(activity);
 
-            Assert.Equal(new[] { "then" }, log);
+            await Assert.That(log).IsEquivalentTo(new[] { "then" });
         }
 
-        [Fact]
-        public void Execute_ShouldNotRunElseBranch_WhenConditionIsTrue()
+        [Test]
+        public async Task ShouldNotRunElseBranch_WhenConditionIsTrue()
         {
             var log = new List<string>();
 
@@ -127,13 +125,13 @@ namespace Autossential.Activities.Tests.Activities
 
             WorkflowInvoker.Invoke(activity);
 
-            Assert.DoesNotContain("else", log);
+            await Assert.That(log).DoesNotContain("else");
         }
 
         // ─── Integration: condition == false ─────────────────────────────────
 
-        [Fact]
-        public void Execute_ShouldRunElseBranch_WhenConditionIsFalse()
+        [Test]
+        public async Task ShouldRunElseBranch_WhenConditionIsFalse()
         {
             var log = new List<string>();
 
@@ -146,11 +144,11 @@ namespace Autossential.Activities.Tests.Activities
 
             WorkflowInvoker.Invoke(activity);
 
-            Assert.Equal(new[] { "else" }, log);
+            await Assert.That(log).IsEquivalentTo(new[] { "else" });
         }
 
-        [Fact]
-        public void Execute_ShouldNotRunThenBranch_WhenConditionIsFalse()
+        [Test]
+        public async Task ShouldNotRunThenBranch_WhenConditionIsFalse()
         {
             var log = new List<string>();
 
@@ -163,13 +161,13 @@ namespace Autossential.Activities.Tests.Activities
 
             WorkflowInvoker.Invoke(activity);
 
-            Assert.DoesNotContain("then", log);
+            await Assert.That(log).DoesNotContain("then");
         }
 
         // ─── Integration: null branches ──────────────────────────────────────
 
-        [Fact]
-        public void Execute_ShouldNotThrow_WhenThenIsNullAndConditionIsTrue()
+        [Test]
+        public void ShouldNotThrow_WhenThenIsNullAndConditionIsTrue()
         {
             var activity = new IfActivity
             {
@@ -177,14 +175,12 @@ namespace Autossential.Activities.Tests.Activities
                 Then = null,
                 Else = null
             };
-
-            // Must complete without throwing
-            var ex = Record.Exception(() => WorkflowInvoker.Invoke(activity));
-            Assert.Null(ex);
+                        
+            WorkflowInvoker.Invoke(activity);
         }
 
-        [Fact]
-        public void Execute_ShouldNotThrow_WhenElseIsNullAndConditionIsFalse()
+        [Test]
+        public void ShouldNotThrow_WhenElseIsNullAndConditionIsFalse()
         {
             var activity = new IfActivity
             {
@@ -193,12 +189,11 @@ namespace Autossential.Activities.Tests.Activities
                 Else = null
             };
 
-            var ex = Record.Exception(() => WorkflowInvoker.Invoke(activity));
-            Assert.Null(ex);
+            WorkflowInvoker.Invoke(activity);
         }
 
-        [Fact]
-        public void Execute_ShouldRunElse_WhenThenIsNullAndConditionIsFalse()
+        [Test]
+        public async Task ShouldRunElse_WhenThenIsNullAndConditionIsFalse()
         {
             var log = new List<string>();
 
@@ -211,11 +206,11 @@ namespace Autossential.Activities.Tests.Activities
 
             WorkflowInvoker.Invoke(activity);
 
-            Assert.Equal(new[] { "else" }, log);
+            await Assert.That(log).IsEquivalentTo(new[] { "else" });
         }
 
-        [Fact]
-        public void Execute_ShouldRunThen_WhenElseIsNullAndConditionIsTrue()
+        [Test]
+        public async Task ShouldRunThen_WhenElseIsNullAndConditionIsTrue()
         {
             var log = new List<string>();
 
@@ -228,13 +223,13 @@ namespace Autossential.Activities.Tests.Activities
 
             WorkflowInvoker.Invoke(activity);
 
-            Assert.Equal(new[] { "then" }, log);
+            await Assert.That(log).IsEquivalentTo(new[] { "then" });
         }
 
         // ─── Integration: dynamic / runtime condition ─────────────────────────
 
-        [Fact]
-        public void Execute_ShouldEvaluateConditionAtRuntime()
+        [Test]
+        public async Task ShouldEvaluateConditionAtRuntime()
         {
             // The condition is backed by a WF variable — value decided at runtime.
             var flag = new Variable<bool>("flag", true);
@@ -259,13 +254,13 @@ namespace Autossential.Activities.Tests.Activities
 
             WorkflowInvoker.Invoke(activity);
 
-            Assert.Equal(new[] { "runtime-then" }, log);
+            await Assert.That(log).IsEquivalentTo(new[] { "runtime-then" });
         }
 
         // ─── Integration: nested IfActivity ──────────────────────────────────
 
-        [Fact]
-        public void Execute_ShouldSupportNestedIfActivities()
+        [Test]
+        public async Task ShouldSupportNestedIfActivities()
         {
             var log = new List<string>();
 
@@ -285,13 +280,13 @@ namespace Autossential.Activities.Tests.Activities
 
             WorkflowInvoker.Invoke(outer);
 
-            Assert.Equal(new[] { "inner-else" }, log);
+            await Assert.That(log).IsEquivalentTo(new[] { "inner-else" });
         }
 
         // ─── Integration: Then/Else as Sequence with multiple children ────────
 
-        [Fact]
-        public void Execute_ShouldRunAllActivitiesInThenSequence()
+        [Test]
+        public async Task ShouldRunAllActivitiesInThenSequence()
         {
             var log = new List<string>();
 
@@ -311,11 +306,11 @@ namespace Autossential.Activities.Tests.Activities
 
             WorkflowInvoker.Invoke(activity);
 
-            Assert.Equal(new[] { "step-1", "step-2", "step-3" }, log);
+            await Assert.That(log).IsEquivalentTo(new[] { "step-1", "step-2", "step-3" });
         }
 
-        [Fact]
-        public void Execute_ShouldRunAllActivitiesInElseSequence()
+        [Test]
+        public async Task ShouldRunAllActivitiesInElseSequence()
         {
             var log = new List<string>();
 
@@ -334,7 +329,7 @@ namespace Autossential.Activities.Tests.Activities
 
             WorkflowInvoker.Invoke(activity);
 
-            Assert.Equal(new[] { "else-1", "else-2" }, log);
+            await Assert.That(log).IsEquivalentTo(new[] { "else-1", "else-2" });
         }
     }
 }

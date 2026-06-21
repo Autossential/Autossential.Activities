@@ -1,17 +1,18 @@
 ﻿using Autossential.Activities.Tests.Extensions;
 using System.Activities;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
+    [NotInParallel]
     public class MapUnmapTests
     {
         private const string NetworkPath = @"\\127.0.0.1\Shared";
-      
+
         private static string[] GetLogicalDrives() => Environment.GetLogicalDrives();
 
-        [Fact]
-        public void Execute_ShouldMapAndUnmap_CustomDriveLetter()
+        [Test]
+        public async Task ShouldMapAndUnmap_CustomDriveLetter()
         {
             var map = new MapDrive
             {
@@ -22,58 +23,60 @@ namespace Autossential.Activities.Tests.Activities
             var driversCount = drivers.Length;
 
             var (result, outputs) = WorkflowInvoker.InvokeOutputs(map);
-            Assert.True(result);
-            Assert.False(string.IsNullOrEmpty(outputs[nameof(MapDrive.MappedDrive)].ToString()));
+            await Assert.That(result).IsTrue();
+            await Assert.That(string.IsNullOrEmpty(outputs[nameof(MapDrive.MappedDrive)].ToString())).IsFalse();
 
             var newDrivers = GetLogicalDrives().Except(drivers).ToArray();
-            Assert.Single(newDrivers);
+            await Assert.That(newDrivers).Count().IsEqualTo(1);
 
             var unmap = new UnmapDrive
             {
                 DriveLetter = newDrivers[0].TrimEnd('\\')
             };
 
-            Assert.True(WorkflowInvoker.Invoke(unmap));
-            Assert.Equal(driversCount, GetLogicalDrives().Length);
+            await Assert.That(WorkflowInvoker.Invoke(unmap)).IsTrue();
+            await Assert.That(GetLogicalDrives().Length).IsEqualTo(driversCount);
         }
 
-        [Fact]
-        public void Execute_MapDrive_MissingSharedDrivePath_Throws()
+        [Test]
+        public async Task MapDrive_MissingSharedDrivePath_Throws()
         {
             // SharedDrivePath is required; validation occurs before execution and raises ArgumentException
-            Assert.Throws<ArgumentException>(() => WorkflowInvoker.Invoke(new MapDrive()));
+            await Assert.That(() => WorkflowInvoker.Invoke(new MapDrive()))
+                .Throws<ArgumentException>();
         }
 
-        [Fact]
-        public void Execute_UnmapDrive_MissingDriveLetter_Throws()
+        [Test]
+        public async Task UnmapDrive_MissingDriveLetter_Throws()
         {
             // DriveLetter is required for unmapping; workflow validation raises ArgumentException when missing
-            Assert.Throws<ArgumentException>(() => WorkflowInvoker.Invoke(new UnmapDrive()));
+            await Assert.That(() => WorkflowInvoker.Invoke(new UnmapDrive()))
+                .Throws<ArgumentException>();
         }
 
-        [Fact]
-        public void Execute_UnmapDrive_InvalidDriveLetterFormat_Throws()
+        [Test]
+        public async Task UnmapDrive_InvalidDriveLetterFormat_Throws()
         {
             // Invalid drive letter formats (not like 'X:') should be rejected
-            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new UnmapDrive(), new Dictionary<string, object>
+            await Assert.That(() => WorkflowInvoker.Invoke(new UnmapDrive(), new Dictionary<string, object>
             {
                 { nameof(UnmapDrive.DriveLetter), "XYZ" }
-            }));
+            })).Throws<InvalidOperationException>();
         }
 
-        [Fact]
-        public void Execute_MapDrive_InvalidDriveLetterFormat_Throws()
+        [Test]
+        public async Task MapDrive_InvalidDriveLetterFormat_Throws()
         {
             // MapDrive should validate provided drive letter format and throw when invalid
-            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new MapDrive(), new Dictionary<string, object>
+            await Assert.That(() => WorkflowInvoker.Invoke(new MapDrive(), new Dictionary<string, object>
             {
                 { nameof(MapDrive.DriveLetter), "A" },
                 { nameof(MapDrive.SharedDrivePath), NetworkPath }
-            }));
+            })).Throws<InvalidOperationException>();
         }
 
-        [Fact]
-        public void Execute_MapDrive_SetsResponseCodeAndMessage()
+        [Test]
+        public async Task MapDrive_SetsResponseCodeAndMessage()
         {
             // Ensure ResponseCode and ResponseMessage out arguments are populated when invoking
             var map = new MapDrive
@@ -84,22 +87,27 @@ namespace Autossential.Activities.Tests.Activities
             var (result, outputs) = WorkflowInvoker.InvokeOutputs(map);
 
             // result indicates success of activity; outputs should contain response information
-            Assert.NotNull(outputs);
-            Assert.True(outputs.ContainsKey(nameof(MapDrive.ResponseCode)));
-            Assert.True(outputs.ContainsKey(nameof(MapDrive.ResponseMessage)));
+            await Assert.That(outputs).IsNotNull();
+            await Assert.That(outputs.ContainsKey(nameof(MapDrive.ResponseCode))).IsTrue();
+            await Assert.That(outputs.ContainsKey(nameof(MapDrive.ResponseMessage))).IsTrue();
 
             // ResponseCode should be convertible to int and ResponseMessage a non-empty string
             var codeObj = outputs[nameof(MapDrive.ResponseCode)];
             var msgObj = outputs[nameof(MapDrive.ResponseMessage)];
 
-            Assert.NotNull(codeObj);
-            Assert.IsType<int>(codeObj);
-            Assert.NotNull(msgObj);
-            Assert.IsType<string>(msgObj);
+            await Assert.That(codeObj).IsNotNull();
+            await Assert.That(codeObj).IsTypeOf<int>();
+            await Assert.That(msgObj).IsNotNull();
+            await Assert.That(msgObj).IsTypeOf<string>();
+
+            WorkflowInvoker.Invoke(new UnmapDrive
+            {
+                DriveLetter = outputs["MappedDrive"].ToString()
+            });
         }
 
-        [Fact]
-        public void Execute_ShoudMapAndUnmap_SpecificDriveLetter()
+        [Test]
+        public async Task ShoudMapAndUnmap_SpecificDriveLetter()
         {
             const string driveLetter = "X:";
             var (result, outputs) = WorkflowInvoker.InvokeOutputs(new MapDrive(), new Dictionary<string, object>
@@ -108,17 +116,17 @@ namespace Autossential.Activities.Tests.Activities
                 { nameof(MapDrive.SharedDrivePath), NetworkPath }
             });
 
-            Assert.True(result);
-            Assert.Equal(driveLetter, outputs[nameof(MapDrive.MappedDrive)]);
+            await Assert.That(result).IsTrue();
+            await Assert.That(outputs[nameof(MapDrive.MappedDrive)]).IsEqualTo(driveLetter);
 
-            Assert.True(WorkflowInvoker.Invoke(new UnmapDrive(), new Dictionary<string, object>
+            await Assert.That(WorkflowInvoker.Invoke(new UnmapDrive(), new Dictionary<string, object>
             {
                 { nameof(UnmapDrive.DriveLetter), driveLetter },
-            }));
+            })).IsTrue();
         }
 
-        [Fact]
-        public void Execute_SameLetterMapWithoutForce_ShouldReturnFalse()
+        [Test]
+        public async Task SameLetterMapWithoutForce_ShouldReturnFalse()
         {
             const string driveLetter = "X:";
             var (result, outputs) = WorkflowInvoker.InvokeOutputs(new MapDrive(), new Dictionary<string, object>
@@ -127,8 +135,8 @@ namespace Autossential.Activities.Tests.Activities
                 { nameof(MapDrive.SharedDrivePath), NetworkPath }
             });
 
-            Assert.True(result);
-            Assert.Equal(driveLetter, outputs[nameof(MapDrive.MappedDrive)]);
+            await Assert.That(result).IsTrue();
+            await Assert.That(outputs[nameof(MapDrive.MappedDrive)]).IsEqualTo(driveLetter);
 
             (result, _) = WorkflowInvoker.InvokeOutputs(new MapDrive(), new Dictionary<string, object>
             {
@@ -136,16 +144,15 @@ namespace Autossential.Activities.Tests.Activities
                 { nameof(MapDrive.SharedDrivePath), NetworkPath }
             });
 
-            Assert.False(result);
-            Assert.True(WorkflowInvoker.Invoke(new UnmapDrive(), new Dictionary<string, object>
+            await Assert.That(result).IsFalse();
+            await Assert.That(WorkflowInvoker.Invoke(new UnmapDrive(), new Dictionary<string, object>
             {
                 { nameof(UnmapDrive.DriveLetter), driveLetter },
-            }));
+            })).IsTrue();
         }
 
-
-        [Fact]
-        public void Execute_SameLetterMapWithForce_ShouldReturnTrue()
+        [Test]
+        public async Task SameLetterMapWithForce_ShouldReturnTrue()
         {
             const string driveLetter = "X:";
             var (result, outputs) = WorkflowInvoker.InvokeOutputs(new MapDrive(), new Dictionary<string, object>
@@ -154,8 +161,8 @@ namespace Autossential.Activities.Tests.Activities
                 { nameof(MapDrive.SharedDrivePath), NetworkPath }
             });
 
-            Assert.True(result);
-            Assert.Equal(driveLetter, outputs[nameof(MapDrive.MappedDrive)]);
+            await Assert.That(result).IsTrue();
+            await Assert.That(outputs[nameof(MapDrive.MappedDrive)]).IsEqualTo(driveLetter);
 
             (result, _) = WorkflowInvoker.InvokeOutputs(new MapDrive(), new Dictionary<string, object>
             {
@@ -164,11 +171,11 @@ namespace Autossential.Activities.Tests.Activities
                 { nameof(MapDrive.Force), true }
             });
 
-            Assert.True(result);
-            Assert.True(WorkflowInvoker.Invoke(new UnmapDrive(), new Dictionary<string, object>
+            await Assert.That(result).IsTrue();
+            await Assert.That(WorkflowInvoker.Invoke(new UnmapDrive(), new Dictionary<string, object>
             {
                 { nameof(UnmapDrive.DriveLetter), driveLetter },
-            }));
+            })).IsTrue();
         }
     }
 }

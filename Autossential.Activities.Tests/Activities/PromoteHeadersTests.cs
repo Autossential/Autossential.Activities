@@ -2,14 +2,14 @@ using System;
 using System.Activities;
 using System.Collections.Generic;
 using System.Data;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
     public class PromoteHeadersTests
     {
-        [Fact]
-        public void Invoke_WithValidDataTable_PromotesFirstRowToHeaders()
+        [Test]
+        public async Task WithValidDataTable_PromotesFirstRowToHeaders()
         {
             var dt = new DataTable();
             dt.Columns.Add("Column0");
@@ -27,17 +27,17 @@ namespace Autossential.Activities.Tests.Activities
             WorkflowInvoker.Invoke(new PromoteHeaders(), inputs);
 
             var result = (DataTable)inputs["DataTable"];
-            Assert.Equal(2, result.Columns.Count);
-            Assert.Equal("Name", result.Columns[0].ColumnName);
-            Assert.Equal("Age", result.Columns[1].ColumnName);
-            Assert.Equal(2, result.Rows.Count);
-            Assert.Equal("Alice", result.Rows[0][0]);
+            await Assert.That(result.Columns.Count).IsEqualTo(2);
+            await Assert.That(result.Columns[0].ColumnName).IsEqualTo("Name");
+            await Assert.That(result.Columns[1].ColumnName).IsEqualTo("Age");
+            await Assert.That(result.Rows.Count).IsEqualTo(2);
+            await Assert.That(result.Rows[0][0]).IsEqualTo("Alice");
             // Both values are strings after promotion
-            Assert.Equal("30", result.Rows[0][1]);
+            await Assert.That(result.Rows[0][1]).IsEqualTo("30");
         }
 
-        [Fact]
-        public void Invoke_WithEmptyDataTable_ThrowsInvalidOperationException()
+        [Test]
+        public async Task WithEmptyDataTable_ThrowsInvalidOperationException()
         {
             var dt = new DataTable();
             dt.Columns.Add("Column0");
@@ -48,22 +48,24 @@ namespace Autossential.Activities.Tests.Activities
                 ["DataTable"] = dt
             };
 
-            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new PromoteHeaders(), inputs));
+            await Assert.That(() => WorkflowInvoker.Invoke(new PromoteHeaders(), inputs))
+                .Throws<InvalidOperationException>();
         }
 
-        [Fact]
-        public void Invoke_WithNullDataTable_ThrowsInvalidOperationException()
+        [Test]
+        public async Task WithNullDataTable_ThrowsInvalidOperationException()
         {
             var inputs = new Dictionary<string, object>
             {
                 ["DataTable"] = null!
             };
 
-            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new PromoteHeaders(), inputs));
+            await Assert.That(() => WorkflowInvoker.Invoke(new PromoteHeaders(), inputs))
+                .Throws<InvalidOperationException>();
         }
 
-        [Fact]
-        public void Invoke_WithDuplicateHeaderNames_AutoRenameTrue_RenamesDuplicates()
+        [Test]
+        public async Task WithDuplicateHeaderNames_AutoRenameTrue_RenamesDuplicates()
         {
             var dt = new DataTable();
             dt.Columns.Add("Column0");
@@ -81,8 +83,8 @@ namespace Autossential.Activities.Tests.Activities
             WorkflowInvoker.Invoke(new PromoteHeaders(), inputs);
 
             var result = (DataTable)inputs["DataTable"];
-            Assert.NotEqual(result.Columns[0].ColumnName, result.Columns[1].ColumnName);
-            Assert.Equal(3, result.Columns.Count);
+            await Assert.That(result.Columns[0].ColumnName).IsNotEqualTo(result.Columns[1].ColumnName);
+            await Assert.That(result.Columns.Count).IsEqualTo(3);
         }
     }
 }

@@ -1,13 +1,11 @@
 using System.Activities;
-using Xunit;
-using Xunit.Sdk;
 
 namespace Autossential.Activities.Tests.Activities
 {
     public class CheckPointTests
     {
-        [Fact]
-        public void Invoke_WhenExpressionIsTrue_DoesNotThrow()
+        [Test]
+        public void DoesNotThrow_WhenExpressionIsTrue()
         {
             var exception = new InvalidOperationException("Test error");
 
@@ -20,8 +18,8 @@ namespace Autossential.Activities.Tests.Activities
             WorkflowInvoker.Invoke(new CheckPoint(), inputs);
         }
 
-        [Fact]
-        public void Invoke_WithOptionalData_DoesNotThrow()
+        [Test]
+        public void DoesNotThrow_WithOptionalData()
         {
             var exception = new InvalidOperationException("Test");
             var data = new Dictionary<string, string> { ["key"] = "value" };
@@ -36,8 +34,8 @@ namespace Autossential.Activities.Tests.Activities
             WorkflowInvoker.Invoke(new CheckPoint(), inputs);
         }
 
-        [Fact]
-        public void Invoke_WhenExpressionIsFalse_ThrowsProvidedException()
+        [Test]
+        public async Task ThrowsProvidedException_WhenExpressionIsFalse()
         {
             var exception = new InvalidOperationException("Expected error");
 
@@ -47,12 +45,14 @@ namespace Autossential.Activities.Tests.Activities
                 ["Exception"] = exception
             };
 
-            var thrown = Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new CheckPoint(), inputs));
-            Assert.Equal("Expected error", thrown.Message);
+            var thrown = await Assert.That(() => WorkflowInvoker.Invoke(new CheckPoint(), inputs))
+                .Throws<InvalidOperationException>();
+
+            await Assert.That(thrown?.Message).IsEqualTo("Expected error");
         }
 
-        [Fact]
-        public void Invoke_WithDifferentExceptionTypes_ThrowsCorrectException()
+        [Test]
+        public async Task ThrowsCorrectException_WithDifferentExceptionTypes()
         {
             var exception = new ArgumentException("Argument error");
 
@@ -62,13 +62,14 @@ namespace Autossential.Activities.Tests.Activities
                 ["Exception"] = exception
             };
 
-            var thrown = Assert.Throws<ArgumentException>(() => WorkflowInvoker.Invoke(new CheckPoint(), inputs));
-            Assert.Equal("Argument error", thrown.Message);
+            var thrown = await Assert.That(() => WorkflowInvoker.Invoke(new CheckPoint(), inputs))
+                .Throws<ArgumentException>();
+
+            await Assert.That(thrown?.Message).IsEqualTo("Argument error");
         }
 
-
-        [Fact]
-        public void Invoke_WithNullException_ThrowsNullReferenceException()
+        [Test]
+        public async Task ThrowsNullReferenceException_WithNullException()
         {
             var inputs = new Dictionary<string, object>
             {
@@ -76,7 +77,8 @@ namespace Autossential.Activities.Tests.Activities
                 ["Exception"] = null!
             };
 
-            Assert.Throws<NullReferenceException>(() => WorkflowInvoker.Invoke(new CheckPoint(), inputs));
+            await Assert.That(() => WorkflowInvoker.Invoke(new CheckPoint(), inputs))
+                .Throws<NullReferenceException>();
         }
     }
 }

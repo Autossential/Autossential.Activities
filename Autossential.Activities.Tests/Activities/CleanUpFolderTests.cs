@@ -1,94 +1,114 @@
 using System.Activities;
-using Xunit;
 
 namespace Autossential.Activities.Tests.Activities
 {
-    public class CleanUpFolderTests
+    public class CleanUpFolderTests : BaseTests
     {
-        [Fact]
-        public void Invoke_WhenFolderHasFiles_DeletesOldFilesAndEmptyFolders()
+
+        [Test]
+        public async Task RemovesAllFiles_RegardlessOfAttributes()
         {
-            var dir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
-            Directory.CreateDirectory(dir);
-            try
-            {
-                // Create old file and new file
-                var oldFile = Path.Combine(dir, "old.txt");
-                File.WriteAllText(oldFile, "old");
-                File.SetLastWriteTime(oldFile, DateTime.Now.AddDays(-10));
-
-                var newFile = Path.Combine(dir, "new.txt");
-                File.WriteAllText(newFile, "new");
-                File.SetLastWriteTime(newFile, DateTime.Now);
-
-                // Create an empty subfolder that should be deleted
-                var emptyDir = Path.Combine(dir, "empty");
-                Directory.CreateDirectory(emptyDir);
-
-                var inputs = new Dictionary<string, object>
+            var dir = NewDir();
+            var files = new Dictionary<string, FileAttributes>
                 {
-                    ["Folder"] = dir,
-                    ["LastWriteTime"] = DateTime.Now.AddDays(-1),
-                    ["SearchPattern"] = "*.txt",
-                    ["DeleteEmptyFolders"] = true
+                    { "hidden.txt", FileAttributes.Hidden },
+                    { "readonly.txt", FileAttributes.ReadOnly },
+                    { "system.txt", FileAttributes.System },
+                    { "archive.txt", FileAttributes.Archive },
+                    { "temporary.txt", FileAttributes.Temporary },
+                    { "normal.txt", FileAttributes.Normal },
+                    { "offline.txt", FileAttributes.Offline },
+                    { "encrypted.txt", FileAttributes.Encrypted },
+                    { "compressed.txt", FileAttributes.Compressed },
+                    { "notcontentindexed.txt", FileAttributes.NotContentIndexed }
                 };
 
-                WorkflowInvoker.Invoke(new CleanUpFolder(), inputs);
-
-                // The activity sets out arguments via the context; WorkflowInvoker returns null for activities that use out args.
-                // Retrieve out arguments by invoking the activity through WorkflowInvoker and reading the outputs dictionary is not straightforward here,
-                // so verify file system side-effects instead.
-                Assert.False(File.Exists(oldFile));
-                Assert.True(File.Exists(newFile));
-                Assert.False(Directory.Exists(emptyDir));
-            }
-            finally
+            foreach (var kvp in files)
             {
-                try { Directory.Delete(dir, true); } catch { }
+                var path = Path.Combine(dir, kvp.Key);
+                File.WriteAllText(path, "...");
+                File.SetAttributes(path, kvp.Value);
             }
+
+            var inputs = new Dictionary<string, object>
+            {
+                ["Folder"] = dir,
+                ["SearchPattern"] = "*.txt",
+                ["DeleteEmptyFolders"] = true
+            };
+
+            WorkflowInvoker.Invoke(new CleanUpFolder(), inputs);
+
+            await Assert.That(Directory.GetFiles(dir)).IsEmpty();
         }
 
-        [Fact]
-        public void Invoke_WithMultipleSearchPatterns_DeletesOnlyMatchingFiles()
+        [Test]
+        public async Task DeletesOldFilesAndEmptyFolders_WhenFolderHasFiles()
         {
-            var dir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
-            Directory.CreateDirectory(dir);
-            try
+            var dir = NewDir();
+
+            // Create old file and new file
+            var oldFile = Path.Combine(dir, "old.txt");
+            File.WriteAllText(oldFile, "old");
+            File.SetLastWriteTime(oldFile, DateTime.Now.AddDays(-10));
+
+            var newFile = Path.Combine(dir, "new.txt");
+            File.WriteAllText(newFile, "new");
+            File.SetLastWriteTime(newFile, DateTime.Now);
+
+            // Create an empty subfolder that should be deleted
+            var emptyDir = Path.Combine(dir, "empty");
+            Directory.CreateDirectory(emptyDir);
+
+            var inputs = new Dictionary<string, object>
             {
-                var aTxt = Path.Combine(dir, "a.txt");
-                var bLog = Path.Combine(dir, "b.log");
-                var cMd = Path.Combine(dir, "c.md");
+                ["Folder"] = dir,
+                ["LastWriteTime"] = DateTime.Now.AddDays(-1),
+                ["SearchPattern"] = "*.txt",
+                ["DeleteEmptyFolders"] = true
+            };
 
-                File.WriteAllText(aTxt, "a");
-                File.WriteAllText(bLog, "b");
-                File.WriteAllText(cMd, "c");
+            WorkflowInvoker.Invoke(new CleanUpFolder(), inputs);
 
-                File.SetLastWriteTime(aTxt, DateTime.Now.AddDays(-10));
-                File.SetLastWriteTime(bLog, DateTime.Now.AddDays(-10));
-                File.SetLastWriteTime(cMd, DateTime.Now.AddDays(-10));
-
-                var inputs = new Dictionary<string, object>
-                {
-                    ["Folder"] = dir,
-                    ["LastWriteTime"] = DateTime.Now.AddDays(-1),
-                    ["SearchPattern"] = "*.txt|*.md",
-                    ["DeleteEmptyFolders"] = false
-                };
-
-                WorkflowInvoker.Invoke(new CleanUpFolder(), inputs);
-
-                Assert.False(File.Exists(aTxt));
-                Assert.True(File.Exists(bLog));
-                Assert.False(File.Exists(cMd));
-            }
-            finally
-            {
-                try { Directory.Delete(dir, true); } catch { }
-            }
+            await Assert.That(File.Exists(oldFile)).IsFalse();
+            await Assert.That(File.Exists(newFile)).IsTrue();
+            await Assert.That(Directory.Exists(emptyDir)).IsFalse();
         }
 
-        [Fact]
-        public void Invoke_WhenFolderArgumentIsNull_ThrowsInvalidOperationException()
+        [Test]
+        public async Task DeletesOnlyMatchingFiles_WithMultipleSearchPatterns()
+        {
+            var dir = NewDir();
+
+            var aTxt = Path.Combine(dir, "a.txt");
+            var bLog = Path.Combine(dir, "b.log");
+            var cMd = Path.Combine(dir, "c.md");
+
+            File.WriteAllText(aTxt, "a");
+            File.WriteAllText(bLog, "b");
+            File.WriteAllText(cMd, "c");
+
+            File.SetLastWriteTime(aTxt, DateTime.Now.AddDays(-10));
+            File.SetLastWriteTime(bLog, DateTime.Now.AddDays(-10));
+            File.SetLastWriteTime(cMd, DateTime.Now.AddDays(-10));
+
+            var inputs = new Dictionary<string, object>
+            {
+                ["Folder"] = dir,
+                ["LastWriteTime"] = DateTime.Now.AddDays(-1),
+                ["SearchPattern"] = "*.txt|*.md",
+                ["DeleteEmptyFolders"] = false
+            };
+
+            WorkflowInvoker.Invoke(new CleanUpFolder(), inputs);
+
+            await Assert.That(File.Exists(aTxt)).IsFalse();
+            await Assert.That(File.Exists(bLog)).IsTrue();
+            await Assert.That(File.Exists(cMd)).IsFalse();
+        }
+
+        [Test]
+        public async Task ThrowsInvalidOperationException_WhenFolderArgumentIsNull()
         {
             var inputs = new Dictionary<string, object>
             {
@@ -99,68 +119,54 @@ namespace Autossential.Activities.Tests.Activities
             Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new CleanUpFolder(), inputs));
         }
 
-        [Fact]
-        public void Invoke_WithTopDirectoryOnly_DoesNotDeleteFilesInSubdirectories()
+        [Test]
+        public async Task DoesNotDeleteFilesInSubdirectories_WithTopDirectoryOnly()
         {
-            var dir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
-            Directory.CreateDirectory(dir);
-            try
+            var dir = NewDir();
+
+            var topFile = Path.Combine(dir, "top.txt");
+            File.WriteAllText(topFile, "top");
+            File.SetLastWriteTime(topFile, DateTime.Now.AddDays(-10));
+
+            var sub = Path.Combine(dir, "sub");
+            Directory.CreateDirectory(sub);
+            var subFile = Path.Combine(sub, "sub.txt");
+            File.WriteAllText(subFile, "sub");
+            File.SetLastWriteTime(subFile, DateTime.Now.AddDays(-10));
+
+            var inputs = new Dictionary<string, object>
             {
-                var topFile = Path.Combine(dir, "top.txt");
-                File.WriteAllText(topFile, "top");
-                File.SetLastWriteTime(topFile, DateTime.Now.AddDays(-10));
+                ["Folder"] = dir,
+                ["LastWriteTime"] = DateTime.Now.AddDays(-1),
+                ["SearchPattern"] = "*.txt",
+                ["DeleteEmptyFolders"] = false
+            };
 
-                var sub = Path.Combine(dir, "sub");
-                Directory.CreateDirectory(sub);
-                var subFile = Path.Combine(sub, "sub.txt");
-                File.WriteAllText(subFile, "sub");
-                File.SetLastWriteTime(subFile, DateTime.Now.AddDays(-10));
+            WorkflowInvoker.Invoke(new CleanUpFolder { SearchOption = SearchOption.TopDirectoryOnly }, inputs);
 
-                var inputs = new Dictionary<string, object>
-                {
-                    ["Folder"] = dir,
-                    ["LastWriteTime"] = DateTime.Now.AddDays(-1),
-                    ["SearchPattern"] = "*.txt",
-                    ["DeleteEmptyFolders"] = false
-                };
-
-                WorkflowInvoker.Invoke(new CleanUpFolder { SearchOption = SearchOption.TopDirectoryOnly }, inputs);
-
-                Assert.False(File.Exists(topFile));
-                Assert.True(File.Exists(subFile));
-            }
-            finally
-            {
-                try { Directory.Delete(dir, true); } catch { }
-            }
+            await Assert.That(File.Exists(topFile)).IsFalse();
+            await Assert.That(File.Exists(subFile)).IsTrue();
         }
 
-        [Fact]
-        public void Invoke_WhenDeleteEmptyFoldersFalse_DoesNotRemoveEmptyFolders()
+        [Test]
+        public async Task DoesNotRemoveEmptyFolders_WhenDeleteEmptyFoldersFalse()
         {
-            var dir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
-            Directory.CreateDirectory(dir);
-            try
+            var dir = NewDir();
+
+            var emptyDir = Path.Combine(dir, "empty");
+            Directory.CreateDirectory(emptyDir);
+
+            var inputs = new Dictionary<string, object>
             {
-                var emptyDir = Path.Combine(dir, "empty");
-                Directory.CreateDirectory(emptyDir);
+                ["Folder"] = dir,
+                ["LastWriteTime"] = DateTime.Now,
+                ["SearchPattern"] = "*.*",
+                ["DeleteEmptyFolders"] = false
+            };
 
-                var inputs = new Dictionary<string, object>
-                {
-                    ["Folder"] = dir,
-                    ["LastWriteTime"] = DateTime.Now,
-                    ["SearchPattern"] = "*.*",
-                    ["DeleteEmptyFolders"] = false
-                };
+            WorkflowInvoker.Invoke(new CleanUpFolder(), inputs);
 
-                WorkflowInvoker.Invoke(new CleanUpFolder(), inputs);
-
-                Assert.True(Directory.Exists(emptyDir));
-            }
-            finally
-            {
-                try { Directory.Delete(dir, true); } catch { }
-            }
+            await Assert.That(Directory.Exists(emptyDir)).IsTrue();
         }
     }
 }

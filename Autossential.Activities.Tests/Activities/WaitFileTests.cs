@@ -1,12 +1,12 @@
 using System.Activities;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
-    public class WaitFileTests
+    public class WaitFileTests : BaseTests
     {
-        [Fact]
-        public void Invoke_WhenFileAccessible_ReturnsFileInfo()
+        [Test]
+        public async Task WhenFileAccessible_ReturnsFileInfo()
         {
             var path = Path.GetTempFileName();
             try
@@ -20,8 +20,8 @@ namespace Autossential.Activities.Tests.Activities
                 };
 
                 var result = WorkflowInvoker.Invoke(new WaitFile(), inputs);
-                var info = Assert.IsType<FileInfo>(result["Result"]);
-                Assert.Equal(Path.GetFullPath(path), info.FullName);
+                var info = await Assert.That(result["Result"]).IsTypeOf<FileInfo>();
+                await Assert.That(info.FullName).IsEqualTo(Path.GetFullPath(path));
             }
             finally
             {
@@ -29,10 +29,10 @@ namespace Autossential.Activities.Tests.Activities
             }
         }
 
-        [Theory]
-        [InlineData(false)]
-        [InlineData(true)]
-        public void Invoke_WhenFileLocked_TimesOut(bool continueOnError)
+        [Test]
+        [Arguments(false)]
+        [Arguments(true)]
+        public async Task WhenFileLocked_TimesOut(bool continueOnError)
         {
             var path = Path.GetTempFileName();
             try
@@ -51,7 +51,8 @@ namespace Autossential.Activities.Tests.Activities
                 };
 
                 if (!continueOnError)
-                    Assert.Throws<TimeoutException>(() => WorkflowInvoker.Invoke(new WaitFile(), inputs));
+                    await Assert.That(() => WorkflowInvoker.Invoke(new WaitFile(), inputs))
+                        .Throws<TimeoutException>();
             }
             finally
             {
@@ -59,8 +60,8 @@ namespace Autossential.Activities.Tests.Activities
             }
         }
 
-        [Fact]
-        public void Invoke_WhenFilePathIsNull_ThrowsInvalidOperationException()
+        [Test]
+        public async Task WhenFilePathIsNull_ThrowsInvalidOperationException()
         {
             var inputs = new Dictionary<string, object>
             {
@@ -69,39 +70,33 @@ namespace Autossential.Activities.Tests.Activities
             };
 
             // The activity throws NullReferenceException when the FilePath argument is null
-            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new WaitFile(), inputs));
+            await Assert.That(() => WorkflowInvoker.Invoke(new WaitFile(), inputs))
+                .Throws<InvalidOperationException>();
         }
 
-        [Fact]
-        public void Invoke_DynamicFile_WhenFilePresent_ReturnsFileInfo()
+        [Test]
+        public async Task DynamicFile_WhenFilePresent_ReturnsFileInfo()
         {
-            var dir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
-            Directory.CreateDirectory(dir);
-            try
-            {
-                var file = Path.Combine(dir, "test.txt");
-                File.WriteAllText(file, "content");
+            var dir = NewDir();
 
-                var inputs = new Dictionary<string, object>
-                {
-                    ["DirectoryPath"] = dir,
-                    ["SearchPattern"] = "test.txt",
-                    ["TimeoutSeconds"] = 50.0,
-                    ["PollingIntervalSeconds"] = 0.1
-                };
+            var file = Path.Combine(dir, "test.txt");
+            File.WriteAllText(file, "content");
 
-                var result = WorkflowInvoker.Invoke(new WaitFile { DynamicFile = true }, inputs);
-                var info = Assert.IsType<FileInfo>(result["Result"]);
-                Assert.Equal(Path.GetFullPath(file), info.FullName);
-            }
-            finally
+            var inputs = new Dictionary<string, object>
             {
-                Directory.Delete(dir, true);
-            }
+                ["DirectoryPath"] = dir,
+                ["SearchPattern"] = "test.txt",
+                ["TimeoutSeconds"] = 50.0,
+                ["PollingIntervalSeconds"] = 0.1
+            };
+
+            var result = WorkflowInvoker.Invoke(new WaitFile { DynamicFile = true }, inputs);
+            var info = await Assert.That(result["Result"]).IsTypeOf<FileInfo>();
+            await Assert.That(info.FullName).IsEqualTo(Path.GetFullPath(file));
         }
 
-        [Fact]
-        public void Invoke_DynamicFile_WhenDirectoryPathIsNull_ThrowsInvalidOperationException()
+        [Test]
+        public async Task DynamicFile_WhenDirectoryPathIsNull_ThrowsInvalidOperationException()
         {
             var inputs = new Dictionary<string, object>
             {
@@ -109,13 +104,15 @@ namespace Autossential.Activities.Tests.Activities
                 ["TimeoutSeconds"] = 1.0
             };
 
-            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new WaitFile { DynamicFile = true }, inputs));
+            await Assert.That(() => WorkflowInvoker.Invoke(new WaitFile { DynamicFile = true }, inputs))
+                .Throws<InvalidOperationException>();
         }
 
-        [Fact]
-        public void Invoke_WhenWaitForExistFalse_FileDoesNotExist_ThrowsFileNotFoundException()
+        [Test]
+        public async Task WhenWaitForExistFalse_FileDoesNotExist_ThrowsFileNotFoundException()
         {
             var path = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".tmp");
+
             if (File.Exists(path))
                 File.Delete(path);
 
@@ -126,7 +123,8 @@ namespace Autossential.Activities.Tests.Activities
                 ["TimeoutSeconds"] = 1.0
             };
 
-            Assert.Throws<FileNotFoundException>(() => WorkflowInvoker.Invoke(new WaitFile(), inputs));
+            await Assert.That(() => WorkflowInvoker.Invoke(new WaitFile(), inputs))
+                .Throws<FileNotFoundException>();
         }
     }
 }

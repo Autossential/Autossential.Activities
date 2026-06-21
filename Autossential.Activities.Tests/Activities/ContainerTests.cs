@@ -1,7 +1,7 @@
 ﻿using Autossential.Activities.Tests.Helpers;
 using System.Activities;
 using System.Activities.Statements;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
@@ -23,29 +23,29 @@ namespace Autossential.Activities.Tests.Activities
         // Timeout usado em todos os WaitOne para evitar travamento nos testes.
         private static readonly TimeSpan TestTimeout = TimeSpan.FromSeconds(10);
 
-        [Fact]
-        public void Constructor_ShouldInitializeBody_WithDoSequence()
+        [Test]
+        public async Task ShouldInitializeBody_WithDoSequence()
         {
             var container = new Container();
 
-            Assert.NotNull(container.Body);
-            Assert.NotNull(container.Body.Handler);
-            var sequence = Assert.IsType<Sequence>(container.Body.Handler);
-            Assert.Equal("Do", sequence.DisplayName);
+            await Assert.That(container.Body).IsNotNull();
+            await Assert.That(container.Body.Handler).IsNotNull();
+            var sequence = await Assert.That(container.Body.Handler).IsTypeOf<Sequence>();
+            await Assert.That(sequence.DisplayName).IsEqualTo("Do");
         }
 
-        [Fact]
-        public void Constructor_Body_ShouldBeMutable()
+        [Test]
+        public async Task Body_ShouldBeMutable()
         {
             var container = new Container();
             var custom = new ActivityAction { Handler = new Sequence { DisplayName = "Custom" } };
 
             container.Body = custom;
-            Assert.Same(custom, container.Body);
+            await Assert.That(container.Body).IsSameReferenceAs(custom);
         }
 
-        [Fact]
-        public void Execute_WhenBodyIsNull_ShouldCompleteWithoutFault()
+        [Test]
+        public async Task ShouldCompleteWithoutFault_WhenBodyIsNull()
         {
             var completed = new ManualResetEventSlim(false);
             Exception? faultEx = null;
@@ -54,12 +54,12 @@ namespace Autossential.Activities.Tests.Activities
 
             var app = AppRunner.Run(container, onCompleted: _ => completed.Set());
 
-            Assert.True(completed.Wait(TestTimeout));
-            Assert.Null(faultEx);
+            await Assert.That(completed.Wait(TestTimeout)).IsTrue();
+            await Assert.That(faultEx).IsNull();
         }
 
-        [Fact]
-        public void Execute_WithoutExit_ShouldRunBodyToCompletion()
+        [Test]
+        public async Task ShouldRunBodyToCompletion_WithoutExit()
         {
             var bodyRan = false;
             var completed = new ManualResetEventSlim(false);
@@ -74,12 +74,12 @@ namespace Autossential.Activities.Tests.Activities
 
             var app = AppRunner.Run(container, _ => completed.Set());
 
-            Assert.True(completed.Wait(TestTimeout));
-            Assert.True(bodyRan);
+            await Assert.That(completed.Wait(TestTimeout)).IsTrue();
+            await Assert.That(bodyRan).IsTrue();
         }
 
-        [Fact]
-        public void Execute_WhenExitCalled_ShouldCancelRemainingChildren()
+        [Test]
+        public async Task ShouldCancelRemainingChildren_WhenExitCalled()
         {
             // Sequence: Exit → atividade que NÃO deve rodar
             var shouldNotRun = false;
@@ -93,7 +93,7 @@ namespace Autossential.Activities.Tests.Activities
                     {
                         Activities =
                         {
-                            new Exit(),                                          
+                            new Exit(),
                             new ActionInvoker(() => shouldNotRun = true) // do not run
                         }
                     }
@@ -102,14 +102,14 @@ namespace Autossential.Activities.Tests.Activities
 
             var app = AppRunner.Run(container, _ => completed.Set());
 
-            Assert.True(completed.Wait(TestTimeout));
-            Assert.False(shouldNotRun);
+            await Assert.That(completed.Wait(TestTimeout)).IsTrue();
+            await Assert.That(shouldNotRun).IsFalse();
         }
 
-        [Theory]
-        [InlineData(true, false)]
-        [InlineData(false, true)]
-        public void Execute_WhenExitConditionIsSet_ShouldExitWhenTrue(bool condition, bool expectedResult)
+        [Test]
+        [Arguments(true, false)]
+        [Arguments(false, true)]
+        public async Task ShouldExitWhenConditionIsTrue_WhenExitConditionIsSet(bool condition, bool expectedResult)
         {
             var afterExitRan = false;
             var completed = new ManualResetEventSlim(false);
@@ -131,13 +131,12 @@ namespace Autossential.Activities.Tests.Activities
 
             var app = AppRunner.Run(container, onCompleted: _ => completed.Set());
 
-            Assert.True(completed.Wait(TestTimeout));
-            Assert.Equal(expectedResult, afterExitRan);
+            await Assert.That(completed.Wait(TestTimeout)).IsTrue();
+            await Assert.That(afterExitRan).IsEqualTo(expectedResult);
         }
 
-
-        [Fact]
-        public void Execute_WhenExitCalledInsideNestedSequence_ShouldStillExit()
+        [Test]
+        public async Task ShouldStillExit_WhenExitCalledInsideNestedSequence()
         {
             var outerActivityRan = false;
             var completed = new ManualResetEventSlim(false);
@@ -162,12 +161,12 @@ namespace Autossential.Activities.Tests.Activities
 
             var app = AppRunner.Run(container, _ => completed.Set());
 
-            Assert.True(completed.Wait(TestTimeout));
-            Assert.False(outerActivityRan);
+            await Assert.That(completed.Wait(TestTimeout)).IsTrue();
+            await Assert.That(outerActivityRan).IsFalse();
         }
 
-        [Fact]
-        public void Execute_MultipleExitCalls_ShouldNotFault()
+        [Test]
+        public async Task ShouldNotFault_WithMultipleExitCalls()
         {
             // Two Exit in sequence — the second must not cause exception
             // because the bookmark was already consumed by the first one
@@ -190,8 +189,8 @@ namespace Autossential.Activities.Tests.Activities
             };
 
             var app = AppRunner.Run(container, onCompleted: _ => completed.Set());
-            Assert.True(completed.Wait(TestTimeout));
-            Assert.Null(faultEx);
+            await Assert.That(completed.Wait(TestTimeout)).IsTrue();
+            await Assert.That(faultEx).IsNull();
         }
     }
 }

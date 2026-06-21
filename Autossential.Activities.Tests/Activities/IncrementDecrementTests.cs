@@ -1,12 +1,12 @@
 ﻿using System.Activities;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
     public class IncrementDecrementTests
     {
-        [Fact]
-        public void Execute_ShouldIncrementVariable()
+        [Test]
+        public async Task ShouldIncrementVariable()
         {
             // Arrange
             var activity = new IncrementDecrement
@@ -24,11 +24,11 @@ namespace Autossential.Activities.Tests.Activities
             var result = WorkflowInvoker.Invoke(activity, inputs);
 
             // Assert
-            Assert.Equal(15, result["Variable"]);
+            await Assert.That(result["Variable"]).IsEqualTo(15);
         }
 
-        [Fact]
-        public void Execute_ShouldDecrementVariable()
+        [Test]
+        public async Task ShouldDecrementVariable()
         {
             // Arrange
             var activity = new IncrementDecrement
@@ -46,11 +46,11 @@ namespace Autossential.Activities.Tests.Activities
             var result = WorkflowInvoker.Invoke(activity, inputs);
 
             // Assert
-            Assert.Equal(7, result["Variable"]);
+            await Assert.That(result["Variable"]).IsEqualTo(7);
         }
 
-        [Fact]
-        public void Execute_ShouldHandleZeroValue()
+        [Test]
+        public async Task ShouldHandleZeroValue()
         {
             // Arrange
             var activity = new IncrementDecrement
@@ -68,11 +68,11 @@ namespace Autossential.Activities.Tests.Activities
             var result = WorkflowInvoker.Invoke(activity, inputs);
 
             // Assert
-            Assert.Equal(10, result["Variable"]);
+            await Assert.That(result["Variable"]).IsEqualTo(10);
         }
 
-        [Fact]
-        public void Execute_ShouldHandleNegativeValue()
+        [Test]
+        public async Task ShouldHandleNegativeValue()
         {
             // Arrange
             var activity = new IncrementDecrement
@@ -90,7 +90,7 @@ namespace Autossential.Activities.Tests.Activities
             var result = WorkflowInvoker.Invoke(activity, inputs);
 
             // Assert
-            Assert.Equal(5, result["Variable"]);
+            await Assert.That(result["Variable"]).IsEqualTo(5);
         }
     }
 }

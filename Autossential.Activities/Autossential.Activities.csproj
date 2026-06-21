@@ -2,13 +2,14 @@
 
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
-		<TargetFrameworks>net6.0;net6.0-windows</TargetFrameworks>
+		<TargetFrameworks>net6.0;net6.0-windows;net8.0;net8.0-windows</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<LangVersion>14.0</LangVersion>
 		<PackageId>Autossential</PackageId>
+		<Platforms>AnyCPU;x64</Platforms>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(TargetFramework)' == 'net6.0-windows'">
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net6.0-windows' Or '$(TargetFramework)' == 'net8.0-windows'">
 		<UseWindowsForms>true</UseWindowsForms>
 	</PropertyGroup>
 

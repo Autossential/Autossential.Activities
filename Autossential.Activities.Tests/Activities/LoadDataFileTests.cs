@@ -1,135 +1,100 @@
-using System;
 using System.Activities;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
-using Autossential.Activities.Models;
-using Xunit;
 
 namespace Autossential.Activities.Tests.Activities
 {
-    public class LoadDataFileTests
+    public class LoadDataFileTests : BaseTests
     {
-        [Fact]
-        public void Invoke_WithValidJsonFile_LoadsAndParsesJson()
+        [Test]
+        public async Task WithValidJsonFile_LoadsAndParsesJson()
         {
-            var dir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
-            Directory.CreateDirectory(dir);
+            var dir = NewDir();
 
-            try
+            var filePath = Path.Combine(dir, "data.json");
+            var jsonContent = "{\"name\": \"Alice\", \"age\": 30}";
+            File.WriteAllText(filePath, jsonContent, Encoding.UTF8);
+
+            var inputs = new Dictionary<string, object>
             {
-                var filePath = Path.Combine(dir, "data.json");
-                var jsonContent = "{\"name\": \"Alice\", \"age\": 30}";
-                File.WriteAllText(filePath, jsonContent, Encoding.UTF8);
+                ["FilePath"] = filePath
+            };
 
-                var inputs = new Dictionary<string, object>
-                {
-                    ["FilePath"] = filePath
-                };
+            var result = WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
 
-                var result = WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
-
-                Assert.NotNull(result);
-                Assert.Equal("Alice", result["name"].AsString());
-            }
-            finally
-            {
-                try { Directory.Delete(dir, true); } catch { }
-            }
+            await Assert.That(result).IsNotNull();
+            await Assert.That(result["name"].AsString()).IsEqualTo("Alice");
         }
 
-        [Fact]
-        public void Invoke_WithValidYamlFile_LoadsAndParsesYaml()
+        [Test]
+        public async Task WithValidYamlFile_LoadsAndParsesYaml()
         {
-            var dir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
-            Directory.CreateDirectory(dir);
+            var dir = NewDir();
 
-            try
+            var filePath = Path.Combine(dir, "data.yaml");
+            var yamlContent = "name: Bob\nage: 25";
+            File.WriteAllText(filePath, yamlContent, Encoding.UTF8);
+
+            var inputs = new Dictionary<string, object>
             {
-                var filePath = Path.Combine(dir, "data.yaml");
-                var yamlContent = "name: Bob\nage: 25";
-                File.WriteAllText(filePath, yamlContent, Encoding.UTF8);
+                ["FilePath"] = filePath
+            };
 
-                var inputs = new Dictionary<string, object>
-                {
-                    ["FilePath"] = filePath
-                };
+            var result = WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
 
-                var result = WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
-
-                Assert.NotNull(result);
-            }
-            finally
-            {
-                try { Directory.Delete(dir, true); } catch { }
-            }
+            await Assert.That(result).IsNotNull();
         }
 
-        [Fact]
-        public void Invoke_WithNonExistentFile_ThrowsFileNotFoundException()
+        [Test]
+        public async Task WithNonExistentFile_ThrowsFileNotFoundException()
         {
             var inputs = new Dictionary<string, object>
             {
                 ["FilePath"] = "/nonexistent/path/file.json"
             };
 
-            Assert.Throws<FileNotFoundException>(() => WorkflowInvoker.Invoke(new LoadDataFile(), inputs));
+            await Assert.That(() => WorkflowInvoker.Invoke(new LoadDataFile(), inputs))
+                .Throws<FileNotFoundException>();
         }
 
-        [Fact]
-        public void Invoke_WithCustomEncoding_LoadsWithSpecifiedEncoding()
+        [Test]
+        public async Task WithCustomEncoding_LoadsWithSpecifiedEncoding()
         {
-            var dir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
-            Directory.CreateDirectory(dir);
+            var dir = NewDir();
 
-            try
+            var filePath = Path.Combine(dir, "data.json");
+            var jsonContent = "{\"text\": \"Hello\"}";
+            File.WriteAllText(filePath, jsonContent, Encoding.UTF8);
+
+            var inputs = new Dictionary<string, object>
             {
-                var filePath = Path.Combine(dir, "data.json");
-                var jsonContent = "{\"text\": \"Hello\"}";
-                File.WriteAllText(filePath, jsonContent, Encoding.UTF8);
+                ["FilePath"] = filePath,
+                ["Encoding"] = "utf-8"
+            };
 
-                var inputs = new Dictionary<string, object>
-                {
-                    ["FilePath"] = filePath,
-                    ["Encoding"] = "utf-8"
-                };
+            var result = WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
 
-                var result = WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
-
-                Assert.NotNull(result);
-            }
-            finally
-            {
-                try { Directory.Delete(dir, true); } catch { }
-            }
+            await Assert.That(result).IsNotNull();
         }
 
-        [Fact]
-        public void Invoke_WithCustomCulture_LoadsWithSpecifiedCulture()
+        [Test]
+        public async Task WithCustomCulture_LoadsWithSpecifiedCulture()
         {
-            var dir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
-            Directory.CreateDirectory(dir);
+            var dir = NewDir();
 
-            try
+            var filePath = Path.Combine(dir, "data.json");
+            var jsonContent = "{\"value\": \"123,45\"}";
+            File.WriteAllText(filePath, jsonContent, Encoding.UTF8);
+
+            var inputs = new Dictionary<string, object>
             {
-                var filePath = Path.Combine(dir, "data.json");
-                var jsonContent = "{\"value\": \"123,45\"}";
-                File.WriteAllText(filePath, jsonContent, Encoding.UTF8);
+                ["FilePath"] = filePath,
+                ["Culture"] = new CultureInfo("pt-BR")
+            };
 
-                var inputs = new Dictionary<string, object>
-                {
-                    ["FilePath"] = filePath,
-                    ["Culture"] = new CultureInfo("pt-BR")
-                };
+            var result = WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
 
-                var result = WorkflowInvoker.Invoke(new LoadDataFile(), inputs);
-
-                Assert.NotNull(result);
-            }
-            finally
-            {
-                try { Directory.Delete(dir, true); } catch { }
-            }
+            await Assert.That(result).IsNotNull();
         }
     }
 }

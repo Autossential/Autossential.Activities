@@ -1,70 +1,57 @@
 ﻿using Autossential.Activities.Tests.Helpers;
 using System.Activities;
 using System.Activities.Statements;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
     public class TimeLoopTests
     {
-        // ──────────────────────────────────────────────────────────────────────
-        // 1. Constructor / Initialization
-        // ──────────────────────────────────────────────────────────────────────
-
-        [Fact]
-        public void Constructor_ShouldInitializeBody_WithDoSequence()
+        [Test]
+        public async Task ShouldInitializeBody_WithDoSequence()
         {
             var loop = new TimeLoop();
 
-            Assert.NotNull(loop.Body);
-            Assert.NotNull(loop.Body.Handler);
-            var sequence = Assert.IsType<Sequence>(loop.Body.Handler);
-            Assert.Equal("Do", sequence.DisplayName);
+            await Assert.That(loop.Body).IsNotNull();
+            await Assert.That(loop.Body.Handler).IsNotNull();
+            var sequence = await Assert.That(loop.Body.Handler).IsTypeOf<Sequence>();
+            await Assert.That(sequence.DisplayName).IsEqualTo("Do");
         }
 
-        [Fact]
-        public void Constructor_Body_ShouldBeMutable()
+        [Test]
+        public async Task Body_ShouldBeMutable()
         {
             var loop = new TimeLoop();
             var custom = new ActivityAction { Handler = new Sequence { DisplayName = "Custom" } };
 
             loop.Body = custom;
 
-            Assert.Same(custom, loop.Body);
+            await Assert.That(loop.Body).IsSameReferenceAs(custom);
         }
 
-        // ──────────────────────────────────────────────────────────────────────
-        // 2. Normal execution — iterations, interval seconds and timeout
-        // ──────────────────────────────────────────────────────────────────────
-
-
-        [Theory]
-        [InlineData(1, 1, 1)]
-        [InlineData(1, .5, 2)]
-        [InlineData(1, .7, 2)]
-        [InlineData(1, .25, 4)]
-        public void Execute_ShouldStopIterating_AfterTimeoutExpires(int seconds, double interval, int expectedCount)
+        [Test]
+        [Arguments(1, 1, 1)]
+        [Arguments(1, 0.5, 2)]
+        [Arguments(1, 0.7, 2)]
+        [Arguments(1, 0.25, 4)]
+        public async Task ShouldStopIterating_AfterTimeoutExpires(int seconds, double interval, int expectedCount)
         {
             var count = 0;
             var loop = Build(TimeSpan.FromSeconds(seconds), interval, () => count++);
             WorkflowInvoker.Invoke(loop);
-            Assert.Equal(expectedCount, count);
+            await Assert.That(count).IsEqualTo(expectedCount);
         }
 
-        [Fact]
-        public void Execute_WithZeroTimeout_ShouldNotRunBody()
+        [Test]
+        public async Task WithZeroTimeout_ShouldNotRunBody()
         {
             var count = 0;
             var loop = Build(TimeSpan.Zero, 0, () => count++);
-            Assert.Equal(0, count);
+            await Assert.That(count).IsEqualTo(0);
         }
 
-        // ──────────────────────────────────────────────────────────────────────
-        // 3. IterationIndex
-        // ──────────────────────────────────────────────────────────────────────
-
-        [Fact]
-        public void Execute_ShouldIncrementIterationIndex_EachIteration()
+        [Test]
+        public async Task ShouldIncrementIterationIndex_EachIteration()
         {
             var count = -1; // iteration index is zero-based index, for correct comparison, counter starts in -1
             var outputs = WorkflowInvoker.Invoke(new OutputWrapper<int>
@@ -81,23 +68,18 @@ namespace Autossential.Activities.Tests.Activities
                 }
             });
 
-            Assert.Equal(count, outputs["Output"]);
+            await Assert.That(outputs["Output"]).IsEqualTo(count);
         }
 
-
-        // ──────────────────────────────────────────────────────────────────────
-        // 4. Result (bool)
-        // ──────────────────────────────────────────────────────────────────────
-
-        [Fact]
-        public void Result_ShouldBeTrue_WhenLoopEndsAfterTimeout()
+        [Test]
+        public async Task Result_ShouldBeTrue_WhenLoopEndsAfterTimeout()
         {
             var loop = Build(TimeSpan.FromMilliseconds(100), 0);
-            Assert.True(WorkflowInvoker.Invoke(loop));
+            await Assert.That(WorkflowInvoker.Invoke(loop)).IsTrue();
         }
 
-        [Fact]
-        public void Result_ShouldBeFalse_WhenLoopEndsViaExit()
+        [Test]
+        public async Task Result_ShouldBeFalse_WhenLoopEndsViaExit()
         {
             var loop = new TimeLoop
             {
@@ -108,11 +90,11 @@ namespace Autossential.Activities.Tests.Activities
                 }
             };
 
-            Assert.False(WorkflowInvoker.Invoke(loop));
+            await Assert.That(WorkflowInvoker.Invoke(loop)).IsFalse();
         }
 
-        [Fact]
-        public void Execute_WhenExitConditionIsFalse_ShouldContinueLoop()
+        [Test]
+        public async Task WhenExitConditionIsFalse_ShouldContinueLoop()
         {
             var loop = new TimeLoop
             {
@@ -123,11 +105,11 @@ namespace Autossential.Activities.Tests.Activities
                 }
             };
 
-            Assert.True(WorkflowInvoker.Invoke(loop));
+            await Assert.That(WorkflowInvoker.Invoke(loop)).IsTrue();
         }
 
-        [Fact]
-        public void Execute_WhenExitCalledInsideNestedSequence_ShouldStopLoop()
+        [Test]
+        public async Task WhenExitCalledInsideNestedSequence_ShouldStopLoop()
         {
             var outerRun = false;
             var loop = new TimeLoop
@@ -147,17 +129,12 @@ namespace Autossential.Activities.Tests.Activities
                 }
             };
 
-            Assert.False(outerRun);
+            WorkflowInvoker.Invoke(loop);
+            await Assert.That(outerRun).IsFalse();
         }
 
-
-
-        // ──────────────────────────────────────────────────────────────────────
-        // 5. Canceling
-        // ──────────────────────────────────────────────────────────────────────
-
-        [Fact]
-        public void Execute_WhenCanceled_ShouldMarkCanceled_AndStop()
+        [Test]
+        public async Task WhenCanceled_ShouldMarkCanceled_AndStop()
         {
             var completed = new ManualResetEventSlim(false);
             ActivityInstanceState? completionState = null;
@@ -172,26 +149,18 @@ namespace Autossential.Activities.Tests.Activities
             Thread.Sleep(300);
             app.Cancel();
 
-            Assert.True(completed.Wait(1000));
-            Assert.Equal(ActivityInstanceState.Canceled, completionState);
+            await Assert.That(completed.Wait(1000)).IsTrue();
+            await Assert.That(completionState).IsEqualTo(ActivityInstanceState.Canceled);
         }
 
-
-        // ──────────────────────────────────────────────────────────────────────
-        // 6. Fault propagation
-        // ──────────────────────────────────────────────────────────────────────
-
-        [Fact]
-        public void Execute_WhenBodyThrows_ShouldFaultWorkflow()
+        [Test]
+        public async Task WhenBodyThrows_ShouldFaultWorkflow()
         {
             var loop = Build(TimeSpan.FromSeconds(1), 0, () => throw new ApplicationException("Boom!"));
 
-            Assert.Throws<ApplicationException>(() => WorkflowInvoker.Invoke(loop));
+            await Assert.That(() => WorkflowInvoker.Invoke(loop))
+                .Throws<ApplicationException>();
         }
-
-        // ──────────────────────────────────────────────────────────────────────
-        // Helpers
-        // ──────────────────────────────────────────────────────────────────────
 
         private static TimeLoop Build(TimeSpan timeout, double intervalSeconds, Action bodyAction = null!)
         {

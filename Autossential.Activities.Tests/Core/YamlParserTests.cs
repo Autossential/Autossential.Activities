@@ -1,103 +1,105 @@
 ﻿using Autossential.Activities.Core;
-using Xunit;
 
 namespace Autossential.Activities.Tests.Core
 {
     public class YamlParserTests
     {
-        [Fact]
-        public void TestBasic_ShouldParseCorrectly()
+
+        [Test]
+        public async Task TestBasic_ShouldParseCorrectly()
         {
             string yaml = TestBasic();
             var result = YamlParser.Parse(yaml);
 
-            var dict = Assert.IsType<Dictionary<string, object>>(result);
+            var dict = await Assert.That(result).IsTypeOf<Dictionary<string, object>>();
+            await Assert.That(dict).IsNotNull();
+            await Assert.That(dict["name"]).IsEqualTo("Alice");
+            await Assert.That(dict["age"]).IsEqualTo("30");      // número tratado como string
+            await Assert.That(dict["active"]).IsEqualTo("true"); // boolean tratado como string
 
-            Assert.Equal("Alice", dict["name"]);
-            Assert.Equal("30", dict["age"]);          // número tratado como string
-            Assert.Equal("true", dict["active"]);     // boolean tratado como string
+            var tags = await Assert.That(dict["tags"]).IsTypeOf<List<object>>();
+            await Assert.That(tags).Contains("admin");
+            await Assert.That(tags).Contains("user");
 
-            var tags = Assert.IsType<List<object>>(dict["tags"]);
-            Assert.Contains("admin", tags);
-            Assert.Contains("user", tags);
-
-            var address = Assert.IsType<Dictionary<string, object>>(dict["address"]);
-            Assert.Equal("Curitiba", address["city"]);
-            Assert.Equal("PR", address["state"]);
+            var address = await Assert.That(dict["address"]).IsTypeOf<Dictionary<string, object>>();
+            await Assert.That(address).IsNotNull();
+            await Assert.That(address["city"]).IsEqualTo("Curitiba");
+            await Assert.That(address["state"]).IsEqualTo("PR");
         }
 
-        [Fact]
-        public void TestBlockScalars_ShouldParseCorrectly()
+        [Test]
+        public async Task TestBlockScalars_ShouldParseCorrectly()
         {
             string yaml = TestBlockScalars();
             var result = YamlParser.Parse(yaml);
 
-            var dict = Assert.IsType<Dictionary<string, object>>(result);
+            var dict = await Assert.That(result).IsTypeOf<Dictionary<string, object>>();
 
-            Assert.Contains("Hello,", dict["literal"].ToString());
-            Assert.Contains("single line", dict["folded"].ToString());
-            Assert.Contains("No trailing newline", dict["chomp_strip"].ToString());
+            await Assert.That(dict).IsNotNull();
+            await Assert.That(dict["literal"].ToString()).Contains("Hello,");
+            await Assert.That(dict["folded"].ToString()).Contains("single line");
+            await Assert.That(dict["chomp_strip"].ToString()).Contains("No trailing newline");
         }
 
-        [Fact]
-        public void TestAnchors_ShouldParseCorrectly()
+        [Test]
+        public async Task TestAnchors_ShouldParseCorrectly()
         {
             string yaml = TestAnchors();
             var result = YamlParser.Parse(yaml);
 
-            var dict = Assert.IsType<Dictionary<string, object>>(result);
+            var dict = await Assert.That(result).IsTypeOf<Dictionary<string, object>>();
 
-            var defaults = Assert.IsType<Dictionary<string, object>>(dict["defaults"]);
-            Assert.Equal("postgres", defaults["adapter"]);
+            var defaults = await Assert.That(dict["defaults"]).IsTypeOf<Dictionary<string, object>>();
+            await Assert.That(defaults["adapter"]).IsEqualTo("postgres");
 
-            var test = Assert.IsType<Dictionary<string, object>>(dict["test"]);
-            Assert.Equal("myapp_test", test["database"]);
+            var test = await Assert.That(dict["test"]).IsTypeOf<Dictionary<string, object>>();
+            await Assert.That(test["database"]).IsEqualTo("myapp_test");
         }
 
-        [Fact]
-        public void TestMergeKeys_ShouldParseCorrectly()
+        [Test]
+        public async Task TestMergeKeys_ShouldParseCorrectly()
         {
             string yaml = TestMergeKeys();
             var result = YamlParser.Parse(yaml);
 
-            var dict = Assert.IsType<Dictionary<string, object>>(result);
+            var dict = await Assert.That(result).IsTypeOf<Dictionary<string, object>>();
 
-            var baseDict = Assert.IsType<Dictionary<string, object>>(dict["base"]);
-            Assert.Equal("1", baseDict["x"]);   // scalar tratado como string
+            var baseDict = await Assert.That(dict["base"]).IsTypeOf<Dictionary<string, object>>();
+            await Assert.That(baseDict["x"]).IsEqualTo("1");   // scalar tratado como string
 
-            var extended = Assert.IsType<Dictionary<string, object>>(dict["extended"]);
-            Assert.Equal("blue", extended["color"]);
+            var extended = await Assert.That(dict["extended"]).IsTypeOf<Dictionary<string, object>>();
+            await Assert.That(extended["color"]).IsEqualTo("blue");
         }
 
-        [Fact]
-        public void TestDockerCompose_ShouldParseCorrectly()
+        [Test]
+        public async Task TestDockerCompose_ShouldParseCorrectly()
         {
             string yaml = TestDockerCompose();
             var result = YamlParser.Parse(yaml);
 
-            var dict = Assert.IsType<Dictionary<string, object>>(result);
+            var dict = await Assert.That(result).IsTypeOf<Dictionary<string, object>>();
 
-            var commonEnv = Assert.IsType<Dictionary<string, object>>(dict["x-common-env"]);
-            Assert.Equal("postgres", commonEnv["DB_HOST"]);
+            var commonEnv = await Assert.That(dict["x-common-env"]).IsTypeOf<Dictionary<string, object>>();
+            await Assert.That(commonEnv["DB_HOST"]).IsEqualTo("postgres");
 
-            var services = Assert.IsType<Dictionary<string, object>>(dict["services"]);
-            var web = Assert.IsType<Dictionary<string, object>>(services["web"]);
-            var envWeb = Assert.IsType<Dictionary<string, object>>(web["environment"]);
-            Assert.Equal("production", envWeb["RAILS_ENV"]);
+            var services = await Assert.That(dict["services"]).IsTypeOf<Dictionary<string, object>>();
+            var web = await Assert.That(services["web"]).IsTypeOf<Dictionary<string, object>>();
+            var envWeb = await Assert.That(web["environment"]).IsTypeOf<Dictionary<string, object>>();
+            await Assert.That(envWeb["RAILS_ENV"]).IsEqualTo("production");
         }
 
-        [Fact]
-        public void TestKubernetes_ShouldParseCorrectly()
+        [Test]
+        public async Task TestKubernetes_ShouldParseCorrectly()
         {
             string yaml = TestKubernetes();
             var result = YamlParser.Parse(yaml);
 
-            var dict = Assert.IsType<Dictionary<string, object>>(result);
+            var dict = await Assert.That(result).IsTypeOf<Dictionary<string, object>>();
 
-            Assert.Equal("ConfigMap", dict["kind"]);
+            await Assert.That(dict["kind"]).IsEqualTo("ConfigMap");
 
-            var metadata = Assert.IsType<Dictionary<string, object>>(dict["metadata"]);
-            Assert.Equal("nginx-config", metadata["name"]);
+            var metadata = await Assert.That(dict["metadata"]).IsTypeOf<Dictionary<string, object>>();
+            await Assert.That(metadata["name"]).IsEqualTo("nginx-config");
         }
 
         // Métodos auxiliares com os YAMLs originais

@@ -2,7 +2,7 @@
 using System.Activities;
 using System.Activities.Statements;
 using System.Globalization;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
@@ -10,37 +10,33 @@ namespace Autossential.Activities.Tests.Activities
     {
         private static readonly TimeSpan TestTimeout = TimeSpan.FromSeconds(10);
 
-        [Fact]
-        public void Constructor_ShouldInitializeBody_WithDoSequence()
+        [Test]
+        public async Task ShouldInitializeBody_WithDoSequence()
         {
             var scope = new CultureScope();
 
-            Assert.NotNull(scope.Body);
-            Assert.NotNull(scope.Body.Handler);
-            var sequence = Assert.IsType<Sequence>(scope.Body.Handler);
-            Assert.Equal("Do", sequence.DisplayName);
+            await Assert.That(scope.Body).IsNotNull();
+            await Assert.That(scope.Body.Handler).IsNotNull();
+            var sequence = await Assert.That(scope.Body.Handler).IsTypeOf<Sequence>();
+            await Assert.That(sequence.DisplayName).IsEqualTo("Do");
         }
 
-        [Fact]
-        public void Constructor_Body_ShouldBeMutable()
+        [Test]
+        public async Task Body_ShouldBeMutable()
         {
             var scope = new CultureScope();
             var custom = new ActivityAction { Handler = new Sequence { DisplayName = "Custom" } };
             scope.Body = custom;
-            Assert.Same(custom, scope.Body);
+            await Assert.That(scope.Body).IsSameReferenceAs(custom);
         }
 
-        // ──────────────────────────────────────────────────────────────────────
-        // 2. Culture aplicada durante execução do Body
-        // ──────────────────────────────────────────────────────────────────────
-
-        [Theory]
-        [InlineData("en-US")]
-        [InlineData("pt-BR")]
-        [InlineData("fr-FR")]
-        [InlineData("de-DE")]
-        [InlineData("ja-JP")]
-        public void Execute_ShouldApplyCulture_DuringBodyExecution(string cultureName)
+        [Test]
+        [Arguments("en-US")]
+        [Arguments("pt-BR")]
+        [Arguments("fr-FR")]
+        [Arguments("de-DE")]
+        [Arguments("ja-JP")]
+        public async Task ShouldApplyCulture_DuringBodyExecution(string cultureName)
         {
             CultureInfo? cultureInsideBody = null;
             var completed = new ManualResetEventSlim(false);
@@ -56,13 +52,13 @@ namespace Autossential.Activities.Tests.Activities
 
             AppRunner.Run(scope, onCompleted: _ => completed.Set());
 
-            Assert.True(completed.Wait(TestTimeout));
-            Assert.NotNull(cultureInsideBody);
-            Assert.Equal(cultureName, cultureInsideBody!.Name);
+            await Assert.That(completed.Wait(TestTimeout)).IsTrue();
+            await Assert.That(cultureInsideBody).IsNotNull();
+            await Assert.That(cultureInsideBody!.Name).IsEqualTo(cultureName);
         }
 
-        [Fact]
-        public void Execute_WithEmptyCultureString_ShouldUseInvariantCulture()
+        [Test]
+        public async Task WithEmptyCultureString_ShouldUseInvariantCulture()
         {
             CultureInfo? inside = null;
             var completed = new ManualResetEventSlim(false);
@@ -78,12 +74,12 @@ namespace Autossential.Activities.Tests.Activities
 
             AppRunner.Run(scope, onCompleted: _ => completed.Set());
 
-            Assert.True(completed.Wait(TestTimeout));
-            Assert.Equal(CultureInfo.InvariantCulture.Name, inside!.Name);
+            await Assert.That(completed.Wait(TestTimeout)).IsTrue();
+            await Assert.That(inside!.Name).IsEqualTo(CultureInfo.InvariantCulture.Name);
         }
 
-        [Fact]
-        public void Execute_WithNullCulture_ShouldFallbackToEmptyString_AndUseInvariantCulture()
+        [Test]
+        public async Task WithNullCulture_ShouldFallbackToEmptyString_AndUseInvariantCulture()
         {
             CultureInfo? inside = null;
             var completed = new ManualResetEventSlim(false);
@@ -99,13 +95,12 @@ namespace Autossential.Activities.Tests.Activities
 
             AppRunner.Run(scope, onCompleted: _ => completed.Set());
 
-            Assert.True(completed.Wait(TestTimeout));
-            Assert.Equal(CultureInfo.InvariantCulture.Name, inside!.Name);
+            await Assert.That(completed.Wait(TestTimeout)).IsTrue();
+            await Assert.That(inside!.Name).IsEqualTo(CultureInfo.InvariantCulture.Name);
         }
 
-
-        [Fact]
-        public void Execute_ShouldRestoreOriginalCulture_AfterBodyCompletes()
+        [Test]
+        public async Task ShouldRestoreOriginalCulture_AfterBodyCompletes()
         {
             var originalCulture = CultureInfo.CurrentCulture;
             CultureInfo? after = null;
@@ -123,12 +118,12 @@ namespace Autossential.Activities.Tests.Activities
                 completed.Set();
             });
 
-            Assert.True(completed.Wait(TestTimeout));
-            Assert.Equal(originalCulture.Name, after!.Name);
+            await Assert.That(completed.Wait(TestTimeout)).IsTrue();
+            await Assert.That(after!.Name).IsEqualTo(originalCulture.Name);
         }
 
-        [Fact]
-        public void Execute_NestedCultureScopes_ShouldApplyInnerCulture_ThenRestoreOuter()
+        [Test]
+        public async Task NestedCultureScopes_ShouldApplyInnerCulture_ThenRestoreOuter()
         {
             CultureInfo? innerCulture = null;
             CultureInfo? outerCulture = null;
@@ -159,13 +154,13 @@ namespace Autossential.Activities.Tests.Activities
 
             AppRunner.Run(outer, onCompleted: _ => completed.Set());
 
-            Assert.True(completed.Wait(TestTimeout));
-            Assert.Equal("fr-FR", innerCulture!.Name);
-            Assert.Equal("en-US", outerCulture!.Name);
+            await Assert.That(completed.Wait(TestTimeout)).IsTrue();
+            await Assert.That(innerCulture!.Name).IsEqualTo("fr-FR");
+            await Assert.That(outerCulture!.Name).IsEqualTo("en-US");
         }
 
-        [Fact]
-        public void Execute_ShouldRestoreOriginalCulture_AfterBodyFaults()
+        [Test]
+        public async Task ShouldRestoreOriginalCulture_AfterBodyFaults()
         {
             var originalCulture = CultureInfo.CurrentCulture;
             CultureInfo? after = null;
@@ -186,12 +181,12 @@ namespace Autossential.Activities.Tests.Activities
                 signaled.Set();
             });
 
-            Assert.True(signaled.Wait(TestTimeout));
-            Assert.Equal(originalCulture.Name, after!.Name);
+            await Assert.That(signaled.Wait(TestTimeout)).IsTrue();
+            await Assert.That(after!.Name).IsEqualTo(originalCulture.Name);
         }
 
-        [Fact]
-        public void Execute_WithInvalidCultureName_ShouldCompleteWithFaultedState()
+        [Test]
+        public async Task WithInvalidCultureName_ShouldCompleteWithFaultedState()
         {
             WorkflowApplicationCompletedEventArgs? completedArgs = null;
             var signaled = new ManualResetEventSlim(false);
@@ -208,13 +203,13 @@ namespace Autossential.Activities.Tests.Activities
                 signaled.Set();
             });
 
-            Assert.True(signaled.Wait(TestTimeout));
-            Assert.Equal(ActivityInstanceState.Faulted, completedArgs!.CompletionState);
-            Assert.IsType<CultureNotFoundException>(completedArgs.TerminationException);
+            await Assert.That(signaled.Wait(TestTimeout)).IsTrue();
+            await Assert.That(completedArgs!.CompletionState).IsEqualTo(ActivityInstanceState.Faulted);
+            await Assert.That(completedArgs.TerminationException).IsTypeOf<CultureNotFoundException>();
         }
 
-        [Fact]
-        public void Execute_WhenBodyIsNull_ShouldCompleteWithoutFault()
+        [Test]
+        public async Task WhenBodyIsNull_ShouldCompleteWithoutFault()
         {
             WorkflowApplicationCompletedEventArgs? completedArgs = null;
             var completed = new ManualResetEventSlim(false);
@@ -231,8 +226,8 @@ namespace Autossential.Activities.Tests.Activities
                 completed.Set();
             });
 
-            Assert.True(completed.Wait(TestTimeout));
-            Assert.Equal(ActivityInstanceState.Closed, completedArgs!.CompletionState);
+            await Assert.That(completed.Wait(TestTimeout)).IsTrue();
+            await Assert.That(completedArgs!.CompletionState).IsEqualTo(ActivityInstanceState.Closed);
         }
     }
 }

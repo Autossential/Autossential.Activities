@@ -2,14 +2,14 @@ using System;
 using System.Activities;
 using System.Collections.Generic;
 using System.Data;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
     public class RemoveDataColumnsTests
     {
-        [Fact]
-        public void Invoke_WithColumnNames_RemovesSpecifiedColumns()
+        [Test]
+        public async Task WithColumnNames_RemovesSpecifiedColumns()
         {
             var dt = new DataTable();
             dt.Columns.Add("Name");
@@ -27,13 +27,13 @@ namespace Autossential.Activities.Tests.Activities
             WorkflowInvoker.Invoke(new RemoveDataColumns(), inputs);
 
             var result = (DataTable)inputs["DataTable"];
-            Assert.Equal(2, result.Columns.Count);
-            Assert.Equal("Name", result.Columns[0].ColumnName);
-            Assert.Equal("Email", result.Columns[1].ColumnName);
+            await Assert.That(result.Columns.Count).IsEqualTo(2);
+            await Assert.That(result.Columns[0].ColumnName).IsEqualTo("Name");
+            await Assert.That(result.Columns[1].ColumnName).IsEqualTo("Email");
         }
 
-        [Fact]
-        public void Invoke_WithColumnIndexes_RemovesSpecifiedIndexes()
+        [Test]
+        public async Task WithColumnIndexes_RemovesSpecifiedIndexes()
         {
             var dt = new DataTable();
             dt.Columns.Add("Name");
@@ -50,13 +50,13 @@ namespace Autossential.Activities.Tests.Activities
             WorkflowInvoker.Invoke(new RemoveDataColumns(), inputs);
 
             var result = (DataTable)inputs["DataTable"];
-            Assert.Equal(2, result.Columns.Count);
-            Assert.Equal("Name", result.Columns[0].ColumnName);
-            Assert.Equal("Email", result.Columns[1].ColumnName);
+            await Assert.That(result.Columns.Count).IsEqualTo(2);
+            await Assert.That(result.Columns[0].ColumnName).IsEqualTo("Name");
+            await Assert.That(result.Columns[1].ColumnName).IsEqualTo("Email");
         }
 
-        [Fact]
-        public void Invoke_WithBothColumnNamesAndIndexes_RemovesBoth()
+        [Test]
+        public async Task WithBothColumnNamesAndIndexes_RemovesBoth()
         {
             var dt = new DataTable();
             dt.Columns.Add("Name");
@@ -75,13 +75,13 @@ namespace Autossential.Activities.Tests.Activities
             WorkflowInvoker.Invoke(new RemoveDataColumns(), inputs);
 
             var result = (DataTable)inputs["DataTable"];
-            Assert.Equal(2, result.Columns.Count);
-            Assert.Equal("Name", result.Columns[0].ColumnName);
-            Assert.Equal("Email", result.Columns[1].ColumnName);
+            await Assert.That(result.Columns.Count).IsEqualTo(2);
+            await Assert.That(result.Columns[0].ColumnName).IsEqualTo("Name");
+            await Assert.That(result.Columns[1].ColumnName).IsEqualTo("Email");
         }
 
-        [Fact]
-        public void Invoke_WithNullDataTable_ThrowsInvalidOperationException()
+        [Test]
+        public async Task WithNullDataTable_ThrowsInvalidOperationException()
         {
             var inputs = new Dictionary<string, object>
             {
@@ -89,11 +89,12 @@ namespace Autossential.Activities.Tests.Activities
                 ["ColumnNames"] = new List<string> { "Age" }
             };
 
-            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new RemoveDataColumns(), inputs));
+            await Assert.That(() => WorkflowInvoker.Invoke(new RemoveDataColumns(), inputs))
+                .Throws<InvalidOperationException>();
         }
 
-        [Fact]
-        public void Invoke_WithInvalidColumnIndex_IgnoresInvalidIndex()
+        [Test]
+        public async Task WithInvalidColumnIndex_IgnoresInvalidIndex()
         {
             var dt = new DataTable();
             dt.Columns.Add("Name");
@@ -109,7 +110,7 @@ namespace Autossential.Activities.Tests.Activities
             WorkflowInvoker.Invoke(new RemoveDataColumns(), inputs);
 
             var result = (DataTable)inputs["DataTable"];
-            Assert.Equal(2, result.Columns.Count);
+            await Assert.That(result.Columns.Count).IsEqualTo(2);
         }
     }
 }

@@ -1,90 +1,81 @@
 ﻿using Autossential.Activities.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
 
-namespace Autossential.Activities.Tests.Core
+public class JsonParserTests
 {
-    public class JsonParserTests
+    [Test]
+    public async Task Parse_ObjectWithScalars_ReturnsDictionary()
     {
-        [Fact]
-        public void Parse_ObjectWithScalars_ReturnsDictionary()
-        {
-            string json = @"{ ""a"": ""text"", ""b"": 123, ""c"": true, ""d"": false, ""e"": null }";
-            var result = (Dictionary<string, object>)JsonParser.Parse(json);
+        string json = @"{ ""a"": ""text"", ""b"": 123, ""c"": true, ""d"": false, ""e"": null }";
+        var result = (Dictionary<string, object>)JsonParser.Parse(json);
 
-            Assert.Equal("text", result["a"]);
-            Assert.Equal("123", result["b"]); // number como string
-            Assert.Equal("true", result["c"]);
-            Assert.Equal("false", result["d"]);
-            Assert.Null(result["e"]);
-        }
+        await Assert.That(result["a"]).IsEqualTo("text");
+        await Assert.That(result["b"]).IsEqualTo("123"); // number como string
+        await Assert.That(result["c"]).IsEqualTo("true");
+        await Assert.That(result["d"]).IsEqualTo("false");
+        await Assert.That(result["e"]).IsNull();
+    }
 
-        [Fact]
-        public void Parse_ArrayWithMixedTypes_ReturnsList()
-        {
-            string json = @"[ ""x"", 42, null, true ]";
-            var result = (List<object>)JsonParser.Parse(json);
+    [Test]
+    public async Task Parse_ArrayWithMixedTypes_ReturnsList()
+    {
+        string json = @"[ ""x"", 42, null, true ]";
+        var result = (List<object>)JsonParser.Parse(json);
 
-            Assert.Equal(new object[] { "x", "42", null, "true" }, result);
-        }
+        await Assert.That(result).IsEquivalentTo(new object[] { "x", "42", null, "true" });
+    }
 
-        [Fact]
-        public void Parse_NestedObjectAndArray_ReturnsRecursiveStructure()
-        {
-            string json = @"{ ""arr"": [ { ""k"": ""v"" }, 99 ] }";
-            var result = (Dictionary<string, object>)JsonParser.Parse(json);
+    [Test]
+    public async Task Parse_NestedObjectAndArray_ReturnsRecursiveStructure()
+    {
+        string json = @"{ ""arr"": [ { ""k"": ""v"" }, 99 ] }";
+        var result = (Dictionary<string, object>)JsonParser.Parse(json);
 
-            var arr = (List<object>)result["arr"];
-            var nested = (Dictionary<string, object>)arr[0];
+        var arr = (List<object>)result["arr"];
+        var nested = (Dictionary<string, object>)arr[0];
 
-            Assert.Equal("v", nested["k"]);
-            Assert.Equal("99", arr[1]);
-        }
+        await Assert.That(nested["k"]).IsEqualTo("v");
+        await Assert.That(arr[1]).IsEqualTo("99");
+    }
 
-        [Fact]
-        public void Parse_StringScalar_ReturnsString()
-        {
-            string json = @"""hello""";
-            var result = JsonParser.Parse(json);
-            Assert.Equal("hello", result);
-        }
+    [Test]
+    public async Task Parse_StringScalar_ReturnsString()
+    {
+        string json = @"""hello""";
+        var result = JsonParser.Parse(json);
+        await Assert.That(result).IsEqualTo("hello");
+    }
 
-        [Fact]
-        public void Parse_NumberScalar_ReturnsRawText()
-        {
-            string json = "123.45";
-            var result = JsonParser.Parse(json);
-            Assert.Equal("123.45", result);
-        }
+    [Test]
+    public async Task Parse_NumberScalar_ReturnsRawText()
+    {
+        string json = "123.45";
+        var result = JsonParser.Parse(json);
+        await Assert.That(result).IsEqualTo("123.45");
+    }
 
-        [Fact]
-        public void Parse_BooleanScalars_ReturnsStringTrueFalse()
-        {
-            Assert.Equal("true", JsonParser.Parse("true"));
-            Assert.Equal("false", JsonParser.Parse("false"));
-        }
+    [Test]
+    public async Task Parse_BooleanScalars_ReturnsStringTrueFalse()
+    {
+        await Assert.That(JsonParser.Parse("true")).IsEqualTo("true");
+        await Assert.That(JsonParser.Parse("false")).IsEqualTo("false");
+    }
 
-        [Fact]
-        public void Parse_NullScalar_ReturnsNull()
-        {
-            Assert.Null(JsonParser.Parse("null"));
-        }
+    [Test]
+    public async Task Parse_NullScalar_ReturnsNull()
+    {
+        await Assert.That(JsonParser.Parse("null")).IsNull();
+    }
 
-        [Fact]
-        public void Parse_WithCommentsAndTrailingCommas_IgnoresThem()
-        {
-            string json = @"{
-            // comentário
-            ""a"": [1,2,3,],
-        }";
-            var result = (Dictionary<string, object>)JsonParser.Parse(json);
-            var arr = (List<object>)result["a"];
+    [Test]
+    public async Task Parse_WithCommentsAndTrailingCommas_IgnoresThem()
+    {
+        string json = @"{
+        // comentário
+        ""a"": [1,2,3,],
+    }";
+        var result = (Dictionary<string, object>)JsonParser.Parse(json);
+        var arr = (List<object>)result["a"];
 
-            Assert.Equal(new[] { "1", "2", "3" }, arr);
-        }
+        await Assert.That(arr).IsEquivalentTo(new[] { "1", "2", "3" });
     }
 }

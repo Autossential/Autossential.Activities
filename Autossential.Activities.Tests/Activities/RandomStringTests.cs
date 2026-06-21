@@ -1,20 +1,20 @@
 using System.Activities;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
     public class RandomStringTests
     {
-        [Fact]
-        public void Invoke_DefaultFormat_ReturnsLength8()
+        [Test]
+        public async Task DefaultFormat_ReturnsLength8()
         {
             var result = WorkflowInvoker.Invoke(new RandomString());
-            Assert.NotNull(result);
-            Assert.Equal(8, result.Length);
+            await Assert.That(result).IsNotNull();
+            await Assert.That(result.Length).IsEqualTo(8);
         }
 
-        [Fact]
-        public void Invoke_CustomCharacters_OnlyUsesCustom()
+        [Test]
+        public async Task CustomCharacters_OnlyUsesCustom()
         {
             var inputs = new Dictionary<string, object>
             {
@@ -24,13 +24,13 @@ namespace Autossential.Activities.Tests.Activities
 
             var result = WorkflowInvoker.Invoke(new RandomString(), inputs);
 
-            Assert.Equal(4, result.Length);
+            await Assert.That(result.Length).IsEqualTo(4);
             foreach (var c in result)
-                Assert.Contains(c, "XYZ");
+                await Assert.That("XYZ").Contains(c.ToString());
         }
 
-        [Fact]
-        public void Invoke_EscapeCharacter_PreservesNext()
+        [Test]
+        public async Task EscapeCharacter_PreservesNext()
         {
             var inputs = new Dictionary<string, object>
             {
@@ -39,18 +39,19 @@ namespace Autossential.Activities.Tests.Activities
 
             var result = WorkflowInvoker.Invoke(new RandomString(), inputs);
 
-            Assert.Equal("A", result);
+            await Assert.That(result).IsEqualTo("A");
         }
 
-        [Fact]
-        public void Invoke_EmptyFormat_ThrowsInvalidOperationException()
+        [Test]
+        public async Task EmptyFormat_ThrowsInvalidOperationException()
         {
             var inputs = new Dictionary<string, object>
             {
                 ["Format"] = string.Empty
             };
 
-            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new RandomString(), inputs));
+            await Assert.That(() => WorkflowInvoker.Invoke(new RandomString(), inputs))
+                .Throws<InvalidOperationException>();
         }
     }
 }

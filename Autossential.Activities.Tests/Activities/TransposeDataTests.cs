@@ -2,14 +2,14 @@ using System;
 using System.Activities;
 using System.Collections.Generic;
 using System.Data;
-using Xunit;
+using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
     public class TransposeDataTests
     {
-        [Fact]
-        public void Invoke_WithValidDataTable_ModifiesTheDataTable()
+        [Test]
+        public async Task WithValidDataTable_ModifiesTheDataTable()
         {
             var dt = new DataTable();
             dt.Columns.Add("Name");
@@ -27,24 +27,25 @@ namespace Autossential.Activities.Tests.Activities
             var result = (DataTable)outputs["DataTable"];
 
             // Verify the result is a DataTable and has been modified
-            Assert.NotNull(result);
-            Assert.NotEmpty(result.Columns);
-            Assert.NotEqual(0, result.Rows.Count);
+            await Assert.That(result).IsNotNull();
+            await Assert.That(result.Columns.Count).IsNotEqualTo(0);
+            await Assert.That(result.Rows.Count).IsNotEqualTo(0);
         }
 
-        [Fact]
-        public void Invoke_WithNullDataTable_ThrowsInvalidOperationException()
+        [Test]
+        public async Task WithNullDataTable_ThrowsInvalidOperationException()
         {
             var inputs = new Dictionary<string, object>
             {
                 ["DataTable"] = null!
             };
 
-            Assert.Throws<InvalidOperationException>(() => WorkflowInvoker.Invoke(new TransposeData(), inputs));
+            await Assert.That(() => WorkflowInvoker.Invoke(new TransposeData(), inputs))
+                .Throws<InvalidOperationException>();
         }
 
-        [Fact]
-        public void Invoke_ColumnsAreNamedSequentially()
+        [Test]
+        public async Task ColumnsAreNamedSequentially()
         {
             var dt = new DataTable();
             dt.Columns.Add("A");
@@ -62,18 +63,18 @@ namespace Autossential.Activities.Tests.Activities
             // Columns are named numerically (Col1, Col2, etc.)
             for (int i = 0; i < result.Columns.Count; i++)
             {
-                Assert.NotNull(result.Columns[i].ColumnName);
-                Assert.NotEmpty(result.Columns[i].ColumnName);
+                await Assert.That(result.Columns[i].ColumnName).IsNotNull();
+                await Assert.That(result.Columns[i].ColumnName).IsNotEmpty();
             }
         }
 
-        [Fact]
-        public void Execute_ShouldTransposeDataTableCorrectly()
+        [Test]
+        public async Task ShouldTransposeDataTableCorrectly()
         {
             // Arrange
             var input = new DataTable();
             input.Columns.Add("Name");
-            input.Columns.Add("Age");
+            input.Columns.Add("Age", typeof(int));
 
             input.Rows.Add("Alice", 30);
             input.Rows.Add("Bob", 25);
@@ -88,17 +89,17 @@ namespace Autossential.Activities.Tests.Activities
             var output = outputs["DataTable"] as DataTable;
 
             // Assert
-            Assert.NotNull(output);
-            Assert.Equal(3, output.Columns.Count);
-            Assert.Equal(2, output.Rows.Count);
+            await Assert.That(output).IsNotNull();
+            await Assert.That(output.Columns.Count).IsEqualTo(3);
+            await Assert.That(output.Rows.Count).IsEqualTo(2);
 
-            Assert.Equal("Name", output.Rows[0][0]);
-            Assert.Equal("Alice", output.Rows[0][1]);
-            Assert.Equal("Bob", output.Rows[0][2]);
+            await Assert.That(output.Rows[0][0]).IsEqualTo("Name");
+            await Assert.That(output.Rows[0][1]).IsEqualTo("Alice");
+            await Assert.That(output.Rows[0][2]).IsEqualTo("Bob");
 
-            Assert.Equal("Age", output.Rows[1][0]);
-            Assert.Equivalent(30, output.Rows[1][1]);
-            Assert.Equivalent(25, output.Rows[1][2]);
+            await Assert.That(output.Rows[1][0]).IsEqualTo("Age");
+            await Assert.That(output.Rows[1][1]).IsEqualTo(30);
+            await Assert.That(output.Rows[1][2]).IsEqualTo(25);
         }
     }
 }

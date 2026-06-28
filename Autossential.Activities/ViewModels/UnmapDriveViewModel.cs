@@ -6,22 +6,7 @@ namespace Autossential.Activities.ViewModels
 {
     internal class UnmapDriveViewModel : BaseViewModel
     {
-        public UnmapDriveViewModel(IDesignServices services) : base(services)
-        {
-            var letters = new List<string>();
-            foreach (var di in DriveInfo.GetDrives())
-            {
-                if (di.DriveType == DriveType.Network)
-                {
-                    letters.Add(di.Name[0].ToString() + ':');
-                }
-            }
-
-            AvailableDrivers = DataSourceBuilder<string>
-                .WithId(p => p)
-                .WithLabel(p => p)
-                .WithData(letters).Build();
-        }
+        public UnmapDriveViewModel(IDesignServices services) : base(services) { }
 
         public DesignInArgument<string> DriveLetter { get; set; }
         public DesignOutArgument<int> ResponseCode { get; set; }
@@ -38,7 +23,6 @@ namespace Autossential.Activities.ViewModels
             DriveLetter.IsPrincipal = true;
             DriveLetter.OrderIndex = orderIndex++;
             DriveLetter.DataSource = AvailableDrivers;
-            AddWidget(DriveLetter, ViewModelWidgetType.Dropdown);
 
             ResponseCode.OrderIndex = orderIndex++;
             ResponseMessage.OrderIndex = orderIndex++;

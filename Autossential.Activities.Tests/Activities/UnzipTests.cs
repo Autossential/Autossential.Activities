@@ -1,11 +1,10 @@
 using System.Activities;
 using System.IO.Compression;
 using System.Text;
-using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
-    public class UnzipTests:BaseTests
+    public class UnzipTests : BaseTests
     {
         [Test]
         public async Task Unzip_CreatesFilesAndDirectories()

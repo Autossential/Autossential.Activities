@@ -465,6 +465,10 @@
   <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
     <value>ネットワーク共有パス</value>
   </data>
+  <data name="MapDrive_Credential_Description" xml:space="preserve">
+    <value>ネットワークドライブをマッピングする際にユーザーを認証するための、ユーザー名、パスワード、およびオプションのドメインを含む NetworkCredential オブジェクトを指定します。保護された共有フォルダーに必要です。</value>
+    <comment>property description</comment>
+  </data>
   <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
     <value>結果</value>
   </data>
@@ -914,4 +918,12 @@
     <value>{1} を {2} {0}</value>
     <comment>view model</comment>
   </data>
+	<data name="TimeLoop_Result_DisplayName" xml:space="preserve">
+  <value>結果</value>
+  <comment>property name</comment>
+</data>
+	<data name="TimeLoop_Result_Description" xml:space="preserve">
+  <value>ループがタイムアウトによって終了したか（true）、または早期に中断されたか（false）を示します。</value>
+  <comment>property description</comment>
+</data>
 </root>

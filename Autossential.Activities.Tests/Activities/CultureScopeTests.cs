@@ -2,7 +2,6 @@
 using System.Activities;
 using System.Activities.Statements;
 using System.Globalization;
-using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {

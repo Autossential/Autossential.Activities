@@ -465,6 +465,10 @@
   <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
     <value>Ruta de unidad compartida</value>
   </data>
+  <data name="MapDrive_Credential_Description" xml:space="preserve">
+    <value>Especifica el objeto NetworkCredential que contiene el nombre de usuario, la contraseña y, opcionalmente, el dominio para autenticar al usuario al asignar la unidad de red. Requerido para carpetas compartidas protegidas.</value>
+    <comment>property description</comment>
+  </data>
   <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
     <value>Resultado</value>
   </data>
@@ -914,4 +918,12 @@ Cualquier otro carácter será tratado como un literal"</value>
     <value>{0} {1} por {2}</value>
     <comment>view model</comment>
   </data>
+	<data name="TimeLoop_Result_DisplayName" xml:space="preserve">
+  <value>Resultado</value>
+  <comment>property name</comment>
+</data>
+	<data name="TimeLoop_Result_Description" xml:space="preserve">
+  <value>Indica si el bucle finalizó debido a tiempo de espera agotado (true) o fue interrumpido antes (false).</value>
+  <comment>property description</comment>
+</data>
 </root>

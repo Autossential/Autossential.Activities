@@ -465,6 +465,10 @@
   <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
     <value>Chemin du partage réseau</value>
   </data>
+  <data name="MapDrive_Credential_Description" xml:space="preserve">
+    <value>Spécifie l'objet NetworkCredential contenant le nom d'utilisateur, le mot de passe et éventuellement le domaine pour authentifier l'utilisateur lors du mappage du lecteur réseau. Requis pour les dossiers partagés protégés.</value>
+    <comment>property description</comment>
+  </data>
   <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
     <value>Résultat</value>
   </data>
@@ -914,4 +918,12 @@ Tout autre caractère sera traité comme un littéral."</value>
     <value>{0} {1} de {2}</value>
     <comment>view model</comment>
   </data>
+	<data name="TimeLoop_Result_DisplayName" xml:space="preserve">
+  <value>Résultat</value>
+  <comment>property name</comment>
+</data>
+	<data name="TimeLoop_Result_Description" xml:space="preserve">
+  <value>Indique si la boucle s'est terminée en raison d'un dépassement de délai (true) ou a été interrompue plus tôt (false).</value>
+  <comment>property description</comment>
+</data>
 </root>

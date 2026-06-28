@@ -465,6 +465,10 @@
   <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
     <value>網路路徑</value>
   </data>
+  <data name="MapDrive_Credential_Description" xml:space="preserve">
+    <value>指定 NetworkCredential 物件，其中包含使用者名稱、密碼以及選擇性的網域，用於在對應網路磁碟機時驗證使用者身分。受保護的共用資料夾需要此參數。</value>
+    <comment>property description</comment>
+  </data>
   <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
     <value>結果</value>
   </data>
@@ -914,4 +918,12 @@
     <value>將 {1} {0} {2}</value>
     <comment>view model</comment>
   </data>
+	<data name="TimeLoop_Result_DisplayName" xml:space="preserve">
+  <value>結果</value>
+  <comment>property name</comment>
+</data>
+	<data name="TimeLoop_Result_Description" xml:space="preserve">
+  <value>指示迴圈是因逾時而結束（true）還是提前中斷（false）。</value>
+  <comment>property description</comment>
+</data>
 </root>

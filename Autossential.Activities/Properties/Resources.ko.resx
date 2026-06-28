@@ -465,6 +465,10 @@
   <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
     <value>네트워크 공유 경로</value>
   </data>
+  <data name="MapDrive_Credential_Description" xml:space="preserve">
+    <value>네트워크 드라이브를 매핑할 때 사용자를 인증하기 위한 사용자 이름, 암호 및 선택적으로 도메인을 포함하는 NetworkCredential 개체를 지정합니다. 보호된 공유 폴더에 필요합니다.</value>
+    <comment>property description</comment>
+  </data>
   <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
     <value>결과</value>
   </data>
@@ -914,4 +918,12 @@
     <value>{1}을(를) {2}만큼 {0}</value>
     <comment>view model</comment>
   </data>
+	<data name="TimeLoop_Result_DisplayName" xml:space="preserve">
+  <value>결과</value>
+  <comment>property name</comment>
+</data>
+	<data name="TimeLoop_Result_Description" xml:space="preserve">
+  <value>루프가 시간 초과로 인해 종료되었는지(true) 또는 더 일찍 중단되었는지(false)를 나타냅니다.</value>
+  <comment>property description</comment>
+</data>
 </root>

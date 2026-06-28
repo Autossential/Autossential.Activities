@@ -465,6 +465,10 @@
   <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
     <value>Caminho de Rede</value>
   </data>
+  <data name="MapDrive_Credential_Description" xml:space="preserve">
+    <value>Especifica o objeto NetworkCredential que contém o nome de usuário, senha e, opcionalmente, o domínio para autenticar o usuário ao mapear a unidade de rede. Necessário para pastas compartilhadas protegidas.</value>
+    <comment>property description</comment>
+  </data>
   <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
     <value>Resultado</value>
   </data>
@@ -914,4 +918,12 @@ Quaisquer outros caracteres são tratados como literais."</value>
     <value>{0} {1} por {2}</value>
     <comment>view model</comment>
   </data>
+	<data name="TimeLoop_Result_DisplayName" xml:space="preserve">
+  <value>Resultado</value>
+  <comment>property name</comment>
+</data>
+	<data name="TimeLoop_Result_Description" xml:space="preserve">
+  <value>Indica se o loop terminou devido a tempo esgotado (true) ou foi interrompido mais cedo (false).</value>
+  <comment>property description</comment>
+</data>
 </root>

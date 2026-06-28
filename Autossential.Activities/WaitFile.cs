@@ -35,7 +35,7 @@ namespace Autossential.Activities
         protected override Task<Action<AsyncCodeActivityContext>> RunAsync(AsyncCodeActivityContext context, CancellationToken token)
         {
             var timeoutSeconds = TimeoutSeconds.Get(context);
-            if (timeoutSeconds <= 0) 
+            if (timeoutSeconds <= 0)
                 timeoutSeconds = 30;
 
             var continueOnError = ContinueOnError.Get(context);

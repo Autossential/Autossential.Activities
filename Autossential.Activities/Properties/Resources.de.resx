@@ -465,6 +465,10 @@
   <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
     <value>Pfad zum freigegebenen Laufwerk</value>
   </data>
+  <data name="MapDrive_Credential_Description" xml:space="preserve">
+    <value>Gibt das NetworkCredential-Objekt an, das den Benutzernamen, das Kennwort und optional die Domäne enthält, um den Benutzer beim Zuordnen des Netzlaufwerks zu authentifizieren. Erforderlich für geschützte freigegebene Ordner.</value>
+    <comment>property description</comment>
+  </data>
   <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
     <value>Ergebnis</value>
   </data>
@@ -914,4 +918,12 @@ Jedes andere Zeichen wird als Literal behandelt"</value>
     <value>{0} {1} um {2}</value>
     <comment>view model</comment>
   </data>
+	<data name="TimeLoop_Result_DisplayName" xml:space="preserve">
+  <value>Ergebnis</value>
+  <comment>property name</comment>
+</data>
+	<data name="TimeLoop_Result_Description" xml:space="preserve">
+  <value>Gibt an, ob die Schleife aufgrund eines Timeouts beendet wurde (true) oder früher unterbrochen wurde (false).</value>
+  <comment>property description</comment>
+</data>
 </root>

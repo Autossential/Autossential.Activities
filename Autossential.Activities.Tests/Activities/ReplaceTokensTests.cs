@@ -1,7 +1,4 @@
-using System;
 using System.Activities;
-using System.Collections.Generic;
-using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {

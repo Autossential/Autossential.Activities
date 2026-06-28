@@ -3,7 +3,6 @@ using System.Activities;
 using System.Activities.Expressions;
 using System.Activities.Statements;
 using System.Activities.Validation;
-using TUnit;
 
 namespace Autossential.Activities.Tests.Activities
 {
@@ -175,7 +174,7 @@ namespace Autossential.Activities.Tests.Activities
                 Then = null,
                 Else = null
             };
-                        
+
             WorkflowInvoker.Invoke(activity);
         }
 

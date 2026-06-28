@@ -581,6 +581,10 @@
     <value>Shared Drive Path</value>
     <comment>property name</comment>
   </data>
+  <data name="MapDrive_Credential_Description" xml:space="preserve">
+    <value>Specifies the NetworkCredential object containing the username, password, and optionally the domain to authenticate the user when mapping the network drive. Required for protected shared folders.</value>
+    <comment>property description</comment>
+  </data>
   <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
     <value>Result</value>
     <comment>property name</comment>
@@ -1161,5 +1165,13 @@ Any other character will be treated as a literal"</value>
   <data name="IncrementDecrement_ViewModel_DynamicDisplayName" xml:space="preserve">
     <value>{0} {1} by {2}</value>
     <comment>view model</comment>
+  </data>
+  <data name="TimeLoop_Result_DisplayName" xml:space="preserve">
+    <value>Result</value>
+    <comment>property name</comment>
+  </data>
+  <data name="TimeLoop_Result_Description" xml:space="preserve">
+    <value>Indicates whether the loop ended due to timeout (true) or was interrupted earlier (false).</value>
+    <comment>property description</comment>
   </data>
 </root>

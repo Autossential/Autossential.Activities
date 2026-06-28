@@ -465,6 +465,10 @@
   <data name="MapDrive_SharedDrivePath_DisplayName" xml:space="preserve">
     <value>Путь к сетевому ресурсу</value>
   </data>
+  <data name="MapDrive_Credential_Description" xml:space="preserve">
+    <value>Указывает объект NetworkCredential, содержащий имя пользователя, пароль и, при необходимости, домен для аутентификации пользователя при сопоставлении сетевого диска. Требуется для защищенных общих папок.</value>
+    <comment>property description</comment>
+  </data>
   <data name="UnmapDrive_Result_DisplayName" xml:space="preserve">
     <value>Результат</value>
   </data>
@@ -914,4 +918,12 @@
     <value>{0} {1} на {2}</value>
     <comment>view model</comment>
   </data>
+	<data name="TimeLoop_Result_DisplayName" xml:space="preserve">
+  <value>Результат</value>
+  <comment>property name</comment>
+</data>
+	<data name="TimeLoop_Result_Description" xml:space="preserve">
+  <value>Указывает, завершился ли цикл из-за тайм-аута (true) или был прерван раньше (false).</value>
+  <comment>property description</comment>
+</data>
 </root>

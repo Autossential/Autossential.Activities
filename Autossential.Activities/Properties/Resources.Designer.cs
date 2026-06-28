@@ -952,6 +952,15 @@ namespace Autossential.Activities.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Specifies the NetworkCredential object containing the username, password, and optionally the domain to authenticate the user when mapping the network drive. Required for protected shared folders..
+        /// </summary>
+        public static string MapDrive_Credential_Description {
+            get {
+                return ResourceManager.GetString("MapDrive_Credential_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Credential.
         /// </summary>
         public static string MapDrive_Credential_DisplayName {
@@ -1821,6 +1830,24 @@ namespace Autossential.Activities.Properties {
         public static string TimeLoop_IterationIndex_DisplayName {
             get {
                 return ResourceManager.GetString("TimeLoop_IterationIndex_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Indicates whether the loop ended due to timeout (true) or was interrupted earlier (false)..
+        /// </summary>
+        public static string TimeLoop_Result_Description {
+            get {
+                return ResourceManager.GetString("TimeLoop_Result_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Result.
+        /// </summary>
+        public static string TimeLoop_Result_DisplayName {
+            get {
+                return ResourceManager.GetString("TimeLoop_Result_DisplayName", resourceCulture);
             }
         }
         
